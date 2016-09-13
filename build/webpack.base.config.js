@@ -23,7 +23,13 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: /node_modules/
+        include: [
+          path.resolve(__dirname, '../../vuetify/src/index'),
+          path.resolve(__dirname, '../src')
+        ],
+        query: {
+          presets: [['es2015', { modules: false }], 'stage-2']
+        }
       },
       {
         test: /\.styl$/,
