@@ -3,7 +3,7 @@
     section-header Icons
     v-row
       v-col(xs12)
-        v-icon(large, v-badge:2.overlap="", class="grey--text") mail
+        v-icon(large, v-badge:2.overlap="{ overlap: true }", class="grey--text") mail
         v-icon(large, v-badge:edit.overlap.icon="", class="grey--text text--darken-1") account_box
         v-icon(large, v-badge:done.overlap.icon="") account_circle
         v-icon(large, v-badge:indeterminate_check_box.icon.overlap="") delete
