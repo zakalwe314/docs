@@ -3,13 +3,13 @@
     section-header Tooltips
     v-row
       v-col(xs3)
-        v-btn(primary, v-tooltip:left="'Left Tooltip'") Left
+        v-btn(primary, v-tooltip:left="{ html: 'Left Tooltip' }") Left
       v-col(xs3)
-        v-btn(primary, v-tooltip:top="'Top tooptip'") Top
+        v-btn(primary, v-tooltip:top="{ html: 'Top tooptip' }") Top
       v-col(xs3)
-        v-btn(primary, v-tooltip:right="'Right tooptip'") Right
+        v-btn(primary, v-tooltip:right="{ html: 'Right tooptip' }") Right
       v-col(xs3)
-        v-btn(primary, v-tooltip:bottom="'Bottom tooptip'") Bottom
+        v-btn(primary, v-tooltip:bottom="{ html: 'Bottom tooptip' }") Bottom
 </template>
 
 <script>

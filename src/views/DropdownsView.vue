@@ -104,7 +104,7 @@
           },
           {
             href: '#!',
-            text: 'Click Me'
+            text: 'Click Me 2'
           }
         ],
         options: { hover: true }
