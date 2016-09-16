@@ -8,7 +8,10 @@
         v-side-bar:mainsidebar=""
       )
         v-icon reorder
-    h1(v-text="title")
+    h1(
+      class="white--text"
+      v-text="title"
+    )
 </template>
 
 <script>

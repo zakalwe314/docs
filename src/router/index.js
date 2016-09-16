@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import BadgesView from '../views/BadgesView.vue'
+import BreadcrumbsView from '../views/BreadcrumbsView.vue'
 import ButtonsView from '../views/ButtonsView.vue'
 import CardsView from '../views/CardsView.vue'
 import ChipsView from '../views/ChipsView.vue'
@@ -24,6 +25,7 @@ export default new Router({
   mode: 'history',
   routes: [
     { path: '/badges', component: BadgesView },
+    { path: '/breadcrumbs', component: BreadcrumbsView },
     { path: '/buttons', component: ButtonsView },
     { path: '/cards', component: CardsView },
     { path: '/chips', component: ChipsView },

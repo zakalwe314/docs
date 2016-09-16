@@ -33,6 +33,11 @@
             icon: 'crop_3_2'
           },
           {
+            href: 'breadcrumbs',
+            text: 'Breadcrumbs',
+            icon: 'linear_scale'
+          },
+          {
             href: 'buttons',
             text: 'Buttons',
             icon: 'arrow_forward'
@@ -65,7 +70,7 @@
           {
             href: 'layouts',
             text: 'Layouts',
-            icon: 'border_all'
+            icon: 'view_day'
           },
           {
             href: 'lists',
@@ -113,7 +118,9 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus"
+       scoped
+>
   .logo
     h1
       padding: 1.5rem 0
@@ -127,4 +134,11 @@
         font-size: 2.5rem
         text-decoration: overline
         letter-spacing: 0px
+        
+  .sidebar__item
+    &:hover
+      background: rgba(255, 255, 255, .2)
+      
+    &--active
+      background: rgba(255, 255, 255, .2)
 </style>

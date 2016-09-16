@@ -1,33 +1,40 @@
 <template lang="pug">
   section
-    section-header Icons
-    v-row
+    section-header Intro
+    section-text
+      | Badge directives can be applied to any element. using the 
+      code v-badge
+      |  directive. This component will use the application's defined 
+      strong.primary--text primary color
+      | . Parameters can be passed using the arg, modifier method, 
+      code v-badge:2.overlap
+      |  , or by passing an object by expression/object 
+      code v-badge="{ value: 2, overlap: true }"
+      | .
+    component-header Character
+    v-row.center-align
       v-col(xs12)
-        v-icon(large, v-badge:2.overlap="{ overlap: true }", class="grey--text") mail
-        v-icon(large, v-badge:edit.overlap.icon="", class="grey--text text--darken-1") account_box
-        v-icon(large, v-badge:done.overlap.icon="") account_circle
-        v-icon(large, v-badge:indeterminate_check_box.icon.overlap="") delete
-        v-icon(large, v-badge:6.left="") shopping_cart
-    section-header Inline
-    v-row
-      v-col(xs2)
-        span(v-badge:4="") Inbox
-      v-col(xs2)
-        span(v-badge:cloud_off.icon="") Status
-    section-header Navbar
-    v-row
+        v-icon(
+          large,
+          v-badge:6.left=""
+        ) shopping_cart
+        v-icon(
+          large,
+          v-badge:2.overlap="{ overlap: true }"
+          class="grey--text"
+        ) mail
+    component-header Material Icons
+    v-row.center-align
       v-col(xs12)
-        v-navbar(class="secondary")
-          v-col-spacer
-          v-navbar-items(v-bind:items="items")
-            li
-              a(
-                class="navbar__item"
-                href="#!"
-              )
-                span(
-                  v-badge:done.icon=""
-                ) Badge
+        v-icon(
+          class="grey--text"
+          large
+          v-badge:notifications.icon.left.overlap=""
+        ) account_box
+        v-icon(
+          large,
+          v-badge:done.icon=""
+        ) account_circle
 </template>
 
 <script>

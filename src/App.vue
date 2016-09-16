@@ -36,7 +36,4 @@
 
 <style lang="stylus">
   @import '../node_modules/vuetify/src/stylus/main'
-  
-  section .row
-    padding: 2rem 0
 </style>

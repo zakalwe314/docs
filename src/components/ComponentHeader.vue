@@ -1,14 +1,14 @@
 <template lang="pug">
-  h2.secondary--text
+  h3.secondary--text
     slot
 </template>
 
 <style lang="stylus"
        scoped
 >
-  h2
-    font-weight: 200
+  h3
+    font-size: 2rem
+    font-weight: 300
     letter-spacing: .4rem
-    margin: 2.5rem 0
     text-align: left !important
 </style>
