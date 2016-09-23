@@ -30,7 +30,7 @@
           {
             href: 'badges',
             text: 'Badges',
-            icon: 'crop_3_2'
+            icon: 'fiber_manual_record'
           },
           {
             href: 'breadcrumbs',
@@ -76,6 +76,11 @@
             href: 'lists',
             text: 'Lists',
             icon: 'reorder'
+          },
+          {
+            href: 'pagination',
+            text: 'Pagination',
+            icon: 'looks_one'
           },
           {
             href: 'parallax',

@@ -9,7 +9,7 @@
     main
       main-side
 
-      v-container
+      v-container(class="container--fluid")
 
         router-view(@view="view")
 </template>
@@ -36,4 +36,13 @@
 
 <style lang="stylus">
   @import '../node_modules/vuetify/src/stylus/main'
+  
+  body
+    background: rgba(0, 0, 0, .005)
+    
+  .view
+    margin-bottom: 3rem
+    
+    .chip--component
+        margin-left: 2rem !important
 </style>

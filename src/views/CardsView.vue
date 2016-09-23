@@ -1,133 +1,178 @@
 <template lang="pug">
-  section
-    v-row
-      v-col(xs12)
-        section-header Basic
-      v-col(xs12, lg4, md4)
+  div.view
+    section
+      section-header Introduction
+      component-chip(type="comp")
+      component-chip(type="slot")
+      section-text(v-html="text")
+    section
+      section-header Examples
+      component-header Basic
+      component-example
         v-card
           v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-      v-col(xs12, lg4, md4)
+            p(v-text="card_text")
         v-card(class="green darken-1 white--text")
           v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-      v-col(xs12, lg4, md4)
-        v-card(class="blue darken-1 white--text")
-          v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-    v-row
-      v-col(xs12)
-        section-header With Title
-      v-col(xs12, lg4, md4)
-        v-card
-          v-card-title(class="red lighten-1")
-            v-card-title-text(class="white--text")
-              v-icon all_out
-              | Update
-          v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-          v-card-actions
-            v-btn(flat) Cancel
-            v-col-spacer
-            v-btn(class="green white--text") Submit
-      v-col(xs12, lg4, md4)
-        v-card
-          v-card-title(class="green lighten-1")
-            v-card-title-text(class="white--text") Title
-            v-card-title-actions
-              v-btn(small, class="btn--title blue lighten-2 white--text")
-                span Upload
-                v-icon(right) backup
-          v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-      v-col(xs12, lg4, md4)
-        v-card
-          v-card-title(class="grey darken-1")
-            v-card-title-text(class="white--text") Title
-            v-card-title-actions
-              v-btn(icon)
-                v-icon(class="white--text") add
-              v-btn(icon)
-                v-icon(class="white--text") edit
-              v-btn(icon)
-                v-icon(class="white--text") delete
-          v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-    v-row
-      v-col(xs12)
-        section-header With Picture
-      v-col(xs12, lg4, md4)
-        v-card
-          v-card-title(
-            img="http://www.titanui.com/wp-content/uploads/2013/04/03/Vector-Cartoon-Nature-Background-03.jpg",
-            height="300px"
-          )
-            v-card-title-text(class="white--text") Update
-          v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-          v-card-actions
-            v-btn(flat, class="primary--text") View Updates
-      v-col(xs12, md4, lg4)
-        v-card
-          v-card-title(
-            img="https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
-            height="300px"
-          )
-            v-card-title-text(class="white--text") Welcome
-          v-card-text
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-          v-card-actions
-            v-btn(flat, class="primary--text") Get Started
-      v-col(xs12, lg4, md4)
-        v-card(
-          img="https://cdn.fstoppers.com/styles/full/s3/lead/2014/11/fstoppers-natural-light-dani-how-to-retouch-dof-bokeh-sharp-facebook-female-fashion-nyc-model-portrait1.jpg",
-          height="300px",
-          id="portrait"
-        )
-          v-card-actions(class="white--text") Picture.png
-    v-row
-      v-col(xs12)
-        section-header Horizontal
-      v-col(xs12, lg6, md6)
-        v-card(horizontal)
-          v-card-title(
-            img="http://www.titanui.com/wp-content/uploads/2013/04/03/Vector-Cartoon-Nature-Background-03.jpg"
-          )
-          v-card-stack
+            p(v-text="card_text")
+      component-header Title
+      component-example
+        div
+          v-card
+            v-card-title(class="red lighten-1")
+              v-card-title-text(class="white--text")
+                v-icon all_out
+                | Update
             v-card-text
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+              p(v-text="card_text")
+            v-card-actions
+              v-btn(flat) Cancel
+              v-col-spacer
+              v-btn(class="green white--text") Submit
+        div
+          v-card
+            v-card-title(class="green lighten-1")
+              v-card-title-text(class="white--text") Title
+              v-card-title-actions
+                v-btn(small, class="btn--title blue lighten-2 white--text")
+                  span Upload
+                  v-icon(right) backup
+            v-card-text
+              p(v-text="card_text")
+      component-header Picture
+      component-example
+        div
+          v-card
+            v-card-title(
+              img="http://www.titanui.com/wp-content/uploads/2013/04/03/Vector-Cartoon-Nature-Background-03.jpg",
+              height="300px"
+            )
+              v-card-title-text(class="white--text") Update
+            v-card-text
+              p(v-text="card_text")
+            v-card-actions
+              v-btn(flat, class="primary--text") View Updates
+        div
+          v-card
+            v-card-title(
+              img="https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
+              height="300px"
+            )
+              v-card-title-text(class="white--text") Welcome
+            v-card-text
+              p(v-text="card_text")
             v-card-actions
               v-btn(flat, class="primary--text") Get Started
-      v-col(xs12, lg6, md6)
-        v-card(horizontal)
-          v-card-stack
-            v-card-text
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-            v-card-actions
-              v-btn(flat, class="secondary--text") Get Started
-          v-card-title(
-            img="http://photo.facegfx.com/static/vector/2015/12/28/facegfx-vector-cartoon-sea-and-mountain-views-vector-graphics.jpg"
+      component-header Background
+      component-example
+        div.portrait
+          v-card(
+            img="https://cdn.fstoppers.com/styles/full/s3/lead/2014/11/fstoppers-natural-light-dani-how-to-retouch-dof-bokeh-sharp-facebook-female-fashion-nyc-model-portrait1.jpg"
+            height="300px"
           )
-    v-row
-      v-col(xs12, lg4, md4)
-        section-header Colored
-        v-card(
-          class="blue darken-4 white--text",
-          id="event"
-        )
-          v-card-title(height="200px")
-            h5
-              | Featured Event: <br>
-              | May 24, 2016 <br>
-              | 7-11pm
-          v-card-actions
-            v-btn(flat, class="white--text") Add to Calendar
-            v-col-spacer
-            v-icon event
+            v-card-actions(class="white--text") Picture.png
+        div.portrait
+          v-card(
+            img="http://images6.fanpop.com/image/photos/38500000/beautiful-wallpaper-1-beautiful-pictures-38538866-500-313.jpg"
+            height="300px"
+          )
+            v-card-actions(class="white--text") Picture.png
+      component-header Horizontal
+      component-example
+        div
+          v-card(horizontal)
+            v-card-title(
+              img="http://www.titanui.com/wp-content/uploads/2013/04/03/Vector-Cartoon-Nature-Background-03.jpg"
+            )
+            v-card-stack
+              v-card-text
+                p(v-text="card_text")
+              v-card-actions
+                v-btn(flat, class="primary--text") Get Started
+        div
+          v-card(horizontal)
+            v-card-stack
+              v-card-text
+                p(v-text="card_text")
+              v-card-actions
+                v-btn(flat, class="secondary--text") Get Started
+            v-card-title(
+              img="http://photo.facegfx.com/static/vector/2015/12/28/facegfx-vector-cartoon-sea-and-mountain-views-vector-graphics.jpg"
+            )
+      component-header Colored
+      component-example
+        div.event
+          v-card(
+            class="blue darken-4 white--text"
+          )
+            v-card-title(height="200px")
+              h5.white--text
+                | Featured Event: <br>
+                | May 24, 2016 <br>
+                | 7-11pm
+            v-card-actions
+              v-btn(flat, class="white--text") Add to Calendar
+              v-col-spacer
+              v-icon event
+      component-options(v-bind:items="options")
+    section
+      section-header Helper-Components
+      component-header.secondary--text Card Title
+      component-chip(type="comp")
+      component-chip(type="slot")
+      section-text(v-html="title_text")
+      component-options
+      component-header.secondary--text Card Title Text
+      component-chip(type="comp")
+      component-chip(type="slot")
+      section-text(v-html="title_text")
+      component-header.secondary--text Card Title Actions
+      component-chip(type="comp")
+      component-chip(type="slot")
+      section-text(v-html="title_text")
+      component-header.secondary--text Card Stack
+      component-chip(type="comp")
+      component-chip(type="slot")
+      section-text(v-html="title_text")
+      component-header.secondary--text Card Actions
+      component-chip(type="comp")
+      component-chip(type="slot")
+      section-text(v-html="title_text")
+      component-header.secondary--text Card Text
+      component-chip(type="comp")
+      component-chip(type="slot")
+      section-text(v-html="title_text")
 </template>
 
 <script>
   export default {
+    data () {
+      return {
+        text: `Soon`,
+        title_text: `
+          <p>Card Title</p>
+        `,
+        card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.',
+        options: [
+          [
+            '<code>height</code>',
+            'Manually define the height of the Card',
+            'Type: String'
+          ],
+          [
+            '<code>horizontal</code>',
+            'Applies the card--horizontal class',
+            ''
+          ],
+          [
+            '<code>img</code>',
+            'Specifies an image background',
+            ''
+          ]
+        ]
+      }
+    },
+
     mounted () {
       this.$emit('view', 'Cards')
     }
@@ -135,11 +180,15 @@
 </script>
 
 <style lang="stylus">
-  #portrait
+  .portrait    
+    flex-basis: 300px !important
+    
     .card__actions
       background: rgba(0, 0, 0, .2)
       
-  #event
+  .event
+    flex-basis: 300px !important
+    
     .card__actions
       border-color: rgba(255, 255, 255, .3)
       

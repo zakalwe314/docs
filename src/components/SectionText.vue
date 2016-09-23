@@ -1,19 +1,21 @@
 <template lang="pug">
-  p
+  div.section-text
     slot
 </template>
 
-<style lang="stylus"
-       scoped
->
-  p
+<style lang="stylus">
+  .section-text
     font-size: .9rem
     font-weight: 300
-    max-width: 50%
+    min-width: 50%
+    max-width: 700px
     text-align: justify
-    margin-bottom: 2rem
+    margin: 2rem
     line-height: 1.5rem
-    
-    strong
-      font-weight: bold
+      
+    p
+      margin-bottom: 1rem !important
+      
+      strong
+        font-weight: 900
 </style>

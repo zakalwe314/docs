@@ -1,59 +1,80 @@
 <template lang="pug">
-  section
-    section-header Intro
-    section-text
-      | Badge directives can be applied to any element. using the 
-      code v-badge
-      |  directive. This component will use the application's defined 
-      strong.primary--text primary color
-      | . Parameters can be passed using the arg, modifier method, 
-      code v-badge:2.overlap
-      |  , or by passing an object by expression/object 
-      code v-badge="{ value: 2, overlap: true }"
-      | .
-    component-header Character
-    v-row.center-align
-      v-col(xs12)
-        v-icon(
-          large,
-          v-badge:6.left=""
-        ) shopping_cart
-        v-icon(
-          large,
-          v-badge:2.overlap="{ overlap: true }"
-          class="grey--text"
-        ) mail
-    component-header Material Icons
-    v-row.center-align
-      v-col(xs12)
-        v-icon(
-          class="grey--text"
-          large
-          v-badge:notifications.icon.left.overlap=""
-        ) account_box
-        v-icon(
-          large,
-          v-badge:done.icon=""
-        ) account_circle
+  div.view
+    section
+      section-header Introduction
+      component-chip(type='directive')
+      section-text(v-html="text")
+    section
+      section-header Examples
+      component-header Character
+      component-example
+        div
+          v-icon(
+            large
+            v-badge:6.left=""
+            class="grey--text text--lighten-1"
+          ) shopping_cart
+        div
+          v-icon(
+            large,
+            v-badge="{ overlap: true, value: '!' }"
+            class="grey--text red--after"
+          ) mail
+      component-header Icon
+      component-example
+        div
+          v-icon(
+            large
+            v-badge:done.overlap.icon.left=""
+            class="grey--text text--lighten-1"
+          ) account_circle
+        div
+          v-icon(
+            large
+            v-badge:notifications.icon.overlap=""
+            class="grey--text text--darken-1 orange--after"
+          ) account_box
+      component-header Inline
+      component-example
+        div
+          span(
+            v-badge:2.left=""
+          ) Examples
+        div
+          span(
+            v-badge:list.icon=""
+            class="green--after"
+          ) Lists
+    component-options(v-bind:items="options")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        items: [
-          {
-            href: '#!',
-            text: 'Link 1'
-          },
-          {
-            href: '#!',
-            text: 'Link 2'
-          },
-          {
-            href: '#!',
-            text: 'Link 3'
-          }
+        text: `
+          <p>
+            Badge directives can be applied to any element using the <code>v-badge</code> directive. By default, a badge will use the application's defined <strong class="primary--text">primary color</strong>. Parameters can be passed using the arg, <code>v-badge:arg</code>, modifier, <code>v-badge:2.modifier</code>, or by passing an object by expression, <code>v-badge="{ value: 2, overlap: true }"</code>
+          </p>
+          <p>
+            The color can be changed by using the color--after helper class, or by apply a class that modifies the background of the badged elements <strong>:after</strong> psuedo-selector.
+          </p>`,
+        options: [
+          [
+            '<code>icon</code>',
+            'Specifies the use of an icon',
+            'Default: false'
+          ],
+          [
+            '<code>left</code>',
+            'Positions the badge to the left of the element',
+            'Default: false'
+          ],
+          [
+            '<code>overlap</code>',
+            'Overlaps badge on element',
+            'Default: false'
+          ]
         ]
       }
     },

@@ -1,12 +1,15 @@
 <template lang="pug">
-  section
-    v-row
-      v-col(xs12)
+  div.view
+    section
+      section-header Introduction
+      component-chip(type="comp")
+      section-text Soon
+      div#parallax-example
         v-parallax(
           src="http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
         )
           v-parallax-content
-            h1 Explore Space
+            h1.white--text Explore Space
             p Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. 
             div
               v-btn(
@@ -21,6 +24,7 @@
               )
                 | Explore
                 v-icon(right) search
+      component-options
 </template>
 
 <script>
@@ -34,6 +38,12 @@
 </script>
 
 <style lang="stylus" scoped>
+  .view 
+    padding-bottom: 100vh
+    
+  #parallax-example
+    padding: 0 2rem
+    
   .parallax__content    
     h1
       font-weight: 300
@@ -77,8 +87,4 @@
             
         &:before
           background: #78909c
-    
-  .row
-    margin-top: 50vh
-    height: 500vh
 </style>

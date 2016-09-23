@@ -1,37 +1,36 @@
 <template lang="pug">
-  section(class="center-align")
-    section-header Variations
-    v-row
-      v-col(xs2)
-        v-btn(
-          secondary
-          @click.native="toast(left)"
-        ) Left
-      v-col(xs2)
-        v-btn(
-          secondary
-          @click.native="toast(right)"
-        ) Right
-      v-col(xs2)
-        v-btn(
-          secondary
-          @click.native="toast(top)"
-        ) Top
-      v-col(xs2)
-        v-btn(
-          secondary
-          @click.native="toast(bottom)"
-        ) Bottom
-      v-col(xs2)
-        v-btn(
-          secondary
-          @click.native="toast(snack)"
-        ) Snack
-      v-col(xs2)
-        v-btn(
-          secondary
-          @click.native="toast(cb)"
-        ) Callback
+  div.view
+    section
+      section-header Introduction
+      component-chip(type="function")
+      section-text Soon
+      component-example
+        div
+          v-btn(
+            secondary
+            @click.native="toast(left)"
+          ) Left
+          v-btn(
+            secondary
+            @click.native="toast(right)"
+          ) Right
+          v-btn(
+            secondary
+            @click.native="toast(top)"
+          ) Top
+          v-btn(
+            secondary
+            @click.native="toast(bottom)"
+          ) Bottom
+          v-btn(
+            secondary
+            @click.native="toast(snack)"
+          ) Snack
+          v-btn(
+            secondary
+            @click.native="toast(cb)"
+          ) Callback
+      component-options
 </template>
 
 <script>
@@ -62,3 +61,10 @@
     }
   }
 </script>
+
+<style lang="stylus"
+       scoped
+>
+  .btn
+    margin: 0 2rem
+</style>

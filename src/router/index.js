@@ -12,6 +12,7 @@ import FormsView from '../views/FormsView.vue'
 import LayoutsView from '../views/LayoutsView.vue'
 import ListsView from '../views/ListsView.vue'
 import ParallaxView from '../views/ParallaxView.vue'
+import PaginationView from '../views/PaginationView.vue'
 import ModalsView from '../views/ModalsView.vue'
 import SliderView from '../views/SliderView.vue'
 import TabsView from '../views/TabsView.vue'
@@ -34,6 +35,7 @@ export default new Router({
     { path: '/forms', component: FormsView },
     { path: '/layouts', component: LayoutsView },
     { path: '/lists', component: ListsView },
+    { path: '/pagination', component: PaginationView },
     { path: '/parallax', component: ParallaxView },
     { path: '/modals', component: ModalsView },
     { path: '/slider', component: SliderView },

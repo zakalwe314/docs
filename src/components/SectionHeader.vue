@@ -7,8 +7,12 @@
        scoped
 >
   h2
-    font-weight: 200
     letter-spacing: .4rem
-    margin: 2.5rem 0
     text-align: left !important
+    margin: 2rem
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 2rem
+    text-transform: uppercase
 </style>

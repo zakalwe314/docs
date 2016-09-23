@@ -40,4 +40,6 @@
     h1
       font-weight: 300
       flex: 1
+      text-transform: uppercase
+      letter-spacing: 6px
 </style>
