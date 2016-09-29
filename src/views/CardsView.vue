@@ -115,59 +115,85 @@
               v-col-spacer
               v-icon event
       component-options(v-bind:items="options")
-    section
-      section-header Helper-Components
-      component-header.secondary--text Card Title
-      component-chip(type="comp")
-      component-chip(type="slot")
-      section-text(v-html="title_text")
-      component-options
-      component-header.secondary--text Card Title Text
-      component-chip(type="comp")
-      component-chip(type="slot")
-      section-text(v-html="title_text")
-      component-header.secondary--text Card Title Actions
-      component-chip(type="comp")
-      component-chip(type="slot")
-      section-text(v-html="title_text")
-      component-header.secondary--text Card Stack
-      component-chip(type="comp")
-      component-chip(type="slot")
-      section-text(v-html="title_text")
-      component-header.secondary--text Card Actions
-      component-chip(type="comp")
-      component-chip(type="slot")
-      section-text(v-html="title_text")
-      component-header.secondary--text Card Text
-      component-chip(type="comp")
-      component-chip(type="slot")
-      section-text(v-html="title_text")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        text: `Soon`,
+        text: `
+          The <code>v-card</code> component is a versatile component that can be used for anything from a panel to a static image. The <strong>card</strong> component has numerous helper components to make markup as easy as possible. Components that have no listed options use <strong class="green--text">Vue's</strong> functional component option for faster rendering and serve as markup sugar to make building easier.
+        `,
         title_text: `
           <p>Card Title</p>
         `,
         card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.',
         options: [
           [
+            '<code>&lt;v-card v-bind:height="500px"&gt;</code>',
             '<code>height</code>',
             'Manually define the height of the Card',
             'Type: String'
           ],
           [
+            '<code>&lt;v-card horizontal&gt;</code>',
             '<code>horizontal</code>',
             'Applies the card--horizontal class',
-            ''
+            'Default: false'
           ],
           [
+            '<code>&lt;v-card img="img.png"&gt;</code>',
             '<code>img</code>',
             'Specifies an image background',
-            ''
+            'Type: String'
+          ],
+          [
+            '<code>&lt;v-card-title height="50px"&gt;</code>',
+            '<code>height</code>',
+            'Manually define the height of the Card Title',
+            'Type: String'
+          ],
+          [
+            '<code>&lt;v-card-title img="img.png"&gt;</code>',
+            '<code>img</code>',
+            'Specifies an image background',
+            'Type: String'
+          ],
+          [
+            '<code>&lt;v-card-menu&gt;</code>',
+            '',
+            'Helper component with the card__menu class',
+            'Functional Component'
+          ],
+          [
+            '<code>&lt;v-card-stack&gt;</code>',
+            '',
+            'Helper component with the card__stack class',
+            'Functional Component'
+          ],
+          [
+            '<code>&lt;v-card-actions&gt;</code>',
+            '',
+            'Helper component with the card__actions class',
+            'Functional Component'
+          ],
+          [
+            '<code>&lt;v-card-text&gt;</code>',
+            '',
+            'Helper component with the card__text class',
+            'Functional Component'
+          ],
+          [
+            '<code>&lt;v-card-title-actions&gt;</code>',
+            '',
+            'Helper component with the card__title-actions class',
+            'Functional Component'
+          ],
+          [
+            '<code>&lt;v-card-title-text&gt;</code>',
+            '',
+            'Helper component with the card__title-text class',
+            'Functional Component'
           ]
         ]
       }
@@ -180,6 +206,9 @@
 </script>
 
 <style lang="stylus">
+  .card
+    margin: 1rem
+    
   .portrait    
     flex-basis: 300px !important
     

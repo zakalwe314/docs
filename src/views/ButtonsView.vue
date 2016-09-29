@@ -84,59 +84,72 @@
 
     data () {
       return {
-        text: 'Soon',
+        text: `
+          The <code>v-btn</code> component replaces the standard html button with a material design theme and a multitude of options. Any color helper class can be used to alter the background or text color. Remember that all event captures must be done using the <strong>.native</strong> modifier.
+        `,
         options: [
           [
+            '<code>&lt;v-btn block&gt;',
             '<code>block</code>',
             'Applies the btn--block class',
             ''
           ],
           [
+            '<code>&lt;v-btn flat&gt;',
             '<code>flat</code>',
             'Applies the btn--flat class',
             ''
           ],
           [
+            '<code>&lt;v-btn floating&gt;',
             '<code>floating</code>',
             'Applies the btn--floating class',
             ''
           ],
           [
+            '<code>&lt;v-btn icon&gt;',
             '<code>icon</code>',
             'Applies the btn--icon class',
             ''
           ],
           [
+            '<code>&lt;v-btn large&gt;',
             '<code>large</code>',
             'Applies the btn--large class',
             ''
           ],
           [
+            '<code>&lt;v-btn outline&gt;',
             '<code>outline</code>',
             'Applies the btn--outline class',
             ''
           ],
           [
+            '<code>&lt;v-btn primary&gt;',
             '<code>primary</code>',
             'Applies the application\s <span class="primary--text">primary</span> color',
             ''
           ],
           [
+            '<code>&lt;v-btn round&gt;',
             '<code>round</code>',
             'Applies the btn--round class',
             ''
           ],
           [
+            '<code>&lt;v-btn secondary&gt;',
             '<code>secondary</code>',
             'Applies the application\s <span class="secondary--text">secondary</span> color',
             ''
           ],
           [
+            '<code>&lt;v-btn small&gt;',
             '<code>small</code>',
             'Applies the btn--small class',
             ''
           ],
           [
+            '<code>&lt;v-btn type="submit"&gt;',
             '<code>type</code>',
             'Sets the buttons type attribute',
             ''

@@ -13,13 +13,20 @@
     background: rgba(0, 0, 0, .03)
     margin-bottom: 5rem
     
-    @media screen and (max-width: 600px)
-      flex-wrap: wrap
-    
-    > :not(.col--spacer)
+    > div
       display: flex
+      justify-content: center
       align-items: center
-      justify-content: space-around
-      margin-left: 2rem
-      margin-right: 2rem
+      text-align: center
+      width: 100%
+    
+    // @media screen and (max-width: 600px)
+    //   flex-wrap: wrap
+    
+    // > :not(.col--spacer)
+    //   display: flex
+    //   align-items: center
+    //   justify-content: space-around
+    //   margin-left: 2rem
+    //   margin-right: 2rem
 </style>

@@ -21,7 +21,7 @@
             li(v-for="item in 2")
               v-collapsible-header Item
               v-collapsible-body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      component-options
+      component-options(v-bind:items="options")
 </template>
 
 <script>
@@ -30,7 +30,27 @@
 
     data () {
       return {
-        text: `Soon`
+        text: `Soon`,
+        options: [
+          [
+            '<code>&lt;v-collapsible expand&gt;</code>',
+            '<code>expand</code>',
+            'Does not contract when multiple are open',
+            'Default: false'
+          ],
+          [
+            '<code>&lt;v-collapsible-header&gt;</code>',
+            '',
+            'Helper component with the collapsible__header class',
+            'Functional Component'
+          ],
+          [
+            '<code>&lt;v-collapsible-body&gt;</code>',
+            '',
+            'Helper component with the collapsible__body class',
+            'Functional Component'
+          ]
+        ]
       }
     },
 

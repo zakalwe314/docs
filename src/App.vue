@@ -44,5 +44,8 @@
     margin-bottom: 3rem
     
     .chip--component
+      margin-right: 1rem
+      
+      &:first-of-type
         margin-left: 2rem !important
 </style>

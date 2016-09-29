@@ -122,3 +122,9 @@
     }
   }
 </script>
+
+<style lang="stylus" scoped>
+  .component-example
+    > *
+      flex-basis: 40%
+</style>

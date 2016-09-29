@@ -6,7 +6,7 @@
       section-text Soon
     section
       section-header Example
-        v-slider
+        v-slider(v-model="current")
           v-slider-item(
             v-for="(item, index) in items"
             v-bind:src="item.src"
@@ -17,6 +17,7 @@
   export default {
     data () {
       return {
+        current: 0,
         items: [
           {
             src: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/cute-almonds-picture-1440x500.jpg'

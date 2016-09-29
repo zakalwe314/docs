@@ -8,43 +8,37 @@
       section-header Examples
       component-header Character
       component-example
-        div
-          v-icon(
-            large
-            v-badge:6.left=""
-            class="grey--text text--lighten-1"
-          ) shopping_cart
-        div
-          v-icon(
-            large,
-            v-badge="{ overlap: true, value: '!' }"
-            class="grey--text red--after"
-          ) mail
+        v-icon(
+          large
+          v-badge:6.left=""
+          class="grey--text text--lighten-1"
+        ) shopping_cart
+        v-icon(
+          large,
+          v-badge="{ overlap: true, value: '!' }"
+          class="grey--text red--after"
+        ) mail
       component-header Icon
       component-example
-        div
-          v-icon(
-            large
-            v-badge:done.overlap.icon.left=""
-            class="grey--text text--lighten-1"
-          ) account_circle
-        div
-          v-icon(
-            large
-            v-badge:notifications.icon.overlap=""
-            class="grey--text text--darken-1 orange--after"
-          ) account_box
+        v-icon(
+          large
+          v-badge:done.overlap.icon.left=""
+          class="grey--text text--lighten-1"
+        ) account_circle
+        v-icon(
+          large
+          v-badge:notifications.icon.overlap=""
+          class="grey--text text--darken-1 orange--after"
+        ) account_box
       component-header Inline
       component-example
-        div
-          span(
-            v-badge:2.left=""
-          ) Examples
-        div
-          span(
-            v-badge:list.icon=""
-            class="green--after"
-          ) Lists
+        span(
+          v-badge:2.left=""
+        ) Examples
+        span(
+          v-badge:list.icon=""
+          class="green--after"
+        ) Lists
     component-options(v-bind:items="options")
 </template>
 
@@ -61,16 +55,19 @@
           </p>`,
         options: [
           [
+            '<code>v-badge:arg.icon</code>',
             '<code>icon</code>',
             'Specifies the use of an icon',
             'Default: false'
           ],
           [
+            '<code>v-badge:arg.left</code>',
             '<code>left</code>',
             'Positions the badge to the left of the element',
             'Default: false'
           ],
           [
+            '<code>v-badge:arg.overlap</code>',
             '<code>overlap</code>',
             'Overlaps badge on element',
             'Default: false'

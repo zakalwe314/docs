@@ -1,9 +1,10 @@
 <template lang="pug">
   section
-    section-header Options
+    section-header Parameters
     table.table--component
       thead
         tr
+          th Markup
           th Option
           th Effect
           th Remarks
@@ -27,6 +28,5 @@
 <style lang="stylus">
   .table
     &--component
-      margin: 0 auto 5rem
-      max-width: 600px
+      margin: 0 2rem 5rem
 </style>

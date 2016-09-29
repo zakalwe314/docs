@@ -46,12 +46,6 @@
               v-bind:disabled="item.disabled"
             )
       component-options(v-bind:items="options")
-    section
-      section-header Helper-Components
-      component-header.secondary--text Breadcrumb
-      component-chip(type="comp")
-      section-text(v-html="breadcrumb")
-      component-options(v-bind:items="breadcrumb_options")
 </template>
 
 <script>
@@ -63,34 +57,36 @@
             The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or character as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.
           </p>
         `,
-        breadcrumb: `For more control over the individual crumbs, use the <code>v-breadcrumb</code> helper component.`,
-        breadcrumb_options: [
-          [
-            '<code>disabled</code>',
-            'Disables the breadcrumb',
-            'Default: false'
-          ],
-          [
-            '<code>item<code>',
-            'The item object',
-            'Allowed properties: href, text'
-          ]
-        ],
         options: [
           [
+            '<code>&lt;v-breadcrumbs divider="-"&gt;</code>',
             '<code>divider</code>',
             'Specifies the dividing character',
             'Default: /'
           ],
           [
+            '<code>&lt;v-breadcrumbs divider="chevron_right" icon&gt;</code>',
             '<code>icon</code>',
             'Specifies that the divider is an icon',
             'Default: false'
           ],
           [
+            '<code>&lt;v-breadcrumbs v-bind:items="items"&gt;</code>',
             '<code>items</code>',
             'The array of Breadcrumbs',
             'Allowed properties: href, text, disabled'
+          ],
+          [
+            '<code>&lt;v-breadcrumbs-item disabled&gt;</code>',
+            '<code>disabled</code>',
+            'Disables the breadcrumb',
+            'Default: false'
+          ],
+          [
+            '<code>&lt;v-breadcrumbs-item v-bind:item="item"&gt;</code>',
+            '<code>item<code>',
+            'The item object',
+            'Allowed object properties: href, text'
           ]
         ],
         items: [
