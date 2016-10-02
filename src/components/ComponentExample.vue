@@ -1,9 +1,17 @@
 <template lang="pug">
-  div(
-    class="component-example"
-  )
-    slot
+  div
+    component-header {{ header }}
+    div(
+      class="component-example"
+    )
+      slot
 </template>
+
+<script>
+  export default {
+    props: ['header']
+  }
+</script>
 
 <style lang="stylus">
   .component-example
@@ -19,14 +27,4 @@
       align-items: center
       text-align: center
       width: 100%
-    
-    // @media screen and (max-width: 600px)
-    //   flex-wrap: wrap
-    
-    // > :not(.col--spacer)
-    //   display: flex
-    //   align-items: center
-    //   justify-content: space-around
-    //   margin-left: 2rem
-    //   margin-right: 2rem
 </style>

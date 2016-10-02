@@ -1,42 +1,44 @@
 <template lang="pug">
-  div.view
-    section
-      section-header Introduction
-      component-chip(type="function")
-      section-text Soon
-      component-example
-        div
-          v-btn(
-            secondary
-            @click.native="toast(left)"
-          ) Left
-          v-btn(
-            secondary
-            @click.native="toast(right)"
-          ) Right
-          v-btn(
-            secondary
-            @click.native="toast(top)"
-          ) Top
-          v-btn(
-            secondary
-            @click.native="toast(bottom)"
-          ) Bottom
-          v-btn(
-            secondary
-            @click.native="toast(snack)"
-          ) Snack
-          v-btn(
-            secondary
-            @click.native="toast(cb)"
-          ) Callback
-      component-options
+  doc-view(v-bind:doc="doc")
+    component-example
+      div
+        v-btn(
+          secondary
+          @click.native="toast(left)"
+        ) Left
+        v-btn(
+          secondary
+          @click.native="toast(right)"
+        ) Right
+        v-btn(
+          secondary
+          @click.native="toast(top)"
+        ) Top
+        v-btn(
+          secondary
+          @click.native="toast(bottom)"
+        ) Bottom
+        v-btn(
+          secondary
+          @click.native="toast(snack)"
+        ) Snack
+        v-btn(
+          secondary
+          @click.native="toast(cb)"
+        ) Callback
 </template>
 
 <script>
   export default {
     data () {
       return {
+        doc: {
+          intro: 'Soon',
+          types: [
+            'function'
+          ],
+          params: []
+        },
         left: ['Left Toast', 'left'],
         right: ['Right Toast', 'right'],
         top: ['Top Toast', 'top'],

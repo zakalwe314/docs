@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import AlertsView from '../views/AlertsView.vue'
 import BadgesView from '../views/BadgesView.vue'
 import BreadcrumbsView from '../views/BreadcrumbsView.vue'
 import ButtonsView from '../views/ButtonsView.vue'
@@ -13,6 +14,7 @@ import LayoutsView from '../views/LayoutsView.vue'
 import ListsView from '../views/ListsView.vue'
 import ParallaxView from '../views/ParallaxView.vue'
 import PaginationView from '../views/PaginationView.vue'
+import ProgressView from '../views/ProgressView.vue'
 import ModalsView from '../views/ModalsView.vue'
 import SliderView from '../views/SliderView.vue'
 import TabsView from '../views/TabsView.vue'
@@ -25,6 +27,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    { path: '/alerts', component: AlertsView },
     { path: '/badges', component: BadgesView },
     { path: '/breadcrumbs', component: BreadcrumbsView },
     { path: '/buttons', component: ButtonsView },
@@ -37,6 +40,7 @@ export default new Router({
     { path: '/lists', component: ListsView },
     { path: '/pagination', component: PaginationView },
     { path: '/parallax', component: ParallaxView },
+    { path: '/progress', component: ProgressView },
     { path: '/modals', component: ModalsView },
     { path: '/slider', component: SliderView },
     { path: '/tabs', component: TabsView },

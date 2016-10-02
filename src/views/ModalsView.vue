@@ -1,15 +1,13 @@
 <template lang="pug">
-  section
-    v-row
-      v-col(xs4)
-        v-btn(
+  doc-view(v-bind:doc="doc")
+    component-example
+      v-btn(
           primary,
           v-modal:modal=""
         ) Regular
         v-modal(id="modal")
           p Hello
-      v-col(xs4)
-        v-btn(
+      v-btn(
           secondary, 
           v-modal:modal2=""
         ) Bottom
@@ -17,12 +15,24 @@
           id="modal2",
           bottom
         )
-          p Hello
+          p Hello        
 </template>
 
 <script>
   export default {
     name: 'modals-view',
+
+    data () {
+      return {
+        doc: {
+          intro: 'Soon',
+          types: [
+            'comp', 'directive'
+          ],
+          params: []
+        }
+      }
+    },
 
     mounted () {
       this.$emit('view', 'Modals')

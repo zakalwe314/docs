@@ -1,35 +1,42 @@
 <template lang="pug">
-  div.view
-    section
-      section-header Introduction
-      component-chip(type="comp")
-      section-text Soon
-      div#parallax-example
-        v-parallax(
-          src="http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
-        )
-          v-parallax-content
-            h1.white--text Explore Space
-            p Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. 
-            div
-              v-btn(
-                class="transparent white--text buy",
-                large
-              )
-                | Buy a Ship
-                v-icon(right) keyboard_arrow_right
-              v-btn(
-                class="transparent white--text explore",
-                large
-              )
-                | Explore
-                v-icon(right) search
-      component-options
+  doc-view(v-bind:doc="doc")
+    div#parallax-example
+      v-parallax(
+        src="http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
+      )
+        v-parallax-content
+          h1.white--text Explore Space
+          p Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. 
+          div
+            v-btn(
+              class="transparent white--text buy",
+              large
+            )
+              | Buy a Ship
+              v-icon(right) keyboard_arrow_right
+            v-btn(
+              class="transparent white--text explore",
+              large
+            )
+              | Explore
+              v-icon(right) search
 </template>
 
 <script>
   export default {
     name: 'parallax-view',
+
+    data () {
+      return {
+        doc: {
+          intro: 'Soon',
+          types: [
+            'comp', 'slot'
+          ],
+          params: []
+        }
+      }
+    },
 
     mounted () {
       this.$emit('view', 'Parallax')

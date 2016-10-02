@@ -1,22 +1,24 @@
 <template lang="pug">
-  div.view
-    section
-      section-header Introduction
-      component-chip(type="comp")
-      section-text Soon
-    section
-      section-header Example
-        v-slider(v-model="current")
-          v-slider-item(
-            v-for="(item, index) in items"
-            v-bind:src="item.src"
-          )
+  doc-view(v-bind:doc="doc")
+    div#slider
+      v-slider(v-model="current")
+        v-slider-item(
+          v-for="(item, index) in items"
+          v-bind:src="item.src"
+        )
 </template>
 
 <script>
   export default {
     data () {
       return {
+        doc: {
+          intro: 'Soon',
+          types: [
+            'comp', 'slot'
+          ],
+          params: []
+        },
         current: 0,
         items: [
           {
@@ -37,3 +39,9 @@
     }
   }
 </script>
+
+<style lang="stylus" scoped>
+  div#slider {
+    padding: 0 2rem
+  }
+</style>

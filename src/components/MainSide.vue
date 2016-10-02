@@ -28,6 +28,11 @@
       return {
         items: [
           {
+            href: 'alerts',
+            text: 'Alerts',
+            icon: 'warning'
+          },
+          {
             href: 'badges',
             text: 'Badges',
             icon: 'fiber_manual_record'
@@ -81,6 +86,11 @@
             href: 'pagination',
             text: 'Pagination',
             icon: 'looks_one'
+          },
+          {
+            href: 'progress',
+            text: 'Progress',
+            icon: 'trending_flat'
           },
           {
             href: 'parallax',
