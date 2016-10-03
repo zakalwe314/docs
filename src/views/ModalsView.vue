@@ -27,7 +27,7 @@
         doc: {
           intro: 'Soon',
           types: [
-            'comp', 'directive'
+            'comp', 'slot', 'directive'
           ],
           params: []
         }
