@@ -61,7 +61,6 @@ app.get('*', (req, res) => {
   res.write(html.head)
 
   renderStream.on('data', chunk => {
-    console.log('here')
     if (firstChunk) {
       // embed initial store state
       if (context.initialState) {

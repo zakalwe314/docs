@@ -20,11 +20,13 @@
     padding: 2rem
     background: rgba(0, 0, 0, .03)
     margin-bottom: 5rem
+    flex-wrap: wrap
     
     > div
       display: flex
       justify-content: center
       align-items: center
       text-align: center
+      flex-wrap: wrap
       width: 100%
 </style>
