@@ -5,8 +5,9 @@
     class="grey darken-3",
     close-on-click
   )
-    div(class="logo")
-      h1(class="white--text center-align") Vuetify
+    div(class="vuetify")
+      h1()
+        router-link(to="/", class="navbar__logo") Vuetify
     ul(
       class="sidebar__items"
     )
@@ -136,12 +137,13 @@
 <style lang="stylus"
        scoped
 >
-  .logo
+  .vuetify
     h1
       padding: 1.5rem 0
       font-weight: 100
       font-size: 1.5rem
       letter-spacing: .3rem
+      text-align: center
       
       &:first-letter
         color: #2196F3
@@ -149,6 +151,8 @@
         font-size: 2.5rem
         text-decoration: overline
         letter-spacing: 0px
+    .navbar__logo
+      font-size: 1.5rem
         
   .sidebar__item
     &:hover

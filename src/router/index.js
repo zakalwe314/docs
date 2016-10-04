@@ -10,6 +10,7 @@ import ChipsView from '../views/ChipsView.vue'
 import CollapsibleView from '../views/CollapsibleView.vue'
 import DropdownsView from '../views/DropdownsView.vue'
 import FormsView from '../views/FormsView.vue'
+import HomeView from '../views/HomeView.vue'
 import LayoutsView from '../views/LayoutsView.vue'
 import ListsView from '../views/ListsView.vue'
 import ParallaxView from '../views/ParallaxView.vue'
@@ -27,6 +28,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    { path: '/', component: HomeView },
     { path: '/alerts', component: AlertsView },
     { path: '/badges', component: BadgesView },
     { path: '/breadcrumbs', component: BreadcrumbsView },
