@@ -50,7 +50,7 @@ app.use('/dist', express.static(resolve('./dist')))
 
 app.get('*', (req, res) => {
   if (!renderer) {
-    return res.end('waiting for compilation...')
+    return res.end('waiting for compilation... refresh in a moment.')
   }
 
   var s = Date.now()
@@ -85,7 +85,7 @@ app.get('*', (req, res) => {
   })
 })
 
-const port = process.env.PORT || 8081
+const port = process.env.PORT || 8080
 app.listen(port, '0.0.0.0', () => {
   console.log(`server started at localhost:${port}`)
 })

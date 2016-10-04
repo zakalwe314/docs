@@ -25,10 +25,7 @@ module.exports = {
         include: [
           path.resolve(__dirname, '../../vuetify/src/index'),
           path.resolve(__dirname, '../src')
-        ],
-        query: {
-          presets: [['es2015', { modules: false }], 'stage-2']
-        }
+        ]
       },
       {
         test: /\.styl$/,

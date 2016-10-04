@@ -14,6 +14,7 @@ const config = Object.assign({}, base, {
   ])
 })
 
+console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'production') {
   const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
