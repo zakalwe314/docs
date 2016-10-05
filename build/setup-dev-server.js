@@ -5,6 +5,7 @@ const clientConfig = require('./webpack.client.config')
 const serverConfig = require('./webpack.server.config')
 
 module.exports = function setupDevServer (app, onUpdate) {
+  // setup on the fly compilation + hot-reload
   clientConfig.entry.app = ['webpack-hot-middleware/client', clientConfig.entry.app]
   clientConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
@@ -21,6 +22,7 @@ module.exports = function setupDevServer (app, onUpdate) {
   }))
   app.use(require('webpack-hot-middleware')(clientCompiler))
 
+  // watch and update server renderer
   const serverCompiler = webpack(serverConfig)
   const mfs = new MFS()
   const outputPath = path.join(serverConfig.output.path, serverConfig.output.filename)

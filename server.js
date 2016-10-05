@@ -47,6 +47,7 @@ function createRenderer (bundle) {
 }
 
 app.use('/dist', express.static(resolve('./dist')))
+app.use(favicon(resolve('./src/assets/logo.png')))
 
 app.get('*', (req, res) => {
   if (!renderer) {
@@ -86,6 +87,6 @@ app.get('*', (req, res) => {
 })
 
 const port = process.env.PORT || 8080
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
   console.log(`server started at localhost:${port}`)
 })
