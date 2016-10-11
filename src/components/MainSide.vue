@@ -31,7 +31,7 @@
           {
             href: 'alerts',
             text: 'Alerts',
-            icon: 'warning'
+            icon: 'priority_high'
           },
           {
             href: 'badges',

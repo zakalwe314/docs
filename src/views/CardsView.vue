@@ -1,12 +1,14 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     component-example(header="Basic")
-      v-card
-        v-card-text
-          p(v-text="card_text")
-      v-card(class="green darken-1 white--text")
-        v-card-text
-          p(v-text="card_text")
+      div
+        v-card
+          v-card-text
+            p(v-text="card_text")
+      div
+        v-card(class="green darken-1 white--text")
+          v-card-text
+            p(v-text="card_text")
 
     component-example(header="Title")
       div
@@ -205,10 +207,7 @@
 
 <style lang="stylus"
        scoped
->
-  .card
-    margin: 1rem
-    
+>    
   .portrait    
     flex-basis: 300px !important
     
@@ -223,4 +222,12 @@
       
   .card__title-actions
     margin-left: auto
+    
+  .component-example
+    margin: 0 -2rem
+    padding: 1rem !important
+    
+    > div
+      flex: 1
+      padding: 1rem
 </style>

@@ -26,6 +26,7 @@ import TypographyView from '../views/TypographyView.vue'
 Vue.use(Router)
 
 export default new Router({
+  base: __dirname,
   mode: 'history',
   routes: [
     { path: '/', component: HomeView },
@@ -49,5 +50,6 @@ export default new Router({
     { path: '/toasts', component: ToastsView },
     { path: '/tooltips', component: TooltipsView },
     { path: '/typography', component: TypographyView },
+    { path: '*', redirect: '/'}
   ]
 })

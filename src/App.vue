@@ -1,7 +1,8 @@
 <template lang="pug">
-  div(
-    id="app",
-    class="with left-fixed-sidebar navbar-and-footer"
+  v-app(
+    navbar
+    footer
+    left-fixed-sidebar
   )
     header
       main-nav(v-bind:selected="selected")
