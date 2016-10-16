@@ -33,7 +33,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Toast',
+          desc: 'Soon',
           types: [
             'function'
           ],

@@ -115,7 +115,8 @@
     data () {
       return {
         doc: {
-          intro: `
+          title: 'Card',
+          desc: `
             <p>
               The <code>v-card</code> component is a versatile component that can be used for anything from a panel to a static image. The <strong>card</strong> component has numerous helper components to make markup as easy as possible. Components that have no listed options use <strong class="green--text">Vue's</strong> functional component option for faster rendering and serve as markup sugar to make building easier.
             </p>
@@ -210,6 +211,7 @@
 >    
   .portrait    
     flex-basis: 300px !important
+    margin: 1rem
     
     .card__actions
       background: rgba(0, 0, 0, .2)
@@ -224,10 +226,6 @@
     margin-left: auto
     
   .component-example
-    margin: 0 -2rem
-    padding: 1rem !important
-    
     > div
-      flex: 1
-      padding: 1rem
+      padding: 1rem 0
 </style>

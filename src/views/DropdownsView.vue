@@ -78,8 +78,6 @@
 
 <script>
   export default {
-    name: 'dropdowns-view',
-
     mounted () {
       this.$emit('view', 'Dropdowns')
     },
@@ -87,7 +85,8 @@
     data () {
       return {
         doc: {
-          intro: `Soon`,
+          title: 'Dropdown',
+          desc: `Soon`,
           types: [
             'comp', 'slot', 'directive'
           ],

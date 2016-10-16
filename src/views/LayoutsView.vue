@@ -149,6 +149,11 @@
   export default {
     data () {
       return {
+        doc: {
+          title: 'Layouts',
+          desc: 'Soon'
+        },
+        
         items: [
           {
             href: '#!',

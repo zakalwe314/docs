@@ -25,7 +25,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Modal',
+          desc: 'Soon',
           types: [
             'comp', 'slot', 'directive'
           ],

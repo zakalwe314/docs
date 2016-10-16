@@ -1,6 +1,7 @@
 <template lang="pug">
-  div.section-text
-    slot
+  dl.section-text
+    slot(name="title")
+    slot(name="desc")
 </template>
 
 <style lang="stylus">
@@ -10,7 +11,7 @@
     min-width: 50%
     max-width: 700px
     text-align: justify
-    margin: 2rem
+    margin: 2rem 0
     line-height: 1.5rem
       
     p

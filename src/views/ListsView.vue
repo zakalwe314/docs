@@ -54,7 +54,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'List',
+          desc: 'Soon',
           types: [
             'comp', 'slot'
           ],

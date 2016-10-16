@@ -292,6 +292,14 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   props: ['doc']
@@ -502,7 +510,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Alert',
+        desc: 'Soon',
         types: ['comp', 'slot'],
         params: []
       }
@@ -557,7 +566,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: '\n          <p>\n            Badge directives can be applied to any element using the <code>v-badge</code> directive. By default, a badge will use the application\'s defined <strong class="primary--text">primary color</strong>. Parameters can be passed using the arg, <code>v-badge:arg</code>, modifier, <code>v-badge:2.modifier</code>, or by passing an object by expression, <code>v-badge="{ value: 2, overlap: true }"</code>\n          </p>\n          <p>\n            The color can be changed by using the color--after helper class, or by apply a class that modifies the background of the badged elements <strong>:after</strong> psuedo-selector.\n          </p>',
+        title: 'Badge',
+        desc: '\n          <p>\n            Badge directives can be applied to any element using the <code>v-badge</code> directive. By default, a badge will use the application\'s defined <strong class="primary--text">primary color</strong>. Parameters can be passed using the arg, <code>v-badge:arg</code>, modifier, <code>v-badge:2.modifier</code>, or by passing an object by expression, <code>v-badge="{ value: 2, overlap: true }"</code>\n          </p>\n          <p>\n            The color can be changed by using the color--after helper class, or by apply a class that modifies the background of the badged elements <strong>:after</strong> psuedo-selector.\n          </p>',
         types: ['directive'],
         params: [['<code>v-badge:arg.icon</code>', '<code>icon</code>', 'Specifies the use of an icon', 'Default: false'], ['<code>v-badge:arg.left</code>', '<code>left</code>', 'Positions the badge to the left of the element', 'Default: false'], ['<code>v-badge:arg.overlap</code>', '<code>overlap</code>', 'Overlaps badge on element', 'Default: false']]
       }
@@ -602,7 +612,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: '\n          <p>\n            The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or character as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.\n          </p>\n        ',
+        title: 'Breadcrumbs',
+        desc: '\n          <p>\n            The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or character as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.\n          </p>\n        ',
         types: ['comp', 'slot'],
         params: [['<code>&lt;v-breadcrumbs&gt;</code>', '', '', 'Base component'], ['<code>&lt;v-breadcrumbs divider="-"&gt;</code>', '<code>divider</code>', 'Specifies the dividing character', 'Default: /'], ['<code>&lt;v-breadcrumbs divider="chevron_right" icon&gt;</code>', '<code>icon</code>', 'Specifies that the divider is an icon', 'Default: false'], ['<code>&lt;v-breadcrumbs v-bind:items="items"&gt;</code>', '<code>items</code>', 'The array of Breadcrumbs', 'Allowed properties: href, text, disabled'], ['<code>&lt;v-breadcrumbs-item&gt;</code>', '', '', 'Base component'], ['<code>&lt;v-breadcrumbs-item disabled&gt;</code>', '<code>disabled</code>', 'Disables the breadcrumb', 'Default: false'], ['<code>&lt;v-breadcrumbs-item v-bind:item="item"&gt;</code>', '<code>item<code>', 'The item object', 'Allowed object properties: href, text']]
       },
@@ -697,12 +708,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 
 /* harmony default export */ exports["default"] = {
-  name: 'buttons-view',
-
   data: function data() {
     return {
       doc: {
-        intro: '\n          <p>\n            The <code>v-btn</code> component replaces the standard html button with a material design theme and a multitude of options. Any color helper class can be used to alter the background or text color. Remember that all event captures must be done using the <strong>.native</strong> modifier.\n          </p>\n        ',
+        title: 'Button',
+        desc: '\n          <p>\n            The <code>v-btn</code> component replaces the standard html button with a material design theme and a multitude of options. Any color helper class can be used to alter the background or text color. Remember that all event captures must be done using the <strong>.native</strong> modifier.\n          </p>\n        ',
         types: ['comp', 'slot'],
         params: [['<code>&lt;v-btn block&gt;', '<code>block</code>', 'Applies the btn--block class', ''], ['<code>&lt;v-btn flat&gt;', '<code>flat</code>', 'Applies the btn--flat class', ''], ['<code>&lt;v-btn floating&gt;', '<code>floating</code>', 'Applies the btn--floating class', ''], ['<code>&lt;v-btn icon&gt;', '<code>icon</code>', 'Applies the btn--icon class', ''], ['<code>&lt;v-btn large&gt;', '<code>large</code>', 'Applies the btn--large class', ''], ['<code>&lt;v-btn outline&gt;', '<code>outline</code>', 'Applies the btn--outline class', ''], ['<code>&lt;v-btn primary&gt;', '<code>primary</code>', 'Applies the application\s <span class="primary--text">primary</span> color', ''], ['<code>&lt;v-btn round&gt;', '<code>round</code>', 'Applies the btn--round class', ''], ['<code>&lt;v-btn secondary&gt;', '<code>secondary</code>', 'Applies the application\s <span class="secondary--text">secondary</span> color', ''], ['<code>&lt;v-btn small&gt;', '<code>small</code>', 'Applies the btn--small class', ''], ['<code>&lt;v-btn type="submit"&gt;', '<code>type</code>', 'Sets the buttons type attribute', '']]
       }
@@ -835,7 +845,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: '\n          <p>\n            The <code>v-card</code> component is a versatile component that can be used for anything from a panel to a static image. The <strong>card</strong> component has numerous helper components to make markup as easy as possible. Components that have no listed options use <strong class="green--text">Vue\'s</strong> functional component option for faster rendering and serve as markup sugar to make building easier.\n          </p>\n        ',
+        title: 'Card',
+        desc: '\n          <p>\n            The <code>v-card</code> component is a versatile component that can be used for anything from a panel to a static image. The <strong>card</strong> component has numerous helper components to make markup as easy as possible. Components that have no listed options use <strong class="green--text">Vue\'s</strong> functional component option for faster rendering and serve as markup sugar to make building easier.\n          </p>\n        ',
         types: ['comp', 'slot'],
         params: [['<code>&lt;v-card v-bind:height="500px"&gt;</code>', '<code>height</code>', 'Manually define the height of the Card', 'Type: String'], ['<code>&lt;v-card horizontal&gt;</code>', '<code>horizontal</code>', 'Applies the card--horizontal class', 'Default: false'], ['<code>&lt;v-card img="img.png"&gt;</code>', '<code>img</code>', 'Specifies an image background', 'Type: String'], ['<code>&lt;v-card-title height="50px"&gt;</code>', '<code>height</code>', 'Manually define the height of the Card Title', 'Type: String'], ['<code>&lt;v-card-title img="img.png"&gt;</code>', '<code>img</code>', 'Specifies an image background', 'Type: String'], ['<code>&lt;v-card-menu&gt;</code>', '', 'Helper component with the card__menu class', 'Functional Component'], ['<code>&lt;v-card-stack&gt;</code>', '', 'Helper component with the card__stack class', 'Functional Component'], ['<code>&lt;v-card-actions&gt;</code>', '', 'Helper component with the card__actions class', 'Functional Component'], ['<code>&lt;v-card-text&gt;</code>', '', 'Helper component with the card__text class', 'Functional Component'], ['<code>&lt;v-card-title-actions&gt;</code>', '', 'Helper component with the card__title-actions class', 'Functional Component'], ['<code>&lt;v-card-title-text&gt;</code>', '', 'Helper component with the card__title-text class', 'Functional Component']]
       },
@@ -903,7 +914,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Chip',
+        desc: 'Soon',
         types: ['comp', 'slot'],
         params: [['<code>&lt;v-chip close&gt;</code>', '<code>close</code>', 'Removes the chip', 'Default: false'], ['<code>&lt;v-chip label&gt;</code>', '<code>label</code>', 'Applies the chip--label class', 'Default: false'], ['<code>&lt;v-chip outline&gt;</code>', '<code>outline</code>', 'Applies the chip--outline class', 'Default: false'], ['<code>&lt;v-chip small&gt;</code>', '<code>small</code>', 'Applies the chip--small class', 'Default: false']]
       }
@@ -937,12 +949,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 
 /* harmony default export */ exports["default"] = {
-  name: 'collapsible-view',
-
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Collapsible',
+        desc: 'Soon',
         types: ['comp', 'slot'],
         params: [['<code>&lt;v-collapsible expand&gt;</code>', '<code>expand</code>', 'Does not contract when multiple are open', 'Default: false'], ['<code>&lt;v-collapsible-header&gt;</code>', '', 'Helper component with the collapsible__header class', 'Functional Component'], ['<code>&lt;v-collapsible-body&gt;</code>', '', 'Helper component with the collapsible__body class', 'Functional Component']]
       }
@@ -1038,15 +1049,14 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 
 /* harmony default export */ exports["default"] = {
-  name: 'dropdowns-view',
-
   mounted: function mounted() {
     this.$emit('view', 'Dropdowns');
   },
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Dropdown',
+        desc: 'Soon',
         types: ['comp', 'slot', 'directive'],
         params: []
       },
@@ -1178,7 +1188,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Forms',
+        desc: 'Soon',
         types: ['comp'],
         params: []
       },
@@ -1263,7 +1274,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
     };
   },
   mounted: function mounted() {
-    this.$emit('view', 'Introduction');
+    this.$emit('view', 'Intro');
   }
 };
 
@@ -1423,6 +1434,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 /* harmony default export */ exports["default"] = {
   data: function data() {
     return {
+      doc: {
+        title: 'Layouts',
+        desc: 'Soon'
+      },
+
       items: [{
         href: '#!',
         text: 'Link 1'
@@ -1504,7 +1520,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'List',
+        desc: 'Soon',
         types: ['comp', 'slot'],
         params: []
       },
@@ -1557,7 +1574,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Modal',
+        desc: 'Soon',
         types: ['comp', 'slot', 'directive'],
         params: []
       }
@@ -1601,7 +1619,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Pagination',
+        desc: 'Soon',
         types: ['comp'],
         params: []
       },
@@ -1651,7 +1670,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Parallax',
+        desc: 'Soon',
         types: ['comp', 'slot'],
         params: []
       }
@@ -1707,7 +1727,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Progress',
+        desc: 'Soon',
         types: ['comp'],
         params: []
       },
@@ -1749,7 +1770,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Slider',
+        desc: 'Soon',
         types: ['comp', 'slot'],
         params: []
       },
@@ -1818,7 +1840,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Tabs',
+        desc: 'Soon',
         types: ['comp', 'slot'],
         params: []
       },
@@ -1872,7 +1895,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Toast',
+        desc: 'Soon',
         types: ['function'],
         params: []
       },
@@ -1935,7 +1959,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Tooltip',
+        desc: 'Soon',
         types: ['directive'],
         params: []
       }
@@ -1974,7 +1999,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   data: function data() {
     return {
       doc: {
-        intro: 'Soon',
+        title: 'Typography',
+        desc: 'Soon',
         types: [],
         params: []
       }
@@ -2119,7 +2145,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 /* harmony default export */ exports["a"] = new __WEBPACK_IMPORTED_MODULE_1_vue_router___default.a({
   base: __dirname,
   mode: 'history',
-  routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_11__views_HomeView_vue___default.a }, { path: '/alerts', component: __WEBPACK_IMPORTED_MODULE_2__views_AlertsView_vue___default.a }, { path: '/badges', component: __WEBPACK_IMPORTED_MODULE_3__views_BadgesView_vue___default.a }, { path: '/breadcrumbs', component: __WEBPACK_IMPORTED_MODULE_4__views_BreadcrumbsView_vue___default.a }, { path: '/buttons', component: __WEBPACK_IMPORTED_MODULE_5__views_ButtonsView_vue___default.a }, { path: '/cards', component: __WEBPACK_IMPORTED_MODULE_6__views_CardsView_vue___default.a }, { path: '/chips', component: __WEBPACK_IMPORTED_MODULE_7__views_ChipsView_vue___default.a }, { path: '/collapsible', component: __WEBPACK_IMPORTED_MODULE_8__views_CollapsibleView_vue___default.a }, { path: '/dropdowns', component: __WEBPACK_IMPORTED_MODULE_9__views_DropdownsView_vue___default.a }, { path: '/forms', component: __WEBPACK_IMPORTED_MODULE_10__views_FormsView_vue___default.a }, { path: '/layouts', component: __WEBPACK_IMPORTED_MODULE_12__views_LayoutsView_vue___default.a }, { path: '/lists', component: __WEBPACK_IMPORTED_MODULE_13__views_ListsView_vue___default.a }, { path: '/pagination', component: __WEBPACK_IMPORTED_MODULE_15__views_PaginationView_vue___default.a }, { path: '/parallax', component: __WEBPACK_IMPORTED_MODULE_14__views_ParallaxView_vue___default.a }, { path: '/progress', component: __WEBPACK_IMPORTED_MODULE_16__views_ProgressView_vue___default.a }, { path: '/modals', component: __WEBPACK_IMPORTED_MODULE_17__views_ModalsView_vue___default.a }, { path: '/slider', component: __WEBPACK_IMPORTED_MODULE_18__views_SliderView_vue___default.a }, { path: '/tabs', component: __WEBPACK_IMPORTED_MODULE_19__views_TabsView_vue___default.a }, { path: '/toasts', component: __WEBPACK_IMPORTED_MODULE_20__views_ToastsView_vue___default.a }, { path: '/tooltips', component: __WEBPACK_IMPORTED_MODULE_21__views_TooltipsView_vue___default.a }, { path: '/typography', component: __WEBPACK_IMPORTED_MODULE_22__views_TypographyView_vue___default.a }, { path: '*', redirect: '/' }]
+  routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_11__views_HomeView_vue___default.a }, { path: '/alerts', component: __WEBPACK_IMPORTED_MODULE_2__views_AlertsView_vue___default.a }, { path: '/badges', component: __WEBPACK_IMPORTED_MODULE_3__views_BadgesView_vue___default.a }, { path: '/breadcrumbs', component: __WEBPACK_IMPORTED_MODULE_4__views_BreadcrumbsView_vue___default.a }, { path: '/buttons', component: __WEBPACK_IMPORTED_MODULE_5__views_ButtonsView_vue___default.a }, { path: '/cards', component: __WEBPACK_IMPORTED_MODULE_6__views_CardsView_vue___default.a }, { path: '/chips', component: __WEBPACK_IMPORTED_MODULE_7__views_ChipsView_vue___default.a }, { path: '/collapsible', component: __WEBPACK_IMPORTED_MODULE_8__views_CollapsibleView_vue___default.a }, { path: '/dropdowns', component: __WEBPACK_IMPORTED_MODULE_9__views_DropdownsView_vue___default.a }, { path: '/forms', component: __WEBPACK_IMPORTED_MODULE_10__views_FormsView_vue___default.a }, { path: '/layouts', component: __WEBPACK_IMPORTED_MODULE_12__views_LayoutsView_vue___default.a }, { path: '/lists', component: __WEBPACK_IMPORTED_MODULE_13__views_ListsView_vue___default.a }, { path: '/pagination', component: __WEBPACK_IMPORTED_MODULE_15__views_PaginationView_vue___default.a }, { path: '/parallax', component: __WEBPACK_IMPORTED_MODULE_14__views_ParallaxView_vue___default.a }, { path: '/progress', component: __WEBPACK_IMPORTED_MODULE_16__views_ProgressView_vue___default.a }, { path: '/modals', component: __WEBPACK_IMPORTED_MODULE_17__views_ModalsView_vue___default.a }, { path: '/slider', component: __WEBPACK_IMPORTED_MODULE_18__views_SliderView_vue___default.a }, { path: '/tabs', component: __WEBPACK_IMPORTED_MODULE_19__views_TabsView_vue___default.a }, { path: '/toasts', component: __WEBPACK_IMPORTED_MODULE_20__views_ToastsView_vue___default.a }, { path: '/tooltips', component: __WEBPACK_IMPORTED_MODULE_21__views_TooltipsView_vue___default.a }, { path: '/typography', component: __WEBPACK_IMPORTED_MODULE_22__views_TypographyView_vue___default.a }]
 });
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
@@ -2155,7 +2181,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(2)
 
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(90)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2166,6 +2192,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2182,7 +2209,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(3)
 
 /* template */
-var __vue_template__ = __webpack_require__(94)
+var __vue_template__ = __webpack_require__(87)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2193,6 +2220,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2206,7 +2234,7 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 
 /* template */
-var __vue_template__ = __webpack_require__(89)
+var __vue_template__ = __webpack_require__(93)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2217,9 +2245,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-3"
+__vue_options__._scopeId = "data-v-72dc748a"
 
 module.exports = __vue_exports__
 
@@ -2234,7 +2263,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(4)
 
 /* template */
-var __vue_template__ = __webpack_require__(96)
+var __vue_template__ = __webpack_require__(69)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2245,6 +2274,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2261,7 +2291,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(5)
 
 /* template */
-var __vue_template__ = __webpack_require__(78)
+var __vue_template__ = __webpack_require__(84)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2272,6 +2302,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2288,7 +2319,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(6)
 
 /* template */
-var __vue_template__ = __webpack_require__(95)
+var __vue_template__ = __webpack_require__(94)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2299,6 +2330,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2312,7 +2344,7 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 
 /* template */
-var __vue_template__ = __webpack_require__(97)
+var __vue_template__ = __webpack_require__(92)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2323,6 +2355,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2339,7 +2372,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(7)
 
 /* template */
-var __vue_template__ = __webpack_require__(98)
+var __vue_template__ = __webpack_require__(72)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2350,9 +2383,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-8"
+__vue_options__._scopeId = "data-v-17174d0a"
 
 module.exports = __vue_exports__
 
@@ -2367,7 +2401,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(8)
 
 /* template */
-var __vue_template__ = __webpack_require__(99)
+var __vue_template__ = __webpack_require__(81)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2378,9 +2412,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-9"
+__vue_options__._scopeId = "data-v-2cddad2f"
 
 module.exports = __vue_exports__
 
@@ -2395,7 +2430,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(9)
 
 /* template */
-var __vue_template__ = __webpack_require__(68)
+var __vue_template__ = __webpack_require__(98)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2406,9 +2441,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-10"
+__vue_options__._scopeId = "data-v-e5ac7b32"
 
 module.exports = __vue_exports__
 
@@ -2420,7 +2456,7 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 
 /* template */
-var __vue_template__ = __webpack_require__(69)
+var __vue_template__ = __webpack_require__(75)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2431,9 +2467,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-11"
+__vue_options__._scopeId = "data-v-20831fe3"
 
 module.exports = __vue_exports__
 
@@ -2445,7 +2482,7 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 
 /* template */
-var __vue_template__ = __webpack_require__(70)
+var __vue_template__ = __webpack_require__(73)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2456,6 +2493,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2472,7 +2510,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(10)
 
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(85)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2483,6 +2521,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2499,7 +2538,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(11)
 
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(82)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2510,6 +2549,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2526,7 +2566,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(12)
 
 /* template */
-var __vue_template__ = __webpack_require__(73)
+var __vue_template__ = __webpack_require__(95)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2537,6 +2577,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2553,7 +2594,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(13)
 
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(76)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2564,9 +2605,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-16"
+__vue_options__._scopeId = "data-v-21f936ea"
 
 module.exports = __vue_exports__
 
@@ -2581,7 +2623,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(14)
 
 /* template */
-var __vue_template__ = __webpack_require__(75)
+var __vue_template__ = __webpack_require__(80)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2592,9 +2634,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-17"
+__vue_options__._scopeId = "data-v-2c771ca6"
 
 module.exports = __vue_exports__
 
@@ -2609,7 +2652,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(15)
 
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(88)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2620,9 +2663,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-18"
+__vue_options__._scopeId = "data-v-5706fbf1"
 
 module.exports = __vue_exports__
 
@@ -2637,7 +2681,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(16)
 
 /* template */
-var __vue_template__ = __webpack_require__(77)
+var __vue_template__ = __webpack_require__(78)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2648,6 +2692,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2664,7 +2709,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(17)
 
 /* template */
-var __vue_template__ = __webpack_require__(79)
+var __vue_template__ = __webpack_require__(74)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2675,9 +2720,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-20"
+__vue_options__._scopeId = "data-v-1fcc3b4c"
 
 module.exports = __vue_exports__
 
@@ -2692,7 +2738,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(18)
 
 /* template */
-var __vue_template__ = __webpack_require__(80)
+var __vue_template__ = __webpack_require__(96)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2703,9 +2749,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-21"
+__vue_options__._scopeId = "data-v-90cceb0e"
 
 module.exports = __vue_exports__
 
@@ -2720,7 +2767,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(19)
 
 /* template */
-var __vue_template__ = __webpack_require__(81)
+var __vue_template__ = __webpack_require__(79)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2731,6 +2778,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2747,7 +2795,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(20)
 
 /* template */
-var __vue_template__ = __webpack_require__(82)
+var __vue_template__ = __webpack_require__(99)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2758,6 +2806,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2774,7 +2823,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(21)
 
 /* template */
-var __vue_template__ = __webpack_require__(83)
+var __vue_template__ = __webpack_require__(91)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2785,6 +2834,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2801,7 +2851,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(22)
 
 /* template */
-var __vue_template__ = __webpack_require__(87)
+var __vue_template__ = __webpack_require__(77)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2812,6 +2862,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2828,7 +2879,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(23)
 
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(71)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2839,6 +2890,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2855,7 +2907,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(24)
 
 /* template */
-var __vue_template__ = __webpack_require__(84)
+var __vue_template__ = __webpack_require__(70)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2866,9 +2918,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-25"
+__vue_options__._scopeId = "data-v-10e7c3e7"
 
 module.exports = __vue_exports__
 
@@ -2883,7 +2936,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(25)
 
 /* template */
-var __vue_template__ = __webpack_require__(86)
+var __vue_template__ = __webpack_require__(89)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2894,6 +2947,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2910,7 +2964,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(26)
 
 /* template */
-var __vue_template__ = __webpack_require__(88)
+var __vue_template__ = __webpack_require__(83)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2921,6 +2975,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2937,7 +2992,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(27)
 
 /* template */
-var __vue_template__ = __webpack_require__(90)
+var __vue_template__ = __webpack_require__(67)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2948,6 +3003,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2964,7 +3020,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(28)
 
 /* template */
-var __vue_template__ = __webpack_require__(91)
+var __vue_template__ = __webpack_require__(86)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2975,9 +3031,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-31"
+__vue_options__._scopeId = "data-v-5362613c"
 
 module.exports = __vue_exports__
 
@@ -2992,7 +3049,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(29)
 
 /* template */
-var __vue_template__ = __webpack_require__(92)
+var __vue_template__ = __webpack_require__(68)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3003,8 +3060,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-050d7e20"
 
 module.exports = __vue_exports__
 
@@ -3019,7 +3078,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(30)
 
 /* template */
-var __vue_template__ = __webpack_require__(93)
+var __vue_template__ = __webpack_require__(97)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3030,6 +3089,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -3041,23 +3101,64 @@ module.exports = __vue_exports__
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('v-app', {
+  return _h('doc-view', {
     attrs: {
-      "navbar": "navbar",
-      "footer": "footer",
-      "left-fixed-sidebar": "left-fixed-sidebar"
+      "doc": doc
     }
-  }, [_h('header', [_h('main-nav', {
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Default"
+    }
+  }, [_h('div', [_h('div', [_h('v-tabs', {
+    attrs: {
+      "id": "tabs"
+    }
+  }, [_h('v-tab', {
+    attrs: {
+      "target": "tab1"
+    },
     domProps: {
-      "selected": selected
+      "selected": true
     }
-  })]), _h('main', [_h('main-side'), _h('v-container', {
-    staticClass: "container--fluid"
-  }, [_h('router-view', {
-    on: {
-      "view": view
+  }, ["Tab 1"]), _h('v-tab', {
+    attrs: {
+      "target": "tab2"
     }
-  })])])])
+  }, ["Tab 2"]), _h('v-tab', {
+    attrs: {
+      "target": "tab3"
+    }
+  }, ["Tab 3"]), _h('v-tab', {
+    attrs: {
+      "target": "tab4"
+    }
+  }, ["Tab 4"])]), _h('div', {
+    staticClass: "tabs__container"
+  }, [_h('v-tab-content', {
+    key: 1,
+    attrs: {
+      "id": "tab1",
+      "target": "tabs"
+    }
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tab-content', {
+    key: 2,
+    attrs: {
+      "id": "tab2",
+      "target": "tabs"
+    }
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tab-content', {
+    key: 3,
+    attrs: {
+      "id": "tab3",
+      "target": "tabs"
+    }
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tab-content', {
+    key: 4,
+    attrs: {
+      "id": "tab4",
+      "target": "tabs"
+    }
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])])])
 }},staticRenderFns: []}
 
 /***/ },
@@ -3065,17 +3166,63 @@ module.exports={render:function (){with(this) {
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('p', {
-    staticClass: "codepen",
+  return _h('doc-view', {
     attrs: {
-      "data-height": "265",
-      "data-theme-id": "dark",
-      "data-default-tab": "html",
-      "data-user": "johnjleider",
-      "data-embed-version": "2",
-      "data-slug-hash": slug
+      "doc": doc
     }
-  })
+  }, [_h('component-example', [_h('div', [_h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:left",
+      value: ({
+        html: 'Left Tooltip'
+      }),
+      expression: "{ html: 'Left Tooltip' }",
+      arg: "left"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Left"]), _h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:top",
+      value: ({
+        html: 'Top tooptip'
+      }),
+      expression: "{ html: 'Top tooptip' }",
+      arg: "top"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Top"]), _h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:right",
+      value: ({
+        html: 'Right tooptip'
+      }),
+      expression: "{ html: 'Right tooptip' }",
+      arg: "right"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Right"]), _h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:bottom",
+      value: ({
+        html: 'Bottom tooptip'
+      }),
+      expression: "{ html: 'Bottom tooptip' }",
+      arg: "bottom"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Bottom"])])])])
 }},staticRenderFns: []}
 
 /***/ },
@@ -3083,20 +3230,64 @@ module.exports={render:function (){with(this) {
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('h2', {
-    staticClass: "secondary--text"
-  }, [_t("default")])
-}},staticRenderFns: []}
+  return _h('table', {
+    staticClass: "table--component"
+  }, [_m(0), _h('tbody', [_l((params), function(option) {
+    return _h('tr', [_l((option), function(td) {
+      return _h('td', {
+        domProps: {
+          "innerHTML": _s(td)
+        }
+      })
+    })])
+  })])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('thead', [_h('tr', [_h('th', ["Markup"]), _h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
+}}]}
 
 /***/ },
 /* 70 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('div', {
-    staticClass: "section-text"
-  }, [_t("default")])
-}},staticRenderFns: []}
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('div', {
+    attrs: {
+      "id": "parallax-example"
+    }
+  }, [_h('v-parallax', {
+    attrs: {
+      "src": "http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
+    }
+  }, [_h('v-parallax-content', [_m(0), _m(1), _h('div', [_h('v-btn', {
+    staticClass: "transparent white--text buy",
+    attrs: {
+      "large": "large"
+    }
+  }, ["Buy a Ship", _h('v-icon', {
+    attrs: {
+      "right": "right"
+    }
+  }, ["keyboard_arrow_right"])]), _h('v-btn', {
+    staticClass: "transparent white--text explore",
+    attrs: {
+      "large": "large"
+    }
+  }, ["Explore", _h('v-icon', {
+    attrs: {
+      "right": "right"
+    }
+  }, ["search"])])])])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('h1', {
+    staticClass: "white--text"
+  }, ["Explore Space"])
+}},function (){with(this) {
+  return _h('p', ["Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. "])
+}}]}
 
 /***/ },
 /* 71 */
@@ -3109,126 +3300,98 @@ module.exports={render:function (){with(this) {
     }
   }, [_h('component-example', {
     attrs: {
-      "id": "alerts"
+      "header": "Short"
     }
-  }, [_h('v-alert', {
+  }, [_h('div', [_h('v-pagination', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (page),
+      expression: "page"
+    }],
     attrs: {
-      "error": "error"
+      "length": 5
+    },
+    domProps: {
+      "value": (page)
+    },
+    on: {
+      "input": function($event) {
+        page = $event
+      }
     }
-  }, [" This is an error alert with ", _m(0)]), _h('v-alert', {
+  })])]), _h('component-example', {
     attrs: {
-      "info": "info"
+      "header": "Long"
     }
-  }, [" This is an info alert with ", _m(1)]), _h('v-alert', {
+  }, [_h('div', [_h('v-pagination', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (page2),
+      expression: "page2"
+    }],
     attrs: {
-      "success": "success"
+      "length": 15
+    },
+    domProps: {
+      "value": (page2)
+    },
+    on: {
+      "input": function($event) {
+        page2 = $event
+      }
     }
-  }, [" This is a success alert with ", _m(2)]), _h('v-alert', {
+  })])]), _h('component-example', {
     attrs: {
-      "warning": "warning"
+      "header": "Round"
     }
-  }, [" This is a warning alert with ", _m(3)])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('strong', ["strong text."])
-}},function (){with(this) {
-  return _h('strong', ["strong text."])
-}},function (){with(this) {
-  return _h('strong', ["strong text."])
-}},function (){with(this) {
-  return _h('strong', ["strong text."])
-}}]}
+  }, [_h('div', [_h('v-pagination', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (page3),
+      expression: "page3"
+    }],
+    attrs: {
+      "length": 4,
+      "circle": "circle"
+    },
+    domProps: {
+      "value": (page3)
+    },
+    on: {
+      "input": function($event) {
+        page3 = $event
+      }
+    }
+  })])])])
+}},staticRenderFns: []}
 
 /***/ },
 /* 72 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Character"
-    }
-  }, [_h('v-icon', {
+  return _h('v-navbar', {
+    staticClass: "center-align white--text"
+  }, [_h('div', {
+    staticClass: "navbar__side-icon"
+  }, [_h('a', {
     directives: [{
-      name: "badge",
-      arg: "6",
-      modifiers: {
-        "left": true
-      }
+      name: "side-bar",
+      rawName: "v-side-bar:mainsidebar",
+      arg: "mainsidebar"
     }],
-    staticClass: "grey--text text--lighten-1",
     attrs: {
-      "large": "large"
+      "href": "#!"
     }
-  }, ["shopping_cart"]), _h('v-icon', {
-    directives: [{
-      name: "badge",
-      value: ({
-        overlap: true,
-        value: '!'
-      }),
-      expression: "{ overlap: true, value: '!' }"
-    }],
-    staticClass: "grey--text red--after",
-    attrs: {
-      "large": "large"
+  }, [_h('v-icon', ["reorder"])])]), _h('h1', {
+    staticClass: "white--text",
+    domProps: {
+      "textContent": _s(title)
     }
-  }, ["mail"])]), _h('component-example', {
-    attrs: {
-      "header": "Icon"
-    }
-  }, [_h('v-icon', {
-    directives: [{
-      name: "badge",
-      arg: "done",
-      modifiers: {
-        "overlap": true,
-        "icon": true,
-        "left": true
-      }
-    }],
-    staticClass: "grey--text text--lighten-1",
-    attrs: {
-      "large": "large"
-    }
-  }, ["account_circle"]), _h('v-icon', {
-    directives: [{
-      name: "badge",
-      arg: "notifications",
-      modifiers: {
-        "icon": true,
-        "overlap": true
-      }
-    }],
-    staticClass: "grey--text text--darken-1 orange--after",
-    attrs: {
-      "large": "large"
-    }
-  }, ["account_box"])]), _h('component-example', {
-    attrs: {
-      "header": "Inline"
-    }
-  }, [_h('span', {
-    directives: [{
-      name: "badge",
-      arg: "2",
-      modifiers: {
-        "left": true
-      }
-    }]
-  }, ["Examples"]), _h('span', {
-    directives: [{
-      name: "badge",
-      arg: "list",
-      modifiers: {
-        "icon": true
-      }
-    }],
-    staticClass: "green--after"
-  }, ["Lists"])])])
+  })])
 }},staticRenderFns: []}
 
 /***/ },
@@ -3236,45 +3399,157 @@ module.exports={render:function (){with(this) {
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
+  return _h('dl', {
+    staticClass: "section-text"
+  }, [_t("title"), _t("desc")])
+}},staticRenderFns: []}
+
+/***/ },
+/* 74 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
   return _h('doc-view', {
     attrs: {
       "doc": doc
     }
   }, [_h('component-example', {
     attrs: {
-      "header": "Text Dividers"
+      "header": "On Click"
     }
-  }, [_h('v-breadcrumbs', {
+  }, [_h('div', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown",
+      arg: "dropdown"
+    }],
     attrs: {
-      "divider": "/",
+      "primary": "primary"
+    }
+  }, ["Dropdown"]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown",
       "items": items
     }
-  }), _h('v-breadcrumbs', {
+  })]), _h('div', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown3",
+      arg: "dropdown3"
+    }],
     attrs: {
-      "divider": "-",
+      "secondary": "secondary"
+    }
+  }, ["With Labels"]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown3"
+    }
+  }, [_h('li', [_h('a', {
+    staticClass: "dropdown__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, ["Profile", _h('v-chip', {
+    staticClass: "teal white--text right",
+    attrs: {
+      "label": "label",
+      "small": "small"
+    }
+  }, ["new"])])]), _h('li', [_h('a', {
+    staticClass: "dropdown__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('span', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:2",
+      arg: "2"
+    }]
+  }, ["Notifications"])])]), _h('li', [_h('a', {
+    staticClass: "dropdown__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, ["Logout", _h('v-icon', {
+    staticClass: "secondary--text right"
+  }, ["cloud_off"])])])])])]), _h('component-example', {
+    attrs: {
+      "header": "On Hover"
+    }
+  }, [_h('div', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown2",
+      value: (options),
+      expression: "options",
+      arg: "dropdown2"
+    }],
+    attrs: {
+      "secondary": "secondary"
+    }
+  }, ["Dropdown"]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown2",
+      "items": items,
+      "right": "right"
+    }
+  })])]), _h('component-example', {
+    attrs: {
+      "header": "Menus"
+    }
+  }, [_h('div', [_h('v-card', [_h('v-card-title', {
+    staticClass: "blue"
+  }, [_h('v-card-title-text', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:menu",
+      arg: "menu"
+    }],
+    attrs: {
+      "icon": "icon"
+    }
+  }, [_h('v-icon', {
+    staticClass: "white--text"
+  }, ["more_vert"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "menu",
       "items": items
     }
-  })]), _h('component-example', {
+  })])]), _h('v-card-text', ["Lorem Ipsum"])])]), _h('div', [_h('v-card', [_h('v-card-title', {
+    staticClass: "blue"
+  }, [_h('v-card-title-actions', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:menu2",
+      arg: "menu2"
+    }],
     attrs: {
-      "header": "Icon Dividers"
+      "icon": "icon"
     }
-  }, [_h('v-breadcrumbs', {
+  }, [_h('v-icon', {
+    staticClass: "white--text"
+  }, ["more_vert"])]), _h('v-dropdown', {
     attrs: {
-      "icons": "icons",
-      "divider": "forward",
-      "items": items
+      "id": "menu2",
+      "items": items,
+      "right": "right"
     }
-  }), _h('v-breadcrumbs', {
-    attrs: {
-      "icons": "icons",
-      "divider": "chevron_right",
-      "items": items
-    }
-  })])])
+  })])]), _h('v-card-text', ["Lorem Ipsum"])])])])])
 }},staticRenderFns: []}
 
 /***/ },
-/* 74 */
+/* 75 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('h2', {
+    staticClass: "secondary--text"
+  }, [_t("default")])
+}},staticRenderFns: []}
+
+/***/ },
+/* 76 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -3466,7 +3741,130 @@ module.exports={render:function (){with(this) {
 }},staticRenderFns: []}
 
 /***/ },
-/* 75 */
+/* 77 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', [_h('v-btn', {
+    directives: [{
+      name: "modal",
+      rawName: "v-modal:modal",
+      arg: "modal"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Regular", _h('v-modal', {
+    attrs: {
+      "id": "modal"
+    }
+  }, [_m(0)])]), _h('v-btn', {
+    directives: [{
+      name: "modal",
+      rawName: "v-modal:modal2",
+      arg: "modal2"
+    }],
+    attrs: {
+      "secondary": "secondary"
+    }
+  }, ["Bottom", _h('v-modal', {
+    attrs: {
+      "id": "modal2",
+      "bottom": "bottom"
+    }
+  }, [_m(1)])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('p', ["Hello"])
+}},function (){with(this) {
+  return _h('p', ["Hello        "])
+}}]}
+
+/***/ },
+/* 78 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Accordion"
+    }
+  }, [_h('div', [_h('v-collapsible', [_l((5), function(item) {
+    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])
+  })])])]), _h('component-example', {
+    attrs: {
+      "header": "Expandable"
+    }
+  }, [_h('div', [_h('v-collapsible', {
+    attrs: {
+      "expand": "expand"
+    }
+  }, [_l((2), function(item) {
+    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])
+  })])])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 79 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('div', {
+    staticClass: "view"
+  }, [_h('section', [_h('section-header', ["Welcome"]), _h('section-text', {
+    domProps: {
+      "innerHTML": _s(intro)
+    }
+  })]), _h('section', [_h('section-header', ["Quick Start"]), _h('section-text', ["Install vuetify from ", _m(0), ", ", _m(1), ". Once installed, go to your main js entry point and import/use the module.", _h('v-card', {
+    staticClass: "grey lighten-3"
+  }, [_h('v-card-text', [_m(2), _m(3), _m(4)])])])]), _h('section', [_h('section-header', ["About"]), _h('section-text', {
+    domProps: {
+      "innerHTML": _s(about)
+    }
+  })]), _h('section', [_h('section-header', ["Ecosystem"]), _h('section-text', ["In order to expedite the development process, Vuetify comes with multiple supplementary features to get the ball rolling."]), _h('v-container', [_h('v-row', [_h('v-col', {
+    attrs: {
+      "xs12": "xs12"
+    }
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["dashboard"]), _h('v-list-item-title', [_h('span', ["Vuetify Admin Template ", _h('v-chip', {
+    staticClass: "green white--text",
+    attrs: {
+      "label": "label"
+    }
+  }, ["Soon", _h('v-icon', {
+    attrs: {
+      "right": "right"
+    }
+  }, ["error_outline"])])])])]), _h('v-list-item', [_h('v-list-item-icon', ["color_lens"]), _h('v-list-item-title', [_h('span', ["Vuetify Frontend Template ", _h('v-chip', {
+    staticClass: "green white--text",
+    attrs: {
+      "label": "label"
+    }
+  }, ["Soon", _h('v-icon', {
+    attrs: {
+      "right": "right"
+    }
+  }, ["error_outline"])])])])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vuetify Webpack Starter"])]), _h('v-list-item', [_h('v-list-item-icon', ["fast_forward"]), _h('v-list-item-title', ["Vuetify SSR Webpack Starter"])])])])])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('strong', ["npm"])
+}},function (){with(this) {
+  return _h('code', ["npm install vuetify"])
+}},function (){with(this) {
+  return _h('strong', ["import Vue from 'vue' ", _h('br')])
+}},function (){with(this) {
+  return _h('strong', ["import Vuetify from 'vuetify' ", _h('br')])
+}},function (){with(this) {
+  return _h('strong', ["Vue.use(Vuetify)"])
+}}]}
+
+/***/ },
+/* 80 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -3646,7 +4044,298 @@ module.exports={render:function (){with(this) {
 }}]}
 
 /***/ },
-/* 76 */
+/* 81 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('v-sidebar', {
+    staticClass: "grey darken-3",
+    attrs: {
+      "id": "mainsidebar",
+      "fixed": "fixed",
+      "close-on-click": "close-on-click"
+    }
+  }, [_h('div', {
+    staticClass: "vuetify"
+  }, [_h('h1', [_h('router-link', {
+    staticClass: "navbar__logo",
+    attrs: {
+      "to": "/"
+    }
+  }, ["Vuetify"])])]), _h('ul', {
+    staticClass: "sidebar__items"
+  }, [_l((items), function(i) {
+    return _h('li', [_h('router-link', {
+      staticClass: "sidebar__item grey--text text--lighten-2",
+      attrs: {
+        "to": i.href,
+        "activeClass": "sidebar__item--active"
+      }
+    }, [_h('v-icon', [_s(i.icon)]), _h('span', [_s(i.text)])])])
+  })])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 82 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Character"
+    }
+  }, [_h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:6.left",
+      arg: "6",
+      modifiers: {
+        "left": true
+      }
+    }],
+    staticClass: "grey--text text--lighten-1",
+    attrs: {
+      "large": "large"
+    }
+  }, ["shopping_cart"]), _h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge",
+      value: ({
+        overlap: true,
+        value: '!'
+      }),
+      expression: "{ overlap: true, value: '!' }"
+    }],
+    staticClass: "grey--text red--after",
+    attrs: {
+      "large": "large"
+    }
+  }, ["mail"])]), _h('component-example', {
+    attrs: {
+      "header": "Icon"
+    }
+  }, [_h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:done.overlap.icon.left",
+      arg: "done",
+      modifiers: {
+        "overlap": true,
+        "icon": true,
+        "left": true
+      }
+    }],
+    staticClass: "grey--text text--lighten-1",
+    attrs: {
+      "large": "large"
+    }
+  }, ["account_circle"]), _h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:notifications.icon.overlap",
+      arg: "notifications",
+      modifiers: {
+        "icon": true,
+        "overlap": true
+      }
+    }],
+    staticClass: "grey--text text--darken-1 orange--after",
+    attrs: {
+      "large": "large"
+    }
+  }, ["account_box"])]), _h('component-example', {
+    attrs: {
+      "header": "Inline"
+    }
+  }, [_h('span', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:2.left",
+      arg: "2",
+      modifiers: {
+        "left": true
+      }
+    }]
+  }, ["Examples"]), _h('span', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:list.icon",
+      arg: "list",
+      modifiers: {
+        "icon": true
+      }
+    }],
+    staticClass: "green--after"
+  }, ["Lists"])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 83 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('div', {
+    attrs: {
+      "id": "slider"
+    }
+  }, [_h('v-slider', [_l((items), function(item, index) {
+    return _h('v-slider-item', {
+      attrs: {
+        "src": item.src
+      }
+    })
+  })])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 84 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('span', {
+    staticClass: "chip--component"
+  }, [_h('v-chip', {
+    class: component.classes,
+    attrs: {
+      "label": "label"
+    }
+  }, [_s(component.text), _h('v-icon', {
+    attrs: {
+      "right": "right"
+    },
+    domProps: {
+      "textContent": _s(component.icon)
+    }
+  })])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 85 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "id": "alerts"
+    }
+  }, [_h('v-alert', {
+    attrs: {
+      "error": "error"
+    }
+  }, [" This is an error alert with ", _m(0)]), _h('v-alert', {
+    attrs: {
+      "info": "info"
+    }
+  }, [" This is an info alert with ", _m(1)]), _h('v-alert', {
+    attrs: {
+      "success": "success"
+    }
+  }, [" This is a success alert with ", _m(2)]), _h('v-alert', {
+    attrs: {
+      "warning": "warning"
+    }
+  }, [" This is a warning alert with ", _m(3)])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('strong', ["strong text."])
+}},function (){with(this) {
+  return _h('strong', ["strong text."])
+}},function (){with(this) {
+  return _h('strong', ["strong text."])
+}},function (){with(this) {
+  return _h('strong', ["strong text."])
+}}]}
+
+/***/ },
+/* 86 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', [_h('div', [_h('v-btn', {
+    attrs: {
+      "secondary": "secondary"
+    },
+    nativeOn: {
+      "click": function($event) {
+        toast(left)
+      }
+    }
+  }, ["Left"]), _h('v-btn', {
+    attrs: {
+      "secondary": "secondary"
+    },
+    nativeOn: {
+      "click": function($event) {
+        toast(right)
+      }
+    }
+  }, ["Right"]), _h('v-btn', {
+    attrs: {
+      "secondary": "secondary"
+    },
+    nativeOn: {
+      "click": function($event) {
+        toast(top)
+      }
+    }
+  }, ["Top"]), _h('v-btn', {
+    attrs: {
+      "secondary": "secondary"
+    },
+    nativeOn: {
+      "click": function($event) {
+        toast(bottom)
+      }
+    }
+  }, ["Bottom"]), _h('v-btn', {
+    attrs: {
+      "secondary": "secondary"
+    },
+    nativeOn: {
+      "click": function($event) {
+        toast(snack)
+      }
+    }
+  }, ["Snack"]), _h('v-btn', {
+    attrs: {
+      "secondary": "secondary"
+    },
+    nativeOn: {
+      "click": function($event) {
+        toast(cb)
+      }
+    }
+  }, ["Callback"])])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 87 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('div', [_h('component-header', [_s(header)]), _h('div', {
+    staticClass: "component-example"
+  }, [_t("default")])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 88 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -3781,7 +4470,80 @@ module.exports={render:function (){with(this) {
 }},staticRenderFns: []}
 
 /***/ },
-/* 77 */
+/* 89 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "id": "progress",
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Fixed Width"
+    }
+  }, [_h('div', [_h('v-progress', {
+    attrs: {
+      "value": "25",
+      "min": "0",
+      "max": "100"
+    }
+  })]), _h('div', [_h('v-progress', {
+    attrs: {
+      "value": "50",
+      "min": "0",
+      "max": "100"
+    }
+  })]), _h('div', [_h('v-progress', {
+    attrs: {
+      "value": "75",
+      "min": "0",
+      "max": "100"
+    }
+  })]), _h('div', [_h('v-progress', {
+    attrs: {
+      "value": "100",
+      "min": "0",
+      "max": "100"
+    }
+  })])]), _h('component-example', {
+    attrs: {
+      "header": "Indeterminate"
+    }
+  }, [_h('div', [_h('v-progress', {
+    attrs: {
+      "indeterminate": "indeterminate"
+    }
+  })])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 90 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('v-app', {
+    attrs: {
+      "navbar": "navbar",
+      "footer": "footer",
+      "left-fixed-sidebar": "left-fixed-sidebar"
+    }
+  }, [_h('header', [_h('main-nav', {
+    domProps: {
+      "selected": selected
+    }
+  })]), _h('main', [_h('main-side'), _h('v-container', {
+    staticClass: "container--fluid"
+  }, [_h('router-view', {
+    on: {
+      "view": view
+    }
+  })])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 91 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -3791,47 +4553,144 @@ module.exports={render:function (){with(this) {
     }
   }, [_h('component-example', {
     attrs: {
-      "header": "Accordion"
+      "header": "Basic"
     }
-  }, [_h('div', [_h('v-collapsible', [_l((5), function(item) {
-    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])
-  })])])]), _h('component-example', {
+  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
     attrs: {
-      "header": "Expandable"
+      "header": "With Icon"
     }
-  }, [_h('div', [_h('v-collapsible', {
+  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
     attrs: {
-      "expand": "expand"
+      "header": "With Avatar"
     }
-  }, [_l((2), function(item) {
-    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])
-  })])])])])
-}},staticRenderFns: []}
+  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('a', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown",
+      arg: "dropdown"
+    }],
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-list-item-avatar', {
+    staticClass: "orange",
+    attrs: {
+      "large": "large"
+    }
+  }, ["event"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown",
+      "items": items
+    }
+  }), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-avatar', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:done.icon",
+      arg: "done",
+      modifiers: {
+        "icon": true
+      }
+    }],
+    staticClass: "brown",
+    attrs: {
+      "large": "large"
+    }
+  }, ["person"]), _h('v-list-item-title', ["Ranee Leider"]), _h('v-list-item-action', [_h('a', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:menu",
+      arg: "menu"
+    }],
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', {
+    staticClass: "blue--text",
+    attrs: {
+      "medium": "medium"
+    }
+  }, ["edit"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "menu",
+      "items": items,
+      "right": "right"
+    }
+  })])]), _h('v-list-item', [_h('v-list-item-avatar', {
+    staticClass: "green",
+    attrs: {
+      "large": "large"
+    }
+  }, ["phone"]), _h('v-list-item-title', [_m(0), _h('v-list-item-sub-title', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."])]), _h('v-list-item-action', [_h('v-list-item-action-title', ["Contact"]), _h('a', {
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', {
+    staticClass: "grey--text darken-1"
+  }, ["email"])])])])])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('span', ["Declan Leider"])
+}}]}
 
 /***/ },
-/* 78 */
+/* 92 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('span', {
-    staticClass: "chip--component"
-  }, [_h('v-chip', {
-    class: component.classes,
+  return _h('v-footer', {
+    staticClass: "grey darken-3"
+  }, [_h('v-container', [_h('v-row', [_h('v-grid', {
     attrs: {
-      "label": "label"
+      "xs12": "xs12"
     }
-  }, [_s(component.text), _h('v-icon', {
-    attrs: {
-      "right": "right"
-    },
+  }, [_m(0)])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('span', {
+    staticClass: "right"
+  }, ["© Copyright 2016"])
+}}]}
+
+/***/ },
+/* 93 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('h5', {
+    staticClass: "primary--text"
+  }, [_t("default")])
+}},staticRenderFns: []}
+
+/***/ },
+/* 94 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('div', {
+    staticClass: "view"
+  }, [_h('section', [_h('section-header', ["Introduction"]), _l((doc.types), function(type) {
+    return _h('component-type', {
+      attrs: {
+        "type": type
+      }
+    })
+  }), _h('section-text', [_h('dt', {
+    slot: "title",
     domProps: {
-      "textContent": _s(component.icon)
+      "innerHTML": _s(doc.title)
+    }
+  }), _h('dd', {
+    slot: "desc",
+    domProps: {
+      "innerHTML": _s(doc.desc)
+    }
+  })])]), _h('section', [_h('section-header', ["Examples"]), _t("default")]), _h('section', [_h('section-header', ["Parameters"]), _h('component-parameters', {
+    attrs: {
+      "params": doc.params
     }
   })])])
 }},staticRenderFns: []}
 
 /***/ },
-/* 79 */
+/* 95 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -3841,125 +4700,39 @@ module.exports={render:function (){with(this) {
     }
   }, [_h('component-example', {
     attrs: {
-      "header": "On Click"
+      "header": "Text Dividers"
     }
-  }, [_h('div', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      arg: "dropdown"
-    }],
+  }, [_h('v-breadcrumbs', {
     attrs: {
-      "primary": "primary"
-    }
-  }, ["Dropdown"]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown",
+      "divider": "/",
       "items": items
     }
-  })]), _h('div', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      arg: "dropdown3"
-    }],
+  }), _h('v-breadcrumbs', {
     attrs: {
-      "secondary": "secondary"
-    }
-  }, ["With Labels"]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown3"
-    }
-  }, [_h('li', [_h('a', {
-    staticClass: "dropdown__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, ["Profile", _h('v-chip', {
-    staticClass: "teal white--text right",
-    attrs: {
-      "label": "label",
-      "small": "small"
-    }
-  }, ["new"])])]), _h('li', [_h('a', {
-    staticClass: "dropdown__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('span', {
-    directives: [{
-      name: "badge",
-      arg: "2"
-    }]
-  }, ["Notifications"])])]), _h('li', [_h('a', {
-    staticClass: "dropdown__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, ["Logout", _h('v-icon', {
-    staticClass: "secondary--text right"
-  }, ["cloud_off"])])])])])]), _h('component-example', {
-    attrs: {
-      "header": "On Hover"
-    }
-  }, [_h('div', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      value: (options),
-      expression: "options",
-      arg: "dropdown2"
-    }],
-    attrs: {
-      "secondary": "secondary"
-    }
-  }, ["Dropdown"]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown2",
-      "items": items,
-      "right": "right"
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Menus"
-    }
-  }, [_h('div', [_h('v-card', [_h('v-card-title', {
-    staticClass: "blue"
-  }, [_h('v-card-title-text', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      arg: "menu"
-    }],
-    attrs: {
-      "icon": "icon"
-    }
-  }, [_h('v-icon', {
-    staticClass: "white--text"
-  }, ["more_vert"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "menu",
+      "divider": "-",
       "items": items
     }
-  })])]), _h('v-card-text', ["Lorem Ipsum"])])]), _h('div', [_h('v-card', [_h('v-card-title', {
-    staticClass: "blue"
-  }, [_h('v-card-title-actions', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      arg: "menu2"
-    }],
+  })]), _h('component-example', {
     attrs: {
-      "icon": "icon"
+      "header": "Icon Dividers"
     }
-  }, [_h('v-icon', {
-    staticClass: "white--text"
-  }, ["more_vert"])]), _h('v-dropdown', {
+  }, [_h('v-breadcrumbs', {
     attrs: {
-      "id": "menu2",
-      "items": items,
-      "right": "right"
+      "icons": "icons",
+      "divider": "forward",
+      "items": items
     }
-  })])]), _h('v-card-text', ["Lorem Ipsum"])])])])])
+  }), _h('v-breadcrumbs', {
+    attrs: {
+      "icons": "icons",
+      "divider": "chevron_right",
+      "items": items
+    }
+  })])])
 }},staticRenderFns: []}
 
 /***/ },
-/* 80 */
+/* 96 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -3974,6 +4747,7 @@ module.exports={render:function (){with(this) {
   }, [_h('div', [_h('v-select', {
     directives: [{
       name: "model",
+      rawName: "v-model",
       value: (input),
       expression: "input"
     }],
@@ -3994,6 +4768,7 @@ module.exports={render:function (){with(this) {
   })]), _h('div', [_h('v-select', {
     directives: [{
       name: "model",
+      rawName: "v-model",
       value: (multiple),
       expression: "multiple"
     }],
@@ -4113,59 +4888,58 @@ module.exports={render:function (){with(this) {
 }},staticRenderFns: []}
 
 /***/ },
-/* 81 */
+/* 97 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('div', {
-    staticClass: "view"
-  }, [_h('section', [_h('section-header', ["Welcome"]), _h('section-text', {
-    domProps: {
-      "innerHTML": _s(intro)
-    }
-  })]), _h('section', [_h('section-header', ["Quick Start"]), _h('section-text', ["Install vuetify from ", _m(0), ", ", _m(1), ". Once installed, go to your main js entry point and import/use the module.", _h('v-card', {
-    staticClass: "grey lighten-3"
-  }, [_h('v-card-text', [_m(2), _m(3), _m(4)])])])]), _h('section', [_h('section-header', ["About"]), _h('section-text', {
-    domProps: {
-      "innerHTML": _s(about)
-    }
-  })]), _h('section', [_h('section-header', ["Ecosystem"]), _h('section-text', ["In order to expedite the development process, Vuetify comes with multiple supplementary features to get the ball rolling."]), _h('v-container', [_h('v-row', [_h('v-col', {
+  return _h('doc-view', {
     attrs: {
-      "xs12": "xs12"
+      "doc": doc
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["dashboard"]), _h('v-list-item-title', [_h('span', ["Vuetify Admin Template ", _h('v-chip', {
-    staticClass: "green white--text",
+  }, [_h('component-example', {
     attrs: {
-      "label": "label"
+      "id": "typo",
+      "header": "Headers"
     }
-  }, ["Soon", _h('v-icon', {
+  }, [_m(0), _m(1), _m(2), _m(3), _m(4), _m(5)]), _h('component-example', {
     attrs: {
-      "right": "right"
+      "header": "Blockquotes"
     }
-  }, ["error_outline"])])])])]), _h('v-list-item', [_h('v-list-item-icon', ["color_lens"]), _h('v-list-item-title', [_h('span', ["Vuetify Frontend Template ", _h('v-chip', {
-    staticClass: "green white--text",
-    attrs: {
-      "label": "label"
-    }
-  }, ["Soon", _h('v-icon', {
-    attrs: {
-      "right": "right"
-    }
-  }, ["error_outline"])])])])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vuetify Webpack Starter"])]), _h('v-list-item', [_h('v-list-item-icon', ["fast_forward"]), _h('v-list-item-title', ["Vuetify SSR Webpack Starter"])])])])])])])])
+  }, [_h('blockquote', ["Hello"])])])
 }},staticRenderFns: [function (){with(this) {
-  return _h('strong', ["npm"])
+  return _h('h1', ["Heading h1"])
 }},function (){with(this) {
-  return _h('code', ["npm install vuetify"])
+  return _h('h2', ["Heading h2"])
 }},function (){with(this) {
-  return _h('strong', ["import Vue from 'vue' ", _h('br')])
+  return _h('h3', ["Heading h3"])
 }},function (){with(this) {
-  return _h('strong', ["import Vuetify from 'vuetify' ", _h('br')])
+  return _h('h4', ["Heading h4"])
 }},function (){with(this) {
-  return _h('strong', ["Vue.use(Vuetify)"])
+  return _h('h5', ["Heading h5"])
+}},function (){with(this) {
+  return _h('h6', ["Heading h6"])
 }}]}
 
 /***/ },
-/* 82 */
+/* 98 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('p', {
+    staticClass: "codepen",
+    attrs: {
+      "data-height": "265",
+      "data-theme-id": "dark",
+      "data-default-tab": "html",
+      "data-user": "johnjleider",
+      "data-embed-version": "2",
+      "data-slug-hash": slug
+    }
+  })
+}},staticRenderFns: []}
+
+/***/ },
+/* 99 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -4210,6 +4984,7 @@ module.exports={render:function (){with(this) {
   }, [_h('v-icon', ["check"])])]), _h('li', [_h('a', {
     directives: [{
       name: "dropdown",
+      rawName: "v-dropdown:icon-dropdown",
       arg: "icon-dropdown"
     }],
     staticClass: "navbar__item",
@@ -4223,687 +4998,6 @@ module.exports={render:function (){with(this) {
       "right": "right"
     }
   })])])])])])])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 83 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Basic"
-    }
-  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
-    attrs: {
-      "header": "With Icon"
-    }
-  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
-    attrs: {
-      "header": "With Avatar"
-    }
-  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('a', {
-    directives: [{
-      name: "dropdown",
-      arg: "dropdown"
-    }],
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-list-item-avatar', {
-    staticClass: "orange",
-    attrs: {
-      "large": "large"
-    }
-  }, ["event"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown",
-      "items": items
-    }
-  }), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-avatar', {
-    directives: [{
-      name: "badge",
-      arg: "done",
-      modifiers: {
-        "icon": true
-      }
-    }],
-    staticClass: "brown",
-    attrs: {
-      "large": "large"
-    }
-  }, ["person"]), _h('v-list-item-title', ["Ranee Leider"]), _h('v-list-item-action', [_h('a', {
-    directives: [{
-      name: "dropdown",
-      arg: "menu"
-    }],
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', {
-    staticClass: "blue--text",
-    attrs: {
-      "medium": "medium"
-    }
-  }, ["edit"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "menu",
-      "items": items,
-      "right": "right"
-    }
-  })])]), _h('v-list-item', [_h('v-list-item-avatar', {
-    staticClass: "green",
-    attrs: {
-      "large": "large"
-    }
-  }, ["phone"]), _h('v-list-item-title', [_m(0), _h('v-list-item-sub-title', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."])]), _h('v-list-item-action', [_h('v-list-item-action-title', ["Contact"]), _h('a', {
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', {
-    staticClass: "grey--text darken-1"
-  }, ["email"])])])])])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('span', ["Declan Leider"])
-}}]}
-
-/***/ },
-/* 84 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('div', {
-    attrs: {
-      "id": "parallax-example"
-    }
-  }, [_h('v-parallax', {
-    attrs: {
-      "src": "http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
-    }
-  }, [_h('v-parallax-content', [_m(0), _m(1), _h('div', [_h('v-btn', {
-    staticClass: "transparent white--text buy",
-    attrs: {
-      "large": "large"
-    }
-  }, ["Buy a Ship", _h('v-icon', {
-    attrs: {
-      "right": "right"
-    }
-  }, ["keyboard_arrow_right"])]), _h('v-btn', {
-    staticClass: "transparent white--text explore",
-    attrs: {
-      "large": "large"
-    }
-  }, ["Explore", _h('v-icon', {
-    attrs: {
-      "right": "right"
-    }
-  }, ["search"])])])])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('h1', {
-    staticClass: "white--text"
-  }, ["Explore Space"])
-}},function (){with(this) {
-  return _h('p', ["Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. "])
-}}]}
-
-/***/ },
-/* 85 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Short"
-    }
-  }, [_h('div', [_h('v-pagination', {
-    directives: [{
-      name: "model",
-      value: (page),
-      expression: "page"
-    }],
-    attrs: {
-      "length": 5
-    },
-    domProps: {
-      "value": (page)
-    },
-    on: {
-      "input": function($event) {
-        page = $event
-      }
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Long"
-    }
-  }, [_h('div', [_h('v-pagination', {
-    directives: [{
-      name: "model",
-      value: (page2),
-      expression: "page2"
-    }],
-    attrs: {
-      "length": 15
-    },
-    domProps: {
-      "value": (page2)
-    },
-    on: {
-      "input": function($event) {
-        page2 = $event
-      }
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Round"
-    }
-  }, [_h('div', [_h('v-pagination', {
-    directives: [{
-      name: "model",
-      value: (page3),
-      expression: "page3"
-    }],
-    attrs: {
-      "length": 4,
-      "circle": "circle"
-    },
-    domProps: {
-      "value": (page3)
-    },
-    on: {
-      "input": function($event) {
-        page3 = $event
-      }
-    }
-  })])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 86 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "id": "progress",
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Fixed Width"
-    }
-  }, [_h('div', [_h('v-progress', {
-    attrs: {
-      "value": "25",
-      "min": "0",
-      "max": "100"
-    }
-  })]), _h('div', [_h('v-progress', {
-    attrs: {
-      "value": "50",
-      "min": "0",
-      "max": "100"
-    }
-  })]), _h('div', [_h('v-progress', {
-    attrs: {
-      "value": "75",
-      "min": "0",
-      "max": "100"
-    }
-  })]), _h('div', [_h('v-progress', {
-    attrs: {
-      "value": "100",
-      "min": "0",
-      "max": "100"
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Indeterminate"
-    }
-  }, [_h('div', [_h('v-progress', {
-    attrs: {
-      "indeterminate": "indeterminate"
-    }
-  })])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 87 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', [_h('v-btn', {
-    directives: [{
-      name: "modal",
-      arg: "modal"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Regular", _h('v-modal', {
-    attrs: {
-      "id": "modal"
-    }
-  }, [_m(0)])]), _h('v-btn', {
-    directives: [{
-      name: "modal",
-      arg: "modal2"
-    }],
-    attrs: {
-      "secondary": "secondary"
-    }
-  }, ["Bottom", _h('v-modal', {
-    attrs: {
-      "id": "modal2",
-      "bottom": "bottom"
-    }
-  }, [_m(1)])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('p', ["Hello"])
-}},function (){with(this) {
-  return _h('p', ["Hello        "])
-}}]}
-
-/***/ },
-/* 88 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('div', {
-    attrs: {
-      "id": "slider"
-    }
-  }, [_h('v-slider', [_l((items), function(item, index) {
-    return _h('v-slider-item', {
-      attrs: {
-        "src": item.src
-      }
-    })
-  })])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 89 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('h3', {
-    staticClass: "primary--text"
-  }, [_t("default")])
-}},staticRenderFns: []}
-
-/***/ },
-/* 90 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Default"
-    }
-  }, [_h('div', [_h('div', [_h('v-tabs', {
-    attrs: {
-      "id": "tabs"
-    }
-  }, [_h('v-tab', {
-    attrs: {
-      "target": "tab1"
-    },
-    domProps: {
-      "selected": true
-    }
-  }, ["Tab 1"]), _h('v-tab', {
-    attrs: {
-      "target": "tab2"
-    }
-  }, ["Tab 2"]), _h('v-tab', {
-    attrs: {
-      "target": "tab3"
-    }
-  }, ["Tab 3"]), _h('v-tab', {
-    attrs: {
-      "target": "tab4"
-    }
-  }, ["Tab 4"])]), _h('div', {
-    staticClass: "tabs__container"
-  }, [_h('v-tab-content', {
-    key: 1,
-    attrs: {
-      "id": "tab1",
-      "target": "tabs"
-    }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tab-content', {
-    key: 2,
-    attrs: {
-      "id": "tab2",
-      "target": "tabs"
-    }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tab-content', {
-    key: 3,
-    attrs: {
-      "id": "tab3",
-      "target": "tabs"
-    }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tab-content', {
-    key: 4,
-    attrs: {
-      "id": "tab4",
-      "target": "tabs"
-    }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 91 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', [_h('div', [_h('v-btn', {
-    attrs: {
-      "secondary": "secondary"
-    },
-    nativeOn: {
-      "click": function($event) {
-        toast(left)
-      }
-    }
-  }, ["Left"]), _h('v-btn', {
-    attrs: {
-      "secondary": "secondary"
-    },
-    nativeOn: {
-      "click": function($event) {
-        toast(right)
-      }
-    }
-  }, ["Right"]), _h('v-btn', {
-    attrs: {
-      "secondary": "secondary"
-    },
-    nativeOn: {
-      "click": function($event) {
-        toast(top)
-      }
-    }
-  }, ["Top"]), _h('v-btn', {
-    attrs: {
-      "secondary": "secondary"
-    },
-    nativeOn: {
-      "click": function($event) {
-        toast(bottom)
-      }
-    }
-  }, ["Bottom"]), _h('v-btn', {
-    attrs: {
-      "secondary": "secondary"
-    },
-    nativeOn: {
-      "click": function($event) {
-        toast(snack)
-      }
-    }
-  }, ["Snack"]), _h('v-btn', {
-    attrs: {
-      "secondary": "secondary"
-    },
-    nativeOn: {
-      "click": function($event) {
-        toast(cb)
-      }
-    }
-  }, ["Callback"])])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 92 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', [_h('div', [_h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      value: ({
-        html: 'Left Tooltip'
-      }),
-      expression: "{ html: 'Left Tooltip' }",
-      arg: "left"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Left"]), _h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      value: ({
-        html: 'Top tooptip'
-      }),
-      expression: "{ html: 'Top tooptip' }",
-      arg: "top"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Top"]), _h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      value: ({
-        html: 'Right tooptip'
-      }),
-      expression: "{ html: 'Right tooptip' }",
-      arg: "right"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Right"]), _h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      value: ({
-        html: 'Bottom tooptip'
-      }),
-      expression: "{ html: 'Bottom tooptip' }",
-      arg: "bottom"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Bottom"])])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 93 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "id": "typo",
-      "header": "Headers"
-    }
-  }, [_m(0), _m(1), _m(2), _m(3), _m(4), _m(5)]), _h('component-example', {
-    attrs: {
-      "header": "Blockquotes"
-    }
-  }, [_h('blockquote', ["Hello"])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('h1', ["Heading h1"])
-}},function (){with(this) {
-  return _h('h2', ["Heading h2"])
-}},function (){with(this) {
-  return _h('h3', ["Heading h3"])
-}},function (){with(this) {
-  return _h('h4', ["Heading h4"])
-}},function (){with(this) {
-  return _h('h5', ["Heading h5"])
-}},function (){with(this) {
-  return _h('h6', ["Heading h6"])
-}}]}
-
-/***/ },
-/* 94 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('div', [_h('component-header', [_s(header)]), _h('div', {
-    staticClass: "component-example"
-  }, [_t("default")])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 95 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('div', {
-    staticClass: "view"
-  }, [_h('section', [_h('section-header', ["Introduction"]), _l((doc.types), function(type) {
-    return _h('component-type', {
-      attrs: {
-        "type": type
-      }
-    })
-  }), _h('section-text', {
-    domProps: {
-      "innerHTML": _s(doc.intro)
-    }
-  })]), _h('section', [_h('section-header', ["Examples"]), _t("default")]), _h('section', [_h('section-header', ["Parameters"]), _h('component-parameters', {
-    attrs: {
-      "params": doc.params
-    }
-  })])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 96 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('table', {
-    staticClass: "table--component"
-  }, [_m(0), _h('tbody', [_l((params), function(option) {
-    return _h('tr', [_l((option), function(td) {
-      return _h('td', {
-        domProps: {
-          "innerHTML": _s(td)
-        }
-      })
-    })])
-  })])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('thead', [_h('tr', [_h('th', ["Markup"]), _h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
-}}]}
-
-/***/ },
-/* 97 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('v-footer', {
-    staticClass: "grey darken-3"
-  }, [_h('v-container', [_h('v-row', [_h('v-grid', {
-    attrs: {
-      "xs12": "xs12"
-    }
-  }, [_m(0)])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('span', {
-    staticClass: "right"
-  }, ["© Copyright 2016"])
-}}]}
-
-/***/ },
-/* 98 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('v-navbar', {
-    staticClass: "center-align white--text"
-  }, [_h('div', {
-    staticClass: "navbar__side-icon"
-  }, [_h('a', {
-    directives: [{
-      name: "side-bar",
-      arg: "mainsidebar"
-    }],
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', ["reorder"])])]), _h('h1', {
-    staticClass: "white--text",
-    domProps: {
-      "textContent": _s(title)
-    }
-  })])
-}},staticRenderFns: []}
-
-/***/ },
-/* 99 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('v-sidebar', {
-    staticClass: "grey darken-3",
-    attrs: {
-      "id": "mainsidebar",
-      "fixed": "fixed",
-      "close-on-click": "close-on-click"
-    }
-  }, [_h('div', {
-    staticClass: "vuetify"
-  }, [_h('h1', [_h('router-link', {
-    staticClass: "navbar__logo",
-    attrs: {
-      "to": "/"
-    }
-  }, ["Vuetify"])])]), _h('ul', {
-    staticClass: "sidebar__items"
-  }, [_l((items), function(i) {
-    return _h('li', [_h('router-link', {
-      staticClass: "sidebar__item grey--text text--lighten-2",
-      attrs: {
-        "to": i.href,
-        "activeClass": "sidebar__item--active"
-      }
-    }, [_h('v-icon', [_s(i.icon)]), _h('span', [_s(i.text)])])])
-  })])])
 }},staticRenderFns: []}
 
 /***/ },

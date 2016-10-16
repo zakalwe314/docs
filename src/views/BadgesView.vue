@@ -37,7 +37,8 @@
     data () {
       return {
         doc: {
-          intro: `
+          title: 'Badge',
+          desc: `
             <p>
               Badge directives can be applied to any element using the <code>v-badge</code> directive. By default, a badge will use the application's defined <strong class="primary--text">primary color</strong>. Parameters can be passed using the arg, <code>v-badge:arg</code>, modifier, <code>v-badge:2.modifier</code>, or by passing an object by expression, <code>v-badge="{ value: 2, overlap: true }"</code>
             </p>

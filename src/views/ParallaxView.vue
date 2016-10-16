@@ -29,7 +29,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Parallax',
+          desc: 'Soon',
           types: [
             'comp', 'slot'
           ],

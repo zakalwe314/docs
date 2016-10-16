@@ -20,7 +20,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Alert',
+          desc: 'Soon',
           types: ['comp', 'slot'],
           params: []
         }

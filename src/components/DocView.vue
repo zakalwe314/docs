@@ -6,7 +6,15 @@
         v-for="type in doc.types"
         v-bind:type="type"
       )
-      section-text(v-html="doc.intro")
+      section-text
+        dt(
+          slot="title"
+          v-html="doc.title"
+        )
+        dd(
+          slot="desc"
+          v-html="doc.desc"
+        )
     section
       section-header Examples
       slot  
@@ -20,3 +28,8 @@
     props: ['doc']
   }
 </script>
+
+<style lang="stylus">
+  dt
+    font-weight 900
+</style>

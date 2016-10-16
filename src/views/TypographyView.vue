@@ -21,7 +21,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Typography',
+          desc: 'Soon',
           types: [],
           params: []
         }

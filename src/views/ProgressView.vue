@@ -38,7 +38,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Progress',
+          desc: 'Soon',
           types: ['comp'],
           params: []
         },

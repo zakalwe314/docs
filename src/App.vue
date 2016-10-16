@@ -40,13 +40,13 @@
   
   body
     background: rgba(0, 0, 0, .005)
-    
+
+  section
+    padding: 0 1rem
+        
   .view
     margin-bottom: 3rem
     
     .chip--component
       margin-right: 1rem
-      
-      &:first-of-type
-        margin-left: 2rem !important
 </style>

@@ -10,7 +10,7 @@
 
 <style lang="stylus">
   div#slider {
-    padding: 0 2rem
+    margin: 0 1rem
   }
 </style>
 
@@ -19,7 +19,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Slider',
+          desc: 'Soon',
           types: [
             'comp', 'slot'
           ],

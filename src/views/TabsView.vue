@@ -42,7 +42,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Tabs',
+          desc: 'Soon',
           types: [
             'comp', 'slot'
           ],

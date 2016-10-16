@@ -26,5 +26,5 @@
 <style lang="stylus">
   .table
     &--component
-      margin: 0 2rem 5rem
+      margin-bottom: 5rem
 </style>

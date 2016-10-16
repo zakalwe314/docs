@@ -25,7 +25,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Tooltip',
+          desc: 'Soon',
           types: [
             'directive'
           ],
@@ -40,7 +41,9 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus"
+       scoped
+>
   .btn
     margin: 0 2rem
 </style>

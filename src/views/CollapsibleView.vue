@@ -16,12 +16,11 @@
 
 <script>
   export default {
-    name: 'collapsible-view',
-
     data () {
       return {
         doc: {
-          intro: `Soon`,
+          title: 'Collapsible',
+          desc: `Soon`,
           types: [
             'comp', 'slot'
           ],

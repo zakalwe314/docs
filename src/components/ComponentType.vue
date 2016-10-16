@@ -1,13 +1,13 @@
 <template lang="pug">
   span.chip--component
     v-chip(
-        label
-        v-bind:class="component.classes"
-      ) {{ component.text }}
-        v-icon(
-          right
-          v-text="component.icon"
-        )
+      label
+      v-bind:class="component.classes"
+    ) {{ component.text }}
+      v-icon(
+        right
+        v-text="component.icon"
+      )
 </template>
 
 <script>

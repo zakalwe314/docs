@@ -64,12 +64,11 @@
 
 <script>
   export default {
-    name: 'buttons-view',
-
     data () {
       return {
         doc: {
-          intro: `
+          title: 'Button',
+          desc: `
             <p>
               The <code>v-btn</code> component replaces the standard html button with a material design theme and a multitude of options. Any color helper class can be used to alter the background or text color. Remember that all event captures must be done using the <strong>.native</strong> modifier.
             </p>
@@ -164,5 +163,7 @@
   .btn--block-example
     flex-wrap: wrap !important
     flex-basis: 100% !important
-      
+    
+    .btn
+      margin: 1rem 0
 </style>

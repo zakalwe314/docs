@@ -26,7 +26,8 @@
     data () {
       return {
         doc: {
-          intro: 'Soon',
+          title: 'Pagination',
+          desc: 'Soon',
           types: [
             'comp'
           ],

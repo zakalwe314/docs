@@ -58,7 +58,7 @@
     },
 
     mounted () {
-      this.$emit('view', 'Introduction')
+      this.$emit('view', 'Intro')
     }
   }
 </script>

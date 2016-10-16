@@ -35,11 +35,9 @@
   .navbar
     align-items: center
     justify-content: center
-    height: 6rem
+    min-height: 6rem
     
     h1
-      font-weight: 300
       flex: 1
-      text-transform: uppercase
-      letter-spacing: 6px
+      letter-spacing: 1px
 </style>

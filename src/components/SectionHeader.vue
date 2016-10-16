@@ -7,12 +7,10 @@
        scoped
 >
   h2
-    letter-spacing: .4rem
+    letter-spacing: 1px
     text-align: left !important
-    margin: 2rem
+    margin: 2rem 0
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
-    font-size: 2rem
-    text-transform: uppercase
 </style>
