@@ -1,17 +1,13 @@
 <template lang="pug">
-  v-navbar(
-    class="center-align white--text"
-  )
+  v-navbar
     div(class="navbar__side-icon")
       a(
         href="#!",
         v-side-bar:mainsidebar=""
+        class="hidden-md"
       )
         v-icon reorder
-    h1(
-      class="white--text"
-      v-text="title"
-    )
+    h1(v-text="title")
 </template>
 
 <script>
@@ -34,10 +30,12 @@
 <style lang="stylus" scoped>
   .navbar
     align-items: center
-    justify-content: center
     min-height: 6rem
+    color: #fff
     
     h1
-      flex: 1
+      flex-grow: 1
       letter-spacing: 1px
+      text-align: center
+      color: #fff
 </style>

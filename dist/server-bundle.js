@@ -137,6 +137,9 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
@@ -310,10 +313,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
 //
 //
 //
@@ -1217,6 +1216,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+//
+//
+//
+//
 //
 //
 //
@@ -3373,9 +3376,7 @@ module.exports={render:function (){with(this) {
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('v-navbar', {
-    staticClass: "center-align white--text"
-  }, [_h('div', {
+  return _h('v-navbar', [_h('div', {
     staticClass: "navbar__side-icon"
   }, [_h('a', {
     directives: [{
@@ -3383,11 +3384,11 @@ module.exports={render:function (){with(this) {
       rawName: "v-side-bar:mainsidebar",
       arg: "mainsidebar"
     }],
+    staticClass: "hidden-md",
     attrs: {
       "href": "#!"
     }
   }, [_h('v-icon', ["reorder"])])]), _h('h1', {
-    staticClass: "white--text",
     domProps: {
       "textContent": _s(title)
     }
@@ -3818,13 +3819,16 @@ module.exports={render:function (){with(this) {
 module.exports={render:function (){with(this) {
   return _h('div', {
     staticClass: "view"
-  }, [_h('section', [_h('section-header', ["Welcome"]), _h('section-text', {
+  }, [_h('section', [_h('section-header', ["Welcome"]), _h('div', {
+    staticClass: "section-text",
     domProps: {
       "innerHTML": _s(intro)
     }
-  })]), _h('section', [_h('section-header', ["Quick Start"]), _h('section-text', ["Install vuetify from ", _m(0), ", ", _m(1), ". Once installed, go to your main js entry point and import/use the module.", _h('v-card', {
+  })]), _h('section', [_h('section-header', ["Quick Start"]), _h('div', {
+    staticClass: "section-text"
+  }, [_m(0), _h('v-card', {
     staticClass: "grey lighten-3"
-  }, [_h('v-card-text', [_m(2), _m(3), _m(4)])])])]), _h('section', [_h('section-header', ["About"]), _h('section-text', {
+  }, [_h('v-card-text', [_m(1), _m(2), _m(3)])])])]), _h('section', [_h('section-header', ["About"]), _h('section-text', {
     domProps: {
       "innerHTML": _s(about)
     }
@@ -3852,9 +3856,7 @@ module.exports={render:function (){with(this) {
     }
   }, ["error_outline"])])])])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vuetify Webpack Starter"])]), _h('v-list-item', [_h('v-list-item-icon', ["fast_forward"]), _h('v-list-item-title', ["Vuetify SSR Webpack Starter"])])])])])])])])
 }},staticRenderFns: [function (){with(this) {
-  return _h('strong', ["npm"])
-}},function (){with(this) {
-  return _h('code', ["npm install vuetify"])
+  return _h('p', ["Install vuetify from ", _h('strong', ["npm"]), ", ", _h('code', ["npm install vuetify"]), ". Once installed, go to your main js entry point and import/use the module."])
 }},function (){with(this) {
   return _h('strong', ["import Vue from 'vue' ", _h('br')])
 }},function (){with(this) {
@@ -4535,11 +4537,16 @@ module.exports={render:function (){with(this) {
     }
   })]), _h('main', [_h('main-side'), _h('v-container', {
     staticClass: "container--fluid"
+  }, [_h('transition', {
+    attrs: {
+      "name": "slide",
+      "mode": "out-in"
+    }
   }, [_h('router-view', {
     on: {
       "view": view
     }
-  })])])])
+  })])])])])
 }},staticRenderFns: []}
 
 /***/ },

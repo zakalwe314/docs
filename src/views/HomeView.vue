@@ -2,10 +2,14 @@
   div.view
     section
       section-header Welcome
-      section-text(v-html="intro")
+      div(
+        class="section-text"
+        v-html="intro"
+      )
     section
       section-header Quick Start
-      section-text Install vuetify from <strong>npm</strong>, <code>npm install vuetify</code>. Once installed, go to your main js entry point and import/use the module.
+      div.section-text
+        p Install vuetify from <strong>npm</strong>, <code>npm install vuetify</code>. Once installed, go to your main js entry point and import/use the module.
         v-card(class="grey lighten-3")
           v-card-text
             strong import Vue from 'vue' <br>
