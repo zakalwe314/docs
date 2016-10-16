@@ -1484,12 +1484,6 @@ fastparse@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.1.tgz#d1e2643b38a94d7583b479060e6c4affc94071f8"
 
-faye-websocket@>=0.6.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.0.tgz#d9ccf0e789e7db725d74bc4877d23aa42972ac50"
-  dependencies:
-    websocket-driver ">=0.5.1"
-
 file-loader@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.9.0.tgz#1d2daddd424ce6d1b07cfe3f79731bed3617ab42"
@@ -1526,12 +1520,6 @@ find-up@^1.0.0:
   dependencies:
     path-exists "^2.0.0"
     pinkie-promise "^2.0.0"
-
-firebase@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-2.4.2.tgz#4e1119ec0396ca561d8a7acbff1630feac6c0a31"
-  dependencies:
-    faye-websocket ">=0.6.0"
 
 flatten@^1.0.2, flatten@1.0.2:
   version "1.0.2"
@@ -3643,9 +3631,9 @@ vue@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.0.3.tgz#3f7698f83d6ad1f0e35955447901672876c63fde"
 
-vuetify@^0.4.4:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.4.7.tgz#63175b55da44e0d030e0c67b71561d578cc4f5f7"
+vuetify:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.5.1.tgz#28ba2a282b2b0c06d2344d8ba6dcd1d079eb286d"
 
 vuex-router-sync@^3.0.0:
   version "3.0.0"
@@ -3711,16 +3699,6 @@ webpack@^2.1.0-beta.20:
     watchpack "^1.0.0"
     webpack-sources "^0.1.0"
     yargs "^4.7.1"
-
-websocket-driver@>=0.5.1:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/websocket-driver/-/websocket-driver-0.6.5.tgz#5cb2556ceb85f4373c6d8238aa691c8454e13a36"
-  dependencies:
-    websocket-extensions ">=0.1.1"
-
-websocket-extensions@>=0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.1.tgz#76899499c184b6ef754377c2dbb0cd6cb55d29e7"
 
 when@~3.6.x:
   version "3.6.4"
