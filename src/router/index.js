@@ -28,6 +28,7 @@ Vue.use(Router)
 export default new Router({
   base: __dirname,
   mode: 'history',
+  scrollBehavior: () => ({ y: 0 }),
   routes: [
     { path: '/', component: HomeView },
     { path: '/alerts', component: AlertsView },
@@ -49,6 +50,7 @@ export default new Router({
     { path: '/tabs', component: TabsView },
     { path: '/toasts', component: ToastsView },
     { path: '/tooltips', component: TooltipsView },
-    { path: '/typography', component: TypographyView }
+    { path: '/typography', component: TypographyView },
+    { path: '*', redirect: '/' }
   ]
 })

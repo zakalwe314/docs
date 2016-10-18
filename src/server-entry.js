@@ -10,6 +10,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 export default context => {
   // set router's location
   router.push(context.url)
+  console.log(context)
 
   const s = isDev && Date.now()
 
