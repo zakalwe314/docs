@@ -50,7 +50,6 @@ export default new Router({
     { path: '/tabs', component: TabsView },
     { path: '/toasts', component: ToastsView },
     { path: '/tooltips', component: TooltipsView },
-    { path: '/typography', component: TypographyView },
-    { path: '*', redirect: '/' }
+    { path: '/typography', component: TypographyView }
   ]
 })
