@@ -56,7 +56,6 @@ app.get('*', (req, res) => {
   const context = { url: req.url }
   const renderStream = renderer.renderToStream(context)
   let firstChunk = true
-  console.log(context)
 
   res.write(html.head)
 

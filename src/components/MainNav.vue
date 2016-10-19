@@ -30,7 +30,7 @@
 <style lang="stylus" scoped>
   .navbar
     align-items: center
-    min-height: 6rem
+    min-height: 10rem
     color: #fff
     
     h1

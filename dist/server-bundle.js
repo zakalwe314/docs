@@ -371,86 +371,102 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
     return {
       items: [{
-        href: 'alerts',
-        text: 'Alerts',
-        icon: 'priority_high'
-      }, {
-        href: 'badges',
-        text: 'Badges',
-        icon: 'fiber_manual_record'
-      }, {
-        href: 'breadcrumbs',
-        text: 'Breadcrumbs',
-        icon: 'linear_scale'
-      }, {
-        href: 'buttons',
-        text: 'Buttons',
-        icon: 'arrow_forward'
-      }, {
-        href: 'cards',
-        text: 'Cards',
-        icon: 'note'
-      }, {
-        href: 'chips',
-        text: 'Chips',
-        icon: 'label'
-      }, {
-        href: 'collapsible',
-        text: 'Collapsible',
-        icon: 'reorder'
-      }, {
-        href: 'dropdowns',
-        text: 'Dropdowns',
-        icon: 'arrow_drop_down_circle'
-      }, {
-        href: 'forms',
-        text: 'Forms',
-        icon: 'text_format'
+        parent: {
+          href: '#!',
+          text: 'Components'
+        },
+
+        items: [{
+          href: 'alerts',
+          text: 'Alerts',
+          icon: 'priority_high'
+        }, {
+          href: 'badges',
+          text: 'Badges',
+          icon: 'fiber_manual_record'
+        }, {
+          href: 'breadcrumbs',
+          text: 'Breadcrumbs',
+          icon: 'linear_scale'
+        }, {
+          href: 'buttons',
+          text: 'Buttons',
+          icon: 'arrow_forward'
+        }, {
+          href: 'cards',
+          text: 'Cards',
+          icon: 'note'
+        }, {
+          href: 'chips',
+          text: 'Chips',
+          icon: 'label'
+        }, {
+          href: 'collapsible',
+          text: 'Collapsible',
+          icon: 'reorder'
+        }, {
+          href: 'dropdowns',
+          text: 'Dropdowns',
+          icon: 'arrow_drop_down_circle'
+        }, {
+          href: 'forms',
+          text: 'Forms',
+          icon: 'text_format'
+        }, {
+          href: 'lists',
+          text: 'Lists',
+          icon: 'reorder'
+        }, {
+          href: 'pagination',
+          text: 'Pagination',
+          icon: 'looks_one'
+        }, {
+          href: 'progress',
+          text: 'Progress',
+          icon: 'trending_flat'
+        }, {
+          href: 'parallax',
+          text: 'Parallax',
+          icon: 'import_export'
+        }, {
+          href: 'modals',
+          text: 'Modals',
+          icon: 'call_to_action'
+        }, {
+          href: 'slider',
+          text: 'Slider',
+          icon: 'slideshow'
+        }, {
+          href: 'tabs',
+          text: 'Tabs',
+          icon: 'more_horiz'
+        }, {
+          href: 'tooltips',
+          text: 'Tooltips',
+          icon: 'sms'
+        }]
       }, {
         href: 'layouts',
         text: 'Layouts',
         icon: 'view_day'
       }, {
-        href: 'lists',
-        text: 'Lists',
-        icon: 'reorder'
-      }, {
-        href: 'pagination',
-        text: 'Pagination',
-        icon: 'looks_one'
-      }, {
-        href: 'progress',
-        text: 'Progress',
-        icon: 'trending_flat'
-      }, {
-        href: 'parallax',
-        text: 'Parallax',
-        icon: 'import_export'
-      }, {
-        href: 'modals',
-        text: 'Modals',
-        icon: 'call_to_action'
-      }, {
-        href: 'slider',
-        text: 'Slider',
-        icon: 'slideshow'
-      }, {
-        href: 'tabs',
-        text: 'Tabs',
-        icon: 'more_horiz'
-      }, {
         href: 'toasts',
         text: 'Toasts',
         icon: 'picture_in_picture'
-      }, {
-        href: 'tooltips',
-        text: 'Tooltips',
-        icon: 'sms'
       }, {
         href: 'typography',
         text: 'Typography',
@@ -4069,14 +4085,26 @@ module.exports={render:function (){with(this) {
     }
   }, ["Vuetify"])])]), _h('ul', {
     staticClass: "sidebar__items"
-  }, [_l((items), function(i) {
-    return _h('li', [_h('router-link', {
+  }, [_l((items), function(item) {
+    return [(item.items) ? _h('v-sidebar-group', {
+      attrs: {
+        "item": item.parent
+      }
+    }, [_l((item.items), function(j) {
+      return _h('li', [_h('router-link', {
+        staticClass: "sidebar__item grey--text text--lighten-2",
+        attrs: {
+          "to": j.href,
+          "activeClass": "sidebar__item--active"
+        }
+      }, [_h('v-icon', [_s(j.icon)]), _h('span', [_s(j.text)])])])
+    })]) : _h('li', [_h('router-link', {
       staticClass: "sidebar__item grey--text text--lighten-2",
       attrs: {
-        "to": i.href,
-        "activeClass": "sidebar__item--active"
+        "to": item.href,
+        "active-class": "sidebar__item--active"
       }
-    }, [_h('v-icon', [_s(i.icon)]), _h('span', [_s(i.text)])])])
+    }, [_h('v-icon', [_s(item.icon)]), _h('span', [_s(item.text)])])])]
   })])])
 }},staticRenderFns: []}
 

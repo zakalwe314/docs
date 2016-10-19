@@ -1,26 +1,35 @@
 <template lang="pug">
   v-sidebar(
-    id="mainsidebar",
-    fixed,
-    class="grey darken-3",
+    id="mainsidebar"
+    fixed
+    class="grey darken-3"
     close-on-click
   )
     div(class="vuetify")
-      h1()
+      h1
         router-link(to="/", class="navbar__logo") Vuetify
-    ul(
-      class="sidebar__items"
-    )
-      li(
-        v-for="i in items"
-      )
-        router-link(
-          :to="i.href",
-          class="sidebar__item grey--text text--lighten-2",
-          activeClass="sidebar__item--active"
+    ul(class="sidebar__items")
+      template(v-for="item in items")
+        v-sidebar-group(
+          v-if="item.items"
+          v-bind:item="item.parent"
         )
-          v-icon {{ i.icon }}
-          span {{ i.text }}
+          li(v-for="j in item.items")
+            router-link(
+              :to="j.href"
+              class="sidebar__item grey--text text--lighten-2"
+              activeClass="sidebar__item--active"
+            )
+              v-icon {{ j.icon }}
+              span {{ j.text }}
+        li(v-else)
+          router-link(
+            :to="item.href",
+            class="sidebar__item grey--text text--lighten-2"
+            active-class="sidebar__item--active"
+          )
+            v-icon {{ item.icon }}
+            span {{ item.text }}
 </template>
 
 <script>
@@ -29,49 +38,98 @@
       return {
         items: [
           {
-            href: 'alerts',
-            text: 'Alerts',
-            icon: 'priority_high'
-          },
-          {
-            href: 'badges',
-            text: 'Badges',
-            icon: 'fiber_manual_record'
-          },
-          {
-            href: 'breadcrumbs',
-            text: 'Breadcrumbs',
-            icon: 'linear_scale'
-          },
-          {
-            href: 'buttons',
-            text: 'Buttons',
-            icon: 'arrow_forward'
-          },
-          {
-            href: 'cards',
-            text: 'Cards',
-            icon: 'note'
-          },
-          {
-            href: 'chips',
-            text: 'Chips',
-            icon: 'label'
-          },
-          {
-            href: 'collapsible',
-            text: 'Collapsible',
-            icon: 'reorder'
-          },
-          {
-            href: 'dropdowns',
-            text: 'Dropdowns',
-            icon: 'arrow_drop_down_circle'
-          },
-          {
-            href: 'forms',
-            text: 'Forms',
-            icon: 'text_format'
+            parent: {
+              href: '#!',
+              text: 'Components'
+            },
+
+            items: [
+              {
+                href: 'alerts',
+                text: 'Alerts',
+                icon: 'priority_high'
+              },
+              {
+                href: 'badges',
+                text: 'Badges',
+                icon: 'fiber_manual_record'
+              },
+              {
+                href: 'breadcrumbs',
+                text: 'Breadcrumbs',
+                icon: 'linear_scale'
+              },
+              {
+                href: 'buttons',
+                text: 'Buttons',
+                icon: 'arrow_forward'
+              },
+              {
+                href: 'cards',
+                text: 'Cards',
+                icon: 'note'
+              },
+              {
+                href: 'chips',
+                text: 'Chips',
+                icon: 'label'
+              },
+              {
+                href: 'collapsible',
+                text: 'Collapsible',
+                icon: 'reorder'
+              },
+              {
+                href: 'dropdowns',
+                text: 'Dropdowns',
+                icon: 'arrow_drop_down_circle'
+              },
+              {
+                href: 'forms',
+                text: 'Forms',
+                icon: 'text_format'
+              },
+              {
+                href: 'lists',
+                text: 'Lists',
+                icon: 'reorder'
+              },
+              {
+                href: 'pagination',
+                text: 'Pagination',
+                icon: 'looks_one'
+              },
+              {
+                href: 'progress',
+                text: 'Progress',
+                icon: 'trending_flat'
+              },
+              {
+                href: 'parallax',
+                text: 'Parallax',
+                icon: 'import_export'
+              },
+              {
+                href: 'modals',
+                text: 'Modals',
+                icon: 'call_to_action'
+              },
+              {
+                href: 'slider',
+                text: 'Slider',
+                icon: 'slideshow'
+              },
+              {
+                href: 'tabs',
+                text: 'Tabs',
+                icon: 'more_horiz'
+              },
+              {
+                href: 'tooltips',
+                text: 'Tooltips',
+                icon: 'sms'
+              }
+            ]
           },
           {
             href: 'layouts',
@@ -79,49 +137,9 @@
             icon: 'view_day'
           },
           {
-            href: 'lists',
-            text: 'Lists',
-            icon: 'reorder'
-          },
-          {
-            href: 'pagination',
-            text: 'Pagination',
-            icon: 'looks_one'
-          },
-          {
-            href: 'progress',
-            text: 'Progress',
-            icon: 'trending_flat'
-          },
-          {
-            href: 'parallax',
-            text: 'Parallax',
-            icon: 'import_export'
-          },
-          {
-            href: 'modals',
-            text: 'Modals',
-            icon: 'call_to_action'
-          },
-          {
-            href: 'slider',
-            text: 'Slider',
-            icon: 'slideshow'
-          },
-          {
-            href: 'tabs',
-            text: 'Tabs',
-            icon: 'more_horiz'
-          },
-          {
             href: 'toasts',
             text: 'Toasts',
             icon: 'picture_in_picture'
-          },
-          {
-            href: 'tooltips',
-            text: 'Tooltips',
-            icon: 'sms'
           },
           {
             href: 'typography',
@@ -136,7 +154,7 @@
 
 <style lang="stylus"
        scoped
->
+>    
   .vuetify
     h1
       padding: 1.5rem 0
