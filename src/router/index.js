@@ -30,7 +30,7 @@ export default new Router({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/', component: HomeView },
+    { path: '/welcome', component: HomeView },
     { path: '/alerts', component: AlertsView },
     { path: '/badges', component: BadgesView },
     { path: '/breadcrumbs', component: BreadcrumbsView },
@@ -50,6 +50,7 @@ export default new Router({
     { path: '/tabs', component: TabsView },
     { path: '/toasts', component: ToastsView },
     { path: '/tooltips', component: TooltipsView },
-    { path: '/typography', component: TypographyView }
+    { path: '/typography', component: TypographyView },
+    { path: '*', redirect: '/welcome' }
   ]
 })

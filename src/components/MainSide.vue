@@ -7,29 +7,23 @@
   )
     div(class="vuetify")
       h1
-        router-link(to="/", class="navbar__logo") Vuetify
-    ul(class="sidebar__items")
+        router-link(to="/welcome", class="navbar__logo") Vuetify
+    v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(
           v-if="item.items"
           v-bind:item="item.parent"
         )
-          li(v-for="j in item.items")
-            router-link(
-              :to="j.href"
-              class="sidebar__item grey--text text--lighten-2"
-              activeClass="sidebar__item--active"
-            )
-              v-icon {{ j.icon }}
-              span {{ j.text }}
-        li(v-else)
-          router-link(
-            :to="item.href",
-            class="sidebar__item grey--text text--lighten-2"
-            active-class="sidebar__item--active"
+          v-sidebar-item(
+            v-for="j in item.items"
+            v-bind:item="j"
+            v-bind:router="true"
           )
-            v-icon {{ item.icon }}
-            span {{ item.text }}
+        v-sidebar-item(
+          v-bind:item="item"
+          v-bind:router="true"
+          v-else
+        )
 </template>
 
 <script>
@@ -38,11 +32,20 @@
       return {
         items: [
           {
+            href: 'welcome',
+            text: 'Welcome',
+            icon: 'dashboard'
+          },
+          {
+            href: 'quick-start',
+            text: 'Quick Start',
+            icon: 'fast_forward'
+          },
+          {
             parent: {
               href: '#!',
               text: 'Components'
             },
-
             items: [
               {
                 href: 'alerts',
@@ -132,29 +135,43 @@
             ]
           },
           {
+            parent: {
+              href: '#!',
+              text: 'Functions'
+            },
+            items: [
+              {
+                href: 'toasts',
+                text: 'Toasts',
+                icon: 'picture_in_picture'
+              }
+            ]
+          },
+          {
+            parent: {
+              href: '#!',
+              text: 'CSS'
+            },
+            items: [
+              {
+                href: 'typography',
+                text: 'Typography',
+                icon: 'title'
+              }
+            ]
+          },
+          {
             href: 'layouts',
             text: 'Layouts',
             icon: 'view_day'
-          },
-          {
-            href: 'toasts',
-            text: 'Toasts',
-            icon: 'picture_in_picture'
-          },
-          {
-            href: 'typography',
-            text: 'Typography',
-            icon: 'title'
-          }
+          }          
         ]
       }
     }
   }
 </script>
 
-<style lang="stylus"
-       scoped
->    
+<style lang="stylus">    
   .vuetify
     h1
       padding: 1.5rem 0
@@ -173,9 +190,11 @@
       font-size: 1.5rem
         
   .sidebar__item
+    color: #fff !important
+    
     &:hover
       background: rgba(255, 255, 255, .2)
       
     &--active
-      background: rgba(255, 255, 255, .2)
+      background: rgba(255, 255, 255, .2)      
 </style>

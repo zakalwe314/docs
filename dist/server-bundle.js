@@ -374,22 +374,23 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
     return {
       items: [{
+        href: 'welcome',
+        text: 'Welcome',
+        icon: 'dashboard'
+      }, {
+        href: 'quick-start',
+        text: 'Quick Start',
+        icon: 'fast_forward'
+      }, {
         parent: {
           href: '#!',
           text: 'Components'
         },
-
         items: [{
           href: 'alerts',
           text: 'Alerts',
@@ -460,17 +461,29 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
           icon: 'sms'
         }]
       }, {
+        parent: {
+          href: '#!',
+          text: 'Functions'
+        },
+        items: [{
+          href: 'toasts',
+          text: 'Toasts',
+          icon: 'picture_in_picture'
+        }]
+      }, {
+        parent: {
+          href: '#!',
+          text: 'CSS'
+        },
+        items: [{
+          href: 'typography',
+          text: 'Typography',
+          icon: 'title'
+        }]
+      }, {
         href: 'layouts',
         text: 'Layouts',
         icon: 'view_day'
-      }, {
-        href: 'toasts',
-        text: 'Toasts',
-        icon: 'picture_in_picture'
-      }, {
-        href: 'typography',
-        text: 'Typography',
-        icon: 'title'
       }]
     };
   }
@@ -1293,7 +1306,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
     };
   },
   mounted: function mounted() {
-    this.$emit('view', 'Intro');
+    this.$emit('view', 'Welcome');
   }
 };
 
@@ -2167,7 +2180,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
   scrollBehavior: function scrollBehavior() {
     return { y: 0 };
   },
-  routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_11__views_HomeView_vue___default.a }, { path: '/alerts', component: __WEBPACK_IMPORTED_MODULE_2__views_AlertsView_vue___default.a }, { path: '/badges', component: __WEBPACK_IMPORTED_MODULE_3__views_BadgesView_vue___default.a }, { path: '/breadcrumbs', component: __WEBPACK_IMPORTED_MODULE_4__views_BreadcrumbsView_vue___default.a }, { path: '/buttons', component: __WEBPACK_IMPORTED_MODULE_5__views_ButtonsView_vue___default.a }, { path: '/cards', component: __WEBPACK_IMPORTED_MODULE_6__views_CardsView_vue___default.a }, { path: '/chips', component: __WEBPACK_IMPORTED_MODULE_7__views_ChipsView_vue___default.a }, { path: '/collapsible', component: __WEBPACK_IMPORTED_MODULE_8__views_CollapsibleView_vue___default.a }, { path: '/dropdowns', component: __WEBPACK_IMPORTED_MODULE_9__views_DropdownsView_vue___default.a }, { path: '/forms', component: __WEBPACK_IMPORTED_MODULE_10__views_FormsView_vue___default.a }, { path: '/layouts', component: __WEBPACK_IMPORTED_MODULE_12__views_LayoutsView_vue___default.a }, { path: '/lists', component: __WEBPACK_IMPORTED_MODULE_13__views_ListsView_vue___default.a }, { path: '/pagination', component: __WEBPACK_IMPORTED_MODULE_15__views_PaginationView_vue___default.a }, { path: '/parallax', component: __WEBPACK_IMPORTED_MODULE_14__views_ParallaxView_vue___default.a }, { path: '/progress', component: __WEBPACK_IMPORTED_MODULE_16__views_ProgressView_vue___default.a }, { path: '/modals', component: __WEBPACK_IMPORTED_MODULE_17__views_ModalsView_vue___default.a }, { path: '/slider', component: __WEBPACK_IMPORTED_MODULE_18__views_SliderView_vue___default.a }, { path: '/tabs', component: __WEBPACK_IMPORTED_MODULE_19__views_TabsView_vue___default.a }, { path: '/toasts', component: __WEBPACK_IMPORTED_MODULE_20__views_ToastsView_vue___default.a }, { path: '/tooltips', component: __WEBPACK_IMPORTED_MODULE_21__views_TooltipsView_vue___default.a }, { path: '/typography', component: __WEBPACK_IMPORTED_MODULE_22__views_TypographyView_vue___default.a }]
+  routes: [{ path: '/welcome', component: __WEBPACK_IMPORTED_MODULE_11__views_HomeView_vue___default.a }, { path: '/alerts', component: __WEBPACK_IMPORTED_MODULE_2__views_AlertsView_vue___default.a }, { path: '/badges', component: __WEBPACK_IMPORTED_MODULE_3__views_BadgesView_vue___default.a }, { path: '/breadcrumbs', component: __WEBPACK_IMPORTED_MODULE_4__views_BreadcrumbsView_vue___default.a }, { path: '/buttons', component: __WEBPACK_IMPORTED_MODULE_5__views_ButtonsView_vue___default.a }, { path: '/cards', component: __WEBPACK_IMPORTED_MODULE_6__views_CardsView_vue___default.a }, { path: '/chips', component: __WEBPACK_IMPORTED_MODULE_7__views_ChipsView_vue___default.a }, { path: '/collapsible', component: __WEBPACK_IMPORTED_MODULE_8__views_CollapsibleView_vue___default.a }, { path: '/dropdowns', component: __WEBPACK_IMPORTED_MODULE_9__views_DropdownsView_vue___default.a }, { path: '/forms', component: __WEBPACK_IMPORTED_MODULE_10__views_FormsView_vue___default.a }, { path: '/layouts', component: __WEBPACK_IMPORTED_MODULE_12__views_LayoutsView_vue___default.a }, { path: '/lists', component: __WEBPACK_IMPORTED_MODULE_13__views_ListsView_vue___default.a }, { path: '/pagination', component: __WEBPACK_IMPORTED_MODULE_15__views_PaginationView_vue___default.a }, { path: '/parallax', component: __WEBPACK_IMPORTED_MODULE_14__views_ParallaxView_vue___default.a }, { path: '/progress', component: __WEBPACK_IMPORTED_MODULE_16__views_ProgressView_vue___default.a }, { path: '/modals', component: __WEBPACK_IMPORTED_MODULE_17__views_ModalsView_vue___default.a }, { path: '/slider', component: __WEBPACK_IMPORTED_MODULE_18__views_SliderView_vue___default.a }, { path: '/tabs', component: __WEBPACK_IMPORTED_MODULE_19__views_TabsView_vue___default.a }, { path: '/toasts', component: __WEBPACK_IMPORTED_MODULE_20__views_ToastsView_vue___default.a }, { path: '/tooltips', component: __WEBPACK_IMPORTED_MODULE_21__views_TooltipsView_vue___default.a }, { path: '/typography', component: __WEBPACK_IMPORTED_MODULE_22__views_TypographyView_vue___default.a }, { path: '*', redirect: '/welcome' }]
 });
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
@@ -2437,7 +2450,6 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-2cddad2f"
 
 module.exports = __vue_exports__
 
@@ -4081,30 +4093,26 @@ module.exports={render:function (){with(this) {
   }, [_h('h1', [_h('router-link', {
     staticClass: "navbar__logo",
     attrs: {
-      "to": "/"
+      "to": "/welcome"
     }
-  }, ["Vuetify"])])]), _h('ul', {
-    staticClass: "sidebar__items"
-  }, [_l((items), function(item) {
+  }, ["Vuetify"])])]), _h('v-sidebar-items', [_l((items), function(item) {
     return [(item.items) ? _h('v-sidebar-group', {
       attrs: {
         "item": item.parent
       }
     }, [_l((item.items), function(j) {
-      return _h('li', [_h('router-link', {
-        staticClass: "sidebar__item grey--text text--lighten-2",
+      return _h('v-sidebar-item', {
         attrs: {
-          "to": j.href,
-          "activeClass": "sidebar__item--active"
+          "item": j,
+          "router": true
         }
-      }, [_h('v-icon', [_s(j.icon)]), _h('span', [_s(j.text)])])])
-    })]) : _h('li', [_h('router-link', {
-      staticClass: "sidebar__item grey--text text--lighten-2",
+      })
+    })]) : _h('v-sidebar-item', {
       attrs: {
-        "to": item.href,
-        "active-class": "sidebar__item--active"
+        "item": item,
+        "router": true
       }
-    }, [_h('v-icon', [_s(item.icon)]), _h('span', [_s(item.text)])])])]
+    })]
   })])])
 }},staticRenderFns: []}
 
