@@ -7,7 +7,10 @@
   )
     div(class="vuetify")
       h1
-        router-link(to="/welcome", class="navbar__logo") Vuetify
+        router-link(
+          to="/welcome",
+          class="navbar__logo"
+        ) Vuetify
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(
@@ -33,13 +36,11 @@
         items: [
           {
             href: 'welcome',
-            text: 'Welcome',
-            icon: 'dashboard'
+            text: 'Welcome'
           },
           {
             href: 'quick-start',
-            text: 'Quick Start',
-            icon: 'fast_forward'
+            text: 'Quick Start'
           },
           {
             parent: {
@@ -162,8 +163,7 @@
           },
           {
             href: 'layouts',
-            text: 'Layouts',
-            icon: 'view_day'
+            text: 'Layouts'
           }          
         ]
       }
@@ -186,11 +186,15 @@
         font-size: 2.5rem
         text-decoration: overline
         letter-spacing: 0px
+        
     .navbar__logo
       font-size: 1.5rem
         
+  .sidebar__item-header
+    color: #fff
+    
   .sidebar__item
-    color: #fff !important
+    color: #fff
     
     &:hover
       background: rgba(255, 255, 255, .2)

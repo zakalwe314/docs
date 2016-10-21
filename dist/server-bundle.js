@@ -374,18 +374,19 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
     return {
       items: [{
         href: 'welcome',
-        text: 'Welcome',
-        icon: 'dashboard'
+        text: 'Welcome'
       }, {
         href: 'quick-start',
-        text: 'Quick Start',
-        icon: 'fast_forward'
+        text: 'Quick Start'
       }, {
         parent: {
           href: '#!',
@@ -482,8 +483,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
         }]
       }, {
         href: 'layouts',
-        text: 'Layouts',
-        icon: 'view_day'
+        text: 'Layouts'
       }]
     };
   }
