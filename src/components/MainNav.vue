@@ -1,13 +1,14 @@
 <template lang="pug">
-  v-navbar
-    div(class="navbar__side-icon")
-      a(
-        href="#!",
-        v-side-bar:mainsidebar=""
-        class="hidden-md"
-      )
-        v-icon reorder
-    h1(v-text="title")
+  header
+    v-navbar
+      div(class="navbar__side-icon")
+        a(
+          href="#!",
+          v-side-bar:mainsidebar=""
+          class="hidden-sm"
+        )
+          v-icon reorder
+      h1(v-text="title")
 </template>
 
 <script>

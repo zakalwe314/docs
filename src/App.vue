@@ -4,8 +4,7 @@
     footer
     left-fixed-sidebar
   )
-    header
-      main-nav(v-bind:selected="selected")
+    main-nav(v-bind:selected="selected")
 
     main
       main-side

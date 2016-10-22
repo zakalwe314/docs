@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import AboutView from '../views/AboutView.vue'
+import QuickStartView from '../views/QuickStartView.vue'
 import AlertsView from '../views/AlertsView.vue'
 import BadgesView from '../views/BadgesView.vue'
 import BreadcrumbsView from '../views/BreadcrumbsView.vue'
@@ -10,7 +12,6 @@ import ChipsView from '../views/ChipsView.vue'
 import CollapsibleView from '../views/CollapsibleView.vue'
 import DropdownsView from '../views/DropdownsView.vue'
 import FormsView from '../views/FormsView.vue'
-import HomeView from '../views/HomeView.vue'
 import LayoutsView from '../views/LayoutsView.vue'
 import ListsView from '../views/ListsView.vue'
 import ParallaxView from '../views/ParallaxView.vue'
@@ -30,7 +31,8 @@ export default new Router({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/welcome', component: HomeView },
+    { path: '/', component: AboutView },
+    { path: '/quick-start', component: QuickStartView },
     { path: '/alerts', component: AlertsView },
     { path: '/badges', component: BadgesView },
     { path: '/breadcrumbs', component: BreadcrumbsView },
@@ -51,6 +53,6 @@ export default new Router({
     { path: '/toasts', component: ToastsView },
     { path: '/tooltips', component: TooltipsView },
     { path: '/typography', component: TypographyView },
-    { path: '*', redirect: '/welcome' }
+    { path: '*', redirect: '/' }
   ]
 })
