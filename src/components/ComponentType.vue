@@ -38,7 +38,7 @@
         return {
           classes: 'blue white--text',
           text: 'Directive',
-          icon: 'compare_arrows'
+          icon: 'polymer'
         }
       },
 

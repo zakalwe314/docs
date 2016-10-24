@@ -252,7 +252,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
       return {
         classes: 'blue white--text',
         text: 'Directive',
-        icon: 'compare_arrows'
+        icon: 'polymer'
       };
     },
     function: function _function() {
@@ -386,7 +386,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
         text: 'About',
         icon: 'question_answer'
       }, {
-        href: 'quick-start',
+        href: '/quick-start',
         text: 'Quick Start',
         icon: 'fast_forward'
       }, {
@@ -396,69 +396,65 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
           icon: 'widgets'
         },
         items: [{
-          href: 'alerts',
+          href: '/components/alerts',
           text: 'Alerts',
           icon: 'priority_high'
         }, {
-          href: 'breadcrumbs',
+          href: '/components/breadcrumbs',
           text: 'Breadcrumbs',
           icon: 'linear_scale'
         }, {
-          href: 'buttons',
+          href: '/components/buttons',
           text: 'Buttons',
           icon: 'arrow_forward'
         }, {
-          href: 'cards',
+          href: '/components/cards',
           text: 'Cards',
           icon: 'note'
         }, {
-          href: 'chips',
+          href: '/components/chips',
           text: 'Chips',
           icon: 'label'
         }, {
-          href: 'collapsible',
+          href: '/components/collapsible',
           text: 'Collapsible',
           icon: 'reorder'
         }, {
-          href: 'dropdowns',
+          href: '/components/dropdowns',
           text: 'Dropdowns',
           icon: 'arrow_drop_down_circle'
         }, {
-          href: 'forms',
+          href: '/components/forms',
           text: 'Forms',
           icon: 'text_format'
         }, {
-          href: 'lists',
+          href: '/components/lists',
           text: 'Lists',
           icon: 'reorder'
         }, {
-          href: 'pagination',
+          href: '/components/pagination',
           text: 'Pagination',
           icon: 'looks_one'
         }, {
-          href: 'progress',
+          href: '/components/progress',
           text: 'Progress',
           icon: 'trending_flat'
         }, {
-          href: 'parallax',
+          href: '/components/parallax',
           text: 'Parallax',
           icon: 'import_export'
         }, {
-          href: 'modals',
+          href: '/components/modals',
           text: 'Modals',
           icon: 'call_to_action'
         }, {
-          href: 'slider',
+          href: '/components/slider',
           text: 'Slider',
           icon: 'slideshow'
         }, {
-          href: 'tabs',
+          href: '/components/tabs',
           text: 'Tabs',
           icon: 'more_horiz'
-        }, {
-          href: 'tooltips',
-          text: 'Tooltips',
-          icon: 'sms'
         }]
       }, {
         parent: {
@@ -467,9 +463,13 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
           icon: 'polymer'
         },
         items: [{
-          href: 'badges',
+          href: '/directives/badges',
           text: 'Badges',
           icon: 'fiber_manual_record'
+        }, {
+          href: '/directives/tooltips',
+          text: 'Tooltips',
+          icon: 'sms'
         }]
       }, {
         parent: {
@@ -478,7 +478,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
           icon: 'functions'
         },
         items: [{
-          href: 'toasts',
+          href: '/functions/toasts',
           text: 'Toasts',
           icon: 'picture_in_picture'
         }]
@@ -489,7 +489,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
           icon: 'brush'
         },
         items: [{
-          href: 'typography',
+          href: '/css/typography',
           text: 'Typography',
           icon: 'title'
         }]
@@ -2239,7 +2239,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
   scrollBehavior: function scrollBehavior() {
     return { y: 0 };
   },
-  routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue___default.a }, { path: '/quick-start', component: __WEBPACK_IMPORTED_MODULE_3__views_QuickStartView_vue___default.a }, { path: '/alerts', component: __WEBPACK_IMPORTED_MODULE_4__views_AlertsView_vue___default.a }, { path: '/badges', component: __WEBPACK_IMPORTED_MODULE_5__views_BadgesView_vue___default.a }, { path: '/breadcrumbs', component: __WEBPACK_IMPORTED_MODULE_6__views_BreadcrumbsView_vue___default.a }, { path: '/buttons', component: __WEBPACK_IMPORTED_MODULE_7__views_ButtonsView_vue___default.a }, { path: '/cards', component: __WEBPACK_IMPORTED_MODULE_8__views_CardsView_vue___default.a }, { path: '/chips', component: __WEBPACK_IMPORTED_MODULE_9__views_ChipsView_vue___default.a }, { path: '/collapsible', component: __WEBPACK_IMPORTED_MODULE_10__views_CollapsibleView_vue___default.a }, { path: '/dropdowns', component: __WEBPACK_IMPORTED_MODULE_11__views_DropdownsView_vue___default.a }, { path: '/forms', component: __WEBPACK_IMPORTED_MODULE_12__views_FormsView_vue___default.a }, { path: '/layouts', component: __WEBPACK_IMPORTED_MODULE_13__views_LayoutsView_vue___default.a }, { path: '/lists', component: __WEBPACK_IMPORTED_MODULE_14__views_ListsView_vue___default.a }, { path: '/pagination', component: __WEBPACK_IMPORTED_MODULE_16__views_PaginationView_vue___default.a }, { path: '/parallax', component: __WEBPACK_IMPORTED_MODULE_15__views_ParallaxView_vue___default.a }, { path: '/progress', component: __WEBPACK_IMPORTED_MODULE_17__views_ProgressView_vue___default.a }, { path: '/modals', component: __WEBPACK_IMPORTED_MODULE_18__views_ModalsView_vue___default.a }, { path: '/slider', component: __WEBPACK_IMPORTED_MODULE_19__views_SliderView_vue___default.a }, { path: '/tabs', component: __WEBPACK_IMPORTED_MODULE_20__views_TabsView_vue___default.a }, { path: '/toasts', component: __WEBPACK_IMPORTED_MODULE_21__views_ToastsView_vue___default.a }, { path: '/tooltips', component: __WEBPACK_IMPORTED_MODULE_22__views_TooltipsView_vue___default.a }, { path: '/typography', component: __WEBPACK_IMPORTED_MODULE_23__views_TypographyView_vue___default.a }, { path: '*', redirect: '/' }]
+  routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue___default.a }, { path: '/quick-start', component: __WEBPACK_IMPORTED_MODULE_3__views_QuickStartView_vue___default.a }, { path: '/components/alerts', component: __WEBPACK_IMPORTED_MODULE_4__views_AlertsView_vue___default.a }, { path: '/components/breadcrumbs', component: __WEBPACK_IMPORTED_MODULE_6__views_BreadcrumbsView_vue___default.a }, { path: '/components/buttons', component: __WEBPACK_IMPORTED_MODULE_7__views_ButtonsView_vue___default.a }, { path: '/components/cards', component: __WEBPACK_IMPORTED_MODULE_8__views_CardsView_vue___default.a }, { path: '/components/chips', component: __WEBPACK_IMPORTED_MODULE_9__views_ChipsView_vue___default.a }, { path: '/components/collapsible', component: __WEBPACK_IMPORTED_MODULE_10__views_CollapsibleView_vue___default.a }, { path: '/components/dropdowns', component: __WEBPACK_IMPORTED_MODULE_11__views_DropdownsView_vue___default.a }, { path: '/components/forms', component: __WEBPACK_IMPORTED_MODULE_12__views_FormsView_vue___default.a }, { path: '/components/layouts', component: __WEBPACK_IMPORTED_MODULE_13__views_LayoutsView_vue___default.a }, { path: '/components/lists', component: __WEBPACK_IMPORTED_MODULE_14__views_ListsView_vue___default.a }, { path: '/components/pagination', component: __WEBPACK_IMPORTED_MODULE_16__views_PaginationView_vue___default.a }, { path: '/components/parallax', component: __WEBPACK_IMPORTED_MODULE_15__views_ParallaxView_vue___default.a }, { path: '/components/progress', component: __WEBPACK_IMPORTED_MODULE_17__views_ProgressView_vue___default.a }, { path: '/components/modals', component: __WEBPACK_IMPORTED_MODULE_18__views_ModalsView_vue___default.a }, { path: '/components/slider', component: __WEBPACK_IMPORTED_MODULE_19__views_SliderView_vue___default.a }, { path: '/components/tabs', component: __WEBPACK_IMPORTED_MODULE_20__views_TabsView_vue___default.a }, { path: '/functions/toasts', component: __WEBPACK_IMPORTED_MODULE_21__views_ToastsView_vue___default.a }, { path: '/directives/badges', component: __WEBPACK_IMPORTED_MODULE_5__views_BadgesView_vue___default.a }, { path: '/directives/tooltips', component: __WEBPACK_IMPORTED_MODULE_22__views_TooltipsView_vue___default.a }, { path: '/css/typography', component: __WEBPACK_IMPORTED_MODULE_23__views_TypographyView_vue___default.a }, { path: '*', redirect: '/' }]
 });
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 

@@ -40,7 +40,7 @@
             icon: 'question_answer'
           },
           {
-            href: 'quick-start',
+            href: '/quick-start',
             text: 'Quick Start',
             icon: 'fast_forward'
           },
@@ -48,88 +48,83 @@
             parent: {
               href: '#!',
               text: 'Components',
-              icon: 'widgets'
+              icon: 'widgets',
             },
             items: [
               {
-                href: 'alerts',
+                href: '/components/alerts',
                 text: 'Alerts',
                 icon: 'priority_high'
               },
               {
-                href: 'breadcrumbs',
+                href: '/components/breadcrumbs',
                 text: 'Breadcrumbs',
                 icon: 'linear_scale'
               },
               {
-                href: 'buttons',
+                href: '/components/buttons',
                 text: 'Buttons',
                 icon: 'arrow_forward'
               },
               {
-                href: 'cards',
+                href: '/components/cards',
                 text: 'Cards',
                 icon: 'note'
               },
               {
-                href: 'chips',
+                href: '/components/chips',
                 text: 'Chips',
                 icon: 'label'
               },
               {
-                href: 'collapsible',
+                href: '/components/collapsible',
                 text: 'Collapsible',
                 icon: 'reorder'
               },
               {
-                href: 'dropdowns',
+                href: '/components/dropdowns',
                 text: 'Dropdowns',
                 icon: 'arrow_drop_down_circle'
               },
               {
-                href: 'forms',
+                href: '/components/forms',
                 text: 'Forms',
                 icon: 'text_format'
               },
               {
-                href: 'lists',
+                href: '/components/lists',
                 text: 'Lists',
                 icon: 'reorder'
               },
               {
-                href: 'pagination',
+                href: '/components/pagination',
                 text: 'Pagination',
                 icon: 'looks_one'
               },
               {
-                href: 'progress',
+                href: '/components/progress',
                 text: 'Progress',
                 icon: 'trending_flat'
               },
               {
-                href: 'parallax',
+                href: '/components/parallax',
                 text: 'Parallax',
                 icon: 'import_export'
               },
               {
-                href: 'modals',
+                href: '/components/modals',
                 text: 'Modals',
                 icon: 'call_to_action'
               },
               {
-                href: 'slider',
+                href: '/components/slider',
                 text: 'Slider',
                 icon: 'slideshow'
               },
               {
-                href: 'tabs',
+                href: '/components/tabs',
                 text: 'Tabs',
                 icon: 'more_horiz'
-              },
-              {
-                href: 'tooltips',
-                text: 'Tooltips',
-                icon: 'sms'
               }
             ]
           },
@@ -141,9 +136,14 @@
             },
             items: [
               {
-                href: 'badges',
+                href: '/directives/badges',
                 text: 'Badges',
                 icon: 'fiber_manual_record'
+              },
+              {
+                href: '/directives/tooltips',
+                text: 'Tooltips',
+                icon: 'sms'
               }
             ]
           },
@@ -155,7 +155,7 @@
             },
             items: [
               {
-                href: 'toasts',
+                href: '/functions/toasts',
                 text: 'Toasts',
                 icon: 'picture_in_picture'
               }
@@ -169,7 +169,7 @@
             },
             items: [
               {
-                href: 'typography',
+                href: '/css/typography',
                 text: 'Typography',
                 icon: 'title'
               }
