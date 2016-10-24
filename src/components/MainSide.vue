@@ -200,12 +200,15 @@
       letter-spacing: .3rem
       text-align: center
       
-      &:first-letter
-        color: #2196F3
-        font-weight: 900
-        font-size: 2.5rem
-        text-decoration: overline
-        letter-spacing: 0px
+      a
+        display: block
+        
+        &:first-letter
+          color: #2196F3
+          font-weight: 900
+          font-size: 2.5rem
+          text-decoration: overline
+          letter-spacing: 0px
         
     .navbar__logo
       font-size: 1.5rem

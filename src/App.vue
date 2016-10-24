@@ -4,6 +4,7 @@
     footer
     left-fixed-sidebar
   )
+  
     main-nav(v-bind:selected="selected")
 
     main
