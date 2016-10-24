@@ -2275,7 +2275,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(2)
 
 /* template */
-var __vue_template__ = __webpack_require__(92)
+var __vue_template__ = __webpack_require__(83)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2303,7 +2303,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(3)
 
 /* template */
-var __vue_template__ = __webpack_require__(89)
+var __vue_template__ = __webpack_require__(82)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2328,7 +2328,7 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 
 /* template */
-var __vue_template__ = __webpack_require__(96)
+var __vue_template__ = __webpack_require__(95)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2342,7 +2342,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-72dc748a"
+__vue_options__._scopeId = "data-v-948ea4aa"
 
 module.exports = __vue_exports__
 
@@ -2357,7 +2357,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(4)
 
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(92)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2385,7 +2385,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(5)
 
 /* template */
-var __vue_template__ = __webpack_require__(86)
+var __vue_template__ = __webpack_require__(84)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2413,7 +2413,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(6)
 
 /* template */
-var __vue_template__ = __webpack_require__(97)
+var __vue_template__ = __webpack_require__(102)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2438,7 +2438,7 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 
 /* template */
-var __vue_template__ = __webpack_require__(95)
+var __vue_template__ = __webpack_require__(73)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2466,7 +2466,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(7)
 
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(69)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2480,7 +2480,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-17174d0a"
+__vue_options__._scopeId = "data-v-018b9d2a"
 
 module.exports = __vue_exports__
 
@@ -2495,7 +2495,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(8)
 
 /* template */
-var __vue_template__ = __webpack_require__(83)
+var __vue_template__ = __webpack_require__(89)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2523,7 +2523,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(9)
 
 /* template */
-var __vue_template__ = __webpack_require__(101)
+var __vue_template__ = __webpack_require__(87)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2537,7 +2537,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-e5ac7b32"
+__vue_options__._scopeId = "data-v-715da712"
 
 module.exports = __vue_exports__
 
@@ -2549,7 +2549,7 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 
 /* template */
-var __vue_template__ = __webpack_require__(77)
+var __vue_template__ = __webpack_require__(79)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2563,7 +2563,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-20831fe3"
+__vue_options__._scopeId = "data-v-372343d3"
 
 module.exports = __vue_exports__
 
@@ -2603,7 +2603,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(10)
 
 /* template */
-var __vue_template__ = __webpack_require__(79)
+var __vue_template__ = __webpack_require__(88)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2631,7 +2631,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(11)
 
 /* template */
-var __vue_template__ = __webpack_require__(87)
+var __vue_template__ = __webpack_require__(93)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2659,7 +2659,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(12)
 
 /* template */
-var __vue_template__ = __webpack_require__(84)
+var __vue_template__ = __webpack_require__(98)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2687,7 +2687,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(13)
 
 /* template */
-var __vue_template__ = __webpack_require__(98)
+var __vue_template__ = __webpack_require__(77)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2729,7 +2729,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-21f936ea"
+__vue_options__._scopeId = "data-v-292ace9b"
 
 module.exports = __vue_exports__
 
@@ -2744,7 +2744,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(15)
 
 /* template */
-var __vue_template__ = __webpack_require__(82)
+var __vue_template__ = __webpack_require__(81)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2758,7 +2758,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-2c771ca6"
+__vue_options__._scopeId = "data-v-3fdf1fbd"
 
 module.exports = __vue_exports__
 
@@ -2773,7 +2773,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(16)
 
 /* template */
-var __vue_template__ = __webpack_require__(90)
+var __vue_template__ = __webpack_require__(97)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2787,7 +2787,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5706fbf1"
+__vue_options__._scopeId = "data-v-a5bcabfe"
 
 module.exports = __vue_exports__
 
@@ -2802,7 +2802,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(17)
 
 /* template */
-var __vue_template__ = __webpack_require__(81)
+var __vue_template__ = __webpack_require__(100)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2830,7 +2830,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(18)
 
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(86)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2844,7 +2844,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-1fcc3b4c"
+__vue_options__._scopeId = "data-v-6dc1615c"
 
 module.exports = __vue_exports__
 
@@ -2859,7 +2859,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(19)
 
 /* template */
-var __vue_template__ = __webpack_require__(99)
+var __vue_template__ = __webpack_require__(71)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2873,7 +2873,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-90cceb0e"
+__vue_options__._scopeId = "data-v-0db43889"
 
 module.exports = __vue_exports__
 
@@ -2888,7 +2888,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(20)
 
 /* template */
-var __vue_template__ = __webpack_require__(102)
+var __vue_template__ = __webpack_require__(91)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2916,7 +2916,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(21)
 
 /* template */
-var __vue_template__ = __webpack_require__(93)
+var __vue_template__ = __webpack_require__(94)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2944,7 +2944,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(22)
 
 /* template */
-var __vue_template__ = __webpack_require__(80)
+var __vue_template__ = __webpack_require__(99)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2972,7 +2972,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(23)
 
 /* template */
-var __vue_template__ = __webpack_require__(73)
+var __vue_template__ = __webpack_require__(101)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3000,7 +3000,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(24)
 
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(74)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3014,7 +3014,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-10e7c3e7"
+__vue_options__._scopeId = "data-v-1bad9bd7"
 
 module.exports = __vue_exports__
 
@@ -3029,7 +3029,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(25)
 
 /* template */
-var __vue_template__ = __webpack_require__(91)
+var __vue_template__ = __webpack_require__(85)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3057,7 +3057,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(26)
 
 /* template */
-var __vue_template__ = __webpack_require__(94)
+var __vue_template__ = __webpack_require__(80)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3085,7 +3085,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(27)
 
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(96)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3113,7 +3113,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(28)
 
 /* template */
-var __vue_template__ = __webpack_require__(69)
+var __vue_template__ = __webpack_require__(76)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3141,7 +3141,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(29)
 
 /* template */
-var __vue_template__ = __webpack_require__(88)
+var __vue_template__ = __webpack_require__(90)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3155,7 +3155,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5362613c"
+__vue_options__._scopeId = "data-v-7ec515a8"
 
 module.exports = __vue_exports__
 
@@ -3170,7 +3170,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(30)
 
 /* template */
-var __vue_template__ = __webpack_require__(70)
+var __vue_template__ = __webpack_require__(72)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3184,7 +3184,7 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-050d7e20"
+__vue_options__._scopeId = "data-v-0fd35610"
 
 module.exports = __vue_exports__
 
@@ -3199,7 +3199,7 @@ var __vue_exports__, __vue_options__
 __vue_exports__ = __webpack_require__(31)
 
 /* template */
-var __vue_template__ = __webpack_require__(100)
+var __vue_template__ = __webpack_require__(70)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3219,6 +3219,355 @@ module.exports = __vue_exports__
 
 /***/ },
 /* 69 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('header', [_h('v-navbar', [_h('div', {
+    staticClass: "navbar__side-icon"
+  }, [_h('a', {
+    directives: [{
+      name: "side-bar",
+      rawName: "v-side-bar:mainsidebar",
+      arg: "mainsidebar"
+    }],
+    staticClass: "hidden-sm",
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', ["reorder"])])]), _h('h1', {
+    domProps: {
+      "textContent": _s(title)
+    }
+  })])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 70 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "id": "typo",
+      "header": "Headers"
+    }
+  }, [_m(0), _m(1), _m(2), _m(3), _m(4), _m(5)]), _h('component-example', {
+    attrs: {
+      "header": "Blockquotes"
+    }
+  }, [_h('blockquote', ["Hello"])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('h1', ["Heading h1"])
+}},function (){with(this) {
+  return _h('h2', ["Heading h2"])
+}},function (){with(this) {
+  return _h('h3', ["Heading h3"])
+}},function (){with(this) {
+  return _h('h4', ["Heading h4"])
+}},function (){with(this) {
+  return _h('h5', ["Heading h5"])
+}},function (){with(this) {
+  return _h('h6', ["Heading h6"])
+}}]}
+
+/***/ },
+/* 71 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Selects"
+    }
+  }, [_h('div', [_h('v-select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (input),
+      expression: "input"
+    }],
+    attrs: {
+      "options": options,
+      "id": "test",
+      "label": "Testing",
+      "name": "test"
+    },
+    domProps: {
+      "value": (input)
+    },
+    on: {
+      "input": function($event) {
+        input = $event
+      }
+    }
+  })]), _h('div', [_h('v-select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (multiple),
+      expression: "multiple"
+    }],
+    attrs: {
+      "options": options,
+      "id": "test4",
+      "label": "Testing4",
+      "name": "test4",
+      "multiple": "multiple"
+    },
+    domProps: {
+      "value": (multiple)
+    },
+    on: {
+      "input": function($event) {
+        multiple = $event
+      }
+    }
+  })])]), _h('component-example', {
+    attrs: {
+      "header": "Inputs"
+    }
+  }, [_h('div', [_h('v-text-input', {
+    attrs: {
+      "id": "test2",
+      "name": "test2",
+      "label": "Testing 2"
+    }
+  })]), _h('div', [_h('v-text-input', {
+    attrs: {
+      "id": "test3",
+      "name": "test3",
+      "label": "Testing 3",
+      "placeholder": "Testing 3"
+    }
+  })])]), _h('component-example', {
+    attrs: {
+      "header": "Radios"
+    }
+  }, [_h('v-radio', {
+    attrs: {
+      "id": "test5",
+      "name": "test5",
+      "label": "Testing 5"
+    }
+  }), _h('v-radio', {
+    attrs: {
+      "id": "test6",
+      "name": "test5",
+      "label": "Testing 6",
+      "gap": "gap"
+    }
+  }), _h('v-radio', {
+    attrs: {
+      "id": "test62",
+      "name": "test52",
+      "label": "Testing 62",
+      "gap": "gap",
+      "checked": "checked",
+      "disabled": "disabled"
+    }
+  }), _h('v-radio', {
+    attrs: {
+      "id": "test61",
+      "name": "test54",
+      "label": "Testing 61",
+      "disabled": "disabled",
+      "checked": "checked"
+    }
+  }), _h('v-radio', {
+    attrs: {
+      "id": "test71",
+      "name": "test5",
+      "label": "Testing 71",
+      "disabled": "disabled"
+    }
+  })]), _h('component-example', {
+    attrs: {
+      "header": "Checkboxes"
+    }
+  }, [_h('v-checkbox', {
+    attrs: {
+      "id": "test7",
+      "name": "test7",
+      "label": "Testing 7"
+    }
+  }), _h('v-checkbox', {
+    attrs: {
+      "id": "test8",
+      "name": "test8",
+      "label": "Testing 8",
+      "filled": "filled"
+    }
+  }), _h('v-checkbox', {
+    attrs: {
+      "id": "test9",
+      "name": "test9",
+      "label": "Testing 9",
+      "indeterminate": "indeterminate"
+    }
+  }), _h('v-checkbox', {
+    attrs: {
+      "id": "test10",
+      "name": "test10",
+      "label": "Testing 10",
+      "disabled": "disabled"
+    }
+  }), _h('v-checkbox', {
+    attrs: {
+      "id": "test10",
+      "name": "test10",
+      "label": "Testing 10",
+      "checked": "checked",
+      "disabled": "disabled"
+    }
+  })])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 72 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', [_h('div', [_h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:left",
+      value: ({
+        html: 'Left Tooltip'
+      }),
+      expression: "{ html: 'Left Tooltip' }",
+      arg: "left"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Left"]), _h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:top",
+      value: ({
+        html: 'Top tooptip'
+      }),
+      expression: "{ html: 'Top tooptip' }",
+      arg: "top"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Top"]), _h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:right",
+      value: ({
+        html: 'Right tooptip'
+      }),
+      expression: "{ html: 'Right tooptip' }",
+      arg: "right"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Right"]), _h('v-btn', {
+    directives: [{
+      name: "tooltip",
+      rawName: "v-tooltip:bottom",
+      value: ({
+        html: 'Bottom tooptip'
+      }),
+      expression: "{ html: 'Bottom tooptip' }",
+      arg: "bottom"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Bottom"])])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 73 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('v-footer', {
+    staticClass: "grey darken-3"
+  }, [_h('v-container', [_h('v-row', [_h('v-grid', {
+    attrs: {
+      "xs12": "xs12"
+    }
+  }, [_m(0)])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('span', {
+    staticClass: "right"
+  }, ["© Copyright 2016"])
+}}]}
+
+/***/ },
+/* 74 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('div', {
+    attrs: {
+      "id": "parallax-example"
+    }
+  }, [_h('v-parallax', {
+    attrs: {
+      "src": "http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
+    }
+  }, [_h('v-parallax-content', [_m(0), _m(1), _h('div', [_h('v-btn', {
+    staticClass: "transparent white--text buy",
+    attrs: {
+      "large": "large"
+    }
+  }, ["Buy a Ship", _h('v-icon', {
+    attrs: {
+      "right": "right"
+    }
+  }, ["keyboard_arrow_right"])]), _h('v-btn', {
+    staticClass: "transparent white--text explore",
+    attrs: {
+      "large": "large"
+    }
+  }, ["Explore", _h('v-icon', {
+    attrs: {
+      "right": "right"
+    }
+  }, ["search"])])])])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('h1', {
+    staticClass: "white--text"
+  }, ["Explore Space"])
+}},function (){with(this) {
+  return _h('p', ["Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. "])
+}}]}
+
+/***/ },
+/* 75 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('dl', {
+    staticClass: "section-text"
+  }, [_t("title"), _t("desc")])
+}},staticRenderFns: []}
+
+/***/ },
+/* 76 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -3283,388 +3632,45 @@ module.exports={render:function (){with(this) {
 }},staticRenderFns: []}
 
 /***/ },
-/* 70 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', [_h('div', [_h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      rawName: "v-tooltip:left",
-      value: ({
-        html: 'Left Tooltip'
-      }),
-      expression: "{ html: 'Left Tooltip' }",
-      arg: "left"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Left"]), _h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      rawName: "v-tooltip:top",
-      value: ({
-        html: 'Top tooptip'
-      }),
-      expression: "{ html: 'Top tooptip' }",
-      arg: "top"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Top"]), _h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      rawName: "v-tooltip:right",
-      value: ({
-        html: 'Right tooptip'
-      }),
-      expression: "{ html: 'Right tooptip' }",
-      arg: "right"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Right"]), _h('v-btn', {
-    directives: [{
-      name: "tooltip",
-      rawName: "v-tooltip:bottom",
-      value: ({
-        html: 'Bottom tooptip'
-      }),
-      expression: "{ html: 'Bottom tooptip' }",
-      arg: "bottom"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Bottom"])])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 71 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('table', {
-    staticClass: "table--component"
-  }, [_m(0), _h('tbody', [_l((params), function(option) {
-    return _h('tr', [_l((option), function(td) {
-      return _h('td', {
-        domProps: {
-          "innerHTML": _s(td)
-        }
-      })
-    })])
-  })])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('thead', [_h('tr', [_h('th', ["Markup"]), _h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
-}}]}
-
-/***/ },
-/* 72 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('div', {
-    attrs: {
-      "id": "parallax-example"
-    }
-  }, [_h('v-parallax', {
-    attrs: {
-      "src": "http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
-    }
-  }, [_h('v-parallax-content', [_m(0), _m(1), _h('div', [_h('v-btn', {
-    staticClass: "transparent white--text buy",
-    attrs: {
-      "large": "large"
-    }
-  }, ["Buy a Ship", _h('v-icon', {
-    attrs: {
-      "right": "right"
-    }
-  }, ["keyboard_arrow_right"])]), _h('v-btn', {
-    staticClass: "transparent white--text explore",
-    attrs: {
-      "large": "large"
-    }
-  }, ["Explore", _h('v-icon', {
-    attrs: {
-      "right": "right"
-    }
-  }, ["search"])])])])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('h1', {
-    staticClass: "white--text"
-  }, ["Explore Space"])
-}},function (){with(this) {
-  return _h('p', ["Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. "])
-}}]}
-
-/***/ },
-/* 73 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Short"
-    }
-  }, [_h('div', [_h('v-pagination', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (page),
-      expression: "page"
-    }],
-    attrs: {
-      "length": 5
-    },
-    domProps: {
-      "value": (page)
-    },
-    on: {
-      "input": function($event) {
-        page = $event
-      }
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Long"
-    }
-  }, [_h('div', [_h('v-pagination', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (page2),
-      expression: "page2"
-    }],
-    attrs: {
-      "length": 15
-    },
-    domProps: {
-      "value": (page2)
-    },
-    on: {
-      "input": function($event) {
-        page2 = $event
-      }
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Round"
-    }
-  }, [_h('div', [_h('v-pagination', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (page3),
-      expression: "page3"
-    }],
-    attrs: {
-      "length": 4,
-      "circle": "circle"
-    },
-    domProps: {
-      "value": (page3)
-    },
-    on: {
-      "input": function($event) {
-        page3 = $event
-      }
-    }
-  })])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 74 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('header', [_h('v-navbar', [_h('div', {
-    staticClass: "navbar__side-icon"
-  }, [_h('a', {
-    directives: [{
-      name: "side-bar",
-      rawName: "v-side-bar:mainsidebar",
-      arg: "mainsidebar"
-    }],
-    staticClass: "hidden-sm",
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', ["reorder"])])]), _h('h1', {
-    domProps: {
-      "textContent": _s(title)
-    }
-  })])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 75 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('dl', {
-    staticClass: "section-text"
-  }, [_t("title"), _t("desc")])
-}},staticRenderFns: []}
-
-/***/ },
-/* 76 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "On Click"
-    }
-  }, [_h('div', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:dropdown",
-      arg: "dropdown"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Dropdown"]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown",
-      "items": items
-    }
-  })]), _h('div', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:dropdown3",
-      arg: "dropdown3"
-    }],
-    attrs: {
-      "secondary": "secondary"
-    }
-  }, ["With Labels"]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown3"
-    }
-  }, [_h('li', [_h('a', {
-    staticClass: "dropdown__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, ["Profile", _h('v-chip', {
-    staticClass: "teal white--text right",
-    attrs: {
-      "label": "label",
-      "small": "small"
-    }
-  }, ["new"])])]), _h('li', [_h('a', {
-    staticClass: "dropdown__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('span', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge:2",
-      arg: "2"
-    }]
-  }, ["Notifications"])])]), _h('li', [_h('a', {
-    staticClass: "dropdown__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, ["Logout", _h('v-icon', {
-    staticClass: "secondary--text right"
-  }, ["cloud_off"])])])])])]), _h('component-example', {
-    attrs: {
-      "header": "On Hover"
-    }
-  }, [_h('div', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:dropdown2",
-      value: (options),
-      expression: "options",
-      arg: "dropdown2"
-    }],
-    attrs: {
-      "secondary": "secondary"
-    }
-  }, ["Dropdown"]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown2",
-      "items": items,
-      "right": "right"
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Menus"
-    }
-  }, [_h('div', [_h('v-card', [_h('v-card-title', {
-    staticClass: "blue"
-  }, [_h('v-card-title-text', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:menu",
-      arg: "menu"
-    }],
-    attrs: {
-      "icon": "icon"
-    }
-  }, [_h('v-icon', {
-    staticClass: "white--text"
-  }, ["more_vert"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "menu",
-      "items": items
-    }
-  })])]), _h('v-card-text', ["Lorem Ipsum"])])]), _h('div', [_h('v-card', [_h('v-card-title', {
-    staticClass: "blue"
-  }, [_h('v-card-title-actions', [_h('v-btn', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:menu2",
-      arg: "menu2"
-    }],
-    attrs: {
-      "icon": "icon"
-    }
-  }, [_h('v-icon', {
-    staticClass: "white--text"
-  }, ["more_vert"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "menu2",
-      "items": items,
-      "right": "right"
-    }
-  })])]), _h('v-card-text', ["Lorem Ipsum"])])])])])
-}},staticRenderFns: []}
-
-/***/ },
 /* 77 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('h2', {
-    staticClass: "secondary--text"
-  }, [_t("default")])
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Text Dividers"
+    }
+  }, [_h('v-breadcrumbs', {
+    attrs: {
+      "divider": "/",
+      "items": items
+    }
+  }), _h('v-breadcrumbs', {
+    attrs: {
+      "divider": "-",
+      "items": items
+    }
+  })]), _h('component-example', {
+    attrs: {
+      "header": "Icon Dividers"
+    }
+  }, [_h('v-breadcrumbs', {
+    attrs: {
+      "icons": "icons",
+      "divider": "forward",
+      "items": items
+    }
+  }), _h('v-breadcrumbs', {
+    attrs: {
+      "icons": "icons",
+      "divider": "chevron_right",
+      "items": items
+    }
+  })])])
 }},staticRenderFns: []}
 
 /***/ },
@@ -3864,167 +3870,25 @@ module.exports={render:function (){with(this) {
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('div', {
-    staticClass: "view"
-  }, [_h('section', [_h('section-text', [_h('strong', {
-    slot: "title"
-  }, ["About"]), _h('p', {
-    slot: "desc"
-  }, ["Vuetify is a collection of components for VueJS 2.0. It aims to provide clean, reusable and semantic components that help kick start your application. Vuetify utilizes Google's ", _m(0), " design pattern, taking cues from other popular frameworks such as Materialize.css, Material Design Lite, Semantic UI and Bootstrap 4. This project is an effort to make building websites in VueJS as easy as possible. ", _m(1), " 2.0's new functional component option allows for Vuetify to provide numerous clean and semantic helper components, allowing the developer to focus on putting the pieces together, instead of having to remember or keep track of an endless stream of css classes."])])]), _h('section', [_h('v-card', [_h('v-card-title', {
-    staticClass: "green"
-  }, [_h('v-card-title-text', [_m(2)]), _h('v-icon', {
-    staticClass: "white--text",
-    attrs: {
-      "large": "large"
-    }
-  }, ["playlist_add_check"])])]), _h('section-text', [_h('strong', {
-    slot: "title"
-  }, ["Vuetify Frontend Components"]), _h('p', {
-    slot: "desc"
-  }, ["The Vuetify core is designed to provide a variety of reusable, plug and play components that fit a variety of scenarios."])]), _h('section-text', [_h('strong', {
-    slot: "title"
-  }, ["Semantic Helper Components"]), _h('p', {
-    slot: "desc"
-  }, ["With the power of functional components, all class based markup that is used to aid main components, such as a ", _m(3), ", are accessible using ", _m(4), " markup, enabling less cluttered files for a miniscule performance cost."])]), _h('section-text', [_h('strong', {
-    slot: "title"
-  }, ["Prototyping Made Easy"]), _h('div', {
-    slot: "desc"
-  }, [_m(5), _m(6)])]), _h('section-text', [_h('strong', {
-    slot: "title"
-  }, ["No Sacrifice Mobile Functionality"]), _h('p', {
-    slot: "desc"
-  }, ["Every component and style is designed with mobile in mind. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, Vuetify just works."])]), _h('section-text', [_h('strong', {
-    slot: "title"
-  }, ["Separation of Concerns"]), _h('p', {
-    slot: "desc"
-  }, ["While auto-injection of css from Vue Components is a very useful feature, for large frameworks, it becomes very expensive when you need the ability to easily change values from defined defaults. Vuetify's stylesheet is separate from the components. Using ", _m(7), ", ", _m(8), " syntax and utilizing ", _m(9), " design principles, Vuetify styles were created with expandability in mind."])]), _h('section-text', [_h('strong', {
-    slot: "title"
-  }, ["Modern Browser Support"]), _h('p', {
-    slot: "desc"
-  }, ["Using functionalities such as flexbox, Vuetify was designed for the modern browser. This allows the best bang for your buck performance to framework size."])])]), _h('section', [_h('v-card', [_h('v-card-title', {
-    staticClass: "purple"
-  }, [_h('v-card-title-text', [_m(10)]), _h('v-icon', {
-    staticClass: "white--text",
-    attrs: {
-      "large": "large"
-    }
-  }, ["autorenew"])])]), _m(11), _h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["color_lens"]), _h('v-list-item-title', ["Material Design Color Pack"])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vuetify Webpack Starter"])]), _h('v-list-item', [_h('v-list-item-icon', ["fast_forward"]), _h('v-list-item-title', ["Vuetify SSR Webpack Starter"])]), _h('v-list-item', [_h('v-list-item-icon', ["security"]), _h('v-list-item-title', [_h('span', ["Vuetify Admin Components ", _h('v-chip', {
-    staticClass: "green white--text",
-    attrs: {
-      "label": ""
-    }
-  }, ["Coming Soon"])])])])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('strong', ["Material Design"])
-}},function (){with(this) {
-  return _h('strong', {
-    staticClass: "green--text"
-  }, ["VueJS"])
-}},function (){with(this) {
   return _h('h2', {
-    staticClass: "white--text"
-  }, ["Features"])
-}},function (){with(this) {
-  return _h('em', ["card title"])
-}},function (){with(this) {
-  return _h('code', ["v-card-title"])
-}},function (){with(this) {
-  return _h('p', ["Vuetify was made from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building an application. Want a dropdown? Apply the ", _h('code', ["v-dropdown"]), " directive to any element with a corresponding ", _h('code', ["v-dropdown"]), " element. Need to put together a quick skeleton layout for a page? Use the ", _h('code', ["v-app"]), " component to easily position your ", _h('code', ["v-navbar"]), " and ", _h('code', ["v-sidebar"]), "."])
-}},function (){with(this) {
-  return _h('p', ["No matter what your use case, Vuetify allows you to get there quicker."])
-}},function (){with(this) {
-  return _h('strong', ["Stylus"])
-}},function (){with(this) {
-  return _h('strong', ["BEM"])
-}},function (){with(this) {
-  return _h('strong', ["ITCSS"])
-}},function (){with(this) {
-  return _h('h2', {
-    staticClass: "white--text"
-  }, ["Ecosystem"])
-}},function (){with(this) {
-  return _h('div', {
-    staticClass: "section-text"
-  }, ["In order to expedite the prototyping and development process, Vuetify comes with optional addons."])
-}}]}
+    staticClass: "secondary--text"
+  }, [_t("default")])
+}},staticRenderFns: []}
 
 /***/ },
 /* 80 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', [_h('v-btn', {
-    directives: [{
-      name: "modal",
-      rawName: "v-modal:modal",
-      arg: "modal"
-    }],
-    attrs: {
-      "primary": "primary"
-    }
-  }, ["Regular", _h('v-modal', {
-    attrs: {
-      "id": "modal"
-    }
-  }, [_m(0)])]), _h('v-btn', {
-    directives: [{
-      name: "modal",
-      rawName: "v-modal:modal2",
-      arg: "modal2"
-    }],
-    attrs: {
-      "secondary": "secondary"
-    }
-  }, ["Bottom", _h('v-modal', {
-    attrs: {
-      "id": "modal2",
-      "bottom": "bottom"
-    }
-  }, [_m(1)])])])])
+  return _m(0)
 }},staticRenderFns: [function (){with(this) {
-  return _h('p', ["Hello"])
-}},function (){with(this) {
-  return _h('p', ["Hello        "])
+  return _h('div', {
+    staticClass: "view"
+  }, ["Quick"])
 }}]}
 
 /***/ },
 /* 81 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Accordion"
-    }
-  }, [_h('div', [_h('v-collapsible', [_l((5), function(item) {
-    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
-      staticClass: "grey lighten-3"
-    }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
-  })])])]), _h('component-example', {
-    attrs: {
-      "header": "Expandable"
-    }
-  }, [_h('div', [_h('v-collapsible', {
-    attrs: {
-      "expand": "expand"
-    }
-  }, [_l((2), function(item) {
-    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
-      staticClass: "grey lighten-3"
-    }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
-  })])])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 82 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -4204,7 +4068,358 @@ module.exports={render:function (){with(this) {
 }}]}
 
 /***/ },
+/* 82 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('div', [_h('component-header', [_s(header)]), _h('div', {
+    staticClass: "component-example"
+  }, [_t("default")])])
+}},staticRenderFns: []}
+
+/***/ },
 /* 83 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('v-app', {
+    attrs: {
+      "navbar": "navbar",
+      "footer": "footer",
+      "left-fixed-sidebar": "left-fixed-sidebar"
+    }
+  }, [_h('main-nav', {
+    domProps: {
+      "selected": selected
+    }
+  }), _h('main', [_h('main-side'), _h('v-container', {
+    staticClass: "container--fluid"
+  }, [_h('transition', {
+    attrs: {
+      "name": "slide",
+      "mode": "out-in"
+    }
+  }, [_h('router-view', {
+    on: {
+      "view": view
+    }
+  })])])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 84 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('span', {
+    staticClass: "chip--component"
+  }, [_h('v-chip', {
+    class: component.classes,
+    attrs: {
+      "label": "label"
+    }
+  }, [_s(component.text), _h('v-icon', {
+    attrs: {
+      "right": "right"
+    },
+    domProps: {
+      "textContent": _s(component.icon)
+    }
+  })])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 85 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "id": "progress",
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Fixed Width"
+    }
+  }, [_h('div', [_h('v-progress', {
+    attrs: {
+      "value": "25",
+      "min": "0",
+      "max": "100"
+    }
+  })]), _h('div', [_h('v-progress', {
+    attrs: {
+      "value": "50",
+      "min": "0",
+      "max": "100"
+    }
+  })]), _h('div', [_h('v-progress', {
+    attrs: {
+      "value": "75",
+      "min": "0",
+      "max": "100"
+    }
+  })]), _h('div', [_h('v-progress', {
+    attrs: {
+      "value": "100",
+      "min": "0",
+      "max": "100"
+    }
+  })])]), _h('component-example', {
+    attrs: {
+      "header": "Indeterminate"
+    }
+  }, [_h('div', [_h('v-progress', {
+    attrs: {
+      "indeterminate": "indeterminate"
+    }
+  })])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 86 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "On Click"
+    }
+  }, [_h('div', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown",
+      arg: "dropdown"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Dropdown"]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown",
+      "items": items
+    }
+  })]), _h('div', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown3",
+      arg: "dropdown3"
+    }],
+    attrs: {
+      "secondary": "secondary"
+    }
+  }, ["With Labels"]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown3"
+    }
+  }, [_h('li', [_h('a', {
+    staticClass: "dropdown__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, ["Profile", _h('v-chip', {
+    staticClass: "teal white--text right",
+    attrs: {
+      "label": "label",
+      "small": "small"
+    }
+  }, ["new"])])]), _h('li', [_h('a', {
+    staticClass: "dropdown__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('span', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:2",
+      arg: "2"
+    }]
+  }, ["Notifications"])])]), _h('li', [_h('a', {
+    staticClass: "dropdown__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, ["Logout", _h('v-icon', {
+    staticClass: "secondary--text right"
+  }, ["cloud_off"])])])])])]), _h('component-example', {
+    attrs: {
+      "header": "On Hover"
+    }
+  }, [_h('div', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown2",
+      value: (options),
+      expression: "options",
+      arg: "dropdown2"
+    }],
+    attrs: {
+      "secondary": "secondary"
+    }
+  }, ["Dropdown"]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown2",
+      "items": items,
+      "right": "right"
+    }
+  })])]), _h('component-example', {
+    attrs: {
+      "header": "Menus"
+    }
+  }, [_h('div', [_h('v-card', [_h('v-card-title', {
+    staticClass: "blue"
+  }, [_h('v-card-title-text', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:menu",
+      arg: "menu"
+    }],
+    attrs: {
+      "icon": "icon"
+    }
+  }, [_h('v-icon', {
+    staticClass: "white--text"
+  }, ["more_vert"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "menu",
+      "items": items
+    }
+  })])]), _h('v-card-text', ["Lorem Ipsum"])])]), _h('div', [_h('v-card', [_h('v-card-title', {
+    staticClass: "blue"
+  }, [_h('v-card-title-actions', [_h('v-btn', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:menu2",
+      arg: "menu2"
+    }],
+    attrs: {
+      "icon": "icon"
+    }
+  }, [_h('v-icon', {
+    staticClass: "white--text"
+  }, ["more_vert"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "menu2",
+      "items": items,
+      "right": "right"
+    }
+  })])]), _h('v-card-text', ["Lorem Ipsum"])])])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 87 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('p', {
+    staticClass: "codepen",
+    attrs: {
+      "data-height": "265",
+      "data-theme-id": "dark",
+      "data-default-tab": "html",
+      "data-user": "johnjleider",
+      "data-embed-version": "2",
+      "data-slug-hash": slug
+    }
+  })
+}},staticRenderFns: []}
+
+/***/ },
+/* 88 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('div', {
+    staticClass: "view"
+  }, [_h('section', [_h('section-text', [_h('strong', {
+    slot: "title"
+  }, ["About"]), _h('p', {
+    slot: "desc"
+  }, ["Vuetify is a collection of components for VueJS 2.0. It aims to provide clean, reusable and semantic components that help kick start your application. Vuetify utilizes Google's ", _m(0), " design pattern, taking cues from other popular frameworks such as Materialize.css, Material Design Lite, Semantic UI and Bootstrap 4. This project is an effort to make building websites in VueJS as easy as possible. ", _m(1), " 2.0's new functional component option allows for Vuetify to provide numerous clean and semantic helper components, allowing the developer to focus on putting the pieces together, instead of having to remember or keep track of an endless stream of css classes."])])]), _h('section', [_h('v-card', [_h('v-card-title', {
+    staticClass: "green"
+  }, [_h('v-card-title-text', [_m(2)]), _h('v-icon', {
+    staticClass: "white--text",
+    attrs: {
+      "large": "large"
+    }
+  }, ["playlist_add_check"])])]), _h('section-text', [_h('strong', {
+    slot: "title"
+  }, ["Vuetify Frontend Components"]), _h('p', {
+    slot: "desc"
+  }, ["The Vuetify core is designed to provide a variety of reusable, plug and play components that fit a variety of scenarios."])]), _h('section-text', [_h('strong', {
+    slot: "title"
+  }, ["Semantic Helper Components"]), _h('p', {
+    slot: "desc"
+  }, ["With the power of functional components, all class based markup that is used to aid main components, such as a ", _m(3), ", are accessible using ", _m(4), " markup, enabling less cluttered files for a miniscule performance cost."])]), _h('section-text', [_h('strong', {
+    slot: "title"
+  }, ["Prototyping Made Easy"]), _h('div', {
+    slot: "desc"
+  }, [_m(5), _m(6)])]), _h('section-text', [_h('strong', {
+    slot: "title"
+  }, ["No Sacrifice Mobile Functionality"]), _h('p', {
+    slot: "desc"
+  }, ["Every component and style is designed with mobile in mind. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, Vuetify just works."])]), _h('section-text', [_h('strong', {
+    slot: "title"
+  }, ["Separation of Concerns"]), _h('p', {
+    slot: "desc"
+  }, ["While auto-injection of css from Vue Components is a very useful feature, for large frameworks, it becomes very expensive when you need the ability to easily change values from defined defaults. Vuetify's stylesheet is separate from the components. Using ", _m(7), ", ", _m(8), " syntax and utilizing ", _m(9), " design principles, Vuetify styles were created with expandability in mind."])]), _h('section-text', [_h('strong', {
+    slot: "title"
+  }, ["Modern Browser Support"]), _h('p', {
+    slot: "desc"
+  }, ["Using functionalities such as flexbox, Vuetify was designed for the modern browser. This allows the best bang for your buck performance to framework size."])])]), _h('section', [_h('v-card', [_h('v-card-title', {
+    staticClass: "purple"
+  }, [_h('v-card-title-text', [_m(10)]), _h('v-icon', {
+    staticClass: "white--text",
+    attrs: {
+      "large": "large"
+    }
+  }, ["autorenew"])])]), _m(11), _h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["color_lens"]), _h('v-list-item-title', ["Material Design Color Pack"])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vuetify Webpack Starter"])]), _h('v-list-item', [_h('v-list-item-icon', ["fast_forward"]), _h('v-list-item-title', ["Vuetify SSR Webpack Starter"])]), _h('v-list-item', [_h('v-list-item-icon', ["security"]), _h('v-list-item-title', [_h('span', ["Vuetify Admin Components ", _h('v-chip', {
+    staticClass: "green white--text",
+    attrs: {
+      "label": ""
+    }
+  }, ["Coming Soon"])])])])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('strong', ["Material Design"])
+}},function (){with(this) {
+  return _h('strong', {
+    staticClass: "green--text"
+  }, ["VueJS"])
+}},function (){with(this) {
+  return _h('h2', {
+    staticClass: "white--text"
+  }, ["Features"])
+}},function (){with(this) {
+  return _h('em', ["card title"])
+}},function (){with(this) {
+  return _h('code', ["v-card-title"])
+}},function (){with(this) {
+  return _h('p', ["Vuetify was made from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building an application. Want a dropdown? Apply the ", _h('code', ["v-dropdown"]), " directive to any element with a corresponding ", _h('code', ["v-dropdown"]), " element. Need to put together a quick skeleton layout for a page? Use the ", _h('code', ["v-app"]), " component to easily position your ", _h('code', ["v-navbar"]), " and ", _h('code', ["v-sidebar"]), "."])
+}},function (){with(this) {
+  return _h('p', ["No matter what your use case, Vuetify allows you to get there quicker."])
+}},function (){with(this) {
+  return _h('strong', ["Stylus"])
+}},function (){with(this) {
+  return _h('strong', ["BEM"])
+}},function (){with(this) {
+  return _h('strong', ["ITCSS"])
+}},function (){with(this) {
+  return _h('h2', {
+    staticClass: "white--text"
+  }, ["Ecosystem"])
+}},function (){with(this) {
+  return _h('div', {
+    staticClass: "section-text"
+  }, ["In order to expedite the prototyping and development process, Vuetify comes with optional addons."])
+}}]}
+
+/***/ },
+/* 89 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -4244,190 +4459,7 @@ module.exports={render:function (){with(this) {
 }},staticRenderFns: []}
 
 /***/ },
-/* 84 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Character"
-    }
-  }, [_h('v-icon', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge:6.left",
-      arg: "6",
-      modifiers: {
-        "left": true
-      }
-    }],
-    staticClass: "grey--text text--lighten-1",
-    attrs: {
-      "large": "large"
-    }
-  }, ["shopping_cart"]), _h('v-icon', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge",
-      value: ({
-        overlap: true,
-        value: '!'
-      }),
-      expression: "{ overlap: true, value: '!' }"
-    }],
-    staticClass: "grey--text red--after",
-    attrs: {
-      "large": "large"
-    }
-  }, ["mail"])]), _h('component-example', {
-    attrs: {
-      "header": "Icon"
-    }
-  }, [_h('v-icon', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge:done.overlap.icon.left",
-      arg: "done",
-      modifiers: {
-        "overlap": true,
-        "icon": true,
-        "left": true
-      }
-    }],
-    staticClass: "grey--text text--lighten-1",
-    attrs: {
-      "large": "large"
-    }
-  }, ["account_circle"]), _h('v-icon', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge:notifications.icon.overlap",
-      arg: "notifications",
-      modifiers: {
-        "icon": true,
-        "overlap": true
-      }
-    }],
-    staticClass: "grey--text text--darken-1 orange--after",
-    attrs: {
-      "large": "large"
-    }
-  }, ["account_box"])]), _h('component-example', {
-    attrs: {
-      "header": "Inline"
-    }
-  }, [_h('span', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge:2.left",
-      arg: "2",
-      modifiers: {
-        "left": true
-      }
-    }]
-  }, ["Examples"]), _h('span', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge:list.icon",
-      arg: "list",
-      modifiers: {
-        "icon": true
-      }
-    }],
-    staticClass: "green--after"
-  }, ["Lists"])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 85 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('div', {
-    attrs: {
-      "id": "slider"
-    }
-  }, [_h('v-slider', [_l((items), function(item, index) {
-    return _h('v-slider-item', {
-      attrs: {
-        "src": item.src
-      }
-    })
-  })])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 86 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('span', {
-    staticClass: "chip--component"
-  }, [_h('v-chip', {
-    class: component.classes,
-    attrs: {
-      "label": "label"
-    }
-  }, [_s(component.text), _h('v-icon', {
-    attrs: {
-      "right": "right"
-    },
-    domProps: {
-      "textContent": _s(component.icon)
-    }
-  })])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 87 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "id": "alerts"
-    }
-  }, [_h('v-alert', {
-    attrs: {
-      "error": "error"
-    }
-  }, [" This is an error alert with ", _m(0)]), _h('v-alert', {
-    attrs: {
-      "info": "info"
-    }
-  }, [" This is an info alert with ", _m(1)]), _h('v-alert', {
-    attrs: {
-      "success": "success"
-    }
-  }, [" This is a success alert with ", _m(2)]), _h('v-alert', {
-    attrs: {
-      "warning": "warning"
-    }
-  }, [" This is a warning alert with ", _m(3)])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('strong', ["strong text."])
-}},function (){with(this) {
-  return _h('strong', ["strong text."])
-}},function (){with(this) {
-  return _h('strong', ["strong text."])
-}},function (){with(this) {
-  return _h('strong', ["strong text."])
-}}]}
-
-/***/ },
-/* 88 */
+/* 90 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -4493,17 +4525,250 @@ module.exports={render:function (){with(this) {
 }},staticRenderFns: []}
 
 /***/ },
-/* 89 */
+/* 91 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('div', [_h('component-header', [_s(header)]), _h('div', {
-    staticClass: "component-example"
-  }, [_t("default")])])
+  return _h('div', {
+    staticClass: "view"
+  }, [_h('section', [_h('section-header', ["Introduction"]), _h('section-text', ["Soon"]), _h('component-header', ["With Navbar"]), _h('component-example', {
+    attrs: {
+      "style": "flex-direction: column"
+    }
+  }, [_h('div', [_h('v-card', {
+    staticClass: "z-depth-0"
+  }, [_h('v-navbar', [_h('v-navbar-logo', ["Logo"]), _h('v-navbar-items', {
+    attrs: {
+      "items": items
+    }
+  })])])]), _h('div', [_h('v-card', {
+    staticClass: "z-depth-0"
+  }, [_h('v-navbar', {
+    staticClass: "red"
+  }, [_h('v-navbar-items', {
+    attrs: {
+      "items": items
+    }
+  }), _h('v-navbar-logo', {
+    staticClass: "right-align"
+  }, ["Logo"])])])]), _h('div', [_h('v-card', {
+    staticClass: "z-depth-0"
+  }, [_h('v-navbar', {
+    staticClass: "purple"
+  }, [_h('v-navbar-logo', {
+    staticClass: "center-align"
+  }, ["Logo"]), _h('v-navbar-items', [_h('li', [_h('a', {
+    staticClass: "navbar__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', ["link"])])]), _h('li', [_h('a', {
+    staticClass: "navbar__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', ["check"])])]), _h('li', [_h('a', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:icon-dropdown",
+      arg: "icon-dropdown"
+    }],
+    staticClass: "navbar__item",
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', ["list"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "icon-dropdown",
+      "items": items,
+      "right": "right"
+    }
+  })])])])])])])])])
 }},staticRenderFns: []}
 
 /***/ },
-/* 90 */
+/* 92 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('table', {
+    staticClass: "table--component"
+  }, [_m(0), _h('tbody', [_l((params), function(option) {
+    return _h('tr', [_l((option), function(td) {
+      return _h('td', {
+        domProps: {
+          "innerHTML": _s(td)
+        }
+      })
+    })])
+  })])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('thead', [_h('tr', [_h('th', ["Markup"]), _h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
+}}]}
+
+/***/ },
+/* 93 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "id": "alerts"
+    }
+  }, [_h('v-alert', {
+    attrs: {
+      "error": "error"
+    }
+  }, [" This is an error alert with ", _m(0)]), _h('v-alert', {
+    attrs: {
+      "info": "info"
+    }
+  }, [" This is an info alert with ", _m(1)]), _h('v-alert', {
+    attrs: {
+      "success": "success"
+    }
+  }, [" This is a success alert with ", _m(2)]), _h('v-alert', {
+    attrs: {
+      "warning": "warning"
+    }
+  }, [" This is a warning alert with ", _m(3)])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('strong', ["strong text."])
+}},function (){with(this) {
+  return _h('strong', ["strong text."])
+}},function (){with(this) {
+  return _h('strong', ["strong text."])
+}},function (){with(this) {
+  return _h('strong', ["strong text."])
+}}]}
+
+/***/ },
+/* 94 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Basic"
+    }
+  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
+    attrs: {
+      "header": "With Icon"
+    }
+  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
+    attrs: {
+      "header": "With Avatar"
+    }
+  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('a', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:dropdown",
+      arg: "dropdown"
+    }],
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-list-item-avatar', {
+    staticClass: "orange",
+    attrs: {
+      "large": "large"
+    }
+  }, ["event"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "dropdown",
+      "items": items
+    }
+  }), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-avatar', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:done.icon",
+      arg: "done",
+      modifiers: {
+        "icon": true
+      }
+    }],
+    staticClass: "brown",
+    attrs: {
+      "large": "large"
+    }
+  }, ["person"]), _h('v-list-item-title', ["Ranee Leider"]), _h('v-list-item-action', [_h('a', {
+    directives: [{
+      name: "dropdown",
+      rawName: "v-dropdown:menu",
+      arg: "menu"
+    }],
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', {
+    staticClass: "blue--text",
+    attrs: {
+      "medium": "medium"
+    }
+  }, ["edit"])]), _h('v-dropdown', {
+    attrs: {
+      "id": "menu",
+      "items": items,
+      "right": "right"
+    }
+  })])]), _h('v-list-item', [_h('v-list-item-avatar', {
+    staticClass: "green",
+    attrs: {
+      "large": "large"
+    }
+  }, ["phone"]), _h('v-list-item-title', [_m(0), _h('v-list-item-sub-title', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."])]), _h('v-list-item-action', [_h('v-list-item-action-title', ["Contact"]), _h('a', {
+    attrs: {
+      "href": "#!"
+    }
+  }, [_h('v-icon', {
+    staticClass: "grey--text darken-1"
+  }, ["email"])])])])])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('span', ["Declan Leider"])
+}}]}
+
+/***/ },
+/* 95 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('h5', {
+    staticClass: "primary--text"
+  }, [_t("default")])
+}},staticRenderFns: []}
+
+/***/ },
+/* 96 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('div', {
+    attrs: {
+      "id": "slider"
+    }
+  }, [_h('v-slider', [_l((items), function(item, index) {
+    return _h('v-slider-item', {
+      attrs: {
+        "src": item.src
+      }
+    })
+  })])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 97 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -4638,214 +4903,260 @@ module.exports={render:function (){with(this) {
 }},staticRenderFns: []}
 
 /***/ },
-/* 91 */
+/* 98 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
   return _h('doc-view', {
     attrs: {
-      "id": "progress",
       "doc": doc
     }
   }, [_h('component-example', {
     attrs: {
-      "header": "Fixed Width"
+      "header": "Character"
     }
-  }, [_h('div', [_h('v-progress', {
+  }, [_h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:6.left",
+      arg: "6",
+      modifiers: {
+        "left": true
+      }
+    }],
+    staticClass: "grey--text text--lighten-1",
     attrs: {
-      "value": "25",
-      "min": "0",
-      "max": "100"
+      "large": "large"
     }
-  })]), _h('div', [_h('v-progress', {
+  }, ["shopping_cart"]), _h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge",
+      value: ({
+        overlap: true,
+        value: '!'
+      }),
+      expression: "{ overlap: true, value: '!' }"
+    }],
+    staticClass: "grey--text red--after",
     attrs: {
-      "value": "50",
-      "min": "0",
-      "max": "100"
+      "large": "large"
     }
-  })]), _h('div', [_h('v-progress', {
+  }, ["mail"])]), _h('component-example', {
     attrs: {
-      "value": "75",
-      "min": "0",
-      "max": "100"
+      "header": "Icon"
     }
-  })]), _h('div', [_h('v-progress', {
+  }, [_h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:done.overlap.icon.left",
+      arg: "done",
+      modifiers: {
+        "overlap": true,
+        "icon": true,
+        "left": true
+      }
+    }],
+    staticClass: "grey--text text--lighten-1",
     attrs: {
-      "value": "100",
-      "min": "0",
-      "max": "100"
+      "large": "large"
+    }
+  }, ["account_circle"]), _h('v-icon', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:notifications.icon.overlap",
+      arg: "notifications",
+      modifiers: {
+        "icon": true,
+        "overlap": true
+      }
+    }],
+    staticClass: "grey--text text--darken-1 orange--after",
+    attrs: {
+      "large": "large"
+    }
+  }, ["account_box"])]), _h('component-example', {
+    attrs: {
+      "header": "Inline"
+    }
+  }, [_h('span', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:2.left",
+      arg: "2",
+      modifiers: {
+        "left": true
+      }
+    }]
+  }, ["Examples"]), _h('span', {
+    directives: [{
+      name: "badge",
+      rawName: "v-badge:list.icon",
+      arg: "list",
+      modifiers: {
+        "icon": true
+      }
+    }],
+    staticClass: "green--after"
+  }, ["Lists"])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 99 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', [_h('v-btn', {
+    directives: [{
+      name: "modal",
+      rawName: "v-modal:modal",
+      arg: "modal"
+    }],
+    attrs: {
+      "primary": "primary"
+    }
+  }, ["Regular", _h('v-modal', {
+    attrs: {
+      "id": "modal"
+    }
+  }, [_m(0)])]), _h('v-btn', {
+    directives: [{
+      name: "modal",
+      rawName: "v-modal:modal2",
+      arg: "modal2"
+    }],
+    attrs: {
+      "secondary": "secondary"
+    }
+  }, ["Bottom", _h('v-modal', {
+    attrs: {
+      "id": "modal2",
+      "bottom": "bottom"
+    }
+  }, [_m(1)])])])])
+}},staticRenderFns: [function (){with(this) {
+  return _h('p', ["Hello"])
+}},function (){with(this) {
+  return _h('p', ["Hello        "])
+}}]}
+
+/***/ },
+/* 100 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Accordion"
+    }
+  }, [_h('div', [_h('v-collapsible', [_l((5), function(item) {
+    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
+      staticClass: "grey lighten-3"
+    }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
+  })])])]), _h('component-example', {
+    attrs: {
+      "header": "Expandable"
+    }
+  }, [_h('div', [_h('v-collapsible', {
+    attrs: {
+      "expand": "expand"
+    }
+  }, [_l((2), function(item) {
+    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
+      staticClass: "grey lighten-3"
+    }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
+  })])])])])
+}},staticRenderFns: []}
+
+/***/ },
+/* 101 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){with(this) {
+  return _h('doc-view', {
+    attrs: {
+      "doc": doc
+    }
+  }, [_h('component-example', {
+    attrs: {
+      "header": "Short"
+    }
+  }, [_h('div', [_h('v-pagination', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (page),
+      expression: "page"
+    }],
+    attrs: {
+      "length": 5
+    },
+    domProps: {
+      "value": (page)
+    },
+    on: {
+      "input": function($event) {
+        page = $event
+      }
     }
   })])]), _h('component-example', {
     attrs: {
-      "header": "Indeterminate"
+      "header": "Long"
     }
-  }, [_h('div', [_h('v-progress', {
+  }, [_h('div', [_h('v-pagination', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (page2),
+      expression: "page2"
+    }],
     attrs: {
-      "indeterminate": "indeterminate"
+      "length": 15
+    },
+    domProps: {
+      "value": (page2)
+    },
+    on: {
+      "input": function($event) {
+        page2 = $event
+      }
+    }
+  })])]), _h('component-example', {
+    attrs: {
+      "header": "Round"
+    }
+  }, [_h('div', [_h('v-pagination', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (page3),
+      expression: "page3"
+    }],
+    attrs: {
+      "length": 4,
+      "circle": "circle"
+    },
+    domProps: {
+      "value": (page3)
+    },
+    on: {
+      "input": function($event) {
+        page3 = $event
+      }
     }
   })])])])
 }},staticRenderFns: []}
 
 /***/ },
-/* 92 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('v-app', {
-    attrs: {
-      "navbar": "navbar",
-      "footer": "footer",
-      "left-fixed-sidebar": "left-fixed-sidebar"
-    }
-  }, [_h('main-nav', {
-    domProps: {
-      "selected": selected
-    }
-  }), _h('main', [_h('main-side'), _h('v-container', {
-    staticClass: "container--fluid"
-  }, [_h('transition', {
-    attrs: {
-      "name": "slide",
-      "mode": "out-in"
-    }
-  }, [_h('router-view', {
-    on: {
-      "view": view
-    }
-  })])])])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 93 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Basic"
-    }
-  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
-    attrs: {
-      "header": "With Icon"
-    }
-  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Ranee Leider"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Declan Leider"])])])])]), _h('component-example', {
-    attrs: {
-      "header": "With Avatar"
-    }
-  }, [_h('div', [_h('v-list', [_h('v-list-item', [_h('a', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:dropdown",
-      arg: "dropdown"
-    }],
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-list-item-avatar', {
-    staticClass: "orange",
-    attrs: {
-      "large": "large"
-    }
-  }, ["event"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "dropdown",
-      "items": items
-    }
-  }), _h('v-list-item-title', ["John Leider"])]), _h('v-list-item', [_h('v-list-item-avatar', {
-    directives: [{
-      name: "badge",
-      rawName: "v-badge:done.icon",
-      arg: "done",
-      modifiers: {
-        "icon": true
-      }
-    }],
-    staticClass: "brown",
-    attrs: {
-      "large": "large"
-    }
-  }, ["person"]), _h('v-list-item-title', ["Ranee Leider"]), _h('v-list-item-action', [_h('a', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:menu",
-      arg: "menu"
-    }],
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', {
-    staticClass: "blue--text",
-    attrs: {
-      "medium": "medium"
-    }
-  }, ["edit"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "menu",
-      "items": items,
-      "right": "right"
-    }
-  })])]), _h('v-list-item', [_h('v-list-item-avatar', {
-    staticClass: "green",
-    attrs: {
-      "large": "large"
-    }
-  }, ["phone"]), _h('v-list-item-title', [_m(0), _h('v-list-item-sub-title', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."])]), _h('v-list-item-action', [_h('v-list-item-action-title', ["Contact"]), _h('a', {
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', {
-    staticClass: "grey--text darken-1"
-  }, ["email"])])])])])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('span', ["Declan Leider"])
-}}]}
-
-/***/ },
-/* 94 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _m(0)
-}},staticRenderFns: [function (){with(this) {
-  return _h('div', {
-    staticClass: "view"
-  }, ["Quick"])
-}}]}
-
-/***/ },
-/* 95 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('v-footer', {
-    staticClass: "grey darken-3"
-  }, [_h('v-container', [_h('v-row', [_h('v-grid', {
-    attrs: {
-      "xs12": "xs12"
-    }
-  }, [_m(0)])])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('span', {
-    staticClass: "right"
-  }, ["© Copyright 2016"])
-}}]}
-
-/***/ },
-/* 96 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('h5', {
-    staticClass: "primary--text"
-  }, [_t("default")])
-}},staticRenderFns: []}
-
-/***/ },
-/* 97 */
+/* 102 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
@@ -4872,317 +5183,6 @@ module.exports={render:function (){with(this) {
       "params": doc.params
     }
   })])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 98 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Text Dividers"
-    }
-  }, [_h('v-breadcrumbs', {
-    attrs: {
-      "divider": "/",
-      "items": items
-    }
-  }), _h('v-breadcrumbs', {
-    attrs: {
-      "divider": "-",
-      "items": items
-    }
-  })]), _h('component-example', {
-    attrs: {
-      "header": "Icon Dividers"
-    }
-  }, [_h('v-breadcrumbs', {
-    attrs: {
-      "icons": "icons",
-      "divider": "forward",
-      "items": items
-    }
-  }), _h('v-breadcrumbs', {
-    attrs: {
-      "icons": "icons",
-      "divider": "chevron_right",
-      "items": items
-    }
-  })])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 99 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "header": "Selects"
-    }
-  }, [_h('div', [_h('v-select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (input),
-      expression: "input"
-    }],
-    attrs: {
-      "options": options,
-      "id": "test",
-      "label": "Testing",
-      "name": "test"
-    },
-    domProps: {
-      "value": (input)
-    },
-    on: {
-      "input": function($event) {
-        input = $event
-      }
-    }
-  })]), _h('div', [_h('v-select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (multiple),
-      expression: "multiple"
-    }],
-    attrs: {
-      "options": options,
-      "id": "test4",
-      "label": "Testing4",
-      "name": "test4",
-      "multiple": "multiple"
-    },
-    domProps: {
-      "value": (multiple)
-    },
-    on: {
-      "input": function($event) {
-        multiple = $event
-      }
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Inputs"
-    }
-  }, [_h('div', [_h('v-text-input', {
-    attrs: {
-      "id": "test2",
-      "name": "test2",
-      "label": "Testing 2"
-    }
-  })]), _h('div', [_h('v-text-input', {
-    attrs: {
-      "id": "test3",
-      "name": "test3",
-      "label": "Testing 3",
-      "placeholder": "Testing 3"
-    }
-  })])]), _h('component-example', {
-    attrs: {
-      "header": "Radios"
-    }
-  }, [_h('v-radio', {
-    attrs: {
-      "id": "test5",
-      "name": "test5",
-      "label": "Testing 5"
-    }
-  }), _h('v-radio', {
-    attrs: {
-      "id": "test6",
-      "name": "test5",
-      "label": "Testing 6",
-      "gap": "gap"
-    }
-  }), _h('v-radio', {
-    attrs: {
-      "id": "test62",
-      "name": "test52",
-      "label": "Testing 62",
-      "gap": "gap",
-      "checked": "checked",
-      "disabled": "disabled"
-    }
-  }), _h('v-radio', {
-    attrs: {
-      "id": "test61",
-      "name": "test54",
-      "label": "Testing 61",
-      "disabled": "disabled",
-      "checked": "checked"
-    }
-  }), _h('v-radio', {
-    attrs: {
-      "id": "test71",
-      "name": "test5",
-      "label": "Testing 71",
-      "disabled": "disabled"
-    }
-  })]), _h('component-example', {
-    attrs: {
-      "header": "Checkboxes"
-    }
-  }, [_h('v-checkbox', {
-    attrs: {
-      "id": "test7",
-      "name": "test7",
-      "label": "Testing 7"
-    }
-  }), _h('v-checkbox', {
-    attrs: {
-      "id": "test8",
-      "name": "test8",
-      "label": "Testing 8",
-      "filled": "filled"
-    }
-  }), _h('v-checkbox', {
-    attrs: {
-      "id": "test9",
-      "name": "test9",
-      "label": "Testing 9",
-      "indeterminate": "indeterminate"
-    }
-  }), _h('v-checkbox', {
-    attrs: {
-      "id": "test10",
-      "name": "test10",
-      "label": "Testing 10",
-      "disabled": "disabled"
-    }
-  }), _h('v-checkbox', {
-    attrs: {
-      "id": "test10",
-      "name": "test10",
-      "label": "Testing 10",
-      "checked": "checked",
-      "disabled": "disabled"
-    }
-  })])])
-}},staticRenderFns: []}
-
-/***/ },
-/* 100 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('doc-view', {
-    attrs: {
-      "doc": doc
-    }
-  }, [_h('component-example', {
-    attrs: {
-      "id": "typo",
-      "header": "Headers"
-    }
-  }, [_m(0), _m(1), _m(2), _m(3), _m(4), _m(5)]), _h('component-example', {
-    attrs: {
-      "header": "Blockquotes"
-    }
-  }, [_h('blockquote', ["Hello"])])])
-}},staticRenderFns: [function (){with(this) {
-  return _h('h1', ["Heading h1"])
-}},function (){with(this) {
-  return _h('h2', ["Heading h2"])
-}},function (){with(this) {
-  return _h('h3', ["Heading h3"])
-}},function (){with(this) {
-  return _h('h4', ["Heading h4"])
-}},function (){with(this) {
-  return _h('h5', ["Heading h5"])
-}},function (){with(this) {
-  return _h('h6', ["Heading h6"])
-}}]}
-
-/***/ },
-/* 101 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('p', {
-    staticClass: "codepen",
-    attrs: {
-      "data-height": "265",
-      "data-theme-id": "dark",
-      "data-default-tab": "html",
-      "data-user": "johnjleider",
-      "data-embed-version": "2",
-      "data-slug-hash": slug
-    }
-  })
-}},staticRenderFns: []}
-
-/***/ },
-/* 102 */
-/***/ function(module, exports) {
-
-module.exports={render:function (){with(this) {
-  return _h('div', {
-    staticClass: "view"
-  }, [_h('section', [_h('section-header', ["Introduction"]), _h('section-text', ["Soon"]), _h('component-header', ["With Navbar"]), _h('component-example', {
-    attrs: {
-      "style": "flex-direction: column"
-    }
-  }, [_h('div', [_h('v-card', {
-    staticClass: "z-depth-0"
-  }, [_h('v-navbar', [_h('v-navbar-logo', ["Logo"]), _h('v-navbar-items', {
-    attrs: {
-      "items": items
-    }
-  })])])]), _h('div', [_h('v-card', {
-    staticClass: "z-depth-0"
-  }, [_h('v-navbar', {
-    staticClass: "red"
-  }, [_h('v-navbar-items', {
-    attrs: {
-      "items": items
-    }
-  }), _h('v-navbar-logo', {
-    staticClass: "right-align"
-  }, ["Logo"])])])]), _h('div', [_h('v-card', {
-    staticClass: "z-depth-0"
-  }, [_h('v-navbar', {
-    staticClass: "purple"
-  }, [_h('v-navbar-logo', {
-    staticClass: "center-align"
-  }, ["Logo"]), _h('v-navbar-items', [_h('li', [_h('a', {
-    staticClass: "navbar__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', ["link"])])]), _h('li', [_h('a', {
-    staticClass: "navbar__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', ["check"])])]), _h('li', [_h('a', {
-    directives: [{
-      name: "dropdown",
-      rawName: "v-dropdown:icon-dropdown",
-      arg: "icon-dropdown"
-    }],
-    staticClass: "navbar__item",
-    attrs: {
-      "href": "#!"
-    }
-  }, [_h('v-icon', ["list"])]), _h('v-dropdown', {
-    attrs: {
-      "id": "icon-dropdown",
-      "items": items,
-      "right": "right"
-    }
-  })])])])])])])])])
 }},staticRenderFns: []}
 
 /***/ },
