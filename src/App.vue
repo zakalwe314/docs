@@ -11,10 +11,7 @@
       main-side
 
       v-container(class="container--fluid")
-        transition(
-          name="slide"
-          mode="out-in"
-        )
+        transition(name="slide" mode="out-in")
           router-view(@view="view")
 </template>
 

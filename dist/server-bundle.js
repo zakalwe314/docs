@@ -137,9 +137,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
@@ -3854,9 +3851,13 @@ module.exports={render:function (){with(this) {
       "icon": "icon"
     }
   }, [_h('v-icon', ["hearing"])]), _h('v-btn', {
-    staticClass: "btn--icon"
+    attrs: {
+      "icon": "icon"
+    }
   }, [_h('v-icon', ["computer"])]), _h('v-btn', {
-    staticClass: "btn--icon"
+    attrs: {
+      "icon": "icon"
+    }
   }, [_h('v-icon', ["headset"])])])])])
 }},staticRenderFns: []}
 

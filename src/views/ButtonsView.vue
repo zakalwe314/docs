@@ -56,9 +56,9 @@
       div
         v-btn(icon)
           v-icon hearing
-        v-btn(class="btn--icon")
+        v-btn(icon)
           v-icon computer
-        v-btn(class="btn--icon")
+        v-btn(icon)
           v-icon headset
 </template>
 
