@@ -20,6 +20,18 @@
         divider="chevron_right"
         v-bind:items="items"
       )
+    div(slot="markup")
+      markup(code="xml")
+        |&lt;v-breadcrumbs
+        |   divider="/"
+        |   v-bind:items="items"&gt;
+        |&lt;/v-breadcrumbs&gt;
+      markup(code="javascript")
+        |data () {
+        |   return {
+        |     items: [{ href: '#!', text: 'Dashboard', disabled: false}]
+        |   }
+        |}
 </template>
 
 <script>

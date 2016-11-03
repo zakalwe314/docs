@@ -13,6 +13,10 @@
       v-alert(warning) 
         | This is a warning alert with 
         strong strong text.
+    markup(slot="markup")
+      |&lt;v-alert error&gt;
+      |   This is an error alert with &lt;strong&gt;strong text&lt;/strong&gt;
+      |&lt;/v-alert&gt;
 </template>
 
 <script>

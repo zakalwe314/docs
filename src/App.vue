@@ -5,7 +5,7 @@
     left-fixed-sidebar
   )
   
-    main-nav(v-bind:selected="selected")
+    main-nav(v-bind:title="title")
 
     main
       main-side
@@ -19,7 +19,7 @@
   export default {
     data () {
       return {
-        selected: ''
+        title: ''
       }
     },
 
@@ -28,8 +28,8 @@
     },
 
     methods: {
-      view (view) {
-        this.selected = view
+      view (title) {
+        this.title = title
       }
     }
   }

@@ -10,7 +10,9 @@
         router-link(
           to="/welcome",
           class="navbar__logo"
-        ) Vuetify
+        )
+          span.v V
+          | uetify
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(
@@ -43,6 +45,11 @@
             href: '/quick-start',
             text: 'Quick Start',
             icon: 'fast_forward'
+          },
+          {
+            href: '/tutorial',
+            text: 'Tutorial',
+            icon: 'help'
           },
           {
             parent: {
@@ -194,24 +201,26 @@
 <style lang="stylus">    
   .vuetify
     h1
-      padding: 1.5rem 0
       font-weight: 100
-      font-size: 1.5rem
       letter-spacing: .3rem
       text-align: center
-      
-      a
-        display: block
-        
-        &:first-letter
-          color: #2196F3
-          font-weight: 900
-          font-size: 2.5rem
-          text-decoration: overline
-          letter-spacing: 0px
+      font-size: 4rem !important
         
     .navbar__logo
-      font-size: 1.5rem
+      font-size: 1.7rem
+      display: block
+      padding: 2rem 0
+      position: relative
+      border-bottom: 1px solid rgba(#fff, .1)
+      margin-bottom: 1rem
+      
+      .v
+        color: #2196F3
+        font-weight: 900
+        font-size: 3rem
+        text-decoration: overline
+        letter-spacing: 0px
+        transition: 1s ease-out
         
   .sidebar__item-header
     color: #fff

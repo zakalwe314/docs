@@ -2,22 +2,15 @@
   div.view
     section
       section-header Introduction
-      component-type(
-        v-for="type in doc.types"
-        v-bind:type="type"
-      )
       section-text
-        dt(
-          slot="title"
-          v-html="doc.title"
-        )
-        dd(
-          slot="desc"
-          v-html="doc.desc"
-        )
+        dt(slot="title" v-html="doc.title")
+        dd(slot="desc" v-html="doc.desc")
     section
       section-header Examples
-      slot  
+      slot
+    section
+      section-header Markup
+      slot(name="markup")
     section
       section-header Parameters
       component-parameters(v-bind:params="doc.params")
