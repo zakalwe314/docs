@@ -1,19 +1,17 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     component-example(header="Default")
-      div
-        v-btn(small) Small
-        v-btn Normal
-        v-btn(large) Large
-        v-btn(flat) Flat
-        v-btn(flat, disabled) Disabled
-        v-btn(disabled) Disabled
+      v-btn(small) Small
+      v-btn Normal
+      v-btn(large) Large
+      v-btn(flat) Flat
+      v-btn(flat, disabled) Disabled
+      v-btn(disabled) Disabled
     component-example(header="Colored")
-      div
-        v-btn(primary) Primary
-        v-btn(flat, class="primary--text") Primary
-        v-btn(secondary) Secondary
-        v-btn(flat, class="secondary--text") Secondary
+      v-btn(primary) Primary
+      v-btn(flat, class="primary--text") Primary
+      v-btn(secondary) Secondary
+      v-btn(flat, class="secondary--text") Secondary
     component-example(header="Block")
       div.btn--block-example
         v-btn(block) Default
@@ -21,45 +19,72 @@
         v-btn(block, secondary) Secondary
         v-btn(block, disabled) Disabled
     component-example(header="Rounded")
-      div
-        v-btn(round) Default
-        v-btn(round, primary) Primary
-        v-btn(round, secondary) Large Secondary
-        v-btn(round, disabled) Disabled
+      v-btn(round) Default
+      v-btn(round, primary) Primary
+      v-btn(round, secondary) Large Secondary
+      v-btn(round, disabled) Disabled
     component-example(header="Outline")
-      div
-        v-btn(outline) Default
-        v-btn(outline, class="primary primary--text") Primary
-        v-btn(outline, class="secondary secondary--text") Secondary
-        v-btn(outline, disabled) Disabled
+      v-btn(outline) Default
+      v-btn(outline, class="primary primary--text") Primary
+      v-btn(outline, class="secondary secondary--text") Secondary
+      v-btn(outline, disabled) Disabled
     component-example(header="Floating")
-      div
-        v-btn(small, floating)
-          v-icon event
-        v-btn(floating)
-          v-icon add
-        v-btn(floating, large)
-          v-icon edit
-        v-btn(floating, disabled)
-          v-icon remove
+      v-btn(small, floating)
+        v-icon event
+      v-btn(floating)
+        v-icon add
+      v-btn(floating, large)
+        v-icon edit
+      v-btn(floating, disabled)
+        v-icon remove
     component-example(header="Colored Floating")
-      div
-        v-btn(floating, small, class="purple white--text")
-          v-icon cloud
-        v-btn(floating, primary)
-          v-icon attachment
-        v-btn(floating, large, secondary)
-          v-icon event
-        v-btn(floating, large, disabled)
-          v-icon room
+      v-btn(floating, small, class="purple white--text")
+        v-icon cloud
+      v-btn(floating, primary)
+        v-icon attachment
+      v-btn(floating, large, secondary)
+        v-icon event
+      v-btn(floating, large, disabled)
+        v-icon room
     component-example(header="Icon")
-      div
-        v-btn(icon)
-          v-icon hearing
-        v-btn(icon)
-          v-icon computer
-        v-btn(icon)
-          v-icon headset
+      v-btn(icon)
+        v-icon hearing
+      v-btn(icon)
+        v-icon computer
+      v-btn(icon)
+        v-icon headset
+    markup(slot="markup")
+      |&lt;v-btn&gt;
+      |   ...
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn flat&gt;
+      |   ...
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn primary&gt;
+      |   ...
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn block&gt;
+      |   ...
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn outline&gt;
+      |   ...
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn floating&gt;
+      |   ...
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn icon&gt;
+      |   &lt;v-icon&gt;profile&lt;/v-icon&gt;
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn floating icon large&gt;
+      |   &lt;v-icon&gt;edit&lt;/v-icon&gt;
+      |&lt;/v-btn&gt;
 </template>
 
 <script>
@@ -78,70 +103,64 @@
           ],
           params: [
             [
-              '<code>&lt;v-btn block&gt;',
+              '<code>&lt;v-btn&gt;',
+              '',
+              'Base Component'
+            ],
+            [
               '<code>block</code>',
               'Applies the btn--block class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn flat&gt;',
               '<code>flat</code>',
               'Applies the btn--flat class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn floating&gt;',
               '<code>floating</code>',
               'Applies the btn--floating class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn icon&gt;',
               '<code>icon</code>',
               'Applies the btn--icon class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn large&gt;',
               '<code>large</code>',
               'Applies the btn--large class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn outline&gt;',
               '<code>outline</code>',
               'Applies the btn--outline class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn primary&gt;',
               '<code>primary</code>',
               'Applies the application\s <span class="primary--text">primary</span> color',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn round&gt;',
               '<code>round</code>',
               'Applies the btn--round class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn secondary&gt;',
               '<code>secondary</code>',
               'Applies the application\s <span class="secondary--text">secondary</span> color',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn small&gt;',
               '<code>small</code>',
               'Applies the btn--small class',
-              ''
+              'Default: false'
             ],
             [
-              '<code>&lt;v-btn type="submit"&gt;',
               '<code>type</code>',
               'Sets the buttons type attribute',
-              ''
+              'Default: false'
             ]
           ]
         }

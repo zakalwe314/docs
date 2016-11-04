@@ -1033,7 +1033,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
-//
 
 /* harmony default export */ exports["default"] = {
   props: {
@@ -1533,17 +1532,27 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
-    return {
+    var data = {
       doc: {
         title: 'Alert',
-        desc: 'Soon',
+        desc: 'Coming Soon',
         types: ['comp', 'slot'],
-        params: []
-      }
+        params: [['<code>&lt;v-alert&gt;</code>', '', 'Base component']]
+      },
+      types: ['success', 'info', 'warning', 'error']
     };
+
+    data.types.forEach(function (i) {
+      data.doc.params.push(['<code>' + i + '</code>', 'Applies the alert--' + i + ' class', 'Default: false']);
+    });
+
+    return data;
   },
   mounted: function mounted() {
     this.$emit('view', 'Alerts');
@@ -1647,6 +1656,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
@@ -1655,7 +1665,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
         title: 'Breadcrumbs',
         desc: '\n          <p>\n            The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or character as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.\n          </p>\n        ',
         types: ['comp', 'slot'],
-        params: [['<code>&lt;v-breadcrumbs&gt;</code>', '', '', 'Base component'], ['<code>&lt;v-breadcrumbs divider="-"&gt;</code>', '<code>divider</code>', 'Specifies the dividing character', 'Default: /'], ['<code>&lt;v-breadcrumbs divider="chevron_right" icon&gt;</code>', '<code>icon</code>', 'Specifies that the divider is an icon', 'Default: false'], ['<code>&lt;v-breadcrumbs v-bind:items="items"&gt;</code>', '<code>items</code>', 'The array of Breadcrumbs', 'Allowed properties: href, text, disabled'], ['<code>&lt;v-breadcrumbs-item&gt;</code>', '', '', 'Base component'], ['<code>&lt;v-breadcrumbs-item disabled&gt;</code>', '<code>disabled</code>', 'Disables the breadcrumb', 'Default: false'], ['<code>&lt;v-breadcrumbs-item v-bind:item="item"&gt;</code>', '<code>item<code>', 'The item object', 'Allowed object properties: href, text']]
+        params: [['<code>&lt;v-breadcrumbs&gt;</code>', '', 'Base component'], ['<code>divider</code>', 'Specifies the dividing character', 'Default: /'], ['<code>icon</code>', 'Specifies that the divider is an icon', 'Default: false'], ['<code>items</code>', 'The array of Breadcrumbs', 'Allowed properties: href, text, disabled'], ['<code>&lt;v-breadcrumbs-item&gt;</code>', '', 'Base component'], ['<code>disabled</code>', 'Disables the breadcrumb', 'Default: false'], ['<code>item<code>', 'The item object', 'Allowed object properties: href, text']]
       },
       items: [{
         href: '#!',
@@ -1746,6 +1756,31 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
@@ -1754,7 +1789,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
         title: 'Button',
         desc: '\n          <p>\n            The <code>v-btn</code> component replaces the standard html button with a material design theme and a multitude of options. Any color helper class can be used to alter the background or text color. Remember that all event captures must be done using the <strong>.native</strong> modifier.\n          </p>\n        ',
         types: ['comp', 'slot'],
-        params: [['<code>&lt;v-btn block&gt;', '<code>block</code>', 'Applies the btn--block class', ''], ['<code>&lt;v-btn flat&gt;', '<code>flat</code>', 'Applies the btn--flat class', ''], ['<code>&lt;v-btn floating&gt;', '<code>floating</code>', 'Applies the btn--floating class', ''], ['<code>&lt;v-btn icon&gt;', '<code>icon</code>', 'Applies the btn--icon class', ''], ['<code>&lt;v-btn large&gt;', '<code>large</code>', 'Applies the btn--large class', ''], ['<code>&lt;v-btn outline&gt;', '<code>outline</code>', 'Applies the btn--outline class', ''], ['<code>&lt;v-btn primary&gt;', '<code>primary</code>', 'Applies the application\s <span class="primary--text">primary</span> color', ''], ['<code>&lt;v-btn round&gt;', '<code>round</code>', 'Applies the btn--round class', ''], ['<code>&lt;v-btn secondary&gt;', '<code>secondary</code>', 'Applies the application\s <span class="secondary--text">secondary</span> color', ''], ['<code>&lt;v-btn small&gt;', '<code>small</code>', 'Applies the btn--small class', ''], ['<code>&lt;v-btn type="submit"&gt;', '<code>type</code>', 'Sets the buttons type attribute', '']]
+        params: [['<code>&lt;v-btn&gt;', '', 'Base Component'], ['<code>block</code>', 'Applies the btn--block class', 'Default: false'], ['<code>flat</code>', 'Applies the btn--flat class', 'Default: false'], ['<code>floating</code>', 'Applies the btn--floating class', 'Default: false'], ['<code>icon</code>', 'Applies the btn--icon class', 'Default: false'], ['<code>large</code>', 'Applies the btn--large class', 'Default: false'], ['<code>outline</code>', 'Applies the btn--outline class', 'Default: false'], ['<code>primary</code>', 'Applies the application\s <span class="primary--text">primary</span> color', 'Default: false'], ['<code>round</code>', 'Applies the btn--round class', 'Default: false'], ['<code>secondary</code>', 'Applies the application\s <span class="secondary--text">secondary</span> color', 'Default: false'], ['<code>small</code>', 'Applies the btn--small class', 'Default: false'], ['<code>type</code>', 'Sets the buttons type attribute', 'Default: false']]
       }
     };
   },
@@ -1880,6 +1915,23 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
@@ -1888,7 +1940,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
         title: 'Card',
         desc: '\n          <p>\n            The <code>v-card</code> component is a versatile component that can be used for anything from a panel to a static image. The <strong>card</strong> component has numerous helper components to make markup as easy as possible. Components that have no listed options use <strong class="green--text">Vue\'s</strong> functional component option for faster rendering and serve as markup sugar to make building easier.\n          </p>\n        ',
         types: ['comp', 'slot'],
-        params: [['<code>&lt;v-card v-bind:height="500px"&gt;</code>', '<code>height</code>', 'Manually define the height of the Card', 'Type: String'], ['<code>&lt;v-card horizontal&gt;</code>', '<code>horizontal</code>', 'Applies the card--horizontal class', 'Default: false'], ['<code>&lt;v-card img="img.png"&gt;</code>', '<code>img</code>', 'Specifies an image background', 'Type: String'], ['<code>&lt;v-card-title height="50px"&gt;</code>', '<code>height</code>', 'Manually define the height of the Card Title', 'Type: String'], ['<code>&lt;v-card-title img="img.png"&gt;</code>', '<code>img</code>', 'Specifies an image background', 'Type: String'], ['<code>&lt;v-card-menu&gt;</code>', '', 'Helper component with the card__menu class', 'Functional Component'], ['<code>&lt;v-card-stack&gt;</code>', '', 'Helper component with the card__stack class', 'Functional Component'], ['<code>&lt;v-card-actions&gt;</code>', '', 'Helper component with the card__actions class', 'Functional Component'], ['<code>&lt;v-card-text&gt;</code>', '', 'Helper component with the card__text class', 'Functional Component'], ['<code>&lt;v-card-title-actions&gt;</code>', '', 'Helper component with the card__title-actions class', 'Functional Component'], ['<code>&lt;v-card-title-text&gt;</code>', '', 'Helper component with the card__title-text class', 'Functional Component']]
+        params: [['<code>&lt;v-card&gt;</code>', '', 'Base Component'], ['<code>height</code>', 'Manually define the height of the Card', 'Type: String'], ['<code>horizontal</code>', 'Applies the card--horizontal class', 'Default: false'], ['<code>img</code>', 'Specifies an image background', 'Type: String'], ['<code>height</code>', 'Manually define the height of the Card Title', 'Type: String'], ['<code>img</code>', 'Specifies an image background', 'Type: String'], ['<code>&lt;v-card-menu&gt;</code>', '', 'Functional Component'], ['<code>&lt;v-card-stack&gt;</code>', '', 'Functional Component'], ['<code>&lt;v-card-actions&gt;</code>', '', 'Functional Component'], ['<code>&lt;v-card-text&gt;</code>', '', 'Functional Component'], ['<code>&lt;v-card-title-actions&gt;</code>', '', 'Functional Component'], ['<code>&lt;v-card-title-text&gt;</code>', '', 'Functional Component']]
       },
       card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.',
       title_text: '\n        <p>Card Title</p>\n      '
@@ -4058,7 +4110,6 @@ if (typeof __vue_options__ === "function") {
 
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-2c771ca6"
 
 module.exports = __vue_exports__
 
@@ -4663,7 +4714,7 @@ module.exports={render:function (){with(this) {
     })])
   })])])
 }},staticRenderFns: [function (){with(this) {
-  return _h('thead', [_h('tr', [_h('th', ["Markup"]), _h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
+  return _h('thead', [_h('tr', [_h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
 }}]}
 
 /***/ },
@@ -4985,7 +5036,7 @@ module.exports={render:function (){with(this) {
     attrs: {
       "header": "Default"
     }
-  }, [_h('div', [_h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "small": "small"
     }
@@ -5006,11 +5057,11 @@ module.exports={render:function (){with(this) {
     attrs: {
       "disabled": "disabled"
     }
-  }, ["Disabled"])])]), _h('component-example', {
+  }, ["Disabled"])]), _h('component-example', {
     attrs: {
       "header": "Colored"
     }
-  }, [_h('div', [_h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "primary": "primary"
     }
@@ -5028,7 +5079,7 @@ module.exports={render:function (){with(this) {
     attrs: {
       "flat": "flat"
     }
-  }, ["Secondary"])])]), _h('component-example', {
+  }, ["Secondary"])]), _h('component-example', {
     attrs: {
       "header": "Block"
     }
@@ -5057,7 +5108,7 @@ module.exports={render:function (){with(this) {
     attrs: {
       "header": "Rounded"
     }
-  }, [_h('div', [_h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "round": "round"
     }
@@ -5076,11 +5127,11 @@ module.exports={render:function (){with(this) {
       "round": "round",
       "disabled": "disabled"
     }
-  }, ["Disabled"])])]), _h('component-example', {
+  }, ["Disabled"])]), _h('component-example', {
     attrs: {
       "header": "Outline"
     }
-  }, [_h('div', [_h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "outline": "outline"
     }
@@ -5099,11 +5150,11 @@ module.exports={render:function (){with(this) {
       "outline": "outline",
       "disabled": "disabled"
     }
-  }, ["Disabled"])])]), _h('component-example', {
+  }, ["Disabled"])]), _h('component-example', {
     attrs: {
       "header": "Floating"
     }
-  }, [_h('div', [_h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "small": "small",
       "floating": "floating"
@@ -5122,11 +5173,11 @@ module.exports={render:function (){with(this) {
       "floating": "floating",
       "disabled": "disabled"
     }
-  }, [_h('v-icon', ["remove"])])])]), _h('component-example', {
+  }, [_h('v-icon', ["remove"])])]), _h('component-example', {
     attrs: {
       "header": "Colored Floating"
     }
-  }, [_h('div', [_h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "purple white--text",
     attrs: {
       "floating": "floating",
@@ -5149,11 +5200,11 @@ module.exports={render:function (){with(this) {
       "large": "large",
       "disabled": "disabled"
     }
-  }, [_h('v-icon', ["room"])])])]), _h('component-example', {
+  }, [_h('v-icon', ["room"])])]), _h('component-example', {
     attrs: {
       "header": "Icon"
     }
-  }, [_h('div', [_h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "icon": "icon"
     }
@@ -5165,7 +5216,9 @@ module.exports={render:function (){with(this) {
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', ["headset"])])])])])
+  }, [_h('v-icon', ["headset"])])]), _h('markup', {
+    slot: "markup"
+  }, ["<v-btn>\n  ...\n</v-btn>\n \n<v-btn flat>\n  ...\n</v-btn>\n \n<v-btn primary>\n  ...\n</v-btn>\n \n<v-btn block>\n  ...\n</v-btn>\n \n<v-btn outline>\n  ...\n</v-btn>\n \n<v-btn floating>\n  ...\n</v-btn>\n \n<v-btn icon>\n  <v-icon>profile</v-icon>\n</v-btn>\n \n<v-btn floating icon large>\n  <v-icon>edit</v-icon>\n</v-btn>"])])
 }},staticRenderFns: []}
 
 /***/ },
@@ -5389,7 +5442,8 @@ module.exports={render:function (){with(this) {
 module.exports={render:function (){with(this) {
   return _h('doc-view', {
     attrs: {
-      "doc": doc
+      "doc": doc,
+      "id": "alerts"
     }
   }, [_h('component-example', {
     attrs: {
@@ -5553,7 +5607,9 @@ module.exports={render:function (){with(this) {
     attrs: {
       "flat": "flat"
     }
-  }, ["Add to Calendar"]), _h('v-col-spacer'), _h('v-icon', ["event"])])])])])])
+  }, ["Add to Calendar"]), _h('v-col-spacer'), _h('v-icon', ["event"])])])])]), _h('markup', {
+    slot: "markup"
+  }, ["<v-card class=\"green\">\n  ...\n</v-card>\n \n<v-card horizontal>\n  <v-card-title img=\"...\"></>\n  <v-card-stack>\n      <v-card-text>\n          <p>...</p>\n      </v-card-text>\n      <v-card-actions>\n          <v-btn flat class=\"secondary--text\">...</v-btn>\n      </v-card-actions>\n  </v-card-stack>\n</v-card>"])])
 }},staticRenderFns: [function (){with(this) {
   return _h('span', ["Upload"])
 }},function (){with(this) {
@@ -5760,27 +5816,30 @@ module.exports={render:function (){with(this) {
     }
   }, [_h('component-example', {
     attrs: {
-      "id": "alerts"
+      "id": "alerts",
+      "header": "Contextual"
     }
   }, [_h('v-alert', {
     attrs: {
-      "error": "error"
+      "success": "success"
     }
-  }, [" This is an error alert with ", _m(0)]), _h('v-alert', {
+  }, [" This is a success alert with ", _m(0)]), _h('v-alert', {
     attrs: {
       "info": "info"
     }
   }, [" This is an info alert with ", _m(1)]), _h('v-alert', {
     attrs: {
-      "success": "success"
-    }
-  }, [" This is a success alert with ", _m(2)]), _h('v-alert', {
-    attrs: {
       "warning": "warning"
     }
-  }, [" This is a warning alert with ", _m(3)])]), _h('markup', {
+  }, [" This is a warning alert with ", _m(2)]), _h('v-alert', {
+    attrs: {
+      "error": "error"
+    }
+  }, [" This is a error alert with ", _m(3)])]), _h('markup', {
     slot: "markup"
-  }, ["<v-alert error>\n  This is an error alert with <strong>strong text</strong>\n</v-alert>"])])
+  }, [_l((types), function(type) {
+    return [" \n<v-alert " + _s(type) + ">\n  ...\n</v-alert>\n "]
+  })])])
 }},staticRenderFns: [function (){with(this) {
   return _h('strong', ["strong text."])
 }},function (){with(this) {
@@ -6278,7 +6337,7 @@ module.exports={render:function (){with(this) {
     attrs: {
       "code": "xml"
     }
-  }, ["<v-breadcrumbs\n  divider=\"/\"\n  v-bind:items=\"items\">\n</v-breadcrumbs>"]), _h('markup', {
+  }, ["<v-breadcrumbs divider=\"/\" v-bind:items=\"items\"></v-breadcrumbs>\n \n<v-breadcrumbs divider=\"/\">\n  <v-breadcrumbs-item v-for(item in items) v-bind:item=\"item\"></v-breadcrumbs-item>\n</v-breadcrumbs>"]), _h('markup', {
     attrs: {
       "code": "javascript"
     }

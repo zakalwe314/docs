@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="alerts")
     component-example(header="Basic")
       div
         v-card
@@ -108,6 +108,23 @@
             v-btn(flat, class="white--text") Add to Calendar
             v-col-spacer
             v-icon event
+
+    markup(slot="markup")
+      |&lt;v-card class="green"&gt;
+      |   ...
+      |&lt;/v-card&gt;
+      |&nbsp;
+      |&lt;v-card horizontal&gt;
+      |   &lt;v-card-title img="..."&gt;&lt;/&gt;
+      |   &lt;v-card-stack&gt;
+      |       &lt;v-card-text&gt;
+      |           &lt;p&gt;...&lt;/p&gt;
+      |       &lt;/v-card-text&gt;
+      |       &lt;v-card-actions&gt;
+      |           &lt;v-btn flat class="secondary--text"&gt;...&lt;/v-btn&gt;
+      |       &lt;/v-card-actions&gt;
+      |   &lt;/v-card-stack&gt;
+      |&lt;/v-card&gt;
 </template>
 
 <script>
@@ -126,31 +143,31 @@
           ],
           params: [
             [
-              '<code>&lt;v-card v-bind:height="500px"&gt;</code>',
+              '<code>&lt;v-card&gt;</code>',
+              '',
+              'Base Component'
+            ],
+            [
               '<code>height</code>',
               'Manually define the height of the Card',
               'Type: String'
             ],
             [
-              '<code>&lt;v-card horizontal&gt;</code>',
               '<code>horizontal</code>',
               'Applies the card--horizontal class',
               'Default: false'
             ],
             [
-              '<code>&lt;v-card img="img.png"&gt;</code>',
               '<code>img</code>',
               'Specifies an image background',
               'Type: String'
             ],
             [
-              '<code>&lt;v-card-title height="50px"&gt;</code>',
               '<code>height</code>',
               'Manually define the height of the Card Title',
               'Type: String'
             ],
             [
-              '<code>&lt;v-card-title img="img.png"&gt;</code>',
               '<code>img</code>',
               'Specifies an image background',
               'Type: String'
@@ -158,37 +175,31 @@
             [
               '<code>&lt;v-card-menu&gt;</code>',
               '',
-              'Helper component with the card__menu class',
               'Functional Component'
             ],
             [
               '<code>&lt;v-card-stack&gt;</code>',
               '',
-              'Helper component with the card__stack class',
               'Functional Component'
             ],
             [
               '<code>&lt;v-card-actions&gt;</code>',
               '',
-              'Helper component with the card__actions class',
               'Functional Component'
             ],
             [
               '<code>&lt;v-card-text&gt;</code>',
               '',
-              'Helper component with the card__text class',
               'Functional Component'
             ],
             [
               '<code>&lt;v-card-title-actions&gt;</code>',
               '',
-              'Helper component with the card__title-actions class',
               'Functional Component'
             ],
             [
               '<code>&lt;v-card-title-text&gt;</code>',
               '',
-              'Helper component with the card__title-text class',
               'Functional Component'
             ]
           ]
@@ -206,26 +217,40 @@
   }
 </script>
 
-<style lang="stylus"
-       scoped
->    
-  .portrait    
-    flex-basis: 300px !important
-    margin: 1rem
-    
-    .card__actions
-      background: rgba(0, 0, 0, .2)
+<style lang="stylus">
+  #alerts
+    .portrait
+      margin: 1rem 0
       
-  .event
-    flex-basis: 300px !important
-    
-    .card__actions
-      border-color: rgba(255, 255, 255, .3)
+      .card
+        flex-basis: 300px
       
-  .card__title-actions
-    margin-left: auto
-    
-  .component-example
-    > div
-      padding: 1rem 0
+      .card__actions
+        background: rgba(0, 0, 0, .2)
+        
+    .event
+      .card
+        flex-basis: 300px
+      
+      .card__actions
+        border-color: rgba(255, 255, 255, .3)
+        
+    .card__title-actions
+      margin-left: auto
+      
+    .component-example
+      flex-flow: row wrap
+      justify-content: space-between
+      
+      > div
+        flex: 1 0 50%
+        display: flex
+        justify-content: space-between
+        padding: 1rem
+        
+        @media screen and (max-width: 768px)
+          flex: 1 0 100%
+        
+        > *
+          margin: 0 auto
 </style>

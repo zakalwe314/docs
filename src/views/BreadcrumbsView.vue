@@ -22,9 +22,10 @@
       )
     div(slot="markup")
       markup(code="xml")
-        |&lt;v-breadcrumbs
-        |   divider="/"
-        |   v-bind:items="items"&gt;
+        |&lt;v-breadcrumbs divider="/" v-bind:items="items"&gt;&lt;/v-breadcrumbs&gt;
+        |&nbsp;
+        |&lt;v-breadcrumbs divider="/"&gt;
+        |   &lt;v-breadcrumbs-item v-for(item in items) v-bind:item="item"&gt;&lt;/v-breadcrumbs-item&gt;
         |&lt;/v-breadcrumbs&gt;
       markup(code="javascript")
         |data () {
@@ -50,25 +51,21 @@
           ],
           params: [
             [
-              `<code>&lt;v-breadcrumbs&gt;</code>`,
-              '',
+              '<code>&lt;v-breadcrumbs&gt;</code>',
               '',
               'Base component'
             ],
             [
-              '<code>&lt;v-breadcrumbs divider="-"&gt;</code>',
               '<code>divider</code>',
               'Specifies the dividing character',
               'Default: /'
             ],
             [
-              '<code>&lt;v-breadcrumbs divider="chevron_right" icon&gt;</code>',
               '<code>icon</code>',
               'Specifies that the divider is an icon',
               'Default: false'
             ],
             [
-              '<code>&lt;v-breadcrumbs v-bind:items="items"&gt;</code>',
               '<code>items</code>',
               'The array of Breadcrumbs',
               'Allowed properties: href, text, disabled'
@@ -76,17 +73,14 @@
             [
               '<code>&lt;v-breadcrumbs-item&gt;</code>',
               '',
-              '',
               'Base component'
             ],
             [
-              '<code>&lt;v-breadcrumbs-item disabled&gt;</code>',
               '<code>disabled</code>',
               'Disables the breadcrumb',
               'Default: false'
             ],
             [
-              '<code>&lt;v-breadcrumbs-item v-bind:item="item"&gt;</code>',
               '<code>item<code>',
               'The item object',
               'Allowed object properties: href, text'

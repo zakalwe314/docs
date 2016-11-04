@@ -2,7 +2,6 @@
   table.table--component
     thead
       tr
-        th Markup
         th Option
         th Effect
         th Remarks

@@ -15,6 +15,7 @@
   .component-example
     display: flex
     justify-content: center
+    align-items: center
     padding: 2rem 1rem
     background: rgba(0, 0, 0, .03)
     margin: 0 -1rem 1rem
