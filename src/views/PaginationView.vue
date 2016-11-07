@@ -1,24 +1,31 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     component-example(header="Short")
-      div
-        v-pagination(
-          :length="5",
-          v-model="page"
-        )
+      v-pagination(
+        v-bind:length.number="5",
+        v-model="page"
+      )
     component-example(header="Long")
-      div
-        v-pagination(
-          :length="15",
-          v-model="page2"
-        )
+      v-pagination(
+        v-bind:length.number="15",
+        v-model="page2"
+      )
     component-example(header="Round")
-      div
-        v-pagination(
-          :length="4",
-          v-model="page3"
-          circle
-        )
+      v-pagination(
+        v-bind:length.number="4",
+        v-model="page3"
+        circle
+      )
+    div(slot="markup")
+      markup
+        |&lt;v-pagination v-bind:length="length" v-model="page"&gt;&lt;/v-pagination&gt;
+      markup
+        |data () {
+        |   return {
+        |     length: 5,
+        |     page: 1
+        |   }
+        |}
 </template>
 
 <script>
@@ -27,11 +34,32 @@
       return {
         doc: {
           title: 'Pagination',
-          desc: 'Soon',
+          desc: 'Coming Soon',
           types: [
             'comp'
           ],
-          params: []
+          params: [
+            [
+              '<code>&lt;v-pagination&gt;</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>length</code>',
+              'The length of the paginator',
+              'Default: 0'
+            ],
+            [
+              '<code>round</code>',
+              'Applies the pagination--round class',
+              'Default: false'
+            ],
+            [
+              '<code>model</code>',
+              '',
+              'Accepts Vue v-model'
+            ],
+          ]
         },
         page: 3,
         page2: 7,

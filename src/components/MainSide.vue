@@ -183,7 +183,7 @@
             ]
           },
           {
-            href: 'layouts',
+            href: '/layouts',
             text: 'Layouts',
             icon: 'view_quilt'
           },
@@ -205,6 +205,7 @@
       letter-spacing: .3rem
       text-align: center
       font-size: 4rem !important
+      margin: 0
         
     .navbar__logo
       font-size: 1.7rem

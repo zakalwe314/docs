@@ -1,7 +1,6 @@
 <template lang="pug">
   div.view
     section
-      section-header Introduction
       section-text
         dt(slot="title" v-html="doc.title")
         dd(slot="desc" v-html="doc.desc")

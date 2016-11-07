@@ -1,18 +1,14 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="alerts")
     component-example(id="alerts" header="Contextual")
-      v-alert(success) 
-        | This is a success alert with 
-        strong strong text.
+      v-alert(success)
+        | This is a success alert
       v-alert(info) 
-        | This is an info alert with 
-        strong strong text.
+        | This is an info alert
       v-alert(warning) 
-        | This is a warning alert with 
-        strong strong text.
+        | This is a warning alert
       v-alert(error) 
-        | This is a error alert with 
-        strong strong text.
+        | This is a error alert
     markup(slot="markup")
       template(v-for="type in types")
         |&nbsp;
@@ -63,7 +59,11 @@
 <style lang="stylus">
   #alerts .component-example
     flex-wrap: wrap
-    
+      
     .alert
       flex-basis: 100%
+      
+      > *
+        margin: 0
+        justify-content: unset
 </style>

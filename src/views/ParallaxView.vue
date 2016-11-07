@@ -1,25 +1,28 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    div#parallax-example
-      v-parallax(
-        src="http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
-      )
-        v-parallax-content
-          h1.white--text Explore Space
-          p Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. 
-          div
-            v-btn(
-              class="transparent white--text buy",
-              large
-            )
-              | Buy a Ship
-              v-icon(right) keyboard_arrow_right
-            v-btn(
-              class="transparent white--text explore",
-              large
-            )
-              | Explore
-              v-icon(right) search
+    v-parallax(
+      src="http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg"
+      v-bind:height="300"
+    )
+    v-parallax(
+      src="http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
+    )
+      v-parallax-content
+        h1.white--text Explore Space
+        p Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. 
+        div
+          v-btn(large primary)
+            | Buy a Ship
+            v-icon(right) keyboard_arrow_right
+          v-btn(large secondary)
+            | Explore
+            v-icon(right) search
+    markup(slot="markup")
+      |&lt;v-parallax src="..."&gt;
+      |   &lt;v-parallax-content&gt;
+      |     ...
+      |   &lt;/v-parallax-content&gt;
+      |&lt;/v-parallax&gt;
 </template>
 
 <script>
@@ -30,11 +33,37 @@
       return {
         doc: {
           title: 'Parallax',
-          desc: 'Soon',
+          desc: 'Coming Soon',
           types: [
             'comp', 'slot'
           ],
-          params: []
+          params: [
+            [
+              '<code>&lt;v-parallax&gt;</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>src</code>',
+              'The image to parallax',
+              'Required: true'
+            ],
+            [
+              '<code>height</code>',
+              'The height of the parallax container',
+              'Default: 500'
+            ],
+            [
+              '<code>&lt;v-parallax-content&gt;</code>',
+              '',
+              'Functional component'
+            ],
+            [
+              '<code>opacity-offset</code>',
+              'Sets offset fade for content. Set 0 for none',
+              'Default: .7'
+            ]
+          ]
         }
       }
     },
@@ -46,11 +75,8 @@
 </script>
 
 <style lang="stylus" scoped>
-  .view 
-    padding-bottom: 100vh
-    
-  #parallax-example
-    padding: 0 2rem
+  .parallax
+    margin: 1rem 0
     
   .parallax__content    
     h1
@@ -68,31 +94,4 @@
     .btn
       border-radius: 0
       margin: 4rem 2rem 0 0
-      
-      &:before
-        position: absolute
-        top: 0
-        left: 0
-        content: ""
-        width: 100%
-        height: 100%
-        transform: skew(-10deg)
-        z-index: -1
-        transition: .3s ease-out
-        
-      &.buy
-        &:hover          
-          &:before
-            background: rgba(#F44336, .5)
-            
-        &:before
-          background: #F44336
-          
-      &.explore
-        &:hover          
-          &:before
-            background: rgba(#78909c, .5)
-            
-        &:before
-          background: #78909c
 </style>

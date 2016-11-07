@@ -49,6 +49,9 @@
           case this.match('css'):
             this.subTitle = 'CSS classes to help reduce the need for manual class declaration'
           break
+          case this.match('layouts'):
+            this.subTitle = 'Setup the perfect layout in a flash'
+          break
           default:
             this.subTitle = 'Learn about the Vuetify framework'
           break
@@ -65,7 +68,6 @@
 <style lang="stylus" scoped>
   .navbar
     align-items: center
-    min-height: 15rem
     color: #fff
     padding: 2rem 0
     
@@ -78,8 +80,7 @@
       align-items: space-between
       justify-content: space-between
       flex-direction: column
-      margin: 0 1rem
-      
+      margin: 0 1rem 1rem      
       span
         font-weight: 200
         font-size: 2rem
@@ -91,6 +92,6 @@
       color: #fff
       font-size: 4rem
       font-weight: 400
-      margin-bottom: 1rem
+      margin: 0 0 1rem
       word-break: break-word
 </style>

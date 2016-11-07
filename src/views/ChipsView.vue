@@ -41,6 +41,27 @@
       v-chip(close, class="red white--text") Remove
       v-chip(close, outline, class="green green--text") Success
       v-chip(close, outline, label, class="orange orange--text") Complete
+    markup(slot="markup")
+      |&lt;v-chip&gt;
+      |   ...
+      |&lt;/v-chip&gt;
+      |&nbsp;
+      |&lt;v-chip label&gt;
+      |   ...
+      |&lt;/v-chip&gt;
+      |&nbsp;
+      |&lt;v-chip outline&gt;
+      |   &lt;v-icon left&gt;list&lt;/v-icon&gt;
+      |   ...
+      |&lt;/v-chip&gt;
+      |&nbsp;
+      |&lt;v-chip small&gt;
+      |   ...
+      |&lt;/v-chip&gt;
+      |&nbsp;
+      |&lt;v-chip close&gt;
+      |   ...
+      |&lt;/v-chip&gt;
 </template>
 
 <script>
@@ -49,31 +70,32 @@
       return {
         doc: {
           title: 'Chip',
-          desc: `Soon`,
+          desc: `Coming Soon`,
           types: [
             'comp', 'slot'
           ],
           params: [
             [
-              '<code>&lt;v-chip close&gt;</code>',
+              '<code>v-chip</code>',
+              '',
+              'Base component'
+            ],
+            [
               '<code>close</code>',
               'Removes the chip',
               'Default: false'
             ],
             [
-              '<code>&lt;v-chip label&gt;</code>',
               '<code>label</code>',
               'Applies the chip--label class',
               'Default: false'
             ],
             [
-              '<code>&lt;v-chip outline&gt;</code>',
               '<code>outline</code>',
               'Applies the chip--outline class',
               'Default: false'
             ],
             [
-              '<code>&lt;v-chip small&gt;</code>',
               '<code>small</code>',
               'Applies the chip--small class',
               'Default: false'

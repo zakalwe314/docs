@@ -1,7 +1,4 @@
 <template lang="pug">
-  v-footer(class="grey darken-3")
-    v-container
-      v-row
-        v-grid(xs12)
-          span.right &copy; Copyright 2016
+  v-footer
+    div(class="text-xs-right") &copy; 2016 John Leider
 </template>

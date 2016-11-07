@@ -1,15 +1,37 @@
 <template lang="pug">
-  h2(class="secondary--text primary--after")
+  h2(
+    class="section-header secondary--text primary--after"
+    v-bind:style="styles"
+  )
     slot
 </template>
+
+<script>
+  export default {
+    props: {
+      first: Boolean
+    },
+
+    computed: {
+      styles () {
+        let styles = {}
+
+        if (this.first) {
+          styles['margin-top'] = 0
+        }
+
+        return styles
+      }
+    }
+  }
+</script>
 
 <style lang="stylus"
        scoped
 >
-  h2
+  .section-header
     letter-spacing: 2px
     text-align: left !important
-    margin: 4rem 0
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis

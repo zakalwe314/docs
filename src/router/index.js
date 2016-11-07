@@ -41,7 +41,6 @@ export default new Router({
     { path: '/components/collapsible', component: CollapsibleView },
     { path: '/components/dropdowns', component: DropdownsView },
     { path: '/components/forms', component: FormsView },
-    { path: '/components/layouts', component: LayoutsView },
     { path: '/components/lists', component: ListsView },
     { path: '/components/pagination', component: PaginationView },
     { path: '/components/parallax', component: ParallaxView },
@@ -52,6 +51,7 @@ export default new Router({
     { path: '/functions/toasts', component: ToastsView },
     { path: '/directives/badges', component: BadgesView },
     { path: '/directives/tooltips', component: TooltipsView },
+    { path: '/layouts', component: LayoutsView },
     { path: '/css/typography', component: TypographyView },
     { path: '*', redirect: '/' }
   ]
