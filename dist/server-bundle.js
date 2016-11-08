@@ -1519,7 +1519,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 
 /* harmony default export */ exports["default"] = {
-  mounted: function mounted() {
+  created: function created() {
     this.$emit('view', 'Vuetify');
   }
 };
@@ -2425,18 +2425,17 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
     return {
       doc: {
         title: 'Layouts',
-        desc: 'Soon'
-      },
-      fixed: false,
-      navbar: true,
-      navFixed: false,
-      sidebar: false
+        desc: 'Vuetify supports numerous different pre-defined layouts, right out of the box.'
+      }
     };
   },
   mounted: function mounted() {
@@ -6635,127 +6634,155 @@ module.exports={render:function (){with(this) {
     }
   }, [_h('component-example', {
     attrs: {
-      "header": "Layout Designer"
+      "header": "Navbar and Footer"
     }
-  }, [_h('v-container', [_h('v-row', [_h('v-col', {
-    attrs: {
-      "xs12": "xs12"
-    }
-  }, [_h('v-card', {
-    staticClass: "z-depth-0"
-  }, [_h('v-card-text', [_h('v-container', {
+  }, [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
   }, [_h('v-row', [_h('v-col', {
     attrs: {
-      "xs3": "xs3"
+      "sm6": "sm6",
+      "md4": "md4",
+      "lg4": "lg4"
     }
-  }, [_h('v-checkbox', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (sidebar),
-      expression: "sidebar"
-    }],
+  }, [_m(0)]), _h('v-col', {
     attrs: {
-      "label": "Sidebar",
-      "id": "sidebar",
-      "name": "sidebar"
-    },
-    domProps: {
-      "value": (sidebar)
-    },
-    on: {
-      "input": function($event) {
-        sidebar = $event
-      }
+      "sm6": "sm6",
+      "md4": "md4",
+      "lg4": "lg4"
     }
-  }), _h('v-checkbox', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (fixed),
-      expression: "fixed"
-    }],
+  }, [_m(1)]), _h('v-col', {
     attrs: {
-      "label": "Fixed",
-      "id": "fixed",
-      "name": "fixed",
-      "disabled": !sidebar
-    },
-    domProps: {
-      "value": (fixed)
-    },
-    on: {
-      "input": function($event) {
-        fixed = $event
-      }
+      "sm6": "sm6",
+      "md4": "md4",
+      "lg4": "lg4"
     }
-  })]), _h('v-col', {
+  }, [_m(2)])])])]), _h('component-example', {
     attrs: {
-      "xs3": "xs3"
+      "header": "Navbar and Sidebar"
     }
-  }, [_h('v-checkbox', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (navbar),
-      expression: "navbar"
-    }],
+  }, [_h('v-container', {
     attrs: {
-      "label": "Navbar",
-      "id": "navbar",
-      "name": "navbar"
-    },
-    domProps: {
-      "value": (navbar)
-    },
-    on: {
-      "input": function($event) {
-        navbar = $event
-      }
+      "fluid": "fluid"
     }
-  }), _h('v-checkbox', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (navFixed),
-      expression: "navFixed"
-    }],
+  }, [_h('v-row', [_h('v-col', {
     attrs: {
-      "label": "Fixed",
-      "id": "nav-fixed",
-      "name": "nav-fixed",
-      "disabled": !navbar
-    },
-    domProps: {
-      "value": (navFixed)
-    },
-    on: {
-      "input": function($event) {
-        navFixed = $event
-      }
+      "sm6": "sm6",
+      "md6": "md6",
+      "lg6": "lg6"
     }
-  })])])])])]), _h('div', {
-    staticClass: "layout layout--1"
-  }, [(navbar) ? _h('v-navbar', {
+  }, [_m(3)]), _h('v-col', {
     attrs: {
-      "fixed": navFixed
+      "sm6": "sm6",
+      "md6": "md6",
+      "lg6": "lg6"
     }
-  }) : _e(), _h('div', {
-    staticClass: "layout__main"
-  }, [(sidebar) ? _h('v-sidebar', {
-    staticClass: "secondary",
+  }, [_m(4)])])])]), _h('component-example', {
     attrs: {
-      "id": "layout-1-sidebar",
-      "fixed": fixed
+      "header": "Navbar, Sidebar and Footer"
     }
-  }) : _e(), _m(0)])])])])])])])
+  }, [_h('v-container', {
+    attrs: {
+      "fluid": "fluid"
+    }
+  }, [_h('v-row', [_h('v-col', {
+    attrs: {
+      "sm6": "sm6",
+      "md6": "md6",
+      "lg6": "lg6"
+    }
+  }, [_m(5)]), _h('v-col', {
+    attrs: {
+      "sm6": "sm6",
+      "md6": "md6",
+      "lg6": "lg6"
+    }
+  }, [_m(6)])])])])])
 }},staticRenderFns: [function (){with(this) {
   return _h('div', {
+    staticClass: "layout"
+  }, [_h('nav', {
+    staticClass: "navbar primary"
+  }, ["Navbar"]), _h('div', {
+    staticClass: "layout__main"
+  }, [_h('div', {
     staticClass: "layout__content"
-  }, ["Content"])
+  }, ["Content"])])])
+}},function (){with(this) {
+  return _h('div', {
+    staticClass: "layout"
+  }, [_h('div', {
+    staticClass: "layout__main"
+  }, [_h('div', {
+    staticClass: "layout__content"
+  }, ["Content"])]), _h('nav', {
+    staticClass: "navbar primary"
+  }, ["Navbar"])])
+}},function (){with(this) {
+  return _h('div', {
+    staticClass: "layout"
+  }, [_h('nav', {
+    staticClass: "navbar primary"
+  }, ["Navbar"]), _h('div', {
+    staticClass: "layout__main"
+  }, [_h('div', {
+    staticClass: "layout__content"
+  }, ["Content"])]), _h('div', {
+    staticClass: "layout__footer primary"
+  }, ["Footer"])])
+}},function (){with(this) {
+  return _h('div', {
+    staticClass: "layout"
+  }, [_h('nav', {
+    staticClass: "navbar primary"
+  }, ["Navbar"]), _h('div', {
+    staticClass: "layout__main"
+  }, [_h('div', {
+    staticClass: "layout__sidebar secondary"
+  }, ["Sidebar"]), _h('div', {
+    staticClass: "layout__content"
+  }, ["Content"])])])
+}},function (){with(this) {
+  return _h('div', {
+    staticClass: "layout layout--4"
+  }, [_h('div', {
+    staticClass: "layout__sidebar secondary"
+  }, ["Sidebar"]), _h('div', {
+    staticClass: "layout__main"
+  }, [_h('nav', {
+    staticClass: "navbar primary"
+  }, ["Navbar"]), _h('div', {
+    staticClass: "layout__content"
+  }, ["Content"])])])
+}},function (){with(this) {
+  return _h('div', {
+    staticClass: "layout"
+  }, [_h('nav', {
+    staticClass: "navbar primary"
+  }), _h('div', {
+    staticClass: "layout__main"
+  }, [_h('div', {
+    staticClass: "layout__sidebar secondary"
+  }), _h('div', {
+    staticClass: "layout__content"
+  }, ["Content"])]), _h('div', {
+    staticClass: "layout__footer primary"
+  })])
+}},function (){with(this) {
+  return _h('div', {
+    staticClass: "layout layout--4"
+  }, [_h('div', {
+    staticClass: "layout__sidebar secondary"
+  }), _h('div', {
+    staticClass: "layout__main"
+  }, [_h('nav', {
+    staticClass: "navbar primary"
+  }), _h('div', {
+    staticClass: "layout__content"
+  }, ["Content"]), _h('div', {
+    staticClass: "layout__footer primary"
+  })])])
 }}]}
 
 /***/ },
@@ -6800,7 +6827,6 @@ var isDev = "production" !== 'production';
 /* harmony default export */ exports["default"] = function (context) {
   // set router's location
   __WEBPACK_IMPORTED_MODULE_0__app__["a" /* router */].push(context.url);
-  console.log(context);
 
   var s = isDev && Date.now();
 

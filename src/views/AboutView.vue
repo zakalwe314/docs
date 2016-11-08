@@ -71,7 +71,7 @@
 
 <script>
   export default {
-    mounted () {
+    created () {
       this.$emit('view', 'Vuetify')
     }
   }
