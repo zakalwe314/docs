@@ -18,8 +18,8 @@ const html = (() => {
   const critical = fs.readFileSync(resolve('./dist/styles.critical'), 'utf-8')
   const i = template.indexOf('{{ APP }}')
   // styles are injected dynamically via vue-style-loader in development
-  let style = isProd ? '<link rel="stylesheet" href="/dist/styles.css">' : ''
-  style += '<style>' + critical + '</style>'
+  let style = '<style>' + critical + '</style>'
+  style += isProd ? '<link rel="stylesheet" href="/dist/styles.css">' : ''
 
   return {
     head: template.slice(0, i).replace('{{ STYLE }}', style),
