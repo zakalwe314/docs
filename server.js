@@ -19,7 +19,6 @@ const html = (() => {
   const i = template.indexOf('{{ APP }}')
   // styles are injected dynamically via vue-style-loader in development
   let style = '<style>' + critical + '</style>'
-  style += isProd ? '<link rel="stylesheet" href="/dist/styles.css">' : ''
 
   return {
     head: template.slice(0, i).replace('{{ STYLE }}', style),
