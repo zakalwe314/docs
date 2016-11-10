@@ -15,9 +15,12 @@ const app = express()
 // parse index.html template
 const html = (() => {
   const template = fs.readFileSync(resolve('./index.html'), 'utf-8')
+  const critical = fs.readFileSync(resolve('./dist/styles.critical'), 'utf-8')
   const i = template.indexOf('{{ APP }}')
   // styles are injected dynamically via vue-style-loader in development
-  const style = isProd ? '<link rel="stylesheet" href="/dist/styles.css">' : ''
+  let style = isProd ? '<link rel="stylesheet" href="/dist/styles.css">' : ''
+  style += '<style>' + critical + '</style>'
+
   return {
     head: template.slice(0, i).replace('{{ STYLE }}', style),
     tail: template.slice(i + '{{ APP }}'.length)
@@ -52,7 +55,6 @@ app.get('*', (req, res) => {
     return res.end('waiting for compilation... refresh in a moment.')
   }
 
-  var s = Date.now()
   const context = { url: req.url }
   const renderStream = renderer.renderToStream(context)
   let firstChunk = true
@@ -76,7 +78,6 @@ app.get('*', (req, res) => {
 
   renderStream.on('end', () => {
     res.end(html.tail)
-    console.log(`whole request: ${Date.now() - s}ms`)
   })
 
   renderStream.on('error', err => {

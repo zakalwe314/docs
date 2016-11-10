@@ -22,6 +22,11 @@
 </script>
 
 <style lang="stylus">
+  .view
+    margin-bottom: 3rem
+    
+    .chip--component
+      margin-right: 1rem
   dt
     font-weight 900
 </style>

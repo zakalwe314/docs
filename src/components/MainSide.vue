@@ -6,13 +6,12 @@
     close-on-click
   )
     div(class="vuetify")
-      h1
-        router-link(
-          to="/welcome",
-          class="navbar__logo"
-        )
-          span.v V
-          | uetify
+      router-link(
+        to="/welcome",
+        class="navbar__logo"
+      )
+        span.v V
+        | uetify
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(
@@ -200,17 +199,16 @@
 
 <style lang="stylus">    
   .vuetify
-    h1
-      font-weight: 100
-      letter-spacing: .3rem
-      text-align: center
-      font-size: 4rem !important
-      margin: 0
+    font-weight: 100
+    letter-spacing: .3rem
+    text-align: center
+    font-size: 4rem !important
+    margin: 0
         
     .navbar__logo
       font-size: 1.7rem
       display: block
-      padding: 2rem 0
+      padding: 3rem 0
       position: relative
       border-bottom: 1px solid rgba(#fff, .1)
       margin-bottom: 1rem

@@ -71,8 +71,15 @@
 
 <script>
   export default {
-    created () {
+    mounted () {
       this.$emit('view', 'Vuetify')
+    },
+
+    preFetch () {
+      return {
+        title: 'Vuetify',
+        meta: {}
+      }
     }
   }
 </script>

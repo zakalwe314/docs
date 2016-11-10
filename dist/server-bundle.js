@@ -1241,7 +1241,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
-//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
@@ -1519,8 +1518,14 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 
 /* harmony default export */ exports["default"] = {
-  created: function created() {
+  mounted: function mounted() {
     this.$emit('view', 'Vuetify');
+  },
+  preFetch: function preFetch() {
+    return {
+      title: 'Vuetify',
+      meta: {}
+    };
   }
 };
 
@@ -5605,12 +5610,12 @@ module.exports={render:function (){with(this) {
     }
   }, [_h('div', {
     staticClass: "vuetify"
-  }, [_h('h1', [_h('router-link', {
+  }, [_h('router-link', {
     staticClass: "navbar__logo",
     attrs: {
       "to": "/welcome"
     }
-  }, [_m(0), "uetify"])])]), _h('v-sidebar-items', [_l((items), function(item) {
+  }, [_m(0), "uetify"])]), _h('v-sidebar-items', [_l((items), function(item) {
     return [(item.items) ? _h('v-sidebar-group', {
       attrs: {
         "item": item.parent
@@ -6828,8 +6833,6 @@ var isDev = "production" !== 'production';
   // set router's location
   __WEBPACK_IMPORTED_MODULE_0__app__["a" /* router */].push(context.url);
 
-  var s = isDev && Date.now();
-
   // Call preFetch hooks on components matched by the route.
   // A preFetch hook dispatches a store action and returns a Promise,
   // which is resolved when the action is complete and store state has been
@@ -6838,8 +6841,7 @@ var isDev = "production" !== 'production';
     if (component.preFetch) {
       return component.preFetch(__WEBPACK_IMPORTED_MODULE_0__app__["b" /* store */]);
     }
-  })).then(function () {
-    isDev && console.log('data pre-fetch: ' + (Date.now() - s) + 'ms');
+  })).then(function (res) {
     // After all preFetch hooks are resolved, our store is now
     // filled with the state needed to render the app.
     // Expose the state on the render context, and let the request handler
@@ -6847,6 +6849,14 @@ var isDev = "production" !== 'production';
     // store to pick-up the server-side state without having to duplicate
     // the initial data fetching on the client.
     context.initialState = __WEBPACK_IMPORTED_MODULE_0__app__["b" /* store */].state;
+
+    var page = res.shift();
+
+    if (page.meta) {
+      context.meta = page.meta;
+      __WEBPACK_IMPORTED_MODULE_0__app__["c" /* app */].title = page.title;
+    }
+
     return __WEBPACK_IMPORTED_MODULE_0__app__["c" /* app */];
   });
 };

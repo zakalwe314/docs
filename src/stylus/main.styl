@@ -1,81 +1,43 @@
 $color-pack = true
 $navbar-min-height = 15rem
 
-h2, h3, h4, h5, h6
-  margin-top: 3rem
-
-@import '../node_modules/vuetify/src/stylus/main'
-  
-.slide-enter-active
-  transition: all .3s ease
-  
-.slide-enter, .slide-leave-active
-  opacity: 0
-  
-.slide-enter
-  transform: translateX(-3rem)
-  
-.slide-leave-active
-  transition: all .2s ease
-  transform: translateX(3rem)
-
-body
-  background: rgba(0, 0, 0, .005)
-
-section
-  padding: 0 1rem
-      
-.view
-  margin-bottom: 3rem
-  
-  .chip--component
-    margin-right: 1rem
-    
-
-.section-text
-  min-width: 50%
-  max-width: 700px
-  text-align: justify
-  margin-bottom: 1rem
-    
-  p
-    margin-bottom: 1rem !important
-    
-    strong
-      font-weight: 900
-      
-
-.markup
-  background: rgba(0, 0, 0, .03)
-  margin: 2rem -1rem
-  font-size: 1.2rem
-  transition: .3s ease-out
-  
-  &:hover
-    background: rgba(0, 0, 0, .1)
-  
-  pre, code
-    background: transparent
-    width: 100%
-    display: block
-    
-  pre
-    padding: 2rem
-    
-  code
-    font-weight: 600 !important
-    
-    &:before
-      display: none
-  
-  .hljs
-    color: $theme.secondary
-    
-    .hljs-tag
-      color: $purple.lighten-1
-    
-    .hljs-attr, .hljs-keyword
-      color: $theme.primary
-      
-    .hljs-string, .hljs-literal
-      color: $red.lighten-2
+@import '../node_modules/vuetify/src/stylus/settings/_colors'
+@import '../node_modules/vuetify/src/stylus/settings/_variables'
+@import '../node_modules/vuetify/src/stylus/tools/_mixins'
+@import '../node_modules/vuetify/src/stylus/generic/_reset'
+@import '../node_modules/vuetify/src/stylus/generic/_grid'
+@import '../node_modules/vuetify/src/stylus/generic/_bootstrap'
+@import '../node_modules/vuetify/src/stylus/generic/_z-depths'
+@import '../node_modules/vuetify/src/stylus/elements/_code'
+@import '../node_modules/vuetify/src/stylus/elements/_global'
+@import '../node_modules/vuetify/src/stylus/elements/_headings'
+@import '../node_modules/vuetify/src/stylus/elements/_typography'
+@import '../node_modules/vuetify/src/stylus/components/_alerts'
+@import '../node_modules/vuetify/src/stylus/components/_badges'
+@import '../node_modules/vuetify/src/stylus/components/_breadcrumbs'
+@import '../node_modules/vuetify/src/stylus/components/_buttons'
+@import '../node_modules/vuetify/src/stylus/components/_cards'
+@import '../node_modules/vuetify/src/stylus/components/_chips'
+@import '../node_modules/vuetify/src/stylus/components/_collapsible'
+@import '../node_modules/vuetify/src/stylus/components/_dropdowns'
+@import '../node_modules/vuetify/src/stylus/components/_icons'
+@import '../node_modules/vuetify/src/stylus/components/_footer'
+@import '../node_modules/vuetify/src/stylus/components/_forms'
+@import '../node_modules/vuetify/src/stylus/components/_lists'
+@import '../node_modules/vuetify/src/stylus/components/_navbar'
+@import '../node_modules/vuetify/src/stylus/components/_modals'
+@import '../node_modules/vuetify/src/stylus/components/_pagination'
+@import '../node_modules/vuetify/src/stylus/components/_parallax'
+@import '../node_modules/vuetify/src/stylus/components/_progress'
+@import '../node_modules/vuetify/src/stylus/components/_sidebar'
+@import '../node_modules/vuetify/src/stylus/components/_slider'
+@import '../node_modules/vuetify/src/stylus/components/_tables'
+@import '../node_modules/vuetify/src/stylus/components/_tabs'
+@import '../node_modules/vuetify/src/stylus/components/_toasts'
+@import '../node_modules/vuetify/src/stylus/components/_tooltips'
+@import '../node_modules/vuetify/src/stylus/trumps/_app'
+@import '../node_modules/vuetify/src/stylus/trumps/_display'
+@import '../node_modules/vuetify/src/stylus/trumps/_helpers'
+@import '../node_modules/vuetify/src/stylus/trumps/_text'
+@import './generic/_transitions'
+@import './elements/_global'

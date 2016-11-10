@@ -11,8 +11,6 @@ export default context => {
   // set router's location
   router.push(context.url)
 
-  const s = isDev && Date.now()
-
   // Call preFetch hooks on components matched by the route.
   // A preFetch hook dispatches a store action and returns a Promise,
   // which is resolved when the action is complete and store state has been
@@ -21,8 +19,7 @@ export default context => {
     if (component.preFetch) {
       return component.preFetch(store)
     }
-  })).then(() => {
-    isDev && console.log(`data pre-fetch: ${Date.now() - s}ms`)
+  })).then(res => {
     // After all preFetch hooks are resolved, our store is now
     // filled with the state needed to render the app.
     // Expose the state on the render context, and let the request handler
@@ -30,6 +27,14 @@ export default context => {
     // store to pick-up the server-side state without having to duplicate
     // the initial data fetching on the client.
     context.initialState = store.state
+
+    const page = res.shift()
+
+    if (page.meta) {
+      context.meta = page.meta
+      app.title = page.title
+    }
+
     return app
   })
 }
