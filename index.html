@@ -22,7 +22,8 @@
     </script>
     <script>
       var loadDeferredStyles = function() {
-        var d = [
+        setTimeout(function () {
+          var d = [
           'https://fonts.googleapis.com/css?family=Roboto:300,400,700|Material+Icons',
           '/dist/styles.css'
         ]
@@ -36,6 +37,7 @@
             el.media = 'all'
             l.parentNode.insertBefore(el, l)
         }
+      }, 300)
       }
       var raf = requestAnimationFrame || mozRequestAnimationFrame ||
           webkitRequestAnimationFrame || msRequestAnimationFrame
