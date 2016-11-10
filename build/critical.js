@@ -3,7 +3,7 @@ var fs = require('fs')
 var path = require('path')
 const resolve = file => path.resolve(__dirname, file)
 
-var str = fs.readFile(resolve('../src/stylus/_critical.styl'), 'utf-8', (err, data) => {
+var str = fs.readFile(resolve('../src/stylus/main.styl'), 'utf-8', (err, data) => {
   err && console.log(err)
 
   stylus(data, { compress: true })
