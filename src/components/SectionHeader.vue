@@ -25,24 +25,3 @@
     }
   }
 </script>
-
-<style lang="stylus"
-       scoped
->
-  .section-header
-    letter-spacing: 2px
-    text-align: left !important
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    position: relative
-    padding-bottom: .5rem
-    
-    &:after
-      content: ''
-      position: absolute
-      left: 0
-      bottom: 0
-      width: 100px
-      height: 3px
-</style>

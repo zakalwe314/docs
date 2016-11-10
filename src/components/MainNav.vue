@@ -64,34 +64,3 @@
     }
   }
 </script>
-
-<style lang="stylus" scoped>
-  .navbar
-    align-items: center
-    color: #fff
-    padding: 2rem 0
-    
-    &__side-icon
-      flex-grow: 1
-      margin: 0 1rem
-    
-    &__side--title
-      display: flex
-      align-items: space-between
-      justify-content: space-between
-      flex-direction: column
-      margin: 0 1rem 1rem      
-      span
-        font-weight: 200
-        font-size: 2rem
-        max-width: 600px
-        line-height: 2rem
-    
-    h1
-      letter-spacing: 1px
-      color: #fff
-      font-size: 4rem
-      font-weight: 400
-      margin: 0 0 1rem
-      word-break: break-word
-</style>
