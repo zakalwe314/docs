@@ -1240,7 +1240,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_extends({
 //
 //
 //
-//
 
 /* harmony default export */ exports["default"] = {
   data: function data() {
@@ -5600,7 +5599,6 @@ module.exports={render:function (){with(this) {
 
 module.exports={render:function (){with(this) {
   return _h('v-sidebar', {
-    staticClass: "grey darken-3",
     attrs: {
       "id": "mainsidebar",
       "fixed": "fixed",

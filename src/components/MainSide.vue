@@ -2,7 +2,6 @@
   v-sidebar(
     id="mainsidebar"
     fixed
-    class="grey darken-3"
     close-on-click
   )
     div(class="vuetify")
