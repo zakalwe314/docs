@@ -15,10 +15,10 @@ const app = express()
 // parse index.html template
 const html = (() => {
   const template = fs.readFileSync(resolve('./index.html'), 'utf-8')
-  const critical = fs.readFileSync(resolve('./dist/styles.critical'), 'utf-8')
+  const critical = fs.readFileSync(resolve('./dist/styles.critical'))
   const i = template.indexOf('{{ APP }}')
   // styles are injected dynamically via vue-style-loader in development
-  let style = '<style>' + critical + '</style>'
+  let style = `<style>${critical}</style>`
 
   return {
     head: template.slice(0, i).replace('{{ STYLE }}', style),
