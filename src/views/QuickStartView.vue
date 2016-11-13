@@ -56,8 +56,3 @@
     }
   }
 </script>
-
-<style lang="stylus">
-  #quick-start
-    //
-</style>

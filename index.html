@@ -4,11 +4,26 @@
     <meta charset="utf-8">
     <title>Vuetify</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <style></style>
-    {{ STYLE }}
   </head>
   <body>
+    <noscript id=deferred-styles>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700|Material+Icons' rel="stylesheet" type="text/css">
+      {{ SCRIPTS }}
+    </noscript>
     {{ APP }}
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
     <script src="/dist/client-vendor-bundle.js" defer></script>
     <script src="/dist/client-bundle.js" defer></script>
     <script>
@@ -19,27 +34,6 @@
 
       ga('create', 'UA-75262397-3', 'auto');
       ga('send', 'pageview');
-    </script>
-    <script>
-      var loadDeferredStyles = function() {
-        var d = [
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,700|Material+Icons'
-        ]
-        var l = document.getElementsByTagName('style')[0]
-        for(var i = 0, length = d.length; i < length; i++) {
-            var el = document.createElement('link')
-            el.href = d[i]
-            el.rel = 'stylesheet'
-            el.type = 'text/css'
-            el.property = 'stylesheet'
-            el.media = 'all'
-            l.parentNode.insertBefore(el, l)
-        }
-      }
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame
-      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0) })
-      else window.addEventListener('load', loadDeferredStyles)
     </script>
   </body>
 </html>

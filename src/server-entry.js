@@ -30,7 +30,7 @@ export default context => {
 
     const page = res.shift()
 
-    if (page.meta) {
+    if (page && page.meta) {
       context.meta = page.meta
       app.title = page.title
     }

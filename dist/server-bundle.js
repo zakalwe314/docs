@@ -6848,7 +6848,7 @@ var isDev = "production" !== 'production';
 
     var page = res.shift();
 
-    if (page.meta) {
+    if (page && page.meta) {
       context.meta = page.meta;
       __WEBPACK_IMPORTED_MODULE_0__app__["c" /* app */].title = page.title;
     }
