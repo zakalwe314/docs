@@ -18,9 +18,7 @@ const html = (() => {
   const template = fs.readFileSync(resolve('./index.html'), 'utf-8')
   const i = template.indexOf('{{ APP }}')
 
-  let styles = process.env.NODE_ENV === 'production'
-    ? `<link rel="stylesheet" href="/dist/styles.css">`
-    : ''
+  let styles = isProd ? `<link href="/dist/styles.css" rel="stylesheet" type="text/css">` : ''
   let scripts = uglify.minify(resolve('./src/inline.js')).code
 
   return {
