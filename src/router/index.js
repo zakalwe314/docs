@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import AboutView from '../views/AboutView.vue'
 import QuickStartView from '../views/QuickStartView.vue'
+import TutorialView from '../views/TutorialView.vue'
 import AlertsView from '../views/AlertsView.vue'
 import BadgesView from '../views/BadgesView.vue'
 import BreadcrumbsView from '../views/BreadcrumbsView.vue'
@@ -33,6 +34,7 @@ export default new Router({
   routes: [
     { path: '/', component: AboutView },
     { path: '/quick-start', component: QuickStartView },
+    { path: '/tutorial', component: TutorialView },
     { path: '/components/alerts', component: AlertsView },
     { path: '/components/breadcrumbs', component: BreadcrumbsView },
     { path: '/components/buttons', component: ButtonsView },

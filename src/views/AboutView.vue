@@ -67,6 +67,8 @@
           v-list-item-icon security
           v-list-item-title
             span Vuetify Admin Components <v-chip label class="green white--text">Coming Soon</v-chip>
+
+      whats-next(route="/quick-start" text="Quick Start") Select from 4 premade Vuetify vue-cli templates. These are based off of the official releases, pre-configured for the <strong>vuetify</strong> package.
 </template>
 
 <script>
@@ -83,11 +85,3 @@
     }
   }
 </script>
-
-<style lang="stylus">
-  #quick
-    padding-top: 1rem
-    
-    .card
-      margin: 1rem 0
-</style>

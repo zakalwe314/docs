@@ -31,6 +31,12 @@
     component-example(header="Indeterminate")
       div
         v-progress(indeterminate)
+    markup(slot="markup")
+      |&lt;v-progress value="100" min="0" max="100"&gt;&lt;/v-progress&gt;
+      |&nbsp;
+      |&lt;v-progress indeterminate&gt;&lt;/v-progress&gt;
+      |&nbsp;
+      |&lt;v-progress v-model="progress" min="0" max="100"&gt;&lt;/v-progress&gt;
 </template>
 
 <script>
@@ -41,7 +47,38 @@
           title: 'Progress',
           desc: 'Soon',
           types: ['comp'],
-          params: []
+          params: [
+            [
+              '<code>v-progress</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>height</code>',
+              'Sets the height of the progress bar',
+              'Default: 7px'
+            ],
+            [
+              '<code>indeterminate</code>',
+              'Applies the progress--indeterminate class',
+              'Default: false'
+            ],
+            [
+              '<code>max</code>',
+              'Sets the max limit of the progress bar',
+              'Default: 0'
+            ],
+            [
+              '<code>min</code>',
+              'Sets the min limit of the progress bar',
+              'Default: 0'
+            ],
+            [
+              '<code>value</code>',
+              'Sets the value of the progress bar',
+              'Default: 0'
+            ]
+          ]
         },
 
         value: 40
@@ -50,9 +87,6 @@
 
     mounted () {
       this.$emit('view', 'Progress')
-      // setInterval(() => {
-      //   this.value = Math.random() * 100
-      // }, 3000)
     }
   }
 </script>

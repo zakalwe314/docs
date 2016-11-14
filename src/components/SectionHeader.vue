@@ -4,6 +4,7 @@
     v-bind:style="styles"
   )
     slot
+    v-icon(x-large class="primary--text") link
 </template>
 
 <script>

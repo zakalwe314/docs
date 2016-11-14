@@ -5,7 +5,7 @@
       v-bind:height="300"
     )
     v-parallax(
-      src="http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg"
+      src="http://marshall.org/wp-content/themes/marshall/img/featured-space-policy.jpg"
     )
       v-parallax-content
         h1.white--text Explore Space

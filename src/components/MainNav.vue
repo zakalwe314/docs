@@ -46,6 +46,9 @@
           case this.match('quick-start'):
             this.subTitle = 'Kickstart your project with a premade Vue template'
           break
+          case this.match('tutorial'):
+            this.subTitle = 'Learn how to use the Vuetify framework in your first project'
+          break
           case this.match('css'):
             this.subTitle = 'CSS classes to help reduce the need for manual class declaration'
           break

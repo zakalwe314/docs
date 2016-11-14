@@ -177,6 +177,16 @@
                 href: '/css/typography',
                 text: 'Typography',
                 icon: 'title'
+              },
+              {
+                href: '/css/grid',
+                text: 'Grid',
+                icon: 'grid_on'
+              },
+              {
+                href: '/css/colors',
+                text: 'Colors',
+                icon: 'invert_colors'
               }
             ]
           },

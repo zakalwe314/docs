@@ -9,6 +9,7 @@ import MainSide from './MainSide.vue'
 import Markup from './Markup.vue'
 import SectionHeader from './SectionHeader.vue'
 import SectionText from './SectionText.vue'
+import WhatsNext from './WhatsNext.vue'
 
 export default {
   ComponentType,
@@ -21,5 +22,6 @@ export default {
   MainSide,
   Markup,
   SectionHeader,
-  SectionText
+  SectionText,
+  WhatsNext
 }

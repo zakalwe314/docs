@@ -6,6 +6,7 @@ const path = require('path')
 const resolve = file => path.resolve(__dirname, file)
 const express = require('express')
 const serialize = require('serialize-javascript')
+const uglify = require('uglify-js')
 
 // https://github.com/vuejs/vue/blob/next/packages/vue-server-renderer/README.md#why-use-bundlerenderer
 const createBundleRenderer = require('vue-server-renderer').createBundleRenderer
@@ -17,13 +18,14 @@ const html = (() => {
   const template = fs.readFileSync(resolve('./index.html'), 'utf-8')
   const i = template.indexOf('{{ APP }}')
 
-  let script = process.env.NODE_ENV === 'production'
+  let styles = process.env.NODE_ENV === 'production'
     ? `<link rel="stylesheet" href="/dist/styles.css">`
     : ''
+  let scripts = uglify.minify(resolve('./src/inline.js')).code
 
   return {
-    head: template.slice(0, i).replace('{{ SCRIPTS }}', script),
-    tail: template.slice(i + '{{ APP }}'.length)
+    head: template.slice(0, i).replace('{{ STYLES }}', styles),
+    tail: template.slice(i + '{{ APP }}'.length).replace('{{ SCRIPTS }}', scripts)
   }
 })()
 

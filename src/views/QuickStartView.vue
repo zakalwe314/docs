@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="view" id="quick-start")
+  div(class="view")
     section
       section-text
         strong(slot="title") Getting Started
@@ -45,8 +45,39 @@
             markup
               |vue init vuetifyjs.com/webpack-ssr
       
-      h6 NPM Install
-      p Once installed
+      h4 NPM Install
+      p After the vue-cli installation finishes:
+      markup(lang="js")
+        |cd &lt;package-name&gt;
+        |npm install
+      p Or alernatively, using Facebook's recently released <a href="#!">yarn package manager</a>.
+      markup(lang="js")
+        |cd &lt;package-name&gt;
+        |yarn
+      p If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up your <code>index.html</code> in any browser. For any other package, type:
+      markup(lang="js")
+        |npm run dev
+      p into your console. This will start a <a href="#!">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
+    section
+      section-header Advanced Setup
+      p(class="section-text") Vuetify comes out of the box configured to use <a href="#!">Stylus</a>. Depending on your project requirements, some additional configuration may be necessary. If you are already familiar with webpack, feel free to skip this section.
+      h5 Pre-processor
+      p(class="section-text") From within your project's directory, navigate to <code>/build</code> and open <code>webpack.base.config.js</code>. If using the <strong>webpack simple</strong> starter template, <code>webpack.config.js</code> is located in your projects base directory. Go to the loaders section of the exported object.
+      h6 SCSS
+      markup(lang="js")
+        |npm install sass-loader --save-dev
+      markup(lang="scss")
+        |{
+        |   test: /\.scss$/,
+        |   loader: ['style', 'css', 'sass']
+        |}
+      h6 CSS
+      markup(lang="scss")
+        |{
+        |   test: /\.css$/,
+        |   loader: ['style', 'css']
+        |}
+      whats-next(route="/tutorial" text="Tutorial") Now that you have your project setup and ready to go, let's work on our first application using Vuetify.
 </template>
 
 <script>

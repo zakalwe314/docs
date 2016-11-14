@@ -96,6 +96,23 @@
         checked,
         disabled
       )
+    div(slot="markup")
+      markup(lang="xml")
+        |&lt;v-select&gt;
+        |   ...
+        |&lt;/v-select&gt;
+      markup(lang="xml")
+        |&lt;v-text-input&gt;
+        |   ...
+        |&lt;/v-text-input&gt;
+      markup(lang="xml")
+        |&lt;v-radio&gt;
+        |   ...
+        |&lt;/v-radio&gt;
+      markup(lang="xml")
+        |&lt;v-checkbox&gt;
+        |   ...
+        |&lt;/v-checkbox&gt;
 </template>
 
 <script>
@@ -108,7 +125,28 @@
           types: [
             'comp'
           ],
-          params: []
+          params: [
+            [
+              '<code>v-select</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>v-text-input</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>v-radio</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>v-checkbox</code>',
+              '',
+              'Base component'
+            ]
+          ]
         },
         input: null,
         multiple: [],
@@ -137,6 +175,9 @@
 
 <style lang="stylus" scoped>
   .component-example
+    justify-content: space-between
+    flex-wrap: wrap
+    
     > *
-      flex-basis: 40%
+      margin: 2rem 0
 </style>

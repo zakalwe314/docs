@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="chips-view")
     component-example(header="Default")
       v-chip Chip
       v-chip(small)
@@ -111,10 +111,8 @@
   }
 </script>
 
-<style lang="stylus" 
-       scoped
->
-  .component-example
+<style lang="stylus">
+  #chips-view
     .chip
-      margin: 0 1rem
+      margin: 1rem
 </style>
