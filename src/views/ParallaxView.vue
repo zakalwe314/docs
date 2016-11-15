@@ -1,28 +1,10 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     v-parallax(
-      src="http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg"
-      v-bind:height="300"
+      src="https://s-media-cache-ak0.pinimg.com/originals/e1/00/ef/e100ef3699fa021506561d41e392a148.jpg"
     )
-    v-parallax(
-      src="http://marshall.org/wp-content/themes/marshall/img/featured-space-policy.jpg"
-    )
-      v-parallax-content
-        h1.white--text Explore Space
-        p Duo te error albucius. Nam dicunt timeam probatus at, vix ei harum soleat instructior. Mei partiendo adipiscing scripserit eu, cu minimum placerat instructior est, ius ne latine pertinax salutatus. 
-        div
-          v-btn(large primary)
-            | Buy a Ship
-            v-icon(right) keyboard_arrow_right
-          v-btn(large secondary)
-            | Explore
-            v-icon(right) search
     markup(slot="markup")
-      |&lt;v-parallax src="..."&gt;
-      |   &lt;v-parallax-content&gt;
-      |     ...
-      |   &lt;/v-parallax-content&gt;
-      |&lt;/v-parallax&gt;
+      |&lt;v-parallax src="..."&gt;&lt;/v-parallax&gt;
 </template>
 
 <script>
@@ -76,7 +58,7 @@
 
 <style lang="stylus" scoped>
   .parallax
-    margin: 1rem 0
+    margin: 15rem 0
     
   .parallax__content    
     h1

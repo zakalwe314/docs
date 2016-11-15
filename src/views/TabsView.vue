@@ -13,6 +13,19 @@
           v-tab-content(id="tab2") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           v-tab-content(id="tab3") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           v-tab-content(id="tab4") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    markup(slot="markup" lang="xml")
+      |&lt;v-tabs id="tabs"&gt;
+      |   &lt;v-tabs-container&gt;
+      |     &lt;v-tab href="tab1" selected&gt;
+      |       ...
+      |     &lt;/v-tab&gt;
+      |   &lt;/v-tabs-container&gt;
+      |   &lt;v-tabs-content-container&gt;
+      |     &lt;v-tab-content id="tab1"&gt;
+      |       ...
+      |     &lt;/v-tab-content&gt;
+      |   &lt;/v-tabs-content&gt;
+      |&lt;/v-tabs&gt;
 </template>
 
 <script>
@@ -27,7 +40,43 @@
           types: [
             'comp', 'slot'
           ],
-          params: []
+          params: [
+            [
+              '<code>v-tabs</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>v-tab</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>href</code>',
+              'Assigns a tab-content to the tab',
+              'Required: true'
+            ],
+            [
+              '<code>selected</code>',
+              'Pre-selects a tab',
+              'Default: false'
+            ],
+            [
+              '<code>v-tabs-content-container</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>v-tabs-content</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>id</code>',
+              'Assigns the id of the tab content',
+              'Required: true'
+            ]
+          ]
         },
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
       }

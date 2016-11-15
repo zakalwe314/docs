@@ -1,18 +1,22 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    div#slider
-      v-slider
-        v-slider-item(
-          v-for="(item, index) in items"
-          v-bind:src="item.src"
-        )
+    v-slider
+      v-slider-item(
+        v-for="item in items"
+        v-bind:src="item.src"
+      )
+    div(slot="markup")
+      markup(lang="xml")
+        |&lt;v-slider&gt;
+        |   &lt;v-slider-item v-for="item in items" v-bind:src="item.src"&gt;&lt;/v-slider-item&gt;
+        |&lt;/v-slider&gt;
+      markup(lang="js")
+        |data () {
+        |   return {
+        |     items: [{ src: '...'}, { src: '...'}, { src: '...'}]
+        |   }
+        |}
 </template>
-
-<style lang="stylus">
-  div#slider {
-    margin: 0 1rem
-  }
-</style>
 
 <script>
   export default {
@@ -24,7 +28,23 @@
           types: [
             'comp', 'slot'
           ],
-          params: []
+          params: [
+            [
+              '<code>v-slider</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>v-slider-item</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>src</code>',
+              'The image src',
+              'Required: true'
+            ]
+          ]
         },
         items: [
           {

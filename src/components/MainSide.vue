@@ -146,10 +146,15 @@
                 icon: 'fiber_manual_record'
               },
               {
+                href: '/directives/modals',
+                text: 'Modals',
+                icon: 'call_to_action'
+              },
+              {
                 href: '/directives/tooltips',
                 text: 'Tooltips',
                 icon: 'sms'
-              }
+              },
             ]
           },
           {

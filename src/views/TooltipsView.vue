@@ -1,23 +1,30 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     component-example
-      div
-        v-btn(
-          primary
-          v-tooltip:left="{ html: 'Left Tooltip' }"
-        ) Left
-        v-btn(
-          primary
-          v-tooltip:top="{ html: 'Top tooptip' }"
-        ) Top
-        v-btn(
-          primary
-          v-tooltip:right="{ html: 'Right tooptip' }"
-        ) Right
-        v-btn(
-          primary
-          v-tooltip:bottom="{ html: 'Bottom tooptip' }"
-        ) Bottom
+      v-btn(
+        primary
+        v-tooltip:top="{ html: 'Top tooptip' }"
+      ) Top
+      v-btn(
+        primary
+        v-tooltip:right="{ html: 'Right tooptip' }"
+      ) Right
+      v-btn(
+        primary
+        v-tooltip:bottom="{ html: 'Bottom tooptip' }"
+      ) Bottom
+      v-btn(
+        primary
+        v-tooltip:left="{ html: 'Left Tooltip' }"
+      ) Left
+    markup(slot="markup" lang="xml")
+      |&lt;v-btn primary v-tooltip:top="{ html: 'Top Tooltip' }"&gt;...&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn primary v-tooltip:right="{ html: 'Right Tooltip' }"&gt;...&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn primary v-tooltip:bottom="{ html: 'Bottom Tooltip' }"&gt;...&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn primary v-tooltip:left="{ html: 'Left Tooltip' }"&gt;...&lt;/v-btn&gt;
 </template>
 
 <script>
@@ -30,7 +37,23 @@
           types: [
             'directive'
           ],
-          params: []
+          params: [
+            [
+              '<code>v-tooltip</code>',
+              '',
+              'Base directive'
+            ],
+            [
+              '<code>modifiers</code>',
+              'top, right, bottom, left',
+              'Required: true'
+            ],
+            [
+              '<code>html</code>',
+              'The content for the tooltip',
+              'Required: true'
+            ]
+          ]
         }
       }
     },
@@ -45,5 +68,5 @@
        scoped
 >
   .btn
-    margin: 0 2rem
+    margin: 1rem
 </style>

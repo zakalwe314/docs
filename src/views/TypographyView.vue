@@ -1,17 +1,21 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
-    component-example(
-      id="typo"
-      header="Headers"
-    )
-        h1 Heading h1
-        h2 Heading h2
-        h3 Heading h3
-        h4 Heading h4
-        h5 Heading h5
-        h6 Heading h6
-    component-example(header="Blockquotes")
-      blockquote Hello
+  div(class="view")
+    section
+      section-text
+        dt(slot="title") Typography
+        dd(slot="desc") Soon
+    section
+      section-header Examples
+      component-example(
+        id="typo"
+        header="Headers"
+      )
+          h1 Heading h1
+          h2 Heading h2
+          h3 Heading h3
+          h4 Heading h4
+          h5 Heading h5
+          h6 Heading h6
 </template>
 
 <script>

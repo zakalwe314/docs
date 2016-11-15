@@ -2,13 +2,13 @@
   doc-view(v-bind:doc="doc" id="alerts")
     component-example(id="alerts" header="Contextual")
       v-alert(success)
-        | This is a success alert
+        | This is a success alert. {{ lorem }}
       v-alert(info) 
-        | This is an info alert
+        | This is an info alert {{ lorem }}
       v-alert(warning) 
-        | This is a warning alert
+        | This is a warning alert {{ lorem }}
       v-alert(error) 
-        | This is a error alert
+        | This is a error alert {{ lorem }}
     markup(slot="markup")
       template(v-for="type in types")
         |&nbsp;
@@ -34,6 +34,7 @@
             ]
           ]
         },
+        lorem: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
         types: [
           'success', 'info', 'warning', 'error'
         ]

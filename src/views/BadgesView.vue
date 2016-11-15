@@ -8,7 +8,7 @@
       ) shopping_cart
       v-icon(
         large,
-        v-badge="{ overlap: true, value: '!' }"
+        v-badge="{ value: '!' }"
         class="grey--text red--after"
       ) mail
     component-example(header="Icon")
@@ -30,6 +30,14 @@
         v-badge:list.icon=""
         class="green--after"
       ) Lists
+    markup(slot="markup" lang="xml")
+      |&lt;v-icon v-badge:done.overlap.icon.left&gt;...&lt;/v-icon&gt;
+      |&nbsp;
+      |&lt;v-icon v-badge:5.left&gt;...&lt;/v-icon&gt;
+      |&nbsp;
+      |&lt;v-icon v-badge="{ value: '!', overlap: true }"&gt;...&lt;/v-icon&gt;
+      |&nbsp;
+      |&lt;v-icon v-badge::notifications.icon.overlap&gt;...&lt;/v-icon&gt;
 </template>
 
 <script>
@@ -77,3 +85,9 @@
     }
   }
 </script>
+
+<style lang="stylus" scoped>
+  .component-example
+    span
+      margin: 1rem
+</style>

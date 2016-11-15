@@ -11,7 +11,10 @@ import ButtonsView from '../views/ButtonsView.vue'
 import CardsView from '../views/CardsView.vue'
 import ChipsView from '../views/ChipsView.vue'
 import CollapsibleView from '../views/CollapsibleView.vue'
+import ColorsView from '../views/ColorsView.vue'
 import DropdownsView from '../views/DropdownsView.vue'
+import GridView from '../views/GridView.vue'
+import FaqView from '../views/FaqView.vue'
 import FormsView from '../views/FormsView.vue'
 import LayoutsView from '../views/LayoutsView.vue'
 import ListsView from '../views/ListsView.vue'
@@ -55,6 +58,9 @@ export default new Router({
     { path: '/directives/tooltips', component: TooltipsView },
     { path: '/layouts', component: LayoutsView },
     { path: '/css/typography', component: TypographyView },
+    { path: '/css/grid', component: GridView },
+    { path: '/css/colors', component: ColorsView },
+    { path: '/faq', component: FaqView },
     { path: '*', redirect: '/' }
   ]
 })
