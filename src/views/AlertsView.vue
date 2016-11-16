@@ -63,8 +63,4 @@
       
     .alert
       flex-basis: 100%
-      
-      > *
-        margin: 0
-        justify-content: unset
 </style>

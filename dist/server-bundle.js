@@ -3338,7 +3338,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 //
-//
 
 /* harmony default export */ exports["default"] = {
   mounted: function mounted() {
@@ -5303,8 +5302,10 @@ module.exports={render:function (){with(this) {
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('div', [_h('h2', {
-    staticClass: "section-header primary--after whats-next"
+  return _h('div', {
+    staticClass: "whats-next"
+  }, [_h('h2', {
+    staticClass: "section-header primary--after"
   }, ["What's Next", _h('v-icon', {
     staticClass: "primary--text",
     attrs: {
@@ -5312,7 +5313,7 @@ module.exports={render:function (){with(this) {
     }
   }, ["help"])]), _h('v-alert', {
     attrs: {
-      "success": "success"
+      "info": "info"
     }
   }, [_h('v-container', {
     attrs: {
@@ -5320,17 +5321,16 @@ module.exports={render:function (){with(this) {
     }
   }, [_h('v-row', [_h('v-col', {
     attrs: {
-      "xs6": "xs6"
+      "xs12": "xs12",
+      "sm6": "sm6"
     }
   }, [_t("default")]), _h('v-col', {
     staticClass: "text-xs-right",
     attrs: {
-      "xs6": "xs6"
+      "xs12": "xs12",
+      "sm6": "sm6"
     }
   }, [_h('v-btn', {
-    attrs: {
-      "primary": "primary"
-    },
     nativeOn: {
       "click": function($event) {
         $router.push(route)
@@ -5985,7 +5985,7 @@ module.exports={render:function (){with(this) {
   return _h('doc-view', {
     attrs: {
       "doc": doc,
-      "id": "alerts"
+      "id": "cards"
     }
   }, [_h('component-example', {
     attrs: {
@@ -6218,7 +6218,7 @@ module.exports={render:function (){with(this) {
     attrs: {
       "to": "/quick-start"
     }
-  }, ["here"]), "."])])])]), _h('section', [_h('section-header', ["Create a Portfolio Site"]), _m(2), _h('markup', {
+  }, ["here"]), "."])])])]), _h('section', [_h('section-header', ["Introduction"]), _m(2), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -6226,23 +6226,30 @@ module.exports={render:function (){with(this) {
     attrs: {
       "lang": "js"
     }
-  }, ["/ project\n  / build\n  / src\n  - .babelrc\n  - .gitignore\n  - README.md\n  - index.html\n  - package.json\n  - server.js"]), _m(4), _m(5), _m(6), _h('markup', {
+  }, ["/ project\n  / build\n  / src\n  - .babelrc\n  - .gitignore\n  - README.md\n  - index.html\n  - package.json\n  - server.js"]), _m(4), _m(5), _h('div', {
+    staticClass: "section-text"
+  }, [_m(6), _h('p', ["The markup below tells the application that you have a ", _m(7), " and ", _m(8), ". Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the ", _h('router-link', {
+    attrs: {
+      "to": "/layouts"
+    }
+  }, ["Layouts"]), " section."])]), _h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>"]), _m(7), _h('markup', {
-    attrs: {
-      "lang": "xml"
-    }
-  }, ["<template>\n  <div>\n    <section>\n      <h1>Introduction</h1>\n    </section>\n  </div>\n</template>"]), _m(8), _h('markup', {
+  }, ["<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>"]), _m(9), _m(10), _h('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["import PortfolioView from '../views/PortfolioView.vue'"]), _m(9), _h('markup', {
+  }, ["routes: [\n  { path: '/', component: HomeView },\n  { path: '/about', component: AboutView }\n]"]), _m(11), _m(12), _m(13), _h('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["routes: [\n  { path: '/', component: PortfolioView },\n]"]), _m(10), _m(11)])])
+  }, ["preFetch (store) {\n  store.dispatch('GET_USER', 2)\n}"]), _m(14), _h('whats-next', {
+    attrs: {
+      "route": "/layouts",
+      "text": "Layouts"
+    }
+  }, [_m(15)])])])
 }},staticRenderFns: [function (){with(this) {
   return _h('strong', ["Vuetify"])
 }},function (){with(this) {
@@ -6272,29 +6279,45 @@ module.exports={render:function (){with(this) {
     }
   }, ["Vue Server Renderer"]), ". This will allow you to make simple or complex applications that are not only fast/efficient, but ", _h('strong', ["SEO"]), " friendly."])])
 }},function (){with(this) {
-  return _h('h3', ["Introduction"])
+  return _h('h3', ["Application"])
+}},function (){with(this) {
+  return _h('p', ["Navigate to the ", _h('strong', ["src"]), " folder and open up ", _h('code', ["App.vue"]), ". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is the ", _h('code', ["v-app"]), " component. This will allow you to define your application layout without any heavy lifting."])
+}},function (){with(this) {
+  return _h('code', ["top navbar"])
+}},function (){with(this) {
+  return _h('code', ["footer"])
+}},function (){with(this) {
+  return _h('h3', ["Routing"])
+}},function (){with(this) {
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["Vuetify SSR uses the official Vue Router for controller application flow. Located in ", _h('code', ["/src/route/index.js"]), ", all of your application routes will be defined here."])
 }},function (){with(this) {
   return _h('div', {
     staticClass: "section-text"
-  }, [_h('p', ["Navigate to the ", _h('strong', ["src"]), " folder and open up ", _h('code', ["App.vue"]), ". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is the ", _h('code', ["v-app"]), " component. This will allow you to define your application layout without any heavy lifting."]), _h('p', ["Modify your ", _h('code', ["App.vue"]), " to contain this markup:"])])
+  }, [_h('p', ["These routes can be accessed be creating a link to the specified path, or by using Vue Router's ", _h('code', ["<router-link>"]), " component. For more information, review the official Vue Router ", _h('a', {
+    attrs: {
+      "href": "https://router.vuejs.org/en/",
+      "target": "_blank"
+    }
+  }, ["documentation"]), "."])])
 }},function (){with(this) {
-  return _h('p', {
-    staticClass: "section-text"
-  }, ["Now let's navigate to ", _h('code', ["/src/views"]), ". Create a new file called ", _h('code', ["PortfolioView.vue"]), ". Inside your new component, put some boilerplate markup."])
+  return _h('h3', ["State Control"])
 }},function (){with(this) {
   return _h('div', {
     staticClass: "section-text"
-  }, [_h('p', ["Once complete, save the file and then open ", _h('code', ["/src/router/index.js"]), ". This is where the routing for your application resides. For this tutorial, we will only be using one route, but as your application expands, this is where you will define that flow."]), _h('p', ["Import your new view:"])])
+  }, [_h('p', ["State control is managed by the official Vuex library. This follows Facebooks' Reflux design pattern. Navigate to ", _h('code', ["/src/store/index.js"]), ". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a ", _h('code', ["preFetch"]), " method on your view component."])])
 }},function (){with(this) {
-  return _h('p', {
+  return _h('div', {
     staticClass: "section-text"
-  }, ["Then update the routes array to look like this:"])
+  }, [_h('p', ["For more information on State Controler and Vuex, view the official ", _h('a', {
+    attrs: {
+      "href": "https://vuex.vuejs.org/en/intro.html",
+      "target": "_blank"
+    }
+  }, ["documentation"]), "."])])
 }},function (){with(this) {
-  return _h('p', {
-    staticClass: "section-text"
-  }, ["After the routes file is updated, refresh the page and you should see:"])
-}},function (){with(this) {
-  return _h('div', ["<img>"])
+  return _h('p', ["Now that you are more familiar with Vuetify and the Vue resources that it utilizes, take a look at the Layout's section and choose a design for your next application!"])
 }}]}
 
 /***/ },
@@ -7078,7 +7101,9 @@ module.exports={render:function (){with(this) {
 /***/ function(module, exports) {
 
 module.exports={render:function (){with(this) {
-  return _h('v-footer', [_m(0)])
+  return _h('v-footer', {
+    staticClass: "grey darken-2 white--text"
+  }, [_m(0)])
 }},staticRenderFns: [function (){with(this) {
   return _h('div', {
     staticClass: "text-xs-right"

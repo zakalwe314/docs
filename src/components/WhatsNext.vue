@@ -1,15 +1,15 @@
 <template lang="pug">
-  div
-    h2(class="section-header primary--after whats-next")
+  div(class="whats-next")
+    h2(class="section-header primary--after")
       | What's Next
       v-icon(x-large class="primary--text") help
-    v-alert(success)
+    v-alert(info)
       v-container(fluid)
         v-row
-          v-col(xs6)
+          v-col(xs12 sm6)
             slot
-          v-col(xs6, class="text-xs-right")
-            v-btn(primary v-on:click.native="$router.push(route)")
+          v-col(xs12 sm6 class="text-xs-right")
+            v-btn(v-on:click.native="$router.push(route)")
               | {{ text }}
               v-icon(right) chevron_right
 </template>
@@ -25,6 +25,11 @@
 
 <style lang="stylus">
   .whats-next
-    display: flex
-    align-items: center
+    h2
+      display: flex
+      align-items: center
+    
+    @media screen and (max-width: 48rem)
+      .btn
+        margin: 1rem 0
 </style>

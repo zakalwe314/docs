@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc" id="alerts")
+  doc-view(v-bind:doc="doc" id="cards")
     component-example(header="Basic")
       div
         v-card
@@ -218,7 +218,7 @@
 </script>
 
 <style lang="stylus">
-  #alerts
+  #cards
     .portrait
       margin: 1rem 0
       
