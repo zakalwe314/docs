@@ -10,7 +10,7 @@
         class="navbar__logo"
       )
         span.v V
-        | uetify
+        span uetify
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(
@@ -199,12 +199,7 @@
             href: '/layouts',
             text: 'Layouts',
             icon: 'view_quilt'
-          },
-          {
-            href: 'faq',
-            text: 'FAQ',
-            icon: 'comment'
-          }       
+          }
         ]
       }
     }

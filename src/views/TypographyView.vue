@@ -42,4 +42,5 @@
 <style lang="stylus">
   #typo .component-example
     flex-direction: column !important
+    align-items: flex-start
 </style>

@@ -3,32 +3,32 @@
     component-example(header="Basic")
       v-list
         v-list-item
-          v-list-item-title John Leider
+          v-list-item-title Person
         v-list-item 
-          v-list-item-title Ranee Leider
+          v-list-item-title Person
         v-list-item 
-          v-list-item-title Declan Leider
+          v-list-item-title Person
     component-example(header="With Icon")
       v-list
         v-list-item
           v-list-item-icon person
-          v-list-item-title John Leider
+          v-list-item-title Person
         v-list-item 
           v-list-item-icon person
-          v-list-item-title Ranee Leider
+          v-list-item-title Person
         v-list-item 
           v-list-item-icon person
-          v-list-item-title Declan Leider
+          v-list-item-title Person
     component-example(header="With Avatar")
       v-list
         v-list-item
           a(href="#!", v-dropdown:dropdown="")
             v-list-item-avatar(class="orange", large) event
           v-dropdown(id="dropdown", v-bind:items="items")
-          v-list-item-title John Leider
+          v-list-item-title Person
         v-list-item 
-          v-list-item-avatar(class="brown", large, v-badge:done.icon="") person
-          v-list-item-title Ranee Leider
+          v-list-item-avatar(class="brown", large, v-badge:notifications.icon="") person
+          v-list-item-title Person
           v-list-item-action
             a(href="#!", v-dropdown:menu="")
               v-icon(class="blue--text", medium) edit
@@ -36,7 +36,7 @@
         v-list-item 
           v-list-item-avatar(class="green", large) phone
           v-list-item-title
-            span Declan Leider
+            span Person
             v-list-item-sub-title Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           v-list-item-action
             v-list-item-action-title Contact

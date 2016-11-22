@@ -11,7 +11,7 @@
     component-example(header="Expandable")
       div
         v-collapsible(expand)
-          li(v-for="item in 4")
+          li(v-for="item in 5")
             v-collapsible-header Item
             v-collapsible-body 
               v-card

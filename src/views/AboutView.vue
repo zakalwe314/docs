@@ -4,7 +4,7 @@
       section-text
         strong(slot="title") About
         div(slot="desc") 
-          p Vuetify is a collection of components for VueJS 2.0. It aims to provide clean, reusable and semantic components that help kick start your application. Vuetify utilizes Google's <strong>Material Design</strong> design pattern, taking cues from other popular frameworks such as Materialize.css, Material Design Lite, Semantic UI and Bootstrap 4. This project is an effort to make building websites with VueJS as easy and efficient as possible.
+          p Vuetify is a collection of components for VueJS 2.0. It aims to provide clean, reusable and semantic components that help kick start your application. Vuetify utilizes Google's <strong>Material Design</strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>.
 
     section
       section-header Features
@@ -15,7 +15,7 @@
               v-list-item
                 v-list-item-avatar(class="primary" x-large) widgets
                 v-list-item-title Vuetify Frontend Components
-                  v-list-item-sub-title The Vuetify core is designed to provide a variety of reusable, plug and play components that fit a variety of scenarios.
+                  v-list-item-sub-title The Vuetify core is designed to provide a variety of reusable, plug and play components that fit any project spec.
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
@@ -41,7 +41,7 @@
               v-list-item
                 v-list-item-avatar(class="primary" x-large) call_split
                 v-list-item-title Separation of Concerns
-                  v-list-item-sub-title While auto-injection of css from Vue Components is a very useful feature, for large frameworks, it becomes very expensive when you need the ability to easily change values from defined defaults. Vuetify's stylesheet is separate from its components. Using <strong>Stylus</strong>, <strong>BEM</strong> syntax and utilizing <strong>ITCSS</strong> design principles, Vuetify's stylesheet is compact, clean and easy to expand upon.
+                  v-list-item-sub-title Vuetify is built on top of Stylus. This allows you to easily mold the styles of your application. With no component specific styles in the component, your application is smaller, easier to change, and easier to build upon.
 
           v-col(xs12 md6 lg6)
             v-list

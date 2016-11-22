@@ -60,7 +60,7 @@
         |   store.dispatch('GET_USER', 2)
         |}
       div(class="section-text")
-        p For more information on State Controler and Vuex, view the official <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">documentation</a>.
+        p For more information on State Control and Vuex, view the official <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">documentation</a>.
       whats-next(route="/layouts", text="Layouts")
         p Now that you are more familiar with Vuetify and the Vue resources that it utilizes, take a look at the Layout's section and choose a design for your next application!
 </template>

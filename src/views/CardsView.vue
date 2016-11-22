@@ -4,11 +4,11 @@
       div
         v-card
           v-card-text
-            p(v-text="card_text")
+            div(v-text="card_text")
       div
         v-card(class="green darken-1 white--text")
           v-card-text
-            p(v-text="card_text")
+            div(v-text="card_text")
 
     component-example(header="Title")
       div
@@ -18,7 +18,7 @@
               v-icon all_out
               | Update
           v-card-text
-            p(v-text="card_text")
+            div(v-text="card_text")
           v-card-actions
             v-btn(flat) Cancel
             v-col-spacer
@@ -32,7 +32,7 @@
                 span Upload
                 v-icon(right) backup
           v-card-text
-            p(v-text="card_text")
+            div(v-text="card_text")
 
     component-example(header="Picture")
       div
@@ -43,7 +43,7 @@
           )
             v-card-title-text(class="white--text") Update
           v-card-text
-            p(v-text="card_text")
+            div(v-text="card_text")
           v-card-actions
             v-btn(flat, class="primary--text") View Updates
       div
@@ -54,7 +54,7 @@
           )
             v-card-title-text(class="white--text") Welcome
           v-card-text
-            p(v-text="card_text")
+            div(v-text="card_text")
           v-card-actions
             v-btn(flat, class="primary--text") Get Started
 
@@ -80,14 +80,14 @@
           )
           v-card-stack
             v-card-text
-              p(v-text="card_text")
+              div(v-text="card_text.substr(0, 150)")
             v-card-actions
               v-btn(flat, class="primary--text") Get Started
       div
         v-card(horizontal)
           v-card-stack
             v-card-text
-              p(v-text="card_text")
+              div(v-text="card_text.substr(0, 150)")
             v-card-actions
               v-btn(flat, class="secondary--text") Get Started
           v-card-title(
@@ -241,6 +241,7 @@
     .component-example
       flex-flow: row wrap
       justify-content: space-between
+      margin: 0 -2rem
       
       > div
         flex: 1 0 50%

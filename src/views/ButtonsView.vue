@@ -5,46 +5,46 @@
       v-btn Normal
       v-btn(large) Large
       v-btn(flat) Flat
-      v-btn(flat, disabled) Disabled
+      v-btn(flat disabled) Disabled
       v-btn(disabled) Disabled
     component-example(header="Colored")
-      v-btn(primary) Primary
-      v-btn(flat, class="primary--text") Primary
-      v-btn(secondary) Secondary
-      v-btn(flat, class="secondary--text") Secondary
+      v-btn(class="primary white--text") Primary
+      v-btn(flat class="primary--text") Primary
+      v-btn(class="secondary white--text") Secondary
+      v-btn(flat class="secondary--text") Secondary
     component-example(header="Block")
       div.btn--block-example
         v-btn(block) Default
-        v-btn(block, primary) Primary
-        v-btn(block, secondary) Secondary
-        v-btn(block, disabled) Disabled
+        v-btn(block class="primary white--text") Primary
+        v-btn(block class="secondary white--text") Secondary
+        v-btn(block disabled) Disabled
     component-example(header="Rounded")
       v-btn(round) Default
-      v-btn(round, primary) Primary
-      v-btn(round, secondary) Large Secondary
-      v-btn(round, disabled) Disabled
+      v-btn(round class="primary white--text") Primary
+      v-btn(round class="secondary white--text") Large Secondary
+      v-btn(round disabled) Disabled
     component-example(header="Outline")
       v-btn(outline) Default
-      v-btn(outline, class="primary primary--text") Primary
-      v-btn(outline, class="secondary secondary--text") Secondary
-      v-btn(outline, disabled) Disabled
+      v-btn(outline class="primary primary--text") Primary
+      v-btn(outline class="secondary secondary--text") Secondary
+      v-btn(outline disabled) Disabled
     component-example(header="Floating")
-      v-btn(small, floating)
+      v-btn(small floating)
         v-icon event
       v-btn(floating)
         v-icon add
-      v-btn(floating, large)
+      v-btn(floating large)
         v-icon edit
-      v-btn(floating, disabled)
+      v-btn(floating disabled)
         v-icon remove
     component-example(header="Colored Floating")
-      v-btn(floating, small, class="purple white--text")
+      v-btn(floating small class="purple white--text")
         v-icon cloud
-      v-btn(floating, primary)
+      v-btn(floating class="primary white--text")
         v-icon attachment
-      v-btn(floating, large, secondary)
+      v-btn(floating large class="secondary white--text")
         v-icon event
-      v-btn(floating, large, disabled)
+      v-btn(floating large disabled)
         v-icon room
     component-example(header="Icon")
       v-btn(icon)

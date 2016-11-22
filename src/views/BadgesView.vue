@@ -59,19 +59,16 @@
           params: [
             [
               '<code>v-badge:arg.icon</code>',
-              '<code>icon</code>',
               'Specifies the use of an icon',
               'Default: false'
             ],
             [
               '<code>v-badge:arg.left</code>',
-              '<code>left</code>',
               'Positions the badge to the left of the element',
               'Default: false'
             ],
             [
               '<code>v-badge:arg.overlap</code>',
-              '<code>overlap</code>',
               'Overlaps badge on element',
               'Default: false'
             ]

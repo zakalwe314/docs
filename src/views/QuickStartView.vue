@@ -3,11 +3,21 @@
     section
       section-text
         strong(slot="title") Getting Started
-        p(slot="desc") Using one of Vuetify's Vue CLI packages (based on the official examples), get your project kick started in no time.
+        p(slot="desc") Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time.
+
+    section
+      section-header Required Files
+      p(class="section-text") Vuetify only has one dependency, Google's Roboto Font and Material Icons.
+      markup
+        |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
+
+    section
+      section-header Global Install
+      p(class="section-text") To use <strong>Vuetify</strong> globally, just include the file into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use!
 
     section
       section-header Vue CLI Packages
-      p(class="section-text") Below are 4 packages forked from the <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with Vuetify even quicker.
+      p(class="section-text") Below are 4 packages forked from the <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with Vuetify even quicker. These packages require <code>vue-cli</code>. For more information on vue-cli, visit  the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
       v-tabs(id="vue-cli")
         v-tabs-container
           v-tab(href="#simple" selected)
@@ -26,22 +36,22 @@
         v-tabs-content-container
           v-tab-content(id="simple")
             h4 Simple Quick Start
-            p This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional fluff. This guide assumes that you have already installed vue-cli. If not, please consult <a href="#!">enter link here</a> for instructions on how to do so.
+            p This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. 
             markup
               |vue init vuetifyjs.com/simple
           v-tab-content(id="webpack-simple")
             h4 Webpack Simple Quick Start
-            p This template is intended for users who are already familiar with Vue/Webpack. This is the basic setup for Vue with Vuetify and the template that is used in the <a href="#!">Vuetify Tutorial</a>. It is recommended for basic prototyping and mockups. This guide assumes that you have already installed vue-cli. If not, please consult <a href="#!">enter link here</a> for instructions on how to do so.
+            p This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups.
             markup
               |vue init vuetifyjs.com/webpack-simple
           v-tab-content(id="webpack")
             h4 Webpack Quick Start
-            p This template is intended for users who are already familiar with Vue/Webpack. This is the basic setup for Vue with Vuetify and the template that is used in the <a href="#!">Vuetify Tutorial</a>. This guide assumes that you have already installed vue-cli. If not, please consult <a href="#!">enter link here</a> for instructions on how to do so.
+            p This template is for users who are ready to start an application. Containing unit testing, routing, and vuex, you will have everything you need to build your next user experience.
             markup
               |vue init vuetifyjs.com/webpack
           v-tab-content(id="webpack-ssr")
             h4 Webpack SSR Quick Start
-            p This template is intended for users who are already familiar with Vue/Webpack. This is the basic setup for Vue with Vuetify and the template that is used in the <a href="#!">Vuetify Tutorial</a>. This guide assumes that you have already installed vue-cli. If not, please consult <a href="#!">enter link here</a> for instructions on how to do so.
+            p This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository, the Vuetify SSR template provides next generation functionality for advanced web applications.
             markup
               |vue init vuetifyjs.com/webpack-ssr
       
@@ -54,7 +64,7 @@
       markup(lang="js")
         |cd &lt;package-name&gt;
         |yarn
-      p If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up your <code>index.html</code> in any browser. For any other package, type:
+      p If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up <code>index.html</code> in any browser. For any other package, type:
       markup(lang="js")
         |npm run dev
       p into your console. This will start a <a href="#!">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.

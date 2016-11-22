@@ -3,18 +3,18 @@
     component-example(header="Navbar and Footer")
       v-container(fluid)
         v-row
-          v-col(sm6 md4 lg4)
-            div(class="layout")
+          v-col(xs12 sm4)
+            div(class="layout z-depth-1")
               nav(class="navbar primary") Navbar
               div(class="layout__main")
                 div(class="layout__content") Content
-          v-col(sm6 md4 lg4)
-            div(class="layout")
+          v-col(xs12 sm4)
+            div(class="layout z-depth-1")
               div(class="layout__main")
                 div(class="layout__content") Content
               nav(class="navbar primary") Navbar
-          v-col(sm6 md4 lg4)
-            div(class="layout")
+          v-col(xs12 sm4)
+            div(class="layout z-depth-1")
               nav(class="navbar primary") Navbar
               div(class="layout__main")
                 div(class="layout__content") Content
@@ -22,14 +22,14 @@
     component-example(header="Navbar and Sidebar")
       v-container(fluid)
         v-row
-          v-col(sm6 md6 lg6)
-            div(class="layout")
+          v-col(xs12 sm6 md6 lg6)
+            div(class="layout z-depth-1")
               nav(class="navbar primary") Navbar
               div(class="layout__main")
                 div(class="layout__sidebar secondary") Sidebar
                 div(class="layout__content") Content
-          v-col(sm6 md6 lg6)
-            div(class="layout layout--4")
+          v-col(xs12 sm6 md6 lg6)
+            div(class="layout layout--4 z-depth-1")
               div(class="layout__sidebar secondary") Sidebar
               div(class="layout__main")
                 nav(class="navbar primary") Navbar
@@ -37,21 +37,62 @@
     component-example(header="Navbar, Sidebar and Footer")
       v-container(fluid)
         v-row
-          v-col(sm6 md6 lg6)
-            div(class="layout")
-              nav(class="navbar primary")
+          v-col(xs12 sm6 md6 lg6)
+            div(class="layout z-depth-1")
+              nav(class="navbar primary") Navbar
               div(class="layout__main")
-                div(class="layout__sidebar secondary")
+                div(class="layout__sidebar secondary") Sidebar
                 div(class="layout__content") Content
-              div(class="layout__footer primary")
-          v-col(sm6 md6 lg6)
-            div(class="layout layout--4")
-              div(class="layout__sidebar secondary")
+              div(class="layout__footer primary") Footer
+          v-col(xs12 sm6 md6 lg6)
+            div(class="layout layout--4 z-depth-1")
+              div(class="layout__sidebar secondary") Sidebar
               div(class="layout__main")
-                nav(class="navbar primary")
+                nav(class="navbar primary") Navbar
                 div(class="layout__content") Content
-                div(class="layout__footer primary")
-
+                div(class="layout__footer primary") Footer
+    markup(slot="markup" lang="xml")
+      |&lt;v-app top-navbar&gt;
+      |   &lt;header&gt;
+      |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
+      |   &lt;/header&gt;
+      |   &lt;main&gt;
+      |     &lt;v-content&gt;
+      |       &lt;v-container&gt;
+      |         &lt;router-view&gt;&lt;/router-view&gt;
+      |       &lt;/v-container&gt;
+      |     &lt;/v-content&gt;
+      |   &lt;/main&gt;
+      |&lt;/v-app&gt;
+      |&nbsp;
+      |&lt;v-app top-navbar left-fixed-sidebar&gt;
+      |   &lt;header&gt;
+      |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
+      |   &lt;/header&gt;
+      |   &lt;main&gt;
+      |     &lt;v-sidebar id="sidebar" fixed close-on-click&gt;&lt;/v-sidebar&gt;
+      |     &lt;v-content&gt;
+      |       &lt;v-container&gt;
+      |         &lt;router-view&gt;&lt;/router-view&gt;
+      |       &lt;/v-container&gt;
+      |     &lt;/v-content&gt;
+      |   &lt;/main&gt;
+      |&lt;/v-app&gt;
+      |&nbsp;
+      |&lt;v-app top-navbar footer left-sidebar&gt;
+      |   &lt;header&gt;
+      |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
+      |   &lt;/header&gt;
+      |   &lt;main&gt;
+      |     &lt;v-sidebar id="sidebar" fixed close-on-click&gt;&lt;/v-sidebar&gt;
+      |     &lt;v-content&gt;
+      |       &lt;v-container&gt;
+      |         &lt;router-view&gt;&lt;/router-view&gt;
+      |       &lt;/v-container&gt;
+      |     &lt;/v-content&gt;
+      |   &lt;/main&gt;
+      |   &lt;v-footer&gt;&lt;/v-footer&gt;
+      |&lt;/v-app&gt;
 </template>
 
 <script>
@@ -60,7 +101,29 @@
       return {
         doc: {
           title: 'Layouts',
-          desc: 'Vuetify supports numerous different pre-defined layouts, right out of the box.'
+          desc: 'Vuetify supports numerous different pre-defined layouts, right out of the box.',
+          params: [
+            [
+              '<code>v-app</code>',
+              '',
+              'Base component'
+            ],
+            [
+              '<code>navbar</code>',
+              'Variations: top, bottom, top-fixed, bottom-fixed',
+              'Default: false'
+            ],
+            [
+              '<code>sidebar</code>',
+              'Variations: left, right, left-fixed, right-fixed',
+              'Default: false'
+            ],
+            [
+              '<code>footer</code>',
+              '',
+              'Default: false'
+            ]
+          ]
         }
       }
     },
@@ -72,6 +135,8 @@
 </script>
 
 <style lang="stylus">
+  @import '../../node_modules/vuetify/src/stylus/settings/_colors'
+  
   .layout
     background: #fff
     display: flex
@@ -83,12 +148,14 @@
     position: relative
       
     .navbar
+      background: $red.darken-2 !important
       min-height: 15%
       color: #fff
       justify-content: center
       align-items: center
       
     &__footer
+      background: $red.darken-2 !important
       display: flex
       flex: 0 1 10%
       color: #fff
