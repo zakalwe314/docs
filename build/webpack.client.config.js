@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const base = require('./webpack.base.config')
 const HTMLPlugin = require('html-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 const vueConfig = require('./vue-loader.config')
 const SWPrecachePlugin = require('sw-precache-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -19,6 +20,9 @@ const config = Object.assign({}, base, {
     // generate output HTML
     new HTMLPlugin({
       template: 'src/index.template.html'
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer'
     })
   ])
 })

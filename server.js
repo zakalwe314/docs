@@ -7,6 +7,7 @@ const express = require('express')
 const compression = require('compression')
 const serialize = require('serialize-javascript')
 const resolve = file => path.resolve(__dirname, file)
+const uglify = require('uglify-js')
 
 
 const app = express()
@@ -42,9 +43,11 @@ function createRenderer (bundle) {
 function parseIndex (template) {
   const contentMarker = '<!-- APP -->'
   const i = template.indexOf(contentMarker)
+  let scripts = `<script>${uglify.minify(resolve('./src/critical.js')).code}</script>`
+
   return {
     head: template.slice(0, i),
-    tail: template.slice(i + contentMarker.length)
+    tail: template.slice(i + contentMarker.length).replace('<!-- CRITICALJS -->', scripts)
   }
 }
 
