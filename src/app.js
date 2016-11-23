@@ -22,10 +22,9 @@ Object.keys(Components).forEach(key => {
   Vue.component(key, Components[key])
 })
 
-const app = new Vue({
-  store,
+const app = new Vue(Vue.util.extend({
   router,
-  ...App
-})
+  store
+}, App))
 
 export { app, router, store }

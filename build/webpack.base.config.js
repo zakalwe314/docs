@@ -6,36 +6,44 @@ module.exports = {
   devtool: '#source-map',
   entry: {
     app: './src/client-entry.js',
-    vendor: ['vue', 'vue-router', 'vuex', 'lru-cache', 'es6-promise']
+    vendor: [
+      'es6-promise',
+      'vue',
+      'vue-router',
+      'vuex',
+      'vuex-router-sync',
+    ]
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
-    filename: 'client-bundle.js'
+    filename: '[name].[chunkhash].js'
+  },
+  resolve: {
+    alias: {
+      'public': path.resolve(__dirname, '../public')
+    }
   },
   module: {
-    loaders: [
+    noParse: /es6-promise\.js$/, // avoid webpack shimming process
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue-loader',
+        options: vueConfig
       },
       {
         test: /\.js$/,
-        loader: 'babel',
-        include: [
-          path.resolve(__dirname, '../../vuetify/src/index'),
-          path.resolve(__dirname, '../src')
-        ]
+        loader: 'buble-loader',
+        exclude: /node_modules/,
+        options: {
+          objectAssign: 'Object.assign'
+        }
       },
       {
         test: /\.styl$/,
         loader: ['style', 'css', 'stylus']
       }
     ]
-  },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      vue: vueConfig
-    })
-  ]
+  }
 }

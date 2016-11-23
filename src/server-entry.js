@@ -8,14 +8,21 @@ const isDev = process.env.NODE_ENV !== 'production'
 // Since data fetching is async, this function is expected to
 // return a Promise that resolves to the app instance.
 export default context => {
+  
   // set router's location
   router.push(context.url)
+  const matchedComponents = router.getMatchedComponents()
+
+  // no matched routes
+  if (!matchedComponents.length) {
+    return Promise.reject({ code: '404' })
+  }
 
   // Call preFetch hooks on components matched by the route.
   // A preFetch hook dispatches a store action and returns a Promise,
   // which is resolved when the action is complete and store state has been
   // updated.
-  return Promise.all(router.getMatchedComponents().map(component => {
+  return Promise.all(matchedComponents.map(component => {
     if (component.preFetch) {
       return component.preFetch(store)
     }
@@ -28,12 +35,12 @@ export default context => {
     // the initial data fetching on the client.
     context.initialState = store.state
 
-    const page = res.shift()
+    // const page = res.shift()
 
-    if (page && page.meta) {
-      context.meta = page.meta
-      app.title = page.title
-    }
+    // if (page && page.meta) {
+    //   context.meta = page.meta
+    //   app.title = page.title
+    // }
 
     return app
   })
