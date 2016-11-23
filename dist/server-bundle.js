@@ -8610,10 +8610,10 @@ var isDev = "production" !== 'production'
 
     var page = res.shift()
 
-    if (page.h1) {
+    if (page && page.h1) {
       __WEBPACK_IMPORTED_MODULE_0__app__["c" /* app */].title = page.h1
     }
-    
+
     if (page && page.meta) {
       context.meta = page.meta
       context.title = page.title
