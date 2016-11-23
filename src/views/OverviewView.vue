@@ -2,9 +2,9 @@
   div(class="view")
     section
       section-text
-        strong(slot="title") Tutorial
+        strong(slot="title") Overview
         div(slot="desc")
-          p This tutorial is designed to help you become fluent in the work-flow utilizing <strong>Vuetify</strong>. This tutorial will cover using the <code>webpack ssr</code> template. If you have not already installed a Vuetify starter template, please do so <router-link to="/quick-start">here</router-link>.
+          p This overview is designed to help you become fluent in the work-flow utilizing <strong>Vuetify</strong>. In this section, you will cover the basics of using the <code>webpack ssr</code> template. If you have not already installed the <code>webpack ssr</code> template, please do so <router-link to="/quick-start">here</router-link>.
     section
       section-header Introduction
       p(class="section-text") Now that you have <strong>Vuetify</strong> installed, you are ready to make your first site. Make sure you have your local server running. If you do not, from within your project directory, type:
@@ -68,12 +68,12 @@
 <script>
   export default {
     mounted () {
-      this.$emit('view', 'Tutorial')
+      this.$emit('view', 'Overview')
     },
 
     preFetch () {
       return {
-        title: 'Tutorial',
+        title: 'Overview',
         meta: {}
       }
     }

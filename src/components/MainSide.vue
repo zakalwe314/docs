@@ -45,9 +45,9 @@
             icon: 'fast_forward'
           },
           {
-            href: '/tutorial',
-            text: 'Tutorial',
-            icon: 'help'
+            href: '/overview',
+            text: 'Overview',
+            icon: 'info'
           },
           {
             parent: {

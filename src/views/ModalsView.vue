@@ -12,9 +12,9 @@
             v-select(v-bind:options="[{ text: '10-19', value: 1 }, { text: '20+', value: 2 }]" label="What is your age?")
             p This information is used to improve your experience on our site.
           v-card-actions
-            v-btn(v-close:modal="") Cancel
+            v-btn(v-on:click.native.stop="$vuetify.bus.pub('modal:close:modal', true)") Cancel
             v-col-spacer
-            v-btn(class="green white--text" v-on:click="submit" v-close:modal="") Submit
+            v-btn(class="green white--text" v-on:click.native.prevent="$vuetify.bus.pub('modal:close:modal', true)") Submit
       v-btn(
         secondary, 
         v-modal:modal2=""
@@ -27,7 +27,7 @@
           v-card-actions
             div This is an example of a bottom modal.
             v-col-spacer
-            v-btn(v-close:modal2="" class="primary white--text") Close
+            v-btn(v-on:click.native.prevent="$vuetify.bus.pub('modal:close:modal2', true)" class="primary white--text") Close
 </template>
 
 <script>
@@ -49,12 +49,6 @@
 
     mounted () {
       this.$emit('view', 'Modals')
-    },
-
-    methods: {
-      submit () {
-        //
-      }
     }
   }
 </script>
