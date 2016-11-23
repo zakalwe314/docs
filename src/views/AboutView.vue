@@ -79,8 +79,12 @@
 
     preFetch () {
       return {
-        title: 'Vuetify',
-        meta: {}
+        title: 'Vuetify | Vue JS 2 Components',
+        h1: 'Vuetify',
+        meta: {
+          description: 'Reusable material design components for Vue JS 2.0.',
+          keywords: 'vue, vue 2.0, vue js, material design, vue components, material design components'
+        }
       }
     }
   }

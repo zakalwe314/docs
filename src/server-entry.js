@@ -35,12 +35,16 @@ export default context => {
     // the initial data fetching on the client.
     context.initialState = store.state
 
-    // const page = res.shift()
+    const page = res.shift()
 
-    // if (page && page.meta) {
-    //   context.meta = page.meta
-    //   app.title = page.title
-    // }
+    if (page.h1) {
+      app.title = page.h1
+    }
+    
+    if (page && page.meta) {
+      context.meta = page.meta
+      context.title = page.title
+    }
 
     return app
   })

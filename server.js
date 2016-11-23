@@ -8,6 +8,7 @@ const compression = require('compression')
 const serialize = require('serialize-javascript')
 const resolve = file => path.resolve(__dirname, file)
 const uglify = require('uglify-js')
+const minify = require('html-minifier').minify
 
 
 const app = express()
@@ -69,8 +70,17 @@ app.get('*', (req, res) => {
   const context = { url: req.url }
   const renderStream = renderer.renderToStream(context)
 
-  renderStream.once('data', () => {
-    res.write(indexHTML.head)
+  renderStream.on('data', () => {
+    let head = indexHTML.head
+    const title = context.title || 'Vuetify | Vue JS 2 Material Components'
+    const description = context.description || 'Vuetify material components for Vue JS 2'
+    const keywords = context.keywords || 'vue, vuetify, material, vue material, vue components'
+
+    head = head.replace(/(<title>)(.*?)(<\/title>)/, `$1${title}$3`)
+               .replace(/(<meta name="description" content=")(.*?)(">)/, `$1${description}$3`)
+               .replace(/(<meta name="keywords" content=")(.*?)(">)/, `$1${keywords}$3`)
+
+    res.write(minify(head, { removeAttributeQuotes: true, collapseWhitespace: true }))
   })
 
   renderStream.on('data', chunk => {

@@ -1608,8 +1608,12 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 
   preFetch: function preFetch () {
     return {
-      title: 'Vuetify',
-      meta: {}
+      title: 'Vuetify | Vue JS 2 Components',
+      h1: 'Vuetify',
+      meta: {
+        description: 'Reusable material design components for Vue JS 2.0.',
+        keywords: 'vue, vue 2.0, vue js, material design, vue components, material design components'
+      }
     }
   }
 };
@@ -8604,12 +8608,16 @@ var isDev = "production" !== 'production'
     // the initial data fetching on the client.
     context.initialState = __WEBPACK_IMPORTED_MODULE_0__app__["b" /* store */].state
 
-    // const page = res.shift()
+    var page = res.shift()
 
-    // if (page && page.meta) {
-    //   context.meta = page.meta
-    //   app.title = page.title
-    // }
+    if (page.h1) {
+      __WEBPACK_IMPORTED_MODULE_0__app__["c" /* app */].title = page.h1
+    }
+    
+    if (page && page.meta) {
+      context.meta = page.meta
+      context.title = page.title
+    }
 
     return __WEBPACK_IMPORTED_MODULE_0__app__["c" /* app */]
   })
