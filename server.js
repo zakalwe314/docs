@@ -42,14 +42,27 @@ function createRenderer (bundle) {
 }
 
 function parseIndex (template) {
-  const contentMarker = '<!-- APP -->'
-  const i = template.indexOf(contentMarker)
-  let scripts = `<script>${uglify.minify(resolve('./src/critical.js')).code}</script>`
+  console.log('here')
+  const appMarker = '<!-- APP -->'
+  const jsMarker = '<!-- CRITICALJS -->'
+
+  const i = template.indexOf(appMarker)
+  let scripts = isProd ? `<script>${uglify.minify(resolve('./src/critical.js')).code}</script>` : ''
 
   return {
     head: template.slice(0, i),
-    tail: template.slice(i + contentMarker.length).replace('<!-- CRITICALJS -->', scripts)
+    tail: template.slice(i + appMarker.length).replace(jsMarker, scripts)
   }
+}
+
+function updateMeta (head, context) {
+  const title = context.title || 'Vuetify | Vue JS 2 Material Components'
+  const description = context.description || 'Vuetify material components for Vue JS 2'
+  const keywords = context.keywords || 'vue, vuetify, material, vue material, vue components'
+
+  return head.replace(/(<title>)(.*?)(<\/title>)/, `$1${title}$3`)
+             .replace(/(<meta name="description" content=")(.*?)(">)/, `$1${description}$3`)
+             .replace(/(<meta name="keywords" content=")(.*?)(">)/, `$1${keywords}$3`)
 }
 
 const serve = (path, cache) => express.static(resolve(path), {
@@ -70,15 +83,8 @@ app.get('*', (req, res) => {
   const context = { url: req.url }
   const renderStream = renderer.renderToStream(context)
 
-  renderStream.on('data', () => {
-    let head = indexHTML.head
-    const title = context.title || 'Vuetify | Vue JS 2 Material Components'
-    const description = context.description || 'Vuetify material components for Vue JS 2'
-    const keywords = context.keywords || 'vue, vuetify, material, vue material, vue components'
-
-    head = head.replace(/(<title>)(.*?)(<\/title>)/, `$1${title}$3`)
-               .replace(/(<meta name="description" content=")(.*?)(">)/, `$1${description}$3`)
-               .replace(/(<meta name="keywords" content=")(.*?)(">)/, `$1${keywords}$3`)
+  renderStream.once('data', () => {
+    let head = updateMeta(indexHTML.head, context)
 
     res.write(minify(head, { removeAttributeQuotes: true, collapseWhitespace: true }))
   })

@@ -21,32 +21,24 @@
       v-tabs(id="vue-cli")
         v-tabs-container
           v-tab(href="#simple" selected)
-            |Simple <br>
+            |Simple HTML <br>
             small (Beginner)
-          v-tab(href="#webpack-simple")
-            |Webpack Simple <br>
-            small (Intermediate)
           v-tab(href="#webpack")
             |Webpack <br>
-            small (Advanced)
+            small (Intermediate)
           v-tab(href="#webpack-ssr")
             |Webpack SSR <br>
-            small (Expert)
+            small (Advanced)
         
         v-tabs-content-container
           v-tab-content(id="simple")
-            h4 Simple Quick Start
+            h4 Simple HTML Quick Start
             p This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. 
             markup
               |vue init vuetifyjs.com/simple
-          v-tab-content(id="webpack-simple")
-            h4 Webpack Simple Quick Start
-            p This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups.
-            markup
-              |vue init vuetifyjs.com/webpack-simple
           v-tab-content(id="webpack")
             h4 Webpack Quick Start
-            p This template is for users who are ready to start an application. Containing unit testing, routing, and vuex, you will have everything you need to build your next user experience.
+            p This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups.
             markup
               |vue init vuetifyjs.com/webpack
           v-tab-content(id="webpack-ssr")

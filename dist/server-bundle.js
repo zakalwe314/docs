@@ -3796,14 +3796,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ exports["default"] = {
   mounted: function mounted () {
@@ -7747,31 +7739,23 @@ module.exports={render:function (){var _vm=this;
       "href": "#simple",
       "selected": "selected"
     }
-  }, ["Simple ", _vm._h('br'), _vm._h('small', ["(Beginner)"])]), _vm._h('v-tab', {
-    attrs: {
-      "href": "#webpack-simple"
-    }
-  }, ["Webpack Simple ", _vm._h('br'), _vm._h('small', ["(Intermediate)"])]), _vm._h('v-tab', {
+  }, ["Simple HTML ", _vm._h('br'), _vm._h('small', ["(Beginner)"])]), _vm._h('v-tab', {
     attrs: {
       "href": "#webpack"
     }
-  }, ["Webpack ", _vm._h('br'), _vm._h('small', ["(Advanced)"])]), _vm._h('v-tab', {
+  }, ["Webpack ", _vm._h('br'), _vm._h('small', ["(Intermediate)"])]), _vm._h('v-tab', {
     attrs: {
       "href": "#webpack-ssr"
     }
-  }, ["Webpack SSR ", _vm._h('br'), _vm._h('small', ["(Expert)"])])]), _vm._h('v-tabs-content-container', [_vm._h('v-tab-content', {
+  }, ["Webpack SSR ", _vm._h('br'), _vm._h('small', ["(Advanced)"])])]), _vm._h('v-tabs-content-container', [_vm._h('v-tab-content', {
     attrs: {
       "id": "simple"
     }
-  }, [_vm._h('h4', ["Simple Quick Start"]), _vm._h('p', ["This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. "]), _vm._h('markup', ["vue init vuetifyjs.com/simple"])]), _vm._h('v-tab-content', {
-    attrs: {
-      "id": "webpack-simple"
-    }
-  }, [_vm._h('h4', ["Webpack Simple Quick Start"]), _vm._h('p', ["This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups."]), _vm._h('markup', ["vue init vuetifyjs.com/webpack-simple"])]), _vm._h('v-tab-content', {
+  }, [_vm._h('h4', ["Simple HTML Quick Start"]), _vm._h('p', ["This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. "]), _vm._h('markup', ["vue init vuetifyjs.com/simple"])]), _vm._h('v-tab-content', {
     attrs: {
       "id": "webpack"
     }
-  }, [_vm._h('h4', ["Webpack Quick Start"]), _vm._h('p', ["This template is for users who are ready to start an application. Containing unit testing, routing, and vuex, you will have everything you need to build your next user experience."]), _vm._h('markup', ["vue init vuetifyjs.com/webpack"])]), _vm._h('v-tab-content', {
+  }, [_vm._h('h4', ["Webpack Quick Start"]), _vm._h('p', ["This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups."]), _vm._h('markup', ["vue init vuetifyjs.com/webpack"])]), _vm._h('v-tab-content', {
     attrs: {
       "id": "webpack-ssr"
     }

@@ -1,8 +1,7 @@
 var loadDeferredStyles = function() {
-  var addStylesNode = document.getElementById("deferred-styles");
-  var replacement = document.createElement("div");
-  replacement.innerHTML = addStylesNode.textContent;
-  document.body.appendChild(replacement)
+  var addStylesNode = document.getElementById('deferred-styles');
+  var location = document.head.getElementsByTagName('meta')
+  location[location.length - 1].insertAdjacentHTML('afterend', addStylesNode.textContent)
   addStylesNode.parentElement.removeChild(addStylesNode);
 };
 var raf = requestAnimationFrame || mozRequestAnimationFrame ||
