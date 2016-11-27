@@ -47,8 +47,8 @@
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) open_in_browser
-                v-list-item-title Modern Browser Support and Server Side Rendering
-                  v-list-item-sub-title Using modern web technologies such as flexbox, Vuetify was designed for the future. This allows the best bang for your buck performance to framework size. Vuetify was built on top of server side renderering. That means, besides working with normal client processed single page applications, your application is out of the box ready for whatever task you have.
+                v-list-item-title Build With Server Side Rendering
+                  v-list-item-sub-title Vuetify was built on top of server side renderering. Using an internal bus, all components communicate with each other without the need for registering DOM events.
 
     section
       section-header Ecosystem

@@ -3,30 +3,15 @@
     id="mainsidebar"
     fixed
     close-on-click
+    v-bind:items="items"
   )
-    div(class="vuetify")
+    div(class="vuetify" slot="top")
       router-link(
         to="/welcome",
         class="sidebar__logo"
       )
         span.v V
         span uetify
-    v-sidebar-items
-      template(v-for="item in items")
-        v-sidebar-group(
-          v-if="item.items"
-          v-bind:item="item.parent"
-        )
-          v-sidebar-item(
-            v-for="j in item.items"
-            v-bind:item="j"
-            v-bind:router="true"
-          )
-        v-sidebar-item(
-          v-bind:item="item"
-          v-bind:router="true"
-          v-else
-        )
 </template>
 
 <script>
