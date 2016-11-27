@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="alerts")
-    component-example(id="alerts" header="Contextual")
+    component-example(header="Contextual")
       v-alert(success)
         | This is a success alert. {{ lorem }}
       v-alert(info) 
@@ -9,6 +9,12 @@
         | This is a warning alert {{ lorem }}
       v-alert(error) 
         | This is a error alert {{ lorem }}
+    component-example(header="Closable")
+      div
+        div(v-if="!alert" class="text-xs-center")
+          v-btn(v-on:click.native="alert = true" class="primary white--text") Reset Alert
+        v-alert(success close v-model="alert")
+          | This is a success alert that is closable. {{ lorem }}
     markup(slot="markup")
       template(v-for="type in types")
         |&nbsp;
@@ -16,21 +22,36 @@
         |   ...
         |&lt;/v-alert&gt;
         |&nbsp;
+      |&nbsp;
+      |&lt;v-alert success close v-model="alert"&gt;
+      |   ...
+      |&lt;/v-alert&gt;
 </template>
 
 <script>
   export default {
     data () {
       let data = {
+        alert: true,
         doc: {
           title: 'Alert',
-          desc: 'Coming Soon',
+          desc: 'The <code>v-alert</code> component is used to convey information to the user. Designed to stand out, the alerts come in four styles, success, info, warning, and error.',
           types: ['comp', 'slot'],
           params: [
             [
               '<code>&lt;v-alert&gt;</code>',
               '',
               'Base component'
+            ],
+            [
+              '<code>v-model</code>',
+              '',
+              'Accepts v-model attr: [Boolean]'
+            ],
+            [
+              '<code>close</code>',
+              'Hides the alert',
+              'Default: false'
             ]
           ]
         },

@@ -39,9 +39,6 @@
         doc: {
           title: 'Modal',
           desc: 'Soon',
-          types: [
-            'comp', 'slot', 'directive'
-          ],
           params: []
         }
       }

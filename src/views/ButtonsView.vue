@@ -138,18 +138,8 @@
               'Default: false'
             ],
             [
-              '<code>primary</code>',
-              'Applies the application\s <span class="primary--text">primary</span> color',
-              'Default: false'
-            ],
-            [
               '<code>round</code>',
               'Applies the btn--round class',
-              'Default: false'
-            ],
-            [
-              '<code>secondary</code>',
-              'Applies the application\s <span class="secondary--text">secondary</span> color',
               'Default: false'
             ],
             [

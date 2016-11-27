@@ -4,17 +4,35 @@
       section-text
         strong(slot="title") Overview
         div(slot="desc")
-          p This overview is designed to help you become fluent in the work-flow utilizing <strong>Vuetify</strong>. In this section, you will cover the basics of using the <code>webpack ssr</code> template. If you have not already installed the <code>webpack ssr</code> template, please do so <router-link to="/quick-start">here</router-link>.
+          p This overview is designed to help you become fluent in the work-flow utilizing <strong>Vuetify</strong>. In this section, you will cover the basics of using the <code>webpack ssr</code> template. If you have not already installed the <code>webpack ssr</code> template, please do so <router-link to="/quick-start#webpack-ssr">here</router-link>.
     section
       section-header Introduction
       p(class="section-text") Now that you have <strong>Vuetify</strong> installed, you are ready to make your first site. Make sure you have your local server running. If you do not, from within your project directory, type:
       markup(lang="js")
         |npm run dev
       p(class="section-text") Let's get aquainted with the folder structure which should look like this:
-      markup(lang="js")
+      markup(lang="xml")
         | / project
         |   / build
+        |     - setup-dev-server.js
+        |     - vue-loader.config.js
+        |     - webpack.base.config.js
+        |     - webpack.client.config.js
+        |     - webpack.server.config.js
+        |   / dist
+        |   / public
         |   / src
+        |     / components
+        |     / router
+        |     / store
+        |     / css
+        |     / views
+        |     - app.js
+        |     - App.vue
+        |     - client-entry.js
+        |     - critical.js
+        |     - index.template.html
+        |     - server-entry.js
         |   - .babelrc
         |   - .gitignore
         |   - README.md

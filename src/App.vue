@@ -9,7 +9,7 @@
       v-content
         v-container(fluid)
           transition(name="slide" mode="out-in")
-            router-view(@view="view")
+            router-view(@view="view => title = view")
     main-footer
 </template>
 
@@ -23,12 +23,6 @@
 
     mounted () {
       this.$vuetify.init()
-    },
-
-    methods: {
-      view (title) {
-        this.title = title
-      }
     }
   }
 </script>

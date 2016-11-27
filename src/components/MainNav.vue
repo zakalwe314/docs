@@ -1,12 +1,12 @@
 <template lang="pug">
   header
     v-navbar
-      div(class="navbar__side-icon hidden-sm")
+      div(class="navbar__side-icon hidden-md-and-up")
         a(href="#!" v-side-bar:mainsidebar="")
           v-icon reorder
-      div(class="navbar__side--title")
-        h1(v-text="title")
-        span(v-html="subTitle")
+      div(class="navbar__side-title")
+        h1(class="text-xs-center text-md-left" v-text="title")
+        span(class="hidden-md-and-down" v-html="subTitle")
 </template>
 
 <script>

@@ -18,11 +18,13 @@ import FaqView from '../views/FaqView.vue'
 import FormsView from '../views/FormsView.vue'
 import LayoutsView from '../views/LayoutsView.vue'
 import ListsView from '../views/ListsView.vue'
+import ModalsView from '../views/ModalsView.vue'
+import NavbarView from '../views/NavbarView.vue'
 import ParallaxView from '../views/ParallaxView.vue'
 import PaginationView from '../views/PaginationView.vue'
 import ProgressView from '../views/ProgressView.vue'
-import ModalsView from '../views/ModalsView.vue'
 import SliderView from '../views/SliderView.vue'
+import SidebarView from '../views/SidebarView.vue'
 import TabsView from '../views/TabsView.vue'
 import ToastsView from '../views/ToastsView.vue'
 import TooltipsView from '../views/TooltipsView.vue'
@@ -47,10 +49,12 @@ export default new Router({
     { path: '/components/dropdowns', component: DropdownsView },
     { path: '/components/forms', component: FormsView },
     { path: '/components/lists', component: ListsView },
+    { path: '/components/modals', component: ModalsView },
+    { path: '/components/navbar', component: NavbarView },
     { path: '/components/pagination', component: PaginationView },
     { path: '/components/parallax', component: ParallaxView },
     { path: '/components/progress', component: ProgressView },
-    { path: '/components/modals', component: ModalsView },
+    { path: '/components/sidebar', component: SidebarView },
     { path: '/components/slider', component: SliderView },
     { path: '/components/tabs', component: TabsView },
     { path: '/functions/toasts', component: ToastsView },

@@ -6,7 +6,7 @@
           v-card-text
             div(v-text="card_text")
       div
-        v-card(class="green darken-1 white--text")
+        v-card(class="blue darken-1 white--text")
           v-card-text
             div(v-text="card_text")
 
@@ -15,22 +15,30 @@
         v-card
           v-card-title(class="red lighten-1")
             v-card-title-text(class="white--text")
-              v-icon all_out
+              v-icon chevron_right
               | Update
+            v-card-title-actions
+              v-btn(icon class="white--text")
+                v-icon(v-on:click.native="$vuetify.toast.create('Upload Me!')") cloud_upload
           v-card-text
             div(v-text="card_text")
           v-card-actions
             v-btn(flat) Cancel
             v-col-spacer
-            v-btn(class="green white--text") Submit
+            v-btn(class="green white--text")
+              | Submit
+              v-icon(right) fast_forward
       div
         v-card
           v-card-title(class="green lighten-1")
             v-card-title-text(class="white--text") Title
             v-card-title-actions
-              v-btn(small, class="btn--title blue lighten-2 white--text")
-                span Upload
-                v-icon(right) backup
+              v-btn(icon class="white--text")
+                v-icon remove
+              v-btn(icon class="white--text")
+                v-icon add
+              v-btn(icon class="white--text")
+                v-icon edit
           v-card-text
             div(v-text="card_text")
 
@@ -111,11 +119,25 @@
 
     markup(slot="markup")
       |&lt;v-card class="green"&gt;
-      |   ...
+      |   &lt;v-card-text&gt;
+      |     ...
+      |   &lt;/v-card-text&gt;
+      |&lt;/v-card&gt;
+      |&nbsp;
+      |&lt;v-card&gt;
+      |   &lt;v-card-title img="..." height="300px"&gt;
+      |     &lt;v-card-title-text&gt;...&lt;/v-card-title-text&gt;
+      |   &lt;/v-card-title&gt;   
+      |   &lt;v-card-text&gt;
+      |      &lt;p&gt;...&lt;/p&gt;
+      |   &lt;/v-card-text&gt;
+      |   &lt;v-card-actions&gt;
+      |      &lt;v-btn flat class="secondary--text"&gt;...&lt;/v-btn&gt;
+      |   &lt;/v-card-actions&gt;
       |&lt;/v-card&gt;
       |&nbsp;
       |&lt;v-card horizontal&gt;
-      |   &lt;v-card-title img="..."&gt;&lt;/&gt;
+      |   &lt;v-card-title img="..."&gt;&lt;/v-card-title&gt;
       |   &lt;v-card-stack&gt;
       |       &lt;v-card-text&gt;
       |           &lt;p&gt;...&lt;/p&gt;

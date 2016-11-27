@@ -1,5 +1,8 @@
 <template lang="pug">
   div.view
+    //- v-breadcrumbs
+    //-   v-breadcrumbs-item(v-bind:item="{ text: 'Vuetify', href: '#!'}")
+    //-   v-breadcrumbs-item(v-bind:item="{ text: 'Vuetify', href: '#!'}")
     section
       section-text
         dt(slot="title" v-html="doc.title")

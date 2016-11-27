@@ -30,19 +30,21 @@
     component-example(header="On Hover")
       v-btn(
         primary
-        v-dropdown:dropdown2="options"
+        v-dropdown:dropdown2=""
       ) Hover Dropdown
       v-dropdown(
-        id="dropdown2",
-        v-bind:items="items",
+        id="dropdown2"
+        v-bind:items="items"
         right
+        hover
       )
       v-btn(
         secondary
-        v-dropdown:dropdown4="options"
+        v-dropdown:dropdown4=""
       ) Hover With Labels
       v-dropdown(
         id="dropdown4"
+        hover
       )
         li
           a(href="#!", class="dropdown__item")
@@ -113,7 +115,7 @@
       return {
         doc: {
           title: 'Dropdown',
-          desc: `Soon`,
+          desc: `The <code>v-dropdown</code> component utilizes the v-dropdown directive to link itself to another element. Once binded, clicking the element, or by hovering (if using the <code>hover</code> parameter), the dropdown will reposition absolutely positioned on top of the selected activator.`,
           types: [
             'comp', 'slot', 'directive'
           ],
@@ -157,8 +159,7 @@
             href: '#!',
             text: 'Click Me 2'
           }
-        ],
-        options: { hover: true }
+        ]
       }
     }
   }

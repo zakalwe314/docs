@@ -37,10 +37,15 @@
         | Tags
       v-chip(label, outline, class="red red--text") Outline
     component-example(header="Closable")
-      v-chip(close) Closable
-      v-chip(close, class="red white--text") Remove
-      v-chip(close, outline, class="green green--text") Success
-      v-chip(close, outline, label, class="orange orange--text") Complete
+      div(class="text-xs-center" v-if="!chip1 && !chip2 && !chip3 && !chip4")
+        v-btn(
+          v-on:click.native="chip1 = true, chip2 = true, chip3 = true, chip4= true"
+          class="primary white--text"
+        ) Reset Chips
+      v-chip(close v-model="chip1") Closable
+      v-chip(close v-model="chip2" class="red white--text") Remove
+      v-chip(close v-model="chip3" outline class="green green--text") Success
+      v-chip(close v-model="chip4" outline label class="orange orange--text") Complete
     markup(slot="markup")
       |&lt;v-chip&gt;
       |   ...
@@ -68,17 +73,26 @@
   export default {
     data () {
       return {
+        chip1: true,
+        chip2: true,
+        chip3: true,
+        chip4: true,
         doc: {
           title: 'Chip',
-          desc: `Coming Soon`,
+          desc: `The <code>v-chip</code> component is used to convey small pieces of information. Using the <code>close</code> property, the chip becomes interactive, allowing user interaction.`,
           types: [
             'comp', 'slot'
           ],
           params: [
             [
-              '<code>v-chip</code>',
+              '<code>&lt;v-chip&gt;</code>',
               '',
               'Base component'
+            ],
+            [
+              '<code>v-model</code>',
+              '',
+              'Accepts v-model attr: [Boolean]'
             ],
             [
               '<code>close</code>',

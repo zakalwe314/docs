@@ -39,7 +39,7 @@
       return {
         doc: {
           title: 'Collapsible',
-          desc: `Coming Soon`,
+          desc: `The <code>v-collapsible</code> component is useful for reducing vertical space with large amounts of information. The default functionality of the component is to only display one collapsible body at a time, however, with the <code>expandable</code> property, the collapsible can remain open until explicity closed.`,
           types: [
             'comp', 'slot'
           ],

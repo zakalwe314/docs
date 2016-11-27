@@ -8,16 +8,19 @@
     section
       section-header Required Files
       p(class="section-text") Vuetify only has one dependency, Google's Roboto Font and Material Icons.
-      markup
+      markup(id="required-files")
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
 
     section
       section-header Global Install
-      p(class="section-text") To use <strong>Vuetify</strong> globally, just include the file into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use!
+      p(class="section-text") To use <strong>Vuetify</strong> globally, just include the file into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will require the dependency above, as well as:
+      markup
+        |&lt;link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"&gt;
+        |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
 
     section
       section-header Vue CLI Packages
-      p(class="section-text") Below are 4 packages forked from the <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with Vuetify even quicker. These packages require <code>vue-cli</code>. For more information on vue-cli, visit  the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
+      p(class="section-text") Below are 3 packages forked from the <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with <strong class="primary--text">Vuetify</strong> even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
       v-tabs(id="vue-cli")
         v-tabs-container
           v-tab(href="#simple" selected)
@@ -61,25 +64,7 @@
         |npm run dev
       p into your console. This will start a <a href="#!">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section
-      section-header Advanced Setup
-      p(class="section-text") Vuetify comes out of the box configured to use <a href="#!">Stylus</a>. Depending on your project requirements, some additional configuration may be necessary. If you are already familiar with webpack, feel free to skip this section.
-      h5 Pre-processor
-      p(class="section-text") From within your project's directory, navigate to <code>/build</code> and open <code>webpack.base.config.js</code>. If using the <strong>webpack simple</strong> starter template, <code>webpack.config.js</code> is located in your projects base directory. Go to the loaders section of the exported object.
-      h6 SCSS
-      markup(lang="js")
-        |npm install sass-loader --save-dev
-      markup(lang="scss")
-        |{
-        |   test: /\.scss$/,
-        |   loader: ['style', 'css', 'sass']
-        |}
-      h6 CSS
-      markup(lang="scss")
-        |{
-        |   test: /\.css$/,
-        |   loader: ['style', 'css']
-        |}
-      whats-next(route="/tutorial" text="Tutorial") Now that you have your project setup and ready to go, let's work on our first application using Vuetify.
+      whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the <strong>webpack ssr</strong> template.
 </template>
 
 <script>
@@ -89,3 +74,8 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #required-files
+    word-break: break-all
+</style>
