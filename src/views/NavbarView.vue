@@ -2,15 +2,15 @@
   doc-view(v-bind:doc="doc" id="navbar")
     component-example(header="Variants")
       v-navbar(class="green")
-        v-navbar-logo Navbar
+        v-navbar-logo(class="hidden-sm-and-down") Navbar
         v-navbar-items(v-bind:items="items")
       v-navbar(class="orange")
         v-spacer
-        v-navbar-logo(class="text-xs-center") Navbar
+        v-navbar-logo(class="hidden-sm-and-down") Navbar
         v-navbar-items(v-bind:items="items")
       v-navbar(class="red")
         v-navbar-items(v-bind:items="items")
-        v-navbar-logo
+        v-navbar-logo(class="hidden-sm-and-down")
           v-spacer
           | Navbar
     div(slot="markup")
@@ -98,6 +98,9 @@
       padding-left: 0
       min-height: 5rem
       margin: 1rem 0
+      
+      &__logo
+        min-height: 5rem
       
       &__item
         min-height: 5rem

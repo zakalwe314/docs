@@ -47,7 +47,7 @@
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) open_in_browser
-                v-list-item-title Build With Server Side Rendering
+                v-list-item-title Built With Server Side Rendering
                   v-list-item-sub-title Vuetify was built on top of server side renderering. Using an internal bus, all components communicate with each other without the need for registering DOM events.
 
     section

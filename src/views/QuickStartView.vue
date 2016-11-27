@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="view")
+  div(class="view" id="quick-start")
     section
       section-text
         strong(slot="title") Getting Started
@@ -8,7 +8,7 @@
     section
       section-header Required Files
       p(class="section-text") Vuetify only has one dependency, Google's Roboto Font and Material Icons.
-      markup(id="required-files")
+      markup
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
 
     section
@@ -19,7 +19,7 @@
         |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
 
     section
-      section-header Vue CLI Packages
+      section-header Vue CLI
       p(class="section-text") Below are 3 packages forked from the <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with <strong class="primary--text">Vuetify</strong> even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
       v-tabs(id="vue-cli")
         v-tabs-tabs
@@ -51,7 +51,7 @@
               |vue init vuetifyjs.com/webpack-ssr
       
       h4 NPM Install
-      p After the vue-cli installation finishes:
+      p(class="section-text") After the vue-cli installation finishes:
       markup(lang="js")
         |cd &lt;package-name&gt;
         |npm install
@@ -59,10 +59,10 @@
       markup(lang="js")
         |cd &lt;package-name&gt;
         |yarn
-      p If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up <code>index.html</code> in any browser. For any other package, type:
+      p(class="section-text") If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up <code>index.html</code> in any browser. For any other package, type:
       markup(lang="js")
         |npm run dev
-      p into your console. This will start a <a href="#!">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
+      p(class="section-text") into your console. This will start a <a href="#!">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section
       whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the <strong>webpack ssr</strong> template.
 </template>
@@ -76,6 +76,7 @@
 </script>
 
 <style lang="stylus">
-  #required-files
-    word-break: break-all
+  #quick-start
+    .markup
+      word-break: break-all
 </style>

@@ -6353,14 +6353,16 @@ module.exports={render:function (){var _vm=this;
     }
   }, [_vm._h('v-navbar', {
     staticClass: "green"
-  }, [_vm._h('v-navbar-logo', ["Navbar"]), _vm._h('v-navbar-items', {
+  }, [_vm._h('v-navbar-logo', {
+    staticClass: "hidden-sm-and-down"
+  }, ["Navbar"]), _vm._h('v-navbar-items', {
     attrs: {
       "items": _vm.items
     }
   })]), _vm._h('v-navbar', {
     staticClass: "orange"
   }, [_vm._h('v-spacer'), _vm._h('v-navbar-logo', {
-    staticClass: "text-xs-center"
+    staticClass: "hidden-sm-and-down"
   }, ["Navbar"]), _vm._h('v-navbar-items', {
     attrs: {
       "items": _vm.items
@@ -6371,7 +6373,9 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "items": _vm.items
     }
-  }), _vm._h('v-navbar-logo', [_vm._h('v-spacer'), "Navbar"])])]), _vm._h('div', {
+  }), _vm._h('v-navbar-logo', {
+    staticClass: "hidden-sm-and-down"
+  }, [_vm._h('v-spacer'), "Navbar"])])]), _vm._h('div', {
     slot: "markup"
   }, [_vm._h('markup', {
     attrs: {
@@ -7091,7 +7095,7 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "x-large": "x-large"
     }
-  }, ["open_in_browser"]), _vm._h('v-list-item-title', ["Build With Server Side Rendering", _vm._h('v-list-item-sub-title', ["Vuetify was built on top of server side renderering. Using an internal bus, all components communicate with each other without the need for registering DOM events."])])])])])])])]), _vm._h('section', [_vm._h('section-header', ["Ecosystem"]), _vm._h('div', {
+  }, ["open_in_browser"]), _vm._h('v-list-item-title', ["Built With Server Side Rendering", _vm._h('v-list-item-sub-title', ["Vuetify was built on top of server side renderering. Using an internal bus, all components communicate with each other without the need for registering DOM events."])])])])])])])]), _vm._h('section', [_vm._h('section-header', ["Ecosystem"]), _vm._h('div', {
     staticClass: "section-text"
   }, ["Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components."]), _vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-icon', ["color_lens"]), _vm._h('v-list-item-title', ["Material Design Color Pack"])]), _vm._h('v-list-item', [_vm._h('v-list-item-icon', ["play_arrow"]), _vm._h('v-list-item-title', ["Vue CLI Templates including SSR"])]), _vm._h('v-list-item', [_vm._h('v-list-item-icon', ["security"]), _vm._h('v-list-item-title', [_vm._h('span', ["Vuetify Admin Components ", _vm._h('v-chip', {
     staticClass: "green white--text",
@@ -8130,18 +8134,17 @@ module.exports={render:function (){var _vm=this;
 
 module.exports={render:function (){var _vm=this;
   return _vm._h('div', {
-    staticClass: "view"
+    staticClass: "view",
+    attrs: {
+      "id": "quick-start"
+    }
   }, [_vm._h('section', [_vm._h('section-text', [_vm._h('strong', {
     slot: "title"
   }, ["Getting Started"]), _vm._h('p', {
     slot: "desc"
   }, ["Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time."])])]), _vm._h('section', [_vm._h('section-header', ["Required Files"]), _vm._h('p', {
     staticClass: "section-text"
-  }, ["Vuetify only has one dependency, Google's Roboto Font and Material Icons."]), _vm._h('markup', {
-    attrs: {
-      "id": "required-files"
-    }
-  }, ["<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">"])]), _vm._h('section', [_vm._h('section-header', ["Global Install"]), _vm._m(0), _vm._h('markup', ["<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>"])]), _vm._h('section', [_vm._h('section-header', ["Vue CLI Packages"]), _vm._m(1), _vm._h('v-tabs', {
+  }, ["Vuetify only has one dependency, Google's Roboto Font and Material Icons."]), _vm._h('markup', ["<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">"])]), _vm._h('section', [_vm._h('section-header', ["Global Install"]), _vm._m(0), _vm._h('markup', ["<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>"])]), _vm._h('section', [_vm._h('section-header', ["Vue CLI"]), _vm._m(1), _vm._h('v-tabs', {
     attrs: {
       "id": "vue-cli"
     }
@@ -8175,7 +8178,9 @@ module.exports={render:function (){var _vm=this;
       "href": "https://github.com/vuejs/vue-hackernews-2.0",
       "target": "_blank"
     }
-  }, ["Hackernews"]), " repository, the Vuetify SSR template provides next generation functionality for advanced web applications."]), _vm._h('markup', ["vue init vuetifyjs.com/webpack-ssr"])])])]), _vm._h('h4', ["NPM Install"]), _vm._h('p', ["After the vue-cli installation finishes:"]), _vm._h('markup', {
+  }, ["Hackernews"]), " repository, the Vuetify SSR template provides next generation functionality for advanced web applications."]), _vm._h('markup', ["vue init vuetifyjs.com/webpack-ssr"])])])]), _vm._h('h4', ["NPM Install"]), _vm._h('p', {
+    staticClass: "section-text"
+  }, ["After the vue-cli installation finishes:"]), _vm._h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -8219,9 +8224,13 @@ module.exports={render:function (){var _vm=this;
     }
   }, ["yarn package manager"]), "."])
 },function (){var _vm=this;
-  return _vm._h('p', ["If you are using the ", _vm._h('code', ["simple"]), " vue-cli package, you are ready to go. Simply open up ", _vm._h('code', ["index.html"]), " in any browser. For any other package, type:"])
+  return _vm._h('p', {
+    staticClass: "section-text"
+  }, ["If you are using the ", _vm._h('code', ["simple"]), " vue-cli package, you are ready to go. Simply open up ", _vm._h('code', ["index.html"]), " in any browser. For any other package, type:"])
 },function (){var _vm=this;
-  return _vm._h('p', ["into your console. This will start a ", _vm._h('a', {
+  return _vm._h('p', {
+    staticClass: "section-text"
+  }, ["into your console. This will start a ", _vm._h('a', {
     attrs: {
       "href": "#!"
     }
