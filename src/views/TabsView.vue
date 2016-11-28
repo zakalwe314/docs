@@ -35,6 +35,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Tabs',
           desc: 'Soon',
           types: [

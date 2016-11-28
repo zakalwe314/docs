@@ -44,6 +44,7 @@
     data () {
       return {
         doc: {
+          stage: 'dev',
           title: 'Progress',
           desc: 'Soon',
           types: ['comp'],

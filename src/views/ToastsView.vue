@@ -49,6 +49,7 @@
     data () {
       return {
         doc: {
+          stage: 'iter',
           title: 'Toast',
           desc: 'Soon',
           types: [

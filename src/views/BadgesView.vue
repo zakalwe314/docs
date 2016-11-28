@@ -45,6 +45,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Badge',
           desc: `
             <p>

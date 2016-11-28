@@ -33,6 +33,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Pagination',
           desc: 'Coming Soon',
           types: [

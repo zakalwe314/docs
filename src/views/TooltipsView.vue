@@ -2,19 +2,19 @@
   doc-view(v-bind:doc="doc")
     component-example
       v-btn(
-        primary
+        class="primary white--text"
         v-tooltip:top="{ html: 'Top tooptip' }"
       ) Top
       v-btn(
-        primary
+        class="primary white--text"
         v-tooltip:right="{ html: 'Right tooptip' }"
       ) Right
       v-btn(
-        primary
+        class="primary white--text"
         v-tooltip:bottom="{ html: 'Bottom tooptip' }"
       ) Bottom
       v-btn(
-        primary
+        class="primary white--text"
         v-tooltip:left="{ html: 'Left Tooltip' }"
       ) Left
     markup(slot="markup" lang="xml")
@@ -32,6 +32,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Tooltip',
           desc: 'Soon',
           types: [

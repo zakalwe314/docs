@@ -2,15 +2,15 @@
   doc-view(v-bind:doc="doc")
     component-example(header="On Click")
       v-btn(
-        primary
+        class="primary white--text"
         v-dropdown:dropdown=""
       ) Click Dropdown
       v-dropdown(
-        id="dropdown",
+        id="dropdown"
         v-bind:items="items"
       )
       v-btn(
-        secondary
+        class="secondary white--text"
         v-dropdown:dropdown3=""
       ) Click With Labels
       v-dropdown(
@@ -29,7 +29,7 @@
             v-icon(class="secondary--text right") cloud_off
     component-example(header="On Hover")
       v-btn(
-        primary
+        class="primary white--text"
         v-dropdown:dropdown2=""
       ) Hover Dropdown
       v-dropdown(
@@ -39,7 +39,7 @@
         hover
       )
       v-btn(
-        secondary
+        class="secondary white--text"
         v-dropdown:dropdown4=""
       ) Hover With Labels
       v-dropdown(
@@ -91,15 +91,19 @@
             )
         v-card-text Lorem Ipsum
     div(slot="markup")
-      markup
-        |&lt;v-btn v-dropdown:dropdown="options"&gt;
+      markup(lang="xml")
+        |&lt;v-btn v-dropdown:dropdown&gt;
         |   ...
         |&lt;/v-btn&gt;
         |&lt;v-dropdown id="dropdown" v-bind:items="items"&gt;&lt;/v-dropdown&gt;
-      markup
+        |&nbsp;
+        |&lt;v-btn v-dropdown:dropdown2&gt;
+        |   ...
+        |&lt;/v-btn&gt;
+        |&lt;v-dropdown id="dropdown2" v-bind:items="items" hover&gt;&lt;/v-dropdown&gt;
+      markup(lang="js")
         |data () {
         |   return {
-        |     options: { hover: true },
         |     items: [{ text: 'Link', href: '#!' }]
         |   }
         |}
@@ -114,6 +118,7 @@
     data () {
       return {
         doc: {
+          stage: 'iter',
           title: 'Dropdown',
           desc: `The <code>v-dropdown</code> component utilizes the v-dropdown directive to link itself to another element. Once binded, clicking the element, or by hovering (if using the <code>hover</code> parameter), the dropdown will reposition absolutely positioned on top of the selected activator.`,
           types: [

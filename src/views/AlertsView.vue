@@ -34,6 +34,7 @@
       let data = {
         alert: true,
         doc: {
+          stage: 'comp',
           title: 'Alert',
           desc: 'The <code>v-alert</code> component is used to convey information to the user. Designed to stand out, the alerts come in four styles, success, info, warning, and error.',
           types: ['comp', 'slot'],

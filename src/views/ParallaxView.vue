@@ -14,6 +14,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Parallax',
           desc: 'Coming Soon',
           types: [

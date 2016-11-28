@@ -120,6 +120,7 @@
     data () {
       return {
         doc: {
+          stage: 'iter',
           title: 'Forms',
           desc: 'Soon',
           types: [

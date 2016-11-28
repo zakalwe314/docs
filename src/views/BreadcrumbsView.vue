@@ -40,6 +40,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Breadcrumbs',
           desc: `
             <p>

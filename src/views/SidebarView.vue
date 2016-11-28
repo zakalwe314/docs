@@ -65,6 +65,7 @@
     data () {
       return {
         doc: {
+          stage: 'iter',
           title: 'Sidebar',
           desc: 'The <code>v-sidebar</code> component is what your users will utilize to navigate through the application. The sidebar is pre-configured to work with or without <strong>vue-router</strong> right out the box.',
           params: [

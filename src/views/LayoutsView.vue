@@ -100,6 +100,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Layouts',
           desc: 'Vuetify supports numerous different pre-defined layouts, right out of the box.',
           params: [

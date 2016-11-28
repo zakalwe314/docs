@@ -154,6 +154,7 @@
     data () {
       return {
         doc: {
+          stage: 'iter',
           title: 'Card',
           desc: `
             <p>

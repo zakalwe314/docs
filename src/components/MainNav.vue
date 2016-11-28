@@ -35,7 +35,7 @@
       determineSubTitle () {
         switch (true) {
           case this.match('components'):
-            this.subTitle = 'Vue components built semmantically&mdash;easy to use, easy to remember'
+            this.subTitle = 'Vue components built semantically&mdash;easy to use, easy to remember'
           break
           case this.match('directives'):
             this.subTitle = 'Vue directives designed to enchance user experience'
@@ -55,8 +55,11 @@
           case this.match('layouts'):
             this.subTitle = 'Setup the foundation of your new application in no time'
           break
+          case this.match('bus'):
+            this.subTitle = 'Learn how Vuetify communicates throughout an application'
+          break
           default:
-            this.subTitle = 'Learn about the Vuetify framework'
+            this.subTitle = 'Learn about the Vuetify Webpack SSR Template'
           break
         }
       },

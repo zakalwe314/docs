@@ -16,7 +16,6 @@ import DropdownsView from '../views/DropdownsView.vue'
 import GridView from '../views/GridView.vue'
 import FaqView from '../views/FaqView.vue'
 import FormsView from '../views/FormsView.vue'
-import LayoutsView from '../views/LayoutsView.vue'
 import ListsView from '../views/ListsView.vue'
 import ModalsView from '../views/ModalsView.vue'
 import NavbarView from '../views/NavbarView.vue'
@@ -29,6 +28,8 @@ import TabsView from '../views/TabsView.vue'
 import ToastsView from '../views/ToastsView.vue'
 import TooltipsView from '../views/TooltipsView.vue'
 import TypographyView from '../views/TypographyView.vue'
+import LayoutsView from '../views/LayoutsView.vue'
+import BusView from '../views/BusView.vue'
 
 Vue.use(Router)
 
@@ -60,11 +61,11 @@ export default new Router({
     { path: '/functions/toasts', component: ToastsView },
     { path: '/directives/badges', component: BadgesView },
     { path: '/directives/tooltips', component: TooltipsView },
-    { path: '/layouts', component: LayoutsView },
     { path: '/css/typography', component: TypographyView },
     { path: '/css/grid', component: GridView },
     { path: '/css/colors', component: ColorsView },
-    { path: '/faq', component: FaqView },
+    { path: '/layouts', component: LayoutsView },
+    { path: '/bus', component: BusView },
     { path: '*', redirect: '/' }
   ]
 })

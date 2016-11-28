@@ -38,17 +38,17 @@
             h4 Simple HTML Quick Start
             p This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. 
             markup
-              |vue init vuetifyjs.com/simple
+              |vue init vuetifyjs/simple
           v-tabs-item(id="webpack")
             h4 Webpack Quick Start
             p This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups.
             markup
-              |vue init vuetifyjs.com/webpack
+              |vue init vuetifyjs/webpack
           v-tabs-item(id="webpack-ssr")
             h4 Webpack SSR Quick Start
             p This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository, the Vuetify SSR template provides next generation functionality for advanced web applications.
             markup
-              |vue init vuetifyjs.com/webpack-ssr
+              |vue init vuetifyjs/webpack-ssr
       
       h4 NPM Install
       p(class="section-text") After the vue-cli installation finishes:

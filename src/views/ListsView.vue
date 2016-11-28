@@ -83,6 +83,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'List',
           desc: 'The <code>v-list</code> component is used to display, you guessed it, lists!. Combine the list with a <code>v-badge</code> directive or a <code>v-dropdown</code> to enhance and add functionality.',
           types: [

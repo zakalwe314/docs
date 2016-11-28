@@ -48,6 +48,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Navbar',
           desc: 'Soon',
           params: [

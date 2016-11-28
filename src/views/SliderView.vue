@@ -23,6 +23,7 @@
     data () {
       return {
         doc: {
+          stage: 'comp',
           title: 'Slider',
           desc: 'Soon',
           types: [
