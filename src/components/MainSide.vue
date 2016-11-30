@@ -10,8 +10,7 @@
         to="/welcome",
         class="sidebar__logo"
       )
-        span.v V
-        span uetify
+        img(src="../assets/v2.png")
 </template>
 
 <script>
@@ -38,7 +37,7 @@
               { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
               { href: '/components/navbar', text: 'Navbar', icon: 'web' },
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
-              { href: '/components/progress', text: 'Progress', icon: 'trending_flat' },
+              // { href: '/components/progress', text: 'Progress', icon: 'trending_flat' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
               { href: '/components/sidebar', text: 'Sidebar', icon: 'view_quilt' },
               { href: '/components/slider', text: 'Slider', icon: 'slideshow' },

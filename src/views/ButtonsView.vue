@@ -5,13 +5,13 @@
       v-btn Normal
       v-btn(large) Large
       v-btn(flat) Flat
-      v-btn(flat disabled) Disabled
+      v-btn(flat disabled) Flat Disabled
       v-btn(disabled) Disabled
     component-example(header="Colored")
       v-btn(class="primary white--text") Primary
-      v-btn(flat class="primary--text") Primary
+      v-btn(flat class="primary--text") Flat Primary
       v-btn(class="secondary white--text") Secondary
-      v-btn(flat class="secondary--text") Secondary
+      v-btn(flat class="secondary--text") Flat Secondary
     component-example(header="Block")
       div.btn--block-example
         v-btn(block) Default
@@ -19,14 +19,14 @@
         v-btn(block class="secondary white--text") Secondary
         v-btn(block disabled) Disabled
     component-example(header="Rounded")
-      v-btn(round) Default
+      v-btn(round small) Small Default
       v-btn(round class="primary white--text") Primary
-      v-btn(round class="secondary white--text") Large Secondary
+      v-btn(round large class="secondary white--text") Large Secondary
       v-btn(round disabled) Disabled
     component-example(header="Outline")
-      v-btn(outline) Default
+      v-btn(outline small class="green green--text") Small Green
       v-btn(outline class="primary primary--text") Primary
-      v-btn(outline class="secondary secondary--text") Secondary
+      v-btn(outline large class="secondary secondary--text") Large Secondary
       v-btn(outline disabled) Disabled
     component-example(header="Floating")
       v-btn(small floating)

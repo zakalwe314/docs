@@ -14,8 +14,8 @@ import CollapsibleView from '../views/CollapsibleView.vue'
 import ColorsView from '../views/ColorsView.vue'
 import DropdownsView from '../views/DropdownsView.vue'
 import GridView from '../views/GridView.vue'
-import FaqView from '../views/FaqView.vue'
 import FormsView from '../views/FormsView.vue'
+import FooterView from '../views/FooterView.vue'
 import ListsView from '../views/ListsView.vue'
 import ModalsView from '../views/ModalsView.vue'
 import NavbarView from '../views/NavbarView.vue'
@@ -49,6 +49,7 @@ export default new Router({
     { path: '/components/collapsible', component: CollapsibleView },
     { path: '/components/dropdowns', component: DropdownsView },
     { path: '/components/forms', component: FormsView },
+    { path: '/components/footer', component: FooterView },
     { path: '/components/lists', component: ListsView },
     { path: '/components/modals', component: ModalsView },
     { path: '/components/navbar', component: NavbarView },

@@ -19,11 +19,6 @@ module.exports = {
     publicPath: '/dist/',
     filename: '[name].[chunkhash].js'
   },
-  resolve: {
-    alias: {
-      'public': path.resolve(__dirname, '../public')
-    }
-  },
   module: {
     noParse: /es6-promise\.js$/, // avoid webpack shimming process
     rules: [
@@ -43,7 +38,15 @@ module.exports = {
       {
         test: /\.styl$/,
         loader: ['style', 'css', 'stylus']
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      },
     ]
   }
 }

@@ -7,13 +7,13 @@
 
     section
       section-header Required Files
-      p(class="section-text") Vuetify only has one dependency, Google's Roboto Font and Material Icons.
+      p(class="section-text") Vuetify requires Google's Roboto Font and Material Icons.
       markup
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
 
     section
       section-header Global Install
-      p(class="section-text") To use <strong>Vuetify</strong> globally, just include the file into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will require the dependency above, as well as:
+      p(class="section-text") If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above.
       markup
         |&lt;link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"&gt;
         |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
@@ -55,14 +55,14 @@
       markup(lang="js")
         |cd &lt;package-name&gt;
         |npm install
-      p Or alernatively, using Facebook's recently released <a href="#!">yarn package manager</a>.
+      p Or alernatively, using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>.
       markup(lang="js")
         |cd &lt;package-name&gt;
         |yarn
       p(class="section-text") If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up <code>index.html</code> in any browser. For any other package, type:
       markup(lang="js")
         |npm run dev
-      p(class="section-text") into your console. This will start a <a href="#!">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
+      p(class="section-text") into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section
       whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the <strong>webpack ssr</strong> template.
 </template>

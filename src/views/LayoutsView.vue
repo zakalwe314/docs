@@ -70,7 +70,7 @@
       |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
       |   &lt;/header&gt;
       |   &lt;main&gt;
-      |     &lt;v-sidebar id="sidebar" fixed close-on-click&gt;&lt;/v-sidebar&gt;
+      |     &lt;v-sidebar id="sidebar" fixed&gt;&lt;/v-sidebar&gt;
       |     &lt;v-content&gt;
       |       &lt;v-container&gt;
       |         &lt;router-view&gt;&lt;/router-view&gt;
@@ -79,12 +79,12 @@
       |   &lt;/main&gt;
       |&lt;/v-app&gt;
       |&nbsp;
-      |&lt;v-app top-navbar footer left-sidebar&gt;
+      |&lt;v-app top-navbar footer right-fixed-sidebar&gt;
       |   &lt;header&gt;
       |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
       |   &lt;/header&gt;
       |   &lt;main&gt;
-      |     &lt;v-sidebar id="sidebar" fixed close-on-click&gt;&lt;/v-sidebar&gt;
+      |     &lt;v-sidebar id="sidebar" fixed right&gt;&lt;/v-sidebar&gt;
       |     &lt;v-content&gt;
       |       &lt;v-container&gt;
       |         &lt;router-view&gt;&lt;/router-view&gt;

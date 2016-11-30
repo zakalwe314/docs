@@ -7,6 +7,9 @@
       div(class="navbar__side-title")
         h1(class="text-xs-center text-md-left" v-text="title")
         span(class="hidden-md-and-down" v-html="subTitle")
+      div(class="navbar__links")
+        a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
+          img(src="../assets/github.png")
 </template>
 
 <script>

@@ -40,7 +40,7 @@
         |   - package.json
         |   - server.js
       div(class="section-text") 
-        p The <strong>Build</strong> folder contains all of the webpack specific build configurations for your project. <strong>Src</strong> is where all the development project files reside. Notice that the <code>vuetify ssr</code> template is out-of-the-box configured to use <a href="#!">Vue Router</a>, <a href="#!">Vuex</a>, and the <a href="#!">Vue Server Renderer</a>. This will allow you to make simple or complex applications that are not only fast/efficient, but <strong>SEO</strong> friendly.
+        p The <strong>Build</strong> folder contains all of the webpack specific build configurations for your project. <strong>Src</strong> is where all the development project files reside. Notice that the <code>vuetify ssr</code> template is out-of-the-box configured to use <a href="https://router.vuejs.org/en/" target="_blank">Vue Router</a>, <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">Vuex</a>, and the <a href="https://vuejs.org/v2/guide/ssr.html" target="_blank">Vue Server Renderer</a>. This will allow you to make simple or complex applications that are not only fast/efficient, but <strong>SEO</strong> friendly.
       h3 Application
       div(class="section-text")
         p Navigate to the <strong>src</strong> folder and open up <code>App.vue</code>. Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is the <code>v-app</code> component. This will allow you to define your application layout without any heavy lifting.

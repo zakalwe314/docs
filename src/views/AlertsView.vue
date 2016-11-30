@@ -47,7 +47,7 @@
             [
               '<code>v-model</code>',
               '',
-              'Accepts v-model attr: [Boolean]'
+              'Types: [Boolean]'
             ],
             [
               '<code>close</code>',
