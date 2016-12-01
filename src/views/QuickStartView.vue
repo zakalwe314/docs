@@ -74,9 +74,3 @@
     }
   }
 </script>
-
-<style lang="stylus">
-  #quick-start
-    .markup
-      word-break: break-all
-</style>

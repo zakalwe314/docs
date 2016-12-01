@@ -974,6 +974,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data () {
@@ -1187,20 +1188,20 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
         case this.match('quick-start'):
           this.subTitle = 'Vue premade templates&mdash;out of the box, ready to go'
         break
-        case this.match('tutorial'):
+        case this.match('overview'):
           this.subTitle = 'Learn how to use the Vuetify framework in your first project'
         break
         case this.match('css'):
           this.subTitle = 'CSS classes to help reduce the need for manual class declaration'
         break
         case this.match('layouts'):
-          this.subTitle = 'Setup the foundation of your new application in no time'
+          this.subTitle = 'Select a layout for your next application'
         break
         case this.match('bus'):
           this.subTitle = 'Learn how Vuetify communicates throughout an application'
         break
         default:
-          this.subTitle = 'Learn about the Vuetify Webpack SSR Template'
+          this.subTitle = 'Learn about the features of Vuetify'
         break
       }
     },
@@ -1473,7 +1474,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 
 /* harmony default export */ exports["default"] = {
   mounted: function mounted () {
-    console.log(this)
     this.$emit('view', 'Vuetify')
   },
 
@@ -2693,8 +2693,14 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
     return {
       doc: {
         title: 'Footer',
-        desc: 'Soon',
-        params: []
+        desc: 'The <code>v-footer</code> component is used for displaying general information that a user might want to access from any page within your site.',
+        params: [
+          [
+            '<code>&lt;v-footer&gt;</code>',
+            '',
+            'Base component'
+          ]
+        ]
       }
     }
   },
@@ -6148,8 +6154,6 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
-/* styles */
-
 /* script */
 __vue_exports__ = __webpack_require__(35)
 
@@ -8218,11 +8222,11 @@ module.exports={render:function (){var _vm=this;
       "name": "slide",
       "mode": "out-in"
     }
-  }, [_vm._h('router-view', {
+  }, [_vm._h('keep-alive', [_vm._h('router-view', {
     on: {
       "view": function (view) { return _vm.title = view; }
     }
-  })])])])]), _vm._h('main-footer')])
+  })])])])])]), _vm._h('main-footer')])
 },staticRenderFns: []}
 
 /***/ },

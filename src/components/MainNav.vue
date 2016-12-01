@@ -49,20 +49,20 @@
           case this.match('quick-start'):
             this.subTitle = 'Vue premade templates&mdash;out of the box, ready to go'
           break
-          case this.match('tutorial'):
+          case this.match('overview'):
             this.subTitle = 'Learn how to use the Vuetify framework in your first project'
           break
           case this.match('css'):
             this.subTitle = 'CSS classes to help reduce the need for manual class declaration'
           break
           case this.match('layouts'):
-            this.subTitle = 'Setup the foundation of your new application in no time'
+            this.subTitle = 'Select a layout for your next application'
           break
           case this.match('bus'):
             this.subTitle = 'Learn how Vuetify communicates throughout an application'
           break
           default:
-            this.subTitle = 'Learn about the Vuetify Webpack SSR Template'
+            this.subTitle = 'Learn about the features of Vuetify'
           break
         }
       },
