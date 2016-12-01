@@ -1479,7 +1479,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 
   preFetch: function preFetch () {
     return {
-      title: 'Vuetify | Vue JS 2 Components',
+      title: 'Vuetify | Vue JS 2.0 Components',
       h1: 'Vuetify',
       meta: {
         description: 'Reusable material design components for Vue JS 2.0.',
