@@ -3,14 +3,13 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const compression = require('compression')
 const fs = require('fs')
-const path = require('path')
 const express = require('express')
 const favicon = require('serve-favicon')
-const serialize = require('serialize-javascript')
-const resolve = file => path.resolve(__dirname, file)
-const uglify = require('uglify-js')
 const minify = require('html-minifier').minify
-
+const path = require('path')
+const resolve = file => path.resolve(__dirname, file)
+const serialize = require('serialize-javascript')
+const uglify = require('uglify-js')
 
 const app = express()
 
