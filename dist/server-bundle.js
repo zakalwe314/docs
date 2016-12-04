@@ -6898,53 +6898,53 @@ module.exports = __vue_exports__
 /* 93 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Default"
     }
-  }, [_vm._h('v-tabs', {
+  }, [_h('v-tabs', {
     attrs: {
       "id": "tabs"
     }
-  }, [_vm._h('v-tabs-tabs', [_vm._h('v-tab', {
+  }, [_h('v-tabs-tabs', [_h('v-tab', {
     attrs: {
       "href": "tab1",
       "selected": "selected"
     }
-  }, ["Tab 1"]), _vm._h('v-tab', {
+  }, ["Tab 1"]), _h('v-tab', {
     attrs: {
       "href": "tab2"
     }
-  }, ["Tab 2"]), _vm._h('v-tab', {
+  }, ["Tab 2"]), _h('v-tab', {
     attrs: {
       "href": "tab3"
     }
-  }, ["Tab 3"]), _vm._h('v-tab', {
+  }, ["Tab 3"]), _h('v-tab', {
     attrs: {
       "href": "tab4"
     }
-  }, ["Tab 4"])]), _vm._h('v-tabs-items', [_vm._h('v-tabs-item', {
+  }, ["Tab 4"])]), _h('v-tabs-items', [_h('v-tabs-item', {
     attrs: {
       "id": "tab1"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _vm._h('v-tabs-item', {
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tabs-item', {
     attrs: {
       "id": "tab2"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _vm._h('v-tabs-item', {
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tabs-item', {
     attrs: {
       "id": "tab3"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _vm._h('v-tabs-item', {
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tabs-item', {
     attrs: {
       "id": "tab4"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])]), _vm._h('markup', {
+  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])]), _h('markup', {
     attrs: {
       "lang": "xml"
     },
@@ -6956,12 +6956,12 @@ module.exports={render:function (){var _vm=this;
 /* 94 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', [_vm._h('v-btn', {
+  }, [_h('component-example', [_h('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:top",
@@ -6972,7 +6972,7 @@ module.exports={render:function (){var _vm=this;
       arg: "top"
     }],
     staticClass: "primary white--text"
-  }, ["Top"]), _vm._h('v-btn', {
+  }, ["Top"]), _h('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:right",
@@ -6983,7 +6983,7 @@ module.exports={render:function (){var _vm=this;
       arg: "right"
     }],
     staticClass: "primary white--text"
-  }, ["Right"]), _vm._h('v-btn', {
+  }, ["Right"]), _h('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:bottom",
@@ -6994,7 +6994,7 @@ module.exports={render:function (){var _vm=this;
       arg: "bottom"
     }],
     staticClass: "primary white--text"
-  }, ["Bottom"]), _vm._h('v-btn', {
+  }, ["Bottom"]), _h('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:left",
@@ -7005,7 +7005,7 @@ module.exports={render:function (){var _vm=this;
       arg: "left"
     }],
     staticClass: "primary white--text"
-  }, ["Left"])]), _vm._h('markup', {
+  }, ["Left"])]), _h('markup', {
     attrs: {
       "lang": "xml"
     },
@@ -7017,47 +7017,47 @@ module.exports={render:function (){var _vm=this;
 /* 95 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "navbar"
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Variants"
     }
-  }, [_vm._h('v-navbar', {
+  }, [_h('v-navbar', {
     staticClass: "green"
-  }, [_vm._h('v-navbar-logo', {
+  }, [_h('v-navbar-logo', {
     staticClass: "hidden-sm-and-down"
-  }, ["Navbar"]), _vm._h('v-navbar-items', {
+  }, ["Navbar"]), _h('v-navbar-items', {
     attrs: {
       "items": _vm.items
     }
-  })]), _vm._h('v-navbar', {
+  })]), _h('v-navbar', {
     staticClass: "orange"
-  }, [_vm._h('v-spacer'), _vm._h('v-navbar-logo', {
+  }, [_h('v-spacer'), _h('v-navbar-logo', {
     staticClass: "hidden-sm-and-down"
-  }, ["Navbar"]), _vm._h('v-navbar-items', {
+  }, ["Navbar"]), _h('v-navbar-items', {
     attrs: {
       "items": _vm.items
     }
-  })]), _vm._h('v-navbar', {
+  })]), _h('v-navbar', {
     staticClass: "red"
-  }, [_vm._h('v-navbar-items', {
+  }, [_h('v-navbar-items', {
     attrs: {
       "items": _vm.items
     }
-  }), _vm._h('v-navbar-logo', {
+  }), _h('v-navbar-logo', {
     staticClass: "hidden-sm-and-down"
-  }, [_vm._h('v-spacer'), "Navbar"])])]), _vm._h('div', {
+  }, [_h('v-spacer'), "Navbar"])])]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-navbar class=\"green\">\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"yellow\">\n  <v-spacer></v-spacer>\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"red\">\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n  <v-navbar-logo>\n    <v-spacer></v-spacer>\n    Navbar\n  </v-navbar>\n</v-navbar>"]), _vm._h('markup', {
+  }, ["<v-navbar class=\"green\">\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"yellow\">\n  <v-spacer></v-spacer>\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"red\">\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n  <v-navbar-logo>\n    <v-spacer></v-spacer>\n    Navbar\n  </v-navbar>\n</v-navbar>"]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -7068,36 +7068,36 @@ module.exports={render:function (){var _vm=this;
 /* 96 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('table', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('table', {
     staticClass: "table--component"
-  }, [_vm._m(0), _vm._h('tbody', [_vm._l((_vm.params), function(option) {
-    return _vm._h('tr', [_vm._l((option), function(td) {
-      return _vm._h('td', {
+  }, [_vm._m(0), _h('tbody', [_vm._l((_vm.params), function(option) {
+    return _h('tr', [_vm._l((option), function(td) {
+      return _h('td', {
         domProps: {
           "innerHTML": _vm._s(td)
         }
       })
     })])
   })])])
-},staticRenderFns: [function (){var _vm=this;
-  return _vm._h('thead', [_vm._h('tr', [_vm._h('th', ["Option"]), _vm._h('th', ["Effect"]), _vm._h('th', ["Remarks"])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('thead', [_h('tr', [_h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
 }]}
 
 /***/ },
 /* 97 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('v-parallax', {
+  }, [_h('v-parallax', {
     attrs: {
       "src": "https://s-media-cache-ak0.pinimg.com/originals/e1/00/ef/e100ef3699fa021506561d41e392a148.jpg"
     }
-  }), _vm._h('markup', {
+  }), _h('markup', {
     slot: "markup"
   }, ["<v-parallax src=\"...\"></v-parallax>"])])
 },staticRenderFns: []}
@@ -7106,16 +7106,16 @@ module.exports={render:function (){var _vm=this;
 /* 98 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Short"
     }
-  }, [_vm._h('v-pagination', {
+  }, [_h('v-pagination', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -7133,11 +7133,11 @@ module.exports={render:function (){var _vm=this;
         _vm.page = $event
       }
     }
-  })]), _vm._h('component-example', {
+  })]), _h('component-example', {
     attrs: {
       "header": "Long"
     }
-  }, [_vm._h('v-pagination', {
+  }, [_h('v-pagination', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -7155,11 +7155,11 @@ module.exports={render:function (){var _vm=this;
         _vm.page2 = $event
       }
     }
-  })]), _vm._h('component-example', {
+  })]), _h('component-example', {
     attrs: {
       "header": "Round"
     }
-  }, [_vm._h('v-pagination', {
+  }, [_h('v-pagination', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -7178,23 +7178,23 @@ module.exports={render:function (){var _vm=this;
         _vm.page3 = $event
       }
     }
-  })]), _vm._h('div', {
+  })]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', ["<v-pagination v-bind:length=\"length\" v-model=\"page\"></v-pagination>"]), _vm._h('markup', ["data () {\n  return {\n    length: 5,\n    page: 1\n  }\n}"])])])
+  }, [_h('markup', ["<v-pagination v-bind:length=\"length\" v-model=\"page\"></v-pagination>"]), _h('markup', ["data () {\n  return {\n    length: 5,\n    page: 1\n  }\n}"])])])
 },staticRenderFns: []}
 
 /***/ },
 /* 99 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', [_vm._h('div', [_vm._h('v-footer', [_vm._h('div', {
+  }, [_h('component-example', [_h('div', [_h('v-footer', [_h('div', {
     staticClass: "text-xs-right"
-  }, ["© 2016"])])])]), _vm._h('markup', {
+  }, ["© 2016"])])])]), _h('markup', {
     attrs: {
       "lang": "xml"
     },
@@ -7206,43 +7206,43 @@ module.exports={render:function (){var _vm=this;
 /* 100 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "whats-next"
-  }, [_vm._h('h2', {
+  }, [_h('h2', {
     staticClass: "section-header primary--after"
-  }, ["What's Next", _vm._h('v-icon', {
+  }, ["What's Next", _h('v-icon', {
     staticClass: "primary--text",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["help_outline"])]), _vm._h('v-alert', {
+  }, ["help_outline"])]), _h('v-alert', {
     attrs: {
       "info": "info"
     }
-  }, [_vm._h('v-container', {
+  }, [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('v-row', [_vm._h('v-col', {
+  }, [_h('v-row', [_h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm8": "sm8"
     }
-  }, [_vm._t("default")]), _vm._h('v-col', {
+  }, [_vm._t("default")]), _h('v-col', {
     staticClass: "text-sm-right text-xs-center",
     attrs: {
       "xs12": "xs12",
       "sm4": "sm4"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "blue darken-3 white--text",
     nativeOn: {
       "click": function($event) {
         _vm.$router.push(_vm.route)
       }
     }
-  }, [_vm._s(_vm.text), _vm._h('v-icon', {
+  }, [_vm._s(_vm.text), _h('v-icon', {
     attrs: {
       "right": "right"
     }
@@ -7253,10 +7253,10 @@ module.exports={render:function (){var _vm=this;
 /* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('header', [_vm._h('v-navbar', [_vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('header', [_h('v-navbar', [_h('div', {
     staticClass: "navbar__side-icon hidden-md-and-up"
-  }, [_vm._h('a', {
+  }, [_h('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:mainsidebar",
@@ -7265,26 +7265,26 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('v-icon', ["reorder"])])]), _vm._h('div', {
+  }, [_h('v-icon', ["reorder"])])]), _h('div', {
     staticClass: "navbar__side-title"
-  }, [_vm._h('h1', {
+  }, [_h('h1', {
     staticClass: "text-xs-center text-md-left",
     domProps: {
       "textContent": _vm._s(_vm.title)
     }
-  }), _vm._h('span', {
+  }), _h('span', {
     staticClass: "hidden-md-and-down",
     domProps: {
       "innerHTML": _vm._s(_vm.subTitle)
     }
-  })]), _vm._h('div', {
+  })]), _h('div', {
     staticClass: "navbar__links"
-  }, [_vm._h('a', {
+  }, [_h('a', {
     attrs: {
       "href": "https://github.com/vuetifyjs/vuetify",
       "target": "_blank"
     }
-  }, [_vm._h('img', {
+  }, [_h('img', {
     attrs: {
       "src": __webpack_require__(49)
     }
@@ -7295,8 +7295,8 @@ module.exports={render:function (){var _vm=this;
 /* 102 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('dl', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('dl', {
     staticClass: "section-text"
   }, [_vm._t("title"), _vm._t("desc")])
 },staticRenderFns: []}
@@ -7305,133 +7305,133 @@ module.exports={render:function (){var _vm=this;
 /* 103 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "On Click"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown",
       arg: "dropdown"
     }],
     staticClass: "primary white--text"
-  }, ["Click Dropdown"]), _vm._h('v-dropdown', {
+  }, ["Click Dropdown"]), _h('v-dropdown', {
     attrs: {
       "id": "dropdown",
       "items": _vm.items
     }
-  }), _vm._h('v-btn', {
+  }), _h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown3",
       arg: "dropdown3"
     }],
     staticClass: "secondary white--text"
-  }, ["Click With Labels"]), _vm._h('v-dropdown', {
+  }, ["Click With Labels"]), _h('v-dropdown', {
     attrs: {
       "id": "dropdown3"
     }
-  }, [_vm._h('li', [_vm._h('a', {
+  }, [_h('li', [_h('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Profile", _vm._h('v-chip', {
+  }, ["Profile", _h('v-chip', {
     staticClass: "teal white--text right",
     attrs: {
       "label": "label",
       "small": "small"
     }
-  }, ["new"])])]), _vm._h('li', [_vm._h('a', {
+  }, ["new"])])]), _h('li', [_h('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('span', {
+  }, [_h('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:2",
       arg: "2"
     }]
-  }, ["Notifications"])])]), _vm._h('li', [_vm._h('a', {
+  }, ["Notifications"])])]), _h('li', [_h('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Logout", _vm._h('v-icon', {
+  }, ["Logout", _h('v-icon', {
     staticClass: "secondary--text right"
-  }, ["cloud_off"])])])])]), _vm._h('component-example', {
+  }, ["cloud_off"])])])])]), _h('component-example', {
     attrs: {
       "header": "On Hover"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown2",
       arg: "dropdown2"
     }],
     staticClass: "primary white--text"
-  }, ["Hover Dropdown"]), _vm._h('v-dropdown', {
+  }, ["Hover Dropdown"]), _h('v-dropdown', {
     attrs: {
       "id": "dropdown2",
       "items": _vm.items,
       "right": "right",
       "hover": "hover"
     }
-  }), _vm._h('v-btn', {
+  }), _h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown4",
       arg: "dropdown4"
     }],
     staticClass: "secondary white--text"
-  }, ["Hover With Labels"]), _vm._h('v-dropdown', {
+  }, ["Hover With Labels"]), _h('v-dropdown', {
     attrs: {
       "id": "dropdown4",
       "hover": "hover"
     }
-  }, [_vm._h('li', [_vm._h('a', {
+  }, [_h('li', [_h('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Profile", _vm._h('v-chip', {
+  }, ["Profile", _h('v-chip', {
     staticClass: "teal white--text right",
     attrs: {
       "label": "label",
       "small": "small"
     }
-  }, ["new"])])]), _vm._h('li', [_vm._h('a', {
+  }, ["new"])])]), _h('li', [_h('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('span', {
+  }, [_h('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:2",
       arg: "2"
     }]
-  }, ["Notifications"])])]), _vm._h('li', [_vm._h('a', {
+  }, ["Notifications"])])]), _h('li', [_h('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Logout", _vm._h('v-icon', {
+  }, ["Logout", _h('v-icon', {
     staticClass: "secondary--text right"
-  }, ["cloud_off"])])])])]), _vm._h('component-example', {
+  }, ["cloud_off"])])])])]), _h('component-example', {
     attrs: {
       "header": "Menus"
     }
-  }, [_vm._h('v-card', [_vm._h('v-card-row', {
+  }, [_h('v-card', [_h('v-card-row', {
     staticClass: "blue white--text"
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:menu",
@@ -7440,16 +7440,16 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "icon": "icon"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     staticClass: "white--text"
-  }, ["more_vert"])]), _vm._h('v-dropdown', {
+  }, ["more_vert"])]), _h('v-dropdown', {
     attrs: {
       "id": "menu",
       "items": _vm.items
     }
-  }), _vm._h('v-card-title', ["Menu"])]), _vm._h('v-card-text', ["Lorem Ipsum"])]), _vm._h('v-card', [_vm._h('v-card-row', {
+  }), _h('v-card-title', ["Menu"])]), _h('v-card-text', ["Lorem Ipsum"])]), _h('v-card', [_h('v-card-row', {
     staticClass: "blue white--text"
-  }, [_vm._h('v-card-title', ["Menu"]), _vm._h('v-spacer'), _vm._h('v-btn', {
+  }, [_h('v-card-title', ["Menu"]), _h('v-spacer'), _h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:menu2",
@@ -7458,21 +7458,21 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "icon": "icon"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     staticClass: "white--text"
-  }, ["more_vert"])]), _vm._h('v-dropdown', {
+  }, ["more_vert"])]), _h('v-dropdown', {
     attrs: {
       "id": "menu2",
       "items": _vm.items,
       "right": "right"
     }
-  })]), _vm._h('v-card-text', ["Lorem Ipsum"])])]), _vm._h('div', {
+  })]), _h('v-card-text', ["Lorem Ipsum"])])]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-btn v-dropdown:dropdown>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown\" v-bind:items=\"items\"></v-dropdown>\n \n<v-btn v-dropdown:dropdown2>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown2\" v-bind:items=\"items\" hover></v-dropdown>"]), _vm._h('markup', {
+  }, ["<v-btn v-dropdown:dropdown>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown\" v-bind:items=\"items\"></v-dropdown>\n \n<v-btn v-dropdown:dropdown2>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown2\" v-bind:items=\"items\" hover></v-dropdown>"]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -7483,11 +7483,11 @@ module.exports={render:function (){var _vm=this;
 /* 104 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('h2', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('h2', {
     staticClass: "section-header secondary--text primary--after",
     style: (_vm.styles)
-  }, [_vm._t("default"), _vm._h('v-icon', {
+  }, [_vm._t("default"), _h('v-icon', {
     staticClass: "primary--text",
     attrs: {
       "x-large": "x-large"
@@ -7499,197 +7499,197 @@ module.exports={render:function (){var _vm=this;
 /* 105 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Default"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "small": "small"
     }
-  }, ["Small"]), _vm._h('v-btn', ["Normal"]), _vm._h('v-btn', {
+  }, ["Small"]), _h('v-btn', ["Normal"]), _h('v-btn', {
     attrs: {
       "large": "large"
     }
-  }, ["Large"]), _vm._h('v-btn', {
+  }, ["Large"]), _h('v-btn', {
     attrs: {
       "flat": "flat"
     }
-  }, ["Flat"]), _vm._h('v-btn', {
+  }, ["Flat"]), _h('v-btn', {
     attrs: {
       "flat": "flat",
       "disabled": "disabled"
     }
-  }, ["Flat Disabled"]), _vm._h('v-btn', {
+  }, ["Flat Disabled"]), _h('v-btn', {
     attrs: {
       "disabled": "disabled"
     }
-  }, ["Disabled"])]), _vm._h('component-example', {
+  }, ["Disabled"])]), _h('component-example', {
     attrs: {
       "header": "Colored"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "primary white--text"
-  }, ["Primary"]), _vm._h('v-btn', {
+  }, ["Primary"]), _h('v-btn', {
     staticClass: "primary--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Flat Primary"]), _vm._h('v-btn', {
+  }, ["Flat Primary"]), _h('v-btn', {
     staticClass: "secondary white--text"
-  }, ["Secondary"]), _vm._h('v-btn', {
+  }, ["Secondary"]), _h('v-btn', {
     staticClass: "secondary--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Flat Secondary"])]), _vm._h('component-example', {
+  }, ["Flat Secondary"])]), _h('component-example', {
     attrs: {
       "header": "Block"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "btn--block-example"
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "block": "block"
     }
-  }, ["Default"]), _vm._h('v-btn', {
+  }, ["Default"]), _h('v-btn', {
     staticClass: "primary white--text",
     attrs: {
       "block": "block"
     }
-  }, ["Primary"]), _vm._h('v-btn', {
+  }, ["Primary"]), _h('v-btn', {
     staticClass: "secondary white--text",
     attrs: {
       "block": "block"
     }
-  }, ["Secondary"]), _vm._h('v-btn', {
+  }, ["Secondary"]), _h('v-btn', {
     attrs: {
       "block": "block",
       "disabled": "disabled"
     }
-  }, ["Disabled"])])]), _vm._h('component-example', {
+  }, ["Disabled"])])]), _h('component-example', {
     attrs: {
       "header": "Rounded"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "round": "round",
       "small": "small"
     }
-  }, ["Small Default"]), _vm._h('v-btn', {
+  }, ["Small Default"]), _h('v-btn', {
     staticClass: "primary white--text",
     attrs: {
       "round": "round"
     }
-  }, ["Primary"]), _vm._h('v-btn', {
+  }, ["Primary"]), _h('v-btn', {
     staticClass: "secondary white--text",
     attrs: {
       "round": "round",
       "large": "large"
     }
-  }, ["Large Secondary"]), _vm._h('v-btn', {
+  }, ["Large Secondary"]), _h('v-btn', {
     attrs: {
       "round": "round",
       "disabled": "disabled"
     }
-  }, ["Disabled"])]), _vm._h('component-example', {
+  }, ["Disabled"])]), _h('component-example', {
     attrs: {
       "header": "Outline"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "green green--text",
     attrs: {
       "outline": "outline",
       "small": "small"
     }
-  }, ["Small Green"]), _vm._h('v-btn', {
+  }, ["Small Green"]), _h('v-btn', {
     staticClass: "primary primary--text",
     attrs: {
       "outline": "outline"
     }
-  }, ["Primary"]), _vm._h('v-btn', {
+  }, ["Primary"]), _h('v-btn', {
     staticClass: "secondary secondary--text",
     attrs: {
       "outline": "outline",
       "large": "large"
     }
-  }, ["Large Secondary"]), _vm._h('v-btn', {
+  }, ["Large Secondary"]), _h('v-btn', {
     attrs: {
       "outline": "outline",
       "disabled": "disabled"
     }
-  }, ["Disabled"])]), _vm._h('component-example', {
+  }, ["Disabled"])]), _h('component-example', {
     attrs: {
       "header": "Floating"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "small": "small",
       "floating": "floating"
     }
-  }, [_vm._h('v-icon', ["event"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["event"])]), _h('v-btn', {
     attrs: {
       "floating": "floating"
     }
-  }, [_vm._h('v-icon', ["add"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["add"])]), _h('v-btn', {
     attrs: {
       "floating": "floating",
       "large": "large"
     }
-  }, [_vm._h('v-icon', ["edit"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["edit"])]), _h('v-btn', {
     attrs: {
       "floating": "floating",
       "disabled": "disabled"
     }
-  }, [_vm._h('v-icon', ["remove"])])]), _vm._h('component-example', {
+  }, [_h('v-icon', ["remove"])])]), _h('component-example', {
     attrs: {
       "header": "Colored Floating"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "purple white--text",
     attrs: {
       "floating": "floating",
       "small": "small"
     }
-  }, [_vm._h('v-icon', ["cloud"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["cloud"])]), _h('v-btn', {
     staticClass: "primary white--text",
     attrs: {
       "floating": "floating"
     }
-  }, [_vm._h('v-icon', ["attachment"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["attachment"])]), _h('v-btn', {
     staticClass: "secondary white--text",
     attrs: {
       "floating": "floating",
       "large": "large"
     }
-  }, [_vm._h('v-icon', ["event"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["event"])]), _h('v-btn', {
     attrs: {
       "floating": "floating",
       "large": "large",
       "disabled": "disabled"
     }
-  }, [_vm._h('v-icon', ["room"])])]), _vm._h('component-example', {
+  }, [_h('v-icon', ["room"])])]), _h('component-example', {
     attrs: {
       "header": "Icon"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     attrs: {
       "icon": "icon"
     }
-  }, [_vm._h('v-icon', ["hearing"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["hearing"])]), _h('v-btn', {
     attrs: {
       "icon": "icon"
     }
-  }, [_vm._h('v-icon', ["computer"])]), _vm._h('v-btn', {
+  }, [_h('v-icon', ["computer"])]), _h('v-btn', {
     attrs: {
       "icon": "icon"
     }
-  }, [_vm._h('v-icon', ["headset"])])]), _vm._h('markup', {
+  }, [_h('v-icon', ["headset"])])]), _h('markup', {
     slot: "markup"
   }, ["<v-btn>\n  ...\n</v-btn>\n \n<v-btn flat>\n  ...\n</v-btn>\n \n<v-btn primary>\n  ...\n</v-btn>\n \n<v-btn block>\n  ...\n</v-btn>\n \n<v-btn outline>\n  ...\n</v-btn>\n \n<v-btn floating>\n  ...\n</v-btn>\n \n<v-btn icon>\n  <v-icon>profile</v-icon>\n</v-btn>\n \n<v-btn floating icon large>\n  <v-icon>edit</v-icon>\n</v-btn>"])])
 },staticRenderFns: []}
@@ -7698,146 +7698,146 @@ module.exports={render:function (){var _vm=this;
 /* 106 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "view"
-  }, [_vm._h('section', [_vm._h('section-text', [_vm._h('strong', {
+  }, [_h('section', [_h('section-text', [_h('strong', {
     slot: "title"
-  }, ["About"]), _vm._h('div', {
+  }, ["About"]), _h('div', {
     slot: "desc"
-  }, [_vm._h('p', ["Vuetify is a component framework for VueJS 2.0. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's ", _vm._h('strong', ["Material Design"]), " design pattern, taking cues from other popular frameworks such as ", _vm._h('a', {
+  }, [_h('p', ["Vuetify is a component framework for VueJS 2.0. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's ", _h('strong', ["Material Design"]), " design pattern, taking cues from other popular frameworks such as ", _h('a', {
     attrs: {
       "href": "http://materializecss.com/",
       "target": "_blank"
     }
-  }, ["Materialize.css"]), ", ", _vm._h('a', {
+  }, ["Materialize.css"]), ", ", _h('a', {
     attrs: {
       "href": "https://getmdl.io/",
       "target": "_blank"
     }
-  }, ["Material Design Lite"]), ", ", _vm._h('a', {
+  }, ["Material Design Lite"]), ", ", _h('a', {
     attrs: {
       "href": "http://semantic-ui.com/",
       "target": "_blank"
     }
-  }, ["Semantic UI"]), " and ", _vm._h('a', {
+  }, ["Semantic UI"]), " and ", _h('a', {
     attrs: {
       "href": "https://v4-alpha.getbootstrap.com/",
       "target": "_blank"
     }
-  }, ["Bootstrap 4"]), "."])])])]), _vm._h('section', [_vm._h('section-header', ["Features"]), _vm._h('v-container', {
+  }, ["Bootstrap 4"]), "."])])])]), _h('section', [_h('section-header', ["Features"]), _h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('v-row', [_vm._h('v-col', {
+  }, [_h('v-row', [_h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["widgets"]), _vm._h('v-list-item-title', ["Vuetify Frontend Components", _vm._h('v-list-item-sub-title', ["The Vuetify core is designed to provide a variety of reusable, plug and play components that fit any project spec."])])])])]), _vm._h('v-col', {
+  }, ["widgets"]), _h('v-list-item-title', ["Vuetify Frontend Components", _h('v-list-item-sub-title', ["The Vuetify core is designed to provide a variety of reusable, plug and play components that fit any project spec."])])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["extension"]), _vm._h('v-list-item-title', ["Vue Semantic Components", _vm._h('v-list-item-sub-title', ["Utilizing the power of Vue's functional components, all class based markup that is used to aid main components, such as a ", _vm._h('em', ["card title"]), ", are accessible using ", _vm._h('code', ["v-card-title"]), ". This added benefit enables less cluttering of files for a miniscule performance cost."])])])])]), _vm._h('v-col', {
+  }, ["extension"]), _h('v-list-item-title', ["Vue Semantic Components", _h('v-list-item-sub-title', ["Utilizing the power of Vue's functional components, all class based markup that is used to aid main components, such as a ", _h('em', ["card title"]), ", are accessible using ", _h('code', ["v-card-title"]), ". This added benefit enables less cluttering of files for a miniscule performance cost."])])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["view_quilt"]), _vm._h('v-list-item-title', ["Prototyping Made Easy", _vm._h('v-list-item-sub-title', ["Vuetify was built from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building your application. With the core philosophy of write less, do more, getting your project off the ground has never been easier."])])])])]), _vm._h('v-col', {
+  }, ["view_quilt"]), _h('v-list-item-title', ["Prototyping Made Easy", _h('v-list-item-sub-title', ["Vuetify was built from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building your application. With the core philosophy of write less, do more, getting your project off the ground has never been easier."])])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["phone_android"]), _vm._h('v-list-item-title', ["No Sacrifice Mobile Functionality", _vm._h('v-list-item-sub-title', ["All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works."])])])])]), _vm._h('v-col', {
+  }, ["phone_android"]), _h('v-list-item-title', ["No Sacrifice Mobile Functionality", _h('v-list-item-sub-title', ["All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works."])])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["call_split"]), _vm._h('v-list-item-title', ["Separation of Concerns", _vm._h('v-list-item-sub-title', ["Vuetify is sculpted with Stylus in a separated stylesheet. With no component specific styles in the component, your application is smaller, easier to change, and easier to build upon."])])])])]), _vm._h('v-col', {
+  }, ["call_split"]), _h('v-list-item-title', ["Separation of Concerns", _h('v-list-item-sub-title', ["Vuetify is sculpted with Stylus in a separated stylesheet. With no component specific styles in the component, your application is smaller, easier to change, and easier to build upon."])])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["open_in_browser"]), _vm._h('v-list-item-title', ["Built for Vue Server Side Rendering", _vm._h('v-list-item-sub-title', ["Using an internal bus, Vuetify is ready from installation for SSR based application. This bus is exposed and available for hooking into, further customizing your application."])])])])])])])]), _vm._h('section', [_vm._h('section-header', ["Ecosystem"]), _vm._h('div', {
+  }, ["open_in_browser"]), _h('v-list-item-title', ["Built for Vue Server Side Rendering", _h('v-list-item-sub-title', ["Using an internal bus, Vuetify is ready from installation for SSR based application. This bus is exposed and available for hooking into, further customizing your application."])])])])])])])]), _h('section', [_h('section-header', ["Ecosystem"]), _h('div', {
     staticClass: "section-text"
-  }, ["Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components."]), _vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-icon', ["color_lens"]), _vm._h('v-list-item-title', ["Material Design Color Pack"])]), _vm._h('v-list-item', [_vm._h('v-list-item-icon', ["play_arrow"]), _vm._h('v-list-item-title', ["Vue CLI Templates including SSR"])]), _vm._h('v-list-item', [_vm._h('v-list-item-icon', ["security"]), _vm._h('v-list-item-title', [_vm._h('span', ["Vuetify Admin Components ", _vm._h('v-chip', {
+  }, ["Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components."]), _h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["color_lens"]), _h('v-list-item-title', ["Material Design Color Pack"])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vue CLI Templates including SSR"])]), _h('v-list-item', [_h('v-list-item-icon', ["security"]), _h('v-list-item-title', [_h('span', ["Vuetify Admin Components ", _h('v-chip', {
     staticClass: "green white--text",
     attrs: {
       "label": ""
     }
-  }, ["Coming Soon"])])])])]), _vm._h('whats-next', {
+  }, ["Coming Soon"])])])])]), _h('whats-next', {
     attrs: {
       "route": "/quick-start",
       "text": "Quick Start"
     }
-  }, ["Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the ", _vm._h('strong', ["vuetify"]), " package."])])])
+  }, ["Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the ", _h('strong', ["vuetify"]), " package."])])])
 },staticRenderFns: []}
 
 /***/ },
 /* 107 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "modals"
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Variants"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     directives: [{
       name: "modal",
       rawName: "v-modal:modal",
       arg: "modal"
     }],
     staticClass: "primary white--text"
-  }, ["Regular"]), _vm._h('v-modal', {
+  }, ["Regular"]), _h('v-modal', {
     attrs: {
       "id": "modal"
     }
-  }, [_vm._h('v-card', [_vm._h('v-card-text', [_vm._h('p', {
+  }, [_h('v-card', [_h('v-card-text', [_h('p', {
     staticClass: "text-xs-center"
-  }, ["What is your age?"]), _vm._h('v-select', {
+  }, ["What is your age?"]), _h('v-select', {
     attrs: {
       "options": [{
         text: '10-19',
@@ -7848,14 +7848,14 @@ module.exports={render:function (){var _vm=this;
       }],
       "label": "What is your age?"
     }
-  }), _vm._h('p', ["This information is used to improve your experience on our site."])]), _vm._h('v-card-actions', [_vm._h('v-btn', {
+  }), _h('p', ["This information is used to improve your experience on our site."])]), _h('v-card-actions', [_h('v-btn', {
     nativeOn: {
       "click": function($event) {
         $event.stopPropagation();
         _vm.$vuetify.bus.pub('modal:close:modal', true)
       }
     }
-  }, ["Cancel"]), _vm._h('v-spacer'), _vm._h('v-btn', {
+  }, ["Cancel"]), _h('v-spacer'), _h('v-btn', {
     staticClass: "green white--text",
     nativeOn: {
       "click": function($event) {
@@ -7863,21 +7863,21 @@ module.exports={render:function (){var _vm=this;
         _vm.$vuetify.bus.pub('modal:close:modal', true)
       }
     }
-  }, ["Submit"])])])]), _vm._h('v-btn', {
+  }, ["Submit"])])])]), _h('v-btn', {
     directives: [{
       name: "modal",
       rawName: "v-modal:modal2",
       arg: "modal2"
     }],
     staticClass: "secondary white--text"
-  }, ["Bottom"]), _vm._h('v-modal', {
+  }, ["Bottom"]), _h('v-modal', {
     attrs: {
       "id": "modal2",
       "bottom": "bottom"
     }
-  }, [_vm._h('v-card', {
+  }, [_h('v-card', {
     staticClass: "secondary white--text"
-  }, [_vm._h('v-card-actions', [_vm._h('div', ["This is an example of a bottom modal."]), _vm._h('v-spacer'), _vm._h('v-btn', {
+  }, [_h('v-card-actions', [_h('div', ["This is an example of a bottom modal."]), _h('v-spacer'), _h('v-btn', {
     staticClass: "primary white--text",
     nativeOn: {
       "click": function($event) {
@@ -7885,9 +7885,9 @@ module.exports={render:function (){var _vm=this;
         _vm.$vuetify.bus.pub('modal:close:modal2', true)
       }
     }
-  }, ["Close"])])])])]), _vm._h('div', {
+  }, ["Close"])])])])]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "lang": "xml"
     }
@@ -7898,32 +7898,32 @@ module.exports={render:function (){var _vm=this;
 /* 108 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Accordion"
     }
-  }, [_vm._h('div', [_vm._h('v-collapsible', [_vm._l((5), function(item) {
-    return _vm._h('li', [_vm._h('v-collapsible-header', ["Item"]), _vm._h('v-collapsible-body', [_vm._h('v-card', [_vm._h('v-card-text', {
+  }, [_h('div', [_h('v-collapsible', [_vm._l((5), function(item) {
+    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
       staticClass: "grey lighten-3"
     }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
-  })])])]), _vm._h('component-example', {
+  })])])]), _h('component-example', {
     attrs: {
       "header": "Expandable"
     }
-  }, [_vm._h('div', [_vm._h('v-collapsible', {
+  }, [_h('div', [_h('v-collapsible', {
     attrs: {
       "expand": "expand"
     }
   }, [_vm._l((5), function(item) {
-    return _vm._h('li', [_vm._h('v-collapsible-header', ["Item"]), _vm._h('v-collapsible-body', [_vm._h('v-card', [_vm._h('v-card-text', {
+    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
       staticClass: "grey lighten-3"
     }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
-  })])])]), _vm._h('markup', {
+  })])])]), _h('markup', {
     slot: "markup"
   }, ["<v-collapsible>\n  <v-collapsible-header>Item</v-collapsible-header>\n  <v-collapsible-body>\n    <v-card>\n      <v-card-text class=\"grey lighten-3\">...</v-card-text>\n    </v-card>\n  </v-collapsible-body>\n</v-collapsible>"])])
 },staticRenderFns: []}
@@ -7932,54 +7932,54 @@ module.exports={render:function (){var _vm=this;
 /* 109 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "cards"
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Basic"
     }
-  }, [_vm._h('div', [_vm._h('v-card', [_vm._h('v-card-text', [_vm._h('div', {
+  }, [_h('div', [_h('v-card', [_h('v-card-text', [_h('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })])])]), _vm._h('div', [_vm._h('v-card', {
+  })])])]), _h('div', [_h('v-card', {
     staticClass: "blue darken-1 white--text"
-  }, [_vm._h('v-card-text', [_vm._h('div', {
+  }, [_h('v-card-text', [_h('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })])])])]), _vm._h('component-example', {
+  })])])])]), _h('component-example', {
     attrs: {
       "header": "Title"
     }
-  }, [_vm._h('div', [_vm._h('v-card', [_vm._h('v-card-row', {
+  }, [_h('div', [_h('v-card', [_h('v-card-row', {
     staticClass: "red darken-1"
-  }, [_vm._h('v-card-title', {
+  }, [_h('v-card-title', {
     staticClass: "white--text"
-  }, ["Delta SkyMiles"])]), _vm._h('v-card-row', {
+  }, ["Delta SkyMiles"])]), _h('v-card-row', {
     attrs: {
       "height": "100px"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     staticClass: "mr-5"
-  }, ["card_membership"]), _vm._h('div', [_vm._h('div', ["Frequent Flyer Number"]), _vm._h('strong', ["113241423"])])]), _vm._h('v-card-row', {
+  }, ["card_membership"]), _h('div', [_h('div', ["Frequent Flyer Number"]), _h('strong', ["113241423"])])]), _h('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "red--text darken-1",
     attrs: {
       "flat": "flat"
     }
-  }, ["View Email"])])])]), _vm._h('div', [_vm._h('v-card', [_vm._h('v-card-row', {
+  }, ["View Email"])])])]), _h('div', [_h('v-card', [_h('v-card-row', {
     staticClass: "green darken-1"
-  }, [_vm._h('v-card-title', {
+  }, [_h('v-card-title', {
     staticClass: "white--text"
-  }, ["Marriot Rewards"]), _vm._h('v-spacer'), _vm._h('div', [_vm._h('v-btn', {
+  }, ["Marriot Rewards"]), _h('v-spacer'), _h('div', [_h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:marriot",
@@ -7989,72 +7989,72 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "icon": "icon"
     }
-  }, [_vm._h('v-icon', ["more_vert"])]), _vm._h('v-dropdown', {
+  }, [_h('v-icon', ["more_vert"])]), _h('v-dropdown', {
     attrs: {
       "id": "marriot",
       "right": "right"
     }
-  }, [_vm._h('v-dropdown-item', {
+  }, [_h('v-dropdown-item', {
     attrs: {
       "item": {
         href: '#!',
         text: 'Never show rewards'
       }
     }
-  }), _vm._h('v-dropdown-item', {
+  }), _h('v-dropdown-item', {
     attrs: {
       "item": {
         href: '#!',
         text: 'Remove Card'
       }
     }
-  }), _vm._h('v-dropdown-item', {
+  }), _h('v-dropdown-item', {
     attrs: {
       "item": {
         href: '#!',
         text: 'Send Feedback'
       }
     }
-  })])])]), _vm._h('v-card-row', {
+  })])])]), _h('v-card-row', {
     attrs: {
       "height": "100px"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     staticClass: "mr-5"
-  }, ["card_membership"]), _vm._h('div', [_vm._h('div', ["Membership Number"]), _vm._h('strong', ["113241423"])])]), _vm._h('v-card-row', {
+  }, ["card_membership"]), _h('div', [_h('div', ["Membership Number"]), _h('strong', ["113241423"])])]), _h('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "green--text darken-1",
     attrs: {
       "flat": "flat"
     }
-  }, ["View Email"])])])])]), _vm._h('component-example', {
+  }, ["View Email"])])])])]), _h('component-example', {
     attrs: {
       "header": "Picture"
     }
-  }, [_vm._h('div', [_vm._h('v-card', [_vm._h('v-card-row', {
+  }, [_h('div', [_h('v-card', [_h('v-card-row', {
     attrs: {
       "img": "http://www.titanui.com/wp-content/uploads/2013/04/03/Vector-Cartoon-Nature-Background-03.jpg",
       "height": "300px"
     }
-  }), _vm._h('v-card-text', [_vm._h('div', {
+  }), _h('v-card-text', [_h('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })]), _vm._h('v-card-row', {
+  })]), _h('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "primary--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["View Updates"])])])]), _vm._h('div', [_vm._h('v-card', [_vm._h('v-card-row', {
+  }, ["View Updates"])])])]), _h('div', [_h('v-card', [_h('v-card-row', {
     staticClass: "blue-grey darken-1 white--text"
-  }, [_vm._h('v-card-title', ["Visit Space"]), _vm._h('v-spacer'), _vm._h('v-btn', {
+  }, [_h('v-card-title', ["Visit Space"]), _h('v-spacer'), _h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:space",
@@ -8064,143 +8064,143 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "icon": "icon"
     }
-  }, [_vm._h('v-icon', ["more_vert"])]), _vm._h('v-dropdown', {
+  }, [_h('v-icon', ["more_vert"])]), _h('v-dropdown', {
     attrs: {
       "id": "space",
       "right": "right"
     }
-  }, [_vm._h('v-dropdown-item', {
+  }, [_h('v-dropdown-item', {
     attrs: {
       "item": {
         href: '#!',
         text: 'Remove Card'
       }
     }
-  }), _vm._h('v-dropdown-item', {
+  }), _h('v-dropdown-item', {
     attrs: {
       "item": {
         href: '#!',
         text: 'Send Feedback'
       }
     }
-  })])]), _vm._h('v-card-row', {
+  })])]), _h('v-card-row', {
     attrs: {
       "img": "https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
       "height": "300px"
     }
-  }), _vm._h('v-card-text', {
+  }), _h('v-card-text', {
     staticClass: "blue-grey darken-3 white--text"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })]), _vm._h('v-card-row', {
+  })]), _h('v-card-row', {
     staticClass: "blue-grey darken-1",
     attrs: {
       "actions": "actions"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "white--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Get Started"]), _vm._h('v-spacer'), _vm._h('v-icon', {
+  }, ["Get Started"]), _h('v-spacer'), _h('v-icon', {
     staticClass: "white--text"
-  }, ["explore"])])])])]), _vm._h('component-example', {
+  }, ["explore"])])])])]), _h('component-example', {
     attrs: {
       "header": "Background"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "portrait"
-  }, [_vm._h('v-card', {
+  }, [_h('v-card', {
     attrs: {
       "img": "https://cdn.fstoppers.com/styles/full/s3/lead/2014/11/fstoppers-natural-light-dani-how-to-retouch-dof-bokeh-sharp-facebook-female-fashion-nyc-model-portrait1.jpg",
       "height": "300px"
     }
-  }, [_vm._h('v-card-row', {
+  }, [_h('v-card-row', {
     staticClass: "white--text pl-3 pt-3 pb-3",
     attrs: {
       "actions": "actions"
     }
-  }, ["Picture.png"])])]), _vm._h('div', {
+  }, ["Picture.png"])])]), _h('div', {
     staticClass: "portrait"
-  }, [_vm._h('v-card', {
+  }, [_h('v-card', {
     attrs: {
       "img": "http://images6.fanpop.com/image/photos/38500000/beautiful-wallpaper-1-beautiful-pictures-38538866-500-313.jpg",
       "height": "300px"
     }
-  }, [_vm._h('v-card-row', {
+  }, [_h('v-card-row', {
     staticClass: "white--text pl-3 pt-3 pb-3",
     attrs: {
       "actions": "actions"
     }
-  }, ["Picture.png"])])])]), _vm._h('component-example', {
+  }, ["Picture.png"])])])]), _h('component-example', {
     attrs: {
       "header": "Horizontal"
     }
-  }, [_vm._h('div', [_vm._h('v-card', {
+  }, [_h('div', [_h('v-card', {
     attrs: {
       "horizontal": "horizontal"
     }
-  }, [_vm._h('v-card-row', {
+  }, [_h('v-card-row', {
     attrs: {
       "img": "http://www.bendut.com/i/2015/12/hotel-room-design-pictures-solid-wood-couch-light-brown-fabric-cushioning-dark-brown-blankets-artistic-wall-painting-twin-wall-lamp-rectangle-oak-wood-coffee-table-black-glass-table-top-brown-motive-c-936x702.jpg",
       "height": "125px"
     }
-  }), _vm._h('v-card-column', [_vm._h('v-card-row', {
+  }), _h('v-card-column', [_h('v-card-row', {
     staticClass: "brown white--text",
     attrs: {
       "height": "75px"
     }
-  }, [_vm._h('v-card-text', [_vm._h('strong', ["Reservation at Lazy Bear"]), _vm._h('div', ["Feb 23, 7:00pm"])])]), _vm._h('v-card-row', {
+  }, [_h('v-card-text', [_h('strong', ["Reservation at Lazy Bear"]), _h('div', ["Feb 23, 7:00pm"])])]), _h('v-card-row', {
     staticClass: "brown darken-2",
     attrs: {
       "actions": "actions"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "white--text",
     attrs: {
       "flat": "flat"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["directions"]), "Directions"])])])])]), _vm._h('div', [_vm._h('v-card', {
+  }, ["directions"]), "Directions"])])])])]), _h('div', [_h('v-card', {
     attrs: {
       "horizontal": "horizontal"
     }
-  }, [_vm._h('v-card-column', {
+  }, [_h('v-card-column', {
     staticClass: "amber white--text"
-  }, [_vm._h('v-card-row', [_vm._h('v-spacer'), _vm._h('v-card-text', {
+  }, [_h('v-card-row', [_h('v-spacer'), _h('v-card-text', {
     staticClass: "text-xs-right"
-  }, [_vm._h('strong', ["Car Rental with Hertz"]), _vm._h('div', ["Mar 5, 8:00pm"])])])]), _vm._h('v-card-row', {
+  }, [_h('strong', ["Car Rental with Hertz"]), _h('div', ["Mar 5, 8:00pm"])])])]), _h('v-card-row', {
     attrs: {
       "img": "http://www.frugaa.com/images/about/hertz-store.jpg",
       "height": "125px"
     }
-  })])])]), _vm._h('component-example', {
+  })])])]), _h('component-example', {
     attrs: {
       "header": "Colored"
     }
-  }, [_vm._h('div', [_vm._h('v-card', {
+  }, [_h('div', [_h('v-card', {
     staticClass: "blue darken-4 white--text"
-  }, [_vm._h('v-card-row', {
+  }, [_h('v-card-row', {
     attrs: {
       "height": "200px"
     }
-  }, [_vm._h('h5', {
+  }, [_h('h5', {
     staticClass: "white--text"
-  }, ["Featured Event: ", _vm._h('br'), "\nMay 24, 2016 ", _vm._h('br'), "\n7-11pm"])]), _vm._h('v-card-row', {
+  }, ["Featured Event: ", _h('br'), "\nMay 24, 2016 ", _h('br'), "\n7-11pm"])]), _h('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "white--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Add to Calendar"]), _vm._h('v-spacer'), _vm._h('v-icon', ["event"])])])])]), _vm._h('markup', {
+  }, ["Add to Calendar"]), _h('v-spacer'), _h('v-icon', ["event"])])])])]), _h('markup', {
     slot: "markup"
   }, ["<v-card class=\"green\">\n  <v-card-text>\n    ...\n  </v-card-text>\n</v-card>\n \n<v-card>\n  <v-card-row img=\"...\" height=\"300px\">\n    <v-card-title>...</v-card-title>\n  </v-card-row>\n  <v-card-text>\n     <p>...</p>\n  </v-card-text>\n  <v-card-row(actions)>\n     <v-btn flat class=\"secondary--text\">...</v-btn>\n  </v-card-row>\n</v-card>\n \n<v-card horizontal>\n  <v-card-row img=\"...\"></v-card-title>\n  <v-card-column>\n      <v-card-text>\n          <p>...</p>\n      </v-card-text>\n      <v-card-row(actions)>\n          <v-btn flat class=\"secondary--text\">...</v-btn>\n      </v-card-row>\n  </v-card-column>\n</v-card>"])])
 },staticRenderFns: []}
@@ -8209,23 +8209,23 @@ module.exports={render:function (){var _vm=this;
 /* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('v-sidebar', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('v-sidebar', {
     attrs: {
       "id": "mainsidebar",
       "fixed": "fixed",
       "close-on-click": "close-on-click",
       "items": _vm.items
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "vuetify",
     slot: "top"
-  }, [_vm._h('router-link', {
+  }, [_h('router-link', {
     staticClass: "sidebar__logo",
     attrs: {
       "to": "/about"
     }
-  }, [_vm._h('img', {
+  }, [_h('img', {
     attrs: {
       "src": __webpack_require__(50)
     }
@@ -8236,16 +8236,16 @@ module.exports={render:function (){var _vm=this;
 /* 111 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Character"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge:6.left",
@@ -8258,7 +8258,7 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "large": "large"
     }
-  }, ["shopping_cart"]), _vm._h('v-icon', {
+  }, ["shopping_cart"]), _h('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge",
@@ -8271,11 +8271,11 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "large": "large"
     }
-  }, ["mail"])]), _vm._h('component-example', {
+  }, ["mail"])]), _h('component-example', {
     attrs: {
       "header": "Icon"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge:done.overlap.icon.left",
@@ -8290,7 +8290,7 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "large": "large"
     }
-  }, ["account_circle"]), _vm._h('v-icon', {
+  }, ["account_circle"]), _h('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge:notifications.icon.overlap",
@@ -8304,11 +8304,11 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "large": "large"
     }
-  }, ["account_box"])]), _vm._h('component-example', {
+  }, ["account_box"])]), _h('component-example', {
     attrs: {
       "header": "Inline"
     }
-  }, [_vm._h('span', {
+  }, [_h('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:2.left",
@@ -8317,7 +8317,7 @@ module.exports={render:function (){var _vm=this;
         "left": true
       }
     }]
-  }, ["Examples"]), _vm._h('span', {
+  }, ["Examples"]), _h('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:list.icon",
@@ -8327,7 +8327,7 @@ module.exports={render:function (){var _vm=this;
       }
     }],
     staticClass: "green--after"
-  }, ["Lists"])]), _vm._h('markup', {
+  }, ["Lists"])]), _h('markup', {
     attrs: {
       "lang": "xml"
     },
@@ -8339,24 +8339,24 @@ module.exports={render:function (){var _vm=this;
 /* 112 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('v-slider', [_vm._l((_vm.items), function(item) {
-    return _vm._h('v-slider-item', {
+  }, [_h('v-slider', [_vm._l((_vm.items), function(item) {
+    return _h('v-slider-item', {
       attrs: {
         "src": item.src
       }
     })
-  })]), _vm._h('div', {
+  })]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-slider>\n  <v-slider-item v-for=\"item in items\" v-bind:src=\"item.src\"></v-slider-item>\n</v-slider>"]), _vm._h('markup', {
+  }, ["<v-slider>\n  <v-slider-item v-for=\"item in items\" v-bind:src=\"item.src\"></v-slider-item>\n</v-slider>"]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -8367,15 +8367,15 @@ module.exports={render:function (){var _vm=this;
 /* 113 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('span', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('span', {
     staticClass: "chip--component"
-  }, [_vm._h('v-chip', {
+  }, [_h('v-chip', {
     class: _vm.component.classes,
     attrs: {
       "label": "label"
     }
-  }, [_vm._s(_vm.component.text), _vm._h('v-icon', {
+  }, [_vm._s(_vm.component.text), _h('v-icon', {
     attrs: {
       "right": "right"
     },
@@ -8389,12 +8389,12 @@ module.exports={render:function (){var _vm=this;
 /* 114 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "view"
-  }, [_vm._h('section', [_vm._h('section-text', [_vm._h('dt', {
+  }, [_h('section', [_h('section-text', [_h('dt', {
     slot: "title"
-  }, ["Bus"]), _vm._h('dd', {
+  }, ["Bus"]), _h('dd', {
     slot: "desc"
   }, ["Coming Soon"])])])])
 },staticRenderFns: []}
@@ -8403,46 +8403,46 @@ module.exports={render:function (){var _vm=this;
 /* 115 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "alerts"
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Contextual"
     }
-  }, [_vm._h('v-alert', {
+  }, [_h('v-alert', {
     attrs: {
       "success": "success"
     }
-  }, ["This is a success alert. " + _vm._s(_vm.lorem)]), _vm._h('v-alert', {
+  }, ["This is a success alert. " + _vm._s(_vm.lorem)]), _h('v-alert', {
     attrs: {
       "info": "info"
     }
-  }, [" This is an info alert " + _vm._s(_vm.lorem)]), _vm._h('v-alert', {
+  }, [" This is an info alert " + _vm._s(_vm.lorem)]), _h('v-alert', {
     attrs: {
       "warning": "warning"
     }
-  }, [" This is a warning alert " + _vm._s(_vm.lorem)]), _vm._h('v-alert', {
+  }, [" This is a warning alert " + _vm._s(_vm.lorem)]), _h('v-alert', {
     attrs: {
       "error": "error"
     }
-  }, [" This is a error alert " + _vm._s(_vm.lorem)])]), _vm._h('component-example', {
+  }, [" This is a error alert " + _vm._s(_vm.lorem)])]), _h('component-example', {
     attrs: {
       "header": "Closable"
     }
-  }, [_vm._h('div', [(!_vm.alert) ? _vm._h('div', {
+  }, [_h('div', [(!_vm.alert) ? _h('div', {
     staticClass: "text-xs-center"
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "primary white--text",
     nativeOn: {
       "click": function($event) {
         _vm.alert = true
       }
     }
-  }, ["Reset Alert"])]) : _vm._e(), _vm._h('v-alert', {
+  }, ["Reset Alert"])]) : _vm._e(), _h('v-alert', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -8461,7 +8461,7 @@ module.exports={render:function (){var _vm=this;
         _vm.alert = $event
       }
     }
-  }, ["This is a success alert that is closable. " + _vm._s(_vm.lorem)])])]), _vm._h('markup', {
+  }, ["This is a success alert that is closable. " + _vm._s(_vm.lorem)])])]), _h('markup', {
     attrs: {
       "lang": "html"
     },
@@ -8475,12 +8475,12 @@ module.exports={render:function (){var _vm=this;
 /* 116 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', [_vm._h('v-btn', {
+  }, [_h('component-example', [_h('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -8489,7 +8489,7 @@ module.exports={render:function (){var _vm=this;
         _vm.toast(_vm.left)
       }
     }
-  }, ["Left"]), _vm._h('v-btn', {
+  }, ["Left"]), _h('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -8498,7 +8498,7 @@ module.exports={render:function (){var _vm=this;
         _vm.toast(_vm.right)
       }
     }
-  }, ["Right"]), _vm._h('v-btn', {
+  }, ["Right"]), _h('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -8507,7 +8507,7 @@ module.exports={render:function (){var _vm=this;
         _vm.toast(_vm.top)
       }
     }
-  }, ["Top"]), _vm._h('v-btn', {
+  }, ["Top"]), _h('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -8516,7 +8516,7 @@ module.exports={render:function (){var _vm=this;
         _vm.toast(_vm.bottom)
       }
     }
-  }, ["Bottom"]), _vm._h('v-btn', {
+  }, ["Bottom"]), _h('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -8525,7 +8525,7 @@ module.exports={render:function (){var _vm=this;
         _vm.toast(_vm.snack)
       }
     }
-  }, ["Snack"]), _vm._h('v-btn', {
+  }, ["Snack"]), _h('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -8534,13 +8534,13 @@ module.exports={render:function (){var _vm=this;
         _vm.toast(_vm.cb)
       }
     }
-  }, ["Callback"])]), _vm._h('div', {
+  }, ["Callback"])]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-btn v-on:click.native=\"toast(info)\">...</v-btn>\n \n<v-btn v-on:click.native=\"toast(cb)\">...</v-btn>"]), _vm._h('markup', {
+  }, ["<v-btn v-on:click.native=\"toast(info)\">...</v-btn>\n \n<v-btn v-on:click.native=\"toast(cb)\">...</v-btn>"]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -8551,8 +8551,8 @@ module.exports={render:function (){var _vm=this;
 /* 117 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', [_vm._h('component-header', [_vm._s(_vm.header)]), _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', [_h('component-header', [_vm._s(_vm.header)]), _h('div', {
     staticClass: "component-example"
   }, [_vm._t("default")])])
 },staticRenderFns: []}
@@ -8561,123 +8561,123 @@ module.exports={render:function (){var _vm=this;
 /* 118 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "chips-view"
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Default"
     }
-  }, [_vm._h('v-chip', ["Chip"]), _vm._h('v-chip', {
+  }, [_h('v-chip', ["Chip"]), _h('v-chip', {
     attrs: {
       "small": "small"
     }
-  }, [_vm._h('v-icon', ["code"])])]), _vm._h('component-example', {
+  }, [_h('v-icon', ["code"])])]), _h('component-example', {
     attrs: {
       "header": "Colored"
     }
-  }, [_vm._h('v-chip', {
+  }, [_h('v-chip', {
     staticClass: "primary white--text"
-  }, ["Primary"]), _vm._h('v-chip', {
+  }, ["Primary"]), _h('v-chip', {
     staticClass: "secondary white--text"
-  }, ["Secondary"]), _vm._h('v-chip', {
+  }, ["Secondary"]), _h('v-chip', {
     staticClass: "red white--text"
-  }, ["Colored Chip"]), _vm._h('v-chip', {
+  }, ["Colored Chip"]), _h('v-chip', {
     staticClass: "green white--text"
-  }, ["Colored Chip"])]), _vm._h('component-example', {
+  }, ["Colored Chip"])]), _h('component-example', {
     attrs: {
       "header": "Icon"
     }
-  }, [_vm._h('v-chip', [_vm._h('v-icon', {
+  }, [_h('v-chip', [_h('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["account_circle"]), "Ranee"]), _vm._h('v-chip', {
+  }, ["account_circle"]), "Ranee"]), _h('v-chip', {
     staticClass: "orange white--text"
-  }, ["Premium", _vm._h('v-icon', {
+  }, ["Premium", _h('v-icon', {
     attrs: {
       "right": "right"
     }
-  }, ["star"])]), _vm._h('v-chip', {
+  }, ["star"])]), _h('v-chip', {
     staticClass: "primary white--text"
-  }, ["1 Year", _vm._h('v-icon', {
+  }, ["1 Year", _h('v-icon', {
     attrs: {
       "right": "right"
     }
-  }, ["cake"])]), _vm._h('v-chip', {
+  }, ["cake"])]), _h('v-chip', {
     staticClass: "green white--text"
-  }, [_vm._h('v-icon', ["done_all"])]), _vm._h('v-chip', {
+  }, [_h('v-icon', ["done_all"])]), _h('v-chip', {
     staticClass: "teal white--text",
     attrs: {
       "close": "close"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["check_circle"]), "Confirmed"])]), _vm._h('component-example', {
+  }, ["check_circle"]), "Confirmed"])]), _h('component-example', {
     attrs: {
       "header": "Outline"
     }
-  }, [_vm._h('v-chip', {
+  }, [_h('v-chip', {
     staticClass: "secondary secondary--text",
     attrs: {
       "outline": "outline"
     }
-  }, ["Outline"]), _vm._h('v-chip', {
+  }, ["Outline"]), _h('v-chip', {
     staticClass: "primary primary--text",
     attrs: {
       "outline": "outline"
     }
-  }, ["Colored"]), _vm._h('v-chip', {
+  }, ["Colored"]), _h('v-chip', {
     staticClass: "red red--text",
     attrs: {
       "outline": "outline"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["build"]), "Icon"])]), _vm._h('component-example', {
+  }, ["build"]), "Icon"])]), _h('component-example', {
     attrs: {
       "header": "Label"
     }
-  }, [_vm._h('v-chip', {
+  }, [_h('v-chip', {
     attrs: {
       "label": "label"
     }
-  }, ["Label"]), _vm._h('v-chip', {
+  }, ["Label"]), _h('v-chip', {
     staticClass: "pink white--text",
     attrs: {
       "label": "label"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["label"]), "Tags"]), _vm._h('v-chip', {
+  }, ["label"]), "Tags"]), _h('v-chip', {
     staticClass: "red red--text",
     attrs: {
       "label": "label",
       "outline": "outline"
     }
-  }, ["Outline"])]), _vm._h('component-example', {
+  }, ["Outline"])]), _h('component-example', {
     attrs: {
       "header": "Closable"
     }
-  }, [(!_vm.chip1 && !_vm.chip2 && !_vm.chip3 && !_vm.chip4) ? _vm._h('div', {
+  }, [(!_vm.chip1 && !_vm.chip2 && !_vm.chip3 && !_vm.chip4) ? _h('div', {
     staticClass: "text-xs-center"
-  }, [_vm._h('v-btn', {
+  }, [_h('v-btn', {
     staticClass: "primary white--text",
     nativeOn: {
       "click": function($event) {
         _vm.chip1 = true, _vm.chip2 = true, _vm.chip3 = true, _vm.chip4 = true
       }
     }
-  }, ["Reset Chips"])]) : _vm._e(), _vm._h('v-chip', {
+  }, ["Reset Chips"])]) : _vm._e(), _h('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -8695,7 +8695,7 @@ module.exports={render:function (){var _vm=this;
         _vm.chip1 = $event
       }
     }
-  }, ["Closable"]), _vm._h('v-chip', {
+  }, ["Closable"]), _h('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -8714,7 +8714,7 @@ module.exports={render:function (){var _vm=this;
         _vm.chip2 = $event
       }
     }
-  }, ["Remove"]), _vm._h('v-chip', {
+  }, ["Remove"]), _h('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -8734,7 +8734,7 @@ module.exports={render:function (){var _vm=this;
         _vm.chip3 = $event
       }
     }
-  }, ["Success"]), _vm._h('v-chip', {
+  }, ["Success"]), _h('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -8755,7 +8755,7 @@ module.exports={render:function (){var _vm=this;
         _vm.chip4 = $event
       }
     }
-  }, ["Complete"])]), _vm._h('markup', {
+  }, ["Complete"])]), _h('markup', {
     slot: "markup"
   }, ["<v-chip>\n  ...\n</v-chip>\n \n<v-chip label>\n  ...\n</v-chip>\n \n<v-chip outline>\n  <v-icon left>list</v-icon>\n  ...\n</v-chip>\n \n<v-chip small>\n  ...\n</v-chip>\n \n<v-chip close>\n  ...\n</v-chip>"])])
 },staticRenderFns: []}
@@ -8764,49 +8764,49 @@ module.exports={render:function (){var _vm=this;
 /* 119 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "id": "progress",
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Fixed Width"
     }
-  }, [_vm._h('div', [_vm._h('v-progress', {
+  }, [_h('div', [_h('v-progress', {
     attrs: {
       "value": "25",
       "min": "0",
       "max": "100"
     }
-  })]), _vm._h('div', [_vm._h('v-progress', {
+  })]), _h('div', [_h('v-progress', {
     attrs: {
       "value": "50",
       "min": "0",
       "max": "100"
     }
-  })]), _vm._h('div', [_vm._h('v-progress', {
+  })]), _h('div', [_h('v-progress', {
     attrs: {
       "value": "75",
       "min": "0",
       "max": "100"
     }
-  })]), _vm._h('div', [_vm._h('v-progress', {
+  })]), _h('div', [_h('v-progress', {
     attrs: {
       "value": "100",
       "min": "0",
       "max": "100"
     }
-  })])]), _vm._h('component-example', {
+  })])]), _h('component-example', {
     attrs: {
       "header": "Indeterminate"
     }
-  }, [_vm._h('div', [_vm._h('v-progress', {
+  }, [_h('div', [_h('v-progress', {
     attrs: {
       "indeterminate": "indeterminate"
     }
-  })])]), _vm._h('markup', {
+  })])]), _h('markup', {
     slot: "markup"
   }, ["<v-progress value=\"100\" min=\"0\" max=\"100\"></v-progress>\n \n<v-progress indeterminate></v-progress>\n \n<v-progress v-model=\"progress\" min=\"0\" max=\"100\"></v-progress>"])])
 },staticRenderFns: []}
@@ -8815,54 +8815,54 @@ module.exports={render:function (){var _vm=this;
 /* 120 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('v-app', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('v-app', {
     attrs: {
       "left-fixed-sidebar": "left-fixed-sidebar",
       "top-navbar": "top-navbar"
     }
-  }, [_vm._h('main-nav', {
+  }, [_h('main-nav', {
     attrs: {
       "title": _vm.title
     }
-  }), _vm._h('main', [_vm._h('main-side'), _vm._h('v-content', [_vm._h('v-container', {
+  }), _h('main', [_h('main-side'), _h('v-content', [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('transition', {
+  }, [_h('transition', {
     attrs: {
       "name": "slide",
       "mode": "out-in"
     }
-  }, [_vm._h('router-view', {
+  }, [_h('router-view', {
     on: {
       "view": _vm.meta
     }
-  })])])])]), _vm._h('main-footer')])
+  })])])])]), _h('main-footer')])
 },staticRenderFns: []}
 
 /***/ },
 /* 121 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Basic"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-title', ["Person"])]), _vm._h('v-list-item', [_vm._h('v-list-item-title', ["Person"])]), _vm._h('v-list-item', [_vm._h('v-list-item-title', ["Person"])])])]), _vm._h('component-example', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-title', ["Person"])])])]), _h('component-example', {
     attrs: {
       "header": "With Icon"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('v-list-item-icon', ["person"]), _vm._h('v-list-item-title', ["Person"])]), _vm._h('v-list-item', [_vm._h('v-list-item-icon', ["person"]), _vm._h('v-list-item-title', ["Person"])]), _vm._h('v-list-item', [_vm._h('v-list-item-icon', ["person"]), _vm._h('v-list-item-title', ["Person"])])])]), _vm._h('component-example', {
+  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Person"])])])]), _h('component-example', {
     attrs: {
       "header": "With Avatar"
     }
-  }, [_vm._h('v-list', [_vm._h('v-list-item', [_vm._h('a', {
+  }, [_h('v-list', [_h('v-list-item', [_h('a', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown",
@@ -8871,17 +8871,17 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('v-list-item-avatar', {
+  }, [_h('v-list-item-avatar', {
     staticClass: "orange",
     attrs: {
       "large": "large"
     }
-  }, ["event"])]), _vm._h('v-dropdown', {
+  }, ["event"])]), _h('v-dropdown', {
     attrs: {
       "id": "dropdown",
       "items": _vm.items
     }
-  }), _vm._h('v-list-item-title', ["Person"])]), _vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  }), _h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-avatar', {
     directives: [{
       name: "badge",
       rawName: "v-badge:notifications.icon",
@@ -8894,7 +8894,7 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "large": "large"
     }
-  }, ["person"]), _vm._h('v-list-item-title', ["Person"]), _vm._h('v-list-item-action', [_vm._h('a', {
+  }, ["person"]), _h('v-list-item-title', ["Person"]), _h('v-list-item-action', [_h('a', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:menu",
@@ -8903,29 +8903,29 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     staticClass: "blue--text",
     attrs: {
       "medium": "medium"
     }
-  }, ["edit"])]), _vm._h('v-dropdown', {
+  }, ["edit"])]), _h('v-dropdown', {
     attrs: {
       "id": "menu",
       "items": _vm.items,
       "right": "right"
     }
-  })])]), _vm._h('v-list-item', [_vm._h('v-list-item-avatar', {
+  })])]), _h('v-list-item', [_h('v-list-item-avatar', {
     staticClass: "green",
     attrs: {
       "large": "large"
     }
-  }, ["phone"]), _vm._h('v-list-item-title', [_vm._h('span', ["Person"]), _vm._h('v-list-item-sub-title', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."])]), _vm._h('v-list-item-action', [_vm._h('v-list-item-action-title', ["Contact"]), _vm._h('a', {
+  }, ["phone"]), _h('v-list-item-title', [_h('span', ["Person"]), _h('v-list-item-sub-title', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."])]), _h('v-list-item-action', [_h('v-list-item-action-title', ["Contact"]), _h('a', {
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('v-icon', {
+  }, [_h('v-icon', {
     staticClass: "grey--text darken-1"
-  }, ["email"])])])])])]), _vm._h('markup', {
+  }, ["email"])])])])])]), _h('markup', {
     slot: "markup"
   }, ["<v-list>\n  <v-list-item>\n    <v-list-item-title>\n      ...\n    </v-list-item-title>  \n  </v-list-item>\n</v-list>\n \n<v-list>\n  <v-list-item>\n    <v-list-item-icon>list</v-list-item-icon>\n    <v-list-item-title>\n      ...\n    </v-list-item-title>\n  </v-list-item>\n</v-list>\n \n<v-list>\n  <v-list-item>\n    <v-list-item-avatar class=\"green\" large>list</v-list-item-avatar>\n    <v-list-item-title>\n      <span>...</span>\n      <v-list-item-sub-title>...</v-list-item-sub-title>\n    </v-list-item-title>\n    <v-list-item-action>\n      <v-list-item-action-title>...</v-list-item-action-title>\n      <a href=\"#!\">\n        <v-icon class=\"grey--text darken-1\">email</v-icon>\n    </v-list-item-action>\n  </v-list-item>\n</v-list>"])])
 },staticRenderFns: []}
@@ -8934,127 +8934,127 @@ module.exports={render:function (){var _vm=this;
 /* 122 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "view",
     attrs: {
       "id": "quick-start"
     }
-  }, [_vm._h('section', [_vm._h('section-text', [_vm._h('strong', {
+  }, [_h('section', [_h('section-text', [_h('strong', {
     slot: "title"
-  }, ["Getting Started"]), _vm._h('p', {
+  }, ["Getting Started"]), _h('p', {
     slot: "desc"
-  }, ["Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, as well as standard spa and html pages."])])]), _vm._h('section', [_vm._h('section-header', ["Required Files"]), _vm._h('p', {
+  }, ["Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, as well as standard spa and html pages."])])]), _h('section', [_h('section-header', ["Required Files"]), _h('p', {
     staticClass: "section-text"
-  }, ["Vuetify requires Google's Roboto Font and Material Icons."]), _vm._h('markup', {
+  }, ["Vuetify requires Google's Roboto Font and Material Icons."]), _h('markup', {
     attrs: {
       "lang": "html"
     }
-  }, ["<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">"])]), _vm._h('section', [_vm._h('section-header', ["Global Install"]), _vm._m(0), _vm._h('markup', ["<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>"])]), _vm._h('section', [_vm._h('section-header', ["Vue CLI"]), _vm._m(1), _vm._h('v-tabs', {
+  }, ["<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">"])]), _h('section', [_h('section-header', ["Global Install"]), _vm._m(0), _h('markup', ["<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>"])]), _h('section', [_h('section-header', ["Vue CLI"]), _vm._m(1), _h('v-tabs', {
     attrs: {
       "id": "vue-cli"
     }
-  }, [_vm._h('v-tabs-tabs', [_vm._h('v-tab', {
+  }, [_h('v-tabs-tabs', [_h('v-tab', {
     attrs: {
       "href": "#simple",
       "selected": "selected"
     }
-  }, ["Simple HTML ", _vm._h('br'), _vm._h('small', ["(Beginner)"])]), _vm._h('v-tab', {
+  }, ["Simple HTML ", _h('br'), _h('small', ["(Beginner)"])]), _h('v-tab', {
     attrs: {
       "href": "#webpack"
     }
-  }, ["Webpack ", _vm._h('br'), _vm._h('small', ["(Intermediate)"])]), _vm._h('v-tab', {
+  }, ["Webpack ", _h('br'), _h('small', ["(Intermediate)"])]), _h('v-tab', {
     attrs: {
       "href": "#webpack-ssr"
     }
-  }, ["Webpack SSR ", _vm._h('br'), _vm._h('small', ["(Advanced)"])])]), _vm._h('v-tabs-items', [_vm._h('v-tabs-item', {
+  }, ["Webpack SSR ", _h('br'), _h('small', ["(Advanced)"])])]), _h('v-tabs-items', [_h('v-tabs-item', {
     attrs: {
       "id": "simple"
     }
-  }, [_vm._h('h4', ["Simple HTML Quick Start"]), _vm._h('p', ["This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. "]), _vm._h('markup', {
+  }, [_h('h4', ["Simple HTML Quick Start"]), _h('p', ["This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. "]), _h('markup', {
     attrs: {
       "lang": "bash"
     }
-  }, ["vue init vuetifyjs/simple"])]), _vm._h('v-tabs-item', {
+  }, ["vue init vuetifyjs/simple"])]), _h('v-tabs-item', {
     attrs: {
       "id": "webpack"
     }
-  }, [_vm._h('h4', ["Webpack Quick Start"]), _vm._h('p', ["This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups."]), _vm._h('markup', {
+  }, [_h('h4', ["Webpack Quick Start"]), _h('p', ["This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups."]), _h('markup', {
     attrs: {
       "lang": "bash"
     }
-  }, ["vue init vuetifyjs/webpack"])]), _vm._h('v-tabs-item', {
+  }, ["vue init vuetifyjs/webpack"])]), _h('v-tabs-item', {
     attrs: {
       "id": "webpack-ssr"
     }
-  }, [_vm._h('h4', ["Webpack SSR Quick Start"]), _vm._h('p', ["This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 ", _vm._h('a', {
+  }, [_h('h4', ["Webpack SSR Quick Start"]), _h('p', ["This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 ", _h('a', {
     attrs: {
       "href": "https://github.com/vuejs/vue-hackernews-2.0",
       "target": "_blank"
     }
-  }, ["Hackernews"]), " repository, the Vuetify SSR template provides next generation functionality for advanced web applications."]), _vm._h('markup', {
+  }, ["Hackernews"]), " repository, the Vuetify SSR template provides next generation functionality for advanced web applications."]), _h('markup', {
     attrs: {
       "lang": "bash"
     }
-  }, ["vue init vuetifyjs/webpack-ssr"])])])]), _vm._h('h4', ["NPM Install"]), _vm._h('p', {
+  }, ["vue init vuetifyjs/webpack-ssr"])])])]), _h('h4', ["NPM Install"]), _h('p', {
     staticClass: "section-text"
-  }, ["After the vue-cli installation finishes:"]), _vm._h('markup', {
+  }, ["After the vue-cli installation finishes:"]), _h('markup', {
     attrs: {
       "code": "bash"
     }
-  }, ["cd <package-name>\nnpm install"]), _vm._m(2), _vm._h('markup', {
+  }, ["cd <package-name>\nnpm install"]), _vm._m(2), _h('markup', {
     attrs: {
       "lang": "bash"
     }
-  }, ["cd <package-name>\nyarn"]), _vm._m(3), _vm._h('markup', {
+  }, ["cd <package-name>\nyarn"]), _vm._m(3), _h('markup', {
     attrs: {
       "lang": "bash"
     }
-  }, ["npm run dev"]), _vm._m(4)]), _vm._h('section', [_vm._h('whats-next', {
+  }, ["npm run dev"]), _vm._m(4)]), _h('section', [_h('whats-next', {
     attrs: {
       "route": "/overview",
       "text": "Overview"
     }
-  }, ["Now that you have your project setup and ready to go, let's go over application structure of the ", _vm._h('strong', ["webpack ssr"]), " template."])])])
-},staticRenderFns: [function (){var _vm=this;
-  return _vm._h('p', {
+  }, ["Now that you have your project setup and ready to go, let's go over application structure of the ", _h('strong', ["webpack ssr"]), " template."])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
     staticClass: "section-text"
-  }, ["If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your ", _vm._h('code', ["index"]), " file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above."])
-},function (){var _vm=this;
-  return _vm._h('p', {
+  }, ["If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your ", _h('code', ["index"]), " file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
     staticClass: "section-text"
-  }, ["Below are 3 packages forked from the ", _vm._h('a', {
+  }, ["Below are 3 packages forked from the ", _h('a', {
     attrs: {
       "href": "#!"
     }
-  }, ["official VueJS templates"]), ". They contain small modifications to help you get started with ", _vm._h('strong', {
+  }, ["official VueJS templates"]), ". They contain small modifications to help you get started with ", _h('strong', {
     staticClass: "primary--text"
-  }, ["Vuetify"]), " even faster. These packages require ", _vm._h('code', ["vue-cli"]), ". For more information on vue-cli, visit the official ", _vm._h('a', {
+  }, ["Vuetify"]), " even faster. These packages require ", _h('code', ["vue-cli"]), ". For more information on vue-cli, visit the official ", _h('a', {
     attrs: {
       "href": "https://github.com/vuejs/vue-cli",
       "target": "_blank"
     }
   }, ["Github"]), " repository."])
-},function (){var _vm=this;
-  return _vm._h('p', ["Or alernatively, using Facebook's recently released ", _vm._h('a', {
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', ["Or alernatively, using Facebook's recently released ", _h('a', {
     attrs: {
       "href": "https://yarnpkg.com/",
       "target": "_blank"
     }
   }, ["yarn package manager"]), "."])
-},function (){var _vm=this;
-  return _vm._h('p', {
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
     staticClass: "section-text"
-  }, ["If you are using the ", _vm._h('code', ["simple"]), " vue-cli package, you are ready to go. Simply open up ", _vm._h('code', ["index.html"]), " in any browser. For any other package, type:"])
-},function (){var _vm=this;
-  return _vm._h('p', {
+  }, ["If you are using the ", _h('code', ["simple"]), " vue-cli package, you are ready to go. Simply open up ", _h('code', ["index.html"]), " in any browser. For any other package, type:"])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
     staticClass: "section-text"
-  }, ["into your console. This will start a ", _vm._h('a', {
+  }, ["into your console. This will start a ", _h('a', {
     attrs: {
       "href": "https://nodejs.org/en/",
       "target": "_blank"
     }
-  }, ["nodejs"]), " server locally which can be accessed by navigating to ", _vm._h('a', {
+  }, ["nodejs"]), " server locally which can be accessed by navigating to ", _h('a', {
     attrs: {
       "href": "http://localhost:8080",
       "target": "_blank"
@@ -9066,21 +9066,21 @@ module.exports={render:function (){var _vm=this;
 /* 123 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "sidebars"
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Left"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "grey lighten-1"
-  }, [_vm._h('v-navbar', [_vm._h('div', {
+  }, [_h('v-navbar', [_h('div', {
     staticClass: "navbar__side-icon hidden-sm-and-up"
-  }, [_vm._h('a', {
+  }, [_h('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:doc-sidebar-1",
@@ -9089,25 +9089,25 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('v-icon', ["reorder"])])]), _vm._h('v-navbar-logo', ["Logo"])]), _vm._h('v-sidebar', {
+  }, [_h('v-icon', ["reorder"])])]), _h('v-navbar-logo', ["Logo"])]), _h('v-sidebar', {
     staticClass: "white",
     attrs: {
       "id": "doc-sidebar-1",
       "height": "40vh"
     }
-  }, [_vm._h('v-sidebar-items', {
+  }, [_h('v-sidebar-items', {
     attrs: {
       "items": _vm.items
     }
-  })])])]), _vm._h('component-example', {
+  })])])]), _h('component-example', {
     attrs: {
       "header": "Drawer"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "grey lighten-1"
-  }, [_vm._h('v-navbar', [_vm._h('div', {
+  }, [_h('v-navbar', [_h('div', {
     staticClass: "navbar__side-icon"
-  }, [_vm._h('a', {
+  }, [_h('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:doc-sidebar-2",
@@ -9116,26 +9116,26 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('v-icon', ["reorder"])])]), _vm._h('v-navbar-logo', ["Logo"])]), _vm._h('v-sidebar', {
+  }, [_h('v-icon', ["reorder"])])]), _h('v-navbar-logo', ["Logo"])]), _h('v-sidebar', {
     staticClass: "white",
     attrs: {
       "id": "doc-sidebar-2",
       "height": "40vh",
       "drawer": "drawer"
     }
-  }, [_vm._h('v-sidebar-items', {
+  }, [_h('v-sidebar-items', {
     attrs: {
       "items": _vm.items
     }
-  })])])]), _vm._h('component-example', {
+  })])])]), _h('component-example', {
     attrs: {
       "header": "Item Groups"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "grey lighten-1"
-  }, [_vm._h('v-navbar', [_vm._h('div', {
+  }, [_h('v-navbar', [_h('div', {
     staticClass: "navbar__side-icon hidden-sm-and-up"
-  }, [_vm._h('a', {
+  }, [_h('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:doc-sidebar-3",
@@ -9144,23 +9144,23 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "href": "#!"
     }
-  }, [_vm._h('v-icon', ["reorder"])])]), _vm._h('v-navbar-logo', ["Logo"])]), _vm._h('v-sidebar', {
+  }, [_h('v-icon', ["reorder"])])]), _h('v-navbar-logo', ["Logo"])]), _h('v-sidebar', {
     staticClass: "white",
     attrs: {
       "id": "doc-sidebar-3",
       "height": "40vh"
     }
-  }, [_vm._h('v-sidebar-items', {
+  }, [_h('v-sidebar-items', {
     attrs: {
       "items": _vm.item_group
     }
-  })])])]), _vm._h('div', {
+  })])])]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-sidebar height=\"50vh\" v-bind:items=\"items\"></v-sidebar>\n \n<v-sidebar drawer>\n  <v-sidebar-items v-bind:items=\"items\"></v-sidebar>\n</v-sidebar>\n \n<v-sidebar fixed>\n  <v-sidebar-items>\n    <v-sidebar-item v-for=\"item in items\" v-bind:item=\"item\"></v-sidebar-item>\n  </v-sidebar>\n</v-sidebar>"]), _vm._h('markup', {
+  }, ["<v-sidebar height=\"50vh\" v-bind:items=\"items\"></v-sidebar>\n \n<v-sidebar drawer>\n  <v-sidebar-items v-bind:items=\"items\"></v-sidebar>\n</v-sidebar>\n \n<v-sidebar fixed>\n  <v-sidebar-items>\n    <v-sidebar-item v-for=\"item in items\" v-bind:item=\"item\"></v-sidebar-item>\n  </v-sidebar>\n</v-sidebar>"]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -9171,10 +9171,10 @@ module.exports={render:function (){var _vm=this;
 /* 124 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('v-footer', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('v-footer', {
     staticClass: "grey darken-2 white--text"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "text-xs-right"
   }, ["© 2016 John Leider"])])
 },staticRenderFns: []}
@@ -9183,52 +9183,52 @@ module.exports={render:function (){var _vm=this;
 /* 125 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "doc"
-  }, [_vm._h('section', [_vm._h('section-text', [_vm._h('dt', {
+  }, [_h('section', [_h('section-text', [_h('dt', {
     slot: "title"
-  }, [_vm._h('strong', ["Colors"])]), _vm._h('dd', {
+  }, [_h('strong', ["Colors"])]), _h('dd', {
     slot: "desc"
-  }, [_vm._h('div', ["Soon"])])])]), _vm._h('section', {
+  }, [_h('div', ["Soon"])])])]), _h('section', {
     attrs: {
       "id": "colors"
     }
-  }, [_vm._h('section-header', ["Material Design"]), _vm._h('component-example', {
+  }, [_h('section-header', ["Material Design"]), _h('component-example', {
     attrs: {
       "header": "Classes"
     }
-  }, [_vm._h('v-container', {
+  }, [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('v-row', [_vm._l((_vm.colors), function(color) {
-    return _vm._h('v-col', {
+  }, [_h('v-row', [_vm._l((_vm.colors), function(color) {
+    return _h('v-col', {
       attrs: {
         "xs6": "xs6",
         "sm6": "sm6",
         "md4": "md4",
         "lg3": "lg3"
       }
-    }, [_vm._h('v-card', {
+    }, [_h('v-card', {
       class: [color],
       attrs: {
         "height": "100px"
       }
-    }, [_vm._h('v-card-text', [_vm._h('h3', [_vm._s(color)])])]), _vm._l(([4, 3, 2, 1]), function(n) {
-      return _vm._h('v-card', {
+    }, [_h('v-card-text', [_h('h3', [_vm._s(color)])])]), _vm._l(([4, 3, 2, 1]), function(n) {
+      return _h('v-card', {
         staticClass: "black--text",
         class: [color, 'lighten-' + n]
-      }, [_vm._h('v-card-text', [_vm._s(color) + " Lighten-" + _vm._s(n)])])
+      }, [_h('v-card-text', [_vm._s(color) + " Lighten-" + _vm._s(n)])])
     }), _vm._l((4), function(n) {
-      return _vm._h('v-card', {
+      return _h('v-card', {
         class: [color, 'darken-' + n]
-      }, [_vm._h('v-card-text', [_vm._s(color) + " Darken-" + _vm._s(n)])])
+      }, [_h('v-card-text', [_vm._s(color) + " Darken-" + _vm._s(n)])])
     }), _vm._l((4), function(n) {
-      return (!['grey', 'blue-grey', 'brown'].includes(color)) ? _vm._h('v-card', {
+      return (!['grey', 'blue-grey', 'brown'].includes(color)) ? _h('v-card', {
         staticClass: "black--text",
         class: [color, 'accent-' + n]
-      }, [_vm._h('v-card-text', [_vm._s(color) + " Accent-" + _vm._s(n)])]) : _vm._e()
+      }, [_h('v-card-text', [_vm._s(color) + " Accent-" + _vm._s(n)])]) : _vm._e()
     })])
   })])])])])])
 },staticRenderFns: []}
@@ -9237,28 +9237,28 @@ module.exports={render:function (){var _vm=this;
 /* 126 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('h6', [_vm._t("default")])
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('h6', [_vm._t("default")])
 },staticRenderFns: []}
 
 /***/ },
 /* 127 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "view"
-  }, [_vm._h('section', [_vm._h('section-text', [_vm._h('dt', {
+  }, [_h('section', [_h('section-text', [_h('dt', {
     domProps: {
       "innerHTML": _vm._s(_vm.doc.title)
     },
     slot: "title"
-  }), _vm._h('dd', {
+  }), _h('dd', {
     domProps: {
       "innerHTML": _vm._s(_vm.doc.desc)
     },
     slot: "desc"
-  })])]), _vm._h('section', [_vm._h('section-header', ["Examples"]), _vm._t("default")]), _vm._h('section', [_vm._h('section-header', ["Markup"]), _vm._t("markup")]), _vm._h('section', [_vm._h('section-header', ["Parameters"]), _vm._h('component-parameters', {
+  })])]), _h('section', [_h('section-header', ["Examples"]), _vm._t("default")]), _h('section', [_h('section-header', ["Markup"]), _vm._t("markup")]), _h('section', [_h('section-header', ["Parameters"]), _h('component-parameters', {
     attrs: {
       "params": _vm.doc.params
     }
@@ -9269,67 +9269,67 @@ module.exports={render:function (){var _vm=this;
 /* 128 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Grid",
       "id": "grid"
     }
-  }, [_vm._h('v-container', {
+  }, [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('v-row', [_vm._h('v-col', {
+  }, [_h('v-row', [_h('v-col', {
     attrs: {
       "xs12": "xs12"
     }
-  }, [_vm._h('v-card', {
+  }, [_h('v-card', {
     staticClass: "primary"
-  }, [_vm._h('v-card-content', ["12"])])]), _vm._l((2), function(i) {
-    return _vm._h('v-col', {
+  }, [_h('v-card-content', ["12"])])]), _vm._l((2), function(i) {
+    return _h('v-col', {
       attrs: {
         "xs6": "xs6"
       }
-    }, [_vm._h('v-card', {
+    }, [_h('v-card', {
       staticClass: "secondary"
-    }, [_vm._h('v-card-content', ["6"])])])
+    }, [_h('v-card-content', ["6"])])])
   }), _vm._l((3), function(i) {
-    return _vm._h('v-col', {
+    return _h('v-col', {
       attrs: {
         "xs4": "xs4"
       }
-    }, [_vm._h('v-card', {
+    }, [_h('v-card', {
       staticClass: "primary"
-    }, [_vm._h('v-card-content', ["4"])])])
+    }, [_h('v-card-content', ["4"])])])
   }), _vm._l((4), function(i) {
-    return _vm._h('v-col', {
+    return _h('v-col', {
       attrs: {
         "xs3": "xs3"
       }
-    }, [_vm._h('v-card', {
+    }, [_h('v-card', {
       staticClass: "secondary"
-    }, [_vm._h('v-card-content', ["3"])])])
+    }, [_h('v-card-content', ["3"])])])
   }), _vm._l((6), function(i) {
-    return _vm._h('v-col', {
+    return _h('v-col', {
       attrs: {
         "xs2": "xs2"
       }
-    }, [_vm._h('v-card', {
+    }, [_h('v-card', {
       staticClass: "primary"
-    }, [_vm._h('v-card-content', ["2"])])])
+    }, [_h('v-card-content', ["2"])])])
   }), _vm._l((12), function(i) {
-    return _vm._h('v-col', {
+    return _h('v-col', {
       attrs: {
         "xs1": "xs1"
       }
-    }, [_vm._h('v-card', {
+    }, [_h('v-card', {
       staticClass: "secondary"
-    }, [_vm._h('v-card-content', ["1"])])])
-  })])])]), _vm._h('markup', {
+    }, [_h('v-card-content', ["1"])])])
+  })])])]), _h('markup', {
     attrs: {
       "lang": "xml"
     },
@@ -9341,48 +9341,48 @@ module.exports={render:function (){var _vm=this;
 /* 129 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Text Dividers"
     }
-  }, [_vm._h('v-breadcrumbs', {
+  }, [_h('v-breadcrumbs', {
     attrs: {
       "divider": "/",
       "items": _vm.items
     }
-  }), _vm._h('v-breadcrumbs', {
+  }), _h('v-breadcrumbs', {
     attrs: {
       "divider": "-",
       "items": _vm.items
     }
-  })]), _vm._h('component-example', {
+  })]), _h('component-example', {
     attrs: {
       "header": "Icon Dividers"
     }
-  }, [_vm._h('v-breadcrumbs', {
+  }, [_h('v-breadcrumbs', {
     attrs: {
       "icons": "icons",
       "divider": "forward",
       "items": _vm.items
     }
-  }), _vm._h('v-breadcrumbs', {
+  }), _h('v-breadcrumbs', {
     attrs: {
       "icons": "icons",
       "divider": "chevron_right",
       "items": _vm.items
     }
-  })]), _vm._h('div', {
+  })]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "code": "xml"
     }
-  }, ["<v-breadcrumbs divider=\"/\" v-bind:items=\"items\"></v-breadcrumbs>\n \n<v-breadcrumbs divider=\"/\">\n  <v-breadcrumbs-item v-for(item in items) v-bind:item=\"item\"></v-breadcrumbs-item>\n</v-breadcrumbs>"]), _vm._h('markup', {
+  }, ["<v-breadcrumbs divider=\"/\" v-bind:items=\"items\"></v-breadcrumbs>\n \n<v-breadcrumbs divider=\"/\">\n  <v-breadcrumbs-item v-for(item in items) v-bind:item=\"item\"></v-breadcrumbs-item>\n</v-breadcrumbs>"]), _h('markup', {
     attrs: {
       "code": "javascript"
     }
@@ -9393,97 +9393,97 @@ module.exports={render:function (){var _vm=this;
 /* 130 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "view"
-  }, [_vm._h('section', [_vm._h('section-text', [_vm._h('strong', {
+  }, [_h('section', [_h('section-text', [_h('strong', {
     slot: "title"
-  }, ["Overview"]), _vm._h('div', {
+  }, ["Overview"]), _h('div', {
     slot: "desc"
-  }, [_vm._h('p', ["This overview is designed to help you become fluent in the work-flow utilizing ", _vm._h('strong', ["Vuetify"]), ". In this section, you will cover the basics of using the ", _vm._h('code', ["webpack ssr"]), " template. If you have not already installed the ", _vm._h('code', ["webpack ssr"]), " template, please do so ", _vm._h('router-link', {
+  }, [_h('p', ["This overview is designed to help you become fluent in the work-flow utilizing ", _h('strong', ["Vuetify"]), ". In this section, you will cover the basics of using the ", _h('code', ["webpack ssr"]), " template. If you have not already installed the ", _h('code', ["webpack ssr"]), " template, please do so ", _h('router-link', {
     attrs: {
       "to": "/quick-start#webpack-ssr"
     }
-  }, ["here"]), "."])])])]), _vm._h('section', [_vm._h('section-header', ["Introduction"]), _vm._m(0), _vm._h('markup', {
+  }, ["here"]), "."])])])]), _h('section', [_h('section-header', ["Introduction"]), _vm._m(0), _h('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["npm run dev"]), _vm._h('p', {
+  }, ["npm run dev"]), _h('p', {
     staticClass: "section-text"
-  }, ["Let's get aquainted with the folder structure which should look like this:"]), _vm._h('markup', {
+  }, ["Let's get aquainted with the folder structure which should look like this:"]), _h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["/ project\n  / build\n    - setup-dev-server.js\n    - vue-loader.config.js\n    - webpack.base.config.js\n    - webpack.client.config.js\n    - webpack.server.config.js\n  / dist\n  / public\n  / src\n    / components\n    / router\n    / store\n    / css\n    / views\n    - app.js\n    - App.vue\n    - client-entry.js\n    - critical.js\n    - index.template.html\n    - server-entry.js\n  - .babelrc\n  - .gitignore\n  - README.md\n  - index.html\n  - package.json\n  - server.js"]), _vm._m(1), _vm._h('h3', ["Application"]), _vm._h('div', {
+  }, ["/ project\n  / build\n    - setup-dev-server.js\n    - vue-loader.config.js\n    - webpack.base.config.js\n    - webpack.client.config.js\n    - webpack.server.config.js\n  / dist\n  / public\n  / src\n    / components\n    / router\n    / store\n    / css\n    / views\n    - app.js\n    - App.vue\n    - client-entry.js\n    - critical.js\n    - index.template.html\n    - server-entry.js\n  - .babelrc\n  - .gitignore\n  - README.md\n  - index.html\n  - package.json\n  - server.js"]), _vm._m(1), _h('h3', ["Application"]), _h('div', {
     staticClass: "section-text"
-  }, [_vm._m(2), _vm._h('p', ["The markup below tells the application that you have a ", _vm._h('code', ["top navbar"]), " and ", _vm._h('code', ["footer"]), ". Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the ", _vm._h('router-link', {
+  }, [_vm._m(2), _h('p', ["The markup below tells the application that you have a ", _h('code', ["top navbar"]), " and ", _h('code', ["footer"]), ". Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the ", _h('router-link', {
     attrs: {
       "to": "/layouts"
     }
-  }, ["Layouts"]), " section."])]), _vm._h('markup', {
+  }, ["Layouts"]), " section."])]), _h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>"]), _vm._h('h3', ["Routing"]), _vm._m(3), _vm._h('markup', {
+  }, ["<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>"]), _h('h3', ["Routing"]), _vm._m(3), _h('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["routes: [\n  { path: '/', component: HomeView },\n  { path: '/about', component: AboutView }\n]"]), _vm._m(4), _vm._h('h3', ["State Control"]), _vm._m(5), _vm._h('markup', {
+  }, ["routes: [\n  { path: '/', component: HomeView },\n  { path: '/about', component: AboutView }\n]"]), _vm._m(4), _h('h3', ["State Control"]), _vm._m(5), _h('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["preFetch (store) {\n  store.dispatch('GET_USER', 2)\n}"]), _vm._m(6), _vm._h('whats-next', {
+  }, ["preFetch (store) {\n  store.dispatch('GET_USER', 2)\n}"]), _vm._m(6), _h('whats-next', {
     attrs: {
       "route": "/layouts",
       "text": "Layouts"
     }
-  }, [_vm._h('p', ["Now that you are more familiar with Vuetify and the Vue resources that it utilizes, take a look at the Layout's section and choose a design for your next application!"])])])])
-},staticRenderFns: [function (){var _vm=this;
-  return _vm._h('p', {
+  }, [_h('p', ["Now that you are more familiar with Vuetify and the Vue resources that it utilizes, take a look at the Layout's section and choose a design for your next application!"])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
     staticClass: "section-text"
-  }, ["Now that you have ", _vm._h('strong', ["Vuetify"]), " installed, you are ready to make your first site. Make sure you have your local server running. If you do not, from within your project directory, type:"])
-},function (){var _vm=this;
-  return _vm._h('div', {
+  }, ["Now that you have ", _h('strong', ["Vuetify"]), " installed, you are ready to make your first site. Make sure you have your local server running. If you do not, from within your project directory, type:"])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "section-text"
-  }, [_vm._h('p', ["The ", _vm._h('strong', ["Build"]), " folder contains all of the webpack specific build configurations for your project. ", _vm._h('strong', ["Src"]), " is where all the development project files reside. Notice that the ", _vm._h('code', ["vuetify ssr"]), " template is out-of-the-box configured to use ", _vm._h('a', {
+  }, [_h('p', ["The ", _h('strong', ["Build"]), " folder contains all of the webpack specific build configurations for your project. ", _h('strong', ["Src"]), " is where all the development project files reside. Notice that the ", _h('code', ["vuetify ssr"]), " template is out-of-the-box configured to use ", _h('a', {
     attrs: {
       "href": "https://router.vuejs.org/en/",
       "target": "_blank"
     }
-  }, ["Vue Router"]), ", ", _vm._h('a', {
+  }, ["Vue Router"]), ", ", _h('a', {
     attrs: {
       "href": "https://vuex.vuejs.org/en/intro.html",
       "target": "_blank"
     }
-  }, ["Vuex"]), ", and the ", _vm._h('a', {
+  }, ["Vuex"]), ", and the ", _h('a', {
     attrs: {
       "href": "https://vuejs.org/v2/guide/ssr.html",
       "target": "_blank"
     }
-  }, ["Vue Server Renderer"]), ". This will allow you to make simple or complex applications that are not only fast/efficient, but ", _vm._h('strong', ["SEO"]), " friendly."])])
-},function (){var _vm=this;
-  return _vm._h('p', ["Navigate to the ", _vm._h('strong', ["src"]), " folder and open up ", _vm._h('code', ["App.vue"]), ". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is the ", _vm._h('code', ["v-app"]), " component. This will allow you to define your application layout without any heavy lifting."])
-},function (){var _vm=this;
-  return _vm._h('p', {
+  }, ["Vue Server Renderer"]), ". This will allow you to make simple or complex applications that are not only fast/efficient, but ", _h('strong', ["SEO"]), " friendly."])])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', ["Navigate to the ", _h('strong', ["src"]), " folder and open up ", _h('code', ["App.vue"]), ". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is the ", _h('code', ["v-app"]), " component. This will allow you to define your application layout without any heavy lifting."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
     staticClass: "section-text"
-  }, ["Vuetify SSR uses the official Vue Router for controller application flow. Located in ", _vm._h('code', ["/src/route/index.js"]), ", all of your application routes will be defined here."])
-},function (){var _vm=this;
-  return _vm._h('div', {
+  }, ["Vuetify SSR uses the official Vue Router for controller application flow. Located in ", _h('code', ["/src/route/index.js"]), ", all of your application routes will be defined here."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "section-text"
-  }, [_vm._h('p', ["These routes can be accessed be creating a link to the specified path, or by using Vue Router's ", _vm._h('code', ["<router-link>"]), " component. For more information, review the official Vue Router ", _vm._h('a', {
+  }, [_h('p', ["These routes can be accessed be creating a link to the specified path, or by using Vue Router's ", _h('code', ["<router-link>"]), " component. For more information, review the official Vue Router ", _h('a', {
     attrs: {
       "href": "https://router.vuejs.org/en/",
       "target": "_blank"
     }
   }, ["documentation"]), "."])])
-},function (){var _vm=this;
-  return _vm._h('div', {
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "section-text"
-  }, [_vm._h('p', ["State control is managed by the official Vuex library. This follows Facebooks' Reflux design pattern. Navigate to ", _vm._h('code', ["/src/store/index.js"]), ". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a ", _vm._h('code', ["preFetch"]), " method on your view component."])])
-},function (){var _vm=this;
-  return _vm._h('div', {
+  }, [_h('p', ["State control is managed by the official Vuex library. This follows Facebooks' Reflux design pattern. Navigate to ", _h('code', ["/src/store/index.js"]), ". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a ", _h('code', ["preFetch"]), " method on your view component."])])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "section-text"
-  }, [_vm._h('p', ["For more information on State Control and Vuex, view the official ", _vm._h('a', {
+  }, [_h('p', ["For more information on State Control and Vuex, view the official ", _h('a', {
     attrs: {
       "href": "https://vuex.vuejs.org/en/intro.html",
       "target": "_blank"
@@ -9495,16 +9495,16 @@ module.exports={render:function (){var _vm=this;
 /* 131 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Selects"
     }
-  }, [_vm._h('div', [_vm._h('v-select', {
+  }, [_h('div', [_h('v-select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -9525,7 +9525,7 @@ module.exports={render:function (){var _vm=this;
         _vm.input = $event
       }
     }
-  }), _vm._s(_vm.input)]), _vm._h('div', [_vm._h('v-select', {
+  }), _vm._s(_vm.input)]), _h('div', [_h('v-select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -9547,11 +9547,11 @@ module.exports={render:function (){var _vm=this;
         _vm.multiple = $event
       }
     }
-  }), _vm._s(_vm.multiple)])]), _vm._h('component-example', {
+  }), _vm._s(_vm.multiple)])]), _h('component-example', {
     attrs: {
       "header": "Inputs"
     }
-  }, [_vm._h('div', [_vm._h('v-text-input', {
+  }, [_h('div', [_h('v-text-input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -9571,31 +9571,31 @@ module.exports={render:function (){var _vm=this;
         _vm.text = $event
       }
     }
-  }), _vm._s(_vm.text)]), _vm._h('div', [_vm._h('v-text-input', {
+  }), _vm._s(_vm.text)]), _h('div', [_h('v-text-input', {
     attrs: {
       "id": "test3",
       "name": "test3",
       "label": "Testing 3",
       "placeholder": "Testing 3"
     }
-  })])]), _vm._h('component-example', {
+  })])]), _h('component-example', {
     attrs: {
       "header": "Radios"
     }
-  }, [_vm._h('v-radio', {
+  }, [_h('v-radio', {
     attrs: {
       "id": "test5",
       "name": "test5",
       "label": "Testing 5"
     }
-  }), _vm._h('v-radio', {
+  }), _h('v-radio', {
     attrs: {
       "id": "test6",
       "name": "test5",
       "label": "Testing 6",
       "gap": "gap"
     }
-  }), _vm._h('v-radio', {
+  }), _h('v-radio', {
     attrs: {
       "id": "test62",
       "name": "test52",
@@ -9604,7 +9604,7 @@ module.exports={render:function (){var _vm=this;
       "checked": "checked",
       "disabled": "disabled"
     }
-  }), _vm._h('v-radio', {
+  }), _h('v-radio', {
     attrs: {
       "id": "test61",
       "name": "test54",
@@ -9612,45 +9612,45 @@ module.exports={render:function (){var _vm=this;
       "disabled": "disabled",
       "checked": "checked"
     }
-  }), _vm._h('v-radio', {
+  }), _h('v-radio', {
     attrs: {
       "id": "test71",
       "name": "test5",
       "label": "Testing 71",
       "disabled": "disabled"
     }
-  })]), _vm._h('component-example', {
+  })]), _h('component-example', {
     attrs: {
       "header": "Checkboxes"
     }
-  }, [_vm._h('v-checkbox', {
+  }, [_h('v-checkbox', {
     attrs: {
       "id": "test7",
       "name": "test7",
       "label": "Testing 7"
     }
-  }), _vm._h('v-checkbox', {
+  }), _h('v-checkbox', {
     attrs: {
       "id": "test8",
       "name": "test8",
       "label": "Testing 8",
       "filled": "filled"
     }
-  }), _vm._h('v-checkbox', {
+  }), _h('v-checkbox', {
     attrs: {
       "id": "test9",
       "name": "test9",
       "label": "Testing 9",
       "indeterminate": "indeterminate"
     }
-  }), _vm._h('v-checkbox', {
+  }), _h('v-checkbox', {
     attrs: {
       "id": "test10",
       "name": "test10",
       "label": "Testing 10",
       "disabled": "disabled"
     }
-  }), _vm._h('v-checkbox', {
+  }), _h('v-checkbox', {
     attrs: {
       "id": "test10",
       "name": "test10",
@@ -9658,21 +9658,21 @@ module.exports={render:function (){var _vm=this;
       "checked": "checked",
       "disabled": "disabled"
     }
-  })]), _vm._h('div', {
+  })]), _h('div', {
     slot: "markup"
-  }, [_vm._h('markup', {
+  }, [_h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-select>\n  ...\n</v-select>"]), _vm._h('markup', {
+  }, ["<v-select>\n  ...\n</v-select>"]), _h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-text-input>\n  ...\n</v-text-input>"]), _vm._h('markup', {
+  }, ["<v-text-input>\n  ...\n</v-text-input>"]), _h('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-radio>\n  ...\n</v-radio>"]), _vm._h('markup', {
+  }, ["<v-radio>\n  ...\n</v-radio>"]), _h('markup', {
     attrs: {
       "lang": "xml"
     }
@@ -9683,29 +9683,29 @@ module.exports={render:function (){var _vm=this;
 /* 132 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "view"
-  }, [_vm._h('section', [_vm._h('section-text', [_vm._h('dt', {
+  }, [_h('section', [_h('section-text', [_h('dt', {
     slot: "title"
-  }, ["Typography"]), _vm._h('dd', {
+  }, ["Typography"]), _h('dd', {
     slot: "desc"
-  }, ["Soon"])])]), _vm._h('section', [_vm._h('section-header', ["Examples"]), _vm._h('component-example', {
+  }, ["Soon"])])]), _h('section', [_h('section-header', ["Examples"]), _h('component-example', {
     attrs: {
       "id": "typo",
       "header": "Headers"
     }
-  }, [_vm._h('h1', ["Heading h1"]), _vm._h('h2', ["Heading h2"]), _vm._h('h3', ["Heading h3"]), _vm._h('h4', ["Heading h4"]), _vm._h('h5', ["Heading h5"]), _vm._h('h6', ["Heading h6"])])])])
+  }, [_h('h1', ["Heading h1"]), _h('h2', ["Heading h2"]), _h('h3', ["Heading h3"]), _h('h4', ["Heading h4"]), _h('h5', ["Heading h5"]), _h('h6', ["Heading h6"])])])])
 },staticRenderFns: []}
 
 /***/ },
 /* 133 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('div', {
     staticClass: "markup"
-  }, [_vm._h('pre', [_vm._h('code', {
+  }, [_h('pre', [_h('code', {
     ref: "code",
     class: _vm.lang
   }, [_vm._t("default")])])])
@@ -9715,149 +9715,149 @@ module.exports={render:function (){var _vm=this;
 /* 134 */
 /***/ function(module, exports) {
 
-module.exports={render:function (){var _vm=this;
-  return _vm._h('doc-view', {
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_vm._h('component-example', {
+  }, [_h('component-example', {
     attrs: {
       "header": "Navbar and Footer"
     }
-  }, [_vm._h('v-container', {
+  }, [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('v-row', [_vm._h('v-col', {
+  }, [_h('v-row', [_h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm4": "sm4"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout z-depth-1"
-  }, [_vm._h('nav', {
+  }, [_h('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _vm._h('div', {
+  }, ["Navbar"]), _h('div', {
     staticClass: "layout__main"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__content"
-  }, ["Content"])])])]), _vm._h('v-col', {
+  }, ["Content"])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm4": "sm4"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout z-depth-1"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__main"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__content"
-  }, ["Content"])]), _vm._h('nav', {
+  }, ["Content"])]), _h('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"])])]), _vm._h('v-col', {
+  }, ["Navbar"])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm4": "sm4"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout z-depth-1"
-  }, [_vm._h('nav', {
+  }, [_h('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _vm._h('div', {
+  }, ["Navbar"]), _h('div', {
     staticClass: "layout__main"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__content"
-  }, ["Content"])]), _vm._h('div', {
+  }, ["Content"])]), _h('div', {
     staticClass: "layout__footer primary"
-  }, ["Footer"])])])])])]), _vm._h('component-example', {
+  }, ["Footer"])])])])])]), _h('component-example', {
     attrs: {
       "header": "Navbar and Sidebar"
     }
-  }, [_vm._h('v-container', {
+  }, [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('v-row', [_vm._h('v-col', {
+  }, [_h('v-row', [_h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout z-depth-1"
-  }, [_vm._h('nav', {
+  }, [_h('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _vm._h('div', {
+  }, ["Navbar"]), _h('div', {
     staticClass: "layout__main"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _vm._h('div', {
+  }, ["Sidebar"]), _h('div', {
     staticClass: "layout__content"
-  }, ["Content"])])])]), _vm._h('v-col', {
+  }, ["Content"])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout layout--4 z-depth-1"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _vm._h('div', {
+  }, ["Sidebar"]), _h('div', {
     staticClass: "layout__main"
-  }, [_vm._h('nav', {
+  }, [_h('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _vm._h('div', {
+  }, ["Navbar"]), _h('div', {
     staticClass: "layout__content"
-  }, ["Content"])])])])])])]), _vm._h('component-example', {
+  }, ["Content"])])])])])])]), _h('component-example', {
     attrs: {
       "header": "Navbar, Sidebar and Footer"
     }
-  }, [_vm._h('v-container', {
+  }, [_h('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_vm._h('v-row', [_vm._h('v-col', {
+  }, [_h('v-row', [_h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout z-depth-1"
-  }, [_vm._h('nav', {
+  }, [_h('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _vm._h('div', {
+  }, ["Navbar"]), _h('div', {
     staticClass: "layout__main"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _vm._h('div', {
+  }, ["Sidebar"]), _h('div', {
     staticClass: "layout__content"
-  }, ["Content"])]), _vm._h('div', {
+  }, ["Content"])]), _h('div', {
     staticClass: "layout__footer primary"
-  }, ["Footer"])])]), _vm._h('v-col', {
+  }, ["Footer"])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout layout--4 z-depth-1"
-  }, [_vm._h('div', {
+  }, [_h('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _vm._h('div', {
+  }, ["Sidebar"]), _h('div', {
     staticClass: "layout__main"
-  }, [_vm._h('nav', {
+  }, [_h('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _vm._h('div', {
+  }, ["Navbar"]), _h('div', {
     staticClass: "layout__content"
-  }, ["Content"]), _vm._h('div', {
+  }, ["Content"]), _h('div', {
     staticClass: "layout__footer primary"
-  }, ["Footer"])])])])])])]), _vm._h('markup', {
+  }, ["Footer"])])])])])])]), _h('markup', {
     attrs: {
       "lang": "xml"
     },
