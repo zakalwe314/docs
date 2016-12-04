@@ -7773,7 +7773,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "x-large": "x-large"
     }
-  }, ["phone_android"]), _h('v-list-item-title', ["No Sacrifice Mobile Functionality", _h('v-list-item-sub-title', ["All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works."])])])])]), _h('v-col', {
+  }, ["phone_android"]), _h('v-list-item-title', ["Made for Mobile", _h('v-list-item-sub-title', ["All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works."])])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",

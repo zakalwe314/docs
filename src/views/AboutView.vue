@@ -32,7 +32,7 @@
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) phone_android
-                v-list-item-title No Sacrifice Mobile Functionality
+                v-list-item-title Made for Mobile
                   v-list-item-sub-title All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works.
 
           v-col(xs12 md6 lg6)
