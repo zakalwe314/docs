@@ -5633,7 +5633,7 @@ module.exports = __webpack_require__.p + "img/github.8f65afc.png";
 /* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/v2.3ec9b89.png";
+module.exports = __webpack_require__.p + "img/v.3ec9b89.png";
 
 /***/ },
 /* 51 */
@@ -8222,7 +8222,7 @@ module.exports={render:function (){var _vm=this;
   }, [_vm._h('router-link', {
     staticClass: "sidebar__logo",
     attrs: {
-      "to": "/welcome"
+      "to": "/about"
     }
   }, [_vm._h('img', {
     attrs: {

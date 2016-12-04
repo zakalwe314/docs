@@ -9,7 +9,7 @@
         span(class="hidden-md-and-down" v-html="subTitle")
       div(class="navbar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
-          img(src="../assets/github.png")
+          img(src="~public/github.png")
 </template>
 
 <script>

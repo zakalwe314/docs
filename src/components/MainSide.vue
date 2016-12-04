@@ -7,10 +7,10 @@
   )
     div(class="vuetify" slot="top")
       router-link(
-        to="/welcome",
+        to="/about",
         class="sidebar__logo"
       )
-        img(src="../assets/v2.png")
+        img(src="~public/v.png")
 </template>
 
 <script>

@@ -4,6 +4,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
+const favicon = require('serve-favicon')
 const compression = require('compression')
 const serialize = require('serialize-javascript')
 const resolve = file => path.resolve(__dirname, file)
@@ -70,6 +71,7 @@ const serve = (path, cache) => express.static(resolve(path), {
 })
 
 app.use(compression({ threshold: 0 }))
+app.use(favicon('./public/favicon-32x32.png'))
 app.use('/manifest.json', serve('./manifest.json'))
 app.use('/dist', serve('./dist'))
 app.use('/public', serve('./public'))
