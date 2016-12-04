@@ -88,7 +88,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Navbar')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Navbar Component | Vuetify',
+          h1: 'Navbars',
+          description: 'Navbar component for Vuetify Framework',
+          keywords: 'vuetify, navbars, components'
+        }
+      }
     }
   }
 </script>

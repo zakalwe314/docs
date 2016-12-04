@@ -199,8 +199,18 @@
               'Type: String'
             ],
             [
+              '<code>&lt;v-card-row&gt;</code>',
+              '',
+              'Base Component'
+            ],
+            [
+              '<code>actions</code>',
+              'Applies the card__row--action class',
+              'Default: false'
+            ],
+            [
               '<code>height</code>',
-              'Manually define the height of the Card Title',
+              'Manually define the height of the Card Row',
               'Type: String'
             ],
             [
@@ -209,32 +219,12 @@
               'Type: String'
             ],
             [
-              '<code>&lt;v-card-menu&gt;</code>',
-              '',
-              'Functional Component'
-            ],
-            [
               '<code>&lt;v-card-stack&gt;</code>',
               '',
               'Functional Component'
             ],
             [
-              '<code>&lt;v-card-actions&gt;</code>',
-              '',
-              'Functional Component'
-            ],
-            [
-              '<code>&lt;v-card-text&gt;</code>',
-              '',
-              'Functional Component'
-            ],
-            [
-              '<code>&lt;v-card-title-actions&gt;</code>',
-              '',
-              'Functional Component'
-            ],
-            [
-              '<code>&lt;v-card-title-text&gt;</code>',
+              '<code>&lt;v-card-title&gt;</code>',
               '',
               'Functional Component'
             ]
@@ -248,7 +238,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Cards')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Card Component | Vuetify',
+          h1: 'Cards',
+          description: 'Card component for Vuetify Framework',
+          keywords: 'vuetify, cards, components'
+        }
+      }
     }
   }
 </script>

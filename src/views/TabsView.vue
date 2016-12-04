@@ -84,7 +84,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Tabs')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Tabs Component | Vuetify',
+          h1: 'Tabs',
+          description: 'Tabs component for Vuetify Framework',
+          keywords: 'vuetify, tabs, components'
+        }
+      }
     }
   }
 </script>

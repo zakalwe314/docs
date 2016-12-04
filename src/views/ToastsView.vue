@@ -78,7 +78,11 @@
     },
 
     mounted () {
-      this.$emit('view', 'Toasts')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
     },
 
     methods: {
@@ -88,6 +92,15 @@
 
       toast (data) {
         this.$vuetify.toast.create(...data)
+      },
+      
+      meta () {
+        return {
+          title: 'Toast Function | Vuetify',
+          h1: 'Toasts',
+          description: 'Toast directive for Vuetify Framework',
+          keywords: 'vuetify, toasts, function'
+        }
       }
     }
   }

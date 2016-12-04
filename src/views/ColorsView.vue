@@ -51,14 +51,23 @@
         ]
       }
     },
+
     mounted () {
-      this.$emit('view', 'Colors')
+      this.$emit('view', this.meta())
     },
 
     preFetch () {
-      return {
-        title: 'Colors',
-        meta: {}
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Colors | Vuetify',
+          h1: 'Colors',
+          description: 'Colors for the Vuetify Framework',
+          keywords: 'vuetify, colors'
+        }
       }
     }
   }

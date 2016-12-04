@@ -33,12 +33,12 @@ import BusView from '../views/BusView.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   base: __dirname,
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/', component: AboutView },
+    { path: '/', component: AboutView, meta: { test: 'yes' } },
     { path: '/quick-start', component: QuickStartView },
     { path: '/overview', component: OverviewView },
     { path: '/components/alerts', component: AlertsView },
@@ -70,3 +70,5 @@ export default new Router({
     { path: '*', redirect: '/' }
   ]
 })
+
+export default router

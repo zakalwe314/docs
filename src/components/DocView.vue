@@ -13,6 +13,9 @@
     section
       section-header Parameters
       component-parameters(v-bind:params="doc.params")
+    section
+      section-header Events
+      p(class="section-text") Coming Soon
 </template>
 
 <script>

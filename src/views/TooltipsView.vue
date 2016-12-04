@@ -60,7 +60,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Tooltips')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Tooltip Directive | Vuetify',
+          h1: 'Tooltips',
+          description: 'Tooltip directive for Vuetify Framework',
+          keywords: 'vuetify, tooltips, directives'
+        }
+      }
     }
   }
 </script>

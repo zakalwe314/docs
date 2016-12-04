@@ -65,7 +65,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Slider')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Slider Component | Vuetify',
+          h1: 'Sliders',
+          description: 'Slider component for Vuetify Framework',
+          keywords: 'vuetify, sliders, components'
+        }
+      }
     }
   }
 </script>

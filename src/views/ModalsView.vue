@@ -89,7 +89,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Modals')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Modal Component | Vuetify',
+          h1: 'Modals',
+          description: 'Modal component for Vuetify Framework',
+          keywords: 'vuetify, modals, components'
+        }
+      }
     }
   }
 </script>

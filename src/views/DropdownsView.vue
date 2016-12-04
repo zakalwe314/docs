@@ -111,10 +111,6 @@
 
 <script>
   export default {
-    mounted () {
-      this.$emit('view', 'Dropdowns')
-    },
-
     data () {
       return {
         doc: {
@@ -165,6 +161,25 @@
             text: 'Click Me 2'
           }
         ]
+      }
+    },
+
+    mounted () {
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Dropdown Component | Vuetify',
+          h1: 'Dropdowns',
+          description: 'Dropdown component for Vuetify Framework',
+          keywords: 'vuetify, dropdowns, components'
+        }
       }
     }
   }

@@ -150,7 +150,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Lists')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'List Component | Vuetify',
+          h1: 'Lists',
+          description: 'List component for Vuetify Framework',
+          keywords: 'vuetify, lists, components'
+        }
+      }
     }
   }
 </script>

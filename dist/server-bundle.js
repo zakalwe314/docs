@@ -7076,6 +7076,9 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   props: ['doc']
@@ -7205,12 +7208,12 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
             { href: '/components/forms', text: 'Forms', icon: 'text_format' },
             { href: '/components/lists', text: 'Lists', icon: 'format_list_bulleted' },
             { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
-            { href: '/components/navbar', text: 'Navbar', icon: 'web' },
+            { href: '/components/navbar', text: 'Navbars', icon: 'web' },
             { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
             // { href: '/components/progress', text: 'Progress', icon: 'trending_flat' },
             { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
-            { href: '/components/sidebar', text: 'Sidebar', icon: 'view_quilt' },
-            { href: '/components/slider', text: 'Slider', icon: 'slideshow' },
+            { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
+            { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
             { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
           ]
         },
@@ -7616,7 +7619,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Badges')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Badge Directive | Vuetify',
+        h1: 'Badges',
+        description: 'Badge directive for Vuetify Framework',
+        keywords: 'vuetify, badges, directives'
+      }
+    }
   }
 };
 
@@ -7766,10 +7784,132 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   mounted: function mounted () {
-    this.$emit('view', 'Bus')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        h1: 'Bus',
+        title: 'Bus System | Vuetify',
+        description: 'The Vuetify bus powers your application by allowing components to communicate to each other',
+        keywords: 'vuetify bus'
+      }
+    }
   }
 };
 
@@ -8158,8 +8298,18 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
             'Type: String'
           ],
           [
+            '<code>&lt;v-card-row&gt;</code>',
+            '',
+            'Base Component'
+          ],
+          [
+            '<code>actions</code>',
+            'Applies the card__row--action class',
+            'Default: false'
+          ],
+          [
             '<code>height</code>',
-            'Manually define the height of the Card Title',
+            'Manually define the height of the Card Row',
             'Type: String'
           ],
           [
@@ -8168,32 +8318,12 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
             'Type: String'
           ],
           [
-            '<code>&lt;v-card-menu&gt;</code>',
-            '',
-            'Functional Component'
-          ],
-          [
             '<code>&lt;v-card-stack&gt;</code>',
             '',
             'Functional Component'
           ],
           [
-            '<code>&lt;v-card-actions&gt;</code>',
-            '',
-            'Functional Component'
-          ],
-          [
-            '<code>&lt;v-card-text&gt;</code>',
-            '',
-            'Functional Component'
-          ],
-          [
-            '<code>&lt;v-card-title-actions&gt;</code>',
-            '',
-            'Functional Component'
-          ],
-          [
-            '<code>&lt;v-card-title-text&gt;</code>',
+            '<code>&lt;v-card-title&gt;</code>',
             '',
             'Functional Component'
           ]
@@ -8205,7 +8335,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Cards')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Card Component | Vuetify',
+        h1: 'Cards',
+        description: 'Card component for Vuetify Framework',
+        keywords: 'vuetify, cards, components'
+      }
+    }
   }
 };
 
@@ -8338,7 +8483,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Chips')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Chip Component | Vuetify',
+        h1: 'Chips',
+        description: 'Chip component for Vuetify Framework',
+        keywords: 'vuetify, chips, components'
+      }
+    }
   }
 };
 
@@ -8421,7 +8581,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Collapsible')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Collapsible Component | Vuetify',
+        h1: 'Collapsible',
+        description: 'Collapsible component for Vuetify Framework',
+        keywords: 'vuetify, collapsible, components'
+      }
+    }
   }
 };
 
@@ -8484,14 +8659,23 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
       ]
     }
   },
+
   mounted: function mounted () {
-    this.$emit('view', 'Colors')
+    this.$emit('view', this.meta())
   },
 
   preFetch: function preFetch () {
-    return {
-      title: 'Colors',
-      meta: {}
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Colors | Vuetify',
+        h1: 'Colors',
+        description: 'Colors for the Vuetify Framework',
+        keywords: 'vuetify, colors'
+      }
     }
   }
 };
@@ -8615,10 +8799,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 
 /* harmony default export */ exports["default"] = {
-  mounted: function mounted () {
-    this.$emit('view', 'Dropdowns')
-  },
-
   data: function data () {
     return {
       doc: {
@@ -8670,6 +8850,25 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
         }
       ]
     }
+  },
+
+  mounted: function mounted () {
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Dropdown Component | Vuetify',
+        h1: 'Dropdowns',
+        description: 'Dropdown component for Vuetify Framework',
+        keywords: 'vuetify, dropdowns, components'
+      }
+    }
   }
 };
 
@@ -8710,7 +8909,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Footer')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Footer Component | Vuetify',
+        h1: 'Footer',
+        description: 'Footer component for Vuetify Framework',
+        keywords: 'vuetify, footer, components'
+      }
+    }
   }
 };
 
@@ -8896,7 +9110,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Forms')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Form Input Components | Vuetify',
+        h1: 'Form Inputs',
+        description: 'Form input components for Vuetify Framework',
+        keywords: 'vuetify, form, components'
+      }
+    }
   }
 };
 
@@ -8981,13 +9210,21 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Grid')
+    this.$emit('view', this.meta())
   },
 
   preFetch: function preFetch () {
-    return {
-      title: 'Grid',
-      meta: {}
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Grid | Vuetify',
+        h1: 'Grid',
+        description: 'Grid for the Vuetify Framework',
+        keywords: 'vuetify, grid'
+      }
     }
   }
 };
@@ -9130,7 +9367,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Layouts')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Layouts | Vuetify',
+        h1: 'Layouts',
+        description: 'Layouts for the Vuetify Framework',
+        keywords: 'vuetify, layouts'
+      }
+    }
   }
 };
 
@@ -9292,7 +9544,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Lists')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'List Component | Vuetify',
+        h1: 'Lists',
+        description: 'List component for Vuetify Framework',
+        keywords: 'vuetify, lists, components'
+      }
+    }
   }
 };
 
@@ -9393,7 +9660,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Modals')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Modal Component | Vuetify',
+        h1: 'Modals',
+        description: 'Modal component for Vuetify Framework',
+        keywords: 'vuetify, modals, components'
+      }
+    }
   }
 };
 
@@ -9493,7 +9775,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Navbar')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Navbar Component | Vuetify',
+        h1: 'Navbars',
+        description: 'Navbar component for Vuetify Framework',
+        keywords: 'vuetify, navbars, components'
+      }
+    }
   }
 };
 
@@ -9686,7 +9983,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Pagination')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Pagination Component | Vuetify',
+        h1: 'Pagination',
+        description: 'Pagination component for Vuetify Framework',
+        keywords: 'vuetify, pagination, components'
+      }
+    }
   }
 };
 
@@ -9750,7 +10062,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Parallax')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Parallax Component | Vuetify',
+        h1: 'Parallax',
+        description: 'Parallax component for Vuetify Framework',
+        keywords: 'vuetify, parallax, components'
+      }
+    }
   }
 };
 
@@ -9859,6 +10186,24 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10121,7 +10466,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Sidebar')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Sidebar Component | Vuetify',
+        h1: 'Sidebars',
+        description: 'Sidebar component for Vuetify Framework',
+        keywords: 'vuetify, sidebars, components'
+      }
+    }
   }
 };
 
@@ -10198,7 +10558,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Slider')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Slider Component | Vuetify',
+        h1: 'Sliders',
+        description: 'Slider component for Vuetify Framework',
+        keywords: 'vuetify, sliders, components'
+      }
+    }
   }
 };
 
@@ -10294,7 +10669,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Tabs')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Tabs Component | Vuetify',
+        h1: 'Tabs',
+        description: 'Tabs component for Vuetify Framework',
+        keywords: 'vuetify, tabs, components'
+      }
+    }
   }
 };
 
@@ -10384,7 +10774,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Toasts')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
   },
 
   methods: {
@@ -10395,6 +10789,15 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
     toast: function toast (data) {
       (ref = this.$vuetify.toast).create.apply(ref, data)
       var ref;
+    },
+    
+    meta: function meta () {
+      return {
+        title: 'Toast Function | Vuetify',
+        h1: 'Toasts',
+        description: 'Toast directive for Vuetify Framework',
+        keywords: 'vuetify, toasts, function'
+      }
     }
   }
 };
@@ -10467,7 +10870,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Tooltips')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Tooltip Directive | Vuetify',
+        h1: 'Tooltips',
+        description: 'Tooltip directive for Vuetify Framework',
+        keywords: 'vuetify, tooltips, directives'
+      }
+    }
   }
 };
 
@@ -10513,7 +10931,22 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   },
 
   mounted: function mounted () {
-    this.$emit('view', 'Typography')
+    this.$emit('view', this.meta())
+  },
+
+  preFetch: function preFetch () {
+    return this.methods.meta()
+  },
+
+  methods: {
+    meta: function meta () {
+      return {
+        title: 'Typography | Vuetify',
+        h1: 'Typography',
+        description: 'Typography for the Vuetify Framework',
+        keywords: 'vuetify, typography'
+      }
+    }
   }
 };
 
@@ -10677,12 +11110,12 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router___default.a)
 
-/* harmony default export */ exports["a"] = new __WEBPACK_IMPORTED_MODULE_1_vue_router___default.a({
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router___default.a({
   base: __dirname,
   mode: 'history',
   scrollBehavior: function () { return ({ y: 0 }); },
   routes: [
-    { path: '/', component: __WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue___default.a },
+    { path: '/', component: __WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue___default.a, meta: { test: 'yes' } },
     { path: '/quick-start', component: __WEBPACK_IMPORTED_MODULE_3__views_QuickStartView_vue___default.a },
     { path: '/overview', component: __WEBPACK_IMPORTED_MODULE_4__views_OverviewView_vue___default.a },
     { path: '/components/alerts', component: __WEBPACK_IMPORTED_MODULE_5__views_AlertsView_vue___default.a },
@@ -10713,7 +11146,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     { path: '/bus', component: __WEBPACK_IMPORTED_MODULE_30__views_BusView_vue___default.a },
     { path: '*', redirect: '/' }
   ]
-});
+})
+
+/* harmony default export */ exports["a"] = router;
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
@@ -19299,7 +19734,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "x-large": "x-large"
     }
-  }, ["call_split"]), _h('v-list-item-title', ["Separation of Concerns", _h('v-list-item-sub-title', ["Vuetify is sculpted with Stylus in a separated stylesheet. With no component specific styles in the component, your application is smaller, easier to change, and easier to build upon."])])])])]), _h('v-col', {
+  }, ["add_to_queue"]), _h('v-list-item-title', ["Premade Vue CLI Templates", _h('v-list-item-sub-title', ["Vuetify comes with 3 Vue CLI templates, preconfigured, and ready to go. ", _h('router-link', {
+    attrs: {
+      "to": "/quick-start#simple"
+    }
+  }, ["Simple HTML"]), ", ", _h('router-link', {
+    attrs: {
+      "to": "/quick-start#webpack"
+    }
+  }, ["Webpack"]), ", and ", _h('router-link', {
+    attrs: {
+      "to": "/quick-start#webpack-ssr"
+    }
+  }, ["Weback SSR"]), " ", _h('em', ["(Server Side Rendering)"]), "."])])])])]), _h('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
@@ -19310,7 +19757,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "x-large": "x-large"
     }
-  }, ["open_in_browser"]), _h('v-list-item-title', ["Built for Vue Server Side Rendering", _h('v-list-item-sub-title', ["Using an internal bus, Vuetify is ready from installation for SSR based application. This bus is exposed and available for hooking into, further customizing your application."])])])])])])])]), _h('section', [_h('section-header', ["Ecosystem"]), _h('div', {
+  }, ["open_in_browser"]), _h('v-list-item-title', ["Built with Vue Server Side Rendering", _h('v-list-item-sub-title', ["Using an internal bus, Vuetify is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application."])])])])])])])]), _h('section', [_h('section-header', ["Ecosystem"]), _h('div', {
     staticClass: "section-text"
   }, ["Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components."]), _h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["color_lens"]), _h('v-list-item-title', ["Material Design Color Pack"])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vue CLI Templates including SSR"])]), _h('v-list-item', [_h('v-list-item-icon', ["security"]), _h('v-list-item-title', [_h('span', ["Vuetify Admin Components ", _h('v-chip', {
     staticClass: "green white--text",
@@ -19911,8 +20358,62 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     slot: "title"
   }, ["Bus"]), _h('dd', {
     slot: "desc"
-  }, ["Coming Soon"])])])])
-},staticRenderFns: []}
+  }, ["The Vuetify ", _h('code', ["bus"]), " is the glue that holds all of your components together. Made for Vue SSR ", _h('em', ["(Server Side Rendering)"]), ", the bus system ensures that components are able to work in a variety of setups."])])]), _h('section', [_h('section-header', ["Meta"]), _vm._m(0), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["// App.vue\nexport default {\n  mounted () {\n    this.$vuetify.init()\n  },\n  methods: {\n    view (meta) {\n      this.$vuetify.bus.pub(meta:title, obj.title)\n      this.$vuetify.bus.pub(meta:description, obj.description)\n      this.$vuetify.bus.pub(meta:keywords, obj.keywords)\n    }\n  }\n}\n \n// View.vue\nexport default {\n  mounted () {\n    this.$emit('view', this.meta())\n  },\n  preFetch () {\n    return this.methods.meta()\n  },\n  methods: {\n    meta () {\n      return {\n        title: 'Vuetify',\n        description: 'A Vue JS Framework',\n        keywords: 'vue, vuetify'\n      }\n    }\n  }\n}"]), _vm._m(1)]), _h('section', [_h('section-header', ["Components"]), _vm._m(2), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["data () {\n  return {\n    popup_data: ['Toast with Callback', 'right', 4000, () => alert('Callback')],\n  }\n}\nmounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nmethods: {\n  popup () {\n    this.$vuetify.toast.create(...popup_data)\n  }\n}"]), _vm._m(3), _h('v-list', [_h('v-list-item', [_h('v-list-item-title', ["Component name"])]), _h('v-list-item', [_h('v-list-item-title', ["Component action"])]), _h('v-list-item', [_h('v-list-item-title', ["Component id (optional)"])])])]), _h('section', [_h('section-header', ["Events"]), _vm._m(4), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["mounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nbeforeDestroy () {\n  this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)\n}"]), _h('p', {
+    staticClass: "section-text"
+  }, ["While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a Vue mixin to do this automatically for you. As well, the Bus accepts an array, which allows for a smoother process."]), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["import Eventable from '../node_modules/vuetify/src/mixins/eventable'\n \nexport default {\n  mixins: [Eventable],\n  computed: {\n    events () {\n      return [\n        'modal:open:demo-modal', this.open,\n        'modal:close:demo-modal', this.popup\n      ]\n    }\n  }\n}"]), _h('p', {
+    staticClass: "section-text"
+  }, ["The above will automatically sub to the Bus upon creation and unsub when removed."])]), _h('section', [_h('section-header', ["Extending"]), _h('p', {
+    staticClass: "section-text"
+  }, ["You may want to create your own events in order to support your application, which is just as easy as hooking into existing ones. This allows you to take advantage of the SSR capabilities you get by default."]), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["this.$vuetify.bus.sub('{unique string}', callback)\n \nthis.$vuetify.bus.pub('{unique string}', arg1, arg2)"]), _h('h6', ["Loading"]), _vm._m(5), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["mounted () {\n  this.$vuetify.load(this.init)\n},\nmethods: {\n  init () {\n    alert('Component ready!')\n  }\n}"])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["Updating your page meta details can be done by publishing an event to the Vuetify ", _h('code', ["bus"]), ". This is the same functionality that is hooked into by the ", _h('strong', ["Vuetify SSR template"]), " when the pages are being initially rendered. Here is an example of a view:"])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["In the example above, we emit an event that is captured on ", _h('code', ["<router-view v-on:view=\"view\">"]), ". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for Bots, but also change when the user is navigating to a different page."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through ", _h('code', ["this"]), "."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["In the example above, we hook into the close event of a modal with the id of ", _h('code', ["demo-modal"]), ". All of Vuetify's events follow a similar structure:"])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["When Vue components are broken down, event listeners need to be removed. This is the process for regular ", _h('strong', ["DOM"]), " event listeners, and it is the same for the Vuetify Bus. This can be done by calling the ", _h('strong', ["unsub"]), " method on the bus in the Vue ", _h('strong', ["beforeDestroy"]), " hook."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "text-text"
+  }, ["Depending on the state of your application, you may need to wait for the ", _h('strong', ["DOM"]), " to be ready. Vuetify provides a simple function to help do this for you."])
+}]}
 
 /***/ },
 /* 116 */
@@ -20465,7 +20966,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "lang": "html"
     }
-  }, ["<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">"])]), _h('section', [_h('section-header', ["Global Install"]), _vm._m(0), _h('markup', ["<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>"])]), _h('section', [_h('section-header', ["Vue CLI"]), _vm._m(1), _h('v-tabs', {
+  }, ["<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">"])]), _h('section', [_h('section-header', ["Manual Install"]), _vm._m(0), _h('markup', {
+    attrs: {
+      "lang": "html"
+    }
+  }, ["<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>"]), _h('h6', ["Existing Projects"]), _h('p', {
+    staticClass: "section-text"
+  }, ["If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn."]), _h('markup', {
+    attrs: {
+      "lang": "bash"
+    }
+  }, ["npm install vuetify --save-dev\n \nyarn add vuetify --dev"]), _h('p', {
+    staticClass: "section-text"
+  }, ["Now, in your index.js, import Vuetify and apply the plugin to Vue."]), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["import Vue from 'vue'\nimport Vuetify from 'vuetify'\n \nVue.use(Vuetify)"]), _vm._m(1), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["mounted () {\n  this.$vuetify.init()\n}"])]), _h('section', [_h('section-header', ["Vue CLI"]), _vm._m(2), _h('v-tabs', {
     attrs: {
       "id": "vue-cli"
     }
@@ -20511,21 +21032,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "lang": "bash"
     }
-  }, ["vue init vuetifyjs/webpack-ssr"])])])]), _h('h4', ["NPM Install"]), _h('p', {
+  }, ["vue init vuetifyjs/webpack-ssr"])])])]), _h('h6', ["NPM Install"]), _h('p', {
     staticClass: "section-text"
   }, ["After the vue-cli installation finishes:"]), _h('markup', {
     attrs: {
       "code": "bash"
     }
-  }, ["cd <package-name>\nnpm install"]), _vm._m(2), _h('markup', {
+  }, ["cd <package-name>\nnpm install"]), _vm._m(3), _h('markup', {
     attrs: {
       "lang": "bash"
     }
-  }, ["cd <package-name>\nyarn"]), _vm._m(3), _h('markup', {
+  }, ["cd <package-name>\nyarn"]), _vm._m(4), _h('markup', {
     attrs: {
       "lang": "bash"
     }
-  }, ["npm run dev"]), _vm._m(4)]), _h('section', [_h('whats-next', {
+  }, ["npm run dev"]), _vm._m(5)]), _h('section', [_h('whats-next', {
     attrs: {
       "route": "/overview",
       "text": "Overview"
@@ -20535,6 +21056,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"
   }, ["If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your ", _h('code', ["index"]), " file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["Once you have Vuetify installed, in your main App.vue file, add the Vuetify ", _h('code', ["init"]), " function to the Vue mounted hook."])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"
@@ -20777,7 +21302,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "params": _vm.doc.params
     }
-  })])])
+  })]), _h('section', [_h('section-header', ["Events"]), _h('p', {
+    staticClass: "section-text"
+  }, ["Coming Soon"])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20895,11 +21422,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     slot: "markup"
   }, [_h('markup', {
     attrs: {
-      "code": "xml"
+      "lang": "html"
     }
   }, ["<v-breadcrumbs divider=\"/\" v-bind:items=\"items\"></v-breadcrumbs>\n \n<v-breadcrumbs divider=\"/\">\n  <v-breadcrumbs-item v-for(item in items) v-bind:item=\"item\"></v-breadcrumbs-item>\n</v-breadcrumbs>"]), _h('markup', {
     attrs: {
-      "code": "javascript"
+      "lang": "js"
     }
   }, ["data () {\n  return {\n    items: [{ href: '#!', text: 'Dashboard', disabled: false}]\n  }\n}"])])])
 },staticRenderFns: []}
@@ -20921,13 +21448,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   }, ["here"]), "."])])])]), _h('section', [_h('section-header', ["Introduction"]), _vm._m(0), _h('markup', {
     attrs: {
-      "lang": "js"
+      "lang": "bash"
     }
   }, ["npm run dev"]), _h('p', {
     staticClass: "section-text"
   }, ["Let's get aquainted with the folder structure which should look like this:"]), _h('markup', {
     attrs: {
-      "lang": "xml"
+      "lang": "bash"
     }
   }, ["/ project\n  / build\n    - setup-dev-server.js\n    - vue-loader.config.js\n    - webpack.base.config.js\n    - webpack.client.config.js\n    - webpack.server.config.js\n  / dist\n  / public\n  / src\n    / components\n    / router\n    / store\n    / css\n    / views\n    - app.js\n    - App.vue\n    - client-entry.js\n    - critical.js\n    - index.template.html\n    - server-entry.js\n  - .babelrc\n  - .gitignore\n  - README.md\n  - index.html\n  - package.json\n  - server.js"]), _vm._m(1), _h('h3', ["Application"]), _h('div', {
     staticClass: "section-text"

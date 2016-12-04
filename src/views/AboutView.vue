@@ -38,16 +38,16 @@
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
-                v-list-item-avatar(class="primary" x-large) call_split
-                v-list-item-title Separation of Concerns
-                  v-list-item-sub-title Vuetify is sculpted with Stylus in a separated stylesheet. With no component specific styles in the component, your application is smaller, easier to change, and easier to build upon.
+                v-list-item-avatar(class="primary" x-large) add_to_queue
+                v-list-item-title Premade Vue CLI Templates
+                  v-list-item-sub-title Vuetify comes with 3 Vue CLI templates, preconfigured, and ready to go. <router-link to="/quick-start#simple">Simple HTML</router-link>, <router-link to="/quick-start#webpack">Webpack</router-link>, and <router-link to="/quick-start#webpack-ssr">Weback SSR</router-link> <em>(Server Side Rendering)</em>.
 
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) open_in_browser
-                v-list-item-title Built for Vue Server Side Rendering
-                  v-list-item-sub-title Using an internal bus, Vuetify is ready from installation for SSR based application. This bus is exposed and available for hooking into, further customizing your application.
+                v-list-item-title Built with Vue Server Side Rendering
+                  v-list-item-sub-title Using an internal bus, Vuetify is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.
 
     section
       section-header Ecosystem

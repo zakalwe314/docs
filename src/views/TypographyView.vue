@@ -34,7 +34,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Typography')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Typography | Vuetify',
+          h1: 'Typography',
+          description: 'Typography for the Vuetify Framework',
+          keywords: 'vuetify, typography'
+        }
+      }
     }
   }
 </script>

@@ -71,7 +71,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Collapsible')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Collapsible Component | Vuetify',
+          h1: 'Collapsible',
+          description: 'Collapsible component for Vuetify Framework',
+          keywords: 'vuetify, collapsible, components'
+        }
+      }
     }
   }
 </script>

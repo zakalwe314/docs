@@ -79,7 +79,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Badges')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Badge Directive | Vuetify',
+          h1: 'Badges',
+          description: 'Badge directive for Vuetify Framework',
+          keywords: 'vuetify, badges, directives'
+        }
+      }
     }
   }
 </script>

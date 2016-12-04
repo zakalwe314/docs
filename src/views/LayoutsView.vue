@@ -130,7 +130,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Layouts')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Layouts | Vuetify',
+          h1: 'Layouts',
+          description: 'Layouts for the Vuetify Framework',
+          keywords: 'vuetify, layouts'
+        }
+      }
     }
   }
 </script>
@@ -154,6 +169,8 @@
       color: #fff
       justify-content: center
       align-items: center
+      text-align: center
+      padding: 0 !important
       
     &__footer
       background: $red.darken-2 !important

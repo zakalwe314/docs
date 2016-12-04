@@ -163,7 +163,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Sidebar')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Sidebar Component | Vuetify',
+          h1: 'Sidebars',
+          description: 'Sidebar component for Vuetify Framework',
+          keywords: 'vuetify, sidebars, components'
+        }
+      }
     }
   }
 </script>

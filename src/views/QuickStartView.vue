@@ -12,11 +12,29 @@
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
 
     section
-      section-header Global Install
+      section-header Manual Install
       p(class="section-text") If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above.
-      markup
+      markup(lang="html")
         |&lt;link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"&gt;
         |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
+
+      h6 Existing Projects
+      p(class="section-text") If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn.
+      markup(lang="bash")
+        |npm install vuetify --save-dev
+        |&nbsp;
+        |yarn add vuetify --dev
+      p(class="section-text") Now, in your index.js, import Vuetify and apply the plugin to Vue.
+      markup(lang="js")
+        |import Vue from 'vue'
+        |import Vuetify from 'vuetify'
+        |&nbsp;
+        |Vue.use(Vuetify)
+      p(class="section-text") Once you have Vuetify installed, in your main App.vue file, add the Vuetify <code>init</code> function to the Vue mounted hook.
+      markup(lang="js")
+        |mounted () {
+        |   this.$vuetify.init()
+        |}
 
     section
       section-header Vue CLI
@@ -50,7 +68,7 @@
             markup(lang="bash")
               |vue init vuetifyjs/webpack-ssr
       
-      h4 NPM Install
+      h6 NPM Install
       p(class="section-text") After the vue-cli installation finishes:
       markup(code="bash")
         |cd &lt;package-name&gt;

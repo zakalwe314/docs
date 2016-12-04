@@ -35,12 +35,12 @@
               { href: '/components/forms', text: 'Forms', icon: 'text_format' },
               { href: '/components/lists', text: 'Lists', icon: 'format_list_bulleted' },
               { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
-              { href: '/components/navbar', text: 'Navbar', icon: 'web' },
+              { href: '/components/navbar', text: 'Navbars', icon: 'web' },
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               // { href: '/components/progress', text: 'Progress', icon: 'trending_flat' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
-              { href: '/components/sidebar', text: 'Sidebar', icon: 'view_quilt' },
-              { href: '/components/slider', text: 'Slider', icon: 'slideshow' },
+              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
+              { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
             ]
           },

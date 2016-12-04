@@ -52,7 +52,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Parallax')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Parallax Component | Vuetify',
+          h1: 'Parallax',
+          description: 'Parallax component for Vuetify Framework',
+          keywords: 'vuetify, parallax, components'
+        }
+      }
     }
   }
 </script>

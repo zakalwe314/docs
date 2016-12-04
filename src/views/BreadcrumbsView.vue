@@ -21,13 +21,13 @@
         v-bind:items="items"
       )
     div(slot="markup")
-      markup(code="xml")
+      markup(lang="html")
         |&lt;v-breadcrumbs divider="/" v-bind:items="items"&gt;&lt;/v-breadcrumbs&gt;
         |&nbsp;
         |&lt;v-breadcrumbs divider="/"&gt;
         |   &lt;v-breadcrumbs-item v-for(item in items) v-bind:item="item"&gt;&lt;/v-breadcrumbs-item&gt;
         |&lt;/v-breadcrumbs&gt;
-      markup(code="javascript")
+      markup(lang="js")
         |data () {
         |   return {
         |     items: [{ href: '#!', text: 'Dashboard', disabled: false}]

@@ -42,7 +42,6 @@ function createRenderer (bundle) {
 }
 
 function parseIndex (template) {
-  console.log('here')
   const appMarker = '<!-- APP -->'
   const jsMarker = '<!-- CRITICALJS -->'
 

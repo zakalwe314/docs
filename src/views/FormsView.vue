@@ -174,7 +174,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Forms')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Form Input Components | Vuetify',
+          h1: 'Form Inputs',
+          description: 'Form input components for Vuetify Framework',
+          keywords: 'vuetify, form, components'
+        }
+      }
     }
   }
 </script>

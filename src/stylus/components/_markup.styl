@@ -4,6 +4,7 @@
   font-size: 1.2rem
   transition: .3s ease-out
   word-break: break-all
+  overflow: hidden
   
   &:hover
     background: rgba(0, 0, 0, .1)
@@ -24,13 +25,15 @@
     &:after
       color: #fff
       position: absolute
-      font-size: .8rem
-      top: 0
-      right: 0
+      font-size: .7rem
+      top: 1rem
+      right: 1rem
       background: rgba(#444, .7)
-      padding: .3rem .5rem
+      border: 2px solid rgba(#444, .3)
+      padding: .1rem .5rem
       font-weight: 100
       letter-spacing: 2px
+      transition: $primary-transition
       
     &.html
       &:after

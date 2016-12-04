@@ -121,7 +121,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Chips')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Chip Component | Vuetify',
+          h1: 'Chips',
+          description: 'Chip component for Vuetify Framework',
+          keywords: 'vuetify, chips, components'
+        }
+      }
     }
   }
 </script>

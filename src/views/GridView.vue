@@ -73,13 +73,21 @@
     },
 
     mounted () {
-      this.$emit('view', 'Grid')
+      this.$emit('view', this.meta())
     },
 
     preFetch () {
-      return {
-        title: 'Grid',
-        meta: {}
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Grid | Vuetify',
+          h1: 'Grid',
+          description: 'Grid for the Vuetify Framework',
+          keywords: 'vuetify, grid'
+        }
       }
     }
   }

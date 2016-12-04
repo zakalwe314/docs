@@ -69,7 +69,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Pagination')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Pagination Component | Vuetify',
+          h1: 'Pagination',
+          description: 'Pagination component for Vuetify Framework',
+          keywords: 'vuetify, pagination, components'
+        }
+      }
     }
   }
 </script>

@@ -8,10 +8,10 @@
     section
       section-header Introduction
       p(class="section-text") Now that you have <strong>Vuetify</strong> installed, you are ready to make your first site. Make sure you have your local server running. If you do not, from within your project directory, type:
-      markup(lang="js")
+      markup(lang="bash")
         |npm run dev
       p(class="section-text") Let's get aquainted with the folder structure which should look like this:
-      markup(lang="xml")
+      markup(lang="bash")
         | / project
         |   / build
         |     - setup-dev-server.js

@@ -29,7 +29,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Footer')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Footer Component | Vuetify',
+          h1: 'Footer',
+          description: 'Footer component for Vuetify Framework',
+          keywords: 'vuetify, footer, components'
+        }
+      }
     }
   }
 </script>
