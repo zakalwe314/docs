@@ -86,13 +86,21 @@
 <script>
   export default {
     mounted () {
-      this.$emit('view', 'Overview')
+      this.$emit('view', this.meta())
     },
 
     preFetch () {
-      return {
-        title: 'Overview',
-        meta: {}
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          h1: 'Overview',
+          title: 'Overview | Vuetify',
+          description: 'Review the structure of the Vuetify SSR Template',
+          keywords: 'vue cli, vue template, vue ssr, vuetify ssr'
+        }
       }
     }
   }

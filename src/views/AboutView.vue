@@ -1,8 +1,5 @@
 <template lang="pug">
   div.view
-    v-card(class="blue lighten-3 white--text version")
-      v-card-text
-        |v0.6.12
     section
       section-text
         strong(slot="title") About
@@ -22,7 +19,7 @@
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) extension
-                v-list-item-title Semantic Helper Components
+                v-list-item-title Vue Semantic Components
                   v-list-item-sub-title Utilizing the power of Vue's functional components, all class based markup that is used to aid main components, such as a <em>card title</em>, are accessible using <code>v-card-title</code>. This added benefit enables less cluttering of files for a miniscule performance cost.
           v-col(xs12 md6 lg6)
             v-list
@@ -49,7 +46,7 @@
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) open_in_browser
-                v-list-item-title Built for Server Side Rendering
+                v-list-item-title Built for Vue Server Side Rendering
                   v-list-item-sub-title Using an internal bus, Vuetify is ready from installation for SSR based application. This bus is exposed and available for hooking into, further customizing your application.
 
     section
@@ -70,21 +67,25 @@
           v-list-item-title
             span Vuetify Admin Components <v-chip label class="green white--text">Coming Soon</v-chip>
 
-      whats-next(route="/quick-start" text="Quick Start") Select from 4 premade Vuetify vue-cli templates. These are based off of the official releases, pre-configured for the <strong>vuetify</strong> package.
+      whats-next(route="/quick-start" text="Quick Start") Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the <strong>vuetify</strong> package.
 </template>
 
 <script>
   export default {
     mounted () {
-      this.$emit('view', 'Vuetify')
+      this.$emit('view', this.meta())
     },
 
     preFetch () {
-      return {
-        title: 'Vuetify | Vue JS 2.0 Components',
-        h1: 'Vuetify',
-        meta: {
-          description: 'Reusable material design components for Vue JS 2.0.',
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Vue JS 2.0 Component Framework | Vuetify',
+          h1: 'Vuetify',
+          description: 'Reusable semantic component framework for Vue JS 2.0.',
           keywords: 'vue, vue 2.0, vue js, material design, vue components, material design components'
         }
       }

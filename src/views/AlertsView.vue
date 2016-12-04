@@ -15,7 +15,7 @@
           v-btn(v-on:click.native="alert = true" class="primary white--text") Reset Alert
         v-alert(success close v-model="alert")
           | This is a success alert that is closable. {{ lorem }}
-    markup(slot="markup")
+    markup(slot="markup" lang="html")
       template(v-for="type in types")
         |&nbsp;
         |&lt;v-alert {{ type }}&gt;
@@ -74,7 +74,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Alerts')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Alert Component | Vuetify',
+          h1: 'Alerts',
+          description: 'Alert component for Vuetify Framework',
+          keywords: 'vuetify, alerts, components'
+        }
+      }
     }
   }
 </script>

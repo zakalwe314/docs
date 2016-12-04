@@ -159,7 +159,22 @@
     },
 
     mounted () {
-      this.$emit('view', 'Buttons')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Button Component | Vuetify',
+          h1: 'Buttons',
+          description: 'Button component for Vuetify Framework',
+          keywords: 'vuetify, buttons, components'
+        }
+      }
     }
   }
 </script>

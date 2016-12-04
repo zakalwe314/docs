@@ -59,36 +59,36 @@
             v-icon(class="secondary--text right") cloud_off
     component-example(header="Menus")
       v-card
-        v-card-title(class="blue")
-          v-card-title-text
-            v-btn(
-                icon
-                v-dropdown:menu=""
-            )
-              v-icon(
-                class="white--text"
-              ) more_vert
-            v-dropdown(
-              id="menu"
-              v-bind:items="items"
-            )
+        v-card-row(class="blue white--text")
+          v-btn(
+              icon
+              v-dropdown:menu=""
+          )
+            v-icon(
+              class="white--text"
+            ) more_vert
+          v-dropdown(
+            id="menu"
+            v-bind:items="items"
+          )
+          v-card-title Menu
         v-card-text Lorem Ipsum
       v-card
-        v-card-title(class="blue")
-          v-col-spacer
-          v-card-title-actions
-            v-btn(
-              icon
-              v-dropdown:menu2=""
-            )
-              v-icon(
-                class="white--text"
-              ) more_vert
-            v-dropdown(
-              id="menu2"
-              v-bind:items="items",
-              right
-            )
+        v-card-row(class="blue white--text")
+          v-card-title Menu
+          v-spacer
+          v-btn(
+            icon
+            v-dropdown:menu2=""
+          )
+            v-icon(
+              class="white--text"
+            ) more_vert
+          v-dropdown(
+            id="menu2"
+            v-bind:items="items",
+            right
+          )
         v-card-text Lorem Ipsum
     div(slot="markup")
       markup(lang="xml")

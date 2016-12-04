@@ -6,13 +6,15 @@ import store from './store/index'
 import router from './router/index'
 import { sync } from 'vuex-router-sync'
 import highlight from 'highlight.js/lib/highlight.js'
-import highlightSCSS from 'highlight.js/lib/languages/scss'
+import highlightBash from 'highlight.js/lib/languages/bash'
+import highlightStylus from 'highlight.js/lib/languages/stylus'
 import highlightXML from 'highlight.js/lib/languages/xml'
 import highlightJS from 'highlight.js/lib/languages/javascript'
 
-highlight.registerLanguage('scss', highlightSCSS)
-highlight.registerLanguage('xml', highlightXML)
-highlight.registerLanguage('javascript', highlightJS)
+highlight.registerLanguage('bash', highlightBash)
+highlight.registerLanguage('stylus', highlightStylus)
+highlight.registerLanguage('html', highlightXML)
+highlight.registerLanguage('js', highlightJS)
 
 sync(store, router)
 

@@ -9,6 +9,7 @@
           name="test",
           v-model="input"
         )
+        |{{ input }}
       div
         v-select(
           v-bind:options="options",
@@ -18,13 +19,16 @@
           multiple,
           v-model="multiple"
         )
+        |{{ multiple }}
     component-example(header="Inputs")
       div
         v-text-input(
           id="test2",
           name="test2",
           label="Testing 2"
+          v-model="text"
         )
+        |{{ text }}
       div
         v-text-input(
           id="test3",
@@ -150,7 +154,7 @@
           ]
         },
         input: null,
-        multiple: [],
+        multiple: ['2'],
         options: [
           {
             value: 1,
@@ -164,7 +168,8 @@
             value: 3,
             text: 'Option 3'
           }
-        ]
+        ],
+        text: ''
       }
     },
 

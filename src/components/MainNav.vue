@@ -62,7 +62,7 @@
             this.subTitle = 'Learn how Vuetify communicates throughout an application'
           break
           default:
-            this.subTitle = 'Learn about the features of Vuetify'
+            this.subTitle = 'Learn about the features of the Vuetify Framework'
           break
         }
       },

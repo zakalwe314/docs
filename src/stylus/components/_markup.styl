@@ -13,14 +13,34 @@
     width: 100%
     display: block
     
-  pre
-    padding: 2rem
-    
   code
     font-weight: 600 !important
+    position: relative
+    padding: 2rem
     
     &:before
       display: none
+    
+    &:after
+      color: #fff
+      position: absolute
+      font-size: .8rem
+      top: 0
+      right: 0
+      background: rgba(#444, .7)
+      padding: .3rem .5rem
+      font-weight: 100
+      letter-spacing: 2px
+      
+    &.html
+      &:after
+        content: 'html'
+    &.js
+      &:after
+        content: 'javascript'
+    &.bash
+      &:after
+        content: 'bash'
   
   .hljs
     color: $theme.secondary

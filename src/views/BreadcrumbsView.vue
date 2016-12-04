@@ -107,8 +107,24 @@
         ]
       }
     },
+
     mounted () {
-      this.$emit('view', 'Breadcrumbs')
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Breadcrumbs Component | Vuetify',
+          h1: 'Breadcrumbs',
+          description: 'Breadcrumbs component for Vuetify Framework',
+          keywords: 'vuetify, breadcrumbs, components'
+        }
+      }
     }
   }
 </script>

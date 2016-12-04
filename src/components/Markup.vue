@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="markup")
     pre
-      code(v-bind:class="code" ref="code")
+      code(v-bind:class="lang" ref="code")
         slot
 </template>
 
@@ -10,17 +10,11 @@
 
 	export default {
     props: {
-      code: String
+      lang: String
     },
 
 		mounted () {
-			this.highlight()
-		},
-
-		methods: {
-			highlight () {
-				hljs.highlightBlock(this.$refs.code)
-			}
+			hljs.highlightBlock(this.$refs.code)
 		}
 	}
 </script>

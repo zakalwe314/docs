@@ -9,8 +9,7 @@
       v-content
         v-container(fluid)
           transition(name="slide" mode="out-in")
-            keep-alive
-              router-view(@view="view => title = view")
+            router-view(@view="meta")
     main-footer
 </template>
 
@@ -24,6 +23,19 @@
 
     mounted () {
       this.$vuetify.init()
+    },
+
+    methods: {
+      meta (obj) {
+        if (typeof obj === 'string') {
+          return this.title = obj
+        }
+
+        this.title = obj.h1
+        this.$vuetify.bus.pub('meta:title', obj.title)
+        this.$vuetify.bus.pub('meta:description', obj.description)
+        this.$vuetify.bus.pub('meta:keywords', obj.keywords)
+      }
     }
   }
 </script>

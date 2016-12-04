@@ -41,9 +41,10 @@ export default context => {
       app.title = page.h1
     }
 
-    if (page && page.meta) {
-      context.meta = page.meta
+    if (page) {
       context.title = page.title
+      context.description = page.description
+      context.keywords = page.keywords
     }
 
     return app
