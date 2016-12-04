@@ -8,19 +8,19 @@
             p(class="text-xs-center") What is your age?
             v-select(v-bind:options="[{ text: '10-19', value: 1 }, { text: '20+', value: 2 }]" label="What is your age?")
             p This information is used to improve your experience on our site.
-          v-card-actions
+          v-card-row(actions)
             v-btn(v-on:click.native.stop="$vuetify.bus.pub('modal:close:modal', true)") Cancel
             v-spacer
             v-btn(class="green white--text" v-on:click.native.prevent="$vuetify.bus.pub('modal:close:modal', true)") Submit
       v-btn(v-modal:modal2="" class="secondary white--text") Bottom
       v-modal(id="modal2" bottom)
         v-card(class="secondary white--text")
-          v-card-actions
+          v-card-row(actions)
             div This is an example of a bottom modal.
             v-spacer
             v-btn(v-on:click.native.prevent="$vuetify.bus.pub('modal:close:modal2', true)" class="primary white--text") Close
     div(slot="markup")
-      markup(lang="xml")
+      markup(lang="html")
         |&lt;v-btn v-modal:modal class="primary white--text"&gt;
         |   ...
         |&lt;/v-btn&gt;
