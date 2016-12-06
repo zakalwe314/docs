@@ -1,6 +1,6 @@
 .markup
   background: rgba(0, 0, 0, .03)
-  margin: 2rem -1rem
+  margin: 2rem -4rem
   font-size: 1.2rem
   transition: .3s ease-out
   word-break: break-all
@@ -17,7 +17,7 @@
   code
     font-weight: 600 !important
     position: relative
-    padding: 2rem
+    padding: 3rem 4rem
     
     &:before
       display: none
@@ -26,10 +26,9 @@
       color: #fff
       position: absolute
       font-size: .7rem
-      top: 1rem
+      top: 0
       right: 1rem
-      background: rgba(#444, .7)
-      border: 2px solid rgba(#444, .3)
+      background: rgba(#444, .3)
       padding: .1rem .5rem
       font-weight: 100
       letter-spacing: 2px
@@ -56,3 +55,10 @@
       
     .hljs-string, .hljs-literal
       color: $red.lighten-2
+  
+  
+  @media screen and (max-width: $grid-breakpoints.sm)
+    margin: 2rem -1rem
+    
+    code
+      padding: 3rem 1rem
