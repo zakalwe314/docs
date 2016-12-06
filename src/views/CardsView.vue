@@ -270,7 +270,6 @@
     .component-example
       flex-flow: row wrap
       justify-content: space-between
-      margin: 0 -2rem
 
       > div
         flex: 1 0 50%
