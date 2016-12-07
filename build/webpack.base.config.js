@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const vueConfig = require('./vue-loader.config')
 
-module.exports = {
+const config = {
   devtool: '#source-map',
   entry: {
     app: './src/client-entry.js',
@@ -53,5 +53,25 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: []
 }
+
+if (process.env.NODE_ENV !== 'production') {
+  return module.exports = config
+}
+
+config.plugins.push(
+  // this is needed in webpack 2 for minifying CSS
+  new webpack.LoaderOptionsPlugin({
+    minimize: true
+  }),
+  // minify JS
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  })
+)
+
+module.exports = config

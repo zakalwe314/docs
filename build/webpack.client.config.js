@@ -20,7 +20,11 @@ const config = Object.assign({}, base, {
     // generate output HTML
     new HTMLPlugin({
       template: 'src/index.template.html',
-      inject: 'body'
+      inject: 'body',
+      minify: {
+        collapseWhitespace: true
+      },
+      environment: process.env.NODE_ENV
     }),
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'defer'
@@ -29,7 +33,7 @@ const config = Object.assign({}, base, {
 })
 
 if (process.env.NODE_ENV !== 'production') {
-  config.entry.critical = './src/critical.js'
+  config.entry.inline = './src/inline/inline.js'
 
   return module.exports = config
 }
@@ -48,17 +52,7 @@ vueConfig.loaders = {
 }
 
 config.plugins.push(
-  new ExtractTextPlugin('styles.[hash].css'),
-  // this is needed in webpack 2 for minifying CSS
-  new webpack.LoaderOptionsPlugin({
-    minimize: true
-  }),
-  // minify JS
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
-  })
+  new ExtractTextPlugin('styles.[hash].css')
 )
 
 module.exports = config

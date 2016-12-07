@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('!style-loader!css-loader!stylus-loader!./inline/inline.styl')
+}
+
 require('es6-promise').polyfill()
 import { app, store } from './app'
 

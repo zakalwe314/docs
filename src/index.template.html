@@ -16,15 +16,18 @@
     <link rel="shortcut icon" href="public/favicon.ico">
     <meta name="msapplication-config" content="browserconfig.xml">
     <meta name="theme-color" content="#2196f3">
+    <!-- INLINECSS -->
   </head>
   <body>
     <noscript id="deferred-styles">
       <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
-      <% for (key in htmlWebpackPlugin.files.css) { %>
-        <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+      <% if (htmlWebpackPlugin.environment === 'production') { %>
+        <% for (key in htmlWebpackPlugin.files.css) { %>
+          <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+        <% } %>
       <% } %>
     </noscript>
     <!-- APP -->
-    <!-- CRITICALJS -->
+    <!-- INLINEJS -->
   </body>
 </html>

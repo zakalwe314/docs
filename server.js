@@ -9,7 +9,6 @@ const minify = require('html-minifier').minify
 const path = require('path')
 const resolve = file => path.resolve(__dirname, file)
 const serialize = require('serialize-javascript')
-const uglify = require('uglify-js')
 
 const app = express()
 
@@ -43,14 +42,33 @@ function createRenderer (bundle) {
 
 function parseIndex (template) {
   const appMarker = '<!-- APP -->'
-  const jsMarker = '<!-- CRITICALJS -->'
+  const jsMarker = '<!-- INLINEJS -->'
+  const cssMarker = '<!-- INLINECSS -->'
+
+  var cssString = ''
+  var jsString = ''
+
+  let str = fs.readFileSync(resolve('./src/inline/inline.styl'), 'utf-8').replace(/\.\.\//g, '')
+
+  if (isProd) {
+    const uglify = require('uglify-js')
+    const stylus = require('stylus')
+
+    stylus(str, { compress: true })
+    .render(function (err, output) {
+      cssString = output
+    })
+
+    jsString = uglify.minify(resolve('./src/inline/inline.js')).code
+  }
 
   const i = template.indexOf(appMarker)
-  let scripts = isProd ? `<script>${uglify.minify(resolve('./src/critical.js')).code}</script>` : ''
+  let js = isProd ? `<script>${jsString}</script>` : ''
+  let css = isProd ? `<style>${cssString}</style>` : ''
 
   return {
-    head: template.slice(0, i),
-    tail: template.slice(i + appMarker.length).replace(jsMarker, scripts)
+    head: template.slice(0, i).replace(cssMarker, css),
+    tail: template.slice(i + appMarker.length).replace(jsMarker, js)
   }
 }
 
