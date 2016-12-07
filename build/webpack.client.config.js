@@ -30,8 +30,6 @@ const config = Object.assign({}, base, {
 })
 
 if (process.env.NODE_ENV !== 'production') {
-  config.entry.inline = './src/inline/inline.js'
-
   return module.exports = config
 }
 

@@ -6,9 +6,9 @@
     v-alert(info)
       v-container(fluid)
         v-row
-          v-col(xs12 sm8)
+          v-col(xs12 sm12 md8)
             slot
-          v-col(xs12 sm4 class="text-sm-right text-xs-center")
+          v-col(xs12 sm12 md4 class="text-sm-right text-xs-center")
             v-btn(class="blue darken-3 white--text" v-on:click.native="$router.push(route)")
               | {{ text }}
               v-icon(right) chevron_right
@@ -32,7 +32,7 @@
       display: flex
       align-items: center
     
-    @media screen and (max-width: 48rem)
+    @media screen and (max-width: 64rem)
       .btn
         margin: 2rem 0 0
         width: 100%
