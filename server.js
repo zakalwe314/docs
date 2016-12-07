@@ -9,6 +9,7 @@ const minify = require('html-minifier').minify
 const path = require('path')
 const resolve = file => path.resolve(__dirname, file)
 const serialize = require('serialize-javascript')
+const uglify = require('uglify-js')
 
 const app = express()
 
