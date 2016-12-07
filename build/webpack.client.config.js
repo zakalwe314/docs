@@ -20,14 +20,11 @@ const config = Object.assign({}, base, {
     // generate output HTML
     new HTMLPlugin({
       template: 'src/index.template.html',
-      inject: 'body',
+      inject: process.env.NODE_ENV !== 'production' ? 'body' : false,
       minify: {
         collapseWhitespace: true
       },
       environment: process.env.NODE_ENV
-    }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer'
     })
   ])
 })

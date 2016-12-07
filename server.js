@@ -43,31 +43,12 @@ function createRenderer (bundle) {
 function parseIndex (template) {
   const appMarker = '<!-- APP -->'
   const jsMarker = '<!-- INLINEJS -->'
-  const cssMarker = '<!-- INLINECSS -->'
-
-  var cssString = ''
-  var jsString = ''
-
-  let str = fs.readFileSync(resolve('./src/inline/inline.styl'), 'utf-8').replace(/\.\.\//g, '')
-
-  if (isProd) {
-    const uglify = require('uglify-js')
-    const stylus = require('stylus')
-
-    stylus(str, { compress: true })
-    .render(function (err, output) {
-      cssString = output
-    })
-
-    jsString = uglify.minify(resolve('./src/inline/inline.js')).code
-  }
 
   const i = template.indexOf(appMarker)
-  let js = isProd ? `<script>${jsString}</script>` : ''
-  let css = isProd ? `<style>${cssString}</style>` : ''
+  let js = isProd ? `<script>${uglify.minify(resolve('./src/inline/inline.js')).code}</script>` : ''
 
   return {
-    head: template.slice(0, i).replace(cssMarker, css),
+    head: template.slice(0, i),
     tail: template.slice(i + appMarker.length).replace(jsMarker, js)
   }
 }
