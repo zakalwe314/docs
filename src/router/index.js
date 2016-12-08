@@ -29,7 +29,7 @@ import ToastsView from '../views/ToastsView.vue'
 import TooltipsView from '../views/TooltipsView.vue'
 import TypographyView from '../views/TypographyView.vue'
 import LayoutsView from '../views/LayoutsView.vue'
-import BusView from '../views/BusView.vue'
+import EventBusView from '../views/EventBusView.vue'
 
 Vue.use(Router)
 
@@ -66,7 +66,7 @@ const router = new Router({
     { path: '/css/grid', component: GridView },
     { path: '/css/colors', component: ColorsView },
     { path: '/layouts', component: LayoutsView },
-    { path: '/bus', component: BusView },
+    { path: '/event-bus', component: EventBusView },
     { path: '*', redirect: '/' }
   ]
 })

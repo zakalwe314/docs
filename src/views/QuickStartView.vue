@@ -20,7 +20,7 @@
 
       h6 Existing Projects
       p(class="section-text") If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn.
-      markup(lang="bash")
+      markup(lang="cli")
         |npm install vuetify --save-dev
         |&nbsp;
         |yarn add vuetify --dev
@@ -55,30 +55,30 @@
           v-tabs-item(id="simple")
             h4 Simple HTML Quick Start
             p This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. 
-            markup(lang="bash")
+            markup(lang="cli")
               |vue init vuetifyjs/simple
           v-tabs-item(id="webpack")
             h4 Webpack Quick Start
             p This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups.
-            markup(lang="bash")
+            markup(lang="cli")
               |vue init vuetifyjs/webpack
           v-tabs-item(id="webpack-ssr")
             h4 Webpack SSR Quick Start
             p This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository, the Vuetify SSR template provides next generation functionality for advanced web applications.
-            markup(lang="bash")
+            markup(lang="cli")
               |vue init vuetifyjs/webpack-ssr
       
       h6 NPM Install
       p(class="section-text") After the vue-cli installation finishes:
-      markup(code="bash")
+      markup(code="cli")
         |cd &lt;package-name&gt;
         |npm install
       p Or alernatively, using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>.
-      markup(lang="bash")
+      markup(lang="cli")
         |cd &lt;package-name&gt;
         |yarn
       p(class="section-text") If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up <code>index.html</code> in any browser. For any other package, type:
-      markup(lang="bash")
+      markup(lang="cli")
         |npm run dev
       p(class="section-text") into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section

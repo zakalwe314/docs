@@ -164,7 +164,7 @@
     position: relative
       
     .navbar
-      background: $red.darken-2 !important
+      background: $blue.lighten-2 !important
       min-height: 15%
       color: #fff
       justify-content: center
@@ -173,7 +173,7 @@
       padding: 0 !important
       
     &__footer
-      background: $red.darken-2 !important
+      background: $blue.lighten-2 !important
       display: flex
       flex: 0 1 10%
       color: #fff

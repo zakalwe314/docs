@@ -16,6 +16,7 @@
     section
       section-header Events
       p(class="section-text") Coming Soon
+    slot(name="end")
 </template>
 
 <script>

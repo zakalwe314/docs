@@ -10,7 +10,12 @@
         to="/about",
         class="sidebar__logo"
       )
-        img(src="~public/v.png")
+        img(
+          src="~public/v.png" 
+          height="100px"
+          width="100px"
+          alt="Vuetify Logo"
+        )
 </template>
 
 <script>
@@ -21,6 +26,8 @@
           { href: '/', text: 'About', icon: 'question_answer' },
           { href: '/quick-start', text: 'Quick Start', icon: 'fast_forward' },
           { href: '/overview', text: 'Overview', icon: 'info' },
+          { href: '/event-bus', text: 'Event Bus', icon: 'device_hub' },
+          { href: '/layouts', text: 'Layouts', icon: 'devices' },
           {
             parent: { href: '#!', text: 'Components', icon: 'widgets', },
             items: [
@@ -37,7 +44,6 @@
               { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
               { href: '/components/navbar', text: 'Navbars', icon: 'web' },
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
-              // { href: '/components/progress', text: 'Progress', icon: 'trending_flat' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
               { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
@@ -65,9 +71,7 @@
               { href: '/css/grid', text: 'Grid', icon: 'grid_on' },
               { href: '/css/colors', text: 'Colors', icon: 'invert_colors' }
             ]
-          },
-          { href: '/layouts', text: 'Layouts', icon: 'devices' },
-          { href: '/bus', text: 'Bus', icon: 'device_hub' }
+          }
         ]
       }
     }

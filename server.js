@@ -51,13 +51,23 @@ function parseIndex (template) {
 }
 
 function updateMeta (head, context) {
-  const title = context.title || 'Vuetify | Vue JS 2 Material Components'
-  const description = context.description || 'Vuetify material components for Vue JS 2'
-  const keywords = context.keywords || 'vue, vuetify, material, vue material, vue components'
+  const title = context.title || false
+  const description = context.description || false
+  const keywords = context.keywords || false
 
-  return head.replace(/(<title>)(.*?)(<\/title>)/, `$1${title}$3`)
-             .replace(/(<meta name="description" content=")(.*?)(">)/, `$1${description}$3`)
-             .replace(/(<meta name="keywords" content=")(.*?)(">)/, `$1${keywords}$3`)
+  if (title) {
+    head = head.replace(/(<title>)(.*?)(<\/title>)/, `$1${title}$3`)
+  }
+
+  if (description) {
+    head = head.replace(/(<meta name="description" content=")(.*?)(">)/, `$1${description}$3`)
+  }
+
+  if (keywords) {
+    head = head.replace(/(<meta name="keywords" content=")(.*?)(">)/, `$1${keywords}$3`)
+  }
+
+  return head
 }
 
 const serve = (path, cache) => express.static(resolve(path), {
