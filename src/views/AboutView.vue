@@ -68,10 +68,6 @@
             span Vuetify Admin Components <v-chip label class="green white--text">Coming Soon</v-chip>
 
     section
-      section-header Web App Support
-      p(class="section-text") Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Mozilla Developer Network</a> for more information. To see a live example, add the Vuetify documentation on your mobile device's homescreen.
-
-    section
       whats-next(route="/quick-start" text="Quick Start") Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the <strong>vuetify</strong> package.
 </template>
 

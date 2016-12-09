@@ -134,8 +134,12 @@
         |     }
         |   }
         |}
-      p(class="section-text") In the example above, we emit an event that is captured on <code>&lt;router-view v-on:view="view"&gt;</code>. In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for Bots, but also change when the user is navigating to a different page.      whats-next(route="/layouts", text="Layouts")
-        p Now that you are more familiar with Vuetify and the Vue resources that it utilizes, take a look at the Layout's section and choose a design for your next application!
+      p(class="section-text") In the example above, we emit an event that is captured on <code>&lt;router-view v-on:view="view"&gt;</code>. In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for Bots, but also change when the user is navigating to a different page.
+
+    section
+      section-header Web App Support
+      p(class="section-text") Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Mozilla Developer Network</a>. To see a live example, add the Vuetify documentation on your mobile device's homescreen.
+
     section
       whats-next(route="/event-bus" text="Event Bus") With a better understanding of the <strong>webpack ssr</strong> template, let's learn about one of the most powerful features of Vuetify, the bus system.
 </template>

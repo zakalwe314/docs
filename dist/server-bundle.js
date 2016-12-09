@@ -7421,10 +7421,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ exports["default"] = {
   mounted: function mounted () {
@@ -9771,6 +9767,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+//
+//
+//
+//
 //
 //
 //
@@ -13378,11 +13378,6 @@ Toast.prototype.create = function create (message, location, duration, cb) {
   ],
 
   props: {
-    closeOnClick: {
-      type: Boolean,
-      default: false
-    },
-
     drawer: Boolean,
 
     fixed: Boolean,
@@ -13397,6 +13392,11 @@ Toast.prototype.create = function create (message, location, duration, cb) {
       required: true
     },
 
+    mobile: {
+      type: Boolean,
+      default: true
+    },
+
     items: {
       type: Array,
       default: function () { return []; }
@@ -13408,12 +13408,11 @@ Toast.prototype.create = function create (message, location, duration, cb) {
   computed: {
     classes: function classes () {
       return {
-        'sidebar--drawer': this.drawer && !this.right,
-        'sidebar--drawer--right': this.drawer && this.right,
-        'sidebar--fixed': (this.fixed || this.drawer) && !this.right,
-        'sidebar--fixed--right': (this.fixed || this.drawer) && this.right,
-        'sidebar--open': this.active,
-        'sidebar--right': this.right
+        'sidebar--mobile': this.mobile,
+        'sidebar--fixed': this.fixed && !this.right,
+        'sidebar--fixed-right': this.fixed && this.right,
+        'sidebar--close': !this.active,
+        'sidebar--open': this.active
       }
     },
 
@@ -13424,25 +13423,45 @@ Toast.prototype.create = function create (message, location, duration, cb) {
     }
   },
 
+  mounted: function mounted () {
+    var this$1 = this;
+
+    this.$vuetify.load(function () {
+      this$1.resize()
+      window.addEventListener('resize', this$1.resize, false)
+    })
+  },
+
+  beforeDestroy: function beforeDestroy () {
+    window.removeEventListener('resize', this.resize)
+  },
+
   methods: {
+    resize: function resize () {
+      if (!this.drawer) {
+        this.active = window.innerWidth > 768
+      }
+    },
+
     close: function close (e) {
-      if (this.activator === null) {
+      var group = e.target.classList.contains('sidebar__item-header')
+        || e.target.parentNode.classList.contains('sidebar__item-header')
+        
+      if (this.activator === null || group) {
         return
       }
 
-      if (e.target === this.activator && this.toggleable) {
-        return this.toggle()
-      }
-      
       try {
-        if (e.target === this.activator
-            || this.activator.contains(e.target)
-            || e.target.classList.contains('sidebar__item-header')
-            || e.target.parentNode.classList.contains('sidebar__item-header')
-        ) {
+        if (e.target === this.activator || this.activator.contains(e.target)) {
           return
         }
       } catch (e) {}
+
+      var width = window.innerWidth
+
+      if (width > 768 && !this.drawer) {
+        return
+      }
 
       this.active = false
     }
@@ -19242,7 +19261,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _h('header', [_h('v-navbar', [_h('div', {
-    staticClass: "navbar__side-icon hidden-md-and-up"
+    staticClass: "navbar__side-icon hidden-sm-and-up"
   }, [_h('a', {
     directives: [{
       name: "side-bar",
@@ -19801,22 +19820,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "label": ""
     }
-  }, ["Coming Soon"])])])])])]), _h('section', [_h('section-header', ["Web App Support"]), _vm._m(0)]), _h('section', [_h('whats-next', {
+  }, ["Coming Soon"])])])])])]), _h('section', [_h('whats-next', {
     attrs: {
       "route": "/quick-start",
       "text": "Quick Start"
     }
   }, ["Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the ", _h('strong', ["vuetify"]), " package."])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
-    staticClass: "section-text"
-  }, ["Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the ", _h('a', {
-    attrs: {
-      "href": "https://developer.mozilla.org/en-US/docs/Web/Manifest",
-      "target": "_blank"
-    }
-  }, ["Mozilla Developer Network"]), " for more information. To see a live example, add the Vuetify documentation on your mobile device's homescreen."])
-}]}
+},staticRenderFns: []}
 
 /***/ },
 /* 108 */
@@ -21538,7 +21548,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "lang": "js"
     }
-  }, ["// App.vue\nexport default {\n  mounted () {\n    this.$vuetify.init()\n  },\n  methods: {\n    view (meta) {\n      this.$vuetify.bus.pub(meta:title, obj.title)\n      this.$vuetify.bus.pub(meta:description, obj.description)\n      this.$vuetify.bus.pub(meta:keywords, obj.keywords)\n    }\n  }\n}\n \n// View.vue\nexport default {\n  mounted () {\n    this.$emit('view', this.meta())\n  },\n  preFetch () {\n    return this.methods.meta()\n  },\n  methods: {\n    meta () {\n      return {\n        title: 'Vuetify',\n        description: 'A Vue JS Framework',\n        keywords: 'vue, vuetify'\n      }\n    }\n  }\n}"]), _vm._m(9), _h('p', ["Now that you are more familiar with Vuetify and the Vue resources that it utilizes, take a look at the Layout's section and choose a design for your next application!"]), _h('p')]), _h('section', [_h('whats-next', {
+  }, ["// App.vue\nexport default {\n  mounted () {\n    this.$vuetify.init()\n  },\n  methods: {\n    view (meta) {\n      this.$vuetify.bus.pub(meta:title, obj.title)\n      this.$vuetify.bus.pub(meta:description, obj.description)\n      this.$vuetify.bus.pub(meta:keywords, obj.keywords)\n    }\n  }\n}\n \n// View.vue\nexport default {\n  mounted () {\n    this.$emit('view', this.meta())\n  },\n  preFetch () {\n    return this.methods.meta()\n  },\n  methods: {\n    meta () {\n      return {\n        title: 'Vuetify',\n        description: 'A Vue JS Framework',\n        keywords: 'vue, vuetify'\n      }\n    }\n  }\n}"]), _vm._m(9)]), _h('section', [_h('section-header', ["Web App Support"]), _vm._m(10)]), _h('section', [_h('whats-next', {
     attrs: {
       "route": "/event-bus",
       "text": "Event Bus"
@@ -21609,7 +21619,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"
-  }, ["In the example above, we emit an event that is captured on ", _h('code', ["<router-view v-on:view=\"view\">"]), ". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for Bots, but also change when the user is navigating to a different page.      whats-next(route=\"/layouts\", text=\"Layouts\")"])
+  }, ["In the example above, we emit an event that is captured on ", _h('code', ["<router-view v-on:view=\"view\">"]), ". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for Bots, but also change when the user is navigating to a different page."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the ", _h('a', {
+    attrs: {
+      "href": "https://developer.mozilla.org/en-US/docs/Web/Manifest",
+      "target": "_blank"
+    }
+  }, ["Mozilla Developer Network"]), ". To see a live example, add the Vuetify documentation on your mobile device's homescreen."])
 }]}
 
 /***/ },
