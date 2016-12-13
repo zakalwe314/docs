@@ -9595,6 +9595,14 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   name: 'modals-view',
@@ -9604,7 +9612,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
       doc: {
         stage: 'dev',
         title: 'Modal',
-        desc: 'Soon',
+        desc: 'The <code>v-modal</code> component is useful for calling a users attention to information or a particular action. It is merely a wrapper for whatever component you choose to place in it. In the examples below, a <code>v-card</code> is used. To close a modal, you must manually publish and event to the Vuetify bus, or click outside of the modal. This is helpful for when you want to capture information by callback after a native click.',
         params: [
           [
             '<code>&lt;v-modal&gt;</code>',
@@ -9642,6 +9650,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
         description: 'Modal component for Vuetify Framework',
         keywords: 'vuetify, modals, components'
       }
+    },
+
+    modal: function modal (id) {
+      this.$vuetify.bus.pub(("modal:close:" + id))
     }
   }
 };
@@ -9697,6 +9709,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data () {
@@ -9704,7 +9718,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
       doc: {
         stage: 'comp',
         title: 'Navbar',
-        desc: 'Soon',
+        desc: 'The <code>v-navbar</code> component is pivotol to any gui, as it generally is the primary source of site navigation. The navbar component works great in cojunction with a sidebar for hiding links and presenting an activator to open the sidebar on mobile.',
         params: [
           [
             '<code>&lt;v-navbar&gt;</code>',
@@ -9767,8 +9781,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-//
-//
 //
 //
 //
@@ -9978,10 +9990,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
       doc: {
         stage: 'comp',
         title: 'Pagination',
-        desc: 'Coming Soon',
-        types: [
-          'comp'
-        ],
+        desc: 'The <code>v-pagination</code> component is used to separate long sets of data so that it is easier for a user to consume information. Depending on the length provided, the pagination component will automatically scale. To maintain the current page, simply supply a v-model attribute.',
         params: [
           [
             '<code>&lt;v-pagination&gt;</code>',
@@ -10054,10 +10063,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
       doc: {
         stage: 'comp',
         title: 'Parallax',
-        desc: 'Coming Soon',
-        types: [
-          'comp', 'slot'
-        ],
+        desc: 'The <code>v-parallax</code> component creates a 3d effect that makes an image appear to scroll slower than the window.',
         params: [
           [
             '<code>&lt;v-parallax&gt;</code>',
@@ -10073,16 +10079,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
             '<code>height</code>',
             'The height of the parallax container',
             'Default: 500'
-          ],
-          [
-            '<code>&lt;v-parallax-content&gt;</code>',
-            '',
-            'Functional component'
-          ],
-          [
-            '<code>opacity-offset</code>',
-            'Sets offset fade for content. Set 0 for none',
-            'Default: .7'
           ]
         ]
       }
@@ -10301,6 +10297,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
+//
 
 /* harmony default export */ exports["default"] = {
   mounted: function mounted () {
@@ -10421,6 +10419,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
             'Required: true'
           ],
           [
+            '<code>mobile</code>',
+            'Specifies whether menu should collapse automatically on mobile',
+            'Default: true'
+          ],
+          [
             '<code>items</code>',
             'Array of navbar items',
             'Item object: parent, text, href, items'
@@ -10429,11 +10432,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
             '<code>right</code>',
             'Applies the navbar--right class',
             'Used to designate the navbar is located on the right'
-          ],
-          [
-            '<code>fixed</code>',
-            'Applies the navbar--fixed class',
-            'Default: false'
           ],
           [
             '<code>&lt;v-sidebar-group&gt;</code>',
@@ -10546,10 +10544,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
       doc: {
         stage: 'comp',
         title: 'Slider',
-        desc: 'Soon',
-        types: [
-          'comp', 'slot'
-        ],
+        desc: 'The <code>v-slider</code> component is used to display large numbers of visual content on a rotating timer.',
         params: [
           [
             '<code>v-slider</code>',
@@ -10641,6 +10636,24 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   name: 'tabs-view',
@@ -10650,10 +10663,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
       doc: {
         stage: 'comp',
         title: 'Tabs',
-        desc: 'Soon',
-        types: [
-          'comp', 'slot'
-        ],
+        desc: 'The <code>v-tabs</code> component is used for hiding content behind a selectable item. This can also be used as a psuedo-navigation for a page, where the tabs are links and the tab-items are the content.',
         params: [
           [
             '<code>v-tabs</code>',
@@ -12846,22 +12856,16 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 //
 //
 //
+//
+//
+//
 
 
 
 /* harmony default export */ exports["default"] = {
   name: 'modal',
 
-  mixins: [ 
-    __WEBPACK_IMPORTED_MODULE_0__mixins_toggleable__["a" /* default */] 
-  ],
-
-  data: function data () {
-    return {
-      closeOnClick: false,
-      overlay: {}
-    }
-  },
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_toggleable__["a" /* default */]],
 
   props: {
     bottom: Boolean,
@@ -12881,10 +12885,8 @@ Toast.prototype.create = function create (message, location, duration, cb) {
   },
 
   methods: {
-    close: function close (e, force) {
-      if ( force === void 0 ) { force = false; }
-
-      if (force) {
+    close: function close (e) {
+      if (!e) {
         return this.active = false
       }
 
@@ -13713,7 +13715,10 @@ Toast.prototype.create = function create (message, location, duration, cb) {
   },
 
   props: {
-    cycle: Boolean,
+    cycle: {
+      type: Boolean,
+      default: true
+    },
 
     icon: {
       type: String,
@@ -13722,7 +13727,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 
     interval: {
       type: Number,
-      default: 8000
+      default: 6000
     }
   },
 
@@ -13885,9 +13890,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
     }
   },
 
-  mixins: [
-    __WEBPACK_IMPORTED_MODULE_0__mixins_eventable__["a" /* default */]
-  ],
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_eventable__["a" /* default */]],
 
   props: {
     href: {
@@ -14294,12 +14297,29 @@ var ListItemAvatar = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_hel
 
 
 var NavbarLogo = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__util_helpers__["a" /* createSimpleFunctional */])('navbar__logo')
+var NavbarSideIcon = {
+  functional: true,
+
+  render: function render (h, ref) {
+    var data = ref.data;
+    var children = ref.children;
+
+    data.staticClass = data.staticClass ? ("navbar__side-icon " + (data.staticClass)) : 'navbar__side-icon'
+
+    console.log(data)
+    var icon = [h('v-icon', 'reorder')]
+    var anchor = [h('a', { attrs: { href: '#!' } }, icon)]
+
+    return h('div',data, [anchor])
+  }
+}
 
 /* harmony default export */ exports["a"] = {
   Navbar: __WEBPACK_IMPORTED_MODULE_0__Navbar_vue___default.a,
   NavbarItem: __WEBPACK_IMPORTED_MODULE_1__NavbarItem_vue___default.a,
   NavbarItems: __WEBPACK_IMPORTED_MODULE_2__NavbarItems_vue___default.a,
-  NavbarLogo: NavbarLogo
+  NavbarLogo: NavbarLogo,
+  NavbarSideIcon: NavbarSideIcon
 };
 
 /***/ },
@@ -14404,13 +14424,15 @@ var NavbarLogo = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__util_helpers
 var Tabs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_helpers__["a" /* createSimpleFunctional */])('tabs')
 var TabsTabs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_helpers__["a" /* createSimpleFunctional */])('tabs__tabs')
 var TabsItems = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_helpers__["a" /* createSimpleFunctional */])('tabs__items')
+var TabsSlider = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_helpers__["a" /* createSimpleFunctional */])('tabs__slider')
 
 /* harmony default export */ exports["a"] = {
   Tab: __WEBPACK_IMPORTED_MODULE_1__Tab_vue___default.a,
   Tabs: Tabs,
   TabsItem: __WEBPACK_IMPORTED_MODULE_2__TabsItem_vue___default.a,
   TabsItems: TabsItems,
-  TabsTabs: TabsTabs
+  TabsTabs: TabsTabs,
+  TabsSlider: TabsSlider
 };
 
 /***/ },
@@ -18915,7 +18937,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "id": "tabs"
     }
-  }, [_h('v-tabs-tabs', [_h('v-tab', {
+  }, [_h('v-card', {
+    staticClass: "secondary"
+  }, [_h('v-card-row', [_h('v-spacer'), _h('v-card-title', {
+    staticClass: "white--text"
+  }, ["Title"]), _h('v-spacer')])]), _h('v-tabs-tabs', [_h('v-tab', {
     attrs: {
       "href": "tab1",
       "selected": "selected"
@@ -18932,15 +18958,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "href": "tab4"
     }
-  }, ["Tab 4"])]), _h('v-tabs-items', [_h('v-tabs-item', {
+  }, ["Tab 4"])]), _h('v-tabs-items', {
+    staticClass: "white"
+  }, [_h('v-tabs-item', {
     attrs: {
       "id": "tab1"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tabs-item', {
+  }, [_h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "])]), _h('v-tabs-item', {
     attrs: {
       "id": "tab2"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tabs-item', {
+  }, [_h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])]), _h('v-tabs-item', {
     attrs: {
       "id": "tab3"
     }
@@ -18953,7 +18981,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "lang": "xml"
     },
     slot: "markup"
-  }, ["<v-tabs id=\"tabs\">\n  <v-tabs-container>\n    <v-tab href=\"tab1\" selected>\n      ...\n    </v-tab>\n  </v-tabs-container>\n  <v-tabs-content-container>\n    <v-tab-content id=\"tab1\">\n      ...\n    </v-tab-content>\n  </v-tabs-content>\n</v-tabs>"])])
+  }, ["<v-tabs id=\"tabs\">\n  <v-card class=\"secondary\">\n    <v-card-row>\n      <v-spacer></v-spacer>\n      <v-card-title>Title</v-card-title>\n      <v-spacer></v-spacer>\n    </v-card-row>\n  </v-card>\n  <v-tabs-tabs>\n    <v-tab href=\"tab1\" selected>\n      ...\n    </v-tab>\n  </v-tabs-tabs>\n  <v-tabs-items>\n    <v-tab-item id=\"tab1\">\n      ...\n    </v-tab-item>\n  </v-tabs-items>\n</v-tabs>"])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19041,9 +19069,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   })]), _h('v-navbar', {
     staticClass: "orange"
-  }, [_h('v-spacer'), _h('v-navbar-logo', {
+  }, [_h('v-navbar-side-icon', {
+    staticClass: "hidden-sm-and-up"
+  }), _h('v-spacer', {
     staticClass: "hidden-sm-and-down"
-  }, ["Navbar"]), _h('v-navbar-items', {
+  }), _h('v-navbar-logo', ["Navbar"]), _h('v-navbar-items', {
+    staticClass: "hidden-sm-and-down",
     attrs: {
       "items": _vm.items
     }
@@ -19061,7 +19092,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-navbar class=\"green\">\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"yellow\">\n  <v-spacer></v-spacer>\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"red\">\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n  <v-navbar-logo>\n    <v-spacer></v-spacer>\n    Navbar\n  </v-navbar>\n</v-navbar>"]), _h('markup', {
+  }, ["<v-navbar class=\"green\">\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"yellow\">\n  <v-navbar-side-icon(class=\"hidden-sm-and-up\")></v-navbar-side-icon>\n  <v-spacer class=\"hidden-sm-and-down\"></v-spacer>\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"red\">\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n  <v-navbar-logo>\n    <v-spacer></v-spacer>\n    Navbar\n  </v-navbar>\n</v-navbar>"]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -19873,16 +19904,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   }, [_h('v-btn', {
     nativeOn: {
       "click": function($event) {
-        $event.stopPropagation();
-        _vm.$vuetify.bus.pub('modal:close:modal', true)
+        _vm.modal('modal')
       }
     }
   }, ["Cancel"]), _h('v-spacer'), _h('v-btn', {
     staticClass: "green white--text",
     nativeOn: {
       "click": function($event) {
-        $event.preventDefault();
-        _vm.$vuetify.bus.pub('modal:close:modal', true)
+        _vm.modal('modal')
       }
     }
   }, ["Submit"])])])]), _h('v-btn', {
@@ -19907,8 +19936,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     staticClass: "primary white--text",
     nativeOn: {
       "click": function($event) {
-        $event.preventDefault();
-        _vm.$vuetify.bus.pub('modal:close:modal2', true)
+        _vm.modal('modal2')
       }
     }
   }, ["Close"])])])])]), _h('div', {
@@ -19917,7 +19945,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "lang": "html"
     }
-  }, ["<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal\">\n  <v-card>\n    <v-card-text>\n      ...\n    </v-card-text>\n    <v-card-actions>\n      <v-btn v-on:click.native.stop=\"$vuetify.bus.pub('modal:close:modal', true)\">\n        Cancel\n      </v-btn>\n      <v-spacer>\n      <v-btn class=\"green white--text\" v-on:click.native.prevent=\"$vuetify.bus.pub('modal:close:modal', true)\">\n        Submit\n      </v-btn>\n    </v-card-actions>\n  </v-card>\n</v-modal>\n \n<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal2\">\n  <v-card>\n    <v-card-actions>\n      <div>This is an example of a bottom modal</div>\n      <v-spacer>\n      <v-btn v-on:click.native.prevent=\"$vuetify.bus.pub('modal:close:modal2', true)\" class=\"primary white--text\">\n        Close\n      </v-btn>\n    </v-card-actions>\n  </v-card>\n</v-modal>"])])])
+  }, ["<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal\">\n  <v-card>\n    <v-card-text>\n      ...\n    </v-card-text>\n    <v-card-actions>\n      <v-btn v-on:click.native=\"modal('modal')\">\n        Cancel\n      </v-btn>\n      <v-spacer>\n      <v-btn v-on:click.native=\"modal('modal')\" class=\"green white--text\">\n        Submit\n      </v-btn>\n    </v-card-actions>\n  </v-card>\n</v-modal>\n \n<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal2\">\n  <v-card>\n    <v-card-actions>\n      <div>This is an example of a bottom modal</div>\n      <v-spacer>\n      <v-btn v-on:click=\"modal('modal2')\" class=\"primary white--text\">\n        Close\n      </v-btn>\n    </v-card-actions>\n  </v-card>\n</v-modal>"]), _h('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, ["export default {\n  methods: {\n    modal (id) {\n      this.$vuetify.bus.pub(`modal:close${id}`)  \n    }\n  }\n}"])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20023,21 +20055,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   }, [_h('v-dropdown-item', {
     attrs: {
       "item": {
-        href: '#!',
+        href: 'javascript:;',
         text: 'Never show rewards'
       }
     }
   }), _h('v-dropdown-item', {
     attrs: {
       "item": {
-        href: '#!',
+        href: 'javascript:;',
         text: 'Remove Card'
       }
     }
   }), _h('v-dropdown-item', {
     attrs: {
       "item": {
-        href: '#!',
+        href: 'javascript:;',
         text: 'Send Feedback'
       }
     }
@@ -20098,14 +20130,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   }, [_h('v-dropdown-item', {
     attrs: {
       "item": {
-        href: '#!',
+        href: 'javascript:;',
         text: 'Remove Card'
       }
     }
   }), _h('v-dropdown-item', {
     attrs: {
       "item": {
-        href: '#!',
+        href: 'javascript:;',
         text: 'Send Feedback'
       }
     }
@@ -20970,7 +21002,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   }, ["mounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nbeforeDestroy () {\n  this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)\n}"]), _h('p', {
     staticClass: "section-text"
-  }, ["While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a Vue mixin to do this automatically for you. As well, the Bus accepts an array, which allows for a smoother process."]), _h('markup', {
+  }, ["While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. "]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -20995,7 +21027,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"
-  }, ["Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through ", _h('code', ["this"]), "."])
+  }, ["Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through ", _h('code', ["this.$vuetify.bus"]), "."])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('div', {
     staticClass: "section-text"
@@ -21024,7 +21056,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     slot: "title"
   }, ["Getting Started"]), _h('p', {
     slot: "desc"
-  }, ["Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, as well as standard spa and html pages."])])]), _h('section', [_h('section-header', ["Required Files"]), _h('p', {
+  }, ["Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages."])])]), _h('section', [_h('section-header', ["Required Files"]), _h('p', {
     staticClass: "section-text"
   }, ["Vuetify requires Google's Roboto Font and Material Icons."]), _h('markup', {
     attrs: {
@@ -21051,6 +21083,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "lang": "js"
     }
   }, ["mounted () {\n  this.$vuetify.init()\n}"])]), _h('section', [_h('section-header', ["Vue CLI"]), _vm._m(2), _h('v-tabs', {
+    staticClass: "z-depth-1",
     attrs: {
       "id": "vue-cli"
     }
@@ -21100,7 +21133,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     staticClass: "section-text"
   }, ["After the vue-cli installation finishes:"]), _h('markup', {
     attrs: {
-      "code": "cli"
+      "lang": "cli"
     }
   }, ["cd <package-name>\nnpm install"]), _vm._m(3), _h('markup', {
     attrs: {
@@ -21110,7 +21143,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "lang": "cli"
     }
-  }, ["npm run dev"]), _vm._m(5)]), _h('section', [_h('whats-next', {
+  }, ["npm run dev"]), _vm._m(5)]), _h('section', [_h('section-header', ["Color Pack"]), _vm._m(6)]), _h('section', [_h('whats-next', {
     attrs: {
       "route": "/overview",
       "text": "Overview"
@@ -21127,13 +21160,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"
-  }, ["Below are 3 packages forked from the ", _h('a', {
+  }, ["Vuetify has 3 pre-made Vue CLI templates, 2 being forked from ", _h('a', {
     attrs: {
       "href": "#!"
     }
-  }, ["official VueJS templates"]), ". They contain small modifications to help you get started with ", _h('strong', {
-    staticClass: "primary--text"
-  }, ["Vuetify"]), " even faster. These packages require ", _h('code', ["vue-cli"]), ". For more information on vue-cli, visit the official ", _h('a', {
+  }, ["official VueJS templates"]), ". They contain small modifications to help you get started with Vuetify even faster. These packages require ", _h('code', ["vue-cli"]), ". For more information on vue-cli, visit the official ", _h('a', {
     attrs: {
       "href": "https://github.com/vuejs/vue-cli",
       "target": "_blank"
@@ -21164,6 +21195,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "target": "_blank"
     }
   }, ["http://localhost:8080"]), " in your browser."])
+},function (){var _vm=this;var _h=_vm.$createElement;
+  return _h('p', {
+    staticClass: "section-text"
+  }, ["Vuetify comes pre-built with a Material Design Color Pack (thanks ", _h('a', {
+    attrs: {
+      "href": "http://materializecss.com/color.html",
+      "target": "_blank"
+    }
+  }, ["Materialize.css"]), ") by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to ", _h('strong', ["src/stylus/main.styl"]), " and assign ", _h('code', ["$color-pack"]), " to false."])
 }]}
 
 /***/ },
@@ -21506,17 +21546,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     slot: "title"
   }, ["Overview"]), _h('div', {
     slot: "desc"
-  }, [_h('p', ["This overview is designed to help you become fluent in ", _h('strong', ["Vuetify's webpack-ssr"]), ". If you have not already installed the ", _h('code', ["webpack ssr"]), " template, please do so ", _h('router-link', {
+  }, [_h('p', ["This overview is designed to help you become fluent in ", _h('strong', ["Vuetify's"]), " Webpack-SSR Template. If you have not already installed the ", _h('code', ["webpack-ssr"]), " template, please do so ", _h('router-link', {
     attrs: {
       "to": "/quick-start#webpack-ssr"
     }
-  }, ["here"]), "."])])])]), _h('section', [_h('section-header', ["Introduction"]), _h('p', {
-    staticClass: "section-text"
-  }, ["The Vuetify SSR template was designed for performance, seo optimization and usability. Before continuing, ensure that your local dev server is running:"]), _h('markup', {
-    attrs: {
-      "lang": "cli"
-    }
-  }, ["npm run dev"]), _vm._m(0), _h('h6', ["Folder Structure"]), _h('markup', {
+  }, ["here"]), "."])])])]), _h('section', [_h('section-header', ["Introduction"]), _vm._m(0), _h('h6', ["Folder Structure"]), _h('markup', {
     attrs: {
       "lang": "cli"
     }
@@ -21544,7 +21578,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   }, ["preFetch (store) {\n  store.dispatch('GET_USER', 2)\n \n  return {\n    title: 'Title',\n    description: 'Description',\n    keywords: 'keyword, keyword'\n  }\n}"]), _h('div', {
     staticClass: "section-text"
-  }, [_h('p', ["While this takes care of initial render meta data, it is a good experience for a user when they change a page within your application to have the title change with it"]), _vm._m(8), _h('P', ["Here is an example of a view:"])]), _h('markup', {
+  }, [_h('p', ["While this takes care of initial render meta data, it is a good experience for a user when they change a page within your application to have the title change with it"]), _vm._m(8), _h('P', ["Here is an example of a way that you can handle this:"])]), _h('markup', {
     attrs: {
       "lang": "js"
     }
@@ -21556,17 +21590,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   }, ["With a better understanding of the ", _h('strong', ["webpack ssr"]), " template, let's learn about one of the most powerful features of Vuetify, the bus system."])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
-    staticClass: "secion-text"
-  }, ["Once running, navigate to ", _h('a', {
-    attrs: {
-      "href": "http://localhost:8080",
-      "target": "_blank"
-    }
-  }, ["http://localhost:8080"]), " in your browser."])
+    staticClass: "section-text"
+  }, ["The Vuetify SSR template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes ", _h('code', ["buble"]), " with webpack's buble-loader."])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('div', {
     staticClass: "section-text"
-  }, [_h('p', ["The ", _h('strong', ["Build"]), " folder contains all of the webpack specific build configurations for your project. ", _h('strong', ["Src"]), " is where all the development project files reside. Notice that the ", _h('code', ["vuetify ssr"]), " template is out-of-the-box configured to use ", _h('a', {
+  }, [_h('p', ["The ", _h('strong', ["Build"]), " folder contains all of the webpack specific build configurations for your project. ", _h('strong', ["Src"]), " is where all the development project files reside. Notice that the Webpack-SSR template is out-of-the-box configured to use ", _h('a', {
     attrs: {
       "href": "https://router.vuejs.org/en/",
       "target": "_blank"
@@ -21583,11 +21612,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   }, ["Vue Server Renderer"]), ". This will allow you to make simple or complex applications that are not only fast/efficient, but ", _h('strong', ["SEO"]), " friendly."])])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', ["Navigate to the ", _h('strong', ["src"]), " folder and open up ", _h('code', ["App.vue"]), ". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is the ", _h('code', ["v-app"]), " component. This will allow you to define your application layout without any heavy lifting."])
+  return _h('p', ["Navigate to the ", _h('strong', ["src"]), " folder and open up ", _h('code', ["App.vue"]), ". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is ", _h('code', ["v-app"]), ". This component allows you to define your application layout. This is used in conjunction with ", _h('code', ["v-navbar"]), ", ", _h('code', ["v-sidebar"]), ", ", _h('code', ["v-content"]), " and ", _h('code', ["v-footer"]), "."])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"
-  }, ["Vuetify SSR uses the official Vue Router for controller application flow. Located in ", _h('code', ["/src/route/index.js"]), ", all of your application routes will be defined here."])
+  }, ["The Webpack-SSR template uses the official Vue Router for controlling application flow. Located in ", _h('code', ["/src/route/index.js"]), ", all of your application routes and route logic will be defined here."])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('div', {
     staticClass: "section-text"
@@ -21600,11 +21629,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('div', {
     staticClass: "section-text"
-  }, [_h('p', ["State control is managed by the official Vuex library. This follows Facebooks' Reflux design pattern. Navigate to ", _h('code', ["/src/store/index.js"]), ". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a ", _h('code', ["preFetch"]), " method on your view component."])])
+  }, [_h('p', ["State control is managed by the official Vuex library. This Vue plugin follows Facebooks' Reflux design pattern. Navigate to ", _h('code', ["/src/store/index.js"]), ". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a ", _h('code', ["preFetch"]), " method on your view component."])])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('div', {
     staticClass: "section-text"
-  }, [_h('p', ["For more information on State Control and Vuex, view the official ", _h('a', {
+  }, [_h('p', ["This is useful for bootstrapping your application so that any necessary data is available before the initial render."]), _h('p', ["For more information on State Control and Vuex, view the official ", _h('a', {
     attrs: {
       "href": "https://vuex.vuejs.org/en/intro.html",
       "target": "_blank"
@@ -21615,11 +21644,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     staticClass: "section-text"
   }, ["In order to ensure that page specific meta data is viewable when your pages are crawled, you can return an object containing ", _h('code', ["title"]), ", ", _h('code', ["description"]), " and ", _h('code', ["keywords"]), "."])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', ["This can be done by publishing an event to the Vuetify ", _h('code', ["bus"]), ". This is the same functionality that is hooked into by the ", _h('strong', ["Vuetify SSR template"]), " when the pages are being initially rendered."])
+  return _h('p', ["This can be done by publishing an event to the Vuetify ", _h('code', ["bus"]), ". This is the same functionality that is hooked into by the Webpack-SSR template when the pages are being initially rendered."])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"
-  }, ["In the example above, we emit an event that is captured on ", _h('code', ["<router-view v-on:view=\"view\">"]), ". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for Bots, but also change when the user is navigating to a different page."])
+  }, ["In the example above, we emit an event that is captured on ", _h('code', ["<router-view v-on:view=\"view\">"]), ". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for crawling, but also change when the user is navigating to a different page."])
 },function (){var _vm=this;var _h=_vm.$createElement;
   return _h('p', {
     staticClass: "section-text"

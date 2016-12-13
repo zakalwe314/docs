@@ -6,7 +6,7 @@
         dd(slot="desc") The Vuetify <code>bus</code> is the glue that holds all of your components together. Made for Vue SSR <em>(Server Side Rendering)</em>, the bus system ensures that components are able to work in a variety of setups.
     section
       section-header Components
-      p(class="section-text") Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through <code>this</code>.
+      p(class="section-text") Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through <code>this.$vuetify.bus</code>.
       markup(lang="js")
         |data () {
         |   return {
@@ -36,7 +36,7 @@
         |beforeDestroy () {
         |   this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)
         |}
-      p(class="section-text") While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a Vue mixin to do this automatically for you. As well, the Bus accepts an array, which allows for a smoother process.
+      p(class="section-text") While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. 
       markup(lang="js")
         |import Eventable from '../node_modules/vuetify/src/mixins/eventable'
         |&nbsp;

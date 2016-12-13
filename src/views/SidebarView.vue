@@ -90,6 +90,11 @@
               'Required: true'
             ],
             [
+              '<code>mobile</code>',
+              'Specifies whether menu should collapse automatically on mobile',
+              'Default: true'
+            ],
+            [
               '<code>items</code>',
               'Array of navbar items',
               'Item object: parent, text, href, items'
@@ -98,11 +103,6 @@
               '<code>right</code>',
               'Applies the navbar--right class',
               'Used to designate the navbar is located on the right'
-            ],
-            [
-              '<code>fixed</code>',
-              'Applies the navbar--fixed class',
-              'Default: false'
             ],
             [
               '<code>&lt;v-sidebar-group&gt;</code>',

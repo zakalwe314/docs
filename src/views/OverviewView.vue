@@ -4,13 +4,10 @@
       section-text
         strong(slot="title") Overview
         div(slot="desc")
-          p This overview is designed to help you become fluent in <strong>Vuetify's webpack-ssr</strong>. If you have not already installed the <code>webpack ssr</code> template, please do so <router-link to="/quick-start#webpack-ssr">here</router-link>.
+          p This overview is designed to help you become fluent in <strong>Vuetify's</strong> Webpack-SSR Template. If you have not already installed the <code>webpack-ssr</code> template, please do so <router-link to="/quick-start#webpack-ssr">here</router-link>.
     section
       section-header Introduction
-      p(class="section-text") The Vuetify SSR template was designed for performance, seo optimization and usability. Before continuing, ensure that your local dev server is running:
-      markup(lang="cli")
-        |npm run dev
-      p(class="secion-text") Once running, navigate to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
+      p(class="section-text") The Vuetify SSR template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes <code>buble</code> with webpack's buble-loader.
       h6 Folder Structure
       markup(lang="cli")
         | / project
@@ -45,10 +42,10 @@
         |   - package.json
         |   - server.js
       div(class="section-text") 
-        p The <strong>Build</strong> folder contains all of the webpack specific build configurations for your project. <strong>Src</strong> is where all the development project files reside. Notice that the <code>vuetify ssr</code> template is out-of-the-box configured to use <a href="https://router.vuejs.org/en/" target="_blank">Vue Router</a>, <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">Vuex</a>, and the <a href="https://vuejs.org/v2/guide/ssr.html" target="_blank">Vue Server Renderer</a>. This will allow you to make simple or complex applications that are not only fast/efficient, but <strong>SEO</strong> friendly.
+        p The <strong>Build</strong> folder contains all of the webpack specific build configurations for your project. <strong>Src</strong> is where all the development project files reside. Notice that the Webpack-SSR template is out-of-the-box configured to use <a href="https://router.vuejs.org/en/" target="_blank">Vue Router</a>, <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">Vuex</a>, and the <a href="https://vuejs.org/v2/guide/ssr.html" target="_blank">Vue Server Renderer</a>. This will allow you to make simple or complex applications that are not only fast/efficient, but <strong>SEO</strong> friendly.
       h3 Application
       div(class="section-text")
-        p Navigate to the <strong>src</strong> folder and open up <code>App.vue</code>. Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is the <code>v-app</code> component. This will allow you to define your application layout without any heavy lifting.
+        p Navigate to the <strong>src</strong> folder and open up <code>App.vue</code>. Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is <code>v-app</code>. This component allows you to define your application layout. This is used in conjunction with <code>v-navbar</code>, <code>v-sidebar</code>, <code>v-content</code> and <code>v-footer</code>.
         p The markup below tells the application that you have a <code>top navbar</code> and <code>footer</code>. Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the <router-link to="/layouts">Layouts</router-link> section.
       markup(lang="html")
         |&lt;v-app top-navbar footer&gt;
@@ -67,7 +64,7 @@
         |   &lt;v-footer&gt;2016&lt;/v-footer&gt;
         |&lt;/v-app&gt;
       h3 Routing
-      p(class="section-text") Vuetify SSR uses the official Vue Router for controller application flow. Located in <code>/src/route/index.js</code>, all of your application routes will be defined here.
+      p(class="section-text") The Webpack-SSR template uses the official Vue Router for controlling application flow. Located in <code>/src/route/index.js</code>, all of your application routes and route logic will be defined here.
       markup(lang="js")
         |routes: [
         |   { path: '/', component: HomeView },
@@ -77,12 +74,13 @@
         p These routes can be accessed be creating a link to the specified path, or by using Vue Router's <code>&lt;router-link&gt;</code> component. For more information, review the official Vue Router <a href="https://router.vuejs.org/en/" target="_blank">documentation</a>.
       h3 State Control
       div(class="section-text")
-        p State control is managed by the official Vuex library. This follows Facebooks' Reflux design pattern. Navigate to <code>/src/store/index.js</code>. By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a <code>preFetch</code> method on your view component.
+        p State control is managed by the official Vuex library. This Vue plugin follows Facebooks' Reflux design pattern. Navigate to <code>/src/store/index.js</code>. By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a <code>preFetch</code> method on your view component.
       markup(lang="js")
         |preFetch (store) {
         |   store.dispatch('GET_USER', 2)
         |}
       div(class="section-text")
+        p This is useful for bootstrapping your application so that any necessary data is available before the initial render.
         p For more information on State Control and Vuex, view the official <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">documentation</a>.
       h3 Meta Data
       p(class="section-text") In order to ensure that page specific meta data is viewable when your pages are crawled, you can return an object containing <code>title</code>, <code>description</code> and <code>keywords</code>.
@@ -98,8 +96,8 @@
         |}
       div(class="section-text")
         p While this takes care of initial render meta data, it is a good experience for a user when they change a page within your application to have the title change with it
-        p This can be done by publishing an event to the Vuetify <code>bus</code>. This is the same functionality that is hooked into by the <strong>Vuetify SSR template</strong> when the pages are being initially rendered.
-        P Here is an example of a view:
+        p This can be done by publishing an event to the Vuetify <code>bus</code>. This is the same functionality that is hooked into by the Webpack-SSR template when the pages are being initially rendered.
+        P Here is an example of a way that you can handle this:
 
       markup(lang="js")
         |// App.vue
@@ -134,7 +132,7 @@
         |     }
         |   }
         |}
-      p(class="section-text") In the example above, we emit an event that is captured on <code>&lt;router-view v-on:view="view"&gt;</code>. In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for Bots, but also change when the user is navigating to a different page.
+      p(class="section-text") In the example above, we emit an event that is captured on <code>&lt;router-view v-on:view="view"&gt;</code>. In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for crawling, but also change when the user is navigating to a different page.
 
     section
       section-header Web App Support

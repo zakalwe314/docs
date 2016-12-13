@@ -31,9 +31,9 @@
               v-btn(icon class="white--text" v-dropdown:marriot="")
                 v-icon more_vert
               v-dropdown(id="marriot" right)
-                v-dropdown-item(v-bind:item="{ href: '#!', text: 'Never show rewards' }")
-                v-dropdown-item(v-bind:item="{ href: '#!', text: 'Remove Card' }")
-                v-dropdown-item(v-bind:item="{ href: '#!', text: 'Send Feedback' }")
+                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }")
+                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
+                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
           v-card-row(height="100px")
             v-icon(class="mr-5") card_membership
             div
@@ -61,8 +61,8 @@
             v-btn(icon class="white--text" v-dropdown:space="")
               v-icon more_vert
             v-dropdown(id="space" right)
-              v-dropdown-item(v-bind:item="{ href: '#!', text: 'Remove Card' }")
-              v-dropdown-item(v-bind:item="{ href: '#!', text: 'Send Feedback' }")
+              v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
+              v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
           v-card-row(
             img="https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
             height="300px"

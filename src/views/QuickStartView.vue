@@ -3,7 +3,7 @@
     section
       section-text
         strong(slot="title") Getting Started
-        p(slot="desc") Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, as well as standard spa and html pages.
+        p(slot="desc") Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages.
 
     section
       section-header Required Files
@@ -35,11 +35,10 @@
         |mounted () {
         |   this.$vuetify.init()
         |}
-
     section
       section-header Vue CLI
-      p(class="section-text") Below are 3 packages forked from the <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with <strong class="primary--text">Vuetify</strong> even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
-      v-tabs(id="vue-cli")
+      p(class="section-text") Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
+      v-tabs(id="vue-cli" class="z-depth-1")
         v-tabs-tabs
           v-tab(href="#simple" selected)
             |Simple HTML <br>
@@ -70,7 +69,7 @@
       
       h6 NPM Install
       p(class="section-text") After the vue-cli installation finishes:
-      markup(code="cli")
+      markup(lang="cli")
         |cd &lt;package-name&gt;
         |npm install
       p Or alernatively, using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>.
@@ -81,6 +80,9 @@
       markup(lang="cli")
         |npm run dev
       p(class="section-text") into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
+    section
+      section-header Color Pack
+      p(class="section-text") Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to <strong>src/stylus/main.styl</strong> and assign <code>$color-pack</code> to false.
     section
       whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the <strong>webpack ssr</strong> template.
 </template>

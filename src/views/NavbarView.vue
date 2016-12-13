@@ -5,9 +5,10 @@
         v-navbar-logo(class="hidden-sm-and-down") Navbar
         v-navbar-items(v-bind:items="items")
       v-navbar(class="orange")
-        v-spacer
-        v-navbar-logo(class="hidden-sm-and-down") Navbar
-        v-navbar-items(v-bind:items="items")
+        v-navbar-side-icon(class="hidden-sm-and-up")
+        v-spacer(class="hidden-sm-and-down")
+        v-navbar-logo Navbar
+        v-navbar-items(class="hidden-sm-and-down" v-bind:items="items")
       v-navbar(class="red")
         v-navbar-items(v-bind:items="items")
         v-navbar-logo(class="hidden-sm-and-down")
@@ -21,7 +22,8 @@
         |&lt;/v-navbar&gt;
         |&nbsp;
         |&lt;v-navbar class="yellow"&gt;
-        |   &lt;v-spacer&gt;&lt;/v-spacer&gt;
+        |   &lt;v-navbar-side-icon(class="hidden-sm-and-up")&gt;&lt;/v-navbar-side-icon&gt;
+        |   &lt;v-spacer class="hidden-sm-and-down"&gt;&lt;/v-spacer&gt;
         |   &lt;v-navbar-logo&gt;Navbar&lt;/v-navbar&gt;
         |   &lt;v-navbar-items v-bind:items="items"&gt;&lt;/v-navbar-items&gt;
         |&lt;/v-navbar&gt;
@@ -50,7 +52,7 @@
         doc: {
           stage: 'comp',
           title: 'Navbar',
-          desc: 'Soon',
+          desc: 'The <code>v-navbar</code> component is pivotol to any gui, as it generally is the primary source of site navigation. The navbar component works great in cojunction with a sidebar for hiding links and presenting an activator to open the sidebar on mobile.',
           params: [
             [
               '<code>&lt;v-navbar&gt;</code>',
@@ -112,12 +114,12 @@
   #navbar
     .navbar
       padding-left: 0
-      min-height: 5rem
+      min-height: 5rem !important
       margin: 1rem 0
       
       &__logo
-        min-height: 5rem
+        min-height: 5rem !important
       
       &__item
-        min-height: 5rem
+        min-height: 5rem !important
 </style>

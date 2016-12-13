@@ -25,10 +25,7 @@
         doc: {
           stage: 'comp',
           title: 'Slider',
-          desc: 'Soon',
-          types: [
-            'comp', 'slot'
-          ],
+          desc: 'The <code>v-slider</code> component is used to display large numbers of visual content on a rotating timer.',
           params: [
             [
               '<code>v-slider</code>',

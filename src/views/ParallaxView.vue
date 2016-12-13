@@ -16,10 +16,7 @@
         doc: {
           stage: 'comp',
           title: 'Parallax',
-          desc: 'Coming Soon',
-          types: [
-            'comp', 'slot'
-          ],
+          desc: 'The <code>v-parallax</code> component creates a 3d effect that makes an image appear to scroll slower than the window.',
           params: [
             [
               '<code>&lt;v-parallax&gt;</code>',
@@ -35,16 +32,6 @@
               '<code>height</code>',
               'The height of the parallax container',
               'Default: 500'
-            ],
-            [
-              '<code>&lt;v-parallax-content&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>opacity-offset</code>',
-              'Sets offset fade for content. Set 0 for none',
-              'Default: .7'
             ]
           ]
         }
