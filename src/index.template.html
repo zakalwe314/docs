@@ -30,13 +30,7 @@
     </noscript>
     <!-- APP -->
     <script>
-      var loadDeferredStyles=function(){var e=document.getElementById("deferred-styles"),t=document.head.getElementsByTagName("meta");t[t.length-1].insertAdjacentHTML("afterend",e.textContent),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadDeferredStyles,0)}):window.addEventListener("load",loadDeferredStyles);
-      !function(v,u,e,t,i,f,y){v.GoogleAnalyticsObject=e;v[e]||(v[e]=function(){
-      (v[e].q=v[e].q||[]).push(arguments)});v[e].l=+new Date;f=u.createElement(t);
-      y=u.getElementsByTagName(t)[0];f.src=i;y.parentNode.insertBefore(f,y)}
-      (window,document,'ga','script','//www.google-analytics.com/analytics.js');
-      ga('create', 'UA-75262397-3', 'auto');
-      ga('send', 'pageview');
+      var loadDeferredStyles=function(){var e=document.getElementById("deferred-styles"),t=document.head.getElementsByTagName("meta");t[t.length-1].insertAdjacentHTML("afterend",e.textContent),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadDeferredStyles,0)}):window.addEventListener("load",loadDeferredStyles),!function(e,t,n,a,r,o,i){e.GoogleAnalyticsObject=n,e[n]||(e[n]=function(){(e[n].q=e[n].q||[]).push(arguments)}),e[n].l=+new Date,o=t.createElement(a),i=t.getElementsByTagName(a)[0],o.src=r,i.parentNode.insertBefore(o,i)}(window,document,"ga","script","//www.google-analytics.com/analytics.js"),ga("create","UA-75262397-3","auto");
     </script>
     <% if (htmlWebpackPlugin.options.environment === 'production') { %>
     <% for (key in htmlWebpackPlugin.files.js) { %>
