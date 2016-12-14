@@ -11186,6 +11186,14 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router___default.a({
   ]
 })
 
+router.beforeEach(function (to, from, next) {
+    if (typeof ga !== 'undefined') {
+        ga('set', 'page', to.path)
+        ga('send', 'pageview')
+    }
+    next()
+})
+
 /* harmony default export */ exports["a"] = router;
 /* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
@@ -21435,14 +21443,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   }, [_h('v-card', {
     staticClass: "primary"
-  }, [_h('v-card-content', ["12"])])]), _vm._l((2), function(i) {
+  }, [_h('v-card-text', ["12"])])]), _vm._l((2), function(i) {
     return _h('v-col', {
       attrs: {
         "xs6": "xs6"
       }
     }, [_h('v-card', {
       staticClass: "secondary"
-    }, [_h('v-card-content', ["6"])])])
+    }, [_h('v-card-text', ["6"])])])
   }), _vm._l((3), function(i) {
     return _h('v-col', {
       attrs: {
@@ -21450,7 +21458,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       }
     }, [_h('v-card', {
       staticClass: "primary"
-    }, [_h('v-card-content', ["4"])])])
+    }, [_h('v-card-text', ["4"])])])
   }), _vm._l((4), function(i) {
     return _h('v-col', {
       attrs: {
@@ -21458,7 +21466,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       }
     }, [_h('v-card', {
       staticClass: "secondary"
-    }, [_h('v-card-content', ["3"])])])
+    }, [_h('v-card-text', ["3"])])])
   }), _vm._l((6), function(i) {
     return _h('v-col', {
       attrs: {
@@ -21466,7 +21474,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       }
     }, [_h('v-card', {
       staticClass: "primary"
-    }, [_h('v-card-content', ["2"])])])
+    }, [_h('v-card-text', ["2"])])])
   }), _vm._l((12), function(i) {
     return _h('v-col', {
       attrs: {
@@ -21474,7 +21482,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       }
     }, [_h('v-card', {
       staticClass: "secondary"
-    }, [_h('v-card-content', ["1"])])])
+    }, [_h('v-card-text', ["1"])])])
   })])])]), _h('markup', {
     attrs: {
       "lang": "xml"
