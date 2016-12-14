@@ -5,22 +5,22 @@
         v-row
           v-col(xs12)
             v-card(class="primary")
-              v-card-content 12
+              v-card-text 12
           v-col(xs6 v-for="i in 2")
             v-card(class="secondary")
-              v-card-content 6
+              v-card-text 6
           v-col(xs4 v-for="i in 3")
             v-card(class="primary")
-              v-card-content 4
+              v-card-text 4
           v-col(xs3 v-for="i in 4")
             v-card(class="secondary")
-              v-card-content 3
+              v-card-text 3
           v-col(xs2 v-for="i in 6")
             v-card(class="primary")
-              v-card-content 2
+              v-card-text 2
           v-col(xs1 v-for="i in 12")
             v-card(class="secondary")
-              v-card-content 1
+              v-card-text 1
     markup(lang="xml" slot="markup")
       |&lt;v-container fluid&gt;
       |   &lt;v-row&gt;
