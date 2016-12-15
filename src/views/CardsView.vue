@@ -15,30 +15,33 @@
         v-card
           v-card-row(class="red darken-1")
             v-card-title(class="white--text") Delta SkyMiles
-          v-card-row(height="100px")
-            v-icon(class="mr-5") card_membership
-            div
-              div Frequent Flyer Number
-              strong 113241423
+          v-card-text
+            v-card-row(height="75px")
+              v-icon(class="mr-5") card_membership
+              div
+                div Frequent Flyer Number
+                strong 113241423
           v-card-row(actions)
             v-btn(flat class="red--text darken-1") View Email
       div
         v-card
           v-card-row(class="green darken-1")
-            v-card-title(class="white--text") Marriot Rewards
-            v-spacer
-            div
-              v-btn(icon class="white--text" v-dropdown:marriot="")
-                v-icon more_vert
-              v-dropdown(id="marriot" right)
-                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }")
-                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
-                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
-          v-card-row(height="100px")
-            v-icon(class="mr-5") card_membership
-            div
-              div Membership Number
-              strong 113241423
+            v-card-title(class="white--text")
+              span Marriot Rewards
+              v-spacer
+              div
+                v-btn(icon class="white--text" v-dropdown:marriot="")
+                  v-icon more_vert
+                v-dropdown(id="marriot" right)
+                  v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }")
+                  v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
+                  v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
+          v-card-text
+            v-card-row(height="75px")
+              v-icon(class="mr-5") card_membership
+              div
+                div Membership Number
+                strong 113241423
           v-card-row(actions)
             v-btn(flat class="green--text darken-1") View Email
 
@@ -56,13 +59,14 @@
       div
         v-card
           v-card-row(class="blue-grey darken-1 white--text")
-            v-card-title Visit Space
-            v-spacer
-            v-btn(icon class="white--text" v-dropdown:space="")
-              v-icon more_vert
-            v-dropdown(id="space" right)
-              v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
-              v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
+            v-card-title
+              span Visit Space
+              v-spacer
+              v-btn(icon class="white--text" v-dropdown:space="")
+                v-icon more_vert
+              v-dropdown(id="space" right)
+                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
+                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
           v-card-row(
             img="https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
             height="300px"
@@ -121,7 +125,7 @@
       div
         v-card(class="blue darken-4 white--text")
           v-card-row(height="200px")
-            h5.white--text
+            v-card-title
               | Featured Event: <br>
               | May 24, 2016 <br>
               | 7-11pm
@@ -142,9 +146,9 @@
       |     &lt;v-card-title&gt;...&lt;/v-card-title&gt;
       |   &lt;/v-card-row&gt;
       |   &lt;v-card-text&gt;
-      |      &lt;p&gt;...&lt;/p&gt;
+      |      ...
       |   &lt;/v-card-text&gt;
-      |   &lt;v-card-row(actions)&gt;
+      |   &lt;v-card-row actions&gt;
       |      &lt;v-btn flat class="secondary--text"&gt;...&lt;/v-btn&gt;
       |   &lt;/v-card-row&gt;
       |&lt;/v-card&gt;
@@ -155,7 +159,7 @@
       |       &lt;v-card-text&gt;
       |           &lt;p&gt;...&lt;/p&gt;
       |       &lt;/v-card-text&gt;
-      |       &lt;v-card-row(actions)&gt;
+      |       &lt;v-card-row actions&gt;
       |           &lt;v-btn flat class="secondary--text"&gt;...&lt;/v-btn&gt;
       |       &lt;/v-card-row&gt;
       |   &lt;/v-card-column&gt;
