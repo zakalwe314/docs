@@ -8128,6 +8128,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data () {
@@ -13556,13 +13560,24 @@ Toast.prototype.create = function create (message, location, duration, cb) {
       el.style.display = 'block'
       el.style.height = 0
       el.style.height = (el.scrollHeight) + "px"
+
+      var transition = function () {
+        done()
+        el.removeEventListener('transitionend', transition, false)
+      }
       
-      el.addEventListener('transitionend', done, { once: true })
+      el.addEventListener('transitionend', transition, false)
     },
 
     leave: function leave (el, done) {
       el.style.height = 0
-      el.addEventListener('transitionend', done, { once: true })
+      
+      var transition = function () {
+        done()
+        el.removeEventListener('transitionend', transition, false)
+      }
+      
+      el.addEventListener('transitionend', transition, false)
     },
 
     open: function open () {
@@ -20026,13 +20041,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     staticClass: "red darken-1"
   }, [_h('v-card-title', {
     staticClass: "white--text"
-  }, ["Delta SkyMiles"])]), _h('v-card-row', {
+  }, ["Delta SkyMiles"])]), _h('v-card-text', [_h('v-card-row', {
     attrs: {
-      "height": "100px"
+      "height": "75px"
     }
   }, [_h('v-icon', {
     staticClass: "mr-5"
-  }, ["card_membership"]), _h('div', [_h('div', ["Frequent Flyer Number"]), _h('strong', ["113241423"])])]), _h('v-card-row', {
+  }, ["card_membership"]), _h('div', [_h('div', ["Frequent Flyer Number"]), _h('strong', ["113241423"])])])]), _h('v-card-row', {
     attrs: {
       "actions": "actions"
     }
@@ -20045,7 +20060,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     staticClass: "green darken-1"
   }, [_h('v-card-title', {
     staticClass: "white--text"
-  }, ["Marriot Rewards"]), _h('v-spacer'), _h('div', [_h('v-btn', {
+  }, [_h('span', ["Marriot Rewards"]), _h('v-spacer'), _h('div', [_h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:marriot",
@@ -20081,13 +20096,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         text: 'Send Feedback'
       }
     }
-  })])])]), _h('v-card-row', {
+  })])])])]), _h('v-card-text', [_h('v-card-row', {
     attrs: {
-      "height": "100px"
+      "height": "75px"
     }
   }, [_h('v-icon', {
     staticClass: "mr-5"
-  }, ["card_membership"]), _h('div', [_h('div', ["Membership Number"]), _h('strong', ["113241423"])])]), _h('v-card-row', {
+  }, ["card_membership"]), _h('div', [_h('div', ["Membership Number"]), _h('strong', ["113241423"])])])]), _h('v-card-row', {
     attrs: {
       "actions": "actions"
     }
@@ -20120,7 +20135,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   }, ["View Updates"])])])]), _h('div', [_h('v-card', [_h('v-card-row', {
     staticClass: "blue-grey darken-1 white--text"
-  }, [_h('v-card-title', ["Visit Space"]), _h('v-spacer'), _h('v-btn', {
+  }, [_h('v-card-title', [_h('span', ["Visit Space"]), _h('v-spacer'), _h('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:space",
@@ -20149,7 +20164,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         text: 'Send Feedback'
       }
     }
-  })])]), _h('v-card-row', {
+  })])])]), _h('v-card-row', {
     attrs: {
       "img": "https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
       "height": "300px"
@@ -20255,9 +20270,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "height": "200px"
     }
-  }, [_h('h5', {
-    staticClass: "white--text"
-  }, ["Featured Event: ", _h('br'), "\nMay 24, 2016 ", _h('br'), "\n7-11pm"])]), _h('v-card-row', {
+  }, [_h('v-card-title', ["Featured Event: ", _h('br'), "\nMay 24, 2016 ", _h('br'), "\n7-11pm"])]), _h('v-card-row', {
     attrs: {
       "actions": "actions"
     }
@@ -20268,7 +20281,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     }
   }, ["Add to Calendar"]), _h('v-spacer'), _h('v-icon', ["event"])])])])]), _h('markup', {
     slot: "markup"
-  }, ["<v-card class=\"green\">\n  <v-card-text>\n    ...\n  </v-card-text>\n</v-card>\n \n<v-card>\n  <v-card-row img=\"...\" height=\"300px\">\n    <v-card-title>...</v-card-title>\n  </v-card-row>\n  <v-card-text>\n     <p>...</p>\n  </v-card-text>\n  <v-card-row(actions)>\n     <v-btn flat class=\"secondary--text\">...</v-btn>\n  </v-card-row>\n</v-card>\n \n<v-card horizontal>\n  <v-card-row img=\"...\"></v-card-title>\n  <v-card-column>\n      <v-card-text>\n          <p>...</p>\n      </v-card-text>\n      <v-card-row(actions)>\n          <v-btn flat class=\"secondary--text\">...</v-btn>\n      </v-card-row>\n  </v-card-column>\n</v-card>"])])
+  }, ["<v-card class=\"green\">\n  <v-card-text>\n    ...\n  </v-card-text>\n</v-card>\n \n<v-card>\n  <v-card-row img=\"...\" height=\"300px\">\n    <v-card-title>...</v-card-title>\n  </v-card-row>\n  <v-card-text>\n     ...\n  </v-card-text>\n  <v-card-row actions>\n     <v-btn flat class=\"secondary--text\">...</v-btn>\n  </v-card-row>\n</v-card>\n \n<v-card horizontal>\n  <v-card-row img=\"...\"></v-card-title>\n  <v-card-column>\n      <v-card-text>\n          <p>...</p>\n      </v-card-text>\n      <v-card-row actions>\n          <v-btn flat class=\"secondary--text\">...</v-btn>\n      </v-card-row>\n  </v-card-column>\n</v-card>"])])
 },staticRenderFns: []}
 
 /***/ },
