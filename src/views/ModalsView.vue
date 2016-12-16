@@ -29,7 +29,7 @@
         |     &lt;v-card-text&gt;
         |       ...
         |     &lt;/v-card-text&gt;
-        |     &lt;v-card-actions&gt;
+        |     &lt;v-card-row actions&gt;
         |       &lt;v-btn v-on:click.native="modal('modal')"&gt;
         |         Cancel
         |       &lt;/v-btn&gt;
@@ -37,7 +37,7 @@
         |       &lt;v-btn v-on:click.native="modal('modal')" class="green white--text"&gt;
         |         Submit
         |       &lt;/v-btn&gt;
-        |     &lt;/v-card-actions&gt;
+        |     &lt;/v-card-row&gt;
         |   &lt;/v-card&gt;
         |&lt;/v-modal&gt;
         |&nbsp;
@@ -46,20 +46,20 @@
         |&lt;/v-btn&gt;
         |&lt;v-modal id="modal2"&gt;
         |   &lt;v-card&gt;
-        |     &lt;v-card-actions&gt;
+        |     &lt;v-card-row actions&gt;
         |       &lt;div&gt;This is an example of a bottom modal&lt;/div&gt;
         |       &lt;v-spacer&gt;
         |       &lt;v-btn v-on:click="modal('modal2')" class="primary white--text"&gt;
         |         Close
         |       &lt;/v-btn&gt;
-        |     &lt;/v-card-actions&gt;
+        |     &lt;/v-card-row&gt;
         |   &lt;/v-card&gt;
         |&lt;/v-modal&gt;
       markup(lang="js")
         |export default {
         |   methods: {
         |     modal (id) {
-        |       this.$vuetify.bus.pub(`modal:close${id}`)  
+        |       this.$vuetify.bus.pub(`modal:close:${id}`)  
         |     }
         |   }
         |}
