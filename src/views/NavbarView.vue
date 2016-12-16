@@ -174,7 +174,7 @@
       margin: 1rem 0
       
   #navbar-image
-    background: url('~public/doc-images/nature.jpg') center
+    background: url('~public/doc-images/nature.jpg') center center / cover no-repeat
     height: 300px
     
     .navbar
