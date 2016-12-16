@@ -10,9 +10,11 @@ import highlightBash from 'highlight.js/lib/languages/bash'
 import highlightStylus from 'highlight.js/lib/languages/stylus'
 import highlightXML from 'highlight.js/lib/languages/xml'
 import highlightJS from 'highlight.js/lib/languages/javascript'
+import highlightScss from 'highlight.js/lib/languages/scss'
 
 highlight.registerLanguage('bash', highlightBash)
 highlight.registerLanguage('stylus', highlightStylus)
+highlight.registerLanguage('sass', highlightScss)
 highlight.registerLanguage('html', highlightXML)
 highlight.registerLanguage('js', highlightJS)
 

@@ -14,6 +14,24 @@
         v-navbar-logo(class="hidden-sm-and-down")
           v-spacer
           | Navbar
+    component-example(header="Icons")
+      v-navbar(class="purple")
+        v-navbar-logo(class="hidden-sm-and-down") Navbar
+        v-navbar-items
+          v-navbar-item(v-bind:item="{ href: '#!', text: 'chevron_left', icon: true }")
+          v-navbar-item(v-bind:item="{ href: '#!', text: 'dashboard', icon: true }")
+          v-navbar-item(v-bind:item="{ href: '#!', text: 'chevron_right', icon: true }")
+          v-navbar-item(
+            v-bind:item="{ href: '#!', text: 'more_vert', icon: true }" 
+            v-dropdown:dropdown=""
+          )
+          v-dropdown(v-bind:items="dropdown_items" id="dropdown" right)
+    component-example(header="Transparent")
+      div(id="navbar-image")
+        v-navbar(class="transparent z-depth-0")
+          v-navbar-logo(class="hidden-sm-and-down") Navbar
+          v-spacer
+          v-navbar-items(v-bind:items="items")
     div(slot="markup")
       markup(lang="xml")
         |&lt;v-navbar class="green"&gt;
@@ -35,13 +53,46 @@
         |     Navbar
         |   &lt;/v-navbar&gt;
         |&lt;/v-navbar&gt;
+        |&nbsp;
+        |&lt;v-navbar class="purple"&gt;
+        |   &lt;v-navbar-logo&gt;
+        |     Navbar
+        |   &lt;/v-navbar&gt;
+        |   &lt;v-navbar-items&gt;
+        |     &lt;v-navbar-item v-bind:item="{ href: '#!', text: 'chevron_left', icon: true }"&gt;&lt;/v-navbar-item&gt;
+        |     &lt;v-navbar-item v-bind:item="{ href: '#!', text: 'dashboard', icon: true }"&gt;&lt;/v-navbar-item&gt;
+        |     &lt;v-navbar-item v-bind:item="{ href: '#!', text: 'chevron_right', icon: true }"&gt;&lt;/v-navbar-item&gt;
+        |     &lt;v-navbar-item 
+        |         v-bind:item="{ href: '#!', text: 'more_vert', icon: true }"
+        |         v-dropdown:dropdown
+        |     &gt;&lt;/v-navbar-item&gt;
+        |   &lt;/v-navbar-items&gt;
+        |   &lt;v-dropdown v-bind:items="dropdown_items" id="dropdown" right&gt;&lt;/v-dropdown&gt;
+        |&lt;/v-navbar&gt;
+        |&nbsp;
+        |&lt;div id="navbar-image"&gt;
+        |   &lt;v-navbar class="transparent z-depth-0"&gt;
+        |     &lt;v-navbar-logo class="hidden-sm-and-down"&gt;...&lt;/v-navbar-logo&gt;
+        |     &lt;v-navbar-items v-bind:items="items"&gt;&lt;/v-navbar-items&gt;
+        |   &lt;/v-navbar&gt;
+        |&lt;/div&gt;
       markup(lang="js")
         |data () {
         |   return {
         |     items: [
         |       { text: 'Link', href: '#!' }
         |     ]
+        |     dropdown_items: [
+        |       { text: 'Send Feedback', href: '#!' },
+        |       { text: 'Request Help', href: '#!' },
+        |       { text: 'Contact Developer', href: '#!' }
+        |     ]
         |   }
+        |}
+      markup(lang="scss")
+        |#navbar-image {
+        |   background: url('...') center;
+        |   height: 300px;
         |}
 </template>
 
@@ -85,6 +136,11 @@
           { text: 'Link', href: '#!' },
           { text: 'Link', href: '#!' },
           { text: 'Link', href: '#!' }
+        ],
+        dropdown_items: [
+          { text: 'Send Feedback', href: '#!' },
+          { text: 'Request Help', href: '#!' },
+          { text: 'Contact Developer', href: '#!' }
         ]
       }
     },
@@ -114,12 +170,13 @@
   #navbar
     .navbar
       padding-left: 0
-      min-height: 5rem !important
+      height: 5rem !important
       margin: 1rem 0
       
-      &__logo
-        min-height: 5rem !important
-      
-      &__item
-        min-height: 5rem !important
+  #navbar-image
+    background: url('~public/doc-images/nature.jpg') center
+    height: 300px
+    
+    .navbar
+      margin: 0
 </style>

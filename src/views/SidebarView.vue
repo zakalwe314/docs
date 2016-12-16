@@ -97,12 +97,17 @@
             [
               '<code>items</code>',
               'Array of navbar items',
-              'Item object: parent, text, href, items'
+              'Item object: [parent, text, href, items]'
             ],
             [
               '<code>right</code>',
               'Applies the navbar--right class',
               'Used to designate the navbar is located on the right'
+            ],
+            [
+              '<code>slot</code>',
+              '',
+              'Types: [default, top]'
             ],
             [
               '<code>&lt;v-sidebar-group&gt;</code>',
@@ -112,7 +117,7 @@
             [
               '<code>item</code>',
               'Parent item object',
-              'Item object: text, href, icon'
+              'Item object: [text, href, icon]'
             ],
             [
               '<code>&lt;v-sidebar-items&gt;</code>',
@@ -132,12 +137,17 @@
             [
               '<code>item</code>',
               'The item object',
-              'Item object: text, href, icon'
+              'Item object: [text, href, icon]'
             ],
             [
               '<code>router</code>',
               'Designates whether to use anchor or router-link',
               'Default: true'
+            ],
+            [
+              '<code>slot</code>',
+              '',
+              'Names: [default]'
             ]
           ]
         },

@@ -44,7 +44,7 @@
           title: 'Breadcrumbs',
           desc: `
             <p>
-              The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or character as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.
+              The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or characters as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.
             </p>
           `,
           types: [
@@ -69,7 +69,7 @@
             [
               '<code>items</code>',
               'The array of Breadcrumbs',
-              'Allowed properties: href, text, disabled'
+              'Allowed properties: [href, text, disabled]'
             ],
             [
               '<code>&lt;v-breadcrumbs-item&gt;</code>',
@@ -84,7 +84,7 @@
             [
               '<code>item<code>',
               'The item object',
-              'Allowed object properties: href, text'
+              'Allowed object properties: [href, text]'
             ]
           ]
         },

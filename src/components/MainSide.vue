@@ -3,7 +3,6 @@
     id="mainsidebar"
     fixed
     close-on-click
-    v-bind:items="items"
   )
     div(class="vuetify" slot="top")
       router-link(
@@ -16,6 +15,21 @@
           width="100px"
           alt="Vuetify Logo"
         )
+    v-sidebar-items
+      template(v-for="item in items")
+        v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
+          v-sidebar-item(
+            v-for="j in item.items"
+            v-bind:item="j"
+            v-bind:router="item.router || true"
+          )
+            v-chip(class="green" v-if="j.chip") updated
+        v-sidebar-item(
+          v-bind:item="item"
+          v-bind:router="item.router || true"
+          v-else
+        )
+          v-chip(class="green" v-if="item.chip") updated
 </template>
 
 <script>
@@ -42,10 +56,10 @@
               { href: '/components/forms', text: 'Forms', icon: 'text_format' },
               { href: '/components/lists', text: 'Lists', icon: 'format_list_bulleted' },
               { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
-              { href: '/components/navbar', text: 'Navbars', icon: 'web' },
+              { href: '/components/navbar', text: 'Navbars', icon: 'web', chip: true },
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
-              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
+              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt', chip: true },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
             ]
