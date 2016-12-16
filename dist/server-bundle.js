@@ -13805,7 +13805,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
       el.style.display = 'block'
       el.style.height = 0
       
-      setTimeout(function () { return el.style.height = (el.scrollHeight) + "px"; }, 0)
+      setTimeout(function () { return el.style.height = (el.scrollHeight) + "px"; }, 50)
 
       var transition = function () {
         done()
@@ -14584,7 +14584,6 @@ var NavbarSideIcon = {
 
     data.staticClass = data.staticClass ? ("navbar__side-icon " + (data.staticClass)) : 'navbar__side-icon'
 
-    console.log(data)
     var icon = [h('v-icon', 'reorder')]
     var anchor = [h('a', { attrs: { href: '#!' } }, icon)]
 
