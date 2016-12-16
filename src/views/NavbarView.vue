@@ -40,7 +40,7 @@
         |&lt;/v-navbar&gt;
         |&nbsp;
         |&lt;v-navbar class="yellow"&gt;
-        |   &lt;v-navbar-side-icon(class="hidden-sm-and-up")&gt;&lt;/v-navbar-side-icon&gt;
+        |   &lt;v-navbar-side-icon class="hidden-sm-and-up"&gt;&lt;/v-navbar-side-icon&gt;
         |   &lt;v-spacer class="hidden-sm-and-down"&gt;&lt;/v-spacer&gt;
         |   &lt;v-navbar-logo&gt;Navbar&lt;/v-navbar&gt;
         |   &lt;v-navbar-items v-bind:items="items"&gt;&lt;/v-navbar-items&gt;
