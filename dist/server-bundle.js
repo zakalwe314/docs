@@ -13801,14 +13801,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
   },
 
   methods: {
-    enter: function enter (el) {
+    enter: function enter (el, done) {
       el.style.display = 'block'
       el.style.height = 0
-      el.style.height = (el.scrollHeight) + "px"
+      
+      setTimeout(function () { return el.style.height = (el.scrollHeight) + "px"; }, 0)
+
+      var transition = function () {
+        done()
+        el.removeEventListener('transitionend', transition, false)
+      }
+      
+      el.addEventListener('transitionend', transition, false)
     },
 
-    leave: function leave (el) {
+    leave: function leave (el, done) {
       el.style.height = 0
+      
+      var transition = function () {
+        done()
+        el.removeEventListener('transitionend', transition, false)
+      }
+      
+      el.addEventListener('transitionend', transition, false)
     },
 
     open: function open () {
