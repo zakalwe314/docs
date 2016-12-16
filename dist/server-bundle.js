@@ -7281,6 +7281,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ exports["default"] = {
   data: function data () {
@@ -7441,6 +7442,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -20282,7 +20305,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "label": ""
     }
-  }, [_vm._v("Coming Soon")])])])])])]), _vm._c('section', [_vm._c('whats-next', {
+  }, [_vm._v("Coming Soon")])])])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Roadmap")]), _vm._c('div', {
+    staticClass: "section-text"
+  }, [_vm._v("With the baseline complete, some of the goals of this project before launch:")]), _vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Continued fleshing out of the Documentation")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Adding more depth to existing components")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Create a guide for taking Vuetify SSR to production")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Add Accessiblity support")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Complete unreleased components, i.e. (Progress, Tables)")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Bug fixing and support")])])])]), _vm._c('section', [_vm._c('whats-next', {
     attrs: {
       "route": "/quick-start",
       "text": "Quick Start"
@@ -20718,7 +20743,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "width": "100px",
       "alt": "Vuetify Logo"
     }
-  })])]), _vm._c('v-sidebar-items', [_vm._l((_vm.items), function(item) {
+  })]), _vm._c('a', {
+    attrs: {
+      "href": "https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.4",
+      "target": "_blank"
+    }
+  }, [_vm._v("v0.7.4")])]), _vm._c('v-sidebar-items', [_vm._l((_vm.items), function(item) {
     return [(item.items) ? _vm._c('v-sidebar-group', {
       attrs: {
         "item": item.parent
@@ -21770,7 +21800,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     staticClass: "grey darken-2 white--text"
   }, [_vm._c('div', {
     staticClass: "text-xs-right"
-  }, [_vm._v("© 2016 John Leider")])])
+  }, [_vm._v("© 2016 "), _vm._c('a', {
+    staticClass: "white--text",
+    attrs: {
+      "href": "http://johnleider.com",
+      "target": "_blank"
+    }
+  }, [_vm._v("John Leider")])])])
 },staticRenderFns: []}
 
 /***/ },

@@ -68,6 +68,28 @@
             span Vuetify Admin Components <v-chip label class="green white--text">Coming Soon</v-chip>
 
     section
+      section-header Roadmap
+      div(class="section-text") With the baseline complete, some of the goals of this project before launch:
+      v-list
+        v-list-item
+          v-list-item-icon remove
+          v-list-item-title Continued fleshing out of the Documentation
+        v-list-item
+          v-list-item-icon remove
+          v-list-item-title Adding more depth to existing components
+        v-list-item
+          v-list-item-icon remove
+          v-list-item-title Create a guide for taking Vuetify SSR to production
+        v-list-item
+          v-list-item-icon remove
+          v-list-item-title Add Accessiblity support
+        v-list-item
+          v-list-item-icon remove
+          v-list-item-title Complete unreleased components, i.e. (Progress, Tables)
+        v-list-item
+          v-list-item-icon remove
+          v-list-item-title Bug fixing and support
+    section
       whats-next(route="/quick-start" text="Quick Start") Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the <strong>vuetify</strong> package.
 </template>
 

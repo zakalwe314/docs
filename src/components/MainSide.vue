@@ -15,6 +15,7 @@
           width="100px"
           alt="Vuetify Logo"
         )
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.4" target="_blank") v0.7.4
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
