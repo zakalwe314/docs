@@ -34,16 +34,18 @@ module.exports =
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 
-/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 
-/******/ 	// define getter function for harmory exports
+/******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
 /******/ 	};
 
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -71,11 +73,11 @@ module.exports =
 
 "use strict";
 /*!
- * Vue.js v2.1.4
+ * Vue.js v2.1.6
  * (c) 2014-2016 Evan You
  * Released under the MIT License.
  */
-'use strict';
+
 
 /*  */
 
@@ -269,6 +271,11 @@ function noop () {}
 var no = function () { return false; };
 
 /**
+ * Return same value
+ */
+var identity = function (_) { return _; };
+
+/**
  * Generate a static keys string from compiler modules.
  */
 function genStaticKeys (modules) {
@@ -347,6 +354,11 @@ var config = {
    * Get the namespace of an element
    */
   getTagNamespace: noop,
+
+  /**
+   * Parse the real tag name for the specific platform.
+   */
+  parsePlatformTagName: identity,
 
   /**
    * Check if an attribute must be bound using property, e.g. value
@@ -557,10 +569,10 @@ if (typeof Set !== 'undefined' && isNative(Set)) {
       this.set = Object.create(null);
     }
     Set.prototype.has = function has (key) {
-      return this.set[key] !== undefined
+      return this.set[key] === true
     };
     Set.prototype.add = function add (key) {
-      this.set[key] = 1;
+      this.set[key] = true;
     };
     Set.prototype.clear = function clear () {
       this.set = Object.create(null);
@@ -778,9 +790,8 @@ function protoAugment (target, src) {
 /**
  * Augment an target Object or Array by defining
  * hidden properties.
- *
- * istanbul ignore next
  */
+/* istanbul ignore next */
 function copyAugment (target, src, keys) {
   for (var i = 0, l = keys.length; i < l; i++) {
     var key = keys[i];
@@ -1246,11 +1257,14 @@ function resolveAsset (
     return
   }
   var assets = options[type];
-  var res = assets[id] ||
-    // camelCase ID
-    assets[camelize(id)] ||
-    // Pascal Case ID
-    assets[capitalize(camelize(id))];
+  // check local registration variations first
+  if (hasOwn(assets, id)) { return assets[id] }
+  var camelizedId = camelize(id);
+  if (hasOwn(assets, camelizedId)) { return assets[camelizedId] }
+  var PascalCaseId = capitalize(camelizedId);
+  if (hasOwn(assets, PascalCaseId)) { return assets[PascalCaseId] }
+  // fallback to prototype chain
+  var res = assets[id] || assets[camelizedId] || assets[PascalCaseId];
   if (false) {
     warn(
       'Failed to resolve ' + type.slice(0, -1) + ': ' + id,
@@ -1452,6 +1466,7 @@ var util = Object.freeze({
 	toObject: toObject,
 	noop: noop,
 	no: no,
+	identity: identity,
 	genStaticKeys: genStaticKeys,
 	looseEqual: looseEqual,
 	looseIndexOf: looseIndexOf,
@@ -1948,7 +1963,8 @@ function initData (vm) {
   if (!isPlainObject(data)) {
     data = {};
     "production" !== 'production' && warn(
-      'data functions should return an object.',
+      'data functions should return an object:\n' +
+      'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
       vm
     );
   }
@@ -2124,7 +2140,6 @@ var VNode = function VNode (
   children,
   text,
   elm,
-  ns,
   context,
   componentOptions
 ) {
@@ -2133,7 +2148,7 @@ var VNode = function VNode (
   this.children = children;
   this.text = text;
   this.elm = elm;
-  this.ns = ns;
+  this.ns = undefined;
   this.context = context;
   this.functionalContext = undefined;
   this.key = data && data.key;
@@ -2148,12 +2163,16 @@ var VNode = function VNode (
   this.isOnce = false;
 };
 
-var emptyVNode = function () {
+var createEmptyVNode = function () {
   var node = new VNode();
   node.text = '';
   node.isComment = true;
   return node
 };
+
+function createTextVNode (val) {
+  return new VNode(undefined, undefined, undefined, String(val))
+}
 
 // optimized shallow clone
 // used for static nodes and slot nodes because they may be reused across
@@ -2166,10 +2185,10 @@ function cloneVNode (vnode) {
     vnode.children,
     vnode.text,
     vnode.elm,
-    vnode.ns,
     vnode.context,
     vnode.componentOptions
   );
+  cloned.ns = vnode.ns;
   cloned.isStatic = vnode.isStatic;
   cloned.key = vnode.key;
   cloned.isCloned = true;
@@ -2182,167 +2201,6 @@ function cloneVNodes (vnodes) {
     res[i] = cloneVNode(vnodes[i]);
   }
   return res
-}
-
-/*  */
-
-function mergeVNodeHook (def, hookKey, hook, key) {
-  key = key + hookKey;
-  var injectedHash = def.__injected || (def.__injected = {});
-  if (!injectedHash[key]) {
-    injectedHash[key] = true;
-    var oldHook = def[hookKey];
-    if (oldHook) {
-      def[hookKey] = function () {
-        oldHook.apply(this, arguments);
-        hook.apply(this, arguments);
-      };
-    } else {
-      def[hookKey] = hook;
-    }
-  }
-}
-
-/*  */
-
-function updateListeners (
-  on,
-  oldOn,
-  add,
-  remove$$1,
-  vm
-) {
-  var name, cur, old, fn, event, capture, once;
-  for (name in on) {
-    cur = on[name];
-    old = oldOn[name];
-    if (!cur) {
-      "production" !== 'production' && warn(
-        "Invalid handler for event \"" + name + "\": got " + String(cur),
-        vm
-      );
-    } else if (!old) {
-      once = name.charAt(0) === '~'; // Prefixed last, checked first
-      event = once ? name.slice(1) : name;
-      capture = event.charAt(0) === '!';
-      event = capture ? event.slice(1) : event;
-      if (Array.isArray(cur)) {
-        add(event, (cur.invoker = arrInvoker(cur)), once, capture);
-      } else {
-        if (!cur.invoker) {
-          fn = cur;
-          cur = on[name] = {};
-          cur.fn = fn;
-          cur.invoker = fnInvoker(cur);
-        }
-        add(event, cur.invoker, once, capture);
-      }
-    } else if (cur !== old) {
-      if (Array.isArray(old)) {
-        old.length = cur.length;
-        for (var i = 0; i < old.length; i++) { old[i] = cur[i]; }
-        on[name] = old;
-      } else {
-        old.fn = cur;
-        on[name] = old;
-      }
-    }
-  }
-  for (name in oldOn) {
-    if (!on[name]) {
-      once = name.charAt(0) === '~'; // Prefixed last, checked first
-      event = once ? name.slice(1) : name;
-      capture = event.charAt(0) === '!';
-      event = capture ? event.slice(1) : event;
-      remove$$1(event, oldOn[name].invoker, capture);
-    }
-  }
-}
-
-function arrInvoker (arr) {
-  return function (ev) {
-    var arguments$1 = arguments;
-
-    var single = arguments.length === 1;
-    for (var i = 0; i < arr.length; i++) {
-      single ? arr[i](ev) : arr[i].apply(null, arguments$1);
-    }
-  }
-}
-
-function fnInvoker (o) {
-  return function (ev) {
-    var single = arguments.length === 1;
-    single ? o.fn(ev) : o.fn.apply(null, arguments);
-  }
-}
-
-/*  */
-
-function normalizeChildren (
-  children,
-  ns,
-  nestedIndex
-) {
-  if (isPrimitive(children)) {
-    return [createTextVNode(children)]
-  }
-  if (Array.isArray(children)) {
-    var res = [];
-    for (var i = 0, l = children.length; i < l; i++) {
-      var c = children[i];
-      var last = res[res.length - 1];
-      //  nested
-      if (Array.isArray(c)) {
-        res.push.apply(res, normalizeChildren(c, ns, ((nestedIndex || '') + "_" + i)));
-      } else if (isPrimitive(c)) {
-        if (last && last.text) {
-          last.text += String(c);
-        } else if (c !== '') {
-          // convert primitive to vnode
-          res.push(createTextVNode(c));
-        }
-      } else if (c instanceof VNode) {
-        if (c.text && last && last.text) {
-          if (!last.isCloned) {
-            last.text += c.text;
-          }
-        } else {
-          // inherit parent namespace
-          if (ns) {
-            applyNS(c, ns);
-          }
-          // default key for nested array children (likely generated by v-for)
-          if (c.tag && c.key == null && nestedIndex != null) {
-            c.key = "__vlist" + nestedIndex + "_" + i + "__";
-          }
-          res.push(c);
-        }
-      }
-    }
-    return res
-  }
-}
-
-function createTextVNode (val) {
-  return new VNode(undefined, undefined, undefined, String(val))
-}
-
-function applyNS (vnode, ns) {
-  if (vnode.tag && !vnode.ns) {
-    vnode.ns = ns;
-    if (vnode.children) {
-      for (var i = 0, l = vnode.children.length; i < l; i++) {
-        applyNS(vnode.children[i], ns);
-      }
-    }
-  }
-}
-
-/*  */
-
-function getFirstComponentChild (children) {
-  return children && children.filter(function (c) { return c && c.componentOptions; })[0]
 }
 
 /*  */
@@ -2382,7 +2240,7 @@ function lifecycleMixin (Vue) {
     var vm = this;
     vm.$el = el;
     if (!vm.$options.render) {
-      vm.$options.render = emptyVNode;
+      vm.$options.render = createEmptyVNode;
       if (false) {
         /* istanbul ignore if */
         if (vm.$options.template && vm.$options.template.charAt(0) !== '#') {
@@ -2633,7 +2491,7 @@ function createComponent (
   var name = Ctor.options.name || tag;
   var vnode = new VNode(
     ("vue-component-" + (Ctor.cid) + (name ? ("-" + name) : '')),
-    data, undefined, undefined, undefined, undefined, context,
+    data, undefined, undefined, undefined, context,
     { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children }
   );
   return vnode
@@ -2653,19 +2511,17 @@ function createFunctionalComponent (
       props[key] = validateProp(key, propOptions, propsData);
     }
   }
-  var vnode = Ctor.options.render.call(
-    null,
-    // ensure the createElement function in functional components
-    // gets a unique context - this is necessary for correct named slot check
-    bind$1(createElement, { _self: Object.create(context) }),
-    {
-      props: props,
-      data: data,
-      parent: context,
-      children: normalizeChildren(children),
-      slots: function () { return resolveSlots(children, context); }
-    }
-  );
+  // ensure the createElement function in functional components
+  // gets a unique context - this is necessary for correct named slot check
+  var _context = Object.create(context);
+  var h = function (a, b, c, d) { return createElement(_context, a, b, c, d, true); };
+  var vnode = Ctor.options.render.call(null, h, {
+    props: props,
+    data: data,
+    parent: context,
+    children: children,
+    slots: function () { return resolveSlots(children, context); }
+  });
   if (vnode instanceof VNode) {
     vnode.functionalContext = context;
     if (data.slot) {
@@ -2876,26 +2732,172 @@ function mergeHook$1 (one, two) {
 
 /*  */
 
+function mergeVNodeHook (def, hookKey, hook, key) {
+  key = key + hookKey;
+  var injectedHash = def.__injected || (def.__injected = {});
+  if (!injectedHash[key]) {
+    injectedHash[key] = true;
+    var oldHook = def[hookKey];
+    if (oldHook) {
+      def[hookKey] = function () {
+        oldHook.apply(this, arguments);
+        hook.apply(this, arguments);
+      };
+    } else {
+      def[hookKey] = hook;
+    }
+  }
+}
+
+/*  */
+
+function updateListeners (
+  on,
+  oldOn,
+  add,
+  remove$$1,
+  vm
+) {
+  var name, cur, old, fn, event, capture, once;
+  for (name in on) {
+    cur = on[name];
+    old = oldOn[name];
+    if (!cur) {
+      "production" !== 'production' && warn(
+        "Invalid handler for event \"" + name + "\": got " + String(cur),
+        vm
+      );
+    } else if (!old) {
+      once = name.charAt(0) === '~'; // Prefixed last, checked first
+      event = once ? name.slice(1) : name;
+      capture = event.charAt(0) === '!';
+      event = capture ? event.slice(1) : event;
+      if (Array.isArray(cur)) {
+        add(event, (cur.invoker = arrInvoker(cur)), once, capture);
+      } else {
+        if (!cur.invoker) {
+          fn = cur;
+          cur = on[name] = {};
+          cur.fn = fn;
+          cur.invoker = fnInvoker(cur);
+        }
+        add(event, cur.invoker, once, capture);
+      }
+    } else if (cur !== old) {
+      if (Array.isArray(old)) {
+        old.length = cur.length;
+        for (var i = 0; i < old.length; i++) { old[i] = cur[i]; }
+        on[name] = old;
+      } else {
+        old.fn = cur;
+        on[name] = old;
+      }
+    }
+  }
+  for (name in oldOn) {
+    if (!on[name]) {
+      once = name.charAt(0) === '~'; // Prefixed last, checked first
+      event = once ? name.slice(1) : name;
+      capture = event.charAt(0) === '!';
+      event = capture ? event.slice(1) : event;
+      remove$$1(event, oldOn[name].invoker, capture);
+    }
+  }
+}
+
+function arrInvoker (arr) {
+  return function (ev) {
+    var arguments$1 = arguments;
+
+    var single = arguments.length === 1;
+    for (var i = 0; i < arr.length; i++) {
+      single ? arr[i](ev) : arr[i].apply(null, arguments$1);
+    }
+  }
+}
+
+function fnInvoker (o) {
+  return function (ev) {
+    var single = arguments.length === 1;
+    single ? o.fn(ev) : o.fn.apply(null, arguments);
+  }
+}
+
+/*  */
+
+function normalizeChildren (children) {
+  return isPrimitive(children)
+    ? [createTextVNode(children)]
+    : Array.isArray(children)
+      ? normalizeArrayChildren(children)
+      : undefined
+}
+
+function normalizeArrayChildren (children, nestedIndex) {
+  var res = [];
+  var i, c, last;
+  for (i = 0; i < children.length; i++) {
+    c = children[i];
+    if (c == null || typeof c === 'boolean') { continue }
+    last = res[res.length - 1];
+    //  nested
+    if (Array.isArray(c)) {
+      res.push.apply(res, normalizeArrayChildren(c, ((nestedIndex || '') + "_" + i)));
+    } else if (isPrimitive(c)) {
+      if (last && last.text) {
+        last.text += String(c);
+      } else if (c !== '') {
+        // convert primitive to vnode
+        res.push(createTextVNode(c));
+      }
+    } else {
+      if (c.text && last && last.text) {
+        res[res.length - 1] = createTextVNode(last.text + c.text);
+      } else {
+        // default key for nested array children (likely generated by v-for)
+        if (c.tag && c.key == null && nestedIndex != null) {
+          c.key = "__vlist" + nestedIndex + "_" + i + "__";
+        }
+        res.push(c);
+      }
+    }
+  }
+  return res
+}
+
+/*  */
+
+function getFirstComponentChild (children) {
+  return children && children.filter(function (c) { return c && c.componentOptions; })[0]
+}
+
+/*  */
+
 // wrapper function for providing a more flexible interface
 // without getting yelled at by flow
 function createElement (
+  context,
   tag,
   data,
-  children
+  children,
+  needNormalization,
+  alwaysNormalize
 ) {
-  if (data && (Array.isArray(data) || typeof data !== 'object')) {
+  if (Array.isArray(data) || isPrimitive(data)) {
+    needNormalization = children;
     children = data;
     data = undefined;
   }
-  // make sure to use real instance instead of proxy as context
-  return _createElement(this._self, tag, data, children)
+  if (alwaysNormalize) { needNormalization = true; }
+  return _createElement(context, tag, data, children, needNormalization)
 }
 
 function _createElement (
   context,
   tag,
   data,
-  children
+  children,
+  needNormalization
 ) {
   if (data && data.__ob__) {
     "production" !== 'production' && warn(
@@ -2903,11 +2905,11 @@ function _createElement (
       'Always create fresh vnode data objects in each render!',
       context
     );
-    return
+    return createEmptyVNode()
   }
   if (!tag) {
     // in case of component :is set to falsy value
-    return emptyVNode()
+    return createEmptyVNode()
   }
   // support single function children as default scoped slot
   if (Array.isArray(children) &&
@@ -2916,31 +2918,53 @@ function _createElement (
     data.scopedSlots = { default: children[0] };
     children.length = 0;
   }
+  if (needNormalization) {
+    children = normalizeChildren(children);
+  }
+  var vnode, ns;
   if (typeof tag === 'string') {
     var Ctor;
-    var ns = config.getTagNamespace(tag);
+    ns = config.getTagNamespace(tag);
     if (config.isReservedTag(tag)) {
       // platform built-in elements
-      return new VNode(
-        tag, data, normalizeChildren(children, ns),
-        undefined, undefined, ns, context
-      )
+      vnode = new VNode(
+        config.parsePlatformTagName(tag), data, children,
+        undefined, undefined, context
+      );
     } else if ((Ctor = resolveAsset(context.$options, 'components', tag))) {
       // component
-      return createComponent(Ctor, data, context, children, tag)
+      vnode = createComponent(Ctor, data, context, children, tag);
     } else {
       // unknown or unlisted namespaced elements
       // check at runtime because it may get assigned a namespace when its
       // parent normalizes children
-      var childNs = tag === 'foreignObject' ? 'xhtml' : ns;
-      return new VNode(
-        tag, data, normalizeChildren(children, childNs),
-        undefined, undefined, ns, context
-      )
+      ns = tag === 'foreignObject' ? 'xhtml' : ns;
+      vnode = new VNode(
+        tag, data, children,
+        undefined, undefined, context
+      );
     }
   } else {
     // direct component options / constructor
-    return createComponent(tag, data, context, children)
+    vnode = createComponent(tag, data, context, children);
+  }
+  if (vnode) {
+    if (ns) { applyNS(vnode, ns); }
+    return vnode
+  } else {
+    return createEmptyVNode()
+  }
+}
+
+function applyNS (vnode, ns) {
+  vnode.ns = ns;
+  if (vnode.children) {
+    for (var i = 0, l = vnode.children.length; i < l; i++) {
+      var child = vnode.children[i];
+      if (child.tag && !child.ns) {
+        applyNS(child, ns);
+      }
+    }
   }
 }
 
@@ -2954,9 +2978,14 @@ function initRender (vm) {
   var renderContext = parentVnode && parentVnode.context;
   vm.$slots = resolveSlots(vm.$options._renderChildren, renderContext);
   vm.$scopedSlots = {};
-  // bind the public createElement fn to this instance
+  // bind the createElement fn to this instance
   // so that we get proper render context inside it.
-  vm.$createElement = bind$1(createElement, vm);
+  // args order: tag, data, children, needNormalization, alwaysNormalize
+  // internal version is used by render functions compiled from templates
+  vm._c = function (a, b, c, d) { return createElement(vm, a, b, c, d, false); };
+  // normalization is always applied for the public version, used in
+  // user-written render functions.
+  vm.$createElement = function (a, b, c, d) { return createElement(vm, a, b, c, d, true); };
   if (vm.$options.el) {
     vm.$mount(vm.$options.el);
   }
@@ -3017,21 +3046,21 @@ function renderMixin (Vue) {
           vm
         );
       }
-      vnode = emptyVNode();
+      vnode = createEmptyVNode();
     }
     // set parent
     vnode.parent = _parentVnode;
     return vnode
   };
 
-  // shorthands used in render functions
-  Vue.prototype._h = createElement;
   // toString for mustaches
   Vue.prototype._s = _toString;
+  // convert text to vnode
+  Vue.prototype._v = createTextVNode;
   // number conversion
   Vue.prototype._n = toNumber;
   // empty vnode
-  Vue.prototype._e = emptyVNode;
+  Vue.prototype._e = createEmptyVNode;
   // loose equal
   Vue.prototype._q = looseEqual;
   // loose indexOf
@@ -3085,7 +3114,6 @@ function renderMixin (Vue) {
   }
 
   // filter resolution helper
-  var identity = function (_) { return _; };
   Vue.prototype._f = function resolveFilter (id) {
     return resolveAsset(this.$options, 'filters', id, true) || identity
   };
@@ -3189,14 +3217,13 @@ function renderMixin (Vue) {
 }
 
 function resolveSlots (
-  renderChildren,
+  children,
   context
 ) {
   var slots = {};
-  if (!renderChildren) {
+  if (!children) {
     return slots
   }
-  var children = normalizeChildren(renderChildren) || [];
   var defaultSlot = [];
   var name, child;
   for (var i = 0, l = children.length; i < l; i++) {
@@ -3451,7 +3478,8 @@ function initExtend (Vue) {
       if (!/^[a-zA-Z][\w-]*$/.test(name)) {
         warn(
           'Invalid component name: "' + name + '". Component names ' +
-          'can only contain alphanumeric characaters and the hyphen.'
+          'can only contain alphanumeric characters and the hyphen, ' +
+          'and must start with a letter.'
         );
       }
     }
@@ -3632,14 +3660,15 @@ Object.defineProperty(Vue$2.prototype, '$isServer', {
   get: isServerRendering
 });
 
-Vue$2.version = '2.1.4';
+Vue$2.version = '2.1.6';
 
 /*  */
 
 // attributes that should be using props for binding
+var acceptValue = makeMap('input,textarea,option,select');
 var mustUseProp = function (tag, attr) {
   return (
-    (attr === 'value' && (tag === 'input' || tag === 'textarea' || tag === 'option')) ||
+    (attr === 'value' && acceptValue(tag)) ||
     (attr === 'selected' && tag === 'option') ||
     (attr === 'checked' && tag === 'input') ||
     (attr === 'muted' && tag === 'video')
@@ -3768,7 +3797,7 @@ var isHTMLTag = makeMap(
 // this map is intentionally selective, only covering SVG elements that may
 // contain child elements.
 var isSVG = makeMap(
-  'svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font,' +
+  'svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,' +
   'font-face,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,' +
   'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view',
   true
@@ -3889,10 +3918,6 @@ function setTextContent (node, text) {
   node.textContent = text;
 }
 
-function childNodes (node) {
-  return node.childNodes
-}
-
 function setAttribute (node, key, val) {
   node.setAttribute(key, val);
 }
@@ -3910,7 +3935,6 @@ var nodeOps = Object.freeze({
 	nextSibling: nextSibling,
 	tagName: tagName,
 	setTextContent: setTextContent,
-	childNodes: childNodes,
 	setAttribute: setAttribute
 });
 
@@ -4138,7 +4162,11 @@ function createPatchFunction (backend) {
 
   function insert (parent, elm, ref) {
     if (parent) {
-      nodeOps.insertBefore(parent, elm, ref);
+      if (ref) {
+        nodeOps.insertBefore(parent, elm, ref);
+      } else {
+        nodeOps.appendChild(parent, elm);
+      }
     }
   }
 
@@ -4318,14 +4346,14 @@ function createPatchFunction (backend) {
               'Make sure each v-for item has a unique key.'
             );
           }
-          if (elmToMove.tag !== newStartVnode.tag) {
-            // same key but different element. treat as new element
-            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
-            newStartVnode = newCh[++newStartIdx];
-          } else {
+          if (sameVnode(elmToMove, newStartVnode)) {
             patchVnode(elmToMove, newStartVnode, insertedVnodeQueue);
             oldCh[idxInOld] = undefined;
             canMove && nodeOps.insertBefore(parentElm, newStartVnode.elm, oldStartVnode.elm);
+            newStartVnode = newCh[++newStartIdx];
+          } else {
+            // same key but different element. treat as new element
+            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
             newStartVnode = newCh[++newStartIdx];
           }
         }
@@ -4400,6 +4428,11 @@ function createPatchFunction (backend) {
   }
 
   var bailed = false;
+  // list of modules that can skip create hook during hydration because they
+  // are already rendered on the client or has no need for initialization
+  var isRenderedModule = makeMap('attrs,style,class,staticClass,staticStyle,key');
+
+  // Note: this is a browser-only function so we can assume elms are DOM nodes.
   function hydrate (elm, vnode, insertedVnodeQueue) {
     if (false) {
       if (!assertNodeMatch(elm, vnode)) {
@@ -4420,34 +4453,38 @@ function createPatchFunction (backend) {
     }
     if (isDef(tag)) {
       if (isDef(children)) {
-        var childNodes = nodeOps.childNodes(elm);
         // empty element, allow client to pick up and populate children
-        if (!childNodes.length) {
+        if (!elm.hasChildNodes()) {
           createChildren(vnode, children, insertedVnodeQueue);
         } else {
           var childrenMatch = true;
-          if (childNodes.length !== children.length) {
-            childrenMatch = false;
-          } else {
-            for (var i$1 = 0; i$1 < children.length; i$1++) {
-              if (!hydrate(childNodes[i$1], children[i$1], insertedVnodeQueue)) {
-                childrenMatch = false;
-                break
-              }
+          var childNode = elm.firstChild;
+          for (var i$1 = 0; i$1 < children.length; i$1++) {
+            if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue)) {
+              childrenMatch = false;
+              break
             }
+            childNode = childNode.nextSibling;
           }
-          if (!childrenMatch) {
+          // if childNode is not null, it means the actual childNodes list is
+          // longer than the virtual children list.
+          if (!childrenMatch || childNode) {
             if (false) {
               bailed = true;
               console.warn('Parent: ', elm);
-              console.warn('Mismatching childNodes vs. VNodes: ', childNodes, children);
+              console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
             }
             return false
           }
         }
       }
       if (isDef(data)) {
-        invokeCreateHooks(vnode, insertedVnodeQueue);
+        for (var key in data) {
+          if (!isRenderedModule(key)) {
+            invokeCreateHooks(vnode, insertedVnodeQueue);
+            break
+          }
+        }
       }
     }
     return true
@@ -4457,7 +4494,7 @@ function createPatchFunction (backend) {
     if (vnode.tag) {
       return (
         vnode.tag.indexOf('vue-component') === 0 ||
-        vnode.tag.toLowerCase() === nodeOps.tagName(node).toLowerCase()
+        vnode.tag.toLowerCase() === (node.tagName && node.tagName.toLowerCase())
       )
     } else {
       return _toString(vnode.text) === node.data
@@ -4554,13 +4591,13 @@ var directives = {
   }
 };
 
-function updateDirectives (
-  oldVnode,
-  vnode
-) {
-  if (!oldVnode.data.directives && !vnode.data.directives) {
-    return
+function updateDirectives (oldVnode, vnode) {
+  if (oldVnode.data.directives || vnode.data.directives) {
+    _update(oldVnode, vnode);
   }
+}
+
+function _update (oldVnode, vnode) {
   var isCreate = oldVnode === emptyNode;
   var oldDirs = normalizeDirectives$1(oldVnode.data.directives, oldVnode.context);
   var newDirs = normalizeDirectives$1(vnode.data.directives, vnode.context);
@@ -4590,9 +4627,9 @@ function updateDirectives (
 
   if (dirsWithInsert.length) {
     var callInsert = function () {
-      dirsWithInsert.forEach(function (dir) {
-        callHook$1(dir, 'inserted', vnode, oldVnode);
-      });
+      for (var i = 0; i < dirsWithInsert.length; i++) {
+        callHook$1(dirsWithInsert[i], 'inserted', vnode, oldVnode);
+      }
     };
     if (isCreate) {
       mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'insert', callInsert, 'dir-insert');
@@ -4603,9 +4640,9 @@ function updateDirectives (
 
   if (dirsWithPostpatch.length) {
     mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'postpatch', function () {
-      dirsWithPostpatch.forEach(function (dir) {
-        callHook$1(dir, 'componentUpdated', vnode, oldVnode);
-      });
+      for (var i = 0; i < dirsWithPostpatch.length; i++) {
+        callHook$1(dirsWithPostpatch[i], 'componentUpdated', vnode, oldVnode);
+      }
     }, 'dir-postpatch');
   }
 
@@ -4678,6 +4715,11 @@ function updateAttrs (oldVnode, vnode) {
     if (old !== cur) {
       setAttr(elm, key, cur);
     }
+  }
+  // #4391: in IE9, setting type can reset value for input[type=radio]
+  /* istanbul ignore if */
+  if (isIE9 && attrs.value !== oldAttrs.value) {
+    setAttr(elm, 'value', attrs.value);
   }
   for (key in oldAttrs) {
     if (attrs[key] == null) {
@@ -4752,8 +4794,26 @@ var klass = {
   update: updateClass
 };
 
-// skip type checking this file because we need to attach private properties
-// to elements
+/*  */
+
+var target;
+
+function add$1 (event, handler, once, capture) {
+  if (once) {
+    var oldHandler = handler;
+    handler = function (ev) {
+      remove$2(event, handler, capture);
+      arguments.length === 1
+        ? oldHandler(ev)
+        : oldHandler.apply(null, arguments);
+    };
+  }
+  target.addEventListener(event, handler, capture);
+}
+
+function remove$2 (event, handler, capture) {
+  target.removeEventListener(event, handler, capture);
+}
 
 function updateDOMListeners (oldVnode, vnode) {
   if (!oldVnode.data.on && !vnode.data.on) {
@@ -4761,26 +4821,8 @@ function updateDOMListeners (oldVnode, vnode) {
   }
   var on = vnode.data.on || {};
   var oldOn = oldVnode.data.on || {};
-  var add = vnode.elm._v_add || (
-    vnode.elm._v_add = function (event, handler, once, capture) {
-      if (once) {
-        var oldHandler = handler;
-        handler = function (ev) {
-          remove(event, handler, capture);
-          arguments.length === 1
-            ? oldHandler(ev)
-            : oldHandler.apply(null, arguments);
-        };
-      }
-      vnode.elm.addEventListener(event, handler, capture);
-    }
-  );
-  var remove = vnode.elm._v_remove || (
-    vnode.elm._v_remove = function (event, handler, capture) {
-      vnode.elm.removeEventListener(event, handler, capture);
-    }
-  );
-  updateListeners(on, oldOn, add, remove, vnode.context);
+  target = vnode.elm;
+  updateListeners(on, oldOn, add$1, remove$2, vnode.context);
 }
 
 var events = {
@@ -4823,13 +4865,28 @@ function updateDOMProps (oldVnode, vnode) {
       elm._value = cur;
       // avoid resetting cursor position when value is the same
       var strCur = cur == null ? '' : String(cur);
-      if (elm.value !== strCur && !elm.composing) {
+      if (!elm.composing && (
+        (document.activeElement !== elm && elm.value !== strCur) ||
+        isValueChanged(vnode, strCur)
+      )) {
         elm.value = strCur;
       }
     } else {
       elm[key] = cur;
     }
   }
+}
+
+function isValueChanged (vnode, newVal) {
+  var value = vnode.elm.value;
+  var modifiers = vnode.elm._vModifiers; // injected by v-model runtime
+  if ((modifiers && modifiers.number) || vnode.elm.type === 'number') {
+    return toNumber(value) !== toNumber(newVal)
+  }
+  if (modifiers && modifiers.trim) {
+    return value.trim() !== newVal.trim()
+  }
+  return value !== newVal
 }
 
 var domProps = {
@@ -5176,7 +5233,7 @@ function toMs (s) {
 
 /*  */
 
-function enter (vnode) {
+function enter (vnode, toggleDisplay) {
   var el = vnode.elm;
 
   // call leave callback now
@@ -5285,6 +5342,7 @@ function enter (vnode) {
   }
 
   if (vnode.data.show) {
+    toggleDisplay && toggleDisplay();
     enterHook && enterHook(el, cb);
   }
 
@@ -5494,17 +5552,17 @@ var model = {
       if (isIE || isEdge) {
         setTimeout(cb, 0);
       }
-    } else if (
-      (vnode.tag === 'textarea' || el.type === 'text') &&
-      !binding.modifiers.lazy
-    ) {
-      if (!isAndroid) {
-        el.addEventListener('compositionstart', onCompositionStart);
-        el.addEventListener('compositionend', onCompositionEnd);
-      }
-      /* istanbul ignore if */
-      if (isIE9) {
-        el.vmodel = true;
+    } else if (vnode.tag === 'textarea' || el.type === 'text') {
+      el._vModifiers = binding.modifiers;
+      if (!binding.modifiers.lazy) {
+        if (!isAndroid) {
+          el.addEventListener('compositionstart', onCompositionStart);
+          el.addEventListener('compositionend', onCompositionEnd);
+        }
+        /* istanbul ignore if */
+        if (isIE9) {
+          el.vmodel = true;
+        }
       }
     }
   },
@@ -5603,12 +5661,16 @@ var show = {
 
     vnode = locateNode(vnode);
     var transition = vnode.data && vnode.data.transition;
+    var originalDisplay = el.__vOriginalDisplay =
+      el.style.display === 'none' ? '' : el.style.display;
     if (value && transition && !isIE9) {
-      enter(vnode);
+      vnode.data.show = true;
+      enter(vnode, function () {
+        el.style.display = originalDisplay;
+      });
+    } else {
+      el.style.display = value ? originalDisplay : 'none';
     }
-    var originalDisplay = el.style.display === 'none' ? '' : el.style.display;
-    el.style.display = value ? originalDisplay : 'none';
-    el.__vOriginalDisplay = originalDisplay;
   },
   update: function update (el, ref, vnode) {
     var value = ref.value;
@@ -5619,9 +5681,11 @@ var show = {
     vnode = locateNode(vnode);
     var transition = vnode.data && vnode.data.transition;
     if (transition && !isIE9) {
+      vnode.data.show = true;
       if (value) {
-        enter(vnode);
-        el.style.display = el.__vOriginalDisplay;
+        enter(vnode, function () {
+          el.style.display = el.__vOriginalDisplay;
+        });
       } else {
         leave(vnode, function () {
           el.style.display = 'none';
@@ -6854,6 +6918,8 @@ https://highlightjs.org/
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_highlight_js_lib_languages_xml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_highlight_js_lib_languages_xml__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_highlight_js_lib_languages_javascript__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_highlight_js_lib_languages_javascript___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_highlight_js_lib_languages_javascript__);
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_5__router_index__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__store_index__["a"]; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "c", function() { return app; });
 
 
@@ -6886,8 +6952,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
   store: __WEBPACK_IMPORTED_MODULE_4__store_index__["a" /* default */]
 }, __WEBPACK_IMPORTED_MODULE_1__App_vue___default.a))
 
-/* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_5__router_index__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__store_index__["a"]; });
 
 
 
@@ -6896,6 +6960,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -6944,6 +7009,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -6962,6 +7028,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -6991,6 +7058,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7059,6 +7127,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7091,6 +7160,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7172,6 +7242,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7256,6 +7327,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_highlight_js_lib_highlight_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_highlight_js_lib_highlight_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_highlight_js_lib_highlight_js__);
 //
@@ -7284,6 +7356,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7318,6 +7391,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7348,6 +7422,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7449,6 +7524,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7550,6 +7626,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7650,6 +7727,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7782,6 +7860,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -7964,6 +8043,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -8227,6 +8307,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -8375,6 +8456,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -8473,6 +8555,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -8553,6 +8636,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -8745,6 +8829,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -8849,6 +8934,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -8905,6 +8991,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -9106,6 +9193,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -9206,6 +9294,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -9363,6 +9452,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -9540,6 +9630,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -9668,6 +9759,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -9785,6 +9877,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -9957,6 +10050,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10049,6 +10143,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10115,6 +10210,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10214,6 +10310,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10331,6 +10428,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10521,6 +10619,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10610,6 +10709,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10736,6 +10836,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10850,6 +10951,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -10937,6 +11039,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MOD
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -11272,16 +11375,18 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 
-/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 
-/******/ 	// define getter function for harmory exports
+/******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
 /******/ 	};
 
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -11706,7 +11811,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
   setTimeout(function () { return content.classList.add('toast__content--active'); }, 10)
 
   setTimeout(function () {
-      content.classList.add('toast__content--remove')
+    content.classList.add('toast__content--remove')
 
     setTimeout(function () {
       content.remove()
@@ -11764,6 +11869,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -11841,6 +11947,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -11893,6 +12000,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -11952,6 +12060,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -11990,6 +12099,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12052,6 +12162,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12103,6 +12214,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12154,6 +12266,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12207,6 +12320,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12243,6 +12357,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_eventable__ = __webpack_require__(1);
 //
 //
@@ -12312,6 +12427,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12340,6 +12456,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_toggleable__ = __webpack_require__(2);
 //
 //
@@ -12411,6 +12528,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12438,6 +12556,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12454,6 +12573,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12565,6 +12685,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12634,6 +12755,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12742,6 +12864,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12804,6 +12927,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12854,6 +12978,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_toggleable__ = __webpack_require__(2);
 //
 //
@@ -12929,6 +13054,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12960,6 +13086,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -12987,6 +13114,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -13014,6 +13142,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -13151,6 +13280,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_translatable__ = __webpack_require__(4);
 //
 //
@@ -13232,6 +13362,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_translatable__ = __webpack_require__(4);
 //
 //
@@ -13307,6 +13438,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -13368,6 +13500,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_toggleable__ = __webpack_require__(2);
 //
 //
@@ -13488,6 +13621,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_eventable__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_helpers__ = __webpack_require__(0);
 //
@@ -13600,6 +13734,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_helpers__ = __webpack_require__(0);
 //
 //
@@ -13667,6 +13802,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -13702,6 +13838,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
@@ -13819,6 +13956,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_eventable__ = __webpack_require__(1);
 //
 //
@@ -13890,6 +14028,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_eventable__ = __webpack_require__(1);
 //
 //
@@ -13965,6 +14104,7 @@ Toast.prototype.create = function create (message, location, duration, cb) {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_eventable__ = __webpack_require__(1);
 //
 //
@@ -14881,7 +15021,7 @@ EventEmitter.prototype.removeAllListeners = function(type) {
 
   // emit removeListener for all listeners on all events
   if (arguments.length === 0) {
-    for (key in this._events) {
+    for (key in this$1._events) {
       if (key === 'removeListener') { continue; }
       this$1.removeAllListeners(key);
     }
@@ -15968,17 +16108,17 @@ module.exports = __vue_exports__
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "input-group",
     class: _vm.classes
-  }, [_vm._h('label', {
+  }, [_vm._c('label', {
     attrs: {
       "for": _vm.id
     },
     domProps: {
       "innerHTML": _vm._s(_vm.label)
     }
-  }), _vm._h('input', {
+  }), _vm._c('input', {
     ref: "input",
     attrs: {
       "type": "text",
@@ -16008,11 +16148,11 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('transition', {
+  return _vm._c('transition', {
     attrs: {
       "name": _vm.transition
     }
-  }, [_vm._h('div', {
+  }, [_vm._c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -16024,7 +16164,7 @@ module.exports={render:function (){var _vm=this;
       'reverse': _vm.reverse
     },
     style: (_vm.styles)
-  }, [_vm._t("default")])])
+  }, [_vm._t("default")], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -16032,7 +16172,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('li', [(!_vm.router) ? _vm._h('a', {
+  return _vm._c('li', [(!_vm.router) ? _vm._c('a', {
     staticClass: "sidebar__item",
     attrs: {
       "href": _vm.item.href
@@ -16042,11 +16182,11 @@ module.exports={render:function (){var _vm=this;
         _vm.click()
       }
     }
-  }, [_vm._h('span', {
+  }, [_vm._c('span', {
     domProps: {
       "textContent": _vm._s(_vm.item.text)
     }
-  })]) : _vm._h('router-link', {
+  })]) : _vm._c('router-link', {
     staticClass: "sidebar__item",
     attrs: {
       "active-class": "sidebar__item--active",
@@ -16058,7 +16198,7 @@ module.exports={render:function (){var _vm=this;
         _vm.click()
       }
     }
-  }, [(_vm.item.icon) ? _vm._h('v-icon', [_vm._s(_vm.item.icon)]) : _vm._e(), _vm._h('span', {
+  }, [(_vm.item.icon) ? _vm._c('v-icon', [_vm._v(_vm._s(_vm.item.icon))]) : _vm._e(), _vm._c('span', {
     domProps: {
       "textContent": _vm._s(_vm.item.text)
     }
@@ -16070,7 +16210,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('ul', {
+  return _vm._c('ul', {
     staticClass: "dropdown",
     class: _vm.classes,
     attrs: {
@@ -16080,12 +16220,12 @@ module.exports={render:function (){var _vm=this;
       "id": _vm.id
     }
   }, [_vm._l((_vm.items), function(item) {
-    return _vm._h('v-dropdown-item', {
+    return _vm._c('v-dropdown-item', {
       attrs: {
         "item": item
       }
     })
-  }), _vm._t("default")])
+  }), _vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16093,13 +16233,13 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "with",
     class: _vm.classes,
     attrs: {
       "id": _vm.id
     }
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16107,11 +16247,11 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "card",
     class: _vm.classes,
     style: (_vm.styles)
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16119,9 +16259,9 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('footer', {
+  return _vm._c('footer', {
     staticClass: "footer"
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16129,7 +16269,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('li', [_vm._h('a', {
+  return _vm._c('li', [_vm._c('a', {
     staticClass: "navbar__item",
     attrs: {
       "href": _vm.item.href
@@ -16145,7 +16285,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('li', [_vm._h('a', {
+  return _vm._c('li', [_vm._c('a', {
     staticClass: "breadcrumbs__item",
     class: _vm.classes,
     attrs: {
@@ -16162,13 +16302,13 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('button', {
+  return _vm._c('button', {
     staticClass: "btn",
     class: _vm.classes,
     attrs: {
       "type": _vm.type
     }
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16176,22 +16316,24 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "input-group",
     class: _vm.classes
-  }, [_vm._h('label', {
+  }, [_vm._c('label', {
     attrs: {
       "for": _vm.id
     },
     domProps: {
       "textContent": _vm._s(_vm.label)
     }
-  }), _vm._h('select', {
+  }), _vm._c('select', {
     ref: "select",
     attrs: {
       "id": _vm.id,
       "name": _vm.name,
-      "multiple": _vm.multiple,
+      "multiple": _vm.multiple
+    },
+    domProps: {
       "value": _vm.value
     },
     on: {
@@ -16203,7 +16345,7 @@ module.exports={render:function (){var _vm=this;
       },
       "input": _vm.update
     }
-  }, [_vm._h('option', {
+  }, [_vm._c('option', {
     attrs: {
       "value": "",
       "disabled": "disabled",
@@ -16213,7 +16355,7 @@ module.exports={render:function (){var _vm=this;
       "textContent": _vm._s(_vm.defaultText)
     }
   }), _vm._l((_vm.options), function(o) {
-    return _vm._h('option', {
+    return _vm._c('option', {
       ref: "options",
       refInFor: true,
       domProps: {
@@ -16221,7 +16363,7 @@ module.exports={render:function (){var _vm=this;
         "textContent": _vm._s(o.text)
       }
     })
-  })])])
+  })], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -16229,11 +16371,11 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('transition', {
+  return _vm._c('transition', {
     attrs: {
       "name": _vm.transition
     }
-  }, [_vm._h('div', {
+  }, [_vm._c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -16244,7 +16386,7 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "id": _vm.id
     }
-  }, [_vm._t("default")])])
+  }, [_vm._t("default")], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -16252,11 +16394,11 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "slider"
-  }, [_vm._h('div', {
+  }, [_vm._c('div', {
     staticClass: "slider__left"
-  }, [_vm._h('v-btn', {
+  }, [_vm._c('v-btn', {
     attrs: {
       "icon": "icon"
     },
@@ -16265,9 +16407,9 @@ module.exports={render:function (){var _vm=this;
         _vm.prev($event)
       }
     }
-  }, [_vm._h('v-icon', ["chevron_left"])])]), _vm._h('div', {
+  }, [_vm._c('v-icon', [_vm._v("chevron_left")])])]), _vm._c('div', {
     staticClass: "slider__right"
-  }, [_vm._h('v-btn', {
+  }, [_vm._c('v-btn', {
     attrs: {
       "icon": "icon"
     },
@@ -16276,10 +16418,10 @@ module.exports={render:function (){var _vm=this;
         _vm.next($event)
       }
     }
-  }, [_vm._h('v-icon', ["chevron_right"])])]), _vm._h('div', {
+  }, [_vm._c('v-icon', [_vm._v("chevron_right")])])]), _vm._c('div', {
     staticClass: "slider__controls"
-  }, [_vm._l((_vm.items), function(item, index) {
-    return _vm._h('v-btn', {
+  }, _vm._l((_vm.items), function(item, index) {
+    return _vm._c('v-btn', {
       staticClass: "slider__controls__item",
       class: {
         'slider__controls__item--active': index === _vm.current
@@ -16287,14 +16429,14 @@ module.exports={render:function (){var _vm=this;
       attrs: {
         "icon": "icon"
       }
-    }, [_vm._h('v-icon', {
+    }, [_vm._c('v-icon', {
       nativeOn: {
         "click": function($event) {
           _vm.select(index)
         }
       }
-    }, [_vm._s(_vm.icon)])])
-  })]), _vm._t("default")])
+    }, [_vm._v(_vm._s(_vm.icon))])])
+  })), _vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16302,9 +16444,9 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "input-group"
-  }, [_vm._h('input', {
+  }, [_vm._c('input', {
     ref: "input",
     class: _vm.classes,
     attrs: {
@@ -16316,7 +16458,7 @@ module.exports={render:function (){var _vm=this;
     domProps: {
       "value": _vm.value
     }
-  }), _vm._h('label', {
+  }), _vm._c('label', {
     attrs: {
       "for": _vm.id
     },
@@ -16331,10 +16473,10 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('i', {
+  return _vm._c('i', {
     staticClass: "material-icons icon",
     class: _vm.classes
-  }, [_vm._h('span', [_vm._t("default")])])
+  }, [_vm._c('span', [_vm._t("default")], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -16342,16 +16484,16 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "modal-overlay",
     class: {
       'modal-overlay--open': this.active
     }
-  }, [_vm._h('transition', {
+  }, [_vm._c('transition', {
     attrs: {
       "name": "modal"
     }
-  }, [_vm._h('div', {
+  }, [_vm._c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -16364,7 +16506,7 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "id": _vm.id
     }
-  }, [_vm._t("default")])])])
+  }, [_vm._t("default")], true)])])
 },staticRenderFns: []}
 
 /***/ },
@@ -16372,10 +16514,10 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "parallax__content",
     style: (_vm.styles)
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16383,18 +16525,18 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('aside', {
+  return _vm._c('aside', {
     staticClass: "sidebar",
     class: _vm.classes,
     style: (_vm.styles),
     attrs: {
       "id": _vm.id
     }
-  }, [_vm._t("top"), (_vm.items.length > 0) ? _vm._h('v-sidebar-items', {
+  }, [_vm._t("top"), (_vm.items.length > 0) ? _vm._c('v-sidebar-items', {
     attrs: {
       "items": _vm.items
     }
-  }) : _vm._e(), _vm._t("default")])
+  }) : _vm._e(), _vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16402,7 +16544,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('a', {
+  return _vm._c('a', {
     staticClass: "tabs__tab",
     class: _vm.classes,
     attrs: {
@@ -16414,7 +16556,7 @@ module.exports={render:function (){var _vm=this;
         _vm.click($event)
       }
     }
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16422,10 +16564,10 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('nav', {
+  return _vm._c('nav', {
     staticClass: "navbar",
     class: _vm.classes
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16433,12 +16575,12 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('transition', {
+  return _vm._c('transition', {
     on: {
       "enter": _vm.enter,
       "leave": _vm.leave
     }
-  }, [_vm._h('div', {
+  }, [_vm._c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -16449,7 +16591,7 @@ module.exports={render:function (){var _vm=this;
     attrs: {
       "uid": _vm._uid
     }
-  }, [_vm._t("default")])])
+  }, [_vm._t("default")], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -16457,7 +16599,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -16466,9 +16608,9 @@ module.exports={render:function (){var _vm=this;
     }],
     staticClass: "alert",
     class: _vm.classes
-  }, [_vm._h('v-icon', {
+  }, [_vm._c('v-icon', {
     staticClass: "alert__icon"
-  }, [_vm._s(_vm.icon)]), _vm._h('div', [_vm._t("default")]), (_vm.close) ? _vm._h('a', {
+  }, [_vm._v(_vm._s(_vm.icon))]), _vm._c('div', [_vm._t("default")], true), (_vm.close) ? _vm._c('a', {
     staticClass: "alert__close",
     attrs: {
       "href": "#!"
@@ -16479,11 +16621,11 @@ module.exports={render:function (){var _vm=this;
         _vm.$emit('input', false)
       }
     }
-  }, [_vm._h('v-icon', {
+  }, [_vm._c('v-icon', {
     attrs: {
       "right": "right"
     }
-  }, ["cancel"])]) : _vm._e()])
+  }, [_vm._v("cancel")])]) : _vm._e()])
 },staticRenderFns: []}
 
 /***/ },
@@ -16491,10 +16633,10 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('ul', {
+  return _vm._c('ul', {
     staticClass: "pagination",
     class: _vm.classes
-  }, [_vm._h('li', [_vm._h('a', {
+  }, [_vm._c('li', [_vm._c('a', {
     staticClass: "pagination__navigation",
     class: {
       'pagination__navigation--disabled': _vm.value === 1
@@ -16508,8 +16650,8 @@ module.exports={render:function (){var _vm=this;
         _vm.$emit('input', _vm.value - 1)
       }
     }
-  }, [_vm._h('v-icon', ["chevron_left"])])]), _vm._l((_vm.items), function(n) {
-    return _vm._h('li', [(!isNaN(n)) ? _vm._h('a', {
+  }, [_vm._c('v-icon', [_vm._v("chevron_left")])])]), _vm._l((_vm.items), function(n) {
+    return _vm._c('li', [(!isNaN(n)) ? _vm._c('a', {
       staticClass: "pagination__item",
       class: {
         'pagination__item--active': n === _vm.selected
@@ -16526,13 +16668,13 @@ module.exports={render:function (){var _vm=this;
           _vm.$emit('input', n)
         }
       }
-    }) : _vm._h('span', {
+    }) : _vm._c('span', {
       staticClass: "pagination__more",
       domProps: {
         "textContent": _vm._s(n)
       }
     })])
-  }), _vm._h('li', [_vm._h('a', {
+  }), _vm._c('li', [_vm._c('a', {
     staticClass: "pagination__navigation",
     class: {
       'pagination__navigation--disabled': _vm.value === _vm.length
@@ -16546,7 +16688,7 @@ module.exports={render:function (){var _vm=this;
         _vm.$emit('input', _vm.value + 1)
       }
     }
-  }, [_vm._h('v-icon', ["chevron_right"])])])])
+  }, [_vm._c('v-icon', [_vm._v("chevron_right")])])])], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16554,9 +16696,9 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('ul', {
+  return _vm._c('ul', {
     class: _vm.classes
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16564,15 +16706,15 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('ul', {
+  return _vm._c('ul', {
     staticClass: "navbar__items"
   }, [_vm._l((_vm.items), function(item) {
-    return _vm._h('v-navbar-item', {
+    return _vm._c('v-navbar-item', {
       attrs: {
         "item": item
       }
     })
-  }), _vm._t("default")])
+  }), _vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16580,20 +16722,20 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('ul', {
+  return _vm._c('ul', {
     staticClass: "breadcrumbs",
     class: _vm.classes,
     attrs: {
       "items": _vm.items
     }
   }, [_vm._l((_vm.items), function(item) {
-    return _vm._h('v-breadcrumbs-item', {
+    return _vm._c('v-breadcrumbs-item', {
       attrs: {
         "item": item,
         "disabled": item.disabled
       }
     })
-  }), _vm._t("default")])
+  }), _vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16601,13 +16743,13 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "progress",
     class: _vm.classes,
     style: ({
       height: this.height
     })
-  }, [_vm._h('div', {
+  }, [_vm._c('div', {
     staticClass: "progress__bar",
     style: (_vm.styles)
   })])
@@ -16618,7 +16760,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('li', [_vm._h('a', {
+  return _vm._c('li', [_vm._c('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": _vm.item.href
@@ -16634,7 +16776,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('span', {
+  return _vm._c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -16643,7 +16785,7 @@ module.exports={render:function (){var _vm=this;
     }],
     staticClass: "chip",
     class: _vm.classes
-  }, [_vm._t("default"), (_vm.close) ? _vm._h('a', {
+  }, [_vm._t("default"), (_vm.close) ? _vm._c('a', {
     staticClass: "chip__close",
     attrs: {
       "href": "#!"
@@ -16654,11 +16796,11 @@ module.exports={render:function (){var _vm=this;
         _vm.$emit('input', false)
       }
     }
-  }, [_vm._h('v-icon', {
+  }, [_vm._c('v-icon', {
     attrs: {
       "right": "right"
     }
-  }, ["cancel"])]) : _vm._e()])
+  }, [_vm._v("cancel")])]) : _vm._e()], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16666,9 +16808,9 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('li', {
+  return _vm._c('li', {
     staticClass: "sidebar__group"
-  }, [_vm._h('a', {
+  }, [_vm._c('a', {
     staticClass: "sidebar__item-header",
     class: {
       'sidebar__item-header--active': _vm.active
@@ -16682,16 +16824,16 @@ module.exports={render:function (){var _vm=this;
         _vm.toggle()
       }
     }
-  }, [(_vm.item.icon) ? _vm._h('v-icon', [_vm._s(_vm.item.icon)]) : _vm._e(), _vm._h('span', {
+  }, [(_vm.item.icon) ? _vm._c('v-icon', [_vm._v(_vm._s(_vm.item.icon))]) : _vm._e(), _vm._c('span', {
     domProps: {
       "textContent": _vm._s(_vm.item.text)
     }
-  })]), _vm._h('transition', {
+  })]), _vm._c('transition', {
     on: {
       "enter": _vm.enter,
       "leave": _vm.leave
     }
-  }, [_vm._h('v-sidebar-items', {
+  }, [_vm._c('v-sidebar-items', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -16699,7 +16841,7 @@ module.exports={render:function (){var _vm=this;
       expression: "active"
     }],
     ref: "group"
-  }, [_vm._t("default")])])])
+  }, [_vm._t("default")], true)])])
 },staticRenderFns: []}
 
 /***/ },
@@ -16707,21 +16849,21 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "parallax",
     style: ({
       minHeight: this.height + 'px'
     })
-  }, [_vm._h('div', {
+  }, [_vm._c('div', {
     staticClass: "parallax__image-container"
-  }, [_vm._h('img', {
+  }, [_vm._c('img', {
     ref: "img",
     staticClass: "parallax__image",
     style: (_vm.styles),
     attrs: {
       "src": _vm.src
     }
-  }), _vm._t("default")])])
+  }), _vm._t("default")], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -16729,9 +16871,9 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "input-group"
-  }, [_vm._h('input', {
+  }, [_vm._c('input', {
     ref: "input",
     class: _vm.classes,
     attrs: {
@@ -16743,7 +16885,7 @@ module.exports={render:function (){var _vm=this;
     domProps: {
       "value": _vm.value
     }
-  }), _vm._h('label', {
+  }), _vm._c('label', {
     attrs: {
       "for": _vm.id
     },
@@ -16758,27 +16900,27 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('ul', {
+  return _vm._c('ul', {
     staticClass: "sidebar__items"
   }, [_vm._l((_vm.items), function(item) {
-    return [(item.items) ? _vm._h('v-sidebar-group', {
+    return [(item.items) ? _vm._c('v-sidebar-group', {
       attrs: {
         "item": item.parent
       }
-    }, [_vm._l((item.items), function(j) {
-      return _vm._h('v-sidebar-item', {
+    }, _vm._l((item.items), function(j) {
+      return _vm._c('v-sidebar-item', {
         attrs: {
           "item": j,
           "router": item.router || true
         }
       })
-    })]) : _vm._h('v-sidebar-item', {
+    })) : _vm._c('v-sidebar-item', {
       attrs: {
         "item": item,
         "router": item.router || true
       }
     })]
-  }), _vm._t("default")])
+  }), _vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16786,11 +16928,11 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "card__row",
     class: _vm.classes,
     style: (_vm.styles)
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16798,12 +16940,12 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;
-  return _vm._h('div', {
+  return _vm._c('div', {
     staticClass: "collapsible__header",
     on: {
       "click": _vm.click
     }
-  }, [_vm._t("default")])
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -16811,6 +16953,7 @@ module.exports={render:function (){var _vm=this;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_bus__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_index__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_index__ = __webpack_require__(6);
@@ -18948,63 +19091,63 @@ module.exports = __vue_exports__
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Default"
     }
-  }, [_h('v-tabs', {
+  }, [_vm._c('v-tabs', {
     attrs: {
       "id": "tabs"
     }
-  }, [_h('v-card', {
+  }, [_vm._c('v-card', {
     staticClass: "secondary"
-  }, [_h('v-card-row', [_h('v-spacer'), _h('v-card-title', {
+  }, [_vm._c('v-card-row', [_vm._c('v-spacer'), _vm._c('v-card-title', {
     staticClass: "white--text"
-  }, ["Title"]), _h('v-spacer')])]), _h('v-tabs-tabs', [_h('v-tab', {
+  }, [_vm._v("Title")]), _vm._c('v-spacer')])]), _vm._c('v-tabs-tabs', [_vm._c('v-tab', {
     attrs: {
       "href": "tab1",
       "selected": "selected"
     }
-  }, ["Tab 1"]), _h('v-tab', {
+  }, [_vm._v("Tab 1")]), _vm._c('v-tab', {
     attrs: {
       "href": "tab2"
     }
-  }, ["Tab 2"]), _h('v-tab', {
+  }, [_vm._v("Tab 2")]), _vm._c('v-tab', {
     attrs: {
       "href": "tab3"
     }
-  }, ["Tab 3"]), _h('v-tab', {
+  }, [_vm._v("Tab 3")]), _vm._c('v-tab', {
     attrs: {
       "href": "tab4"
     }
-  }, ["Tab 4"])]), _h('v-tabs-items', {
+  }, [_vm._v("Tab 4")])]), _vm._c('v-tabs-items', {
     staticClass: "white"
-  }, [_h('v-tabs-item', {
+  }, [_vm._c('v-tabs-item', {
     attrs: {
       "id": "tab1"
     }
-  }, [_h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "])]), _h('v-tabs-item', {
+  }, [_vm._c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")]), _vm._c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")]), _vm._c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ")])]), _vm._c('v-tabs-item', {
     attrs: {
       "id": "tab2"
     }
-  }, [_h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('p', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])]), _h('v-tabs-item', {
+  }, [_vm._c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")]), _vm._c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")]), _vm._c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])]), _vm._c('v-tabs-item', {
     attrs: {
       "id": "tab3"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."]), _h('v-tabs-item', {
+  }, [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")]), _vm._c('v-tabs-item', {
     attrs: {
       "id": "tab4"
     }
-  }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])]), _h('markup', {
+  }, [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])])])]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     },
     slot: "markup"
-  }, ["<v-tabs id=\"tabs\">\n  <v-card class=\"secondary\">\n    <v-card-row>\n      <v-spacer></v-spacer>\n      <v-card-title>Title</v-card-title>\n      <v-spacer></v-spacer>\n    </v-card-row>\n  </v-card>\n  <v-tabs-tabs>\n    <v-tab href=\"tab1\" selected>\n      ...\n    </v-tab>\n  </v-tabs-tabs>\n  <v-tabs-items>\n    <v-tab-item id=\"tab1\">\n      ...\n    </v-tab-item>\n  </v-tabs-items>\n</v-tabs>"])])
+  }, [_vm._v("<v-tabs id=\"tabs\">\n  <v-card class=\"secondary\">\n    <v-card-row>\n      <v-spacer></v-spacer>\n      <v-card-title>Title</v-card-title>\n      <v-spacer></v-spacer>\n    </v-card-row>\n  </v-card>\n  <v-tabs-tabs>\n    <v-tab href=\"tab1\" selected>\n      ...\n    </v-tab>\n  </v-tabs-tabs>\n  <v-tabs-items>\n    <v-tab-item id=\"tab1\">\n      ...\n    </v-tab-item>\n  </v-tabs-items>\n</v-tabs>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19012,11 +19155,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', [_h('v-btn', {
+  }, [_vm._c('component-example', [_vm._c('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:top",
@@ -19027,7 +19170,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       arg: "top"
     }],
     staticClass: "primary white--text"
-  }, ["Top"]), _h('v-btn', {
+  }, [_vm._v("Top")]), _vm._c('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:right",
@@ -19038,7 +19181,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       arg: "right"
     }],
     staticClass: "primary white--text"
-  }, ["Right"]), _h('v-btn', {
+  }, [_vm._v("Right")]), _vm._c('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:bottom",
@@ -19049,7 +19192,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       arg: "bottom"
     }],
     staticClass: "primary white--text"
-  }, ["Bottom"]), _h('v-btn', {
+  }, [_vm._v("Bottom")]), _vm._c('v-btn', {
     directives: [{
       name: "tooltip",
       rawName: "v-tooltip:left",
@@ -19060,12 +19203,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       arg: "left"
     }],
     staticClass: "primary white--text"
-  }, ["Left"])]), _h('markup', {
+  }, [_vm._v("Left")])]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     },
     slot: "markup"
-  }, ["<v-btn primary v-tooltip:top=\"{ html: 'Top Tooltip' }\">...</v-btn>\n \n<v-btn primary v-tooltip:right=\"{ html: 'Right Tooltip' }\">...</v-btn>\n \n<v-btn primary v-tooltip:bottom=\"{ html: 'Bottom Tooltip' }\">...</v-btn>\n \n<v-btn primary v-tooltip:left=\"{ html: 'Left Tooltip' }\">...</v-btn>"])])
+  }, [_vm._v("<v-btn primary v-tooltip:top=\"{ html: 'Top Tooltip' }\">...</v-btn>\n \n<v-btn primary v-tooltip:right=\"{ html: 'Right Tooltip' }\">...</v-btn>\n \n<v-btn primary v-tooltip:bottom=\"{ html: 'Bottom Tooltip' }\">...</v-btn>\n \n<v-btn primary v-tooltip:left=\"{ html: 'Left Tooltip' }\">...</v-btn>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19073,53 +19216,53 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "navbar"
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Variants"
     }
-  }, [_h('v-navbar', {
+  }, [_vm._c('v-navbar', {
     staticClass: "green"
-  }, [_h('v-navbar-logo', {
+  }, [_vm._c('v-navbar-logo', {
     staticClass: "hidden-sm-and-down"
-  }, ["Navbar"]), _h('v-navbar-items', {
+  }, [_vm._v("Navbar")]), _vm._c('v-navbar-items', {
     attrs: {
       "items": _vm.items
     }
-  })]), _h('v-navbar', {
+  })]), _vm._c('v-navbar', {
     staticClass: "orange"
-  }, [_h('v-navbar-side-icon', {
+  }, [_vm._c('v-navbar-side-icon', {
     staticClass: "hidden-sm-and-up"
-  }), _h('v-spacer', {
+  }), _vm._c('v-spacer', {
     staticClass: "hidden-sm-and-down"
-  }), _h('v-navbar-logo', ["Navbar"]), _h('v-navbar-items', {
+  }), _vm._c('v-navbar-logo', [_vm._v("Navbar")]), _vm._c('v-navbar-items', {
     staticClass: "hidden-sm-and-down",
     attrs: {
       "items": _vm.items
     }
-  })]), _h('v-navbar', {
+  })]), _vm._c('v-navbar', {
     staticClass: "red"
-  }, [_h('v-navbar-items', {
+  }, [_vm._c('v-navbar-items', {
     attrs: {
       "items": _vm.items
     }
-  }), _h('v-navbar-logo', {
+  }), _vm._c('v-navbar-logo', {
     staticClass: "hidden-sm-and-down"
-  }, [_h('v-spacer'), "Navbar"])])]), _h('div', {
+  }, [_vm._c('v-spacer'), _vm._v("Navbar")])])]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-navbar class=\"green\">\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"yellow\">\n  <v-navbar-side-icon(class=\"hidden-sm-and-up\")></v-navbar-side-icon>\n  <v-spacer class=\"hidden-sm-and-down\"></v-spacer>\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"red\">\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n  <v-navbar-logo>\n    <v-spacer></v-spacer>\n    Navbar\n  </v-navbar>\n</v-navbar>"]), _h('markup', {
+  }, [_vm._v("<v-navbar class=\"green\">\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"yellow\">\n  <v-navbar-side-icon(class=\"hidden-sm-and-up\")></v-navbar-side-icon>\n  <v-spacer class=\"hidden-sm-and-down\"></v-spacer>\n  <v-navbar-logo>Navbar</v-navbar>\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n</v-navbar>\n \n<v-navbar class=\"red\">\n  <v-navbar-items v-bind:items=\"items\"></v-navbar-items>\n  <v-navbar-logo>\n    <v-spacer></v-spacer>\n    Navbar\n  </v-navbar>\n</v-navbar>")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["data () {\n  return {\n    items: [\n      { text: 'Link', href: '#!' }\n    ]\n  }\n}"])])])
+  }, [_vm._v("data () {\n  return {\n    items: [\n      { text: 'Link', href: '#!' }\n    ]\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19127,19 +19270,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('table', {
+  return _vm._c('table', {
     staticClass: "table--component"
-  }, [_vm._m(0), _h('tbody', [_vm._l((_vm.params), function(option) {
-    return _h('tr', [_vm._l((option), function(td) {
-      return _h('td', {
+  }, [_vm._m(0), _vm._c('tbody', _vm._l((_vm.params), function(option) {
+    return _vm._c('tr', _vm._l((option), function(td) {
+      return _vm._c('td', {
         domProps: {
           "innerHTML": _vm._s(td)
         }
       })
-    })])
-  })])])
+    }))
+  }))])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('thead', [_h('tr', [_h('th', ["Option"]), _h('th', ["Effect"]), _h('th', ["Remarks"])])])
+  return _vm._c('thead', [_vm._c('tr', [_vm._c('th', [_vm._v("Option")]), _vm._c('th', [_vm._v("Effect")]), _vm._c('th', [_vm._v("Remarks")])])])
 }]}
 
 /***/ },
@@ -19147,17 +19290,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('v-parallax', {
+  }, [_vm._c('v-parallax', {
     attrs: {
       "src": "https://s-media-cache-ak0.pinimg.com/originals/e1/00/ef/e100ef3699fa021506561d41e392a148.jpg"
     }
-  }), _h('markup', {
+  }), _vm._c('markup', {
     slot: "markup"
-  }, ["<v-parallax src=\"...\"></v-parallax>"])])
+  }, [_vm._v("<v-parallax src=\"...\"></v-parallax>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19165,15 +19308,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Short"
     }
-  }, [_h('v-pagination', {
+  }, [_vm._c('v-pagination', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -19191,11 +19334,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.page = $event
       }
     }
-  })]), _h('component-example', {
+  })]), _vm._c('component-example', {
     attrs: {
       "header": "Long"
     }
-  }, [_h('v-pagination', {
+  }, [_vm._c('v-pagination', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -19213,11 +19356,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.page2 = $event
       }
     }
-  })]), _h('component-example', {
+  })]), _vm._c('component-example', {
     attrs: {
       "header": "Round"
     }
-  }, [_h('v-pagination', {
+  }, [_vm._c('v-pagination', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -19236,9 +19379,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.page3 = $event
       }
     }
-  })]), _h('div', {
+  })]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', ["<v-pagination v-bind:length=\"length\" v-model=\"page\"></v-pagination>"]), _h('markup', ["data () {\n  return {\n    length: 5,\n    page: 1\n  }\n}"])])])
+  }, [_vm._c('markup', [_vm._v("<v-pagination v-bind:length=\"length\" v-model=\"page\"></v-pagination>")]), _vm._c('markup', [_vm._v("data () {\n  return {\n    length: 5,\n    page: 1\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19246,18 +19389,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', [_h('div', [_h('v-footer', [_h('div', {
+  }, [_vm._c('component-example', [_vm._c('div', [_vm._c('v-footer', [_vm._c('div', {
     staticClass: "text-xs-right"
-  }, ["© 2016"])])])]), _h('markup', {
+  }, [_vm._v("© 2016")])])])]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     },
     slot: "markup"
-  }, ["<v-footer>\n  <div class=\"text-xs-right\">...</div>\n</v-footer>"])])
+  }, [_vm._v("<v-footer>\n  <div class=\"text-xs-right\">...</div>\n</v-footer>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19265,48 +19408,48 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "whats-next"
-  }, [_h('h2', {
+  }, [_vm._c('h2', {
     staticClass: "section-header primary--after"
-  }, ["What's Next", _h('v-icon', {
+  }, [_vm._v("What's Next"), _vm._c('v-icon', {
     staticClass: "primary--text",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["help_outline"])]), _h('v-alert', {
+  }, [_vm._v("help_outline")])]), _vm._c('v-alert', {
     attrs: {
       "info": "info"
     }
-  }, [_h('v-container', {
+  }, [_vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('v-row', [_h('v-col', {
+  }, [_vm._c('v-row', [_vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm12": "sm12",
       "md8": "md8"
     }
-  }, [_vm._t("default")]), _h('v-col', {
+  }, [_vm._t("default")], true), _vm._c('v-col', {
     staticClass: "text-sm-right text-xs-center",
     attrs: {
       "xs12": "xs12",
       "sm12": "sm12",
       "md4": "md4"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "blue darken-3 white--text",
     nativeOn: {
       "click": function($event) {
         _vm.$router.push(_vm.route)
       }
     }
-  }, [_vm._s(_vm.text), _h('v-icon', {
+  }, [_vm._v(_vm._s(_vm.text)), _vm._c('v-icon', {
     attrs: {
       "right": "right"
     }
-  }, ["chevron_right"])])])])])])])
+  }, [_vm._v("chevron_right")])])])])])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19314,9 +19457,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('header', [_h('v-navbar', [_h('div', {
+  return _vm._c('header', [_vm._c('v-navbar', [_vm._c('div', {
     staticClass: "navbar__side-icon hidden-sm-and-up"
-  }, [_h('a', {
+  }, [_vm._c('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:mainsidebar",
@@ -19325,26 +19468,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "href": "#!"
     }
-  }, [_h('v-icon', ["reorder"])])]), _h('div', {
+  }, [_vm._c('v-icon', [_vm._v("reorder")])])]), _vm._c('div', {
     staticClass: "navbar__side-title"
-  }, [_h('h1', {
+  }, [_vm._c('h1', {
     staticClass: "text-xs-center text-md-left",
     domProps: {
       "textContent": _vm._s(_vm.title)
     }
-  }), _h('span', {
+  }), _vm._c('span', {
     staticClass: "hidden-md-and-down",
     domProps: {
       "innerHTML": _vm._s(_vm.subTitle)
     }
-  })]), _h('div', {
+  })]), _vm._c('div', {
     staticClass: "navbar__links"
-  }, [_h('a', {
+  }, [_vm._c('a', {
     attrs: {
       "href": "https://github.com/vuetifyjs/vuetify",
       "target": "_blank"
     }
-  }, [_h('img', {
+  }, [_vm._c('img', {
     attrs: {
       "src": __webpack_require__(50)
     }
@@ -19356,9 +19499,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('dl', {
+  return _vm._c('dl', {
     staticClass: "section-text"
-  }, [_vm._t("title"), _vm._t("desc")])
+  }, [_vm._t("title"), _vm._t("desc")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -19366,132 +19509,132 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "On Click"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown",
       arg: "dropdown"
     }],
     staticClass: "primary white--text"
-  }, ["Click Dropdown"]), _h('v-dropdown', {
+  }, [_vm._v("Click Dropdown")]), _vm._c('v-dropdown', {
     attrs: {
       "id": "dropdown",
       "items": _vm.items
     }
-  }), _h('v-btn', {
+  }), _vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown3",
       arg: "dropdown3"
     }],
     staticClass: "secondary white--text"
-  }, ["Click With Labels"]), _h('v-dropdown', {
+  }, [_vm._v("Click With Labels")]), _vm._c('v-dropdown', {
     attrs: {
       "id": "dropdown3"
     }
-  }, [_h('li', [_h('a', {
+  }, [_vm._c('li', [_vm._c('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Profile", _h('v-chip', {
+  }, [_vm._v("Profile"), _vm._c('v-chip', {
     staticClass: "teal white--text right",
     attrs: {
       "label": "label",
       "small": "small"
     }
-  }, ["new"])])]), _h('li', [_h('a', {
+  }, [_vm._v("new")])])]), _vm._c('li', [_vm._c('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, [_h('span', {
+  }, [_vm._c('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:2",
       arg: "2"
     }]
-  }, ["Notifications"])])]), _h('li', [_h('a', {
+  }, [_vm._v("Notifications")])])]), _vm._c('li', [_vm._c('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Logout", _h('v-icon', {
+  }, [_vm._v("Logout"), _vm._c('v-icon', {
     staticClass: "secondary--text right"
-  }, ["cloud_off"])])])])]), _h('component-example', {
+  }, [_vm._v("cloud_off")])])])])]), _vm._c('component-example', {
     attrs: {
       "header": "On Hover"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown2",
       arg: "dropdown2"
     }],
     staticClass: "primary white--text"
-  }, ["Hover Dropdown"]), _h('v-dropdown', {
+  }, [_vm._v("Hover Dropdown")]), _vm._c('v-dropdown', {
     attrs: {
       "id": "dropdown2",
       "items": _vm.items,
       "right": "right",
       "hover": "hover"
     }
-  }), _h('v-btn', {
+  }), _vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown4",
       arg: "dropdown4"
     }],
     staticClass: "secondary white--text"
-  }, ["Hover With Labels"]), _h('v-dropdown', {
+  }, [_vm._v("Hover With Labels")]), _vm._c('v-dropdown', {
     attrs: {
       "id": "dropdown4",
       "hover": "hover"
     }
-  }, [_h('li', [_h('a', {
+  }, [_vm._c('li', [_vm._c('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Profile", _h('v-chip', {
+  }, [_vm._v("Profile"), _vm._c('v-chip', {
     staticClass: "teal white--text right",
     attrs: {
       "label": "label",
       "small": "small"
     }
-  }, ["new"])])]), _h('li', [_h('a', {
+  }, [_vm._v("new")])])]), _vm._c('li', [_vm._c('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, [_h('span', {
+  }, [_vm._c('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:2",
       arg: "2"
     }]
-  }, ["Notifications"])])]), _h('li', [_h('a', {
+  }, [_vm._v("Notifications")])])]), _vm._c('li', [_vm._c('a', {
     staticClass: "dropdown__item",
     attrs: {
       "href": "#!"
     }
-  }, ["Logout", _h('v-icon', {
+  }, [_vm._v("Logout"), _vm._c('v-icon', {
     staticClass: "secondary--text right"
-  }, ["cloud_off"])])])])]), _h('component-example', {
+  }, [_vm._v("cloud_off")])])])])]), _vm._c('component-example', {
     attrs: {
       "header": "Menus"
     }
-  }, [_h('v-card', [_h('v-card-row', {
+  }, [_vm._c('v-card', [_vm._c('v-card-row', {
     staticClass: "blue white--text"
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:menu",
@@ -19500,16 +19643,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     staticClass: "white--text"
-  }, ["more_vert"])]), _h('v-dropdown', {
+  }, [_vm._v("more_vert")])]), _vm._c('v-dropdown', {
     attrs: {
       "id": "menu",
       "items": _vm.items
     }
-  }), _h('v-card-title', ["Menu"])]), _h('v-card-text', ["Lorem Ipsum"])]), _h('v-card', [_h('v-card-row', {
+  }), _vm._c('v-card-title', [_vm._v("Menu")])]), _vm._c('v-card-text', [_vm._v("Lorem Ipsum")])]), _vm._c('v-card', [_vm._c('v-card-row', {
     staticClass: "blue white--text"
-  }, [_h('v-card-title', ["Menu"]), _h('v-spacer'), _h('v-btn', {
+  }, [_vm._c('v-card-title', [_vm._v("Menu")]), _vm._c('v-spacer'), _vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:menu2",
@@ -19518,25 +19661,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     staticClass: "white--text"
-  }, ["more_vert"])]), _h('v-dropdown', {
+  }, [_vm._v("more_vert")])]), _vm._c('v-dropdown', {
     attrs: {
       "id": "menu2",
       "items": _vm.items,
       "right": "right"
     }
-  })]), _h('v-card-text', ["Lorem Ipsum"])])]), _h('div', {
+  })]), _vm._c('v-card-text', [_vm._v("Lorem Ipsum")])])]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-btn v-dropdown:dropdown>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown\" v-bind:items=\"items\"></v-dropdown>\n \n<v-btn v-dropdown:dropdown2>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown2\" v-bind:items=\"items\" hover></v-dropdown>"]), _h('markup', {
+  }, [_vm._v("<v-btn v-dropdown:dropdown>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown\" v-bind:items=\"items\"></v-dropdown>\n \n<v-btn v-dropdown:dropdown2>\n  ...\n</v-btn>\n<v-dropdown id=\"dropdown2\" v-bind:items=\"items\" hover></v-dropdown>")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["data () {\n  return {\n    items: [{ text: 'Link', href: '#!' }]\n  }\n}"])])])
+  }, [_vm._v("data () {\n  return {\n    items: [{ text: 'Link', href: '#!' }]\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19544,15 +19687,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('h2', {
+  return _vm._c('h2', {
     staticClass: "section-header secondary--text primary--after",
     style: (_vm.styles)
-  }, [_vm._t("default"), _h('v-icon', {
+  }, [_vm._t("default"), _vm._c('v-icon', {
     staticClass: "primary--text",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["short_text"])])
+  }, [_vm._v("short_text")])], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -19560,198 +19703,198 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Default"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     attrs: {
       "small": "small"
     }
-  }, ["Small"]), _h('v-btn', ["Normal"]), _h('v-btn', {
+  }, [_vm._v("Small")]), _vm._c('v-btn', [_vm._v("Normal")]), _vm._c('v-btn', {
     attrs: {
       "large": "large"
     }
-  }, ["Large"]), _h('v-btn', {
+  }, [_vm._v("Large")]), _vm._c('v-btn', {
     attrs: {
       "flat": "flat"
     }
-  }, ["Flat"]), _h('v-btn', {
+  }, [_vm._v("Flat")]), _vm._c('v-btn', {
     attrs: {
       "flat": "flat",
       "disabled": "disabled"
     }
-  }, ["Flat Disabled"]), _h('v-btn', {
+  }, [_vm._v("Flat Disabled")]), _vm._c('v-btn', {
     attrs: {
       "disabled": "disabled"
     }
-  }, ["Disabled"])]), _h('component-example', {
+  }, [_vm._v("Disabled")])]), _vm._c('component-example', {
     attrs: {
       "header": "Colored"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "primary white--text"
-  }, ["Primary"]), _h('v-btn', {
+  }, [_vm._v("Primary")]), _vm._c('v-btn', {
     staticClass: "primary--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Flat Primary"]), _h('v-btn', {
+  }, [_vm._v("Flat Primary")]), _vm._c('v-btn', {
     staticClass: "secondary white--text"
-  }, ["Secondary"]), _h('v-btn', {
+  }, [_vm._v("Secondary")]), _vm._c('v-btn', {
     staticClass: "secondary--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Flat Secondary"])]), _h('component-example', {
+  }, [_vm._v("Flat Secondary")])]), _vm._c('component-example', {
     attrs: {
       "header": "Block"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "btn--block-example"
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     attrs: {
       "block": "block"
     }
-  }, ["Default"]), _h('v-btn', {
+  }, [_vm._v("Default")]), _vm._c('v-btn', {
     staticClass: "primary white--text",
     attrs: {
       "block": "block"
     }
-  }, ["Primary"]), _h('v-btn', {
+  }, [_vm._v("Primary")]), _vm._c('v-btn', {
     staticClass: "secondary white--text",
     attrs: {
       "block": "block"
     }
-  }, ["Secondary"]), _h('v-btn', {
+  }, [_vm._v("Secondary")]), _vm._c('v-btn', {
     attrs: {
       "block": "block",
       "disabled": "disabled"
     }
-  }, ["Disabled"])])]), _h('component-example', {
+  }, [_vm._v("Disabled")])])]), _vm._c('component-example', {
     attrs: {
       "header": "Rounded"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     attrs: {
       "round": "round",
       "small": "small"
     }
-  }, ["Small Default"]), _h('v-btn', {
+  }, [_vm._v("Small Default")]), _vm._c('v-btn', {
     staticClass: "primary white--text",
     attrs: {
       "round": "round"
     }
-  }, ["Primary"]), _h('v-btn', {
+  }, [_vm._v("Primary")]), _vm._c('v-btn', {
     staticClass: "secondary white--text",
     attrs: {
       "round": "round",
       "large": "large"
     }
-  }, ["Large Secondary"]), _h('v-btn', {
+  }, [_vm._v("Large Secondary")]), _vm._c('v-btn', {
     attrs: {
       "round": "round",
       "disabled": "disabled"
     }
-  }, ["Disabled"])]), _h('component-example', {
+  }, [_vm._v("Disabled")])]), _vm._c('component-example', {
     attrs: {
       "header": "Outline"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "green green--text",
     attrs: {
       "outline": "outline",
       "small": "small"
     }
-  }, ["Small Green"]), _h('v-btn', {
+  }, [_vm._v("Small Green")]), _vm._c('v-btn', {
     staticClass: "primary primary--text",
     attrs: {
       "outline": "outline"
     }
-  }, ["Primary"]), _h('v-btn', {
+  }, [_vm._v("Primary")]), _vm._c('v-btn', {
     staticClass: "secondary secondary--text",
     attrs: {
       "outline": "outline",
       "large": "large"
     }
-  }, ["Large Secondary"]), _h('v-btn', {
+  }, [_vm._v("Large Secondary")]), _vm._c('v-btn', {
     attrs: {
       "outline": "outline",
       "disabled": "disabled"
     }
-  }, ["Disabled"])]), _h('component-example', {
+  }, [_vm._v("Disabled")])]), _vm._c('component-example', {
     attrs: {
       "header": "Floating"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     attrs: {
       "small": "small",
       "floating": "floating"
     }
-  }, [_h('v-icon', ["event"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("event")])]), _vm._c('v-btn', {
     attrs: {
       "floating": "floating"
     }
-  }, [_h('v-icon', ["add"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("add")])]), _vm._c('v-btn', {
     attrs: {
       "floating": "floating",
       "large": "large"
     }
-  }, [_h('v-icon', ["edit"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("edit")])]), _vm._c('v-btn', {
     attrs: {
       "floating": "floating",
       "disabled": "disabled"
     }
-  }, [_h('v-icon', ["remove"])])]), _h('component-example', {
+  }, [_vm._c('v-icon', [_vm._v("remove")])])]), _vm._c('component-example', {
     attrs: {
       "header": "Colored Floating"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "purple white--text",
     attrs: {
       "floating": "floating",
       "small": "small"
     }
-  }, [_h('v-icon', ["cloud"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("cloud")])]), _vm._c('v-btn', {
     staticClass: "primary white--text",
     attrs: {
       "floating": "floating"
     }
-  }, [_h('v-icon', ["attachment"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("attachment")])]), _vm._c('v-btn', {
     staticClass: "secondary white--text",
     attrs: {
       "floating": "floating",
       "large": "large"
     }
-  }, [_h('v-icon', ["event"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("event")])]), _vm._c('v-btn', {
     attrs: {
       "floating": "floating",
       "large": "large",
       "disabled": "disabled"
     }
-  }, [_h('v-icon', ["room"])])]), _h('component-example', {
+  }, [_vm._c('v-icon', [_vm._v("room")])])]), _vm._c('component-example', {
     attrs: {
       "header": "Icon"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', ["hearing"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("hearing")])]), _vm._c('v-btn', {
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', ["computer"])]), _h('v-btn', {
+  }, [_vm._c('v-icon', [_vm._v("computer")])]), _vm._c('v-btn', {
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', ["headset"])])]), _h('markup', {
+  }, [_vm._c('v-icon', [_vm._v("headset")])])]), _vm._c('markup', {
     slot: "markup"
-  }, ["<v-btn>\n  ...\n</v-btn>\n \n<v-btn flat>\n  ...\n</v-btn>\n \n<v-btn primary>\n  ...\n</v-btn>\n \n<v-btn block>\n  ...\n</v-btn>\n \n<v-btn outline>\n  ...\n</v-btn>\n \n<v-btn floating>\n  ...\n</v-btn>\n \n<v-btn icon>\n  <v-icon>profile</v-icon>\n</v-btn>\n \n<v-btn floating icon large>\n  <v-icon>edit</v-icon>\n</v-btn>"])])
+  }, [_vm._v("<v-btn>\n  ...\n</v-btn>\n \n<v-btn flat>\n  ...\n</v-btn>\n \n<v-btn primary>\n  ...\n</v-btn>\n \n<v-btn block>\n  ...\n</v-btn>\n \n<v-btn outline>\n  ...\n</v-btn>\n \n<v-btn floating>\n  ...\n</v-btn>\n \n<v-btn icon>\n  <v-icon>profile</v-icon>\n</v-btn>\n \n<v-btn floating icon large>\n  <v-icon>edit</v-icon>\n</v-btn>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19759,127 +19902,127 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "view"
-  }, [_h('section', [_h('section-text', [_h('strong', {
+  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('strong', {
     slot: "title"
-  }, ["About"]), _h('div', {
+  }, [_vm._v("About")]), _vm._c('div', {
     slot: "desc"
-  }, [_h('p', ["Vuetify is a component framework for VueJS 2.0. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's ", _h('strong', ["Material Design"]), " design pattern, taking cues from other popular frameworks such as ", _h('a', {
+  }, [_vm._c('p', [_vm._v("Vuetify is a component framework for VueJS 2.0. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's "), _vm._c('strong', [_vm._v("Material Design")]), _vm._v(" design pattern, taking cues from other popular frameworks such as "), _vm._c('a', {
     attrs: {
       "href": "http://materializecss.com/",
       "target": "_blank"
     }
-  }, ["Materialize.css"]), ", ", _h('a', {
+  }, [_vm._v("Materialize.css")]), _vm._v(", "), _vm._c('a', {
     attrs: {
       "href": "https://getmdl.io/",
       "target": "_blank"
     }
-  }, ["Material Design Lite"]), ", ", _h('a', {
+  }, [_vm._v("Material Design Lite")]), _vm._v(", "), _vm._c('a', {
     attrs: {
       "href": "http://semantic-ui.com/",
       "target": "_blank"
     }
-  }, ["Semantic UI"]), " and ", _h('a', {
+  }, [_vm._v("Semantic UI")]), _vm._v(" and "), _vm._c('a', {
     attrs: {
       "href": "https://v4-alpha.getbootstrap.com/",
       "target": "_blank"
     }
-  }, ["Bootstrap 4"]), "."])])])]), _h('section', [_h('section-header', ["Features"]), _h('v-container', {
+  }, [_vm._v("Bootstrap 4")]), _vm._v(".")])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Features")]), _vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('v-row', [_h('v-col', {
+  }, [_vm._c('v-row', [_vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["widgets"]), _h('v-list-item-title', ["Vuetify Frontend Components", _h('v-list-item-sub-title', ["The Vuetify core is designed to provide a variety of reusable, plug and play components that fit any project spec."])])])])]), _h('v-col', {
+  }, [_vm._v("widgets")]), _vm._c('v-list-item-title', [_vm._v("Vuetify Frontend Components"), _vm._c('v-list-item-sub-title', [_vm._v("The Vuetify core is designed to provide a variety of reusable, plug and play components that fit any project spec.")])])])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["extension"]), _h('v-list-item-title', ["Vue Semantic Components", _h('v-list-item-sub-title', ["Utilizing the power of Vue's functional components, all class based markup that is used to aid main components, such as a ", _h('em', ["card title"]), ", are accessible using ", _h('code', ["v-card-title"]), ". This added benefit enables less cluttering of files for a miniscule performance cost."])])])])]), _h('v-col', {
+  }, [_vm._v("extension")]), _vm._c('v-list-item-title', [_vm._v("Vue Semantic Components"), _vm._c('v-list-item-sub-title', [_vm._v("Utilizing the power of Vue's functional components, all class based markup that is used to aid main components, such as a "), _vm._c('em', [_vm._v("card title")]), _vm._v(", are accessible using "), _vm._c('code', [_vm._v("v-card-title")]), _vm._v(". This added benefit enables less cluttering of files for a miniscule performance cost.")])])])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["view_quilt"]), _h('v-list-item-title', ["Prototyping Made Easy", _h('v-list-item-sub-title', ["Vuetify was built from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building your application. With the core philosophy of write less, do more, getting your project off the ground has never been easier."])])])])]), _h('v-col', {
+  }, [_vm._v("view_quilt")]), _vm._c('v-list-item-title', [_vm._v("Prototyping Made Easy"), _vm._c('v-list-item-sub-title', [_vm._v("Vuetify was built from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building your application. With the core philosophy of write less, do more, getting your project off the ground has never been easier.")])])])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["phone_android"]), _h('v-list-item-title', ["Made for Mobile", _h('v-list-item-sub-title', ["All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works."])])])])]), _h('v-col', {
+  }, [_vm._v("phone_android")]), _vm._c('v-list-item-title', [_vm._v("Made for Mobile"), _vm._c('v-list-item-sub-title', [_vm._v("All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works.")])])])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["add_to_queue"]), _h('v-list-item-title', ["Premade Vue CLI Templates", _h('v-list-item-sub-title', ["Vuetify comes with 3 Vue CLI templates, preconfigured, and ready to go. ", _h('router-link', {
+  }, [_vm._v("add_to_queue")]), _vm._c('v-list-item-title', [_vm._v("Premade Vue CLI Templates"), _vm._c('v-list-item-sub-title', [_vm._v("Vuetify comes with 3 Vue CLI templates, preconfigured, and ready to go. "), _vm._c('router-link', {
     attrs: {
       "to": "/quick-start#simple"
     }
-  }, ["Simple HTML"]), ", ", _h('router-link', {
+  }, [_vm._v("Simple HTML")]), _vm._v(", "), _vm._c('router-link', {
     attrs: {
       "to": "/quick-start#webpack"
     }
-  }, ["Webpack"]), ", and ", _h('router-link', {
+  }, [_vm._v("Webpack")]), _vm._v(", and "), _vm._c('router-link', {
     attrs: {
       "to": "/quick-start#webpack-ssr"
     }
-  }, ["Weback SSR"]), " ", _h('em', ["(Server Side Rendering)"]), "."])])])])]), _h('v-col', {
+  }, [_vm._v("Weback SSR")]), _vm._v(" "), _vm._c('em', [_vm._v("(Server Side Rendering)")]), _vm._v(".")])])])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-avatar', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     staticClass: "primary",
     attrs: {
       "x-large": "x-large"
     }
-  }, ["open_in_browser"]), _h('v-list-item-title', ["Built with Vue Server Side Rendering", _h('v-list-item-sub-title', ["Using an internal bus, Vuetify is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application."])])])])])])])]), _h('section', [_h('section-header', ["Ecosystem"]), _h('div', {
+  }, [_vm._v("open_in_browser")]), _vm._c('v-list-item-title', [_vm._v("Built with Vue Server Side Rendering"), _vm._c('v-list-item-sub-title', [_vm._v("Using an internal bus, Vuetify is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.")])])])])])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Ecosystem")]), _vm._c('div', {
     staticClass: "section-text"
-  }, ["Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components."]), _h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["color_lens"]), _h('v-list-item-title', ["Material Design Color Pack"])]), _h('v-list-item', [_h('v-list-item-icon', ["play_arrow"]), _h('v-list-item-title', ["Vue CLI Templates including SSR"])]), _h('v-list-item', [_h('v-list-item-icon', ["security"]), _h('v-list-item-title', [_h('span', ["Vuetify Admin Components ", _h('v-chip', {
+  }, [_vm._v("Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.")]), _vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("color_lens")]), _vm._c('v-list-item-title', [_vm._v("Material Design Color Pack")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("play_arrow")]), _vm._c('v-list-item-title', [_vm._v("Vue CLI Templates including SSR")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("security")]), _vm._c('v-list-item-title', [_vm._c('span', [_vm._v("Vuetify Admin Components "), _vm._c('v-chip', {
     staticClass: "green white--text",
     attrs: {
       "label": ""
     }
-  }, ["Coming Soon"])])])])])]), _h('section', [_h('whats-next', {
+  }, [_vm._v("Coming Soon")])])])])])]), _vm._c('section', [_vm._c('whats-next', {
     attrs: {
       "route": "/quick-start",
       "text": "Quick Start"
     }
-  }, ["Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the ", _h('strong', ["vuetify"]), " package."])])])
+  }, [_vm._v("Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the "), _vm._c('strong', [_vm._v("vuetify")]), _vm._v(" package.")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19887,29 +20030,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "modals"
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Variants"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     directives: [{
       name: "modal",
       rawName: "v-modal:modal",
       arg: "modal"
     }],
     staticClass: "primary white--text"
-  }, ["Regular"]), _h('v-modal', {
+  }, [_vm._v("Regular")]), _vm._c('v-modal', {
     attrs: {
       "id": "modal"
     }
-  }, [_h('v-card', [_h('v-card-text', [_h('p', {
+  }, [_vm._c('v-card', [_vm._c('v-card-text', [_vm._c('p', {
     staticClass: "text-xs-center"
-  }, ["What is your age?"]), _h('v-select', {
+  }, [_vm._v("What is your age?")]), _vm._c('v-select', {
     attrs: {
       "options": [{
         text: '10-19',
@@ -19920,59 +20063,59 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       }],
       "label": "What is your age?"
     }
-  }), _h('p', ["This information is used to improve your experience on our site."])]), _h('v-card-row', {
+  }), _vm._c('p', [_vm._v("This information is used to improve your experience on our site.")])]), _vm._c('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     nativeOn: {
       "click": function($event) {
         _vm.modal('modal')
       }
     }
-  }, ["Cancel"]), _h('v-spacer'), _h('v-btn', {
+  }, [_vm._v("Cancel")]), _vm._c('v-spacer'), _vm._c('v-btn', {
     staticClass: "green white--text",
     nativeOn: {
       "click": function($event) {
         _vm.modal('modal')
       }
     }
-  }, ["Submit"])])])]), _h('v-btn', {
+  }, [_vm._v("Submit")])])])]), _vm._c('v-btn', {
     directives: [{
       name: "modal",
       rawName: "v-modal:modal2",
       arg: "modal2"
     }],
     staticClass: "secondary white--text"
-  }, ["Bottom"]), _h('v-modal', {
+  }, [_vm._v("Bottom")]), _vm._c('v-modal', {
     attrs: {
       "id": "modal2",
       "bottom": "bottom"
     }
-  }, [_h('v-card', {
+  }, [_vm._c('v-card', {
     staticClass: "secondary white--text"
-  }, [_h('v-card-row', {
+  }, [_vm._c('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_h('div', ["This is an example of a bottom modal."]), _h('v-spacer'), _h('v-btn', {
+  }, [_vm._c('div', [_vm._v("This is an example of a bottom modal.")]), _vm._c('v-spacer'), _vm._c('v-btn', {
     staticClass: "primary white--text",
     nativeOn: {
       "click": function($event) {
         _vm.modal('modal2')
       }
     }
-  }, ["Close"])])])])]), _h('div', {
+  }, [_vm._v("Close")])])])])]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, ["<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal\">\n  <v-card>\n    <v-card-text>\n      ...\n    </v-card-text>\n    <v-card-actions>\n      <v-btn v-on:click.native=\"modal('modal')\">\n        Cancel\n      </v-btn>\n      <v-spacer>\n      <v-btn v-on:click.native=\"modal('modal')\" class=\"green white--text\">\n        Submit\n      </v-btn>\n    </v-card-actions>\n  </v-card>\n</v-modal>\n \n<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal2\">\n  <v-card>\n    <v-card-actions>\n      <div>This is an example of a bottom modal</div>\n      <v-spacer>\n      <v-btn v-on:click=\"modal('modal2')\" class=\"primary white--text\">\n        Close\n      </v-btn>\n    </v-card-actions>\n  </v-card>\n</v-modal>"]), _h('markup', {
+  }, [_vm._v("<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal\">\n  <v-card>\n    <v-card-text>\n      ...\n    </v-card-text>\n    <v-card-row actions>\n      <v-btn v-on:click.native=\"modal('modal')\">\n        Cancel\n      </v-btn>\n      <v-spacer>\n      <v-btn v-on:click.native=\"modal('modal')\" class=\"green white--text\">\n        Submit\n      </v-btn>\n    </v-card-row>\n  </v-card>\n</v-modal>\n \n<v-btn v-modal:modal class=\"primary white--text\">\n  ...\n</v-btn>\n<v-modal id=\"modal2\">\n  <v-card>\n    <v-card-row actions>\n      <div>This is an example of a bottom modal</div>\n      <v-spacer>\n      <v-btn v-on:click=\"modal('modal2')\" class=\"primary white--text\">\n        Close\n      </v-btn>\n    </v-card-row>\n  </v-card>\n</v-modal>")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["export default {\n  methods: {\n    modal (id) {\n      this.$vuetify.bus.pub(`modal:close${id}`)  \n    }\n  }\n}"])])])
+  }, [_vm._v("export default {\n  methods: {\n    modal (id) {\n      this.$vuetify.bus.pub(`modal:close:${id}`)  \n    }\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -19980,33 +20123,33 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Accordion"
     }
-  }, [_h('div', [_h('v-collapsible', [_vm._l((5), function(item) {
-    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
+  }, [_vm._c('div', [_vm._c('v-collapsible', _vm._l((5), function(item) {
+    return _vm._c('li', [_vm._c('v-collapsible-header', [_vm._v("Item")]), _vm._c('v-collapsible-body', [_vm._c('v-card', [_vm._c('v-card-text', {
       staticClass: "grey lighten-3"
-    }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
-  })])])]), _h('component-example', {
+    }, [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])])])])
+  }))])]), _vm._c('component-example', {
     attrs: {
       "header": "Expandable"
     }
-  }, [_h('div', [_h('v-collapsible', {
+  }, [_vm._c('div', [_vm._c('v-collapsible', {
     attrs: {
       "expand": "expand"
     }
-  }, [_vm._l((5), function(item) {
-    return _h('li', [_h('v-collapsible-header', ["Item"]), _h('v-collapsible-body', [_h('v-card', [_h('v-card-text', {
+  }, _vm._l((5), function(item) {
+    return _vm._c('li', [_vm._c('v-collapsible-header', [_vm._v("Item")]), _vm._c('v-collapsible-body', [_vm._c('v-card', [_vm._c('v-card-text', {
       staticClass: "grey lighten-3"
-    }, ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."])])])])
-  })])])]), _h('markup', {
+    }, [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])])])])
+  }))])]), _vm._c('markup', {
     slot: "markup"
-  }, ["<v-collapsible>\n  <v-collapsible-header>Item</v-collapsible-header>\n  <v-collapsible-body>\n    <v-card>\n      <v-card-text class=\"grey lighten-3\">...</v-card-text>\n    </v-card>\n  </v-collapsible-body>\n</v-collapsible>"])])
+  }, [_vm._v("<v-collapsible>\n  <v-collapsible-header>Item</v-collapsible-header>\n  <v-collapsible-body>\n    <v-card>\n      <v-card-text class=\"grey lighten-3\">...</v-card-text>\n    </v-card>\n  </v-collapsible-body>\n</v-collapsible>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20014,53 +20157,53 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "cards"
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Basic"
     }
-  }, [_h('div', [_h('v-card', [_h('v-card-text', [_h('div', {
+  }, [_vm._c('div', [_vm._c('v-card', [_vm._c('v-card-text', [_vm._c('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })])])]), _h('div', [_h('v-card', {
+  })])])]), _vm._c('div', [_vm._c('v-card', {
     staticClass: "blue darken-1 white--text"
-  }, [_h('v-card-text', [_h('div', {
+  }, [_vm._c('v-card-text', [_vm._c('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })])])])]), _h('component-example', {
+  })])])])]), _vm._c('component-example', {
     attrs: {
       "header": "Title"
     }
-  }, [_h('div', [_h('v-card', [_h('v-card-row', {
+  }, [_vm._c('div', [_vm._c('v-card', [_vm._c('v-card-row', {
     staticClass: "red darken-1"
-  }, [_h('v-card-title', {
+  }, [_vm._c('v-card-title', {
     staticClass: "white--text"
-  }, ["Delta SkyMiles"])]), _h('v-card-text', [_h('v-card-row', {
+  }, [_vm._v("Delta SkyMiles")])]), _vm._c('v-card-text', [_vm._c('v-card-row', {
     attrs: {
       "height": "75px"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     staticClass: "mr-5"
-  }, ["card_membership"]), _h('div', [_h('div', ["Frequent Flyer Number"]), _h('strong', ["113241423"])])])]), _h('v-card-row', {
+  }, [_vm._v("card_membership")]), _vm._c('div', [_vm._c('div', [_vm._v("Frequent Flyer Number")]), _vm._c('strong', [_vm._v("113241423")])])])]), _vm._c('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "red--text darken-1",
     attrs: {
       "flat": "flat"
     }
-  }, ["View Email"])])])]), _h('div', [_h('v-card', [_h('v-card-row', {
+  }, [_vm._v("View Email")])])])]), _vm._c('div', [_vm._c('v-card', [_vm._c('v-card-row', {
     staticClass: "green darken-1"
-  }, [_h('v-card-title', {
+  }, [_vm._c('v-card-title', {
     staticClass: "white--text"
-  }, [_h('span', ["Marriot Rewards"]), _h('v-spacer'), _h('div', [_h('v-btn', {
+  }, [_vm._c('span', [_vm._v("Marriot Rewards")]), _vm._c('v-spacer'), _vm._c('div', [_vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:marriot",
@@ -20070,72 +20213,72 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', ["more_vert"])]), _h('v-dropdown', {
+  }, [_vm._c('v-icon', [_vm._v("more_vert")])]), _vm._c('v-dropdown', {
     attrs: {
       "id": "marriot",
       "right": "right"
     }
-  }, [_h('v-dropdown-item', {
+  }, [_vm._c('v-dropdown-item', {
     attrs: {
       "item": {
         href: 'javascript:;',
         text: 'Never show rewards'
       }
     }
-  }), _h('v-dropdown-item', {
+  }), _vm._c('v-dropdown-item', {
     attrs: {
       "item": {
         href: 'javascript:;',
         text: 'Remove Card'
       }
     }
-  }), _h('v-dropdown-item', {
+  }), _vm._c('v-dropdown-item', {
     attrs: {
       "item": {
         href: 'javascript:;',
         text: 'Send Feedback'
       }
     }
-  })])])])]), _h('v-card-text', [_h('v-card-row', {
+  })])])])]), _vm._c('v-card-text', [_vm._c('v-card-row', {
     attrs: {
       "height": "75px"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     staticClass: "mr-5"
-  }, ["card_membership"]), _h('div', [_h('div', ["Membership Number"]), _h('strong', ["113241423"])])])]), _h('v-card-row', {
+  }, [_vm._v("card_membership")]), _vm._c('div', [_vm._c('div', [_vm._v("Membership Number")]), _vm._c('strong', [_vm._v("113241423")])])])]), _vm._c('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "green--text darken-1",
     attrs: {
       "flat": "flat"
     }
-  }, ["View Email"])])])])]), _h('component-example', {
+  }, [_vm._v("View Email")])])])])]), _vm._c('component-example', {
     attrs: {
       "header": "Picture"
     }
-  }, [_h('div', [_h('v-card', [_h('v-card-row', {
+  }, [_vm._c('div', [_vm._c('v-card', [_vm._c('v-card-row', {
     attrs: {
       "img": "http://www.titanui.com/wp-content/uploads/2013/04/03/Vector-Cartoon-Nature-Background-03.jpg",
       "height": "300px"
     }
-  }), _h('v-card-text', [_h('div', {
+  }), _vm._c('v-card-text', [_vm._c('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })]), _h('v-card-row', {
+  })]), _vm._c('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "primary--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["View Updates"])])])]), _h('div', [_h('v-card', [_h('v-card-row', {
+  }, [_vm._v("View Updates")])])])]), _vm._c('div', [_vm._c('v-card', [_vm._c('v-card-row', {
     staticClass: "blue-grey darken-1 white--text"
-  }, [_h('v-card-title', [_h('span', ["Visit Space"]), _h('v-spacer'), _h('v-btn', {
+  }, [_vm._c('v-card-title', [_vm._c('span', [_vm._v("Visit Space")]), _vm._c('v-spacer'), _vm._c('v-btn', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:space",
@@ -20145,143 +20288,143 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "icon": "icon"
     }
-  }, [_h('v-icon', ["more_vert"])]), _h('v-dropdown', {
+  }, [_vm._c('v-icon', [_vm._v("more_vert")])]), _vm._c('v-dropdown', {
     attrs: {
       "id": "space",
       "right": "right"
     }
-  }, [_h('v-dropdown-item', {
+  }, [_vm._c('v-dropdown-item', {
     attrs: {
       "item": {
         href: 'javascript:;',
         text: 'Remove Card'
       }
     }
-  }), _h('v-dropdown-item', {
+  }), _vm._c('v-dropdown-item', {
     attrs: {
       "item": {
         href: 'javascript:;',
         text: 'Send Feedback'
       }
     }
-  })])])]), _h('v-card-row', {
+  })])])]), _vm._c('v-card-row', {
     attrs: {
       "img": "https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
       "height": "300px"
     }
-  }), _h('v-card-text', {
+  }), _vm._c('v-card-text', {
     staticClass: "blue-grey darken-3 white--text"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     domProps: {
       "textContent": _vm._s(_vm.card_text)
     }
-  })]), _h('v-card-row', {
+  })]), _vm._c('v-card-row', {
     staticClass: "blue-grey darken-1",
     attrs: {
       "actions": "actions"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "white--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Get Started"]), _h('v-spacer'), _h('v-icon', {
+  }, [_vm._v("Get Started")]), _vm._c('v-spacer'), _vm._c('v-icon', {
     staticClass: "white--text"
-  }, ["explore"])])])])]), _h('component-example', {
+  }, [_vm._v("explore")])])])])]), _vm._c('component-example', {
     attrs: {
       "header": "Background"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "portrait"
-  }, [_h('v-card', {
+  }, [_vm._c('v-card', {
     attrs: {
       "img": "https://cdn.fstoppers.com/styles/full/s3/lead/2014/11/fstoppers-natural-light-dani-how-to-retouch-dof-bokeh-sharp-facebook-female-fashion-nyc-model-portrait1.jpg",
       "height": "300px"
     }
-  }, [_h('v-card-row', {
+  }, [_vm._c('v-card-row', {
     staticClass: "white--text pl-3 pt-3 pb-3",
     attrs: {
       "actions": "actions"
     }
-  }, ["Picture.png"])])]), _h('div', {
+  }, [_vm._v("Picture.png")])])]), _vm._c('div', {
     staticClass: "portrait"
-  }, [_h('v-card', {
+  }, [_vm._c('v-card', {
     attrs: {
       "img": "http://images6.fanpop.com/image/photos/38500000/beautiful-wallpaper-1-beautiful-pictures-38538866-500-313.jpg",
       "height": "300px"
     }
-  }, [_h('v-card-row', {
+  }, [_vm._c('v-card-row', {
     staticClass: "white--text pl-3 pt-3 pb-3",
     attrs: {
       "actions": "actions"
     }
-  }, ["Picture.png"])])])]), _h('component-example', {
+  }, [_vm._v("Picture.png")])])])]), _vm._c('component-example', {
     attrs: {
       "header": "Horizontal"
     }
-  }, [_h('div', [_h('v-card', {
+  }, [_vm._c('div', [_vm._c('v-card', {
     attrs: {
       "horizontal": "horizontal"
     }
-  }, [_h('v-card-row', {
+  }, [_vm._c('v-card-row', {
     attrs: {
       "img": "http://www.bendut.com/i/2015/12/hotel-room-design-pictures-solid-wood-couch-light-brown-fabric-cushioning-dark-brown-blankets-artistic-wall-painting-twin-wall-lamp-rectangle-oak-wood-coffee-table-black-glass-table-top-brown-motive-c-936x702.jpg",
       "height": "125px"
     }
-  }), _h('v-card-column', [_h('v-card-row', {
+  }), _vm._c('v-card-column', [_vm._c('v-card-row', {
     staticClass: "brown white--text",
     attrs: {
       "height": "75px"
     }
-  }, [_h('v-card-text', [_h('strong', ["Reservation at Lazy Bear"]), _h('div', ["Feb 23, 7:00pm"])])]), _h('v-card-row', {
+  }, [_vm._c('v-card-text', [_vm._c('strong', [_vm._v("Reservation at Lazy Bear")]), _vm._c('div', [_vm._v("Feb 23, 7:00pm")])])]), _vm._c('v-card-row', {
     staticClass: "brown darken-2",
     attrs: {
       "actions": "actions"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "white--text",
     attrs: {
       "flat": "flat"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["directions"]), "Directions"])])])])]), _h('div', [_h('v-card', {
+  }, [_vm._v("directions")]), _vm._v("Directions")])])])])]), _vm._c('div', [_vm._c('v-card', {
     attrs: {
       "horizontal": "horizontal"
     }
-  }, [_h('v-card-column', {
+  }, [_vm._c('v-card-column', {
     staticClass: "amber white--text"
-  }, [_h('v-card-row', [_h('v-spacer'), _h('v-card-text', {
+  }, [_vm._c('v-card-row', [_vm._c('v-spacer'), _vm._c('v-card-text', {
     staticClass: "text-xs-right"
-  }, [_h('strong', ["Car Rental with Hertz"]), _h('div', ["Mar 5, 8:00pm"])])])]), _h('v-card-row', {
+  }, [_vm._c('strong', [_vm._v("Car Rental with Hertz")]), _vm._c('div', [_vm._v("Mar 5, 8:00pm")])])])]), _vm._c('v-card-row', {
     attrs: {
       "img": "http://www.frugaa.com/images/about/hertz-store.jpg",
       "height": "125px"
     }
-  })])])]), _h('component-example', {
+  })])])]), _vm._c('component-example', {
     attrs: {
       "header": "Colored"
     }
-  }, [_h('div', [_h('v-card', {
+  }, [_vm._c('div', [_vm._c('v-card', {
     staticClass: "blue darken-4 white--text"
-  }, [_h('v-card-row', {
+  }, [_vm._c('v-card-row', {
     attrs: {
       "height": "200px"
     }
-  }, [_h('v-card-title', ["Featured Event: ", _h('br'), "\nMay 24, 2016 ", _h('br'), "\n7-11pm"])]), _h('v-card-row', {
+  }, [_vm._c('v-card-title', [_vm._v("Featured Event: "), _vm._c('br'), _vm._v("\nMay 24, 2016 "), _vm._c('br'), _vm._v("\n7-11pm")])]), _vm._c('v-card-row', {
     attrs: {
       "actions": "actions"
     }
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "white--text",
     attrs: {
       "flat": "flat"
     }
-  }, ["Add to Calendar"]), _h('v-spacer'), _h('v-icon', ["event"])])])])]), _h('markup', {
+  }, [_vm._v("Add to Calendar")]), _vm._c('v-spacer'), _vm._c('v-icon', [_vm._v("event")])])])])]), _vm._c('markup', {
     slot: "markup"
-  }, ["<v-card class=\"green\">\n  <v-card-text>\n    ...\n  </v-card-text>\n</v-card>\n \n<v-card>\n  <v-card-row img=\"...\" height=\"300px\">\n    <v-card-title>...</v-card-title>\n  </v-card-row>\n  <v-card-text>\n     ...\n  </v-card-text>\n  <v-card-row actions>\n     <v-btn flat class=\"secondary--text\">...</v-btn>\n  </v-card-row>\n</v-card>\n \n<v-card horizontal>\n  <v-card-row img=\"...\"></v-card-title>\n  <v-card-column>\n      <v-card-text>\n          <p>...</p>\n      </v-card-text>\n      <v-card-row actions>\n          <v-btn flat class=\"secondary--text\">...</v-btn>\n      </v-card-row>\n  </v-card-column>\n</v-card>"])])
+  }, [_vm._v("<v-card class=\"green\">\n  <v-card-text>\n    ...\n  </v-card-text>\n</v-card>\n \n<v-card>\n  <v-card-row img=\"...\" height=\"300px\">\n    <v-card-title>...</v-card-title>\n  </v-card-row>\n  <v-card-text>\n     ...\n  </v-card-text>\n  <v-card-row actions>\n     <v-btn flat class=\"secondary--text\">...</v-btn>\n  </v-card-row>\n</v-card>\n \n<v-card horizontal>\n  <v-card-row img=\"...\"></v-card-title>\n  <v-card-column>\n      <v-card-text>\n          <p>...</p>\n      </v-card-text>\n      <v-card-row actions>\n          <v-btn flat class=\"secondary--text\">...</v-btn>\n      </v-card-row>\n  </v-card-column>\n</v-card>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20289,22 +20432,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('v-sidebar', {
+  return _vm._c('v-sidebar', {
     attrs: {
       "id": "mainsidebar",
       "fixed": "fixed",
       "close-on-click": "close-on-click",
       "items": _vm.items
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "vuetify",
     slot: "top"
-  }, [_h('router-link', {
+  }, [_vm._c('router-link', {
     staticClass: "sidebar__logo",
     attrs: {
       "to": "/about"
     }
-  }, [_h('img', {
+  }, [_vm._c('img', {
     attrs: {
       "src": __webpack_require__(51),
       "height": "100px",
@@ -20319,15 +20462,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Character"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge:6.left",
@@ -20340,7 +20483,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "large": "large"
     }
-  }, ["shopping_cart"]), _h('v-icon', {
+  }, [_vm._v("shopping_cart")]), _vm._c('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge",
@@ -20353,11 +20496,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "large": "large"
     }
-  }, ["mail"])]), _h('component-example', {
+  }, [_vm._v("mail")])]), _vm._c('component-example', {
     attrs: {
       "header": "Icon"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge:done.overlap.icon.left",
@@ -20372,7 +20515,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "large": "large"
     }
-  }, ["account_circle"]), _h('v-icon', {
+  }, [_vm._v("account_circle")]), _vm._c('v-icon', {
     directives: [{
       name: "badge",
       rawName: "v-badge:notifications.icon.overlap",
@@ -20386,11 +20529,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "large": "large"
     }
-  }, ["account_box"])]), _h('component-example', {
+  }, [_vm._v("account_box")])]), _vm._c('component-example', {
     attrs: {
       "header": "Inline"
     }
-  }, [_h('span', {
+  }, [_vm._c('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:2.left",
@@ -20399,7 +20542,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         "left": true
       }
     }]
-  }, ["Examples"]), _h('span', {
+  }, [_vm._v("Examples")]), _vm._c('span', {
     directives: [{
       name: "badge",
       rawName: "v-badge:list.icon",
@@ -20409,12 +20552,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       }
     }],
     staticClass: "green--after"
-  }, ["Lists"])]), _h('markup', {
+  }, [_vm._v("Lists")])]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     },
     slot: "markup"
-  }, ["<v-icon v-badge:done.overlap.icon.left>...</v-icon>\n \n<v-icon v-badge:5.left>...</v-icon>\n \n<v-icon v-badge=\"{ value: '!', overlap: true }\">...</v-icon>\n \n<v-icon v-badge::notifications.icon.overlap>...</v-icon>"])])
+  }, [_vm._v("<v-icon v-badge:done.overlap.icon.left>...</v-icon>\n \n<v-icon v-badge:5.left>...</v-icon>\n \n<v-icon v-badge=\"{ value: '!', overlap: true }\">...</v-icon>\n \n<v-icon v-badge::notifications.icon.overlap>...</v-icon>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20422,27 +20565,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('v-slider', [_vm._l((_vm.items), function(item) {
-    return _h('v-slider-item', {
+  }, [_vm._c('v-slider', _vm._l((_vm.items), function(item) {
+    return _vm._c('v-slider-item', {
       attrs: {
         "src": item.src
       }
     })
-  })]), _h('div', {
+  })), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-slider>\n  <v-slider-item v-for=\"item in items\" v-bind:src=\"item.src\"></v-slider-item>\n</v-slider>"]), _h('markup', {
+  }, [_vm._v("<v-slider>\n  <v-slider-item v-for=\"item in items\" v-bind:src=\"item.src\"></v-slider-item>\n</v-slider>")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["data () {\n  return {\n    items: [{ src: '...'}, { src: '...'}, { src: '...'}]\n  }\n}"])])])
+  }, [_vm._v("data () {\n  return {\n    items: [{ src: '...'}, { src: '...'}, { src: '...'}]\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20450,14 +20593,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('span', {
+  return _vm._c('span', {
     staticClass: "chip--component"
-  }, [_h('v-chip', {
+  }, [_vm._c('v-chip', {
     class: _vm.component.classes,
     attrs: {
       "label": "label"
     }
-  }, [_vm._s(_vm.component.text), _h('v-icon', {
+  }, [_vm._v(_vm._s(_vm.component.text)), _vm._c('v-icon', {
     attrs: {
       "right": "right"
     },
@@ -20472,45 +20615,45 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "alerts"
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Contextual"
     }
-  }, [_h('v-alert', {
+  }, [_vm._c('v-alert', {
     attrs: {
       "success": "success"
     }
-  }, ["This is a success alert. " + _vm._s(_vm.lorem)]), _h('v-alert', {
+  }, [_vm._v("This is a success alert. " + _vm._s(_vm.lorem))]), _vm._c('v-alert', {
     attrs: {
       "info": "info"
     }
-  }, [" This is an info alert " + _vm._s(_vm.lorem)]), _h('v-alert', {
+  }, [_vm._v(" This is an info alert " + _vm._s(_vm.lorem))]), _vm._c('v-alert', {
     attrs: {
       "warning": "warning"
     }
-  }, [" This is a warning alert " + _vm._s(_vm.lorem)]), _h('v-alert', {
+  }, [_vm._v(" This is a warning alert " + _vm._s(_vm.lorem))]), _vm._c('v-alert', {
     attrs: {
       "error": "error"
     }
-  }, [" This is a error alert " + _vm._s(_vm.lorem)])]), _h('component-example', {
+  }, [_vm._v(" This is a error alert " + _vm._s(_vm.lorem))])]), _vm._c('component-example', {
     attrs: {
       "header": "Closable"
     }
-  }, [_h('div', [(!_vm.alert) ? _h('div', {
+  }, [_vm._c('div', [(!_vm.alert) ? _vm._c('div', {
     staticClass: "text-xs-center"
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "primary white--text",
     nativeOn: {
       "click": function($event) {
         _vm.alert = true
       }
     }
-  }, ["Reset Alert"])]) : _vm._e(), _h('v-alert', {
+  }, [_vm._v("Reset Alert")])]) : _vm._e(), _vm._c('v-alert', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20529,14 +20672,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.alert = $event
       }
     }
-  }, ["This is a success alert that is closable. " + _vm._s(_vm.lorem)])])]), _h('markup', {
+  }, [_vm._v("This is a success alert that is closable. " + _vm._s(_vm.lorem))])])]), _vm._c('markup', {
     attrs: {
       "lang": "html"
     },
     slot: "markup"
   }, [_vm._l((_vm.types), function(type) {
-    return [" \n<v-alert " + _vm._s(type) + ">\n  ...\n</v-alert>\n "]
-  }), " \n<v-alert success close v-model=\"alert\">\n  ...\n</v-alert>"])])
+    return [_vm._v(" \n<v-alert " + _vm._s(type) + ">\n  ...\n</v-alert>\n ")]
+  }), _vm._v(" \n<v-alert success close v-model=\"alert\">\n  ...\n</v-alert>")], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -20544,11 +20687,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', [_h('v-btn', {
+  }, [_vm._c('component-example', [_vm._c('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -20557,7 +20700,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.toast(_vm.left)
       }
     }
-  }, ["Left"]), _h('v-btn', {
+  }, [_vm._v("Left")]), _vm._c('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -20566,7 +20709,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.toast(_vm.right)
       }
     }
-  }, ["Right"]), _h('v-btn', {
+  }, [_vm._v("Right")]), _vm._c('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -20575,7 +20718,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.toast(_vm.top)
       }
     }
-  }, ["Top"]), _h('v-btn', {
+  }, [_vm._v("Top")]), _vm._c('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -20584,7 +20727,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.toast(_vm.bottom)
       }
     }
-  }, ["Bottom"]), _h('v-btn', {
+  }, [_vm._v("Bottom")]), _vm._c('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -20593,7 +20736,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.toast(_vm.snack)
       }
     }
-  }, ["Snack"]), _h('v-btn', {
+  }, [_vm._v("Snack")]), _vm._c('v-btn', {
     attrs: {
       "secondary": "secondary"
     },
@@ -20602,17 +20745,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.toast(_vm.cb)
       }
     }
-  }, ["Callback"])]), _h('div', {
+  }, [_vm._v("Callback")])]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-btn v-on:click.native=\"toast(info)\">...</v-btn>\n \n<v-btn v-on:click.native=\"toast(cb)\">...</v-btn>"]), _h('markup', {
+  }, [_vm._v("<v-btn v-on:click.native=\"toast(info)\">...</v-btn>\n \n<v-btn v-on:click.native=\"toast(cb)\">...</v-btn>")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["data () {\n  return {\n    cb: ['Toast with callback', 'right', 4000, () =>('Callback')],\n    info: ['Toast', 'left'],\n  }\n},\nmethods: {\n  toast (data) {\n    this.$vuetify.toast.create(...data)\n  }\n}"])])])
+  }, [_vm._v("data () {\n  return {\n    cb: ['Toast with callback', 'right', 4000, () =>('Callback')],\n    info: ['Toast', 'left'],\n  }\n},\nmethods: {\n  toast (data) {\n    this.$vuetify.toast.create(...data)\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20620,9 +20763,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', [_h('component-header', [_vm._s(_vm.header)]), _h('div', {
+  return _vm._c('div', [_vm._c('component-header', [_vm._v(_vm._s(_vm.header))]), _vm._c('div', {
     staticClass: "component-example"
-  }, [_vm._t("default")])])
+  }, [_vm._t("default")], true)])
 },staticRenderFns: []}
 
 /***/ },
@@ -20630,122 +20773,122 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "chips-view"
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Default"
     }
-  }, [_h('v-chip', ["Chip"]), _h('v-chip', {
+  }, [_vm._c('v-chip', [_vm._v("Chip")]), _vm._c('v-chip', {
     attrs: {
       "small": "small"
     }
-  }, [_h('v-icon', ["code"])])]), _h('component-example', {
+  }, [_vm._c('v-icon', [_vm._v("code")])])]), _vm._c('component-example', {
     attrs: {
       "header": "Colored"
     }
-  }, [_h('v-chip', {
+  }, [_vm._c('v-chip', {
     staticClass: "primary white--text"
-  }, ["Primary"]), _h('v-chip', {
+  }, [_vm._v("Primary")]), _vm._c('v-chip', {
     staticClass: "secondary white--text"
-  }, ["Secondary"]), _h('v-chip', {
+  }, [_vm._v("Secondary")]), _vm._c('v-chip', {
     staticClass: "red white--text"
-  }, ["Colored Chip"]), _h('v-chip', {
+  }, [_vm._v("Colored Chip")]), _vm._c('v-chip', {
     staticClass: "green white--text"
-  }, ["Colored Chip"])]), _h('component-example', {
+  }, [_vm._v("Colored Chip")])]), _vm._c('component-example', {
     attrs: {
       "header": "Icon"
     }
-  }, [_h('v-chip', [_h('v-icon', {
+  }, [_vm._c('v-chip', [_vm._c('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["account_circle"]), "Ranee"]), _h('v-chip', {
+  }, [_vm._v("account_circle")]), _vm._v("Ranee")]), _vm._c('v-chip', {
     staticClass: "orange white--text"
-  }, ["Premium", _h('v-icon', {
+  }, [_vm._v("Premium"), _vm._c('v-icon', {
     attrs: {
       "right": "right"
     }
-  }, ["star"])]), _h('v-chip', {
+  }, [_vm._v("star")])]), _vm._c('v-chip', {
     staticClass: "primary white--text"
-  }, ["1 Year", _h('v-icon', {
+  }, [_vm._v("1 Year"), _vm._c('v-icon', {
     attrs: {
       "right": "right"
     }
-  }, ["cake"])]), _h('v-chip', {
+  }, [_vm._v("cake")])]), _vm._c('v-chip', {
     staticClass: "green white--text"
-  }, [_h('v-icon', ["done_all"])]), _h('v-chip', {
+  }, [_vm._c('v-icon', [_vm._v("done_all")])]), _vm._c('v-chip', {
     staticClass: "teal white--text",
     attrs: {
       "close": "close"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["check_circle"]), "Confirmed"])]), _h('component-example', {
+  }, [_vm._v("check_circle")]), _vm._v("Confirmed")])]), _vm._c('component-example', {
     attrs: {
       "header": "Outline"
     }
-  }, [_h('v-chip', {
+  }, [_vm._c('v-chip', {
     staticClass: "secondary secondary--text",
     attrs: {
       "outline": "outline"
     }
-  }, ["Outline"]), _h('v-chip', {
+  }, [_vm._v("Outline")]), _vm._c('v-chip', {
     staticClass: "primary primary--text",
     attrs: {
       "outline": "outline"
     }
-  }, ["Colored"]), _h('v-chip', {
+  }, [_vm._v("Colored")]), _vm._c('v-chip', {
     staticClass: "red red--text",
     attrs: {
       "outline": "outline"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["build"]), "Icon"])]), _h('component-example', {
+  }, [_vm._v("build")]), _vm._v("Icon")])]), _vm._c('component-example', {
     attrs: {
       "header": "Label"
     }
-  }, [_h('v-chip', {
+  }, [_vm._c('v-chip', {
     attrs: {
       "label": "label"
     }
-  }, ["Label"]), _h('v-chip', {
+  }, [_vm._v("Label")]), _vm._c('v-chip', {
     staticClass: "pink white--text",
     attrs: {
       "label": "label"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     attrs: {
       "left": "left"
     }
-  }, ["label"]), "Tags"]), _h('v-chip', {
+  }, [_vm._v("label")]), _vm._v("Tags")]), _vm._c('v-chip', {
     staticClass: "red red--text",
     attrs: {
       "label": "label",
       "outline": "outline"
     }
-  }, ["Outline"])]), _h('component-example', {
+  }, [_vm._v("Outline")])]), _vm._c('component-example', {
     attrs: {
       "header": "Closable"
     }
-  }, [(!_vm.chip1 && !_vm.chip2 && !_vm.chip3 && !_vm.chip4) ? _h('div', {
+  }, [(!_vm.chip1 && !_vm.chip2 && !_vm.chip3 && !_vm.chip4) ? _vm._c('div', {
     staticClass: "text-xs-center"
-  }, [_h('v-btn', {
+  }, [_vm._c('v-btn', {
     staticClass: "primary white--text",
     nativeOn: {
       "click": function($event) {
         _vm.chip1 = true, _vm.chip2 = true, _vm.chip3 = true, _vm.chip4 = true
       }
     }
-  }, ["Reset Chips"])]) : _vm._e(), _h('v-chip', {
+  }, [_vm._v("Reset Chips")])]) : _vm._e(), _vm._c('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20763,7 +20906,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.chip1 = $event
       }
     }
-  }, ["Closable"]), _h('v-chip', {
+  }, [_vm._v("Closable")]), _vm._c('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20782,7 +20925,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.chip2 = $event
       }
     }
-  }, ["Remove"]), _h('v-chip', {
+  }, [_vm._v("Remove")]), _vm._c('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20802,7 +20945,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.chip3 = $event
       }
     }
-  }, ["Success"]), _h('v-chip', {
+  }, [_vm._v("Success")]), _vm._c('v-chip', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20823,9 +20966,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.chip4 = $event
       }
     }
-  }, ["Complete"])]), _h('markup', {
+  }, [_vm._v("Complete")])]), _vm._c('markup', {
     slot: "markup"
-  }, ["<v-chip>\n  ...\n</v-chip>\n \n<v-chip label>\n  ...\n</v-chip>\n \n<v-chip outline>\n  <v-icon left>list</v-icon>\n  ...\n</v-chip>\n \n<v-chip small>\n  ...\n</v-chip>\n \n<v-chip close>\n  ...\n</v-chip>"])])
+  }, [_vm._v("<v-chip>\n  ...\n</v-chip>\n \n<v-chip label>\n  ...\n</v-chip>\n \n<v-chip outline>\n  <v-icon left>list</v-icon>\n  ...\n</v-chip>\n \n<v-chip small>\n  ...\n</v-chip>\n \n<v-chip close>\n  ...\n</v-chip>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20833,50 +20976,50 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "id": "progress",
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Fixed Width"
     }
-  }, [_h('div', [_h('v-progress', {
+  }, [_vm._c('div', [_vm._c('v-progress', {
     attrs: {
       "value": "25",
       "min": "0",
       "max": "100"
     }
-  })]), _h('div', [_h('v-progress', {
+  })]), _vm._c('div', [_vm._c('v-progress', {
     attrs: {
       "value": "50",
       "min": "0",
       "max": "100"
     }
-  })]), _h('div', [_h('v-progress', {
+  })]), _vm._c('div', [_vm._c('v-progress', {
     attrs: {
       "value": "75",
       "min": "0",
       "max": "100"
     }
-  })]), _h('div', [_h('v-progress', {
+  })]), _vm._c('div', [_vm._c('v-progress', {
     attrs: {
       "value": "100",
       "min": "0",
       "max": "100"
     }
-  })])]), _h('component-example', {
+  })])]), _vm._c('component-example', {
     attrs: {
       "header": "Indeterminate"
     }
-  }, [_h('div', [_h('v-progress', {
+  }, [_vm._c('div', [_vm._c('v-progress', {
     attrs: {
       "indeterminate": "indeterminate"
     }
-  })])]), _h('markup', {
+  })])]), _vm._c('markup', {
     slot: "markup"
-  }, ["<v-progress value=\"100\" min=\"0\" max=\"100\"></v-progress>\n \n<v-progress indeterminate></v-progress>\n \n<v-progress v-model=\"progress\" min=\"0\" max=\"100\"></v-progress>"])])
+  }, [_vm._v("<v-progress value=\"100\" min=\"0\" max=\"100\"></v-progress>\n \n<v-progress indeterminate></v-progress>\n \n<v-progress v-model=\"progress\" min=\"0\" max=\"100\"></v-progress>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -20884,29 +21027,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('v-app', {
+  return _vm._c('v-app', {
     attrs: {
       "left-fixed-sidebar": "left-fixed-sidebar",
       "top-navbar": "top-navbar"
     }
-  }, [_h('main-nav', {
+  }, [_vm._c('main-nav', {
     attrs: {
       "title": _vm.title
     }
-  }), _h('main', [_h('main-side'), _h('v-content', [_h('v-container', {
+  }), _vm._c('main', [_vm._c('main-side'), _vm._c('v-content', [_vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('transition', {
+  }, [_vm._c('transition', {
     attrs: {
       "name": "slide",
       "mode": "out-in"
     }
-  }, [_h('router-view', {
+  }, [_vm._c('router-view', {
     on: {
       "view": _vm.meta
     }
-  })])])])]), _h('main-footer')])
+  })])])])]), _vm._c('main-footer')])
 },staticRenderFns: []}
 
 /***/ },
@@ -20914,23 +21057,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Basic"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-title', ["Person"])])])]), _h('component-example', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-title', [_vm._v("Person")])]), _vm._c('v-list-item', [_vm._c('v-list-item-title', [_vm._v("Person")])]), _vm._c('v-list-item', [_vm._c('v-list-item-title', [_vm._v("Person")])])])]), _vm._c('component-example', {
     attrs: {
       "header": "With Icon"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-icon', ["person"]), _h('v-list-item-title', ["Person"])])])]), _h('component-example', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("person")]), _vm._c('v-list-item-title', [_vm._v("Person")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("person")]), _vm._c('v-list-item-title', [_vm._v("Person")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("person")]), _vm._c('v-list-item-title', [_vm._v("Person")])])])]), _vm._c('component-example', {
     attrs: {
       "header": "With Avatar"
     }
-  }, [_h('v-list', [_h('v-list-item', [_h('a', {
+  }, [_vm._c('v-list', [_vm._c('v-list-item', [_vm._c('a', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:dropdown",
@@ -20939,17 +21082,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "href": "#!"
     }
-  }, [_h('v-list-item-avatar', {
+  }, [_vm._c('v-list-item-avatar', {
     staticClass: "orange",
     attrs: {
       "large": "large"
     }
-  }, ["event"])]), _h('v-dropdown', {
+  }, [_vm._v("event")])]), _vm._c('v-dropdown', {
     attrs: {
       "id": "dropdown",
       "items": _vm.items
     }
-  }), _h('v-list-item-title', ["Person"])]), _h('v-list-item', [_h('v-list-item-avatar', {
+  }), _vm._c('v-list-item-title', [_vm._v("Person")])]), _vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     directives: [{
       name: "badge",
       rawName: "v-badge:notifications.icon",
@@ -20962,7 +21105,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "large": "large"
     }
-  }, ["person"]), _h('v-list-item-title', ["Person"]), _h('v-list-item-action', [_h('a', {
+  }, [_vm._v("person")]), _vm._c('v-list-item-title', [_vm._v("Person")]), _vm._c('v-list-item-action', [_vm._c('a', {
     directives: [{
       name: "dropdown",
       rawName: "v-dropdown:menu",
@@ -20971,31 +21114,31 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "href": "#!"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     staticClass: "blue--text",
     attrs: {
       "medium": "medium"
     }
-  }, ["edit"])]), _h('v-dropdown', {
+  }, [_vm._v("edit")])]), _vm._c('v-dropdown', {
     attrs: {
       "id": "menu",
       "items": _vm.items,
       "right": "right"
     }
-  })])]), _h('v-list-item', [_h('v-list-item-avatar', {
+  })])]), _vm._c('v-list-item', [_vm._c('v-list-item-avatar', {
     staticClass: "green",
     attrs: {
       "large": "large"
     }
-  }, ["phone"]), _h('v-list-item-title', [_h('span', ["Person"]), _h('v-list-item-sub-title', ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."])]), _h('v-list-item-action', [_h('v-list-item-action-title', ["Contact"]), _h('a', {
+  }, [_vm._v("phone")]), _vm._c('v-list-item-title', [_vm._c('span', [_vm._v("Person")]), _vm._c('v-list-item-sub-title', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")])]), _vm._c('v-list-item-action', [_vm._c('v-list-item-action-title', [_vm._v("Contact")]), _vm._c('a', {
     attrs: {
       "href": "#!"
     }
-  }, [_h('v-icon', {
+  }, [_vm._c('v-icon', {
     staticClass: "grey--text darken-1"
-  }, ["email"])])])])])]), _h('markup', {
+  }, [_vm._v("email")])])])])])]), _vm._c('markup', {
     slot: "markup"
-  }, ["<v-list>\n  <v-list-item>\n    <v-list-item-title>\n      ...\n    </v-list-item-title>  \n  </v-list-item>\n</v-list>\n \n<v-list>\n  <v-list-item>\n    <v-list-item-icon>list</v-list-item-icon>\n    <v-list-item-title>\n      ...\n    </v-list-item-title>\n  </v-list-item>\n</v-list>\n \n<v-list>\n  <v-list-item>\n    <v-list-item-avatar class=\"green\" large>list</v-list-item-avatar>\n    <v-list-item-title>\n      <span>...</span>\n      <v-list-item-sub-title>...</v-list-item-sub-title>\n    </v-list-item-title>\n    <v-list-item-action>\n      <v-list-item-action-title>...</v-list-item-action-title>\n      <a href=\"#!\">\n        <v-icon class=\"grey--text darken-1\">email</v-icon>\n    </v-list-item-action>\n  </v-list-item>\n</v-list>"])])
+  }, [_vm._v("<v-list>\n  <v-list-item>\n    <v-list-item-title>\n      ...\n    </v-list-item-title>  \n  </v-list-item>\n</v-list>\n \n<v-list>\n  <v-list-item>\n    <v-list-item-icon>list</v-list-item-icon>\n    <v-list-item-title>\n      ...\n    </v-list-item-title>\n  </v-list-item>\n</v-list>\n \n<v-list>\n  <v-list-item>\n    <v-list-item-avatar class=\"green\" large>list</v-list-item-avatar>\n    <v-list-item-title>\n      <span>...</span>\n      <v-list-item-sub-title>...</v-list-item-sub-title>\n    </v-list-item-title>\n    <v-list-item-action>\n      <v-list-item-action-title>...</v-list-item-action-title>\n      <a href=\"#!\">\n        <v-icon class=\"grey--text darken-1\">email</v-icon>\n    </v-list-item-action>\n  </v-list-item>\n</v-list>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21003,64 +21146,64 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "view"
-  }, [_h('section', [_h('section-text', [_h('dt', {
+  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
     slot: "title"
-  }, ["Event Bus"]), _h('dd', {
+  }, [_vm._v("Event Bus")]), _vm._c('dd', {
     slot: "desc"
-  }, ["The Vuetify ", _h('code', ["bus"]), " is the glue that holds all of your components together. Made for Vue SSR ", _h('em', ["(Server Side Rendering)"]), ", the bus system ensures that components are able to work in a variety of setups."])])]), _h('section', [_h('section-header', ["Components"]), _vm._m(0), _h('markup', {
+  }, [_vm._v("The Vuetify "), _vm._c('code', [_vm._v("bus")]), _vm._v(" is the glue that holds all of your components together. Made for Vue SSR "), _vm._c('em', [_vm._v("(Server Side Rendering)")]), _vm._v(", the bus system ensures that components are able to work in a variety of setups.")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Components")]), _vm._m(0), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["data () {\n  return {\n    popup_data: ['Toast with Callback', 'right', 4000, () => alert('Callback')],\n  }\n}\nmounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nmethods: {\n  popup () {\n    this.$vuetify.toast.create(...popup_data)\n  }\n}"]), _vm._m(1), _h('markup', {
+  }, [_vm._v("data () {\n  return {\n    popup_data: ['Toast with Callback', 'right', 4000, () => alert('Callback')],\n  }\n}\nmounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nmethods: {\n  popup () {\n    this.$vuetify.toast.create(...popup_data)\n  }\n}")]), _vm._m(1), _vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, ["{component name}:{component action}:{component id}(optional)"])]), _h('section', [_h('section-header', ["Events"]), _vm._m(2), _h('markup', {
+  }, [_vm._v("{component name}:{component action}:{component id}(optional)")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Events")]), _vm._m(2), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["mounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nbeforeDestroy () {\n  this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)\n}"]), _h('p', {
+  }, [_vm._v("mounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nbeforeDestroy () {\n  this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)\n}")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. "]), _h('markup', {
+  }, [_vm._v("While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. ")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["import Eventable from '../node_modules/vuetify/src/mixins/eventable'\n \nexport default {\n  mixins: [Eventable],\n  computed: {\n    events () {\n      return [\n        'modal:open:demo-modal', this.open,\n        'modal:close:demo-modal', this.popup\n      ]\n    }\n  }\n}"]), _h('p', {
+  }, [_vm._v("import Eventable from '../node_modules/vuetify/src/mixins/eventable'\n \nexport default {\n  mixins: [Eventable],\n  computed: {\n    events () {\n      return [\n        'modal:open:demo-modal', this.open,\n        'modal:close:demo-modal', this.popup\n      ]\n    }\n  }\n}")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["The above will automatically sub to the Bus upon creation and unsub when removed."])]), _h('section', [_h('section-header', ["Extending"]), _h('p', {
+  }, [_vm._v("The above will automatically sub to the Bus upon creation and unsub when removed.")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Extending")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["You may want to create your own events in order to support your application, which is just as easy as hooking into existing ones. This allows you to take advantage of the SSR capabilities you get by default."]), _h('markup', {
+  }, [_vm._v("You may want to create your own events in order to support your application, which is just as easy as hooking into existing ones. This allows you to take advantage of the SSR capabilities you get by default.")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["this.$vuetify.bus.sub('{unique string}', callback)\n \nthis.$vuetify.bus.pub('{unique string}', arg1, arg2)"]), _h('h6', ["Loading"]), _vm._m(3), _h('markup', {
+  }, [_vm._v("this.$vuetify.bus.sub('{unique string}', callback)\n \nthis.$vuetify.bus.pub('{unique string}', arg1, arg2)")]), _vm._c('h6', [_vm._v("Loading")]), _vm._m(3), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["mounted () {\n  this.$vuetify.load(this.init)\n},\nmethods: {\n  init () {\n    alert('Component ready!')\n  }\n}"])]), _h('section', [_h('whats-next', {
+  }, [_vm._v("mounted () {\n  this.$vuetify.load(this.init)\n},\nmethods: {\n  init () {\n    alert('Component ready!')\n  }\n}")])]), _vm._c('section', [_vm._c('whats-next', {
     attrs: {
       "route": "/layouts",
       "text": "Layouts"
     }
-  }, ["Now that you have all the tools needed to build your next awesome application, head over to the layouts section to choose a ui."])])])
+  }, [_vm._v("Now that you have all the tools needed to build your next awesome application, head over to the layouts section to choose a ui.")])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through ", _h('code', ["this.$vuetify.bus"]), "."])
+  }, [_vm._v("Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through "), _vm._c('code', [_vm._v("this.$vuetify.bus")]), _vm._v(".")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "section-text"
-  }, [_h('p', ["In the example above, we hook into the close event of a modal with the id of ", _h('code', ["demo-modal"]), ". All of Vuetify's events follow a similar structure:"])])
+  }, [_vm._c('p', [_vm._v("In the example above, we hook into the close event of a modal with the id of "), _vm._c('code', [_vm._v("demo-modal")]), _vm._v(". All of Vuetify's events follow a similar structure:")])])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["When Vue components are broken down, event listeners need to be removed. This is the process for regular ", _h('strong', ["DOM"]), " event listeners, and it is the same for the Vuetify Bus. This can be done by calling the ", _h('strong', ["unsub"]), " method on the bus in the Vue ", _h('strong', ["beforeDestroy"]), " hook."])
+  }, [_vm._v("When Vue components are broken down, event listeners need to be removed. This is the process for regular "), _vm._c('strong', [_vm._v("DOM")]), _vm._v(" event listeners, and it is the same for the Vuetify Bus. This can be done by calling the "), _vm._c('strong', [_vm._v("unsub")]), _vm._v(" method on the bus in the Vue "), _vm._c('strong', [_vm._v("beforeDestroy")]), _vm._v(" hook.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "text-text"
-  }, ["Depending on the state of your application, you may need to wait for the ", _h('strong', ["DOM"]), " to be ready or just call immediately. Vuetify provides a simple function that will do this for you."])
+  }, [_vm._v("Depending on the state of your application, you may need to wait for the "), _vm._c('strong', [_vm._v("DOM")]), _vm._v(" to be ready or just call immediately. Vuetify provides a simple function that will do this for you.")])
 }]}
 
 /***/ },
@@ -21068,163 +21211,163 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "view",
     attrs: {
       "id": "quick-start"
     }
-  }, [_h('section', [_h('section-text', [_h('strong', {
+  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('strong', {
     slot: "title"
-  }, ["Getting Started"]), _h('p', {
+  }, [_vm._v("Getting Started")]), _vm._c('p', {
     slot: "desc"
-  }, ["Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages."])])]), _h('section', [_h('section-header', ["Required Files"]), _h('p', {
+  }, [_vm._v("Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages.")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Required Files")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["Vuetify requires Google's Roboto Font and Material Icons."]), _h('markup', {
+  }, [_vm._v("Vuetify requires Google's Roboto Font and Material Icons.")]), _vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, ["<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">"])]), _h('section', [_h('section-header', ["Manual Install"]), _vm._m(0), _h('markup', {
+  }, [_vm._v("<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Manual Install")]), _vm._m(0), _vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, ["<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>"]), _h('h6', ["Existing Projects"]), _h('p', {
+  }, [_vm._v("<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>")]), _vm._c('h6', [_vm._v("Existing Projects")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn."]), _h('markup', {
+  }, [_vm._v("If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn.")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["npm install vuetify --save-dev\n \nyarn add vuetify --dev"]), _h('p', {
+  }, [_vm._v("npm install vuetify --save-dev\n \nyarn add vuetify --dev")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["Now, in your index.js, import Vuetify and apply the plugin to Vue."]), _h('markup', {
+  }, [_vm._v("Now, in your index.js, import Vuetify and apply the plugin to Vue.")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["import Vue from 'vue'\nimport Vuetify from 'vuetify'\n \nVue.use(Vuetify)"]), _vm._m(1), _h('markup', {
+  }, [_vm._v("import Vue from 'vue'\nimport Vuetify from 'vuetify'\n \nVue.use(Vuetify)")]), _vm._m(1), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["mounted () {\n  this.$vuetify.init()\n}"])]), _h('section', [_h('section-header', ["Vue CLI"]), _vm._m(2), _h('v-tabs', {
+  }, [_vm._v("mounted () {\n  this.$vuetify.init()\n}")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Vue CLI")]), _vm._m(2), _vm._c('v-tabs', {
     staticClass: "z-depth-1",
     attrs: {
       "id": "vue-cli"
     }
-  }, [_h('v-tabs-tabs', [_h('v-tab', {
+  }, [_vm._c('v-tabs-tabs', [_vm._c('v-tab', {
     attrs: {
       "href": "#simple",
       "selected": "selected"
     }
-  }, ["Simple HTML ", _h('br'), _h('small', ["(Beginner)"])]), _h('v-tab', {
+  }, [_vm._v("Simple HTML "), _vm._c('br'), _vm._c('small', [_vm._v("(Beginner)")])]), _vm._c('v-tab', {
     attrs: {
       "href": "#webpack"
     }
-  }, ["Webpack ", _h('br'), _h('small', ["(Intermediate)"])]), _h('v-tab', {
+  }, [_vm._v("Webpack "), _vm._c('br'), _vm._c('small', [_vm._v("(Intermediate)")])]), _vm._c('v-tab', {
     attrs: {
       "href": "#webpack-ssr"
     }
-  }, ["Webpack SSR ", _h('br'), _h('small', ["(Advanced)"])])]), _h('v-tabs-items', [_h('v-tabs-item', {
+  }, [_vm._v("Webpack SSR "), _vm._c('br'), _vm._c('small', [_vm._v("(Advanced)")])])]), _vm._c('v-tabs-items', [_vm._c('v-tabs-item', {
     attrs: {
       "id": "simple"
     }
-  }, [_h('h4', ["Simple HTML Quick Start"]), _h('p', ["This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. "]), _h('markup', {
+  }, [_vm._c('h4', [_vm._v("Simple HTML Quick Start")]), _vm._c('p', [_vm._v("This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. ")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["vue init vuetifyjs/simple"])]), _h('v-tabs-item', {
+  }, [_vm._v("vue init vuetifyjs/simple")])]), _vm._c('v-tabs-item', {
     attrs: {
       "id": "webpack"
     }
-  }, [_h('h4', ["Webpack Quick Start"]), _h('p', ["This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups."]), _h('markup', {
+  }, [_vm._c('h4', [_vm._v("Webpack Quick Start")]), _vm._c('p', [_vm._v("This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups.")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["vue init vuetifyjs/webpack"])]), _h('v-tabs-item', {
+  }, [_vm._v("vue init vuetifyjs/webpack")])]), _vm._c('v-tabs-item', {
     attrs: {
       "id": "webpack-ssr"
     }
-  }, [_h('h4', ["Webpack SSR Quick Start"]), _h('p', ["This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 ", _h('a', {
+  }, [_vm._c('h4', [_vm._v("Webpack SSR Quick Start")]), _vm._c('p', [_vm._v("This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 "), _vm._c('a', {
     attrs: {
       "href": "https://github.com/vuejs/vue-hackernews-2.0",
       "target": "_blank"
     }
-  }, ["Hackernews"]), " repository, the Vuetify SSR template provides next generation functionality for advanced web applications."]), _h('markup', {
+  }, [_vm._v("Hackernews")]), _vm._v(" repository, the Vuetify SSR template provides next generation functionality for advanced web applications.")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["vue init vuetifyjs/webpack-ssr"])])])]), _h('h6', ["NPM Install"]), _h('p', {
+  }, [_vm._v("vue init vuetifyjs/webpack-ssr")])])])]), _vm._c('h6', [_vm._v("NPM Install")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["After the vue-cli installation finishes:"]), _h('markup', {
+  }, [_vm._v("After the vue-cli installation finishes:")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["cd <package-name>\nnpm install"]), _vm._m(3), _h('markup', {
+  }, [_vm._v("cd <package-name>\nnpm install")]), _vm._m(3), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["cd <package-name>\nyarn"]), _vm._m(4), _h('markup', {
+  }, [_vm._v("cd <package-name>\nyarn")]), _vm._m(4), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["npm run dev"]), _vm._m(5)]), _h('section', [_h('section-header', ["Color Pack"]), _vm._m(6)]), _h('section', [_h('whats-next', {
+  }, [_vm._v("npm run dev")]), _vm._m(5)]), _vm._c('section', [_vm._c('section-header', [_vm._v("Color Pack")]), _vm._m(6)]), _vm._c('section', [_vm._c('whats-next', {
     attrs: {
       "route": "/overview",
       "text": "Overview"
     }
-  }, ["Now that you have your project setup and ready to go, let's go over application structure of the ", _h('strong', ["webpack ssr"]), " template."])])])
+  }, [_vm._v("Now that you have your project setup and ready to go, let's go over application structure of the "), _vm._c('strong', [_vm._v("webpack ssr")]), _vm._v(" template.")])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your ", _h('code', ["index"]), " file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above."])
+  }, [_vm._v("If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your "), _vm._c('code', [_vm._v("index")]), _vm._v(" file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["Once you have Vuetify installed, in your main App.vue file, add the Vuetify ", _h('code', ["init"]), " function to the Vue mounted hook."])
+  }, [_vm._v("Once you have Vuetify installed, in your main App.vue file, add the Vuetify "), _vm._c('code', [_vm._v("init")]), _vm._v(" function to the Vue mounted hook.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["Vuetify has 3 pre-made Vue CLI templates, 2 being forked from ", _h('a', {
+  }, [_vm._v("Vuetify has 3 pre-made Vue CLI templates, 2 being forked from "), _vm._c('a', {
     attrs: {
       "href": "#!"
     }
-  }, ["official VueJS templates"]), ". They contain small modifications to help you get started with Vuetify even faster. These packages require ", _h('code', ["vue-cli"]), ". For more information on vue-cli, visit the official ", _h('a', {
+  }, [_vm._v("official VueJS templates")]), _vm._v(". They contain small modifications to help you get started with Vuetify even faster. These packages require "), _vm._c('code', [_vm._v("vue-cli")]), _vm._v(". For more information on vue-cli, visit the official "), _vm._c('a', {
     attrs: {
       "href": "https://github.com/vuejs/vue-cli",
       "target": "_blank"
     }
-  }, ["Github"]), " repository."])
+  }, [_vm._v("Github")]), _vm._v(" repository.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', ["Or alernatively, using Facebook's recently released ", _h('a', {
+  return _vm._c('p', [_vm._v("Or alernatively, using Facebook's recently released "), _vm._c('a', {
     attrs: {
       "href": "https://yarnpkg.com/",
       "target": "_blank"
     }
-  }, ["yarn package manager"]), "."])
+  }, [_vm._v("yarn package manager")]), _vm._v(".")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["If you are using the ", _h('code', ["simple"]), " vue-cli package, you are ready to go. Simply open up ", _h('code', ["index.html"]), " in any browser. For any other package, type:"])
+  }, [_vm._v("If you are using the "), _vm._c('code', [_vm._v("simple")]), _vm._v(" vue-cli package, you are ready to go. Simply open up "), _vm._c('code', [_vm._v("index.html")]), _vm._v(" in any browser. For any other package, type:")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["into your console. This will start a ", _h('a', {
+  }, [_vm._v("into your console. This will start a "), _vm._c('a', {
     attrs: {
       "href": "https://nodejs.org/en/",
       "target": "_blank"
     }
-  }, ["nodejs"]), " server locally which can be accessed by navigating to ", _h('a', {
+  }, [_vm._v("nodejs")]), _vm._v(" server locally which can be accessed by navigating to "), _vm._c('a', {
     attrs: {
       "href": "http://localhost:8080",
       "target": "_blank"
     }
-  }, ["http://localhost:8080"]), " in your browser."])
+  }, [_vm._v("http://localhost:8080")]), _vm._v(" in your browser.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["Vuetify comes pre-built with a Material Design Color Pack (thanks ", _h('a', {
+  }, [_vm._v("Vuetify comes pre-built with a Material Design Color Pack (thanks "), _vm._c('a', {
     attrs: {
       "href": "http://materializecss.com/color.html",
       "target": "_blank"
     }
-  }, ["Materialize.css"]), ") by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to ", _h('strong', ["src/stylus/main.styl"]), " and assign ", _h('code', ["$color-pack"]), " to false."])
+  }, [_vm._v("Materialize.css")]), _vm._v(") by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to "), _vm._c('strong', [_vm._v("src/stylus/main.styl")]), _vm._v(" and assign "), _vm._c('code', [_vm._v("$color-pack")]), _vm._v(" to false.")])
 }]}
 
 /***/ },
@@ -21232,20 +21375,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc,
       "id": "sidebars"
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Left"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "grey lighten-1"
-  }, [_h('v-navbar', [_h('div', {
+  }, [_vm._c('v-navbar', [_vm._c('div', {
     staticClass: "navbar__side-icon hidden-sm-and-up"
-  }, [_h('a', {
+  }, [_vm._c('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:doc-sidebar-1",
@@ -21254,25 +21397,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "href": "#!"
     }
-  }, [_h('v-icon', ["reorder"])])]), _h('v-navbar-logo', ["Logo"])]), _h('v-sidebar', {
+  }, [_vm._c('v-icon', [_vm._v("reorder")])])]), _vm._c('v-navbar-logo', [_vm._v("Logo")])]), _vm._c('v-sidebar', {
     staticClass: "white",
     attrs: {
       "id": "doc-sidebar-1",
       "height": "40vh"
     }
-  }, [_h('v-sidebar-items', {
+  }, [_vm._c('v-sidebar-items', {
     attrs: {
       "items": _vm.items
     }
-  })])])]), _h('component-example', {
+  })])])]), _vm._c('component-example', {
     attrs: {
       "header": "Drawer"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "grey lighten-1"
-  }, [_h('v-navbar', [_h('div', {
+  }, [_vm._c('v-navbar', [_vm._c('div', {
     staticClass: "navbar__side-icon"
-  }, [_h('a', {
+  }, [_vm._c('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:doc-sidebar-2",
@@ -21281,26 +21424,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "href": "#!"
     }
-  }, [_h('v-icon', ["reorder"])])]), _h('v-navbar-logo', ["Logo"])]), _h('v-sidebar', {
+  }, [_vm._c('v-icon', [_vm._v("reorder")])])]), _vm._c('v-navbar-logo', [_vm._v("Logo")])]), _vm._c('v-sidebar', {
     staticClass: "white",
     attrs: {
       "id": "doc-sidebar-2",
       "height": "40vh",
       "drawer": "drawer"
     }
-  }, [_h('v-sidebar-items', {
+  }, [_vm._c('v-sidebar-items', {
     attrs: {
       "items": _vm.items
     }
-  })])])]), _h('component-example', {
+  })])])]), _vm._c('component-example', {
     attrs: {
       "header": "Item Groups"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "grey lighten-1"
-  }, [_h('v-navbar', [_h('div', {
+  }, [_vm._c('v-navbar', [_vm._c('div', {
     staticClass: "navbar__side-icon hidden-sm-and-up"
-  }, [_h('a', {
+  }, [_vm._c('a', {
     directives: [{
       name: "side-bar",
       rawName: "v-side-bar:doc-sidebar-3",
@@ -21309,27 +21452,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "href": "#!"
     }
-  }, [_h('v-icon', ["reorder"])])]), _h('v-navbar-logo', ["Logo"])]), _h('v-sidebar', {
+  }, [_vm._c('v-icon', [_vm._v("reorder")])])]), _vm._c('v-navbar-logo', [_vm._v("Logo")])]), _vm._c('v-sidebar', {
     staticClass: "white",
     attrs: {
       "id": "doc-sidebar-3",
       "height": "40vh"
     }
-  }, [_h('v-sidebar-items', {
+  }, [_vm._c('v-sidebar-items', {
     attrs: {
       "items": _vm.item_group
     }
-  })])])]), _h('div', {
+  })])])]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-sidebar height=\"50vh\" v-bind:items=\"items\"></v-sidebar>\n \n<v-sidebar drawer>\n  <v-sidebar-items v-bind:items=\"items\"></v-sidebar>\n</v-sidebar>\n \n<v-sidebar fixed>\n  <v-sidebar-items>\n    <v-sidebar-item v-for=\"item in items\" v-bind:item=\"item\"></v-sidebar-item>\n  </v-sidebar>\n</v-sidebar>"]), _h('markup', {
+  }, [_vm._v("<v-sidebar height=\"50vh\" v-bind:items=\"items\"></v-sidebar>\n \n<v-sidebar drawer>\n  <v-sidebar-items v-bind:items=\"items\"></v-sidebar>\n</v-sidebar>\n \n<v-sidebar fixed>\n  <v-sidebar-items>\n    <v-sidebar-item v-for=\"item in items\" v-bind:item=\"item\"></v-sidebar-item>\n  </v-sidebar>\n</v-sidebar>")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["data () {\n  return {\n    items: [\n      {\n        parent: { text: 'Parent', href: '#!\" '},\n        items: [\n          { text: 'Child', href: '#!', router: false },\n          { text: 'Child', href: '#!' },\n          { text: 'Child', href: '#!', icon: 'list' },\n        ]\n      },\n      { text: 'Link', href: '#!' }\n    ]\n  }\n}"])])])
+  }, [_vm._v("data () {\n  return {\n    items: [\n      {\n        parent: { text: 'Parent', href: '#!\" '},\n        items: [\n          { text: 'Child', href: '#!', router: false },\n          { text: 'Child', href: '#!' },\n          { text: 'Child', href: '#!', icon: 'list' },\n        ]\n      },\n      { text: 'Link', href: '#!' }\n    ]\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21337,11 +21480,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('v-footer', {
+  return _vm._c('v-footer', {
     staticClass: "grey darken-2 white--text"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "text-xs-right"
-  }, ["© 2016 John Leider"])])
+  }, [_vm._v("© 2016 John Leider")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21349,53 +21492,53 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "doc"
-  }, [_h('section', [_h('section-text', [_h('dt', {
+  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
     slot: "title"
-  }, [_h('strong', ["Colors"])]), _h('dd', {
+  }, [_vm._c('strong', [_vm._v("Colors")])]), _vm._c('dd', {
     slot: "desc"
-  }, [_h('div', ["Soon"])])])]), _h('section', {
+  }, [_vm._c('div', [_vm._v("Soon")])])])]), _vm._c('section', {
     attrs: {
       "id": "colors"
     }
-  }, [_h('section-header', ["Material Design"]), _h('component-example', {
+  }, [_vm._c('section-header', [_vm._v("Material Design")]), _vm._c('component-example', {
     attrs: {
       "header": "Classes"
     }
-  }, [_h('v-container', {
+  }, [_vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('v-row', [_vm._l((_vm.colors), function(color) {
-    return _h('v-col', {
+  }, [_vm._c('v-row', _vm._l((_vm.colors), function(color) {
+    return _vm._c('v-col', {
       attrs: {
         "xs6": "xs6",
         "sm6": "sm6",
         "md4": "md4",
         "lg3": "lg3"
       }
-    }, [_h('v-card', {
+    }, [_vm._c('v-card', {
       class: [color],
       attrs: {
         "height": "100px"
       }
-    }, [_h('v-card-text', [_h('h3', [_vm._s(color)])])]), _vm._l(([4, 3, 2, 1]), function(n) {
-      return _h('v-card', {
+    }, [_vm._c('v-card-text', [_vm._c('h3', [_vm._v(_vm._s(color))])])]), _vm._l(([4, 3, 2, 1]), function(n) {
+      return _vm._c('v-card', {
         staticClass: "black--text",
         class: [color, 'lighten-' + n]
-      }, [_h('v-card-text', [_vm._s(color) + " Lighten-" + _vm._s(n)])])
+      }, [_vm._c('v-card-text', [_vm._v(_vm._s(color) + " Lighten-" + _vm._s(n))])])
     }), _vm._l((4), function(n) {
-      return _h('v-card', {
+      return _vm._c('v-card', {
         class: [color, 'darken-' + n]
-      }, [_h('v-card-text', [_vm._s(color) + " Darken-" + _vm._s(n)])])
+      }, [_vm._c('v-card-text', [_vm._v(_vm._s(color) + " Darken-" + _vm._s(n))])])
     }), _vm._l((4), function(n) {
-      return (!['grey', 'blue-grey', 'brown'].includes(color)) ? _h('v-card', {
+      return (!['grey', 'blue-grey', 'brown'].includes(color)) ? _vm._c('v-card', {
         staticClass: "black--text",
         class: [color, 'accent-' + n]
-      }, [_h('v-card-text', [_vm._s(color) + " Accent-" + _vm._s(n)])]) : _vm._e()
-    })])
-  })])])])])])
+      }, [_vm._c('v-card-text', [_vm._v(_vm._s(color) + " Accent-" + _vm._s(n))])]) : _vm._e()
+    })], true)
+  }))])])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21403,7 +21546,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('h6', [_vm._t("default")])
+  return _vm._c('h6', [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -21411,25 +21554,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "view"
-  }, [_h('section', [_h('section-text', [_h('dt', {
+  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
     domProps: {
       "innerHTML": _vm._s(_vm.doc.title)
     },
     slot: "title"
-  }), _h('dd', {
+  }), _vm._c('dd', {
     domProps: {
       "innerHTML": _vm._s(_vm.doc.desc)
     },
     slot: "desc"
-  })])]), _h('section', [_h('section-header', ["Examples"]), _vm._t("default")]), _h('section', [_h('section-header', ["Markup"]), _vm._t("markup")]), _h('section', [_h('section-header', ["Parameters"]), _h('component-parameters', {
+  })])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Examples")]), _vm._t("default")], true), _vm._c('section', [_vm._c('section-header', [_vm._v("Markup")]), _vm._t("markup")], true), _vm._c('section', [_vm._c('section-header', [_vm._v("Parameters")]), _vm._c('component-parameters', {
     attrs: {
       "params": _vm.doc.params
     }
-  })]), _h('section', [_h('section-header', ["Events"]), _h('p', {
+  })]), _vm._c('section', [_vm._c('section-header', [_vm._v("Events")]), _vm._c('p', {
     staticClass: "section-text"
-  }, ["Coming Soon"])]), _vm._t("end")])
+  }, [_vm._v("Coming Soon")])]), _vm._t("end")], true)
 },staticRenderFns: []}
 
 /***/ },
@@ -21437,71 +21580,71 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Grid",
       "id": "grid"
     }
-  }, [_h('v-container', {
+  }, [_vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('v-row', [_h('v-col', {
+  }, [_vm._c('v-row', [_vm._c('v-col', {
     attrs: {
       "xs12": "xs12"
     }
-  }, [_h('v-card', {
+  }, [_vm._c('v-card', {
     staticClass: "primary"
-  }, [_h('v-card-text', ["12"])])]), _vm._l((2), function(i) {
-    return _h('v-col', {
+  }, [_vm._c('v-card-text', [_vm._v("12")])])]), _vm._l((2), function(i) {
+    return _vm._c('v-col', {
       attrs: {
         "xs6": "xs6"
       }
-    }, [_h('v-card', {
+    }, [_vm._c('v-card', {
       staticClass: "secondary"
-    }, [_h('v-card-text', ["6"])])])
+    }, [_vm._c('v-card-text', [_vm._v("6")])])])
   }), _vm._l((3), function(i) {
-    return _h('v-col', {
+    return _vm._c('v-col', {
       attrs: {
         "xs4": "xs4"
       }
-    }, [_h('v-card', {
+    }, [_vm._c('v-card', {
       staticClass: "primary"
-    }, [_h('v-card-text', ["4"])])])
+    }, [_vm._c('v-card-text', [_vm._v("4")])])])
   }), _vm._l((4), function(i) {
-    return _h('v-col', {
+    return _vm._c('v-col', {
       attrs: {
         "xs3": "xs3"
       }
-    }, [_h('v-card', {
+    }, [_vm._c('v-card', {
       staticClass: "secondary"
-    }, [_h('v-card-text', ["3"])])])
+    }, [_vm._c('v-card-text', [_vm._v("3")])])])
   }), _vm._l((6), function(i) {
-    return _h('v-col', {
+    return _vm._c('v-col', {
       attrs: {
         "xs2": "xs2"
       }
-    }, [_h('v-card', {
+    }, [_vm._c('v-card', {
       staticClass: "primary"
-    }, [_h('v-card-text', ["2"])])])
+    }, [_vm._c('v-card-text', [_vm._v("2")])])])
   }), _vm._l((12), function(i) {
-    return _h('v-col', {
+    return _vm._c('v-col', {
       attrs: {
         "xs1": "xs1"
       }
-    }, [_h('v-card', {
+    }, [_vm._c('v-card', {
       staticClass: "secondary"
-    }, [_h('v-card-text', ["1"])])])
-  })])])]), _h('markup', {
+    }, [_vm._c('v-card-text', [_vm._v("1")])])])
+  })], true)])]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     },
     slot: "markup"
-  }, ["<v-container fluid>\n  <v-row>\n    <v-col xs12 sm6 md4 lg3>\n      ...\n    </v-col>\n    <v-col xs6 offset-xs3>\n      ...\n    </v-col>\n  </v-row>\n</v-container>"])])
+  }, [_vm._v("<v-container fluid>\n  <v-row>\n    <v-col xs12 sm6 md4 lg3>\n      ...\n    </v-col>\n    <v-col xs6 offset-xs3>\n      ...\n    </v-col>\n  </v-row>\n</v-container>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21509,51 +21652,51 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Text Dividers"
     }
-  }, [_h('v-breadcrumbs', {
+  }, [_vm._c('v-breadcrumbs', {
     attrs: {
       "divider": "/",
       "items": _vm.items
     }
-  }), _h('v-breadcrumbs', {
+  }), _vm._c('v-breadcrumbs', {
     attrs: {
       "divider": "-",
       "items": _vm.items
     }
-  })]), _h('component-example', {
+  })]), _vm._c('component-example', {
     attrs: {
       "header": "Icon Dividers"
     }
-  }, [_h('v-breadcrumbs', {
+  }, [_vm._c('v-breadcrumbs', {
     attrs: {
       "icons": "icons",
       "divider": "forward",
       "items": _vm.items
     }
-  }), _h('v-breadcrumbs', {
+  }), _vm._c('v-breadcrumbs', {
     attrs: {
       "icons": "icons",
       "divider": "chevron_right",
       "items": _vm.items
     }
-  })]), _h('div', {
+  })]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, ["<v-breadcrumbs divider=\"/\" v-bind:items=\"items\"></v-breadcrumbs>\n \n<v-breadcrumbs divider=\"/\">\n  <v-breadcrumbs-item v-for(item in items) v-bind:item=\"item\"></v-breadcrumbs-item>\n</v-breadcrumbs>"]), _h('markup', {
+  }, [_vm._v("<v-breadcrumbs divider=\"/\" v-bind:items=\"items\"></v-breadcrumbs>\n \n<v-breadcrumbs divider=\"/\">\n  <v-breadcrumbs-item v-for(item in items) v-bind:item=\"item\"></v-breadcrumbs-item>\n</v-breadcrumbs>")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["data () {\n  return {\n    items: [{ href: '#!', text: 'Dashboard', disabled: false}]\n  }\n}"])])])
+  }, [_vm._v("data () {\n  return {\n    items: [{ href: '#!', text: 'Dashboard', disabled: false}]\n  }\n}")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21561,124 +21704,124 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "view"
-  }, [_h('section', [_h('section-text', [_h('strong', {
+  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('strong', {
     slot: "title"
-  }, ["Overview"]), _h('div', {
+  }, [_vm._v("Overview")]), _vm._c('div', {
     slot: "desc"
-  }, [_h('p', ["This overview is designed to help you become fluent in ", _h('strong', ["Vuetify's"]), " Webpack-SSR Template. If you have not already installed the ", _h('code', ["webpack-ssr"]), " template, please do so ", _h('router-link', {
+  }, [_vm._c('p', [_vm._v("This overview is designed to help you become fluent in "), _vm._c('strong', [_vm._v("Vuetify's")]), _vm._v(" Webpack-SSR Template. If you have not already installed the "), _vm._c('code', [_vm._v("webpack-ssr")]), _vm._v(" template, please do so "), _vm._c('router-link', {
     attrs: {
       "to": "/quick-start#webpack-ssr"
     }
-  }, ["here"]), "."])])])]), _h('section', [_h('section-header', ["Introduction"]), _vm._m(0), _h('h6', ["Folder Structure"]), _h('markup', {
+  }, [_vm._v("here")]), _vm._v(".")])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Introduction")]), _vm._m(0), _vm._c('h6', [_vm._v("Folder Structure")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, ["/ project\n  / build\n    - setup-dev-server.js\n    - vue-loader.config.js\n    - webpack.base.config.js\n    - webpack.client.config.js\n    - webpack.server.config.js\n  / dist\n  / public\n  / src\n    / css\n      - main.css\n    / components\n    / router\n      - index.js\n    / sass\n      - main.scss\n    / store\n      - index.js\n    / stylus\n      - main.styl\n    / views\n    - app.js\n    - App.vue\n    - client-entry.js\n    - index.template.html\n    - server-entry.js\n  - .gitignore\n  - README.md\n  - package.json\n  - server.js"]), _vm._m(1), _h('h3', ["Application"]), _h('div', {
+  }, [_vm._v("/ project\n  / build\n    - setup-dev-server.js\n    - vue-loader.config.js\n    - webpack.base.config.js\n    - webpack.client.config.js\n    - webpack.server.config.js\n  / dist\n  / public\n  / src\n    / css\n      - main.css\n    / components\n    / router\n      - index.js\n    / sass\n      - main.scss\n    / store\n      - index.js\n    / stylus\n      - main.styl\n    / views\n    - app.js\n    - App.vue\n    - client-entry.js\n    - index.template.html\n    - server-entry.js\n  - .gitignore\n  - README.md\n  - package.json\n  - server.js")]), _vm._m(1), _vm._c('h3', [_vm._v("Application")]), _vm._c('div', {
     staticClass: "section-text"
-  }, [_vm._m(2), _h('p', ["The markup below tells the application that you have a ", _h('code', ["top navbar"]), " and ", _h('code', ["footer"]), ". Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the ", _h('router-link', {
+  }, [_vm._m(2), _vm._c('p', [_vm._v("The markup below tells the application that you have a "), _vm._c('code', [_vm._v("top navbar")]), _vm._v(" and "), _vm._c('code', [_vm._v("footer")]), _vm._v(". Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the "), _vm._c('router-link', {
     attrs: {
       "to": "/layouts"
     }
-  }, ["Layouts"]), " section."])]), _h('markup', {
+  }, [_vm._v("Layouts")]), _vm._v(" section.")])]), _vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, ["<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>"]), _h('h3', ["Routing"]), _vm._m(3), _h('markup', {
+  }, [_vm._v("<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>")]), _vm._c('h3', [_vm._v("Routing")]), _vm._m(3), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["routes: [\n  { path: '/', component: HomeView },\n  { path: '/about', component: AboutView }\n]"]), _vm._m(4), _h('h3', ["State Control"]), _vm._m(5), _h('markup', {
+  }, [_vm._v("routes: [\n  { path: '/', component: HomeView },\n  { path: '/about', component: AboutView }\n]")]), _vm._m(4), _vm._c('h3', [_vm._v("State Control")]), _vm._m(5), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["preFetch (store) {\n  store.dispatch('GET_USER', 2)\n}"]), _vm._m(6), _h('h3', ["Meta Data"]), _vm._m(7), _h('markup', {
+  }, [_vm._v("preFetch (store) {\n  store.dispatch('GET_USER', 2)\n}")]), _vm._m(6), _vm._c('h3', [_vm._v("Meta Data")]), _vm._m(7), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["preFetch (store) {\n  store.dispatch('GET_USER', 2)\n \n  return {\n    title: 'Title',\n    description: 'Description',\n    keywords: 'keyword, keyword'\n  }\n}"]), _h('div', {
+  }, [_vm._v("preFetch (store) {\n  store.dispatch('GET_USER', 2)\n \n  return {\n    title: 'Title',\n    description: 'Description',\n    keywords: 'keyword, keyword'\n  }\n}")]), _vm._c('div', {
     staticClass: "section-text"
-  }, [_h('p', ["While this takes care of initial render meta data, it is a good experience for a user when they change a page within your application to have the title change with it"]), _vm._m(8), _h('P', ["Here is an example of a way that you can handle this:"])]), _h('markup', {
+  }, [_vm._c('p', [_vm._v("While this takes care of initial render meta data, it is a good experience for a user when they change a page within your application to have the title change with it")]), _vm._m(8), _vm._c('P', [_vm._v("Here is an example of a way that you can handle this:")])]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, ["// App.vue\nexport default {\n  mounted () {\n    this.$vuetify.init()\n  },\n  methods: {\n    view (meta) {\n      this.$vuetify.bus.pub(meta:title, obj.title)\n      this.$vuetify.bus.pub(meta:description, obj.description)\n      this.$vuetify.bus.pub(meta:keywords, obj.keywords)\n    }\n  }\n}\n \n// View.vue\nexport default {\n  mounted () {\n    this.$emit('view', this.meta())\n  },\n  preFetch () {\n    return this.methods.meta()\n  },\n  methods: {\n    meta () {\n      return {\n        title: 'Vuetify',\n        description: 'A Vue JS Framework',\n        keywords: 'vue, vuetify'\n      }\n    }\n  }\n}"]), _vm._m(9)]), _h('section', [_h('section-header', ["Web App Support"]), _vm._m(10)]), _h('section', [_h('whats-next', {
+  }, [_vm._v("// App.vue\nexport default {\n  mounted () {\n    this.$vuetify.init()\n  },\n  methods: {\n    view (meta) {\n      this.$vuetify.bus.pub(meta:title, obj.title)\n      this.$vuetify.bus.pub(meta:description, obj.description)\n      this.$vuetify.bus.pub(meta:keywords, obj.keywords)\n    }\n  }\n}\n \n// View.vue\nexport default {\n  mounted () {\n    this.$emit('view', this.meta())\n  },\n  preFetch () {\n    return this.methods.meta()\n  },\n  methods: {\n    meta () {\n      return {\n        title: 'Vuetify',\n        description: 'A Vue JS Framework',\n        keywords: 'vue, vuetify'\n      }\n    }\n  }\n}")]), _vm._m(9)]), _vm._c('section', [_vm._c('section-header', [_vm._v("Web App Support")]), _vm._m(10)]), _vm._c('section', [_vm._c('whats-next', {
     attrs: {
       "route": "/event-bus",
       "text": "Event Bus"
     }
-  }, ["With a better understanding of the ", _h('strong', ["webpack ssr"]), " template, let's learn about one of the most powerful features of Vuetify, the bus system."])])])
+  }, [_vm._v("With a better understanding of the "), _vm._c('strong', [_vm._v("webpack ssr")]), _vm._v(" template, let's learn about one of the most powerful features of Vuetify, the bus system.")])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["The Vuetify SSR template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes ", _h('code', ["buble"]), " with webpack's buble-loader."])
+  }, [_vm._v("The Vuetify SSR template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes "), _vm._c('code', [_vm._v("buble")]), _vm._v(" with webpack's buble-loader.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "section-text"
-  }, [_h('p', ["The ", _h('strong', ["Build"]), " folder contains all of the webpack specific build configurations for your project. ", _h('strong', ["Src"]), " is where all the development project files reside. Notice that the Webpack-SSR template is out-of-the-box configured to use ", _h('a', {
+  }, [_vm._c('p', [_vm._v("The "), _vm._c('strong', [_vm._v("Build")]), _vm._v(" folder contains all of the webpack specific build configurations for your project. "), _vm._c('strong', [_vm._v("Src")]), _vm._v(" is where all the development project files reside. Notice that the Webpack-SSR template is out-of-the-box configured to use "), _vm._c('a', {
     attrs: {
       "href": "https://router.vuejs.org/en/",
       "target": "_blank"
     }
-  }, ["Vue Router"]), ", ", _h('a', {
+  }, [_vm._v("Vue Router")]), _vm._v(", "), _vm._c('a', {
     attrs: {
       "href": "https://vuex.vuejs.org/en/intro.html",
       "target": "_blank"
     }
-  }, ["Vuex"]), ", and the ", _h('a', {
+  }, [_vm._v("Vuex")]), _vm._v(", and the "), _vm._c('a', {
     attrs: {
       "href": "https://vuejs.org/v2/guide/ssr.html",
       "target": "_blank"
     }
-  }, ["Vue Server Renderer"]), ". This will allow you to make simple or complex applications that are not only fast/efficient, but ", _h('strong', ["SEO"]), " friendly."])])
+  }, [_vm._v("Vue Server Renderer")]), _vm._v(". This will allow you to make simple or complex applications that are not only fast/efficient, but "), _vm._c('strong', [_vm._v("SEO")]), _vm._v(" friendly.")])])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', ["Navigate to the ", _h('strong', ["src"]), " folder and open up ", _h('code', ["App.vue"]), ". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is ", _h('code', ["v-app"]), ". This component allows you to define your application layout. This is used in conjunction with ", _h('code', ["v-navbar"]), ", ", _h('code', ["v-sidebar"]), ", ", _h('code', ["v-content"]), " and ", _h('code', ["v-footer"]), "."])
+  return _vm._c('p', [_vm._v("Navigate to the "), _vm._c('strong', [_vm._v("src")]), _vm._v(" folder and open up "), _vm._c('code', [_vm._v("App.vue")]), _vm._v(". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is "), _vm._c('code', [_vm._v("v-app")]), _vm._v(". This component allows you to define your application layout. This is used in conjunction with "), _vm._c('code', [_vm._v("v-navbar")]), _vm._v(", "), _vm._c('code', [_vm._v("v-sidebar")]), _vm._v(", "), _vm._c('code', [_vm._v("v-content")]), _vm._v(" and "), _vm._c('code', [_vm._v("v-footer")]), _vm._v(".")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["The Webpack-SSR template uses the official Vue Router for controlling application flow. Located in ", _h('code', ["/src/route/index.js"]), ", all of your application routes and route logic will be defined here."])
+  }, [_vm._v("The Webpack-SSR template uses the official Vue Router for controlling application flow. Located in "), _vm._c('code', [_vm._v("/src/route/index.js")]), _vm._v(", all of your application routes and route logic will be defined here.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "section-text"
-  }, [_h('p', ["These routes can be accessed be creating a link to the specified path, or by using Vue Router's ", _h('code', ["<router-link>"]), " component. For more information, review the official Vue Router ", _h('a', {
+  }, [_vm._c('p', [_vm._v("These routes can be accessed be creating a link to the specified path, or by using Vue Router's "), _vm._c('code', [_vm._v("<router-link>")]), _vm._v(" component. For more information, review the official Vue Router "), _vm._c('a', {
     attrs: {
       "href": "https://router.vuejs.org/en/",
       "target": "_blank"
     }
-  }, ["documentation"]), "."])])
+  }, [_vm._v("documentation")]), _vm._v(".")])])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "section-text"
-  }, [_h('p', ["State control is managed by the official Vuex library. This Vue plugin follows Facebooks' Reflux design pattern. Navigate to ", _h('code', ["/src/store/index.js"]), ". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a ", _h('code', ["preFetch"]), " method on your view component."])])
+  }, [_vm._c('p', [_vm._v("State control is managed by the official Vuex library. This Vue plugin follows Facebooks' Reflux design pattern. Navigate to "), _vm._c('code', [_vm._v("/src/store/index.js")]), _vm._v(". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a "), _vm._c('code', [_vm._v("preFetch")]), _vm._v(" method on your view component.")])])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "section-text"
-  }, [_h('p', ["This is useful for bootstrapping your application so that any necessary data is available before the initial render."]), _h('p', ["For more information on State Control and Vuex, view the official ", _h('a', {
+  }, [_vm._c('p', [_vm._v("This is useful for bootstrapping your application so that any necessary data is available before the initial render.")]), _vm._c('p', [_vm._v("For more information on State Control and Vuex, view the official "), _vm._c('a', {
     attrs: {
       "href": "https://vuex.vuejs.org/en/intro.html",
       "target": "_blank"
     }
-  }, ["documentation"]), "."])])
+  }, [_vm._v("documentation")]), _vm._v(".")])])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["In order to ensure that page specific meta data is viewable when your pages are crawled, you can return an object containing ", _h('code', ["title"]), ", ", _h('code', ["description"]), " and ", _h('code', ["keywords"]), "."])
+  }, [_vm._v("In order to ensure that page specific meta data is viewable when your pages are crawled, you can return an object containing "), _vm._c('code', [_vm._v("title")]), _vm._v(", "), _vm._c('code', [_vm._v("description")]), _vm._v(" and "), _vm._c('code', [_vm._v("keywords")]), _vm._v(".")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', ["This can be done by publishing an event to the Vuetify ", _h('code', ["bus"]), ". This is the same functionality that is hooked into by the Webpack-SSR template when the pages are being initially rendered."])
+  return _vm._c('p', [_vm._v("This can be done by publishing an event to the Vuetify "), _vm._c('code', [_vm._v("bus")]), _vm._v(". This is the same functionality that is hooked into by the Webpack-SSR template when the pages are being initially rendered.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["In the example above, we emit an event that is captured on ", _h('code', ["<router-view v-on:view=\"view\">"]), ". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for crawling, but also change when the user is navigating to a different page."])
+  }, [_vm._v("In the example above, we emit an event that is captured on "), _vm._c('code', [_vm._v("<router-view v-on:view=\"view\">")]), _vm._v(". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for crawling, but also change when the user is navigating to a different page.")])
 },function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('p', {
+  return _vm._c('p', {
     staticClass: "section-text"
-  }, ["Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the ", _h('a', {
+  }, [_vm._v("Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the "), _vm._c('a', {
     attrs: {
       "href": "https://developer.mozilla.org/en-US/docs/Web/Manifest",
       "target": "_blank"
     }
-  }, ["Mozilla Developer Network"]), ". To see a live example, add the Vuetify documentation on your mobile device's homescreen."])
+  }, [_vm._v("Mozilla Developer Network")]), _vm._v(". To see a live example, add the Vuetify documentation on your mobile device's homescreen.")])
 }]}
 
 /***/ },
@@ -21686,15 +21829,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Selects"
     }
-  }, [_h('div', [_h('v-select', {
+  }, [_vm._c('div', [_vm._c('v-select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -21715,7 +21858,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.input = $event
       }
     }
-  }), _vm._s(_vm.input)]), _h('div', [_h('v-select', {
+  }), _vm._v(_vm._s(_vm.input))]), _vm._c('div', [_vm._c('v-select', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -21737,11 +21880,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.multiple = $event
       }
     }
-  }), _vm._s(_vm.multiple)])]), _h('component-example', {
+  }), _vm._v(_vm._s(_vm.multiple))])]), _vm._c('component-example', {
     attrs: {
       "header": "Inputs"
     }
-  }, [_h('div', [_h('v-text-input', {
+  }, [_vm._c('div', [_vm._c('v-text-input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -21761,31 +21904,31 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
         _vm.text = $event
       }
     }
-  }), _vm._s(_vm.text)]), _h('div', [_h('v-text-input', {
+  }), _vm._v(_vm._s(_vm.text))]), _vm._c('div', [_vm._c('v-text-input', {
     attrs: {
       "id": "test3",
       "name": "test3",
       "label": "Testing 3",
       "placeholder": "Testing 3"
     }
-  })])]), _h('component-example', {
+  })])]), _vm._c('component-example', {
     attrs: {
       "header": "Radios"
     }
-  }, [_h('v-radio', {
+  }, [_vm._c('v-radio', {
     attrs: {
       "id": "test5",
       "name": "test5",
       "label": "Testing 5"
     }
-  }), _h('v-radio', {
+  }), _vm._c('v-radio', {
     attrs: {
       "id": "test6",
       "name": "test5",
       "label": "Testing 6",
       "gap": "gap"
     }
-  }), _h('v-radio', {
+  }), _vm._c('v-radio', {
     attrs: {
       "id": "test62",
       "name": "test52",
@@ -21794,7 +21937,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "checked": "checked",
       "disabled": "disabled"
     }
-  }), _h('v-radio', {
+  }), _vm._c('v-radio', {
     attrs: {
       "id": "test61",
       "name": "test54",
@@ -21802,45 +21945,45 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "disabled": "disabled",
       "checked": "checked"
     }
-  }), _h('v-radio', {
+  }), _vm._c('v-radio', {
     attrs: {
       "id": "test71",
       "name": "test5",
       "label": "Testing 71",
       "disabled": "disabled"
     }
-  })]), _h('component-example', {
+  })]), _vm._c('component-example', {
     attrs: {
       "header": "Checkboxes"
     }
-  }, [_h('v-checkbox', {
+  }, [_vm._c('v-checkbox', {
     attrs: {
       "id": "test7",
       "name": "test7",
       "label": "Testing 7"
     }
-  }), _h('v-checkbox', {
+  }), _vm._c('v-checkbox', {
     attrs: {
       "id": "test8",
       "name": "test8",
       "label": "Testing 8",
       "filled": "filled"
     }
-  }), _h('v-checkbox', {
+  }), _vm._c('v-checkbox', {
     attrs: {
       "id": "test9",
       "name": "test9",
       "label": "Testing 9",
       "indeterminate": "indeterminate"
     }
-  }), _h('v-checkbox', {
+  }), _vm._c('v-checkbox', {
     attrs: {
       "id": "test10",
       "name": "test10",
       "label": "Testing 10",
       "disabled": "disabled"
     }
-  }), _h('v-checkbox', {
+  }), _vm._c('v-checkbox', {
     attrs: {
       "id": "test10",
       "name": "test10",
@@ -21848,25 +21991,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "checked": "checked",
       "disabled": "disabled"
     }
-  })]), _h('div', {
+  })]), _vm._c('div', {
     slot: "markup"
-  }, [_h('markup', {
+  }, [_vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-select>\n  ...\n</v-select>"]), _h('markup', {
+  }, [_vm._v("<v-select>\n  ...\n</v-select>")]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-text-input>\n  ...\n</v-text-input>"]), _h('markup', {
+  }, [_vm._v("<v-text-input>\n  ...\n</v-text-input>")]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-radio>\n  ...\n</v-radio>"]), _h('markup', {
+  }, [_vm._v("<v-radio>\n  ...\n</v-radio>")]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     }
-  }, ["<v-checkbox>\n  ...\n</v-checkbox>"])])])
+  }, [_vm._v("<v-checkbox>\n  ...\n</v-checkbox>")])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21874,18 +22017,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "view"
-  }, [_h('section', [_h('section-text', [_h('dt', {
+  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
     slot: "title"
-  }, ["Typography"]), _h('dd', {
+  }, [_vm._v("Typography")]), _vm._c('dd', {
     slot: "desc"
-  }, ["Soon"])])]), _h('section', [_h('section-header', ["Examples"]), _h('component-example', {
+  }, [_vm._v("Soon")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Examples")]), _vm._c('component-example', {
     attrs: {
       "id": "typo",
       "header": "Headers"
     }
-  }, [_h('h1', ["Heading h1"]), _h('h2', ["Heading h2"]), _h('h3', ["Heading h3"]), _h('h4', ["Heading h4"]), _h('h5', ["Heading h5"]), _h('h6', ["Heading h6"])])])])
+  }, [_vm._c('h1', [_vm._v("Heading h1")]), _vm._c('h2', [_vm._v("Heading h2")]), _vm._c('h3', [_vm._v("Heading h3")]), _vm._c('h4', [_vm._v("Heading h4")]), _vm._c('h5', [_vm._v("Heading h5")]), _vm._c('h6', [_vm._v("Heading h6")])])])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21893,12 +22036,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('div', {
+  return _vm._c('div', {
     staticClass: "markup"
-  }, [_h('pre', [_h('code', {
+  }, [_vm._c('pre', [_vm._c('code', {
     ref: "code",
     class: _vm.lang
-  }, [_vm._t("default")])])])
+  }, [_vm._t("default")], true)])])
 },staticRenderFns: []}
 
 /***/ },
@@ -21906,153 +22049,153 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _h('doc-view', {
+  return _vm._c('doc-view', {
     attrs: {
       "doc": _vm.doc
     }
-  }, [_h('component-example', {
+  }, [_vm._c('component-example', {
     attrs: {
       "header": "Navbar and Footer"
     }
-  }, [_h('v-container', {
+  }, [_vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('v-row', [_h('v-col', {
+  }, [_vm._c('v-row', [_vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm4": "sm4"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout z-depth-1"
-  }, [_h('nav', {
+  }, [_vm._c('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _h('div', {
+  }, [_vm._v("Navbar")]), _vm._c('div', {
     staticClass: "layout__main"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__content"
-  }, ["Content"])])])]), _h('v-col', {
+  }, [_vm._v("Content")])])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm4": "sm4"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout z-depth-1"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__main"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__content"
-  }, ["Content"])]), _h('nav', {
+  }, [_vm._v("Content")])]), _vm._c('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"])])]), _h('v-col', {
+  }, [_vm._v("Navbar")])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm4": "sm4"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout z-depth-1"
-  }, [_h('nav', {
+  }, [_vm._c('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _h('div', {
+  }, [_vm._v("Navbar")]), _vm._c('div', {
     staticClass: "layout__main"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__content"
-  }, ["Content"])]), _h('div', {
+  }, [_vm._v("Content")])]), _vm._c('div', {
     staticClass: "layout__footer primary"
-  }, ["Footer"])])])])])]), _h('component-example', {
+  }, [_vm._v("Footer")])])])])])]), _vm._c('component-example', {
     attrs: {
       "header": "Navbar and Sidebar"
     }
-  }, [_h('v-container', {
+  }, [_vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('v-row', [_h('v-col', {
+  }, [_vm._c('v-row', [_vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout z-depth-1"
-  }, [_h('nav', {
+  }, [_vm._c('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _h('div', {
+  }, [_vm._v("Navbar")]), _vm._c('div', {
     staticClass: "layout__main"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _h('div', {
+  }, [_vm._v("Sidebar")]), _vm._c('div', {
     staticClass: "layout__content"
-  }, ["Content"])])])]), _h('v-col', {
+  }, [_vm._v("Content")])])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout layout--4 z-depth-1"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _h('div', {
+  }, [_vm._v("Sidebar")]), _vm._c('div', {
     staticClass: "layout__main"
-  }, [_h('nav', {
+  }, [_vm._c('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _h('div', {
+  }, [_vm._v("Navbar")]), _vm._c('div', {
     staticClass: "layout__content"
-  }, ["Content"])])])])])])]), _h('component-example', {
+  }, [_vm._v("Content")])])])])])])]), _vm._c('component-example', {
     attrs: {
       "header": "Navbar, Sidebar and Footer"
     }
-  }, [_h('v-container', {
+  }, [_vm._c('v-container', {
     attrs: {
       "fluid": "fluid"
     }
-  }, [_h('v-row', [_h('v-col', {
+  }, [_vm._c('v-row', [_vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout z-depth-1"
-  }, [_h('nav', {
+  }, [_vm._c('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _h('div', {
+  }, [_vm._v("Navbar")]), _vm._c('div', {
     staticClass: "layout__main"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _h('div', {
+  }, [_vm._v("Sidebar")]), _vm._c('div', {
     staticClass: "layout__content"
-  }, ["Content"])]), _h('div', {
+  }, [_vm._v("Content")])]), _vm._c('div', {
     staticClass: "layout__footer primary"
-  }, ["Footer"])])]), _h('v-col', {
+  }, [_vm._v("Footer")])])]), _vm._c('v-col', {
     attrs: {
       "xs12": "xs12",
       "sm6": "sm6",
       "md6": "md6",
       "lg6": "lg6"
     }
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout layout--4 z-depth-1"
-  }, [_h('div', {
+  }, [_vm._c('div', {
     staticClass: "layout__sidebar secondary"
-  }, ["Sidebar"]), _h('div', {
+  }, [_vm._v("Sidebar")]), _vm._c('div', {
     staticClass: "layout__main"
-  }, [_h('nav', {
+  }, [_vm._c('nav', {
     staticClass: "navbar primary"
-  }, ["Navbar"]), _h('div', {
+  }, [_vm._v("Navbar")]), _vm._c('div', {
     staticClass: "layout__content"
-  }, ["Content"]), _h('div', {
+  }, [_vm._v("Content")]), _vm._c('div', {
     staticClass: "layout__footer primary"
-  }, ["Footer"])])])])])])]), _h('markup', {
+  }, [_vm._v("Footer")])])])])])])]), _vm._c('markup', {
     attrs: {
       "lang": "xml"
     },
     slot: "markup"
-  }, ["<v-app top-navbar>\n  <header>\n    <v-navbar></v-nabvar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n</v-app>\n \n<v-app top-navbar left-fixed-sidebar>\n  <header>\n    <v-navbar></v-nabvar>\n  </header>\n  <main>\n    <v-sidebar id=\"sidebar\" fixed></v-sidebar>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n</v-app>\n \n<v-app top-navbar footer right-fixed-sidebar>\n  <header>\n    <v-navbar></v-nabvar>\n  </header>\n  <main>\n    <v-sidebar id=\"sidebar\" fixed right></v-sidebar>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer></v-footer>\n</v-app>"])])
+  }, [_vm._v("<v-app top-navbar>\n  <header>\n    <v-navbar></v-nabvar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n</v-app>\n \n<v-app top-navbar left-fixed-sidebar>\n  <header>\n    <v-navbar></v-nabvar>\n  </header>\n  <main>\n    <v-sidebar id=\"sidebar\" fixed></v-sidebar>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n</v-app>\n \n<v-app top-navbar footer right-fixed-sidebar>\n  <header>\n    <v-navbar></v-nabvar>\n  </header>\n  <main>\n    <v-sidebar id=\"sidebar\" fixed right></v-sidebar>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer></v-footer>\n</v-app>")])])
 },staticRenderFns: []}
 
 /***/ },
@@ -22065,7 +22208,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   * (c) 2016 Evan You
   * @license MIT
   */
-'use strict';
+
 
 var View = {
   name: 'router-view',
@@ -24126,19 +24269,14 @@ module.exports = VueRouter;
 /* 137 */
 /***/ function(module, exports) {
 
-exports.sync = function (store, router) {
-  store.registerModule('route', {
+exports.sync = function (store, router, options) {
+  var moduleName = (options || {}).moduleName || 'route'
+
+  store.registerModule(moduleName, {
     state: {},
     mutations: {
-      'router/ROUTE_CHANGED': function (state, to) {
-        store.state.route = Object.freeze({
-          name: to.name,
-          path: to.path,
-          hash: to.hash,
-          query: to.query,
-          params: to.params,
-          fullPath: to.fullPath
-        })
+      'router/ROUTE_CHANGED': function (state, transition) {
+        store.state[moduleName] = cloneRoute(transition.to, transition.from)
       }
     }
   })
@@ -24148,7 +24286,7 @@ exports.sync = function (store, router) {
 
   // sync router on store change
   store.watch(
-    function (state) { return state.route },
+    function (state) { return state[moduleName] },
     function (route) {
       if (route.fullPath === currentPath) {
         return
@@ -24161,14 +24299,30 @@ exports.sync = function (store, router) {
   )
 
   // sync store on router navigation
-  router.afterEach(function (to) {
+  router.afterEach(function (to, from) {
     if (isTimeTraveling) {
       isTimeTraveling = false
       return
     }
     currentPath = to.fullPath
-    store.commit('router/ROUTE_CHANGED', to)
+    store.commit('router/ROUTE_CHANGED', { to: to, from: from })
   })
+}
+
+function cloneRoute (to, from) {
+  const clone = {
+    name: to.name,
+    path: to.path,
+    hash: to.hash,
+    query: to.query,
+    params: to.params,
+    fullPath: to.fullPath,
+    meta: to.meta
+  }
+  if (from) {
+    clone.from = cloneRoute(from)
+  }
+  return Object.freeze(clone)
 }
 
 
@@ -24710,6 +24864,7 @@ return index;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(2);
 
 
