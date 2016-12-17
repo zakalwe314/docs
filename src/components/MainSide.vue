@@ -24,13 +24,13 @@
             v-bind:item="j"
             v-bind:router="item.router || true"
           )
-            v-chip(class="green" v-if="j.chip") updated
+            v-chip(class="green" v-if="j.chip") {{ j.chip }}
         v-sidebar-item(
           v-bind:item="item"
           v-bind:router="item.router || true"
           v-else
         )
-          v-chip(class="green" v-if="item.chip") updated
+          v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
 
 <script>
@@ -55,12 +55,13 @@
               { href: '/components/dropdowns', text: 'Dropdowns', icon: 'arrow_drop_down_circle' },
               { href: '/components/footer', text: 'Footer', icon: 'call_to_action' },
               { href: '/components/forms', text: 'Forms', icon: 'text_format' },
+              { href: '/components/icons', text: 'Icons', icon: 'favorite', chip: 'new' },
               { href: '/components/lists', text: 'Lists', icon: 'format_list_bulleted' },
               { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
-              { href: '/components/navbar', text: 'Navbars', icon: 'web', chip: true },
+              { href: '/components/navbar', text: 'Navbars', icon: 'web', chip: 'updated' },
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
-              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt', chip: true },
+              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
             ]

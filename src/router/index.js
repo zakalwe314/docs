@@ -16,6 +16,7 @@ import DropdownsView from '../views/DropdownsView.vue'
 import GridView from '../views/GridView.vue'
 import FormsView from '../views/FormsView.vue'
 import FooterView from '../views/FooterView.vue'
+import IconView from '../views/IconView.vue'
 import ListsView from '../views/ListsView.vue'
 import ModalsView from '../views/ModalsView.vue'
 import NavbarView from '../views/NavbarView.vue'
@@ -51,6 +52,7 @@ const router = new Router({
     { path: '/components/forms', component: FormsView },
     { path: '/components/footer', component: FooterView },
     { path: '/components/lists', component: ListsView },
+    { path: '/components/icons', component: IconView },
     { path: '/components/modals', component: ModalsView },
     { path: '/components/navbar', component: NavbarView },
     { path: '/components/pagination', component: PaginationView },
