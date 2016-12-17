@@ -15,7 +15,7 @@
           width="100px"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.4" target="_blank") v0.7.4
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.6" target="_blank") v0.7.6
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
@@ -85,7 +85,8 @@
             items: [
               { href: '/css/typography', text: 'Typography', icon: 'title' },
               { href: '/css/grid', text: 'Grid', icon: 'grid_on' },
-              { href: '/css/colors', text: 'Colors', icon: 'invert_colors' }
+              { href: '/css/colors', text: 'Colors', icon: 'invert_colors' },
+              { href: '/css/helpers', text: 'Helpers', icon: 'build', chip: 'new' }
             ]
           }
         ]
