@@ -50,17 +50,20 @@
     &.scss
       &:after
         content: 'scss'
+    &.stylus
+      &:after
+        content: 'stylus'
   
   .hljs
     color: $theme.secondary
     
-    .hljs-tag
+    .hljs-tag, .hljs-variable
       color: $purple.lighten-1
     
     .hljs-attr, .hljs-keyword
       color: $theme.primary
       
-    .hljs-string, .hljs-literal
+    .hljs-string, .hljs-literal, .hljs-number
       color: $red.lighten-2
   
   

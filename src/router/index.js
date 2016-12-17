@@ -29,6 +29,7 @@ import TabsView from '../views/TabsView.vue'
 import ToastsView from '../views/ToastsView.vue'
 import TooltipsView from '../views/TooltipsView.vue'
 import TypographyView from '../views/TypographyView.vue'
+import HelpersView from '../views/HelpersView.vue'
 import LayoutsView from '../views/LayoutsView.vue'
 import EventBusView from '../views/EventBusView.vue'
 
@@ -67,6 +68,7 @@ const router = new Router({
     { path: '/css/typography', component: TypographyView },
     { path: '/css/grid', component: GridView },
     { path: '/css/colors', component: ColorsView },
+    { path: '/css/helpers', component: HelpersView },
     { path: '/layouts', component: LayoutsView },
     { path: '/event-bus', component: EventBusView },
     { path: '*', redirect: '/' }
