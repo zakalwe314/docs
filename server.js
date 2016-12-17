@@ -79,6 +79,12 @@ app.use(favicon('./public/favicon-32x32.png'))
 app.use('/manifest.json', serve('./manifest.json'))
 app.use('/dist', serve('./dist'))
 app.use('/public', serve('./public'))
+app.use('/robots.txt', serve('./robots.txt'))
+
+app.get('/sitemap.xml', (req, res) => {
+  res.setHeader("Content-Type", "text/xml")
+  res.sendFile(resolve('./sitemap.xml'))
+})
 
 app.get('*', (req, res) => {
   if (!renderer) {
