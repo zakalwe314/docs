@@ -23,8 +23,7 @@
         |}
       div(class="section-text") 
         p In the example above, we hook into the close event of a modal with the id of <code>demo-modal</code>. All of Vuetify's events follow a similar structure:
-      markup(lang="html")
-        |{component name}:{component action}:{component id}(optional)
+        code {component name}:{component action}:{component id}(optional)
       
     section
       section-header Events
