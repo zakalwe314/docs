@@ -100,4 +100,7 @@
       text-align: center
       padding: 1rem 0
       margin: .5rem 0
+      
+      &__text
+        padding: 0
 </style>

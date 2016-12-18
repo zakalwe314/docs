@@ -1,12 +1,12 @@
 <template lang="pug">
   div(class="view")
     section
-      section-text
+      section-def
         dt(slot="title") Event Bus
         dd(slot="desc") The Vuetify <code>bus</code> is the glue that holds all of your components together. Made for Vue SSR <em>(Server Side Rendering)</em>, the bus system ensures that components are able to work in a variety of setups.
     section
       section-header Components
-      p(class="section-text") Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through <code>this.$vuetify.bus</code>.
+      section-text Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through <code>this.$vuetify.bus</code>.
       markup(lang="js")
         |data () {
         |   return {
@@ -21,13 +21,13 @@
         |     this.$vuetify.toast.create(...popup_data)
         |   }
         |}
-      div(class="section-text") 
+      section-text
         p In the example above, we hook into the close event of a modal with the id of <code>demo-modal</code>. All of Vuetify's events follow a similar structure:
         code {component name}:{component action}:{component id}(optional)
       
     section
       section-header Events
-      p(class="section-text") When Vue components are broken down, event listeners need to be removed. This is the process for regular <strong>DOM</strong> event listeners, and it is the same for the Vuetify Bus. This can be done by calling the <strong>unsub</strong> method on the bus in the Vue <strong>beforeDestroy</strong> hook.
+      section-text When Vue components are broken down, event listeners need to be removed. This is the process for regular <strong>DOM</strong> event listeners, and it is the same for the Vuetify Bus. This can be done by calling the <strong>unsub</strong> method on the bus in the Vue <strong>beforeDestroy</strong> hook.
       markup(lang="js")
         |mounted () {
         |   this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)
@@ -35,7 +35,7 @@
         |beforeDestroy () {
         |   this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)
         |}
-      p(class="section-text") While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. 
+      section-text While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. 
       markup(lang="js")
         |import Eventable from '../node_modules/vuetify/src/mixins/eventable'
         |&nbsp;
@@ -50,16 +50,16 @@
         |     }
         |   }
         |}
-      p(class="section-text") The above will automatically sub to the Bus upon creation and unsub when removed.
+      section-text The above will automatically sub to the Bus upon creation and unsub when removed.
     section
       section-header Extending
-      p(class="section-text") You may want to create your own events in order to support your application, which is just as easy as hooking into existing ones. This allows you to take advantage of the SSR capabilities you get by default.
+      section-text You may want to create your own events in order to support your application, which is just as easy as hooking into existing ones. This allows you to take advantage of the SSR capabilities you get by default.
       markup(lang="js")
         |this.$vuetify.bus.sub('{unique string}', callback)
         |&nbsp;
         |this.$vuetify.bus.pub('{unique string}', arg1, arg2)
       h6 Loading
-      p(class="text-text") Depending on the state of your application, you may need to wait for the <strong>DOM</strong> to be ready or just call immediately. Vuetify provides a simple function that will do this for you.
+      section-text Depending on the state of your application, you may need to wait for the <strong>DOM</strong> to be ready or just call immediately. Vuetify provides a simple function that will do this for you.
       markup(lang="js")
         |mounted () {
         |   this.$vuetify.load(this.init)

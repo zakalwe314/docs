@@ -1,10 +1,10 @@
 <template lang="pug">
-  div.view
+  div(class="view")
     section
-      section-text
+      section-def
         strong(slot="title") About
         div(slot="desc") 
-          p Vuetify is a component framework for VueJS 2.0. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's <strong>Material Design</strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>.
+          p Vuetify is a component framework for Vue.js 2. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's <strong><a href="https://material.io/" target="_blank">Material Design</a></strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>.
     section
       section-header Features
       v-container(fluid)
@@ -51,7 +51,7 @@
 
     section
       section-header Ecosystem
-      div(class="section-text") Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.
+      section-text Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.
 
       v-list
         v-list-item
@@ -69,26 +69,14 @@
 
     section
       section-header Roadmap
-      div(class="section-text") With the baseline complete, some of the goals of this project before launch:
-      v-list
-        v-list-item
-          v-list-item-icon remove
-          v-list-item-title Continued fleshing out of the Documentation
-        v-list-item
-          v-list-item-icon remove
-          v-list-item-title Adding more depth to existing components
-        v-list-item
-          v-list-item-icon remove
-          v-list-item-title Create a guide for taking Vuetify SSR to production
-        v-list-item
-          v-list-item-icon remove
-          v-list-item-title Add Accessiblity support
-        v-list-item
-          v-list-item-icon remove
-          v-list-item-title Complete unreleased components, i.e. (Progress, Tables)
-        v-list-item
-          v-list-item-icon remove
-          v-list-item-title Bug fixing and support
+      section-text With the baseline complete, some of the goals of this project before launch:
+      ul
+        li Continued fleshing out of the Documentation
+        li Adding more depth to existing components
+        li Create a guide for taking Vuetify SSR to production
+        li Add Accessiblity support
+        li Complete unreleased components, i.e. (Progress, Tables)
+        li Bug fixing and support
     section
       whats-next(route="/quick-start" text="Quick Start") Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the <strong>vuetify</strong> package.
 </template>
@@ -106,10 +94,10 @@
     methods: {
       meta () {
         return {
-          title: 'Vue JS 2.0 Component Framework | Vuetify',
+          title: 'Vue.js 2 Component Framework | Vuetify',
           h1: 'Vuetify',
-          description: 'Reusable semantic component framework for Vue JS 2.0.',
-          keywords: 'vue, vue 2.0, vue js, material design, vue components, material design components'
+          description: 'Reusable semantic component framework for Vue.js 2.',
+          keywords: 'vue, vue 2, vue js, material design, vue components, material design components'
         }
       }
     }

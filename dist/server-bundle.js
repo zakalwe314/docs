@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/dist/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 146);
+/******/ 	return __webpack_require__(__webpack_require__.s = 148);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -6906,7 +6906,7 @@ https://highlightjs.org/
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_index__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_index__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router_index__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex_router_sync__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex_router_sync__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex_router_sync___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vuex_router_sync__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_highlight_js_lib_highlight_js__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_highlight_js_lib_highlight_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_highlight_js_lib_highlight_js__);
@@ -7527,18 +7527,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ exports["default"] = {
   mounted: function mounted () {
@@ -7552,10 +7540,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
   methods: {
     meta: function meta () {
       return {
-        title: 'Vue JS 2.0 Component Framework | Vuetify',
+        title: 'Vue.js 2 Component Framework | Vuetify',
         h1: 'Vuetify',
-        description: 'Reusable semantic component framework for Vue JS 2.0.',
-        keywords: 'vue, vue 2.0, vue js, material design, vue components, material design components'
+        description: 'Reusable semantic component framework for Vue.js 2.',
+        keywords: 'vue, vue 2, vue js, material design, vue components, material design components'
       }
     }
   }
@@ -8595,8 +8583,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -11305,12 +11291,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
   data: function data () {
     return {
       doc: {
-        stage: 'iter',
         title: 'Toast',
         desc: 'Soon',
-        types: [
-          'function'
-        ],
         params: [
           [
             '<code>$vuetify.toast</code>',
@@ -11485,9 +11467,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
     return {
       doc: {
         title: 'Typography',
-        desc: 'Soon',
-        types: [],
-        params: []
+        desc: 'Soon'
       }
     }
   },
@@ -11536,12 +11516,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MainSide_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__MainSide_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Markup_vue__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Markup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__Markup_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__SectionHeader_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__SectionHeader_vue__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__SectionHeader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__SectionHeader_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__SectionText_vue__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__SectionText_vue__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__SectionText_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__SectionText_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__WhatsNext_vue__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__WhatsNext_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__WhatsNext_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__SectionDef_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__SectionDef_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__SectionDef_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__WhatsNext_vue__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__WhatsNext_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__WhatsNext_vue__);
+
 
 
 
@@ -11567,7 +11550,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
   Markup: __WEBPACK_IMPORTED_MODULE_8__Markup_vue___default.a,
   SectionHeader: __WEBPACK_IMPORTED_MODULE_9__SectionHeader_vue___default.a,
   SectionText: __WEBPACK_IMPORTED_MODULE_10__SectionText_vue___default.a,
-  WhatsNext: __WEBPACK_IMPORTED_MODULE_11__WhatsNext_vue___default.a
+  SectionDef: __WEBPACK_IMPORTED_MODULE_11__SectionDef_vue___default.a,
+  WhatsNext: __WEBPACK_IMPORTED_MODULE_12__WhatsNext_vue___default.a
 };
 
 /***/ },
@@ -11577,69 +11561,69 @@ Object.defineProperty(exports, "__esModule", { value: true });
 "use strict";
 /* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_router__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_AboutView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_QuickStartView_vue__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_QuickStartView_vue__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_QuickStartView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_QuickStartView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_OverviewView_vue__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_OverviewView_vue__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_OverviewView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_OverviewView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_AlertsView_vue__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_AlertsView_vue__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_AlertsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_AlertsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_BadgesView_vue__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_BadgesView_vue__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_BadgesView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_BadgesView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_BreadcrumbsView_vue__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_BreadcrumbsView_vue__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_BreadcrumbsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_BreadcrumbsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_ButtonsView_vue__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_ButtonsView_vue__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_ButtonsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_ButtonsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_CardsView_vue__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_CardsView_vue__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_CardsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_CardsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_ChipsView_vue__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_ChipsView_vue__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_ChipsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_ChipsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_CollapsibleView_vue__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_CollapsibleView_vue__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_CollapsibleView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_CollapsibleView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_ColorsView_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_ColorsView_vue__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_ColorsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_ColorsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_DropdownsView_vue__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_DropdownsView_vue__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_DropdownsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__views_DropdownsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_GridView_vue__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_GridView_vue__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_GridView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__views_GridView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_FormsView_vue__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_FormsView_vue__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_FormsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__views_FormsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_FooterView_vue__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_FooterView_vue__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_FooterView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__views_FooterView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__views_IconView_vue__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__views_IconView_vue__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__views_IconView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__views_IconView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__views_ListsView_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__views_ListsView_vue__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__views_ListsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__views_ListsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__views_ModalsView_vue__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__views_ModalsView_vue__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__views_ModalsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__views_ModalsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__views_NavbarView_vue__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__views_NavbarView_vue__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__views_NavbarView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__views_NavbarView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__views_ParallaxView_vue__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__views_ParallaxView_vue__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__views_ParallaxView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21__views_ParallaxView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__views_PaginationView_vue__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__views_PaginationView_vue__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__views_PaginationView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22__views_PaginationView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__views_ProgressView_vue__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__views_ProgressView_vue__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__views_ProgressView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__views_ProgressView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__views_SliderView_vue__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__views_SliderView_vue__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__views_SliderView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__views_SliderView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__views_SidebarView_vue__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__views_SidebarView_vue__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__views_SidebarView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__views_SidebarView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__views_TabsView_vue__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__views_TabsView_vue__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__views_TabsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__views_TabsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__views_ToastsView_vue__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__views_ToastsView_vue__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__views_ToastsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27__views_ToastsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__views_TooltipsView_vue__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__views_TooltipsView_vue__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__views_TooltipsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_28__views_TooltipsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__views_TypographyView_vue__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__views_TypographyView_vue__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__views_TypographyView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29__views_TypographyView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__views_HelpersView_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__views_HelpersView_vue__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__views_HelpersView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30__views_HelpersView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__views_LayoutsView_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__views_LayoutsView_vue__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__views_LayoutsView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31__views_LayoutsView_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__views_EventBusView_vue__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__views_EventBusView_vue__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__views_EventBusView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32__views_EventBusView_vue__);
 
 
@@ -11736,7 +11720,7 @@ router.beforeEach(function (to, from, next) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuex__);
 
 
@@ -18376,7 +18360,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(3)
 
 /* template */
-var __vue_template__ = __webpack_require__(127)
+var __vue_template__ = __webpack_require__(129)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18401,11 +18385,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
 __vue_exports__ = __webpack_require__(4)
 
 /* template */
-var __vue_template__ = __webpack_require__(122)
+var __vue_template__ = __webpack_require__(123)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18431,7 +18417,7 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
 /* template */
-var __vue_template__ = __webpack_require__(134)
+var __vue_template__ = __webpack_require__(136)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18456,11 +18442,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
 __vue_exports__ = __webpack_require__(5)
 
 /* template */
-var __vue_template__ = __webpack_require__(102)
+var __vue_template__ = __webpack_require__(103)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18489,7 +18477,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(6)
 
 /* template */
-var __vue_template__ = __webpack_require__(119)
+var __vue_template__ = __webpack_require__(120)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18514,11 +18502,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
 __vue_exports__ = __webpack_require__(7)
 
 /* template */
-var __vue_template__ = __webpack_require__(135)
+var __vue_template__ = __webpack_require__(137)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18544,7 +18534,7 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
 /* template */
-var __vue_template__ = __webpack_require__(132)
+var __vue_template__ = __webpack_require__(134)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18569,11 +18559,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
 __vue_exports__ = __webpack_require__(8)
 
 /* template */
-var __vue_template__ = __webpack_require__(107)
+var __vue_template__ = __webpack_require__(108)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18598,11 +18590,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
 __vue_exports__ = __webpack_require__(9)
 
 /* template */
-var __vue_template__ = __webpack_require__(116)
+var __vue_template__ = __webpack_require__(117)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18627,11 +18621,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
 __vue_exports__ = __webpack_require__(10)
 
 /* template */
-var __vue_template__ = __webpack_require__(141)
+var __vue_template__ = __webpack_require__(143)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18656,11 +18652,8 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
-/* script */
-__vue_exports__ = __webpack_require__(11)
-
 /* template */
-var __vue_template__ = __webpack_require__(110)
+var __vue_template__ = __webpack_require__(127)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18685,8 +18678,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
+/* script */
+__vue_exports__ = __webpack_require__(11)
+
 /* template */
-var __vue_template__ = __webpack_require__(108)
+var __vue_template__ = __webpack_require__(111)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18713,11 +18711,8 @@ var __vue_styles__ = {}
 
 /* styles */
 
-/* script */
-__vue_exports__ = __webpack_require__(12)
-
 /* template */
-var __vue_template__ = __webpack_require__(106)
+var __vue_template__ = __webpack_require__(109)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18742,11 +18737,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
-__vue_exports__ = __webpack_require__(13)
+__vue_exports__ = __webpack_require__(12)
 
 /* template */
-var __vue_template__ = __webpack_require__(112)
+var __vue_template__ = __webpack_require__(107)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18771,13 +18768,11 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
-/* styles */
-
 /* script */
-__vue_exports__ = __webpack_require__(14)
+__vue_exports__ = __webpack_require__(13)
 
 /* template */
-var __vue_template__ = __webpack_require__(120)
+var __vue_template__ = __webpack_require__(113)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18805,10 +18800,41 @@ var __vue_styles__ = {}
 /* styles */
 
 /* script */
+__vue_exports__ = __webpack_require__(14)
+
+/* template */
+var __vue_template__ = __webpack_require__(121)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ },
+/* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* styles */
+
+/* script */
 __vue_exports__ = __webpack_require__(15)
 
 /* template */
-var __vue_template__ = __webpack_require__(117)
+var __vue_template__ = __webpack_require__(118)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18828,7 +18854,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -18838,7 +18864,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(16)
 
 /* template */
-var __vue_template__ = __webpack_require__(137)
+var __vue_template__ = __webpack_require__(139)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18857,7 +18883,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -18869,7 +18895,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(17)
 
 /* template */
-var __vue_template__ = __webpack_require__(111)
+var __vue_template__ = __webpack_require__(112)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18889,7 +18915,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -18901,38 +18927,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(18)
 
 /* template */
-var __vue_template__ = __webpack_require__(115)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-module.exports = __vue_exports__
-
-
-/***/ },
-/* 74 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = {}
-
-/* styles */
-
-/* script */
-__vue_exports__ = __webpack_require__(19)
-
-/* template */
-var __vue_template__ = __webpack_require__(123)
+var __vue_template__ = __webpack_require__(116)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18960,10 +18955,10 @@ var __vue_styles__ = {}
 /* styles */
 
 /* script */
-__vue_exports__ = __webpack_require__(20)
+__vue_exports__ = __webpack_require__(19)
 
 /* template */
-var __vue_template__ = __webpack_require__(114)
+var __vue_template__ = __webpack_require__(124)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -18991,10 +18986,10 @@ var __vue_styles__ = {}
 /* styles */
 
 /* script */
-__vue_exports__ = __webpack_require__(21)
+__vue_exports__ = __webpack_require__(20)
 
 /* template */
-var __vue_template__ = __webpack_require__(133)
+var __vue_template__ = __webpack_require__(115)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19022,10 +19017,41 @@ var __vue_styles__ = {}
 /* styles */
 
 /* script */
+__vue_exports__ = __webpack_require__(21)
+
+/* template */
+var __vue_template__ = __webpack_require__(135)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ },
+/* 78 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
+/* styles */
+
+/* script */
 __vue_exports__ = __webpack_require__(22)
 
 /* template */
-var __vue_template__ = __webpack_require__(109)
+var __vue_template__ = __webpack_require__(110)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19045,7 +19071,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -19055,36 +19081,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(23)
 
 /* template */
-var __vue_template__ = __webpack_require__(129)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-module.exports = __vue_exports__
-
-
-/***/ },
-/* 79 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = {}
-
-/* script */
-__vue_exports__ = __webpack_require__(24)
-
-/* template */
-var __vue_template__ = __webpack_require__(105)
+var __vue_template__ = __webpack_require__(131)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19109,13 +19106,42 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* script */
+__vue_exports__ = __webpack_require__(24)
+
+/* template */
+var __vue_template__ = __webpack_require__(106)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ },
+/* 81 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
 /* styles */
 
 /* script */
 __vue_exports__ = __webpack_require__(25)
 
 /* template */
-var __vue_template__ = __webpack_require__(139)
+var __vue_template__ = __webpack_require__(141)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19135,7 +19161,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -19147,38 +19173,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(26)
 
 /* template */
-var __vue_template__ = __webpack_require__(136)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-module.exports = __vue_exports__
-
-
-/***/ },
-/* 82 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = {}
-
-/* styles */
-
-/* script */
-__vue_exports__ = __webpack_require__(27)
-
-/* template */
-var __vue_template__ = __webpack_require__(125)
+var __vue_template__ = __webpack_require__(138)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19206,10 +19201,10 @@ var __vue_styles__ = {}
 /* styles */
 
 /* script */
-__vue_exports__ = __webpack_require__(28)
+__vue_exports__ = __webpack_require__(27)
 
 /* template */
-var __vue_template__ = __webpack_require__(124)
+var __vue_template__ = __webpack_require__(126)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19237,10 +19232,10 @@ var __vue_styles__ = {}
 /* styles */
 
 /* script */
-__vue_exports__ = __webpack_require__(29)
+__vue_exports__ = __webpack_require__(28)
 
 /* template */
-var __vue_template__ = __webpack_require__(142)
+var __vue_template__ = __webpack_require__(125)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19265,11 +19260,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
-__vue_exports__ = __webpack_require__(30)
+__vue_exports__ = __webpack_require__(29)
 
 /* template */
-var __vue_template__ = __webpack_require__(128)
+var __vue_template__ = __webpack_require__(144)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19294,13 +19291,11 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
-/* styles */
-
 /* script */
-__vue_exports__ = __webpack_require__(31)
+__vue_exports__ = __webpack_require__(30)
 
 /* template */
-var __vue_template__ = __webpack_require__(113)
+var __vue_template__ = __webpack_require__(130)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19328,10 +19323,10 @@ var __vue_styles__ = {}
 /* styles */
 
 /* script */
-__vue_exports__ = __webpack_require__(32)
+__vue_exports__ = __webpack_require__(31)
 
 /* template */
-var __vue_template__ = __webpack_require__(101)
+var __vue_template__ = __webpack_require__(114)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19356,11 +19351,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
-__vue_exports__ = __webpack_require__(33)
+__vue_exports__ = __webpack_require__(32)
 
 /* template */
-var __vue_template__ = __webpack_require__(138)
+var __vue_template__ = __webpack_require__(102)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19386,10 +19383,10 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
 /* script */
-__vue_exports__ = __webpack_require__(34)
+__vue_exports__ = __webpack_require__(33)
 
 /* template */
-var __vue_template__ = __webpack_require__(104)
+var __vue_template__ = __webpack_require__(140)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19414,13 +19411,42 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* script */
+__vue_exports__ = __webpack_require__(34)
+
+/* template */
+var __vue_template__ = __webpack_require__(105)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ },
+/* 91 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
 /* styles */
 
 /* script */
 __vue_exports__ = __webpack_require__(35)
 
 /* template */
-var __vue_template__ = __webpack_require__(103)
+var __vue_template__ = __webpack_require__(104)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19440,7 +19466,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -19452,36 +19478,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(36)
 
 /* template */
-var __vue_template__ = __webpack_require__(126)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-module.exports = __vue_exports__
-
-
-/***/ },
-/* 92 */
-/***/ function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = {}
-
-/* script */
-__vue_exports__ = __webpack_require__(37)
-
-/* template */
-var __vue_template__ = __webpack_require__(130)
+var __vue_template__ = __webpack_require__(128)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19506,13 +19503,11 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
-/* styles */
-
 /* script */
-__vue_exports__ = __webpack_require__(38)
+__vue_exports__ = __webpack_require__(37)
 
 /* template */
-var __vue_template__ = __webpack_require__(131)
+var __vue_template__ = __webpack_require__(132)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19537,11 +19532,13 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* styles */
+
 /* script */
-__vue_exports__ = __webpack_require__(39)
+__vue_exports__ = __webpack_require__(38)
 
 /* template */
-var __vue_template__ = __webpack_require__(118)
+var __vue_template__ = __webpack_require__(133)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19567,10 +19564,10 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
 /* script */
-__vue_exports__ = __webpack_require__(40)
+__vue_exports__ = __webpack_require__(39)
 
 /* template */
-var __vue_template__ = __webpack_require__(99)
+var __vue_template__ = __webpack_require__(119)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19595,13 +19592,42 @@ module.exports = __vue_exports__
 var __vue_exports__, __vue_options__
 var __vue_styles__ = {}
 
+/* script */
+__vue_exports__ = __webpack_require__(40)
+
+/* template */
+var __vue_template__ = __webpack_require__(100)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+module.exports = __vue_exports__
+
+
+/***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
+
 /* styles */
 
 /* script */
 __vue_exports__ = __webpack_require__(41)
 
 /* template */
-var __vue_template__ = __webpack_require__(121)
+var __vue_template__ = __webpack_require__(122)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19621,7 +19647,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -19633,7 +19659,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(42)
 
 /* template */
-var __vue_template__ = __webpack_require__(100)
+var __vue_template__ = __webpack_require__(101)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19653,7 +19679,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -19665,7 +19691,7 @@ var __vue_styles__ = {}
 __vue_exports__ = __webpack_require__(43)
 
 /* template */
-var __vue_template__ = __webpack_require__(140)
+var __vue_template__ = __webpack_require__(142)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -19684,7 +19710,7 @@ module.exports = __vue_exports__
 
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -19748,7 +19774,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -19809,7 +19835,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -19934,7 +19960,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -19954,7 +19980,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 }]}
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -19972,7 +19998,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20053,7 +20079,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20072,7 +20098,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20121,7 +20147,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20163,17 +20189,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('dl', {
+  return _vm._c('div', {
     staticClass: "section-text"
-  }, [_vm._t("title"), _vm._t("desc")], true)
+  }, [_vm._t("default")], true)
 },staticRenderFns: []}
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20351,7 +20377,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20367,7 +20393,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20566,17 +20592,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _vm._c('div', {
     staticClass: "view"
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('strong', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('strong', {
     slot: "title"
   }, [_vm._v("About")]), _vm._c('div', {
     slot: "desc"
-  }, [_vm._c('p', [_vm._v("Vuetify is a component framework for VueJS 2.0. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's "), _vm._c('strong', [_vm._v("Material Design")]), _vm._v(" design pattern, taking cues from other popular frameworks such as "), _vm._c('a', {
+  }, [_vm._c('p', [_vm._v("Vuetify is a component framework for Vue.js 2. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify utilizes Google's "), _vm._c('strong', [_vm._c('a', {
+    attrs: {
+      "href": "https://material.io/",
+      "target": "_blank"
+    }
+  }, [_vm._v("Material Design")])]), _vm._v(" design pattern, taking cues from other popular frameworks such as "), _vm._c('a', {
     attrs: {
       "href": "http://materializecss.com/",
       "target": "_blank"
@@ -20678,25 +20709,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "x-large": "x-large"
     }
-  }, [_vm._v("open_in_browser")]), _vm._c('v-list-item-title', [_vm._v("Built with Vue Server Side Rendering"), _vm._c('v-list-item-sub-title', [_vm._v("Using an internal bus, Vuetify is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.")])])])])])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Ecosystem")]), _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._v("Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.")]), _vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("color_lens")]), _vm._c('v-list-item-title', [_vm._v("Material Design Color Pack")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("play_arrow")]), _vm._c('v-list-item-title', [_vm._v("Vue CLI Templates including SSR")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("security")]), _vm._c('v-list-item-title', [_vm._c('span', [_vm._v("Vuetify Admin Components "), _vm._c('v-chip', {
+  }, [_vm._v("open_in_browser")]), _vm._c('v-list-item-title', [_vm._v("Built with Vue Server Side Rendering"), _vm._c('v-list-item-sub-title', [_vm._v("Using an internal bus, Vuetify is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.")])])])])])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Ecosystem")]), _vm._c('section-text', [_vm._v("Vuetify also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.")]), _vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("color_lens")]), _vm._c('v-list-item-title', [_vm._v("Material Design Color Pack")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("play_arrow")]), _vm._c('v-list-item-title', [_vm._v("Vue CLI Templates including SSR")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("security")]), _vm._c('v-list-item-title', [_vm._c('span', [_vm._v("Vuetify Admin Components "), _vm._c('v-chip', {
     staticClass: "green white--text",
     attrs: {
       "label": ""
     }
-  }, [_vm._v("Coming Soon")])])])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Roadmap")]), _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._v("With the baseline complete, some of the goals of this project before launch:")]), _vm._c('v-list', [_vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Continued fleshing out of the Documentation")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Adding more depth to existing components")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Create a guide for taking Vuetify SSR to production")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Add Accessiblity support")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Complete unreleased components, i.e. (Progress, Tables)")])]), _vm._c('v-list-item', [_vm._c('v-list-item-icon', [_vm._v("remove")]), _vm._c('v-list-item-title', [_vm._v("Bug fixing and support")])])])]), _vm._c('section', [_vm._c('whats-next', {
+  }, [_vm._v("Coming Soon")])])])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Roadmap")]), _vm._c('section-text', [_vm._v("With the baseline complete, some of the goals of this project before launch:")]), _vm._m(0)]), _vm._c('section', [_vm._c('whats-next', {
     attrs: {
       "route": "/quick-start",
       "text": "Quick Start"
     }
   }, [_vm._v("Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the "), _vm._c('strong', [_vm._v("vuetify")]), _vm._v(" package.")])])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
+  return _vm._c('ul', [_vm._c('li', [_vm._v("Continued fleshing out of the Documentation")]), _vm._c('li', [_vm._v("Adding more depth to existing components")]), _vm._c('li', [_vm._v("Create a guide for taking Vuetify SSR to production")]), _vm._c('li', [_vm._v("Add Accessiblity support")]), _vm._c('li', [_vm._v("Complete unreleased components, i.e. (Progress, Tables)")]), _vm._c('li', [_vm._v("Bug fixing and support")])])
+}]}
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20789,7 +20818,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -20823,7 +20852,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21098,7 +21127,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21154,7 +21183,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21257,7 +21286,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21285,7 +21314,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21307,7 +21336,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21379,7 +21408,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21455,7 +21484,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21465,7 +21494,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21668,7 +21697,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21880,7 +21909,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21889,7 +21918,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "id": "helpers"
     }
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('dt', {
     slot: "title"
   }, [_vm._v("Helpers")]), _vm._c('dd', {
     slot: "desc"
@@ -21946,7 +21975,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 }]}
 
 /***/ },
-/* 126 */
+/* 127 */
+/***/ function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
+  return _vm._c('dl', {
+    staticClass: "section-text"
+  }, [_vm._t("title"), _vm._t("desc")], true)
+},staticRenderFns: []}
+
+/***/ },
+/* 128 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -21997,7 +22036,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 127 */
+/* 129 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22027,7 +22066,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 128 */
+/* 130 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22116,39 +22155,33 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 129 */
+/* 131 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _vm._c('div', {
     staticClass: "view"
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('dt', {
     slot: "title"
   }, [_vm._v("Event Bus")]), _vm._c('dd', {
     slot: "desc"
-  }, [_vm._v("The Vuetify "), _vm._c('code', [_vm._v("bus")]), _vm._v(" is the glue that holds all of your components together. Made for Vue SSR "), _vm._c('em', [_vm._v("(Server Side Rendering)")]), _vm._v(", the bus system ensures that components are able to work in a variety of setups.")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Components")]), _vm._m(0), _vm._c('markup', {
+  }, [_vm._v("The Vuetify "), _vm._c('code', [_vm._v("bus")]), _vm._v(" is the glue that holds all of your components together. Made for Vue SSR "), _vm._c('em', [_vm._v("(Server Side Rendering)")]), _vm._v(", the bus system ensures that components are able to work in a variety of setups.")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Components")]), _vm._c('section-text', [_vm._v("Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through "), _vm._c('code', [_vm._v("this.$vuetify.bus")]), _vm._v(".")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, [_vm._v("data () {\n  return {\n    popup_data: ['Toast with Callback', 'right', 4000, () => alert('Callback')],\n  }\n}\nmounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nmethods: {\n  popup () {\n    this.$vuetify.toast.create(...popup_data)\n  }\n}")]), _vm._m(1)]), _vm._c('section', [_vm._c('section-header', [_vm._v("Events")]), _vm._m(2), _vm._c('markup', {
+  }, [_vm._v("data () {\n  return {\n    popup_data: ['Toast with Callback', 'right', 4000, () => alert('Callback')],\n  }\n}\nmounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nmethods: {\n  popup () {\n    this.$vuetify.toast.create(...popup_data)\n  }\n}")]), _vm._c('section-text', [_vm._c('p', [_vm._v("In the example above, we hook into the close event of a modal with the id of "), _vm._c('code', [_vm._v("demo-modal")]), _vm._v(". All of Vuetify's events follow a similar structure:")]), _vm._c('code', [_vm._v("{component name}:{component action}:{component id}(optional)")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Events")]), _vm._c('section-text', [_vm._v("When Vue components are broken down, event listeners need to be removed. This is the process for regular "), _vm._c('strong', [_vm._v("DOM")]), _vm._v(" event listeners, and it is the same for the Vuetify Bus. This can be done by calling the "), _vm._c('strong', [_vm._v("unsub")]), _vm._v(" method on the bus in the Vue "), _vm._c('strong', [_vm._v("beforeDestroy")]), _vm._v(" hook.")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, [_vm._v("mounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nbeforeDestroy () {\n  this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)\n}")]), _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. ")]), _vm._c('markup', {
+  }, [_vm._v("mounted () {\n  this.$vuetify.bus.sub('modal:close:demo-modal', this.popup)\n},\nbeforeDestroy () {\n  this.$vuetify.bus.unsub('modal:close:demo-modal', this.popup)\n}")]), _vm._c('section-text', [_vm._v("While this accomplishes binding and unbinding an event, it can become tedious in a larger application. To combat this, Vuetify provides a simple Vue mixin to do this automatically for you. The mixin looks for an event variable on the component. The mixin also assumes event to be an array of arrays. ")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, [_vm._v("import Eventable from '../node_modules/vuetify/src/mixins/eventable'\n \nexport default {\n  mixins: [Eventable],\n  computed: {\n    events () {\n      return [\n        'modal:open:demo-modal', this.open,\n        'modal:close:demo-modal', this.popup\n      ]\n    }\n  }\n}")]), _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("The above will automatically sub to the Bus upon creation and unsub when removed.")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Extending")]), _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("You may want to create your own events in order to support your application, which is just as easy as hooking into existing ones. This allows you to take advantage of the SSR capabilities you get by default.")]), _vm._c('markup', {
+  }, [_vm._v("import Eventable from '../node_modules/vuetify/src/mixins/eventable'\n \nexport default {\n  mixins: [Eventable],\n  computed: {\n    events () {\n      return [\n        'modal:open:demo-modal', this.open,\n        'modal:close:demo-modal', this.popup\n      ]\n    }\n  }\n}")]), _vm._c('section-text', [_vm._v("The above will automatically sub to the Bus upon creation and unsub when removed.")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Extending")]), _vm._c('section-text', [_vm._v("You may want to create your own events in order to support your application, which is just as easy as hooking into existing ones. This allows you to take advantage of the SSR capabilities you get by default.")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, [_vm._v("this.$vuetify.bus.sub('{unique string}', callback)\n \nthis.$vuetify.bus.pub('{unique string}', arg1, arg2)")]), _vm._c('h6', [_vm._v("Loading")]), _vm._m(3), _vm._c('markup', {
+  }, [_vm._v("this.$vuetify.bus.sub('{unique string}', callback)\n \nthis.$vuetify.bus.pub('{unique string}', arg1, arg2)")]), _vm._c('h6', [_vm._v("Loading")]), _vm._c('section-text', [_vm._v("Depending on the state of your application, you may need to wait for the "), _vm._c('strong', [_vm._v("DOM")]), _vm._v(" to be ready or just call immediately. Vuetify provides a simple function that will do this for you.")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
@@ -22158,26 +22191,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "text": "Layouts"
     }
   }, [_vm._v("Now that you have all the tools needed to build your next awesome application, head over to the layouts section to choose a ui.")])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("Vuetify's components utilize a simple pub/sub Bus in order to communicate throughout an application. This makes your website 100% compatible with server side rendering. It also makes it easy to hook into a components functionality through "), _vm._c('code', [_vm._v("this.$vuetify.bus")]), _vm._v(".")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._c('p', [_vm._v("In the example above, we hook into the close event of a modal with the id of "), _vm._c('code', [_vm._v("demo-modal")]), _vm._v(". All of Vuetify's events follow a similar structure:")]), _vm._c('code', [_vm._v("{component name}:{component action}:{component id}(optional)")])])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("When Vue components are broken down, event listeners need to be removed. This is the process for regular "), _vm._c('strong', [_vm._v("DOM")]), _vm._v(" event listeners, and it is the same for the Vuetify Bus. This can be done by calling the "), _vm._c('strong', [_vm._v("unsub")]), _vm._v(" method on the bus in the Vue "), _vm._c('strong', [_vm._v("beforeDestroy")]), _vm._v(" hook.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "text-text"
-  }, [_vm._v("Depending on the state of your application, you may need to wait for the "), _vm._c('strong', [_vm._v("DOM")]), _vm._v(" to be ready or just call immediately. Vuetify provides a simple function that will do this for you.")])
-}]}
+},staticRenderFns: []}
 
 /***/ },
-/* 130 */
+/* 132 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22186,37 +22203,40 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "id": "quick-start"
     }
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('strong', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('strong', {
     slot: "title"
   }, [_vm._v("Getting Started")]), _vm._c('p', {
     slot: "desc"
-  }, [_vm._v("Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages.")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Required Files")]), _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("Vuetify requires Google's Roboto Font and Material Icons.")]), _vm._c('markup', {
+  }, [_vm._v("Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages.")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Required Files")]), _vm._c('section-text', [_vm._v("Vuetify requires Google's Roboto Font and Material Icons.")]), _vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, [_vm._v("<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Manual Install")]), _vm._m(0), _vm._c('markup', {
+  }, [_vm._v("<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel=\"stylesheet\" type=\"text/css\">")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Manual Install")]), _vm._c('section-text', [_vm._v("If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your "), _vm._c('code', [_vm._v("index")]), _vm._v(" file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above.")]), _vm._c('markup', {
     attrs: {
       "lang": "html"
     }
-  }, [_vm._v("<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>")]), _vm._c('h6', [_vm._v("Existing Projects")]), _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn.")]), _vm._c('markup', {
+  }, [_vm._v("<link href=\"https://unpkg.com/vuetify/dist/vuetify.min.css\" rel=\"stylesheet\" type=\"text/css\">\n<script src=\"https://unpkg.com/vuetify/dist/vuetify.min.js\"></script>")]), _vm._c('h6', [_vm._v("Existing Projects")]), _vm._c('section-text', [_vm._v("If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn.")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, [_vm._v("npm install vuetify --save-dev\n \nyarn add vuetify --dev")]), _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("Now, in your index.js, import Vuetify and apply the plugin to Vue.")]), _vm._c('markup', {
+  }, [_vm._v("npm install vuetify --save-dev\n \nyarn add vuetify --dev")]), _vm._c('section-text', [_vm._v("Now, in your index.js, import Vuetify and apply the plugin to Vue.")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, [_vm._v("import Vue from 'vue'\nimport Vuetify from 'vuetify'\n \nVue.use(Vuetify)")]), _vm._m(1), _vm._c('markup', {
+  }, [_vm._v("import Vue from 'vue'\nimport Vuetify from 'vuetify'\n \nVue.use(Vuetify)")]), _vm._c('section-text', [_vm._v("Once you have Vuetify installed, in your main App.vue file, add the Vuetify "), _vm._c('code', [_vm._v("init")]), _vm._v(" function to the Vue mounted hook.")]), _vm._c('markup', {
     attrs: {
       "lang": "js"
     }
-  }, [_vm._v("mounted () {\n  this.$vuetify.init()\n}")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Vue CLI")]), _vm._m(2), _vm._c('v-tabs', {
+  }, [_vm._v("mounted () {\n  this.$vuetify.init()\n}")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Vue CLI")]), _vm._c('section-text', [_vm._v("Vuetify has 3 pre-made Vue CLI templates, 2 being forked from "), _vm._c('a', {
+    attrs: {
+      "href": "#!"
+    }
+  }, [_vm._v("official VueJS templates")]), _vm._v(". They contain small modifications to help you get started with Vuetify even faster. These packages require "), _vm._c('code', [_vm._v("vue-cli")]), _vm._v(". For more information on vue-cli, visit the official "), _vm._c('a', {
+    attrs: {
+      "href": "https://github.com/vuejs/vue-cli",
+      "target": "_blank"
+    }
+  }, [_vm._v("Github")]), _vm._v(" repository.")]), _vm._c('v-tabs', {
     staticClass: "z-depth-1",
     attrs: {
       "id": "vue-cli"
@@ -22263,62 +22283,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "lang": "cli"
     }
-  }, [_vm._v("vue init vuetifyjs/webpack-ssr")])])])]), _vm._c('h6', [_vm._v("NPM Install")]), _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("After the vue-cli installation finishes:")]), _vm._c('markup', {
+  }, [_vm._v("vue init vuetifyjs/webpack-ssr")])])])]), _vm._c('h6', [_vm._v("NPM Install")]), _vm._c('section-text', [_vm._v("After the vue-cli installation finishes:")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, [_vm._v("cd <package-name>\nnpm install")]), _vm._m(3), _vm._c('markup', {
+  }, [_vm._v("cd <package-name>\nnpm install")]), _vm._m(0), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, [_vm._v("cd <package-name>\nyarn")]), _vm._m(4), _vm._c('markup', {
+  }, [_vm._v("cd <package-name>\nyarn")]), _vm._c('section-text', [_vm._v("If you are using the "), _vm._c('code', [_vm._v("simple")]), _vm._v(" vue-cli package, you are ready to go. Simply open up "), _vm._c('code', [_vm._v("index.html")]), _vm._v(" in any browser. For any other package, type:")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, [_vm._v("npm run dev")]), _vm._m(5)]), _vm._c('section', [_vm._c('section-header', [_vm._v("Color Pack")]), _vm._m(6)]), _vm._c('section', [_vm._c('whats-next', {
-    attrs: {
-      "route": "/overview",
-      "text": "Overview"
-    }
-  }, [_vm._v("Now that you have your project setup and ready to go, let's go over application structure of the "), _vm._c('strong', [_vm._v("webpack ssr")]), _vm._v(" template.")])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your "), _vm._c('code', [_vm._v("index")]), _vm._v(" file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("Once you have Vuetify installed, in your main App.vue file, add the Vuetify "), _vm._c('code', [_vm._v("init")]), _vm._v(" function to the Vue mounted hook.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("Vuetify has 3 pre-made Vue CLI templates, 2 being forked from "), _vm._c('a', {
-    attrs: {
-      "href": "#!"
-    }
-  }, [_vm._v("official VueJS templates")]), _vm._v(". They contain small modifications to help you get started with Vuetify even faster. These packages require "), _vm._c('code', [_vm._v("vue-cli")]), _vm._v(". For more information on vue-cli, visit the official "), _vm._c('a', {
-    attrs: {
-      "href": "https://github.com/vuejs/vue-cli",
-      "target": "_blank"
-    }
-  }, [_vm._v("Github")]), _vm._v(" repository.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', [_vm._v("Or alernatively, using Facebook's recently released "), _vm._c('a', {
-    attrs: {
-      "href": "https://yarnpkg.com/",
-      "target": "_blank"
-    }
-  }, [_vm._v("yarn package manager")]), _vm._v(".")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("If you are using the "), _vm._c('code', [_vm._v("simple")]), _vm._v(" vue-cli package, you are ready to go. Simply open up "), _vm._c('code', [_vm._v("index.html")]), _vm._v(" in any browser. For any other package, type:")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("into your console. This will start a "), _vm._c('a', {
+  }, [_vm._v("npm run dev")]), _vm._c('section-text', [_vm._v("into your console. This will start a "), _vm._c('a', {
     attrs: {
       "href": "https://nodejs.org/en/",
       "target": "_blank"
@@ -22328,20 +22305,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "href": "http://localhost:8080",
       "target": "_blank"
     }
-  }, [_vm._v("http://localhost:8080")]), _vm._v(" in your browser.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("Vuetify comes pre-built with a Material Design Color Pack (thanks "), _vm._c('a', {
+  }, [_vm._v("http://localhost:8080")]), _vm._v(" in your browser.")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Color Pack")]), _vm._c('section-text', [_vm._v("Vuetify comes pre-built with a Material Design Color Pack (thanks "), _vm._c('a', {
     attrs: {
       "href": "http://materializecss.com/color.html",
       "target": "_blank"
     }
-  }, [_vm._v("Materialize.css")]), _vm._v(") by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to "), _vm._c('strong', [_vm._v("src/stylus/main.styl")]), _vm._v(" and assign "), _vm._c('code', [_vm._v("$color-pack")]), _vm._v(" to false.")])
+  }, [_vm._v("Materialize.css")]), _vm._v(") by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to "), _vm._c('strong', [_vm._v("src/stylus/main.styl")]), _vm._v(" and assign "), _vm._c('code', [_vm._v("$color-pack")]), _vm._v(" to false.")])]), _vm._c('section', [_vm._c('whats-next', {
+    attrs: {
+      "route": "/overview",
+      "text": "Overview"
+    }
+  }, [_vm._v("Now that you have your project setup and ready to go, let's go over application structure of the "), _vm._c('strong', [_vm._v("webpack ssr")]), _vm._v(" template.")])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
+  return _vm._c('p', [_vm._v("Or alernatively, using Facebook's recently released "), _vm._c('a', {
+    attrs: {
+      "href": "https://yarnpkg.com/",
+      "target": "_blank"
+    }
+  }, [_vm._v("yarn package manager")]), _vm._v(".")])
 }]}
 
 /***/ },
-/* 131 */
+/* 133 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22446,7 +22431,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 132 */
+/* 134 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22464,17 +22449,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 133 */
+/* 135 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _vm._c('div', {
     staticClass: "doc"
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('dt', {
     slot: "title"
-  }, [_vm._c('strong', [_vm._v("Colors")])]), _vm._c('dd', {
+  }, [_vm._v("Colors")]), _vm._c('dd', {
     slot: "desc"
-  }, [_vm._c('div', [_vm._v("Soon")])])])]), _vm._c('section', {
+  }, [_vm._v("Soon")])])]), _vm._c('section', {
     attrs: {
       "id": "colors"
     }
@@ -22518,7 +22503,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 134 */
+/* 136 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22526,13 +22511,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 135 */
+/* 137 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _vm._c('div', {
     staticClass: "view"
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('dt', {
     domProps: {
       "innerHTML": _vm._s(_vm.doc.title)
     },
@@ -22552,7 +22537,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 136 */
+/* 138 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22624,7 +22609,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 137 */
+/* 139 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22676,13 +22661,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 138 */
+/* 140 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _vm._c('div', {
     staticClass: "view"
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('strong', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('strong', {
     slot: "title"
   }, [_vm._v("Overview")]), _vm._c('div', {
     slot: "desc"
@@ -22690,52 +22675,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
     attrs: {
       "to": "/quick-start#webpack-ssr"
     }
-  }, [_vm._v("here")]), _vm._v(".")])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Introduction")]), _vm._m(0), _vm._c('h6', [_vm._v("Folder Structure")]), _vm._c('markup', {
+  }, [_vm._v("here")]), _vm._v(".")])])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Introduction")]), _vm._c('section-text', [_vm._v("The Vuetify SSR template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes "), _vm._c('code', [_vm._v("buble")]), _vm._v(" with webpack's buble-loader.")]), _vm._c('h6', [_vm._v("Folder Structure")]), _vm._c('markup', {
     attrs: {
       "lang": "cli"
     }
-  }, [_vm._v("/ project\n  / build\n    - setup-dev-server.js\n    - vue-loader.config.js\n    - webpack.base.config.js\n    - webpack.client.config.js\n    - webpack.server.config.js\n  / dist\n  / public\n  / src\n    / css\n      - main.css\n    / components\n    / router\n      - index.js\n    / sass\n      - main.scss\n    / store\n      - index.js\n    / stylus\n      - main.styl\n    / views\n    - app.js\n    - App.vue\n    - client-entry.js\n    - index.template.html\n    - server-entry.js\n  - .gitignore\n  - README.md\n  - package.json\n  - server.js")]), _vm._m(1), _vm._c('h3', [_vm._v("Application")]), _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._m(2), _vm._c('p', [_vm._v("The markup below tells the application that you have a "), _vm._c('code', [_vm._v("top navbar")]), _vm._v(" and "), _vm._c('code', [_vm._v("footer")]), _vm._v(". Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the "), _vm._c('router-link', {
-    attrs: {
-      "to": "/layouts"
-    }
-  }, [_vm._v("Layouts")]), _vm._v(" section.")])]), _vm._c('markup', {
-    attrs: {
-      "lang": "html"
-    }
-  }, [_vm._v("<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>")]), _vm._c('h3', [_vm._v("Routing")]), _vm._m(3), _vm._c('markup', {
-    attrs: {
-      "lang": "js"
-    }
-  }, [_vm._v("routes: [\n  { path: '/', component: HomeView },\n  { path: '/about', component: AboutView }\n]")]), _vm._m(4), _vm._c('h3', [_vm._v("State Control")]), _vm._m(5), _vm._c('markup', {
-    attrs: {
-      "lang": "js"
-    }
-  }, [_vm._v("preFetch (store) {\n  store.dispatch('GET_USER', 2)\n}")]), _vm._m(6), _vm._c('h3', [_vm._v("Meta Data")]), _vm._m(7), _vm._c('markup', {
-    attrs: {
-      "lang": "js"
-    }
-  }, [_vm._v("preFetch (store) {\n  store.dispatch('GET_USER', 2)\n \n  return {\n    title: 'Title',\n    description: 'Description',\n    keywords: 'keyword, keyword'\n  }\n}")]), _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._c('p', [_vm._v("While this takes care of initial render meta data, it is a good experience for a user when they change a page within your application to have the title change with it")]), _vm._m(8), _vm._c('P', [_vm._v("Here is an example of a way that you can handle this:")])]), _vm._c('markup', {
-    attrs: {
-      "lang": "js"
-    }
-  }, [_vm._v("// App.vue\nexport default {\n  mounted () {\n    this.$vuetify.init()\n  },\n  methods: {\n    view (meta) {\n      this.$vuetify.bus.pub(meta:title, obj.title)\n      this.$vuetify.bus.pub(meta:description, obj.description)\n      this.$vuetify.bus.pub(meta:keywords, obj.keywords)\n    }\n  }\n}\n \n// View.vue\nexport default {\n  mounted () {\n    this.$emit('view', this.meta())\n  },\n  preFetch () {\n    return this.methods.meta()\n  },\n  methods: {\n    meta () {\n      return {\n        title: 'Vuetify',\n        description: 'A Vue JS Framework',\n        keywords: 'vue, vuetify'\n      }\n    }\n  }\n}")]), _vm._m(9)]), _vm._c('section', [_vm._c('section-header', [_vm._v("Web App Support")]), _vm._m(10)]), _vm._c('section', [_vm._c('whats-next', {
-    attrs: {
-      "route": "/event-bus",
-      "text": "Event Bus"
-    }
-  }, [_vm._v("With a better understanding of the "), _vm._c('strong', [_vm._v("webpack ssr")]), _vm._v(" template, let's learn about one of the most powerful features of Vuetify, the bus system.")])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("The Vuetify SSR template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes "), _vm._c('code', [_vm._v("buble")]), _vm._v(" with webpack's buble-loader.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._c('p', [_vm._v("The "), _vm._c('strong', [_vm._v("Build")]), _vm._v(" folder contains all of the webpack specific build configurations for your project. "), _vm._c('strong', [_vm._v("Src")]), _vm._v(" is where all the development project files reside. Notice that the Webpack-SSR template is out-of-the-box configured to use "), _vm._c('a', {
+  }, [_vm._v("/ project\n  / build\n    - setup-dev-server.js\n    - vue-loader.config.js\n    - webpack.base.config.js\n    - webpack.client.config.js\n    - webpack.server.config.js\n  / dist\n  / public\n  / src\n    / css\n      - main.css\n    / components\n    / router\n      - index.js\n    / sass\n      - main.scss\n    / store\n      - index.js\n    / stylus\n      - main.styl\n    / views\n    - app.js\n    - App.vue\n    - client-entry.js\n    - index.template.html\n    - server-entry.js\n  - .gitignore\n  - README.md\n  - package.json\n  - server.js")]), _vm._c('section-text', [_vm._c('p', [_vm._v("The "), _vm._c('strong', [_vm._v("Build")]), _vm._v(" folder contains all of the webpack specific build configurations for your project. "), _vm._c('strong', [_vm._v("Src")]), _vm._v(" is where all the development project files reside. Notice that the Webpack-SSR template is out-of-the-box configured to use "), _vm._c('a', {
     attrs: {
       "href": "https://router.vuejs.org/en/",
       "target": "_blank"
@@ -22750,58 +22694,55 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
       "href": "https://vuejs.org/v2/guide/ssr.html",
       "target": "_blank"
     }
-  }, [_vm._v("Vue Server Renderer")]), _vm._v(". This will allow you to make simple or complex applications that are not only fast/efficient, but "), _vm._c('strong', [_vm._v("SEO")]), _vm._v(" friendly.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', [_vm._v("Navigate to the "), _vm._c('strong', [_vm._v("src")]), _vm._v(" folder and open up "), _vm._c('code', [_vm._v("App.vue")]), _vm._v(". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is "), _vm._c('code', [_vm._v("v-app")]), _vm._v(". This component allows you to define your application layout. This is used in conjunction with "), _vm._c('code', [_vm._v("v-navbar")]), _vm._v(", "), _vm._c('code', [_vm._v("v-sidebar")]), _vm._v(", "), _vm._c('code', [_vm._v("v-content")]), _vm._v(" and "), _vm._c('code', [_vm._v("v-footer")]), _vm._v(".")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("The Webpack-SSR template uses the official Vue Router for controlling application flow. Located in "), _vm._c('code', [_vm._v("/src/route/index.js")]), _vm._v(", all of your application routes and route logic will be defined here.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._c('p', [_vm._v("These routes can be accessed be creating a link to the specified path, or by using Vue Router's "), _vm._c('code', [_vm._v("<router-link>")]), _vm._v(" component. For more information, review the official Vue Router "), _vm._c('a', {
+  }, [_vm._v("Vue Server Renderer")]), _vm._v(". This will allow you to make simple or complex applications that are not only fast/efficient, but "), _vm._c('strong', [_vm._v("SEO")]), _vm._v(" friendly.")])]), _vm._c('h3', [_vm._v("Application")]), _vm._c('section-text', [_vm._c('p', [_vm._v("Navigate to the "), _vm._c('strong', [_vm._v("src")]), _vm._v(" folder and open up "), _vm._c('code', [_vm._v("App.vue")]), _vm._v(". Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is "), _vm._c('code', [_vm._v("v-app")]), _vm._v(". This component allows you to define your application layout. This is used in conjunction with "), _vm._c('code', [_vm._v("v-navbar")]), _vm._v(", "), _vm._c('code', [_vm._v("v-sidebar")]), _vm._v(", "), _vm._c('code', [_vm._v("v-content")]), _vm._v(" and "), _vm._c('code', [_vm._v("v-footer")]), _vm._v(".")]), _vm._c('p', [_vm._v("The markup below tells the application that you have a "), _vm._c('code', [_vm._v("top navbar")]), _vm._v(" and "), _vm._c('code', [_vm._v("footer")]), _vm._v(". Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the "), _vm._c('router-link', {
+    attrs: {
+      "to": "/layouts"
+    }
+  }, [_vm._v("Layouts")]), _vm._v(" section.")])]), _vm._c('markup', {
+    attrs: {
+      "lang": "html"
+    }
+  }, [_vm._v("<v-app top-navbar footer>\n  <header>\n    <v-navbar>\n      <h1>Portfolio</h1>\n    </v-navbar>\n  </header>\n  <main>\n    <v-content>\n      <v-container>\n        <router-view></router-view>\n      </v-container>\n    </v-content>\n  </main>\n  <v-footer>2016</v-footer>\n</v-app>")]), _vm._c('h3', [_vm._v("Routing")]), _vm._c('section-text', [_vm._v("The Webpack-SSR template uses the official Vue Router for controlling application flow. Located in "), _vm._c('code', [_vm._v("/src/route/index.js")]), _vm._v(", all of your application routes and route logic will be defined here.")]), _vm._c('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, [_vm._v("routes: [\n  { path: '/', component: HomeView },\n  { path: '/about', component: AboutView }\n]")]), _vm._c('section-text', [_vm._c('p', [_vm._v("These routes can be accessed be creating a link to the specified path, or by using Vue Router's "), _vm._c('code', [_vm._v("<router-link>")]), _vm._v(" component. For more information, review the official Vue Router "), _vm._c('a', {
     attrs: {
       "href": "https://router.vuejs.org/en/",
       "target": "_blank"
     }
-  }, [_vm._v("documentation")]), _vm._v(".")])])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._c('p', [_vm._v("State control is managed by the official Vuex library. This Vue plugin follows Facebooks' Reflux design pattern. Navigate to "), _vm._c('code', [_vm._v("/src/store/index.js")]), _vm._v(". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a "), _vm._c('code', [_vm._v("preFetch")]), _vm._v(" method on your view component.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('div', {
-    staticClass: "section-text"
-  }, [_vm._c('p', [_vm._v("This is useful for bootstrapping your application so that any necessary data is available before the initial render.")]), _vm._c('p', [_vm._v("For more information on State Control and Vuex, view the official "), _vm._c('a', {
+  }, [_vm._v("documentation")]), _vm._v(".")])]), _vm._c('h3', [_vm._v("State Control")]), _vm._c('section-text', [_vm._c('p', [_vm._v("State control is managed by the official Vuex library. This Vue plugin follows Facebooks' Reflux design pattern. Navigate to "), _vm._c('code', [_vm._v("/src/store/index.js")]), _vm._v(". By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a "), _vm._c('code', [_vm._v("preFetch")]), _vm._v(" method on your view component.")])]), _vm._c('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, [_vm._v("preFetch (store) {\n  store.dispatch('GET_USER', 2)\n}")]), _vm._c('section-text', [_vm._c('p', [_vm._v("This is useful for bootstrapping your application so that any necessary data is available before the initial render.")]), _vm._c('p', [_vm._v("For more information on State Control and Vuex, view the official "), _vm._c('a', {
     attrs: {
       "href": "https://vuex.vuejs.org/en/intro.html",
       "target": "_blank"
     }
-  }, [_vm._v("documentation")]), _vm._v(".")])])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("In order to ensure that page specific meta data is viewable when your pages are crawled, you can return an object containing "), _vm._c('code', [_vm._v("title")]), _vm._v(", "), _vm._c('code', [_vm._v("description")]), _vm._v(" and "), _vm._c('code', [_vm._v("keywords")]), _vm._v(".")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', [_vm._v("This can be done by publishing an event to the Vuetify "), _vm._c('code', [_vm._v("bus")]), _vm._v(". This is the same functionality that is hooked into by the Webpack-SSR template when the pages are being initially rendered.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("In the example above, we emit an event that is captured on "), _vm._c('code', [_vm._v("<router-view v-on:view=\"view\">")]), _vm._v(". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for crawling, but also change when the user is navigating to a different page.")])
-},function (){var _vm=this;var _h=_vm.$createElement;
-  return _vm._c('p', {
-    staticClass: "section-text"
-  }, [_vm._v("Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the "), _vm._c('a', {
+  }, [_vm._v("documentation")]), _vm._v(".")])]), _vm._c('h3', [_vm._v("Meta Data")]), _vm._c('section-text', [_vm._v("In order to ensure that page specific meta data is viewable when your pages are crawled, you can return an object containing "), _vm._c('code', [_vm._v("title")]), _vm._v(", "), _vm._c('code', [_vm._v("description")]), _vm._v(" and "), _vm._c('code', [_vm._v("keywords")]), _vm._v(".")]), _vm._c('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, [_vm._v("preFetch (store) {\n  store.dispatch('GET_USER', 2)\n \n  return {\n    title: 'Title',\n    description: 'Description',\n    keywords: 'keyword, keyword'\n  }\n}")]), _vm._c('section-text', [_vm._c('p', [_vm._v("While this takes care of initial render meta data, it is a good experience for a user when they change a page within your application to have the title change with it")]), _vm._c('p', [_vm._v("This can be done by publishing an event to the Vuetify "), _vm._c('code', [_vm._v("bus")]), _vm._v(". This is the same functionality that is hooked into by the Webpack-SSR template when the pages are being initially rendered.")]), _vm._c('P', [_vm._v("Here is an example of a way that you can handle this:")])]), _vm._c('markup', {
+    attrs: {
+      "lang": "js"
+    }
+  }, [_vm._v("// App.vue\nexport default {\n  mounted () {\n    this.$vuetify.init()\n  },\n  methods: {\n    view (meta) {\n      this.$vuetify.bus.pub(meta:title, obj.title)\n      this.$vuetify.bus.pub(meta:description, obj.description)\n      this.$vuetify.bus.pub(meta:keywords, obj.keywords)\n    }\n  }\n}\n \n// View.vue\nexport default {\n  mounted () {\n    this.$emit('view', this.meta())\n  },\n  preFetch () {\n    return this.methods.meta()\n  },\n  methods: {\n    meta () {\n      return {\n        title: 'Vuetify',\n        description: 'A Vue JS Framework',\n        keywords: 'vue, vuetify'\n      }\n    }\n  }\n}")]), _vm._c('section-text', [_vm._v("In the example above, we emit an event that is captured on "), _vm._c('code', [_vm._v("<router-view v-on:view=\"view\">")]), _vm._v(". In our view, we have a meta method that is used by the router on view change, and the server for preFetching data. This allows pages to have proper meta information for crawling, but also change when the user is navigating to a different page.")])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Web App Support")]), _vm._c('section-text', [_vm._v("Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the "), _vm._c('a', {
     attrs: {
       "href": "https://developer.mozilla.org/en-US/docs/Web/Manifest",
       "target": "_blank"
     }
-  }, [_vm._v("Mozilla Developer Network")]), _vm._v(". To see a live example, add the Vuetify documentation on your mobile device's homescreen.")])
-}]}
+  }, [_vm._v("Mozilla Developer Network")]), _vm._v(". To see a live example, add the Vuetify documentation on your mobile device's homescreen.")])]), _vm._c('section', [_vm._c('whats-next', {
+    attrs: {
+      "route": "/event-bus",
+      "text": "Event Bus"
+    }
+  }, [_vm._v("With a better understanding of the "), _vm._c('strong', [_vm._v("webpack ssr")]), _vm._v(" template, let's learn about one of the most powerful features of Vuetify, the bus system.")])])])
+},staticRenderFns: []}
 
 /***/ },
-/* 139 */
+/* 141 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -22989,17 +22930,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 140 */
+/* 142 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
   return _vm._c('div', {
     staticClass: "view"
-  }, [_vm._c('section', [_vm._c('section-text', [_vm._c('dt', {
+  }, [_vm._c('section', [_vm._c('section-def', [_vm._c('dt', {
     slot: "title"
-  }, [_vm._v("Typography")]), _vm._c('dd', {
+  }, [_vm._v(_vm._s(_vm.doc.title))]), _vm._c('dd', {
     slot: "desc"
-  }, [_vm._v("Soon")])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Examples")]), _vm._c('component-example', {
+  }, [_vm._v(_vm._s(_vm.doc.desc))])])]), _vm._c('section', [_vm._c('section-header', [_vm._v("Examples")]), _vm._c('component-example', {
     attrs: {
       "id": "typo",
       "header": "Headers"
@@ -23008,7 +22949,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 141 */
+/* 143 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -23021,7 +22962,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 142 */
+/* 144 */
 /***/ function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
@@ -23175,7 +23116,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;
 },staticRenderFns: []}
 
 /***/ },
-/* 143 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25242,7 +25183,7 @@ if (inBrowser && window.Vue) {
 module.exports = VueRouter;
 
 /***/ },
-/* 144 */
+/* 146 */
 /***/ function(module, exports) {
 
 exports.sync = function (store, router, options) {
@@ -25303,7 +25244,7 @@ function cloneRoute (to, from) {
 
 
 /***/ },
-/* 145 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 /**
@@ -25836,7 +25777,7 @@ return index;
 })));
 
 /***/ },
-/* 146 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";

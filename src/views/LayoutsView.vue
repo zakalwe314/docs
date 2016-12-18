@@ -165,7 +165,7 @@
       
     .navbar
       background: $blue.lighten-2 !important
-      min-height: 15%
+      height: 15%
       color: #fff
       justify-content: center
       align-items: center

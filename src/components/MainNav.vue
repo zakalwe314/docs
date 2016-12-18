@@ -73,3 +73,56 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  @import '../stylus/settings/_variables'
+  
+  header
+    .navbar
+      align-items: center
+      color: #fff
+      padding: 2rem 0
+      height: 12rem
+      
+      &__links
+        margin: 1rem
+        
+        a
+          color: #fff
+          text-align: center
+          text-decoration: none
+          
+          img
+            height: 50px
+      
+      &__side-icon
+        margin: 0 1rem
+      
+      &__side-title
+        display: flex
+        flex: 1
+        align-items: space-between
+        justify-content: space-between
+        flex-direction: column
+        margin: 0 4rem
+        
+        @media screen and (max-width: $grid-breakpoints.sm)
+          margin: 0 1rem
+        
+        span
+          font-weight: 200
+          font-size: 2rem
+          max-width: 600px
+          line-height: 2rem
+      
+      h1
+        letter-spacing: 1px
+        color: #fff
+        font-size: 4rem
+        font-weight: 400
+        margin: 0
+        word-break: break-word
+        
+        @media screen and (max-width: $grid-breakpoints.sm)
+          font-size: 9vw
+</style>

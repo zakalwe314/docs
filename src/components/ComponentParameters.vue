@@ -21,3 +21,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  .table
+    &--component
+      margin-bottom: 5rem
+</style>

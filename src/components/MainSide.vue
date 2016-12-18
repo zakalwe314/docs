@@ -94,3 +94,40 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  @import '../stylus/settings/_variables'
+  
+  .sidebar
+    background: $grey.darken-3
+  
+  .vuetify
+    text-align: center
+    border-bottom: 1px solid rgba(#fff, .1)
+    margin: 0 0 1rem
+    padding: 1rem 0
+        
+    .sidebar__logo
+      display: block
+      position: relative
+      margin-bottom: 1rem
+      text-decoration: none
+      
+      img
+        height: 100px
+    
+    a
+      color: #fff
+        
+  .sidebar__item-header
+    color: #fff
+    
+  .sidebar__item
+    color: #fff
+    
+    &:hover
+      background: rgba(255, 255, 255, .2)
+      
+    &--active
+      background: rgba(255, 255, 255, .2)
+</style>

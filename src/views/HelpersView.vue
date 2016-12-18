@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="view" id="helpers")
     section
-      section-text
+      section-def
         dt(slot="title") Helpers
         dd(slot="desc") In order to expedite the development process, Vuetify offers a multitude of helper classes to reduce style clutter and the time it takes to prototype an application.
     section

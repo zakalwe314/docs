@@ -1,11 +1,9 @@
 <template lang="pug">
   div(class="doc")
     section
-      section-text
-        dt(slot="title")
-          strong Colors
-        dd(slot="desc")
-          div Soon
+      section-def
+        dt(slot="title") Colors
+        dd(slot="desc") Soon
     section(id="colors")
       section-header Material Design
       component-example(header="Classes")

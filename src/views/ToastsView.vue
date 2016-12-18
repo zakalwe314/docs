@@ -49,12 +49,8 @@
     data () {
       return {
         doc: {
-          stage: 'iter',
           title: 'Toast',
           desc: 'Soon',
-          types: [
-            'function'
-          ],
           params: [
             [
               '<code>$vuetify.toast</code>',

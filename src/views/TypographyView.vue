@@ -1,9 +1,9 @@
 <template lang="pug">
   div(class="view")
     section
-      section-text
-        dt(slot="title") Typography
-        dd(slot="desc") Soon
+      section-def
+        dt(slot="title") {{ doc.title }}
+        dd(slot="desc") {{ doc.desc }}
     section
       section-header Examples
       component-example(
@@ -26,9 +26,7 @@
       return {
         doc: {
           title: 'Typography',
-          desc: 'Soon',
-          types: [],
-          params: []
+          desc: 'Soon'
         }
       }
     },
