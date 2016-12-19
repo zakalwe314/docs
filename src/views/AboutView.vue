@@ -40,7 +40,7 @@
               v-list-item
                 v-list-item-avatar(class="primary" x-large) add_to_queue
                 v-list-item-title Premade Vue CLI Templates
-                  v-list-item-sub-title Vuetify comes with 3 Vue CLI templates, preconfigured, and ready to go. <router-link to="/quick-start#simple">Simple HTML</router-link>, <router-link to="/quick-start#webpack">Webpack</router-link>, and <router-link to="/quick-start#webpack-ssr">Weback SSR</router-link> <em>(Server Side Rendering)</em>.
+                  v-list-item-sub-title Vuetify comes with 3 Vue CLI templates, preconfigured, and ready to go. <router-link to="/quick-start#simple">Simple HTML</router-link>, <router-link to="/quick-start#webpack">Webpack</router-link>, and <router-link to="/quick-start#webpack-ssr">Webpack SSR</router-link> <em>(Server Side Rendering)</em>.
 
           v-col(xs12 md6 lg6)
             v-list
