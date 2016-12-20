@@ -54,7 +54,7 @@
     markup(slot="markup" lang="xml")
       |&lt;v-app top-navbar&gt;
       |   &lt;header&gt;
-      |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
+      |     &lt;v-navbar&gt;&lt;/v-navbar&gt;
       |   &lt;/header&gt;
       |   &lt;main&gt;
       |     &lt;v-content&gt;
@@ -67,7 +67,7 @@
       |&nbsp;
       |&lt;v-app top-navbar left-fixed-sidebar&gt;
       |   &lt;header&gt;
-      |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
+      |     &lt;v-navbar&gt;&lt;/v-navbar&gt;
       |   &lt;/header&gt;
       |   &lt;main&gt;
       |     &lt;v-sidebar id="sidebar" fixed&gt;&lt;/v-sidebar&gt;
@@ -81,7 +81,7 @@
       |&nbsp;
       |&lt;v-app top-navbar footer right-fixed-sidebar&gt;
       |   &lt;header&gt;
-      |     &lt;v-navbar&gt;&lt;/v-nabvar&gt;
+      |     &lt;v-navbar&gt;&lt;/v-navbar&gt;
       |   &lt;/header&gt;
       |   &lt;main&gt;
       |     &lt;v-sidebar id="sidebar" fixed right&gt;&lt;/v-sidebar&gt;
