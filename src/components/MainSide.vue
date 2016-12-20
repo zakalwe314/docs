@@ -15,7 +15,7 @@
           width="100px"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.6" target="_blank") v0.7.6
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.7" target="_blank") v0.7.7
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
@@ -46,21 +46,22 @@
           {
             parent: { href: '#!', text: 'Components', icon: 'widgets', },
             items: [
-              { href: '/components/alerts', text: 'Alerts', icon: 'priority_high' },
+              { href: '/components/alerts', text: 'Alerts', icon: 'priority_high', chip: 'updated' },
               { href: '/components/breadcrumbs', text: 'Breadcrumbs', icon: 'linear_scale' },
-              { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward' },
+              { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward', chip: 'updated' },
               { href: '/components/cards', text: 'Cards', icon: 'note' },
               { href: '/components/chips', text: 'Chips', icon: 'label' },
               { href: '/components/collapsible', text: 'Collapsible', icon: 'reorder' },
               { href: '/components/dropdowns', text: 'Dropdowns', icon: 'arrow_drop_down_circle' },
               { href: '/components/footer', text: 'Footer', icon: 'call_to_action' },
               { href: '/components/forms', text: 'Forms', icon: 'text_format' },
-              { href: '/components/icons', text: 'Icons', icon: 'favorite', chip: 'new' },
+              { href: '/components/icons', text: 'Icons', icon: 'favorite' },
               { href: '/components/lists', text: 'Lists', icon: 'format_list_bulleted' },
               { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
-              { href: '/components/navbar', text: 'Navbars', icon: 'web', chip: 'updated' },
+              { href: '/components/navbar', text: 'Navbars', icon: 'web' },
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
+              { href: '/components/progress-circular', text: 'Progress Circular', icon: 'replay', chip: 'new' },
               { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }

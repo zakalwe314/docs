@@ -22,7 +22,7 @@ import ModalsView from '../views/ModalsView.vue'
 import NavbarView from '../views/NavbarView.vue'
 import ParallaxView from '../views/ParallaxView.vue'
 import PaginationView from '../views/PaginationView.vue'
-import ProgressView from '../views/ProgressView.vue'
+import ProgressCircularView from '../views/ProgressCircularView.vue'
 import SliderView from '../views/SliderView.vue'
 import SidebarView from '../views/SidebarView.vue'
 import TabsView from '../views/TabsView.vue'
@@ -58,7 +58,7 @@ const router = new Router({
     { path: '/components/navbar', component: NavbarView },
     { path: '/components/pagination', component: PaginationView },
     { path: '/components/parallax', component: ParallaxView },
-    { path: '/components/progress', component: ProgressView },
+    { path: '/components/progress-circular', component: ProgressCircularView },
     { path: '/components/sidebar', component: SidebarView },
     { path: '/components/slider', component: SliderView },
     { path: '/components/tabs', component: TabsView },

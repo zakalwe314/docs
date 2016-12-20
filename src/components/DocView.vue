@@ -13,7 +13,7 @@
     section
       section-header Parameters
       component-parameters(v-bind:params="doc.params")
-    section
+    section(v-if="doc.eventable")
       section-header Events
       p(class="section-text") Coming Soon
     slot(name="end")

@@ -12,20 +12,40 @@
     component-example(header="Closable")
       div
         div(v-if="!alert" class="text-xs-center")
-          v-btn(v-on:click.native="alert = true" class="primary white--text") Reset Alert
-        v-alert(success close v-model="alert")
+          v-btn(v-on:click.native="alert = true" class="primary") Reset Alert
+        v-alert(info dismissible v-model="alert")
           | This is a success alert that is closable. {{ lorem }}
-    markup(slot="markup" lang="html")
-      template(v-for="type in types")
+    component-example(header="Custom Icon / No Icon")
+      v-alert(success icon="new_releases")
+        | This is a success alert with a custom icon. {{ lorem }}
+      v-alert(error hide-icon)
+        | This is an error alert with no icon. {{ lorem }}
+    div(slot="markup")
+      markup(lang="html")
+        template(v-for="type in types")
+          |&nbsp;
+          |&lt;v-alert {{ type }}&gt;
+          |   ...
+          |&lt;/v-alert&gt;
+          |&nbsp;
         |&nbsp;
-        |&lt;v-alert {{ type }}&gt;
+        |&lt;v-alert success close v-model="alert"&gt;
         |   ...
         |&lt;/v-alert&gt;
         |&nbsp;
-      |&nbsp;
-      |&lt;v-alert success close v-model="alert"&gt;
-      |   ...
-      |&lt;/v-alert&gt;
+        |&lt;v-alert success icon="new_releases"&gt;
+        |   ...
+        |&lt;/v-alert&gt;
+        |&nbsp;
+        |&lt;v-alert error hide-icon&gt;
+        |   ...
+        |&lt;/v-alert&gt;
+      markup(lang="js")
+        |data () {
+        |   return {
+        |     alert: true
+        |   }
+        |}
 </template>
 
 <script>
@@ -50,8 +70,18 @@
               'Types: [Boolean]'
             ],
             [
-              '<code>close</code>',
-              'Hides the alert',
+              '<code>dismissible</code>',
+              'Specifies that the Alert can be closed',
+              'Default: false'
+            ],
+            [
+              '<code>icon</code>',
+              'Designates a specific icon',
+              'Default: ""'
+            ],
+            [
+              '<code>hide-icon</code>',
+              'Hides the alert icon',
               'Default: false'
             ]
           ]

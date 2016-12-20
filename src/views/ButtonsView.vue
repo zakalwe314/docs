@@ -7,21 +7,27 @@
       v-btn(flat) Flat
       v-btn(flat disabled) Flat Disabled
       v-btn(disabled) Disabled
+      v-btn(v-bind:raised="false") Not Raised
     component-example(header="Colored")
-      v-btn(class="primary white--text") Primary
+      v-btn(class="primary") Primary
       v-btn(flat class="primary--text") Flat Primary
-      v-btn(class="secondary white--text") Secondary
+      v-btn(class="secondary") Secondary
       v-btn(flat class="secondary--text") Flat Secondary
+      v-btn(class="success") Success
+      v-btn(class="info") Info
+      v-btn(class="warning") Warning
+      v-btn(class="error") Error
+      v-btn(class="purple white--text" v-bind:raised="false") Purple Not Raised
     component-example(header="Block")
       div.btn--block-example
         v-btn(block) Default
-        v-btn(block class="primary white--text") Primary
-        v-btn(block class="secondary white--text") Secondary
+        v-btn(block class="primary") Primary
+        v-btn(block class="secondary") Secondary
         v-btn(block disabled) Disabled
     component-example(header="Rounded")
       v-btn(round small) Small Default
-      v-btn(round class="primary white--text") Primary
-      v-btn(round large class="secondary white--text") Large Secondary
+      v-btn(round class="primary") Primary
+      v-btn(round large class="secondary") Large Secondary
       v-btn(round disabled) Disabled
     component-example(header="Outline")
       v-btn(outline small class="green green--text") Small Green
@@ -42,7 +48,7 @@
         v-icon cloud
       v-btn(floating class="primary white--text")
         v-icon attachment
-      v-btn(floating large class="secondary white--text")
+      v-btn(floating class="secondary")
         v-icon event
       v-btn(floating large disabled)
         v-icon room
@@ -53,6 +59,12 @@
         v-icon computer
       v-btn(icon)
         v-icon headset
+      v-btn(icon)
+        v-icon(medium) check
+      v-btn(icon)
+        v-icon(large) warning
+      v-btn(icon)
+        v-icon(x-large) language
     markup(slot="markup")
       |&lt;v-btn&gt;
       |   ...
@@ -62,7 +74,7 @@
       |   ...
       |&lt;/v-btn&gt;
       |&nbsp;
-      |&lt;v-btn primary&gt;
+      |&lt;v-btn success&gt;
       |   ...
       |&lt;/v-btn&gt;
       |&nbsp;
@@ -80,6 +92,10 @@
       |&nbsp;
       |&lt;v-btn icon&gt;
       |   &lt;v-icon&gt;profile&lt;/v-icon&gt;
+      |&lt;/v-btn&gt;
+      |&nbsp;
+      |&lt;v-btn icon&gt;
+      |   &lt;v-icon large&gt;headphones&lt;/v-icon&gt;
       |&lt;/v-btn&gt;
       |&nbsp;
       |&lt;v-btn floating icon large&gt;
@@ -142,6 +158,11 @@
               '<code>round</code>',
               'Applies the btn--round class',
               'Default: false'
+            ],
+            [
+              '<code>raised</code>',
+              'Applies the btn--raised class',
+              'Default: true'
             ],
             [
               '<code>small</code>',
