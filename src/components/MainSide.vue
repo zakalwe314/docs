@@ -16,6 +16,15 @@
           alt="Vuetify Logo"
         )
       a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.7" target="_blank") v0.7.7
+      div(class="sidebar__links")
+        a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
+          img(src="~public/github.png")
+        a(href="https://twitter.com/vuetifyjs" target="_blank")
+          img(src="~public/twitter.png")
+        a(href="https://www.facebook.com/vuetifyjs" target="_blank")
+          img(src="~public/facebook.png")
+        a(href="mailto:john.j.leider@gmail.com")
+          v-icon(x-large) mail
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
@@ -101,12 +110,30 @@
   
   .sidebar
     background: $grey.darken-3
+    
+    &__links
+      margin: 1rem
+      display: flex
+      justify-content: center
+      align-items: center
+      
+      a
+        color: #fff
+        text-align: center
+        text-decoration: none
+        margin: 0 .5rem
+        
+        img
+          height: 35px
+          
+        i
+          padding: 0
   
   .vuetify
     text-align: center
     border-bottom: 1px solid rgba(#fff, .1)
     margin: 0 0 1rem
-    padding: 1rem 0
+    padding: 1rem 0 0
         
     .sidebar__logo
       display: block
