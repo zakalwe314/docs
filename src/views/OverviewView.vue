@@ -71,7 +71,7 @@
         |   { path: '/about', component: AboutView }
         |]
       section-text
-        p These routes can be accessed be creating a link to the specified path, or by using Vue Router's <code>&lt;router-link&gt;</code> component. For more information, review the official Vue Router <a href="https://router.vuejs.org/en/" target="_blank">documentation</a>.
+        p These routes can be accessed by creating a link to the specified path, or by using Vue Router's <code>&lt;router-link&gt;</code> component. For more information, review the official Vue Router <a href="https://router.vuejs.org/en/" target="_blank">documentation</a>.
       h3 State Control
       section-text
         p State control is managed by the official Vuex library. This Vue plugin follows Facebooks' Reflux design pattern. Navigate to <code>/src/store/index.js</code>. By default, Vuex is setup to prefetch data for the store before your page is initially rendered. To hook into this functionality, create a <code>preFetch</code> method on your view component.
