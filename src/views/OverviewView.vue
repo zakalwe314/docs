@@ -107,9 +107,9 @@
         |   },
         |   methods: {
         |     view (meta) {
-        |       this.$vuetify.bus.pub(meta:title, obj.title)
-        |       this.$vuetify.bus.pub(meta:description, obj.description)
-        |       this.$vuetify.bus.pub(meta:keywords, obj.keywords)
+        |       this.$vuetify.bus.pub('meta:title', obj.title)
+        |       this.$vuetify.bus.pub('meta:description', obj.description)
+        |       this.$vuetify.bus.pub('meta:keywords', obj.keywords)
         |     }
         |   }
         |}
