@@ -34,13 +34,13 @@
         |&lt;v-sidebar height="50vh" v-bind:items="items"&gt;&lt;/v-sidebar&gt;
         |&nbsp;
         |&lt;v-sidebar drawer&gt;
-        |   &lt;v-sidebar-items v-bind:items="items"&gt;&lt;/v-sidebar&gt;
+        |   &lt;v-sidebar-items v-bind:items="items"&gt;&lt;/v-sidebar-items&gt;
         |&lt;/v-sidebar&gt;
         |&nbsp;
         |&lt;v-sidebar fixed&gt;
         |   &lt;v-sidebar-items&gt;
         |     &lt;v-sidebar-item v-for="item in items" v-bind:item="item"&gt;&lt;/v-sidebar-item&gt;
-        |   &lt;/v-sidebar&gt;
+        |   &lt;/v-sidebar-items&gt;
         |&lt;/v-sidebar&gt;
       markup(lang="js")
         |data () {
