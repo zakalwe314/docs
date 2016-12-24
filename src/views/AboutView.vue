@@ -78,6 +78,13 @@
         li Complete unreleased components, i.e. (Progress, Tables)
         li Bug fixing and support
     section
+      section-header Sponsors
+      section-text Vuetify is proudly sponsored by:
+      v-container
+        v-row
+          v-col(s12)
+            img(src="~public/doc-images/browser-stack.svg" height="35px")
+    section
       whats-next(route="/quick-start" text="Quick Start") Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the <strong>vuetify</strong> package.
 </template>
 
