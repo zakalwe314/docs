@@ -55,9 +55,7 @@ const config = {
     ]
   },
   plugins: [],
-  performance: {
-    hints: false
-  }
+  performance: false
 }
 
 if (process.env.NODE_ENV !== 'production') {
