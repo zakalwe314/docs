@@ -1,6 +1,7 @@
 <template lang="pug">
   div
     component-header {{ header }}
+    slot(name="details")
     div(class="component-example")
       slot
 </template>
@@ -25,7 +26,7 @@
     transition: .3s ease-out
     
     &:hover
-      background: rgba(0, 0, 0, .1)
+      background: rgba(0, 0, 0, .06)
       
     @media screen and (max-width: $grid-breakpoints.sm)
       margin: 0 -1rem 1rem

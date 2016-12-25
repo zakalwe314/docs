@@ -35,7 +35,7 @@
     overflow: hidden
     
     &:hover
-      background: rgba(0, 0, 0, .1)
+      background: rgba(0, 0, 0, .06)
     
     pre, code
       background: transparent

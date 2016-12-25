@@ -15,7 +15,7 @@
           width="100px"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.7" target="_blank") v0.7.7
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.8" target="_blank") v0.7.8
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png")
@@ -24,7 +24,7 @@
         a(href="https://www.facebook.com/vuetifyjs" target="_blank")
           img(src="~public/facebook.png")
         a(href="mailto:john.j.leider@gmail.com")
-          v-icon(x-large) mail
+          img(src="~public/mail.png")
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
@@ -55,7 +55,7 @@
           {
             parent: { href: '#!', text: 'Components', icon: 'widgets', },
             items: [
-              { href: '/components/alerts', text: 'Alerts', icon: 'priority_high', chip: 'updated' },
+              { href: '/components/alerts', text: 'Alerts', icon: 'priority_high' },
               { href: '/components/breadcrumbs', text: 'Breadcrumbs', icon: 'linear_scale' },
               { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward', chip: 'updated' },
               { href: '/components/cards', text: 'Cards', icon: 'note' },
@@ -70,7 +70,7 @@
               { href: '/components/navbar', text: 'Navbars', icon: 'web' },
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
-              { href: '/components/progress-circular', text: 'Progress Circular', icon: 'replay', chip: 'new' },
+              { href: '/components/progress-circular', text: 'Progress Circular', icon: 'replay' },
               { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
@@ -80,7 +80,7 @@
             parent: { href: '#!', text: 'Directives', icon: 'polymer' },
             items: [
               { href: '/directives/badges', text: 'Badges', icon: 'fiber_manual_record' },
-              { href: '/directives/tooltips', text: 'Tooltips', icon: 'sms' },
+              { href: '/directives/tooltips', text: 'Tooltips', icon: 'sms' }
             ]
           },
           {
@@ -124,7 +124,7 @@
         margin: 0 .5rem
         
         img
-          height: 35px
+          height: 25px
           
         i
           padding: 0
