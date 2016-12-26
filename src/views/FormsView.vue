@@ -9,7 +9,7 @@
           name="test",
           v-model="input"
         )
-        |{{ input }}
+        div {{ input }}
       div
         v-select(
           v-bind:options="options",
@@ -19,7 +19,7 @@
           multiple,
           v-model="multiple"
         )
-        |{{ multiple }}
+        div {{ multiple }}
     component-example(header="Inputs")
       div
         v-text-input(
@@ -28,7 +28,7 @@
           label="Testing 2"
           v-model="text"
         )
-        |{{ text }}
+        div {{ text }}
       div
         v-text-input(
           id="test3",
