@@ -129,6 +129,11 @@
               '<code>item</code>',
               'The item object',
               'Allowed object properties: href, text'
+            ],
+            [
+              '<code>router</code>',
+              'Designates whether to use anchor or router-link',
+              'Default: false'
             ]
           ]
         },

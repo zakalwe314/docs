@@ -142,7 +142,7 @@
             [
               '<code>router</code>',
               'Designates whether to use anchor or router-link',
-              'Default: true'
+              'Default: false'
             ],
             [
               '<code>slot</code>',
