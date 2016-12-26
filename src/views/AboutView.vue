@@ -13,40 +13,46 @@
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) widgets
-                v-list-item-title Vuetify Frontend Components
+                v-list-item-title
+                  div Vuetify Frontend Components
                   v-list-item-sub-title The Vuetify core is designed to provide a variety of reusable, plug and play components that fit any project spec.
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) extension
-                v-list-item-title Vue Semantic Components
+                v-list-item-title
+                  div Vue Semantic Components
                   v-list-item-sub-title Utilizing the power of Vue's functional components, all class based markup that is used to aid main components, such as a <em>card title</em>, are accessible using <code>v-card-title</code>. This added benefit enables less cluttering of files for a miniscule performance cost.
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) view_quilt
-                v-list-item-title Prototyping Made Easy
+                v-list-item-title
+                  div Prototyping Made Easy
                   v-list-item-sub-title Vuetify was built from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building your application. With the core philosophy of write less, do more, getting your project off the ground has never been easier.
 
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) phone_android
-                v-list-item-title Made for Mobile
+                v-list-item-title
+                  div Made for Mobile
                   v-list-item-sub-title All Vuetify components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works.
 
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) add_to_queue
-                v-list-item-title Premade Vue CLI Templates
+                v-list-item-title
+                  div Premade Vue CLI Templates
                   v-list-item-sub-title Vuetify comes with 3 Vue CLI templates, preconfigured, and ready to go. <router-link to="/quick-start#simple">Simple HTML</router-link>, <router-link to="/quick-start#webpack">Webpack</router-link>, and <router-link to="/quick-start#webpack-ssr">Webpack SSR</router-link> <em>(Server Side Rendering)</em>.
 
           v-col(xs12 md6 lg6)
             v-list
               v-list-item
                 v-list-item-avatar(class="primary" x-large) open_in_browser
-                v-list-item-title Built with Vue Server Side Rendering
+                v-list-item-title
+                  div Built with Vue Server Side Rendering
                   v-list-item-sub-title Using an internal bus, Vuetify is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.
 
     section
