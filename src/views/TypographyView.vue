@@ -42,7 +42,7 @@
     methods: {
       meta () {
         return {
-          title: 'Typography | Vuetify',
+          title: 'Typography | Vuetify.js',
           h1: 'Typography',
           description: 'Typography for the Vuetify Framework',
           keywords: 'vuetify, typography'

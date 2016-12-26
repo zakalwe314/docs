@@ -39,7 +39,7 @@
     methods: {
       meta () {
         return {
-          title: 'Footer Component | Vuetify',
+          title: 'Footer Component | Vuetify.js',
           h1: 'Footer',
           description: 'Footer component for Vuetify Framework',
           keywords: 'vuetify, footer, components'

@@ -160,7 +160,7 @@
     methods: {
       meta () {
         return {
-          title: 'List Component | Vuetify',
+          title: 'List Component | Vuetify.js',
           h1: 'Lists',
           description: 'List component for Vuetify Framework',
           keywords: 'vuetify, lists, components'

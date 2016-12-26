@@ -175,7 +175,7 @@
     methods: {
       meta () {
         return {
-          title: 'Dropdown Component | Vuetify',
+          title: 'Dropdown Component | Vuetify.js',
           h1: 'Dropdowns',
           description: 'Dropdown component for Vuetify Framework',
           keywords: 'vuetify, dropdowns, components'

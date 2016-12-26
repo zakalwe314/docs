@@ -160,7 +160,7 @@
     methods: {
       meta () {
         return {
-          title: 'Progress Circular Component | Vuetify',
+          title: 'Progress Circular Component | Vuetify.js',
           h1: 'Progress Circular',
           description: 'Progress Circular component for Vuetify Framework',
           keywords: 'vuetify, progress, progress circle, progress circular, components'

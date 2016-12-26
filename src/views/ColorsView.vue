@@ -61,7 +61,7 @@
     methods: {
       meta () {
         return {
-          title: 'Colors | Vuetify',
+          title: 'Colors | Vuetify.js',
           h1: 'Colors',
           description: 'Colors for the Vuetify Framework',
           keywords: 'vuetify, colors'

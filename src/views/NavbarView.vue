@@ -161,7 +161,7 @@
     methods: {
       meta () {
         return {
-          title: 'Navbar Component | Vuetify',
+          title: 'Navbar Component | Vuetify.js',
           h1: 'Navbars',
           description: 'Navbar component for Vuetify Framework',
           keywords: 'vuetify, navbars, components'

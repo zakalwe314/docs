@@ -92,7 +92,7 @@
       
       meta () {
         return {
-          title: 'Toast Function | Vuetify',
+          title: 'Toast Function | Vuetify.js',
           h1: 'Toasts',
           description: 'Toast directive for Vuetify Framework',
           keywords: 'vuetify, toasts, function'

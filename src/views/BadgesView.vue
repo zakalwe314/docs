@@ -89,7 +89,7 @@
     methods: {
       meta () {
         return {
-          title: 'Badge Directive | Vuetify',
+          title: 'Badge Directive | Vuetify.js',
           h1: 'Badges',
           description: 'Badge directive for Vuetify Framework',
           keywords: 'vuetify, badges, directives'

@@ -87,7 +87,7 @@
       meta () {
         return {
           h1: 'Event Bus',
-          title: 'Event Bus | Vuetify',
+          title: 'Event Bus | Vuetify.js',
           description: 'The Vuetify bus powers your application by allowing components to communicate to each other',
           keywords: 'vuetify bus'
         }

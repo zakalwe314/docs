@@ -107,7 +107,7 @@
     methods: {
       meta () {
         return {
-          title: 'Modal Component | Vuetify',
+          title: 'Modal Component | Vuetify.js',
           h1: 'Modals',
           description: 'Modal component for Vuetify Framework',
           keywords: 'vuetify, modals, components'

@@ -119,7 +119,7 @@
     methods: {
       meta () {
         return {
-          title: 'Breadcrumbs Component | Vuetify',
+          title: 'Breadcrumbs Component | Vuetify.js',
           h1: 'Breadcrumbs',
           description: 'Breadcrumbs component for Vuetify Framework',
           keywords: 'vuetify, breadcrumbs, components'

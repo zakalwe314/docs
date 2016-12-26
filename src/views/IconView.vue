@@ -135,7 +135,7 @@
     methods: {
       meta () {
         return {
-          title: 'Icon Component | Vuetify',
+          title: 'Icon Component | Vuetify.js',
           h1: 'Icons',
           description: 'Icon component for Vuetify Framework',
           keywords: 'vuetify, icons, material design icons'

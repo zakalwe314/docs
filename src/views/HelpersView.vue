@@ -142,7 +142,7 @@
     methods: {
       meta () {
         return {
-          title: 'Helpers | Vuetify',
+          title: 'Helpers | Vuetify.js',
           h1: 'Helpers',
           description: 'Helper classes for the Vuetify Framework',
           keywords: 'vuetify, helper classes'

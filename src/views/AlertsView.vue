@@ -114,7 +114,7 @@
     methods: {
       meta () {
         return {
-          title: 'Alert Component | Vuetify',
+          title: 'Alert Component | Vuetify.js',
           h1: 'Alerts',
           description: 'Alert component for Vuetify Framework',
           keywords: 'vuetify, alerts, components'

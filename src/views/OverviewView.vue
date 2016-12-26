@@ -156,7 +156,7 @@
       meta () {
         return {
           h1: 'Overview',
-          title: 'Overview | Vuetify',
+          title: 'Overview | Vuetify.js',
           description: 'Review the structure of the Vuetify SSR Template',
           keywords: 'vue cli, vue template, vue ssr, vuetify ssr'
         }

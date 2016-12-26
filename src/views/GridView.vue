@@ -83,7 +83,7 @@
     methods: {
       meta () {
         return {
-          title: 'Grid | Vuetify',
+          title: 'Grid | Vuetify.js',
           h1: 'Grid',
           description: 'Grid for the Vuetify Framework',
           keywords: 'vuetify, grid'

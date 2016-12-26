@@ -316,7 +316,7 @@
 
       meta () {
         return {
-          title: 'Button Component | Vuetify',
+          title: 'Button Component | Vuetify.js',
           h1: 'Buttons',
           description: 'Button component for Vuetify Framework',
           keywords: 'vuetify, buttons, components'

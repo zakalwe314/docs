@@ -70,7 +70,7 @@
     methods: {
       meta () {
         return {
-          title: 'Tooltip Directive | Vuetify',
+          title: 'Tooltip Directive | Vuetify.js',
           h1: 'Tooltips',
           description: 'Tooltip directive for Vuetify Framework',
           keywords: 'vuetify, tooltips, directives'

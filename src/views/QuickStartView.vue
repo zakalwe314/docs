@@ -100,7 +100,7 @@
     methods: {
       meta () {
         return {
-          title: 'Quick Start | Vuetify',
+          title: 'Quick Start | Vuetify.js',
           h1: 'Quick Start',
           description: 'Get started with Vue and Vuetify in no time.',
           keywords: 'vuetify quick start, vuetify templates, server side rendering'

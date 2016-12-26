@@ -140,7 +140,7 @@
     methods: {
       meta () {
         return {
-          title: 'Layouts | Vuetify',
+          title: 'Layouts | Vuetify.js',
           h1: 'Layouts',
           description: 'Layouts for the Vuetify Framework',
           keywords: 'vuetify, layouts'

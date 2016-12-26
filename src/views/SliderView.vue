@@ -72,7 +72,7 @@
     methods: {
       meta () {
         return {
-          title: 'Slider Component | Vuetify',
+          title: 'Slider Component | Vuetify.js',
           h1: 'Sliders',
           description: 'Slider component for Vuetify Framework',
           keywords: 'vuetify, sliders, components'

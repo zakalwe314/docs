@@ -183,7 +183,7 @@
     methods: {
       meta () {
         return {
-          title: 'Sidebar Component | Vuetify',
+          title: 'Sidebar Component | Vuetify.js',
           h1: 'Sidebars',
           description: 'Sidebar component for Vuetify Framework',
           keywords: 'vuetify, sidebars, components'

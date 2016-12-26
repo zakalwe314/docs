@@ -248,7 +248,7 @@
     methods: {
       meta () {
         return {
-          title: 'Card Component | Vuetify',
+          title: 'Card Component | Vuetify.js',
           h1: 'Cards',
           description: 'Card component for Vuetify Framework',
           keywords: 'vuetify, cards, components'

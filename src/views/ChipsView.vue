@@ -131,7 +131,7 @@
     methods: {
       meta () {
         return {
-          title: 'Chip Component | Vuetify',
+          title: 'Chip Component | Vuetify.js',
           h1: 'Chips',
           description: 'Chip component for Vuetify Framework',
           keywords: 'vuetify, chips, components'

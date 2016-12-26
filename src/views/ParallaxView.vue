@@ -49,7 +49,7 @@
     methods: {
       meta () {
         return {
-          title: 'Parallax Component | Vuetify',
+          title: 'Parallax Component | Vuetify.js',
           h1: 'Parallax',
           description: 'Parallax component for Vuetify Framework',
           keywords: 'vuetify, parallax, components'

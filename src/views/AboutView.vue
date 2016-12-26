@@ -107,8 +107,8 @@
     methods: {
       meta () {
         return {
-          title: 'Vue.js 2 Component Framework | Vuetify',
-          h1: 'Vuetify',
+          title: 'Vue.js 2 Component Framework | Vuetify.js',
+          h1: 'Vuetify.js',
           description: 'Reusable semantic component framework for Vue.js 2.',
           keywords: 'vue, vue 2, vue js, material design, vue components, material design components'
         }

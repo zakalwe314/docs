@@ -276,7 +276,7 @@
     methods: {
       meta () {
         return {
-          title: 'Form Input Components | Vuetify',
+          title: 'Form Input Components | Vuetify.js',
           h1: 'Form Inputs',
           description: 'Form input components for Vuetify Framework',
           keywords: 'vuetify, form, components'

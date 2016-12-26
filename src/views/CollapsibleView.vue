@@ -81,7 +81,7 @@
     methods: {
       meta () {
         return {
-          title: 'Collapsible Component | Vuetify',
+          title: 'Collapsible Component | Vuetify.js',
           h1: 'Collapsible',
           description: 'Collapsible component for Vuetify Framework',
           keywords: 'vuetify, collapsible, components'

@@ -39,9 +39,9 @@
       |     &lt;/v-tab&gt;
       |   &lt;/v-tabs-tabs&gt;
       |   &lt;v-tabs-items&gt;
-      |     &lt;v-tab-item id="tab1"&gt;
+      |     &lt;v-tabs-item id="tab1"&gt;
       |       ...
-      |     &lt;/v-tab-item&gt;
+      |     &lt;/v-tabs-item&gt;
       |   &lt;/v-tabs-items&gt;
       |&lt;/v-tabs&gt;
 </template>
@@ -109,7 +109,7 @@
     methods: {
       meta () {
         return {
-          title: 'Tabs Component | Vuetify',
+          title: 'Tabs Component | Vuetify.js',
           h1: 'Tabs',
           description: 'Tabs component for Vuetify Framework',
           keywords: 'vuetify, tabs, components'
