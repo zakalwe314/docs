@@ -27,17 +27,19 @@
           img(src="~public/mail.png")
     v-sidebar-items
       template(v-for="item in items")
+        v-sidebar-item-header(v-if="item.header" v-html="item.header")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
           v-sidebar-item(
             v-for="j in item.items"
             v-bind:item="j"
             v-bind:router="item.router || true"
+            v-if="j.href"
           )
             v-chip(class="green" v-if="j.chip") {{ j.chip }}
         v-sidebar-item(
           v-bind:item="item"
           v-bind:router="item.router || true"
-          v-else
+          v-if="item.href"
         )
           v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
@@ -47,12 +49,14 @@
     data () {
       return {
         items: [
+          { header: 'Core Documentation' },
           { href: '/', text: 'About', icon: 'question_answer' },
           { href: '/quick-start', text: 'Quick Start', icon: 'fast_forward' },
           { href: '/overview', text: 'Overview', icon: 'info' },
           { href: '/event-bus', text: 'Event Bus', icon: 'device_hub' },
           { href: '/layouts', text: 'Layouts', icon: 'devices' },
           {
+            header: 'Main Framework',
             parent: { href: '#!', text: 'Components', icon: 'widgets', },
             items: [
               { href: '/components/alerts', text: 'Alerts', icon: 'priority_high' },
@@ -108,9 +112,7 @@
 <style lang="stylus">
   @import '../stylus/settings/_variables'
   
-  .sidebar
-    background: $grey.darken-3
-    
+  .sidebar    
     &__links
       margin: 1rem
       display: flex
@@ -146,16 +148,4 @@
     
     a
       color: #fff
-        
-  .sidebar__item-header
-    color: #fff
-    
-  .sidebar__item
-    color: #fff
-    
-    &:hover
-      background: rgba(255, 255, 255, .2)
-      
-    &--active
-      background: rgba(255, 255, 255, .2)
 </style>
