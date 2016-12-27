@@ -3901,6 +3901,10 @@ vuetify@^0.7.10:
   version "0.7.10"
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.7.10.tgz#29e542c3743a1ddb12c81575483a5e23efc98894"
 
+"vuetify@git+https://github.com/vuetifyjs/vuetify.git#2.1.7-update":
+  version "0.7.10"
+  resolved "git+https://github.com/vuetifyjs/vuetify.git#7f60a2dfcaffab21cd473dc0aca0f9eda3b7cdab"
+
 vuex-router-sync@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/vuex-router-sync/-/vuex-router-sync-4.0.2.tgz#46e949f28a5d7275385a8300495752c34da0aeef"
