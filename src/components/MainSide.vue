@@ -27,7 +27,7 @@
           img(src="~public/mail.png")
     v-sidebar-items
       template(v-for="item in items")
-        v-sidebar-item-header(v-if="item.header" v-html="item.header")
+        //- v-sidebar-item-header(v-if="item.header" v-html="item.header")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
           v-sidebar-item(
             v-for="j in item.items"
@@ -49,14 +49,14 @@
     data () {
       return {
         items: [
-          { header: 'Core Documentation' },
+          // { header: 'Core Documentation' },
           { href: '/', text: 'About', icon: 'question_answer' },
           { href: '/quick-start', text: 'Quick Start', icon: 'fast_forward' },
           { href: '/overview', text: 'Overview', icon: 'info' },
           { href: '/event-bus', text: 'Event Bus', icon: 'device_hub' },
           { href: '/layouts', text: 'Layouts', icon: 'devices' },
           {
-            header: 'Main Framework',
+            // header: 'Main Framework',
             parent: { href: '#!', text: 'Components', icon: 'widgets', },
             items: [
               { href: '/components/alerts', text: 'Alerts', icon: 'priority_high' },
