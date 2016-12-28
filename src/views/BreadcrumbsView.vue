@@ -82,7 +82,7 @@
               'Default: false'
             ],
             [
-              '<code>item<code>',
+              '<code>item</code>',
               'The item object',
               'Allowed object properties: [href, text]'
             ]

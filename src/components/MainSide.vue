@@ -11,20 +11,20 @@
       )
         img(
           src="~public/v.png" 
-          height="100px"
-          width="100px"
+          height="100"
+          width="100"
           alt="Vuetify Logo"
         )
       a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.8" target="_blank") v0.7.8
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
-          img(src="~public/github.png")
+          img(src="~public/github.png" alt="github")
         a(href="https://twitter.com/vuetifyjs" target="_blank")
-          img(src="~public/twitter.png")
+          img(src="~public/twitter.png" alt="twitter")
         a(href="https://www.facebook.com/vuetifyjs" target="_blank")
-          img(src="~public/facebook.png")
+          img(src="~public/facebook.png" alt="facebook")
         a(href="mailto:john.j.leider@gmail.com")
-          img(src="~public/mail.png")
+          img(src="~public/mail.png" alt="mail")
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")

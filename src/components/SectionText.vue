@@ -9,6 +9,9 @@
     max-width: 700px
     text-align: justify
     margin-bottom: 1rem
+    
+    &--def
+      padding-left: 1rem
       
     p
       margin-bottom: 1rem !important

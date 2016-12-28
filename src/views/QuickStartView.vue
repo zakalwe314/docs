@@ -2,8 +2,8 @@
   div(class="view" id="quick-start")
     section
       section-def
-        strong(slot="title") Getting Started
-        p(slot="desc") Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages.
+        dt(slot="title") Getting Started
+        dd(slot="desc") Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages.
 
     section
       section-header Required Files

@@ -1,6 +1,6 @@
 <template lang="pug">
   div.view
-    section
+    div
       section-def
         dt(slot="title" v-html="doc.title")
         dd(slot="desc" v-html="doc.desc")
