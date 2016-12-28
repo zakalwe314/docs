@@ -1,9 +1,9 @@
 <template lang="pug">
   div(class="view")
-    section
+    div
       section-def
-        strong(slot="title") Overview
-        div(slot="desc")
+        dt(slot="title") Overview
+        dd(slot="desc")
           p This overview is designed to help you become fluent in <strong>Vuetify's</strong> Webpack-SSR Template. If you have not already installed the <code>webpack-ssr</code> template, please do so <router-link to="/quick-start#webpack-ssr">here</router-link>.
     section
       section-header Introduction
