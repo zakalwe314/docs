@@ -44,7 +44,7 @@
     "uglify": "^0.1.5",
     "uglify-js": "^2.7.4",
     "url-loader": "^0.5.7",
-    "vue": "^2.1.6",
+    "vue": "2.1.6",
     "vue-loader": "^10.0.2",
     "vue-router": "^2.1.1",
     "vue-server-renderer": "^2.1.6",
