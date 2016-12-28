@@ -3869,9 +3869,9 @@ vue-router@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.1.1.tgz#10c31bbdcb6da92bd3e0223fa12345e73018625a"
 
-vue-server-renderer@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.1.7.tgz#e3e17af044094209061282b57d27b14e0e6f39f1"
+vue-server-renderer@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.1.8.tgz#834f2fc940b87f6f9bc6a1c8a604fddd5e6283ba"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -3882,9 +3882,9 @@ vue-style-loader@^1.0.0:
   dependencies:
     loader-utils "^0.2.7"
 
-vue-template-compiler@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.1.7.tgz#5e1fc983271d3ac24c79abb64b71383357e2cea5"
+vue-template-compiler@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.1.8.tgz#12dd1cc63793f59be580c694a61610cb9369d629"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -3893,13 +3893,9 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.4.2.tgz#0bc595cda68fc27779568926fcead13553a335df"
 
-vue@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.7.tgz#747880cb70a50c66cb8791aacfee7a6dab7fc842"
-
-vuetify@^0.7.10:
-  version "0.7.10"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.7.10.tgz#29e542c3743a1ddb12c81575483a5e23efc98894"
+vue@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.8.tgz#ae30aa86024fccf5535292ce414e7b4c221a1756"
 
 "vuetify@git+https://github.com/vuetifyjs/vuetify.git#2.1.7-update":
   version "0.7.10"
