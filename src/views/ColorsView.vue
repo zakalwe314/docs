@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="doc")
-    section
+    div
       section-def
         dt(slot="title") Colors
         dd(slot="desc") Soon
@@ -27,7 +27,7 @@
               v-card(
                 v-for="n in 4"
                 v-bind:class="[color, 'accent-' + n]"
-                v-if="!['grey', 'blue-grey', 'brown'].includes(color)"
+                v-if="['grey', 'blue-grey', 'brown'].indexOf(color) === -1"
                 class="black--text"
               )
                 v-card-text {{ color }} Accent-{{ n }}

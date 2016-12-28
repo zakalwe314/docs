@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="view")
-    section
+    div
       section-def
         dt(slot="title") Overview
         dd(slot="desc")

@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="view" id="quick-start")
-    section
+    div
       section-def
         dt(slot="title") Getting Started
         dd(slot="desc") Using one of Vuetify's Vue CLI packages (based on the official examples), get your project started in no time. Vuetify supports Vue JS server side rendering, SPA (Single Page Application) and standard HTML pages.

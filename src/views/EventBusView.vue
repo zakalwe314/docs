@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="view")
-    section
+    div
       section-def
         dt(slot="title") Event Bus
         dd(slot="desc") The Vuetify <code>bus</code> is the glue that holds all of your components together. Made for Vue SSR <em>(Server Side Rendering)</em>, the bus system ensures that components are able to work in a variety of setups.

@@ -11,7 +11,7 @@
     margin-bottom: 1rem
     
     &--def
-      padding-left: 1rem
+      padding: 0 1rem
       
     p
       margin-bottom: 1rem !important
