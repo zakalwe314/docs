@@ -152,10 +152,4 @@
     
   .sidebar__item
     color: #fff
-    
-    &:hover
-      background: rgba(255, 255, 255, .2)
-      
-    &--active
-      background: rgba(255, 255, 255, .2)
 </style>
