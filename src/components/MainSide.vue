@@ -27,6 +27,12 @@
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-item-header(v-if="item.header" v-html="item.header")
+        v-sidebar-item(
+          v-bind:item="item"
+          v-bind:router="item.router"
+          v-if="item.href"
+        )
+          v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
 
 <script>
