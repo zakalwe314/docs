@@ -46,12 +46,13 @@
         |data () {
         |   return {
         |     items: [
+        |       { header: 'Header' },
         |       {
         |         parent: { text: 'Parent', href: '#!" '},
         |         items: [
         |           { text: 'Child', href: '#!', router: false },
         |           { text: 'Child', href: '#!' },
-        |           { text: 'Child', href: '#!', icon: 'list' },
+        |           { text: 'Child', href: '#!', icon: 'list' }
         |         ]
         |       },
         |       { text: 'Link', href: '#!' }
@@ -65,7 +66,6 @@
     data () {
       return {
         doc: {
-          stage: 'iter',
           title: 'Sidebar',
           desc: 'The <code>v-sidebar</code> component is what your users will utilize to navigate through the application. The sidebar is pre-configured to work with or without <strong>vue-router</strong> right out the box.',
           params: [
@@ -97,7 +97,7 @@
             [
               '<code>items</code>',
               'Array of navbar items',
-              'Item object: [parent, text, href, items]'
+              'Item object: [header, parent, text, href, items]'
             ],
             [
               '<code>right</code>',
@@ -137,7 +137,7 @@
             [
               '<code>item</code>',
               'The item object',
-              'Item object: [text, href, icon]'
+              'Item object: [text, href, icon, router]'
             ],
             [
               '<code>router</code>',
@@ -148,10 +148,16 @@
               '<code>slot</code>',
               '',
               'Names: [default]'
+            ],
+            [
+              '<code>v-sidebar-header</code>',
+              '',
+              'Functional component'
             ]
           ]
         },
         items: [
+          { header: 'Header' },
           { text: 'Link', href: "#!" },
           { text: 'Link', href: "#!" },
           { text: 'Link', href: "#!" }
@@ -210,7 +216,7 @@
         margin: 0 2rem
       
     .sidebar      
-      &__item-header--active
+      &__group-header--active
         background: #444
         
         span
@@ -218,6 +224,9 @@
           
         &:after
           color: #fff
+          
+        ~ .sidebar__items a
+          color: #fff !important
       
       a
         color: #444

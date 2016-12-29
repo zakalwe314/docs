@@ -2,7 +2,6 @@
   v-sidebar(
     id="mainsidebar"
     fixed
-    close-on-click
   )
     div(class="vuetify" slot="top")
       router-link(
@@ -15,7 +14,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.7.8" target="_blank") v0.7.8
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.0" target="_blank") v0.8.0
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -27,17 +26,19 @@
           img(src="~public/mail.png" alt="mail")
     v-sidebar-items
       template(v-for="item in items")
+        v-sidebar-item-header(v-if="item.header" v-html="item.header")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
           v-sidebar-item(
-            v-for="j in item.items"
-            v-bind:item="j"
-            v-bind:router="item.router || true"
+            v-for="child in item.items"
+            v-bind:item="child"
+            v-bind:router="item.router"
+            v-if="child.href"
           )
-            v-chip(class="green" v-if="j.chip") {{ j.chip }}
+            v-chip(class="green" v-if="child.chip") {{ child.chip }}
         v-sidebar-item(
           v-bind:item="item"
-          v-bind:router="item.router || true"
-          v-else
+          v-bind:router="item.router"
+          v-if="item.href"
         )
           v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
