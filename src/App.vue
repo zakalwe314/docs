@@ -4,6 +4,7 @@
     main-nav(v-bind:title="title")
 
     main
+      main-side
 
       v-content
         v-container(fluid)
