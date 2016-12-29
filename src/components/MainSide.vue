@@ -24,23 +24,8 @@
           img(src="~public/facebook.png" alt="facebook")
         a(href="mailto:john.j.leider@gmail.com")
           img(src="~public/mail.png" alt="mail")
-    v-sidebar-items
+    v-sidebar-items(v-bind:items="items")
       template(v-for="item in items")
-        v-sidebar-item-header(v-if="item.header" v-html="item.header")
-        v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
-          v-sidebar-item(
-            v-for="child in item.items"
-            v-bind:item="child"
-            v-bind:router="item.router"
-            v-if="child.href"
-          )
-            v-chip(class="green" v-if="child.chip") {{ child.chip }}
-        v-sidebar-item(
-          v-bind:item="item"
-          v-bind:router="item.router"
-          v-if="item.href"
-        )
-          v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
 
 <script>
@@ -58,7 +43,7 @@
             items: [
               { href: '/components/alerts', text: 'Alerts', icon: 'priority_high' },
               { href: '/components/breadcrumbs', text: 'Breadcrumbs', icon: 'linear_scale' },
-              { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward', chip: 'updated' },
+              { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward' },
               { href: '/components/cards', text: 'Cards', icon: 'note' },
               { href: '/components/chips', text: 'Chips', icon: 'label' },
               { href: '/components/collapsible', text: 'Collapsible', icon: 'reorder' },
