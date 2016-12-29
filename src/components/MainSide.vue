@@ -58,7 +58,7 @@
             items: [
               { href: '/components/alerts', text: 'Alerts', icon: 'priority_high' },
               { href: '/components/breadcrumbs', text: 'Breadcrumbs', icon: 'linear_scale' },
-              { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward', chip: 'updated' },
+              { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward' },
               { href: '/components/cards', text: 'Cards', icon: 'note' },
               { href: '/components/chips', text: 'Chips', icon: 'label' },
               { href: '/components/collapsible', text: 'Collapsible', icon: 'reorder' },
@@ -72,7 +72,7 @@
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
               { href: '/components/progress-circular', text: 'Progress Circular', icon: 'replay' },
-              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
+              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt', chip: 'updated' },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
             ]
