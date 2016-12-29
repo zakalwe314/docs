@@ -26,6 +26,7 @@
           img(src="~public/mail.png" alt="mail")
     v-sidebar-items
       template(v-for="item in items")
+        v-sidebar-item-header(v-if="item.header" v-html="item.header")
 </template>
 
 <script>
