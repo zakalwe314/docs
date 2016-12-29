@@ -35,6 +35,12 @@
             v-if="child.href"
           )
             v-chip(class="green" v-if="child.chip") {{ child.chip }}
+        v-sidebar-item(
+          v-bind:item="item"
+          v-bind:router="item.router"
+          v-if="item.href"
+        )
+          v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
 
 <script>
