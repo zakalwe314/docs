@@ -8,7 +8,7 @@
               v-icon reorder
           v-navbar-logo Logo
         v-sidebar(class="white" id="doc-sidebar-1" height="40vh")
-          //- v-sidebar-items(v-bind:items="items")
+          v-sidebar-items(v-bind:items="items")
 
     component-example(header="Drawer")
       div(class="grey lighten-1")
