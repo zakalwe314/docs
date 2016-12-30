@@ -31,17 +31,19 @@
           v-sidebar-items(v-bind:items="item_group")
     div(slot="markup")
       markup(lang="xml")
-        |&lt;v-sidebar height="50vh" v-bind:items="items"&gt;&lt;/v-sidebar&gt;
+        |&lt;v-sidebar id="sidebar" height="50vh" v-bind:items="items"&gt;&lt;/v-sidebar&gt;
         |&nbsp;
-        |&lt;v-sidebar drawer&gt;
+        |&lt;v-sidebar id="sidebar2" drawer&gt;
         |   &lt;v-sidebar-items v-bind:items="items"&gt;&lt;/v-sidebar-items&gt;
         |&lt;/v-sidebar&gt;
         |&nbsp;
-        |&lt;v-sidebar fixed&gt;
+        |&lt;v-sidebar id="sidebar3" fixed&gt;
         |   &lt;v-sidebar-items&gt;
         |     &lt;v-sidebar-item v-for="item in items" v-bind:item="item"&gt;&lt;/v-sidebar-item&gt;
         |   &lt;/v-sidebar-items&gt;
         |&lt;/v-sidebar&gt;
+        |&nbsp;
+        |&lt;v-navbar-side-icon v-sidebar:sidebar&gt;&lt;/v-navbar-side-icon&gt;
       markup(lang="js")
         |data () {
         |   return {
@@ -67,12 +69,17 @@
       return {
         doc: {
           title: 'Sidebar',
-          desc: 'The <code>v-sidebar</code> component is what your users will utilize to navigate through the application. The sidebar is pre-configured to work with or without <strong>vue-router</strong> right out the box.',
+          desc: `The <code>v-sidebar</code> component is what your users will utilize to navigate through the application. The sidebar is pre-configured to work with or without <strong>vue-router</strong> right out the box. By default, the <code>v-sidebar-item</code> component renders an anchor tag, but can be changed to a Vue Router <code>router-link</code> component by either specifying the <strong>router</strong> prop as <em>true</em> or by passing it as an option in the item object.`,
           params: [
             [
               '<code>&lt;v-sidebar&gt;</code>',
               '',
               'Base component'
+            ],
+            [
+              '<code>close-on-click</code>',
+              'Designates if sidebar should close on body click',
+              'Default: true'
             ],
             [
               '<code>drawer</code>',
@@ -93,6 +100,11 @@
               '<code>mobile</code>',
               'Specifies whether menu should collapse automatically on mobile',
               'Default: true'
+            ],
+            [
+              '<code>mobileBreakPoint</code>',
+              'The maximum width in px before sidebar auto-closes',
+              'Default: 768'
             ],
             [
               '<code>items</code>',

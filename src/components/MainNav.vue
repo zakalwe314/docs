@@ -1,8 +1,7 @@
 <template lang="pug">
   header
     v-navbar
-      div(class="navbar__side-icon hidden-sm-and-up")
-        a(href="#!" v-side-bar:mainsidebar="")
+      v-navbar-side-icon(v-sidebar:mainsidebar="" class="hidden-md-and-up")
           v-icon reorder
       div(class="navbar__side-title")
         h1(class="text-xs-center text-md-left" v-text="title")

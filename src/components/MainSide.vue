@@ -14,7 +14,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.0" target="_blank") v0.8.0
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.2" target="_blank") v0.8.2
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -33,12 +33,14 @@
             v-bind:item="child"
             v-bind:router="item.router"
             v-if="child.href"
+            router
           )
             v-chip(class="green" v-if="child.chip") {{ child.chip }}
         v-sidebar-item(
           v-bind:item="item"
           v-bind:router="item.router"
           v-else-if="item.href"
+          router
         )
           v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
