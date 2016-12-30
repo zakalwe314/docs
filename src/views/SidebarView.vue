@@ -3,7 +3,7 @@
     component-example(header="Left")
       div(class="grey lighten-1")
         v-navbar
-          div(class="navbar__side-icon hidden-sm-and-up")
+          div(class="navbar__side-icon hidden-md-and-up")
             a(href="#!" v-side-bar:doc-sidebar-1="")
               v-icon reorder
           v-navbar-logo Logo
@@ -23,9 +23,8 @@
     component-example(header="Item Groups")
       div(class="grey lighten-1")
         v-navbar
-          div(class="navbar__side-icon hidden-sm-and-up")
-            a(href="#!" v-side-bar:doc-sidebar-3="")
-              v-icon reorder
+          v-navbar-side-icon(v-side-bar:doc-sidebar-3="" class="hidden-md-and-up")
+            v-icon reorder
           v-navbar-logo Logo
         v-sidebar(class="white" id="doc-sidebar-3" height="40vh")
           v-sidebar-items(v-bind:items="item_group")

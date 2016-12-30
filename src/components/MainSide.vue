@@ -14,7 +14,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.2" target="_blank") v0.8.2
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.3" target="_blank") v0.8.3
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -99,7 +99,7 @@
               { href: '/css/typography', text: 'Typography', icon: 'title' },
               { href: '/css/grid', text: 'Grid', icon: 'grid_on' },
               { href: '/css/colors', text: 'Colors', icon: 'invert_colors' },
-              { href: '/css/helpers', text: 'Helpers', icon: 'build', chip: 'new' }
+              { href: '/css/helpers', text: 'Helpers', icon: 'build' }
             ]
           }
         ]
