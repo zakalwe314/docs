@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="collapsible")
     component-example(header="Accordion")
       div
         v-collapsible
@@ -28,9 +28,10 @@
 </template>
 
 <style lang="stylus">
-  .component-example
-    > div
-      width: 100%
+  #collapsible
+    .component-example
+      > div
+        width: 100%
 </style>
 
 <script>

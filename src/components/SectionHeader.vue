@@ -4,7 +4,6 @@
     v-bind:style="styles"
   )
     slot
-    v-icon(x-large class="primary--text") short_text
 </template>
 
 <script>

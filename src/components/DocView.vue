@@ -8,14 +8,6 @@
       section-header Examples
       slot
     section
-      section-header Markup
-      slot(name="markup")
-    section
-      section-header Parameters
-      component-parameters(v-bind:params="doc.params")
-    section(v-if="doc.eventable")
-      section-header Events
-      p(class="section-text") Coming Soon
     slot(name="end")
 </template>
 
@@ -30,6 +22,7 @@
   
   .view
     margin-bottom: 3rem
+    max-width: 900px
   
   .version
     margin-top: -1rem

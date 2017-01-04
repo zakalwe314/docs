@@ -27,15 +27,19 @@
       margin: 2rem 0
       
   .markup
-    background: rgba(0, 0, 0, .03)
-    margin: 2rem -4rem
     font-size: 1.2rem
     transition: .3s ease-out
-    word-break: break-all
-    overflow: hidden
+    box-shadow: none
+    display: flex
+    align-items: center
+    padding: 2rem
+    overflow-x: auto
+    overflow-y: hidden
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
     
-    &:hover
-      background: rgba(0, 0, 0, .06)
     
     pre, code
       background: transparent
@@ -45,38 +49,13 @@
     code
       font-weight: 600 !important
       position: relative
-      padding: 3rem 4rem
+      box-shadow: none
+      
+      > span
+        white-space: nowrap
       
       &:before
         display: none
-      
-      &:after
-        color: #fff
-        position: absolute
-        font-size: .7rem
-        top: 0
-        right: 1rem
-        background: rgba(#444, .3)
-        padding: .1rem .5rem
-        font-weight: 100
-        letter-spacing: 2px
-        transition: $primary-transition
-        
-      &.html
-        &:after
-          content: 'html'
-      &.js
-        &:after
-          content: 'javascript'
-      &.cli
-        &:after
-          content: 'cli'
-      &.scss
-        &:after
-          content: 'scss'
-      &.stylus
-        &:after
-          content: 'stylus'
     
     .hljs
       color: $theme.secondary
@@ -89,11 +68,4 @@
         
       .hljs-string, .hljs-literal, .hljs-number
         color: $red.lighten-2
-    
-    
-    @media screen and (max-width: $grid-breakpoints.sm)
-      margin: 2rem -1rem
-      
-      code
-        padding: 3rem 1rem
 </style>

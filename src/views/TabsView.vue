@@ -1,49 +1,68 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
-    component-example(header="Default")
-      v-tabs(id="tabs")
-        v-card(class="secondary")
-          v-card-row
-            v-spacer
-            v-card-title(class="white--text") Title
-            v-spacer
+  doc-view(v-bind:doc="doc" id="components-tabs-view")
+    component-example(header="Mobile tabs")
+      v-tabs(id="mobile-tabs-1" grow)
+        v-card(class="primary white--text")
+          v-card-text
+            v-card-row
+              v-btn(icon)
+                v-icon menu
+              v-card-title Page Title
+              v-btn(icon)
+                v-icon search
+              v-btn(icon)
+                v-icon more_vert
         v-tabs-tabs
-          v-tab(href="tab1" selected) Tab 1
-          v-tab(href="tab2") Tab 2
-          v-tab(href="tab3") Tab 3
-          v-tab(href="tab4") Tab 4
-          
-        v-tabs-items(class="white")
-          v-tabs-item(id="tab1")
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-          v-tabs-item(id="tab2")
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          v-tabs-item(id="tab3") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          v-tabs-item(id="tab4") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    markup(slot="markup" lang="xml")
-      |&lt;v-tabs id="tabs"&gt;
-      |   &lt;v-card class="secondary"&gt;
-      |     &lt;v-card-row&gt;
-      |       &lt;v-spacer&gt;&lt;/v-spacer&gt;
-      |       &lt;v-card-title&gt;Title&lt;/v-card-title&gt;
-      |       &lt;v-spacer&gt;&lt;/v-spacer&gt;
-      |     &lt;/v-card-row&gt;
-      |   &lt;/v-card&gt;
-      |   &lt;v-tabs-tabs&gt;
-      |     &lt;v-tab href="tab1" selected&gt;
-      |       ...
-      |     &lt;/v-tab&gt;
-      |   &lt;/v-tabs-tabs&gt;
-      |   &lt;v-tabs-items&gt;
-      |     &lt;v-tabs-item id="tab1"&gt;
-      |       ...
-      |     &lt;/v-tabs-item&gt;
-      |   &lt;/v-tabs-items&gt;
-      |&lt;/v-tabs&gt;
+          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-1-' + i }")
+        v-tabs-items
+          v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-1-' + i")
+            v-card
+              v-card-text {{ content }}
+      //- v-tabs(id="mobile-tabs-2" grow)
+      //-   v-card(class="primary white--text")
+      //-     v-card-text
+      //-       v-card-row
+      //-         v-btn(icon)
+      //-           v-icon menu
+      //-         v-spacer
+      //-         v-btn(icon)
+      //-           v-icon search
+      //-         v-btn(icon)
+      //-           v-icon more_vert
+      //-       v-card-row
+      //-         v-card-title Page Title
+      //-   v-tabs-tabs
+      //-     v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-2-' + i }")
+      //-   v-tabs-items
+      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-2-' + i")
+      //-       v-card
+      //-         v-card-text {{ content }}
+      //- v-tabs(id="mobile-tabs-3" grow)
+      //-   v-tabs-tabs
+      //-     v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-3-' + i }")
+      //-   v-tabs-items
+      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-3-' + i")
+      //-       v-card
+      //-         v-card-text {{ content }}
+      //- v-tabs(id="mobile-tabs-4" grow icons)
+      //-   v-tabs-tabs
+      //-     v-tab(v-bind:item="{ text: 'Recents', href: '#mobile-tabs-4-1', icon: 'phone' }")
+      //-     v-tab(v-bind:item="{ text: 'Favorites', href: '#mobile-tabs-4-2', icon: 'favorite' }")
+      //-     v-tab(v-bind:item="{ text: 'Nearby', href: '#mobile-tabs-4-3', icon: 'account_box' }")
+      //-   v-tabs-items
+      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-4-' + i")
+      //-       v-card
+      //-         v-card-text {{ content }}
+      //- v-tabs(id="mobile-tabs-5" grow)
+      //-   v-tabs-tabs
+      //-     v-tab(v-bind:item="{ href: '#mobile-tabs-5-1', icon: 'phone' }")
+      //-     v-tab(v-bind:item="{ href: '#mobile-tabs-5-2', icon: 'favorite' }")
+      //-     v-tab(v-bind:item="{ href: '#mobile-tabs-5-3', icon: 'account_box' }")
+      //-   v-tabs-items
+      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-5-' + i")
+      //-       v-card
+      //-         v-card-text {{ content }}
+
 </template>
 
 <script>
@@ -52,6 +71,8 @@
 
     data () {
       return {
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        items: [{text: 'Item One', href: '#!'}, {text: 'Item Two', href: '#!'}, {text: 'Item Three', href: '#!'}],
         doc: {
           stage: 'comp',
           title: 'Tabs',
@@ -118,3 +139,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #components-tabs-view
+    .tabs
+      margin: 1rem 0
+</style>
