@@ -27,13 +27,14 @@
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-item-header(v-if="item.header" v-html="item.header")
-        v-sidebar-group(v-if="item.items" v-bind:item="item.parent")
+        v-sidebar-group(v-if="item.items" v-bind:item="item.parent" ripple)
           v-sidebar-item(
             v-for="child in item.items"
             v-bind:item="child"
             v-bind:router="item.router"
             v-if="child.href"
             router
+            ripple
           )
             v-chip(class="green" v-if="child.chip") {{ child.chip }}
         v-sidebar-item(
@@ -41,6 +42,7 @@
           v-bind:router="item.router"
           v-else-if="item.href"
           router
+          ripple
         )
           v-chip(class="green" v-if="item.chip") {{ item.chip }}
 </template>
@@ -51,6 +53,7 @@
       return {
         items: [
           { href: '/', text: 'About', icon: 'question_answer' },
+          { header: 'Core Documentation' },
           { href: '/quick-start', text: 'Quick Start', icon: 'fast_forward' },
           { href: '/overview', text: 'Overview', icon: 'info' },
           { href: '/event-bus', text: 'Event Bus', icon: 'device_hub' },

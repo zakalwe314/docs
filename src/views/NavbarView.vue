@@ -138,7 +138,7 @@
           ]
         },
         items: [
-          { text: 'Link', href: '#!' },
+          { text: 'Link', href: '#!', router: true },
           { text: 'Link', href: '#!' },
           { text: 'Link', href: '#!' }
         ],

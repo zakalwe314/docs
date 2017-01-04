@@ -18,50 +18,53 @@
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-1-' + i")
             v-card
               v-card-text {{ content }}
-      //- v-tabs(id="mobile-tabs-2" grow)
-      //-   v-card(class="primary white--text")
-      //-     v-card-text
-      //-       v-card-row
-      //-         v-btn(icon)
-      //-           v-icon menu
-      //-         v-spacer
-      //-         v-btn(icon)
-      //-           v-icon search
-      //-         v-btn(icon)
-      //-           v-icon more_vert
-      //-       v-card-row
-      //-         v-card-title Page Title
-      //-   v-tabs-tabs
-      //-     v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-2-' + i }")
-      //-   v-tabs-items
-      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-2-' + i")
-      //-       v-card
-      //-         v-card-text {{ content }}
-      //- v-tabs(id="mobile-tabs-3" grow)
-      //-   v-tabs-tabs
-      //-     v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-3-' + i }")
-      //-   v-tabs-items
-      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-3-' + i")
-      //-       v-card
-      //-         v-card-text {{ content }}
-      //- v-tabs(id="mobile-tabs-4" grow icons)
-      //-   v-tabs-tabs
-      //-     v-tab(v-bind:item="{ text: 'Recents', href: '#mobile-tabs-4-1', icon: 'phone' }")
-      //-     v-tab(v-bind:item="{ text: 'Favorites', href: '#mobile-tabs-4-2', icon: 'favorite' }")
-      //-     v-tab(v-bind:item="{ text: 'Nearby', href: '#mobile-tabs-4-3', icon: 'account_box' }")
-      //-   v-tabs-items
-      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-4-' + i")
-      //-       v-card
-      //-         v-card-text {{ content }}
-      //- v-tabs(id="mobile-tabs-5" grow)
-      //-   v-tabs-tabs
-      //-     v-tab(v-bind:item="{ href: '#mobile-tabs-5-1', icon: 'phone' }")
-      //-     v-tab(v-bind:item="{ href: '#mobile-tabs-5-2', icon: 'favorite' }")
-      //-     v-tab(v-bind:item="{ href: '#mobile-tabs-5-3', icon: 'account_box' }")
-      //-   v-tabs-items
-      //-     v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-5-' + i")
-      //-       v-card
-      //-         v-card-text {{ content }}
+      markup(slot="markup" lang="html")
+        |&lt;v-tab&gt;&lt;/v-tab&gt;
+    component-example
+      v-tabs(id="mobile-tabs-2" grow)
+        v-card(class="primary white--text")
+          v-card-text
+            v-card-row
+              v-btn(icon)
+                v-icon menu
+              v-spacer
+              v-btn(icon)
+                v-icon search
+              v-btn(icon)
+                v-icon more_vert
+            v-card-row
+              v-card-title Page Title
+        v-tabs-tabs
+          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-2-' + i }")
+        v-tabs-items
+          v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-2-' + i")
+            v-card
+              v-card-text {{ content }}
+      v-tabs(id="mobile-tabs-3" grow)
+        v-tabs-tabs
+          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-3-' + i }")
+        v-tabs-items
+          v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-3-' + i")
+            v-card
+              v-card-text {{ content }}
+      v-tabs(id="mobile-tabs-4" grow icons)
+        v-tabs-tabs
+          v-tab(v-bind:item="{ text: 'Recents', href: '#mobile-tabs-4-1', icon: 'phone' }")
+          v-tab(v-bind:item="{ text: 'Favorites', href: '#mobile-tabs-4-2', icon: 'favorite' }")
+          v-tab(v-bind:item="{ text: 'Nearby', href: '#mobile-tabs-4-3', icon: 'account_box' }")
+        v-tabs-items
+          v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-4-' + i")
+            v-card
+              v-card-text {{ content }}
+      v-tabs(id="mobile-tabs-5" grow)
+        v-tabs-tabs
+          v-tab(v-bind:item="{ href: '#mobile-tabs-5-1', icon: 'phone' }")
+          v-tab(v-bind:item="{ href: '#mobile-tabs-5-2', icon: 'favorite' }")
+          v-tab(v-bind:item="{ href: '#mobile-tabs-5-3', icon: 'account_box' }")
+        v-tabs-items
+          v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-5-' + i")
+            v-card
+              v-card-text {{ content }}
 
 </template>
 

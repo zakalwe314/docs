@@ -1,8 +1,9 @@
 <template lang="pug">
-  div(class="markup")
+  div(class="markup" v-bind:data-lang="lang")
     pre
       code(v-bind:class="lang" ref="code")
         slot
+    v-icon content_copy
 </template>
 
 <script>
@@ -32,27 +33,51 @@
     box-shadow: none
     display: flex
     align-items: center
-    padding: 2rem
-    overflow-x: auto
-    overflow-y: hidden
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    
+    padding: 3rem 2rem
+    background: rgba(#000, 0.04)
+    border-radius: 2px
+    height: 100%
+    cursor: pointer
+      
+    &:after, .icon
+      position: absolute
+      right: 1rem
+      transition: opacity .2s ease-in
+      
+    &:after
+      content: attr(data-lang)
+      color: rgba(#000, 0.3)
+      font-size: 1rem
+      font-weight: 700
+      top: .5rem
+      
+    .icon
+      font-size: 1.5rem
+      opacity: 0
+      top: 1rem
+        
+    &:hover
+      background: rgba(#000, 0.08)
+      
+      &:after
+        opacity: 0
+        
+      .icon
+        opacity: 1
+        
     
     pre, code
       background: transparent
-      width: 100%
-      display: block
       
     code
       font-weight: 600 !important
       position: relative
       box-shadow: none
-      
-      > span
-        white-space: nowrap
+      overflow-x: auto
+      overflow-y: hidden
+      word-break: break-word
+      display: flex
+      align-items: center
       
       &:before
         display: none

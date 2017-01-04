@@ -4,17 +4,43 @@
     slot(name="details")
     v-collapsible(ref="source")
       li
-        v-collapsible-body(ref="body")
+        v-collapsible-body(ref="body" v-on:click.native="copyMarkup")
           slot(name="markup")
+          v-slide-x-transition
+            span(class="component-example-copied" v-if="copied") Copied
     div(class="component-example__container")
       slot
+    input(
+      ref="copy" 
+      v-if="copy" 
+      class="component-example-copy" 
+      v-model="copy"
+    )
 </template>
 
 <script>
   export default {
     props: ['header'],
 
+    data () {
+      return {
+        copy: '',
+        copied: false
+      }
+    },
+
     methods: {
+      copyMarkup () {
+        this.copy = this.$slots.markup[0].elm.innerText
+        this.$nextTick(() => {
+          this.$refs.copy.select()
+          document.execCommand('copy')
+          this.copy = ''
+          this.copied = true
+          setTimeout(() => this.copied = false, 2000)
+        })
+      },
+
       source () {
         this.$vuetify.bus.pub(
           `collapse:toggle:${this.$refs.source._uid}`,
@@ -31,6 +57,20 @@
   .component-example
     .collapsible, .collapsible__body
       border: none
+      box-shadow: none
+      background: transparent
+      
+    &-copy
+      opacity: 0
+      position: absolute
+      
+    &-copied
+      position: absolute
+      right: 1rem
+      bottom: .5rem
+      font-size: 1rem
+      font-weight: 700
+      color: rgba(#000, 0.3)
       
     &__container
       display: flex
