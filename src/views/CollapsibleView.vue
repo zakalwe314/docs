@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="collapsible")
-    component-example(header="Accordion")
+    component-example(header="Accordion" file="collapsible/1")
       div
         v-collapsible
           li(v-for="item in 5")
@@ -8,7 +8,7 @@
             v-collapsible-body 
               v-card
                 v-card-text(class="grey lighten-3") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    component-example(header="Expandable")
+    component-example(header="Expandable" file="collapsible/1")
       div
         v-collapsible(expand)
           li(v-for="item in 5")
@@ -16,20 +16,11 @@
             v-collapsible-body 
               v-card
                 v-card-text(class="grey lighten-3") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    markup(slot="markup")
-      |&lt;v-collapsible&gt;
-      |   &lt;v-collapsible-header&gt;Item&lt;/v-collapsible-header&gt;
-      |   &lt;v-collapsible-body&gt;
-      |     &lt;v-card&gt;
-      |       &lt;v-card-text class="grey lighten-3"&gt;...&lt;/v-card-text&gt;
-      |     &lt;/v-card&gt;
-      |   &lt;/v-collapsible-body&gt;
-      |&lt;/v-collapsible&gt;
 </template>
 
 <style lang="stylus">
   #collapsible
-    .component-example
+    .component-example__container
       > div
         width: 100%
 </style>
@@ -39,34 +30,34 @@
     data () {
       return {
         doc: {
-          stage: 'iter',
           title: 'Collapsible',
           desc: `The <code>v-collapsible</code> component is useful for reducing vertical space with large amounts of information. The default functionality of the component is to only display one collapsible body at a time, however, with the <code>expandable</code> property, the collapsible can remain open until explicity closed.`,
-          types: [
-            'comp', 'slot'
-          ],
-          params: [
-            [
-              '<code>&lt;v-collapsible&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>expand</code>',
-              'Does not contract when multiple are open',
-              'Default: false'
-            ],
-            [
-              '<code>&lt;v-collapsible-header&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>&lt;v-collapsible-body&gt;</code>',
-              '',
-              'Functional component'
-            ]
-          ]
+          props: {
+            'v-collapsible': {
+              params: [
+                [
+                  'expand',
+                  'Boolean',
+                  'False',
+                  'Leaves collapsible open when selecting another'
+                ]
+              ]
+            }
+          },
+          functional: {
+            'v-collapsible': {
+              params: [
+                [
+                  'v-collapsible-header',
+                  '.collapsible__header'
+                ],
+                [
+                  'v-collapsible-body',
+                  '.collapsible__body'
+                ]
+              ]
+            }
+          }
         }
       }
     },

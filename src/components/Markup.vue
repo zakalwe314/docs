@@ -2,8 +2,8 @@
   div(class="markup" v-bind:data-lang="lang")
     pre
       code(v-bind:class="lang" ref="code")
-        slot
-    v-icon content_copy
+        div
+          slot
 </template>
 
 <script>
@@ -11,11 +11,11 @@
 
 	export default {
     props: {
-      lang: String
+      lang: String,
     },
 
 		mounted () {
-			hljs.highlightBlock(this.$refs.code)
+      hljs.highlightBlock(this.$refs.code)
 		}
 	}
 </script>
@@ -32,38 +32,30 @@
     transition: .3s ease-out
     box-shadow: none
     display: flex
-    align-items: center
     padding: 3rem 2rem
     background: rgba(#000, 0.04)
     border-radius: 2px
     height: 100%
     cursor: pointer
+    position: relative
+    margin-bottom: 1rem
+    align-items: center
       
-    &:after, .icon
+    &:after
       position: absolute
       right: 1rem
       transition: opacity .2s ease-in
-      
-    &:after
       content: attr(data-lang)
       color: rgba(#000, 0.3)
       font-size: 1rem
       font-weight: 700
       top: .5rem
-      
-    .icon
-      font-size: 1.5rem
-      opacity: 0
-      top: 1rem
         
     &:hover
       background: rgba(#000, 0.08)
       
       &:after
         opacity: 0
-        
-      .icon
-        opacity: 1
         
     
     pre, code

@@ -1,0 +1,28 @@
+<v-card>
+  <v-card-row class="green darken-1">
+    <v-card-title class="white--text"><span>Marriot Rewards</span>
+      <v-spacer></v-spacer>
+      <div>
+        <v-btn icon="icon" v-dropdown:marriot class="white--text">
+          <v-icon>more_vert</v-icon>
+        </v-btn>
+        <v-dropdown id="marriot" top right origin="top right">
+          <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }"></v-dropdown-item>
+          <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }"></v-dropdown-item>
+          <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }"></v-dropdown-item>
+        </v-dropdown>
+      </div>
+    </v-card-title>
+  </v-card-row>
+  <v-card-text>
+    <v-card-row height="75px">
+      <v-icon class="mr-5">card_membership</v-icon>
+      <div>
+        <div>Membership Number</div><strong>113241423</strong>
+      </div>
+    </v-card-row>
+  </v-card-text>
+  <v-card-row actions>
+    <v-btn flat class="green--text darken-1">View Email</v-btn>
+  </v-card-row>
+</v-card>

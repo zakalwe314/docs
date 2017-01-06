@@ -1,15 +1,15 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="chips-view")
-    component-example(header="Default")
+    component-example(header="Default" file="chips/1")
       v-chip Chip
       v-chip(small)
         v-icon code
-    component-example(header="Colored")
+    component-example(header="Colored" file="chips/2")
       v-chip(class="primary white--text") Primary
       v-chip(class="secondary white--text") Secondary
       v-chip(class="red white--text") Colored Chip
       v-chip(class="green white--text") Colored Chip
-    component-example(header="Icon")
+    component-example(header="Icon" file="chips/3")
       v-chip
         v-icon(left) account_circle
         | Ranee
@@ -24,19 +24,19 @@
       v-chip(close, class="teal white--text")
         v-icon(left) check_circle
         | Confirmed
-    component-example(header="Outline")
+    component-example(header="Outline" file="chips/4")
       v-chip(outline, class="secondary secondary--text") Outline
       v-chip(outline, class="primary primary--text") Colored
       v-chip(outline, class="red red--text")
         v-icon(left) build
         | Icon
-    component-example(header="Label")
+    component-example(header="Label" file="chips/5")
       v-chip(label) Label
       v-chip(label, class="pink white--text")
         v-icon(left) label
         | Tags
       v-chip(label, outline, class="red red--text") Outline
-    component-example(header="Closable")
+    component-example(header="Closable" file="chips/6")
       div(class="text-xs-center" v-if="!chip1 && !chip2 && !chip3 && !chip4")
         v-btn(
           v-on:click.native="chip1 = true, chip2 = true, chip3 = true, chip4= true"
@@ -46,27 +46,6 @@
       v-chip(close v-model="chip2" class="red white--text") Remove
       v-chip(close v-model="chip3" outline class="green green--text") Success
       v-chip(close v-model="chip4" outline label class="orange orange--text") Complete
-    markup(slot="markup")
-      |&lt;v-chip&gt;
-      |   ...
-      |&lt;/v-chip&gt;
-      |&nbsp;
-      |&lt;v-chip label&gt;
-      |   ...
-      |&lt;/v-chip&gt;
-      |&nbsp;
-      |&lt;v-chip outline&gt;
-      |   &lt;v-icon left&gt;list&lt;/v-icon&gt;
-      |   ...
-      |&lt;/v-chip&gt;
-      |&nbsp;
-      |&lt;v-chip small&gt;
-      |   ...
-      |&lt;/v-chip&gt;
-      |&nbsp;
-      |&lt;v-chip close&gt;
-      |   ...
-      |&lt;/v-chip&gt;
 </template>
 
 <script>
@@ -78,44 +57,47 @@
         chip3: true,
         chip4: true,
         doc: {
-          stage: 'comp',
           title: 'Chip',
           desc: `The <code>v-chip</code> component is used to convey small pieces of information. Using the <code>close</code> property, the chip becomes interactive, allowing user interaction.`,
-          types: [
-            'comp', 'slot'
-          ],
-          params: [
-            [
-              '<code>&lt;v-chip&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>v-model</code>',
-              '',
-              'Accepts v-model attr: [Boolean]'
-            ],
-            [
-              '<code>close</code>',
-              'Removes the chip',
-              'Default: false'
-            ],
-            [
-              '<code>label</code>',
-              'Applies the chip--label class',
-              'Default: false'
-            ],
-            [
-              '<code>outline</code>',
-              'Applies the chip--outline class',
-              'Default: false'
-            ],
-            [
-              '<code>small</code>',
-              'Applies the chip--small class',
-              'Default: false'
-            ]
-          ]
+          props: {
+            'v-chip': {
+              params: [
+                [
+                  'close',
+                  'Boolean',
+                  'False',
+                  'Removes the chip'
+                ],
+                [
+                  'label',
+                  'Boolean',
+                  'False',
+                  'Applies the chip--label class'
+                ],
+                [
+                  'outline',
+                  'Boolean',
+                  'False',
+                  'Applies the chip--outline class'
+                ],
+                [
+                  'small',
+                  'Boolean',
+                  'False',
+                  'Applies the chip--small class'
+                ]
+              ],
+              model: {
+                types: ['Boolean'],
+                default: 'False'
+              }
+            }
+          },
+          slots: {
+            'v-chip': {
+              default: true
+            }
+          }
         }
       }
     },

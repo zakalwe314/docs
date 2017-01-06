@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="buttons-view")
-    component-example(header="Normal")
+    component-example(header="Normal" file="buttons/1")
       v-btn Default
       v-btn(success) Success
       v-btn(info) Info
@@ -11,13 +11,13 @@
       v-btn(info disabled) Info Disabled
       v-btn(warning disabled) Warning Disabled
       v-btn(error disabled) Error Disabled
-    component-example(header="Flat")
+    component-example(header="Flat" file="buttons/2")
       v-btn(flat) Default Flat
       v-btn(success flat) Success Flat
       v-btn(info flat) Info Flat
       v-btn(warning flat) Warning Flat
       v-btn(error flat) Error Flat
-    component-example(header="Sizes")
+    component-example(header="Sizes" file="buttons/3")
       v-btn(small) Default Small
       v-btn(success small) Success Small
       v-btn(info small) Info Small
@@ -28,26 +28,26 @@
       v-btn(info large) Info Large
       v-btn(warning large) Warning Large
       v-btn(error large) Error Large
-    component-example(header="Block")
+    component-example(header="Block" file="buttons/4")
       div.btn--block-example
         v-btn(block) Default Block
         v-btn(success block) Success Block
         v-btn(info block) Info Block
         v-btn(warning block) Warning Block
         v-btn(error block) Error Block
-    component-example(header="Rounded")
+    component-example(header="Rounded" file="buttons/5")
       v-btn(round) Default Rounded
       v-btn(success round) Success Rounded
       v-btn(info round) Info Rounded
       v-btn(warning round) Warning Rounded
       v-btn(error round) Error Rounded
-    component-example(header="Outline")
+    component-example(header="Outline" file="buttons/6")
       v-btn(outline) Default Outline
       v-btn(success outline) Success Outline
       v-btn(info outline) Info Outline
       v-btn(warning outline) Warning Outline
       v-btn(error outline) Error Outline
-    component-example(header="Floating")
+    component-example(header="Floating" file="buttons/7")
       v-btn(floating success small)
         v-icon check
       v-btn(floating info small)
@@ -72,7 +72,7 @@
         v-icon warning
       v-btn(floating large error)
         v-icon priority_high
-    component-example(header="Icon")
+    component-example(header="Icon" file="buttons/8")
       v-btn(icon)
         v-icon hearing
       v-btn(icon)
@@ -85,7 +85,7 @@
         v-icon(large) warning
       v-btn(icon)
         v-icon(x-large) language
-    component-example(header="With Icons")
+    component-example(header="With Icons" file="buttons/9")
       v-btn(class="purple white--text")
         v-icon(left) event
         | Icon Left
@@ -97,7 +97,7 @@
       v-btn(class="deep-orange white--text")
         v-icon(left) build
         | Left Icon
-    component-example(header="Ripples")
+    component-example(header="Ripples" file="buttons/10")
       p(slot="details") Ripple colors can be altered by passing a class through the ripple prop, <code>v-ripple="{ class: 'red--text' }"</code> Defined class should define the desired color using the <code>color</code> css attribute.
       v-btn(ripple success)
         v-icon(left) check
@@ -109,7 +109,7 @@
       v-btn(floating large info ripple)
         v-icon info_outline
       v-btn(v-bind:ripple="{ class: 'red--text' }") Colored
-    component-example(header="Loaders")
+    component-example(header="Loaders" file="buttons/11")
       v-btn(
         secondary
         v-bind:loading="loading" 
@@ -139,50 +139,6 @@
         span(slot="loader" class="loader")
           v-icon cached
     div(slot="markup")
-      markup(lang="html")
-        |&lt;v-btn&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn flat&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn success&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn block&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn outline&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn floating&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn icon&gt;
-        |   &lt;v-icon&gt;profile&lt;/v-icon&gt;
-        |&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn icon&gt;
-        |   &lt;v-icon large&gt;headphones&lt;/v-icon&gt;
-        |&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn floating icon large&gt;
-        |   &lt;v-icon&gt;edit&lt;/v-icon&gt;
-        |&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn ripple&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn error&gt;
-        |   &lt;v-icon left&gt;delete&lt;/v-icon&gt;
-        |   ...
-        |&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn info 
-        |   v-bind:disabled="loading"
-        |   v-bind:loading="loading"
-        |   v-on:click="loading = !loading"
-        |&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn error v-bind:loading="loading" v-on:click="loading = !loading"&gt;
-        |   ...
-        |   &lt;span slot="loader" class="loader"&gt;
-        |     &lt;v-icon&gt;cached&lt;/v-icon&gt;
-        |   &lt;/span&gt;
-        |&lt;/v-btn&gt;
       markup(lang="js")
         |data () {
         |   return {
@@ -214,88 +170,101 @@
         loading3: false,
         loading4: false,
         doc: {
-          stage: 'comp',
           title: 'Button',
           desc: `
             <p>
               The <code>v-btn</code> component replaces the standard html button with a material design theme and a multitude of options. Any color helper class can be used to alter the background or text color. Remember that all event captures must be done using the <strong>.native</strong> modifier.
             </p>
           `,
-          types: [
-            'comp', 'slot'
-          ],
-          params: [
-            [
-              '<code>&lt;v-btn&gt;</code>',
-              '',
-              'Base Component'
-            ],
-            [
-              '<code>&lt;slot&gt;</code>',
-              'Name: loader',
-              'Used for specifying custom loader'
-            ],
-            [
-              '<code>block</code>',
-              'Applies the btn--block class',
-              'Default: false'
-            ],
-            [
-              '<code>flat</code>',
-              'Applies the btn--flat class',
-              'Default: false'
-            ],
-            [
-              '<code>floating</code>',
-              'Applies the btn--floating class',
-              'Default: false'
-            ],
-            [
-              '<code>icon</code>',
-              'Applies the btn--icon class',
-              'Default: false'
-            ],
-            [
-              '<code>large</code>',
-              'Applies the btn--large class',
-              'Default: false'
-            ],
-            [
-              '<code>loading</code>',
-              'Applies the btn--loading class',
-              'Default: false'
-            ],
-            [
-              '<code>outline</code>',
-              'Applies the btn--outline class',
-              'Default: false'
-            ],
-            [
-              '<code>round</code>',
-              'Applies the btn--round class',
-              'Default: false'
-            ],
-            [
-              '<code>raised</code>',
-              'Applies the btn--raised class',
-              'Default: true'
-            ],
-            [
-              '<code>ripple</code>',
-              'Applies the ripple directive',
-              'Default: false'
-            ],
-            [
-              '<code>small</code>',
-              'Applies the btn--small class',
-              'Default: false'
-            ],
-            [
-              '<code>type</code>',
-              'Sets the buttons type attribute',
-              'Default: false'
-            ]
-          ]
+          props: {
+            'v-btn': {
+              params: [
+                [
+                  'block',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--block class'
+                ],
+                [
+                  'flat',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--flat class'
+                ],
+                [
+                  'floating',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--floating class'
+                ],
+                [
+                  'icon',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--icon class'
+                ],
+                [
+                  'large',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--large class'
+                ],
+                [
+                  'loading',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--loading class'
+                ],
+                [
+                  'outline',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--outline class'
+                ],
+                [
+                  'round',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--round class'
+                ],
+                [
+                  'raised',
+                  'Boolean',
+                  'True',
+                  'Applies the btn--raised class'
+                ],
+                [
+                  'ripple',
+                  'Boolean',
+                  'False',
+                  'Applies the ripple directive',
+                ],
+                [
+                  'small',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--small class',
+                ],
+                [
+                  'type',
+                  'String',
+                  'button',
+                  'Sets the buttons type attribute',
+                ]
+              ]
+            }
+          },
+          slots: {
+            'v-btn': {
+              default: true,
+              params: [
+                [
+                  'loader',
+                  'Used for specifying custom loader'
+                ]
+              ]
+            }
+          }
         }
       }
     },

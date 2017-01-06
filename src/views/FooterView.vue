@@ -1,13 +1,10 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example
+    component-example(file="footer/1")
       div
         v-footer
           div(class="text-xs-right") &copy; 2016
     markup(slot="markup" lang="xml")
-      |&lt;v-footer&gt;
-      |   &lt;div class="text-xs-right"&gt;...&lt;/div&gt;
-      |&lt;/v-footer&gt;
 </template>
 
 <script>
@@ -17,13 +14,11 @@
         doc: {
           title: 'Footer',
           desc: 'The <code>v-footer</code> component is used for displaying general information that a user might want to access from any page within your site.',
-          params: [
-            [
-              '<code>&lt;v-footer&gt;</code>',
-              '',
-              'Base component'
-            ]
-          ]
+          slots: {
+            'v-footer': {
+              default: true
+            }
+          }
         }
       }
     },
@@ -48,3 +43,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  .component-example__container
+    > div
+      width: 100%
+</style>

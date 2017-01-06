@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="components-tabs-view")
-    component-example(header="Mobile tabs")
+    component-example(header="Mobile tabs" file="tabs/1")
       v-tabs(id="mobile-tabs-1" grow)
         v-card(class="primary white--text")
           v-card-text
@@ -18,9 +18,7 @@
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-1-' + i")
             v-card
               v-card-text {{ content }}
-      markup(slot="markup" lang="html")
-        |&lt;v-tab&gt;&lt;/v-tab&gt;
-    component-example
+    component-example(file="tabs/2")
       v-tabs(id="mobile-tabs-2" grow)
         v-card(class="primary white--text")
           v-card-text
@@ -40,6 +38,7 @@
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-2-' + i")
             v-card
               v-card-text {{ content }}
+    component-example(file="tabs/3")
       v-tabs(id="mobile-tabs-3" grow)
         v-tabs-tabs
           v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-3-' + i }")
@@ -47,6 +46,8 @@
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-3-' + i")
             v-card
               v-card-text {{ content }}
+      markup(slot="markup" lang="html" file="tabs/3")
+    component-example(file="tabs/4")
       v-tabs(id="mobile-tabs-4" grow icons)
         v-tabs-tabs
           v-tab(v-bind:item="{ text: 'Recents', href: '#mobile-tabs-4-1', icon: 'phone' }")
@@ -56,6 +57,7 @@
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-4-' + i")
             v-card
               v-card-text {{ content }}
+    component-example(file="tabs/5")
       v-tabs(id="mobile-tabs-5" grow)
         v-tabs-tabs
           v-tab(v-bind:item="{ href: '#mobile-tabs-5-1', icon: 'phone' }")
@@ -65,7 +67,42 @@
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-5-' + i")
             v-card
               v-card-text {{ content }}
-
+    component-example(header="Desktop tabs" file="tabs/6")
+      v-tabs(id="mobile-tabs-6" scroll-bars)
+        v-card(class="primary white--text")
+          v-card-text
+            v-card-row
+              v-btn(icon)
+                v-icon menu
+              v-card-title Page Title
+              v-btn(icon)
+                v-icon search
+              v-btn(icon)
+                v-icon more_vert
+        v-tabs-tabs()
+          v-tab(v-for="i in 13" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-6-' + i }")
+        v-tabs-items
+          v-tabs-item(v-for="i in 13" v-bind:id="'mobile-tabs-6-' + i")
+            v-card
+              v-card-text {{ content }}
+    component-example(file="tabs/7")
+      v-tabs(id="mobile-tabs-7" centered)
+        v-card(class="primary white--text")
+          v-card-text
+            v-card-row
+              v-btn(icon)
+                v-icon menu
+              v-card-title Page Title
+              v-btn(icon)
+                v-icon search
+              v-btn(icon)
+                v-icon more_vert
+        v-tabs-tabs()
+          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-7-' + i }")
+        v-tabs-items
+          v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-7-' + i")
+            v-card
+              v-card-text {{ content }}
 </template>
 
 <script>

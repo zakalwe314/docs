@@ -1,0 +1,14 @@
+<v-tabs id="mobile-tabs-4" grow icons>
+  <v-tabs-tabs>
+    <v-tab v-bind:item="{ text: 'Recents', href: '#mobile-tabs-4-1', icon: 'phone' }"></v-tab>
+    <v-tab v-bind:item="{ text: 'Favorites', href: '#mobile-tabs-4-2', icon: 'favorite' }"></v-tab>
+    <v-tab v-bind:item="{ text: 'Nearby', href: '#mobile-tabs-4-3', icon: 'account_box' }"></v-tab>
+  </v-tabs-tabs>
+  <v-tabs-items>
+    <v-tabs-item v-for="i in 3" v-bind:id="'mobile-tabs-4-' + i">
+      <v-card>
+        <v-card-text>...</v-card-text>
+      </v-card>
+    </v-tabs-item>
+  </v-tabs-items>
+</v-tabs>

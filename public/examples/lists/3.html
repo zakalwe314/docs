@@ -1,0 +1,30 @@
+<v-list>
+  <v-list-item><a href="#!" v-dropdown:dropdown>
+      <v-list-item-avatar large class="orange">event</v-list-item-avatar></a>
+    <v-dropdown id="dropdown" v-bind:items="items"></v-dropdown>
+    <v-list-item-title>Person</v-list-item-title>
+  </v-list-item>
+  <v-list-item> 
+    <v-list-item-avatar large v-badge:notifications.icon class="brown">person</v-list-item-avatar>
+    <v-list-item-title>Person</v-list-item-title>
+    <v-list-item-action>
+      <a href="#!" v-dropdown:menu>
+        <v-icon medium class="blue--text">edit</v-icon>
+      </a>
+      <v-dropdown id="menu" v-bind:items="items" top right origin="top right"></v-dropdown>
+    </v-list-item-action>
+  </v-list-item>
+  <v-list-item> 
+    <v-list-item-avatar large class="green">phone</v-list-item-avatar>
+    <v-list-item-title>
+      <span>Person</span>
+      <v-list-item-sub-title>...</v-list-item-sub-title>
+    </v-list-item-title>
+    <v-list-item-action>
+      <v-list-item-action-title>
+        Contact
+      </v-list-item-action-title><a href="#!">
+      <v-icon class="grey--text darken-1">email</v-icon></a>
+    </v-list-item-action>
+  </v-list-item>
+</v-list>

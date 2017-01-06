@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="Text Dividers")
+    component-example(header="Text Dividers" file="breadcrumbs/1")
       v-breadcrumbs(
         divider="/"
         v-bind:items="items"
@@ -9,7 +9,7 @@
         divider="-"
         v-bind:items="items"
       )
-    component-example(header="Icon Dividers")
+    component-example(header="Icon Dividers" file="breadcrumbs/2")
       v-breadcrumbs(
         icons,
         divider="forward"
@@ -20,19 +20,6 @@
         divider="chevron_right"
         v-bind:items="items"
       )
-    div(slot="markup")
-      markup(lang="html")
-        |&lt;v-breadcrumbs divider="/" v-bind:items="items"&gt;&lt;/v-breadcrumbs&gt;
-        |&nbsp;
-        |&lt;v-breadcrumbs divider="/"&gt;
-        |   &lt;v-breadcrumbs-item v-for(item in items) v-bind:item="item"&gt;&lt;/v-breadcrumbs-item&gt;
-        |&lt;/v-breadcrumbs&gt;
-      markup(lang="js")
-        |data () {
-        |   return {
-        |     items: [{ href: '#!', text: 'Dashboard', disabled: false}]
-        |   }
-        |}
 </template>
 
 <script>
@@ -40,53 +27,46 @@
     data () {
       return {
         doc: {
-          stage: 'comp',
           title: 'Breadcrumbs',
           desc: `
             <p>
               The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or characters as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.
             </p>
           `,
-          types: [
-            'comp', 'slot'
-          ],
-          params: [
-            [
-              '<code>&lt;v-breadcrumbs&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>divider</code>',
-              'Specifies the dividing character',
-              'Default: /'
-            ],
-            [
-              '<code>icon</code>',
-              'Specifies that the divider is an icon',
-              'Default: false'
-            ],
-            [
-              '<code>items</code>',
-              'The array of Breadcrumbs',
-              'Allowed properties: [href, text, disabled]'
-            ],
-            [
-              '<code>&lt;v-breadcrumbs-item&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>disabled</code>',
-              'Disables the breadcrumb',
-              'Default: false'
-            ],
-            [
-              '<code>item</code>',
-              'The item object',
-              'Allowed object properties: [href, text]'
-            ]
-          ]
+          props: {
+            'v-breadcrumbs': {
+              params: [
+                [
+                  'divider',
+                  'String',
+                  '/',
+                  'Specifies the dividing character'
+                ],
+                [
+                  'icon',
+                  'Boolean',
+                  'False',
+                  'Specifies that the divider is an icon'
+                ],
+                [
+                  'items',
+                  'Array',
+                  '[]',
+                  'Accepts v-breadcrumbs object'
+                ]
+              ]
+            },
+            'v-breadcrumbs-item': {
+              params: [
+                [
+                  'item',
+                  'Object',
+                  `{ href: '#!', text: '', disabled: false }`,
+                  'The individual breadcrumbs'
+                ]
+              ]
+            }
+          }
         },
         items: [
           {
@@ -121,7 +101,7 @@
         return {
           title: 'Breadcrumbs Component | Vuetify.js',
           h1: 'Breadcrumbs',
-          description: 'Breadcrumbs component for Vuetify Framework',
+          description: 'The v-breadcrumbs component is a navigational helper for pages. It can accept a Material Icons icon or characters as a divider',
           keywords: 'vuetify, breadcrumbs, components'
         }
       }

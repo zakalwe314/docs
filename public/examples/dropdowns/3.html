@@ -1,0 +1,22 @@
+<v-card>
+  <v-card-row class="blue white--text">
+    <v-btn icon="icon" v-dropdown:menu>
+      <v-icon class="white--text">more_vert</v-icon>
+    </v-btn>
+    <v-dropdown id="menu" v-bind:items="items"></v-dropdown>
+    <v-card-title>Menu</v-card-title>
+  </v-card-row>
+  <v-card-text>Lorem Ipsum</v-card-text>
+</v-card>
+
+<v-card>
+  <v-card-row class="blue white--text">
+    <v-card-title>Menu</v-card-title>
+    <v-spacer></v-spacer>
+    <v-btn icon="icon" v-dropdown:menu2>
+      <v-icon class="white--text">more_vert</v-icon>
+    </v-btn>
+    <v-dropdown id="menu2" v-bind:items="items" right></v-dropdown>
+  </v-card-row>
+  <v-card-text>Lorem Ipsum</v-card-text>
+</v-card>

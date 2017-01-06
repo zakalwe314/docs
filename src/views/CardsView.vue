@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="cards")
-    component-example(header="Basic")
+    component-example(header="Basic" file="cards/1")
       div
         v-card
           v-card-text
@@ -10,7 +10,7 @@
           v-card-text
             div(v-text="card_text")
 
-    component-example(header="Title")
+    component-example(header="Title" file="cards/2")
       div
         v-card
           v-card-row(class="red darken-1")
@@ -32,7 +32,7 @@
               div
                 v-btn(icon class="white--text" v-dropdown:marriot="")
                   v-icon more_vert
-                v-dropdown(id="marriot" right)
+                v-dropdown(id="marriot" top right origin="top right")
                   v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }")
                   v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
                   v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
@@ -45,7 +45,7 @@
           v-card-row(actions)
             v-btn(flat class="green--text darken-1") View Email
 
-    component-example(header="Picture")
+    component-example(header="Picture" file="cards/3")
       div
         v-card
           v-card-row(
@@ -64,7 +64,7 @@
               v-spacer
               v-btn(icon class="white--text" v-dropdown:space="")
                 v-icon more_vert
-              v-dropdown(id="space" right)
+              v-dropdown(id="space" top right origin="top right")
                 v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
                 v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
           v-card-row(
@@ -78,7 +78,7 @@
             v-spacer
             v-icon(class="white--text") explore
 
-    component-example(header="Background")
+    component-example(header="Background" file="cards/4")
       div.portrait
         v-card(
           img="https://cdn.fstoppers.com/styles/full/s3/lead/2014/11/fstoppers-natural-light-dani-how-to-retouch-dof-bokeh-sharp-facebook-female-fashion-nyc-model-portrait1.jpg"
@@ -92,7 +92,7 @@
         )
           v-card-row(actions class="white--text pl-3 pt-3 pb-3") Picture.png
 
-    component-example(header="Horizontal")
+    component-example(header="Horizontal" file="cards/5")
       div
         v-card(horizontal)
           v-card-row(
@@ -121,7 +121,7 @@
             height="125px"
           )
 
-    component-example(header="Colored")
+    component-example(header="Colored" file="cards/6")
       div
         v-card(class="blue darken-4 white--text")
           v-card-row(height="200px")
@@ -133,37 +133,6 @@
             v-btn(flat, class="white--text") Add to Calendar
             v-spacer
             v-icon event
-
-    markup(slot="markup")
-      |&lt;v-card class="green"&gt;
-      |   &lt;v-card-text&gt;
-      |     ...
-      |   &lt;/v-card-text&gt;
-      |&lt;/v-card&gt;
-      |&nbsp;
-      |&lt;v-card&gt;
-      |   &lt;v-card-row img="..." height="300px"&gt;
-      |     &lt;v-card-title&gt;...&lt;/v-card-title&gt;
-      |   &lt;/v-card-row&gt;
-      |   &lt;v-card-text&gt;
-      |      ...
-      |   &lt;/v-card-text&gt;
-      |   &lt;v-card-row actions&gt;
-      |      &lt;v-btn flat class="secondary--text"&gt;...&lt;/v-btn&gt;
-      |   &lt;/v-card-row&gt;
-      |&lt;/v-card&gt;
-      |&nbsp;
-      |&lt;v-card horizontal&gt;
-      |   &lt;v-card-row img="..."&gt;&lt;/v-card-title&gt;
-      |   &lt;v-card-column&gt;
-      |       &lt;v-card-text&gt;
-      |           &lt;p&gt;...&lt;/p&gt;
-      |       &lt;/v-card-text&gt;
-      |       &lt;v-card-row actions&gt;
-      |           &lt;v-btn flat class="secondary--text"&gt;...&lt;/v-btn&gt;
-      |       &lt;/v-card-row&gt;
-      |   &lt;/v-card-column&gt;
-      |&lt;/v-card&gt;
 </template>
 
 <script>
@@ -177,63 +146,68 @@
               The <code>v-card</code> component is a versatile component that can be used for anything from a panel to a static image. The <strong>card</strong> component has numerous helper components to make markup as easy as possible. Components that have no listed options use <strong class="green--text">Vue's</strong> functional component option for faster rendering and serve as markup sugar to make building easier.
             </p>
           `,
-          params: [
-            [
-              '<code>&lt;v-card&gt;</code>',
-              '',
-              'Base Component'
-            ],
-            [
-              '<code>height</code>',
-              'Manually define the height of the Card',
-              'Type: String'
-            ],
-            [
-              '<code>horizontal</code>',
-              'Applies the card--horizontal class',
-              'Default: false'
-            ],
-            [
-              '<code>img</code>',
-              'Specifies an image background',
-              'Type: String'
-            ],
-            [
-              '<code>&lt;v-card-row&gt;</code>',
-              '',
-              'Base Component'
-            ],
-            [
-              '<code>actions</code>',
-              'Applies the card__row--action class',
-              'Default: false'
-            ],
-            [
-              '<code>height</code>',
-              'Manually define the height of the Card Row',
-              'Type: String'
-            ],
-            [
-              '<code>img</code>',
-              'Specifies an image background',
-              'Type: String'
-            ],
-            [
-              '<code>&lt;v-card-stack&gt;</code>',
-              '',
-              'Functional Component'
-            ],
-            [
-              '<code>&lt;v-card-title&gt;</code>',
-              '',
-              'Functional Component'
-            ]
-          ]
+          props: {
+            'v-card': {
+              params: [
+                [
+                  'height',
+                  'String',
+                  'auto',
+                  'Manually define the height of the Card',
+                ],
+                [
+                  'horizontal',
+                  'Boolean',
+                  'False',
+                  'Applies the card--horizontal class',
+                ],
+                [
+                  'img',
+                  'String',
+                  `''`,
+                  'Specifies an image background',
+                ]
+              ]
+            },
+            'v-card-row': {
+                params: [
+                [
+                  'actions',
+                  'Boolean',
+                  'False',
+                  'Applies the card__row--action class',
+                ],
+                [
+                  'height',
+                  'String',
+                  'auto',
+                  'Manually define the height of the Card Row',
+                ],
+                [
+                  'img',
+                  'String',
+                  `''`,
+                  'Specifies an image background',
+                ]
+              ]
+            }
+          },
+          functional: {
+            'v-card': {
+              params: [
+                [
+                  'v-card-title',
+                  '.card__title'
+                ],
+                [
+                  'v-card-col',
+                  '.card__col'
+                ]
+              ]
+            }
+          }
         },
         card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.',
-        title_text: `
-          <p>Card Title</p>
-        `
       }
     },
 
@@ -265,7 +239,7 @@
         background: rgba(0,0,0,.5)
         
     .card
-      flex-basis: 500px
+      margin: 1rem 0
 
     .component-example
       flex-flow: row wrap

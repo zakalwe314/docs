@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="Basic")
+    component-example(header="Basic" file="lists/1")
       v-list
         v-list-item
           v-list-item-title Person
@@ -8,7 +8,7 @@
           v-list-item-title Person
         v-list-item 
           v-list-item-title Person
-    component-example(header="With Icon")
+    component-example(header="With Icon" file="lists/2")
       v-list
         v-list-item
           v-list-item-icon person
@@ -19,7 +19,7 @@
         v-list-item 
           v-list-item-icon person
           v-list-item-title Person
-    component-example(header="With Avatar")
+    component-example(header="With Avatar" file="lists/3")
       v-list
         v-list-item
           a(href="#!", v-dropdown:dropdown="")
@@ -32,7 +32,7 @@
           v-list-item-action
             a(href="#!", v-dropdown:menu="")
               v-icon(class="blue--text", medium) edit
-            v-dropdown(id="menu", v-bind:items="items", right)
+            v-dropdown(id="menu" v-bind:items="items" top right origin="top right")
         v-list-item 
           v-list-item-avatar(class="green", large) phone
           v-list-item-title
@@ -42,38 +42,6 @@
             v-list-item-action-title Contact
             a(href="#!")
               v-icon(class="grey--text darken-1") email
-    markup(slot="markup")
-      |&lt;v-list&gt;
-      |   &lt;v-list-item&gt;
-      |     &lt;v-list-item-title&gt;
-      |       ...
-      |     &lt;/v-list-item-title&gt;  
-      |   &lt;/v-list-item&gt;
-      |&lt;/v-list&gt;
-      |&nbsp;
-      |&lt;v-list&gt;
-      |   &lt;v-list-item&gt;
-      |     &lt;v-list-item-icon&gt;list&lt;/v-list-item-icon&gt;
-      |     &lt;v-list-item-title&gt;
-      |       ...
-      |     &lt;/v-list-item-title&gt;
-      |   &lt;/v-list-item&gt;
-      |&lt;/v-list&gt;
-      |&nbsp;
-      |&lt;v-list&gt;
-      |   &lt;v-list-item&gt;
-      |     &lt;v-list-item-avatar class="green" large&gt;list&lt;/v-list-item-avatar&gt;
-      |     &lt;v-list-item-title&gt;
-      |       &lt;span&gt;...&lt;/span&gt;
-      |       &lt;v-list-item-sub-title&gt;...&lt;/v-list-item-sub-title&gt;
-      |     &lt;/v-list-item-title&gt;
-      |     &lt;v-list-item-action&gt;
-      |       &lt;v-list-item-action-title&gt;...&lt;/v-list-item-action-title&gt;
-      |       &lt;a href="#!"&gt;
-      |         &lt;v-icon class="grey--text darken-1"&gt;email&lt;/v-icon&gt;
-      |     &lt;/v-list-item-action&gt;
-      |   &lt;/v-list-item&gt;
-      |&lt;/v-list&gt;
 </template>
 
 <script>
@@ -83,54 +51,21 @@
     data () {
       return {
         doc: {
-          stage: 'comp',
           title: 'List',
           desc: 'The <code>v-list</code> component is used to display, you guessed it, lists!. Combine the list with a <code>v-badge</code> directive or a <code>v-dropdown</code> to enhance and add functionality.',
-          types: [
-            'comp', 'slot'
-          ],
-          params: [
-            [
-              '<code>&lt;v-list&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>&lt;v-list-item&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>&lt;v-list-item-title&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>&lt;v-list-item-sub-title&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>&lt;v-list-action&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>&lt;v-list-action-title&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>&lt;v-list-icon&gt;</code>',
-              '',
-              'Functional component'
-            ],
-            [
-              '<code>&lt;v-list-avatar&gt;</code>',
-              '',
-              'Functional component'
-            ]
-          ]
+          functional: {
+            'v-list': {
+              params: [
+                ['v-list-item', 'list__item'],
+                ['v-list-title', 'list__item__title'],
+                ['v-list-sub-title', 'list__item__sub-title'],
+                ['v-list-action', 'list__action'],
+                ['v-list-action-title', 'list__action__title'],
+                ['v-list-icon', 'list__icon'],
+                ['v-list-avatar', 'list__avatar'],
+              ]
+            }
+          }
         },
         items: [
           {

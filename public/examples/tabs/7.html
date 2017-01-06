@@ -1,0 +1,28 @@
+<v-tabs id="mobile-tabs-7" centered>
+  <v-card class="primary white--text">
+    <v-card-text>
+      <v-card-row>
+        <v-btn icon>
+          <v-icon>menu</v-icon>
+        </v-btn>
+        <v-card-title>Page Title</v-card-title>
+        <v-btn icon>
+          <v-icon>search</v-icon>
+        </v-btn>
+        <v-btn icon>
+          <v-icon>more_vert</v-icon>
+        </v-btn>
+      </v-card-row>
+    </v-card-text>
+  </v-card>
+  <v-tabs-tabs>
+    <v-tab v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-7-' + i }"></v-tab>
+  </v-tabs-tabs>
+  <v-tabs-items>
+    <v-tabs-item v-for="i in 3" v-bind:id="'mobile-tabs-7-' + i">
+      <v-card>
+        <v-card-text>...</v-card-text>
+      </v-card>
+    </v-tabs-item>
+  </v-tabs-items>
+</v-tabs>

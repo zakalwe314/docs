@@ -1,10 +1,9 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
+    component-example(file="parallax/1")
     v-parallax(
       src="https://s-media-cache-ak0.pinimg.com/originals/e1/00/ef/e100ef3699fa021506561d41e392a148.jpg"
     )
-    markup(slot="markup")
-      |&lt;v-parallax src="..."&gt;&lt;/v-parallax&gt;
 </template>
 
 <script>
@@ -14,26 +13,31 @@
     data () {
       return {
         doc: {
-          stage: 'comp',
           title: 'Parallax',
           desc: 'The <code>v-parallax</code> component creates a 3d effect that makes an image appear to scroll slower than the window.',
-          params: [
-            [
-              '<code>&lt;v-parallax&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>src</code>',
-              'The image to parallax',
-              'Required: true'
-            ],
-            [
-              '<code>height</code>',
-              'The height of the parallax container',
-              'Default: 500'
-            ]
-          ]
+          props: {
+            'v-parallax': {
+              params: [
+                [
+                  'src',
+                  'String',
+                  'Required',
+                  'The image to parallax'
+                ],
+                [
+                  'height',
+                  'Number',
+                  '500',
+                  'The height of the parallax container'
+                ]
+              ]
+            }
+          },
+          slots: {
+            'v-parallax': {
+              default: true
+            }
+          }
         }
       }
     },

@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="On Click")
+    component-example(header="On Click" file="dropdowns/1")
       v-btn(
         class="primary white--text"
         v-dropdown:dropdown=""
@@ -27,7 +27,7 @@
           a(href="#!", class="dropdown__item")
             | Logout
             v-icon(class="secondary--text right") cloud_off
-    component-example(header="On Hover")
+    component-example(header="On Hover" file="dropdowns/2")
       v-btn(
         class="primary white--text"
         v-dropdown:dropdown2=""
@@ -57,7 +57,7 @@
           a(href="#!", class="dropdown__item")
             | Logout
             v-icon(class="secondary--text right") cloud_off
-    component-example(header="Menus")
+    component-example(header="Menus" file="dropdowns/3")
       v-card
         v-card-row(class="blue white--text")
           v-btn(
@@ -91,16 +91,6 @@
           )
         v-card-text Lorem Ipsum
     div(slot="markup")
-      markup(lang="xml")
-        |&lt;v-btn v-dropdown:dropdown&gt;
-        |   ...
-        |&lt;/v-btn&gt;
-        |&lt;v-dropdown id="dropdown" v-bind:items="items"&gt;&lt;/v-dropdown&gt;
-        |&nbsp;
-        |&lt;v-btn v-dropdown:dropdown2&gt;
-        |   ...
-        |&lt;/v-btn&gt;
-        |&lt;v-dropdown id="dropdown2" v-bind:items="items" hover&gt;&lt;/v-dropdown&gt;
       markup(lang="js")
         |data () {
         |   return {
@@ -114,34 +104,47 @@
     data () {
       return {
         doc: {
-          stage: 'iter',
           title: 'Dropdown',
           desc: `The <code>v-dropdown</code> component utilizes the v-dropdown directive to link itself to another element. Once binded, clicking the element, or by hovering (if using the <code>hover</code> parameter), the dropdown will reposition absolutely positioned on top of the selected activator.`,
-          types: [
-            'comp', 'slot', 'directive'
-          ],
-          params: [
-            [
-              '<code>v-dropdown</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>id</code>',
-              'Sets the id of the dropdown',
-              'Required: true'
-            ],
-            [
-              '<code>items</code>',
-              'Optionally pass array of items',
-              'Type: object'
-            ],
-            [
-              '<code>right</code>',
-              'Open dropdown from right',
-              'Default: false'
-            ]
-          ]
+          props: {
+            'v-dropdown': {
+              params: [
+                [
+                  'id',
+                  'String',
+                  'Required',
+                  'Sets the id of the dropdown'
+                ],
+                [
+                  'items',
+                  'Object',
+                  '[]',
+                  'Optionally pass array of items'
+                ],
+                [
+                  'right',
+                  'Boolean',
+                  'False',
+                  'Open dropdown from right'
+                ]
+              ]
+            },
+            'v-dropdown-item': {
+              params: [
+                [
+                  'item',
+                  'Object',
+                  `{ href: '#!', text: ''`,
+                  'The invididual items'
+                ]
+              ]
+            }
+          },
+          slots: {
+            'v-dropdown': {
+              default: true
+            }
+          }
         },
         items: [
           {

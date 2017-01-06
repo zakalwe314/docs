@@ -100,34 +100,6 @@
         checked,
         disabled
       )
-    div(slot="markup")
-      markup(lang="html")
-        |&lt;v-select v-bind:options="options"&gt;
-        |   ...
-        |&lt;/v-select&gt;
-        |&nbsp;
-        |&lt;v-text-input label="Label" value="yes" id="terms" name="terms" v-model="text"&gt;
-        |   ...
-        |&lt;/v-text-input&gt;
-        |&nbsp;
-        |&lt;v-radio gap indeterminate&gt;
-        |   ...
-        |&lt;/v-radio&gt;
-        |&nbsp;
-        |&lt;v-checkbox name="check" id="check"&gt;
-        |   ...
-        |&lt;/v-checkbox&gt;
-      markup(lang="js")
-        |data () {
-        |   return {
-        |     text: '',
-        |     options: [
-        |       { value: 1, text: 'One' },
-        |       { value: 2, text: 'Two' },
-        |       { value: 3, text: 'Three' },
-        |     ]
-        |   }
-        |}
 </template>
 
 <script>
@@ -137,113 +109,122 @@
         doc: {
           title: 'Form Inputs',
           desc: 'Form components are used for collecting user provided information.',
-          params: [
-            [
-              '<code>v-select</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>defaultText</code>',
-              'Sets default option text',
-              'Required: Select...'
-            ],
-            [
-              '<code>multiple</code>',
-              'Sets the multiple attribute',
-              'Default: false'
-            ],
-            [
-              '<code>options</code>',
-              'The options array',
-              'Allowed object properties: [id, text]'
-            ],
-            [
-              '<code>v-text-input</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>v-model</code>',
-              '',
-              'Required: false'
-            ],
-            [
-              '<code>type</code>',
-              'Sets the type attribute (v-text-input only)',
-              "Default: text"
-            ],
-            [
-              '<code>v-radio</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>v-model</code>',
-              '',
-              'Allowed types: [String, Number, Boolean]'
-            ],
-            [
-              '<code>gap</code>',
-              'Applies the gap class',
-              'Default: false'
-            ],
-            [
-              '<code>v-checkbox</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>v-model</code>',
-              '',
-              'Required: false'
-            ],
-            [
-              '<code>filled</code>',
-              'Applies the filled class',
-              'Default: false'
-            ],
-            [
-              '<code>gap</code>',
-              'Applies the gap class',
-              'Default: false'
-            ],
-            [
-              '<code>indeterminate</code>',
-              'Applies the indeterminate class',
-              'Default: false'
-            ],
-            [
-              '<strong>All Components</strong>',
-              '',
-              ''
-            ],
-            [
-              '<code>disabled</code>',
-              'Sets the disabled attribute',
-              "Default: ''"
-            ],
-            [
-              '<code>label</code>',
-              'Sets the label text',
-              "Default: ''"
-            ],
-            [
-              '<code>id</code>',
-              'Sets the input id',
-              "Default: ''"
-            ],
-            [
-              '<code>name</code>',
-              'Sets the label text',
-              "Default: ''"
-            ],
-            [
-              '<code>placeholder</code>',
-              'Sets the placeholder text',
-              "Default: ''"
-            ]
-          ]
+          props: {
+            'v-select': {
+              params: [
+                [
+                  'defaultText',
+                  'String',
+                  'Select...',
+                  'Sets default option text'
+                ],
+                [
+                  'multiple',
+                  'Boolean',
+                  'False',
+                  'Sets the multiple attribute'
+                ],
+                [
+                  'options',
+                  'Array',
+                  `{ id: 1, text: 'Value' }`,
+                  'The options array'
+                ]
+              ],
+              model: {
+                types: ['Array', 'String', 'Number'],
+                default: 'null'
+              }
+            },
+            'v-text-input': {
+              params: [
+                [
+                  'type',
+                  'String',
+                  'text',
+                  'Sets the type attribute'
+                ],
+              ],
+              model: {
+                types: ['*'],
+                default: 'null'
+              }
+            },
+            'v-radio': {
+              params: [
+                [
+                  'gap',
+                  'Boolean',
+                  'False',
+                  'Creates a gap between the selected circle and the outer border'
+                ]
+              ],
+              model: {
+                types: ['String', 'Number', 'Boolean'],
+                default: 'null'
+              }
+            },
+            'v-checkbox': {
+              params: [
+                [
+                  'gap',
+                  'Boolean',
+                  'False',
+                  'Creates a gap between the selected box and the outer border'
+                ],
+                [
+                  'filled',
+                  'Boolean',
+                  'False',
+                  'Fills the checkbox when selected'
+                ],
+                [
+                  'indeterminate',
+                  'Boolean',
+                  'False',
+                  'Sets the indeterminate state'
+                ]
+              ],
+              model: {
+                types: ['String', 'Number', 'Boolean'],
+                default: 'null'
+              }
+            },
+            'All Components': {
+              params: [
+                [
+                  'disabled',
+                  'Boolean',
+                  'False',
+                  'Sets the disabled attribute',
+                ],
+                [
+                  'label',
+                  'String',
+                  "''",
+                  'Sets the label text',
+                ],
+                [
+                  'id',
+                  "String",
+                  "''",
+                  'Sets the input id',
+                ],
+                [
+                  'name',
+                  "String",
+                  "''",
+                  'Sets the label text',
+                ],
+                [
+                  'placeholder',
+                  "String",
+                  "''",
+                  'Sets the placeholder text',
+                ]
+              ]
+            }
+          }
         },
         input: null,
         multiple: ['2'],

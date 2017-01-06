@@ -1,31 +1,21 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="Short")
+    component-example(header="Short" file="pagination/1")
       v-pagination(
         v-bind:length.number="5",
         v-model="page"
       )
-    component-example(header="Long")
+    component-example(header="Long" file="pagination/2")
       v-pagination(
         v-bind:length.number="15",
         v-model="page2"
       )
-    component-example(header="Round")
+    component-example(header="Round" file="pagination/3")
       v-pagination(
         v-bind:length.number="4",
         v-model="page3"
         circle
       )
-    div(slot="markup")
-      markup
-        |&lt;v-pagination v-bind:length="length" v-model="page"&gt;&lt;/v-pagination&gt;
-      markup
-        |data () {
-        |   return {
-        |     length: 5,
-        |     page: 1
-        |   }
-        |}
 </template>
 
 <script>
@@ -33,31 +23,30 @@
     data () {
       return {
         doc: {
-          stage: 'comp',
           title: 'Pagination',
           desc: 'The <code>v-pagination</code> component is used to separate long sets of data so that it is easier for a user to consume information. Depending on the length provided, the pagination component will automatically scale. To maintain the current page, simply supply a v-model attribute.',
-          params: [
-            [
-              '<code>&lt;v-pagination&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>length</code>',
-              'The length of the paginator',
-              'Default: 0'
-            ],
-            [
-              '<code>round</code>',
-              'Applies the pagination--round class',
-              'Default: false'
-            ],
-            [
-              '<code>model</code>',
-              '',
-              'Accepts Vue v-model'
-            ],
-          ]
+          props: {
+            'v-pagination': {
+              params: [
+                [
+                  'length',
+                  'Number',
+                  '0',
+                  'The length of the paginator',
+                ],
+                [
+                  'round',
+                  'Boolean',
+                  'False',
+                  'Applies the pagination--round class',
+                ],
+              ],
+              model: {
+                types: ['Number'],
+                default: 0
+              }
+            }
+          }
         },
         page: 3,
         page2: 7,

@@ -1,0 +1,20 @@
+<v-btn v-dropdown:dropdown2 class="primary white--text">Hover Dropdown</v-btn>
+<v-dropdown id="dropdown2" v-bind:items="items" top right origin="top right" hover></v-dropdown>
+
+<v-btn v-dropdown:dropdown4 class="secondary white--text">Hover With Labels</v-btn>
+
+<v-dropdown id="dropdown4" hover>
+  <li>
+    <a href="#!" class="dropdown__item">Profile
+      <v-chip label small class="teal white--text right">new</v-chip>
+    </a>
+  </li>
+  <li>
+    <a href="#!" class="dropdown__item"><span v-badge:2>Notifications</span></a>
+  </li>
+  <li>
+    <a href="#!" class="dropdown__item">Logout
+      <v-icon class="secondary--text right">cloud_off</v-icon>
+    </a>
+  </li>
+</v-dropdown>

@@ -16,6 +16,7 @@
       section-text If you would like to test Vuetify without installing a template from Vue CLI, just include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use! This will also require the dependency above.
       markup(lang="html")
         |&lt;link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"&gt;
+        |&nbsp;
         |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
 
       h6 Existing Projects

@@ -1,0 +1,22 @@
+<v-btn v-dropdown:dropdown class="primary white--text">Click Dropdown</v-btn>
+<v-dropdown id="dropdown" v-bind:items="items"></v-dropdown>
+
+<v-btn v-dropdown:dropdown3 class="secondary white--text">Click With Labels</v-btn>
+<v-dropdown id="dropdown3">
+  <li>
+    <a href="#!" class="dropdown__item">Profile
+      <v-chip label small class="teal white--text right">new</v-chip>
+    </a>
+  </li>
+  <li>
+    <a href="#!" class="dropdown__item">
+      <span v-badge:2>Notifications</span>
+    </a>
+  </li>
+  <li>
+    <a href="#!" class="dropdown__item">
+      Logout
+      <v-icon class="secondary--text right">cloud_off</v-icon>
+    </a>
+  </li>
+</v-dropdown>
