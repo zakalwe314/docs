@@ -195,7 +195,7 @@
           {
             parent: { text: 'Home', icon: 'home' },
             items: [
-              {text: 'Our Services', href: '/components/navbar'},
+              {text: 'Our Services', href: 'javascript:;'},
               {text: 'Contact Us', href: 'javascript:;'},
               {text: 'About Us', href: 'javascript:;'}
             ]
