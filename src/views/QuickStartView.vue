@@ -41,9 +41,9 @@
       section-text Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official VueJS templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
       v-tabs(id="vue-cli" class="z-depth-1" grow)
         v-tabs-tabs
-          v-tab(href="#simple" ripple v-bind:item="{ href: '#simple', text: 'Simple HTML' }")
-          v-tab(href="#simple" ripple v-bind:item="{ href: '#webpack', text: 'Webpack' }")
-          v-tab(href="#simple" ripple v-bind:item="{ href: '#webpack-ssr', text: 'Webpack SSR' }")
+          v-tab-item(ripple v-bind:item="{ href: '#simple', text: 'Simple HTML' }")
+          v-tab-item(ripple v-bind:item="{ href: '#webpack', text: 'Webpack' }")
+          v-tab-item(ripple v-bind:item="{ href: '#webpack-ssr', text: 'Webpack SSR' }")
         
         v-tabs-items
           v-tabs-item(id="simple")

@@ -11,10 +11,10 @@
       section-header API
       v-tabs
         v-tabs-tabs
-          v-tab(v-bind:item="{ href: '#props', text: 'Props' }" v-if="doc.props")
-          v-tab(v-bind:item="{ href: '#slots', text: 'Slots' }" v-if="doc.slots")
-          v-tab(v-bind:item="{ href: '#events', text: 'Bus Events' }" v-if="doc.events")
-          v-tab(v-bind:item="{ href: '#functional', text: 'Functional' }" v-if="doc.functional")
+          v-tab-item(v-bind:item="{ href: '#props', text: 'Props' }" v-if="doc.props")
+          v-tab-item(v-bind:item="{ href: '#slots', text: 'Slots' }" v-if="doc.slots")
+          v-tab-item(v-bind:item="{ href: '#events', text: 'Bus Events' }" v-if="doc.events")
+          v-tab-item(v-bind:item="{ href: '#functional', text: 'Functional' }" v-if="doc.functional")
         v-tabs-items
           v-tabs-item(id="props" v-if="doc.props")
             v-card

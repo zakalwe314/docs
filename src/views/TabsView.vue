@@ -13,7 +13,7 @@
               v-btn(icon)
                 v-icon more_vert
         v-tabs-tabs
-          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-1-' + i }")
+          v-tab-item(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-1-' + i }")
         v-tabs-items
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-1-' + i")
             v-card
@@ -33,7 +33,7 @@
             v-card-row
               v-card-title Page Title
         v-tabs-tabs
-          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-2-' + i }")
+          v-tab-item(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-2-' + i }")
         v-tabs-items
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-2-' + i")
             v-card
@@ -41,7 +41,7 @@
     component-example(file="tabs/3")
       v-tabs(id="mobile-tabs-3" grow)
         v-tabs-tabs
-          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-3-' + i }")
+          v-tab-item(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-3-' + i }")
         v-tabs-items
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-3-' + i")
             v-card
@@ -50,9 +50,9 @@
     component-example(file="tabs/4")
       v-tabs(id="mobile-tabs-4" grow icons)
         v-tabs-tabs
-          v-tab(v-bind:item="{ text: 'Recents', href: '#mobile-tabs-4-1', icon: 'phone' }")
-          v-tab(v-bind:item="{ text: 'Favorites', href: '#mobile-tabs-4-2', icon: 'favorite' }")
-          v-tab(v-bind:item="{ text: 'Nearby', href: '#mobile-tabs-4-3', icon: 'account_box' }")
+          v-tab-item(v-bind:item="{ text: 'Recents', href: '#mobile-tabs-4-1', icon: 'phone' }")
+          v-tab-item(v-bind:item="{ text: 'Favorites', href: '#mobile-tabs-4-2', icon: 'favorite' }")
+          v-tab-item(v-bind:item="{ text: 'Nearby', href: '#mobile-tabs-4-3', icon: 'account_box' }")
         v-tabs-items
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-4-' + i")
             v-card
@@ -60,9 +60,9 @@
     component-example(file="tabs/5")
       v-tabs(id="mobile-tabs-5" grow)
         v-tabs-tabs
-          v-tab(v-bind:item="{ href: '#mobile-tabs-5-1', icon: 'phone' }")
-          v-tab(v-bind:item="{ href: '#mobile-tabs-5-2', icon: 'favorite' }")
-          v-tab(v-bind:item="{ href: '#mobile-tabs-5-3', icon: 'account_box' }")
+          v-tab-item(v-bind:item="{ href: '#mobile-tabs-5-1', icon: 'phone' }")
+          v-tab-item(v-bind:item="{ href: '#mobile-tabs-5-2', icon: 'favorite' }")
+          v-tab-item(v-bind:item="{ href: '#mobile-tabs-5-3', icon: 'account_box' }")
         v-tabs-items
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-5-' + i")
             v-card
@@ -80,7 +80,7 @@
               v-btn(icon)
                 v-icon more_vert
         v-tabs-tabs()
-          v-tab(v-for="i in 13" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-6-' + i }")
+          v-tab-item(v-for="i in 13" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-6-' + i }")
         v-tabs-items
           v-tabs-item(v-for="i in 13" v-bind:id="'mobile-tabs-6-' + i")
             v-card
@@ -98,7 +98,7 @@
               v-btn(icon)
                 v-icon more_vert
         v-tabs-tabs()
-          v-tab(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-7-' + i }")
+          v-tab-item(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-7-' + i }")
         v-tabs-items
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-7-' + i")
             v-card
@@ -117,6 +117,74 @@
           stage: 'comp',
           title: 'Tabs',
           desc: 'The <code>v-tabs</code> component is used for hiding content behind a selectable item. This can also be used as a psuedo-navigation for a page, where the tabs are links and the tab-items are the content.',
+          props: {
+            'v-tabs': {
+              params: [
+                [
+                  'centered',
+                  'Boolean',
+                  'False',
+                  'Centers the tabs'
+                ],
+                [
+                  'grow',
+                  'Boolean',
+                  'False',
+                  'Items fill available space'
+                ],
+                [
+                  'icons',
+                  'Boolean',
+                  'False',
+                  'Applies the tabs--icons class'
+                ],
+                [
+                  'scroll-bars',
+                  'Boolean',
+                  'False',
+                  'Displays scrollbars when content overflows'
+                ]
+              ]
+            },
+            'v-tabs-tabs': {
+              params: [
+                [
+                  'items',
+                  'Array',
+                  '[]',
+                  'The array of tabs'
+                ]
+              ]
+            },
+            'v-tab-item': {
+              params: [
+                [
+                  'disabled',
+                  'Object',
+                  `{ href: '#!', text: '', router: false }`,
+                  'The navbar item object'
+                ],
+                [
+                  'item',
+                  'Object',
+                  `{ href: '#!', text: '', router: false }`,
+                  'The navbar item object'
+                ],
+                [
+                  'ripple',
+                  'Object, Boolean',
+                  'False',
+                  'Applies the v-ripple directive'
+                ],
+                [
+                  'router',
+                  'Boolean',
+                  'False',
+                  'Designates whether to use anchor or router-link'
+                ]
+              ]
+            }
+          },
           params: [
             [
               '<code>v-tabs</code>',
