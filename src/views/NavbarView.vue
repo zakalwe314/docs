@@ -1,99 +1,71 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="navbar")
-    component-example(header="Variants")
+    component-example(header="Variants" file="navbar/1")
       v-navbar(class="green")
         v-navbar-logo(class="hidden-sm-and-down") Navbar
         v-navbar-items(v-bind:items="items")
+    component-example(file="navbar/2")
       v-navbar(class="orange")
         v-navbar-side-icon(class="hidden-sm-and-up")
         v-spacer(class="hidden-sm-and-down")
         v-navbar-logo Navbar
         v-navbar-items(class="hidden-sm-and-down" v-bind:items="items")
+    component-example(file="navbar/3")
       v-navbar(class="red")
         v-navbar-items(v-bind:items="items")
         v-navbar-logo(class="hidden-sm-and-down")
           v-spacer
           | Navbar
-    component-example(header="Icons")
+    component-example(header="Icons" file="navbar/4")
       v-navbar(class="purple")
         v-navbar-logo(class="hidden-sm-and-down") Navbar
         v-navbar-items
-          v-navbar-item(v-bind:item="{ href: '#!', text: 'chevron_left', icon: true }")
-          v-navbar-item(v-bind:item="{ href: '#!', text: 'dashboard', icon: true }")
-          v-navbar-item(v-bind:item="{ href: '#!', text: 'chevron_right', icon: true }")
+          v-navbar-item(v-bind:item="{ href: '#!', icon: 'chevron_left' }")
+          v-navbar-item(v-bind:item="{ href: '#!', icon: 'dashboard' }")
+          v-navbar-item(v-bind:item="{ href: '#!', icon: 'chevron_right' }")
           v-navbar-item(
-            v-bind:item="{ href: '#!', text: 'more_vert', icon: true }" 
+            v-bind:item="{ href: '#!', icon: 'more_vert' }" 
             v-dropdown:dropdown=""
           )
-          v-dropdown(v-bind:items="dropdown_items" id="dropdown" right)
-    component-example(header="Transparent")
+          v-dropdown(v-bind:items="dropdown_items" id="dropdown" top right origin="top right")
+    component-example(header="Transparent" file="navbar/5")
       div(id="navbar-image")
         v-navbar(class="transparent z-depth-0")
           v-navbar-logo(class="hidden-sm-and-down") Navbar
           v-spacer
           v-navbar-items(v-bind:items="items")
-    div(slot="markup")
-      markup(lang="xml")
-        |&lt;v-navbar class="green"&gt;
-        |   &lt;v-navbar-logo&gt;Navbar&lt;/v-navbar&gt;
-        |   &lt;v-navbar-items v-bind:items="items"&gt;&lt;/v-navbar-items&gt;
-        |&lt;/v-navbar&gt;
-        |&nbsp;
-        |&lt;v-navbar class="yellow"&gt;
-        |   &lt;v-navbar-side-icon class="hidden-sm-and-up"&gt;&lt;/v-navbar-side-icon&gt;
-        |   &lt;v-spacer class="hidden-sm-and-down"&gt;&lt;/v-spacer&gt;
-        |   &lt;v-navbar-logo&gt;Navbar&lt;/v-navbar&gt;
-        |   &lt;v-navbar-items v-bind:items="items"&gt;&lt;/v-navbar-items&gt;
-        |&lt;/v-navbar&gt;
-        |&nbsp;
-        |&lt;v-navbar class="red"&gt;
-        |   &lt;v-navbar-items v-bind:items="items"&gt;&lt;/v-navbar-items&gt;
-        |   &lt;v-navbar-logo&gt;
-        |     &lt;v-spacer&gt;&lt;/v-spacer&gt;
-        |     Navbar
-        |   &lt;/v-navbar&gt;
-        |&lt;/v-navbar&gt;
-        |&nbsp;
-        |&lt;v-navbar class="purple"&gt;
-        |   &lt;v-navbar-logo&gt;
-        |     Navbar
-        |   &lt;/v-navbar&gt;
-        |   &lt;v-navbar-items&gt;
-        |     &lt;v-navbar-item v-bind:item="{ href: '#!', text: 'chevron_left', icon: true }"&gt;&lt;/v-navbar-item&gt;
-        |     &lt;v-navbar-item v-bind:item="{ href: '#!', text: 'dashboard', icon: true }"&gt;&lt;/v-navbar-item&gt;
-        |     &lt;v-navbar-item v-bind:item="{ href: '#!', text: 'chevron_right', icon: true }"&gt;&lt;/v-navbar-item&gt;
-        |     &lt;v-navbar-item 
-        |         v-bind:item="{ href: '#!', text: 'more_vert', icon: true }"
-        |         v-dropdown:dropdown
-        |     &gt;&lt;/v-navbar-item&gt;
-        |   &lt;/v-navbar-items&gt;
-        |   &lt;v-dropdown v-bind:items="dropdown_items" id="dropdown" right&gt;&lt;/v-dropdown&gt;
-        |&lt;/v-navbar&gt;
-        |&nbsp;
-        |&lt;div id="navbar-image"&gt;
-        |   &lt;v-navbar class="transparent z-depth-0"&gt;
-        |     &lt;v-navbar-logo class="hidden-sm-and-down"&gt;...&lt;/v-navbar-logo&gt;
-        |     &lt;v-navbar-items v-bind:items="items"&gt;&lt;/v-navbar-items&gt;
-        |   &lt;/v-navbar&gt;
-        |&lt;/div&gt;
-      markup(lang="js")
-        |data () {
-        |   return {
-        |     items: [
-        |       { text: 'Link', href: '#!' }
-        |     ]
-        |     dropdown_items: [
-        |       { text: 'Send Feedback', href: '#!' },
-        |       { text: 'Request Help', href: '#!' },
-        |       { text: 'Contact Developer', href: '#!' }
-        |     ]
-        |   }
-        |}
-      markup(lang="scss")
-        |#navbar-image {
-        |   background: url('...') center;
-        |   height: 300px;
-        |}
+    component-example(header="Groups" file="navbar/6")
+      v-navbar(v-bind:items="itemsGroup")
+        v-navbar-logo(class="hidden-sm-and-down" slot="right")
+          v-spacer
+          | Vuetify
+    markup(lang='js')
+      |data () {
+      |   return {
+      |     itemsGroup: [
+      |       {
+      |         parent: { text: 'Home', icon: 'home'},
+      |         items: [
+      |           {text: 'Our Services', href: '/components/navbar'},
+      |           {text: 'Contact Us', href: 'javascript:;'},
+      |           {text: 'About Us', href: 'javascript:;'}
+      |         ]
+      |       },
+      |       { text: 'Portfolio', href: 'javascript:;', icon: 'work' },
+      |       {
+      |         parent: { text: 'Apply', icon: 'favorite' },
+      |         items: [
+      |           {text: 'Our Mission', href: 'javascript:;'},
+      |           {text: 'Partners', href: 'javascript:;'},
+      |           {text: 'Join Our Team', href: 'javascript:;', icon: 'people'}
+      |         ]
+      |       }
+      |     ]
+      |   }
+      |}
+    component-example(file="navbar/7")
+      v-navbar(v-bind:items="itemsGroupV" class="green" group-class="green lighten-2")
+        v-navbar-logo(class="hidden-sm-and-down") Vue
 </template>
 
 <script>
@@ -101,46 +73,152 @@
     data () {
       return {
         doc: {
-          stage: 'comp',
           title: 'Navbar',
           desc: 'The <code>v-navbar</code> component is pivotol to any gui, as it generally is the primary source of site navigation. The navbar component works great in cojunction with a sidebar for hiding links and presenting an activator to open the sidebar on mobile.',
-          params: [
-            [
-              '<code>&lt;v-navbar&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>&lt;v-navbar-items&gt;</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>items</code>',
-              'The array of Navbar items',
-              'Allowed properties: href, text'
-            ],
-            [
-              '<code>&lt;v-navbar-item&gt;</code>',
-              '',
-              'base component'
-            ],
-            [
-              '<code>item</code>',
-              'The item object',
-              'Allowed object properties: href, text'
-            ],
-            [
-              '<code>router</code>',
-              'Designates whether to use anchor or router-link',
-              'Default: false'
-            ]
-          ]
+          props: {
+            'v-navbar': {
+              params: [
+                [
+                  'items',
+                  'Array',
+                  `[]`,
+                  'The array of navbar items'
+                ],
+                [
+                  'fixed',
+                  'Boolean',
+                  'false',
+                  'Applies the navbar--fixed class'
+                ],
+                [
+                  'group-class',
+                  'String',
+                  '',
+                  'Applies a custom class to the group dropdown'
+                ]
+              ],
+            },
+            'v-navbar-group': {
+              params: [
+                [
+                  'item',
+                  'Object',
+                  { text: '', icon: '' },
+                  'The group navbar item'
+                ],
+                [
+                  'group-class',
+                  'String',
+                  '',
+                  'Applies a custom class to the group dropdown'
+                ],
+                [
+                  'items',
+                  'Array',
+                  `[]`,
+                  'The array of Navbar items'
+                ],
+                [
+                  'origin',
+                  'String',
+                  'top center',
+                  'Specifies transform origin'
+                ],
+                [
+                  'transition',
+                  'String',
+                  'v-slide-x-transition',
+                  'Applies a transition to the group dropdown'
+                ]
+              ]
+            },
+            'v-navbar-items': {
+              params: [
+                [
+                  'group-class',
+                  'String',
+                  '',
+                  'Applies a custom class to the group dropdown'
+                ],
+                [
+                  'items',
+                  'Array',
+                  `[]`,
+                  'The array of navbar items'
+                ]
+              ],
+            },
+            'v-navbar-item': {
+              params: [
+                [
+                  'item',
+                  'Object',
+                  `{ href: '#!', text: '', router: false }`,
+                  'The navbar item object'
+                ],
+                [
+                  'ripple',
+                  'Object, Boolean',
+                  'False',
+                  'Applies the v-ripple directive'
+                ],
+                [
+                  'router',
+                  'Boolean',
+                  'False',
+                  'Designates whether to use anchor or router-link'
+                ]
+              ]
+            }
+          },
+          slots: {
+            'v-navbar': {
+              default: true,
+              params: [
+                ['right', 'Slot positioned on right side of navbar']
+              ]
+            },
+            'v-navbar-group': {
+              default: true
+            },
+            'v-navbar-items': {
+              default: true
+            }
+          }
         },
         items: [
           { text: 'Link', href: '#!', router: true },
           { text: 'Link', href: '#!' },
           { text: 'Link', href: '#!' }
+        ],
+        itemsGroup: [
+          {
+            parent: { text: 'Home', icon: 'home' },
+            items: [
+              {text: 'Our Services', href: '/components/navbar'},
+              {text: 'Contact Us', href: 'javascript:;'},
+              {text: 'About Us', href: 'javascript:;'}
+            ]
+          },
+          { text: 'Portfolio', href: 'javascript:;', icon: 'work' },
+          {
+            parent: { text: 'Apply', icon: 'favorite' },
+            items: [
+              {text: 'Our Mission', href: 'javascript:;'},
+              {text: 'Partners', href: 'javascript:;'},
+              {text: 'Join Our Team', href: 'javascript:;', icon: 'people'}
+            ]
+          }
+        ],
+        itemsGroupV: [
+          {
+            parent: { text: 'Home', icon: 'home' },
+            items: [
+              {text: 'News', href: 'javascript:;'},
+              {text: 'Blog', href: 'javascript:;'},
+              {text: 'About', href: 'javascript:;'}
+            ]
+          }
         ],
         dropdown_items: [
           { text: 'Send Feedback', href: '#!' },

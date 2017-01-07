@@ -40,3 +40,13 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  .table--component
+    caption
+      background: rgba(#000, 0.05)
+      padding: 5px 0
+      
+    &:not(:first-child)
+      margin-top: 2rem
+</style>

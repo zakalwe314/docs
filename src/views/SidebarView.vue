@@ -28,38 +28,6 @@
           v-navbar-logo Logo
         v-sidebar(class="white" id="doc-sidebar-3" height="40vh")
           v-sidebar-items(v-bind:items="item_group")
-    div(slot="markup")
-      markup(lang="xml")
-        |&lt;v-sidebar id="sidebar" height="50vh" v-bind:items="items"&gt;&lt;/v-sidebar&gt;
-        |&nbsp;
-        |&lt;v-sidebar id="sidebar2" drawer&gt;
-        |   &lt;v-sidebar-items v-bind:items="items"&gt;&lt;/v-sidebar-items&gt;
-        |&lt;/v-sidebar&gt;
-        |&nbsp;
-        |&lt;v-sidebar id="sidebar3" fixed&gt;
-        |   &lt;v-sidebar-items&gt;
-        |     &lt;v-sidebar-item v-for="item in items" v-bind:item="item"&gt;&lt;/v-sidebar-item&gt;
-        |   &lt;/v-sidebar-items&gt;
-        |&lt;/v-sidebar&gt;
-        |&nbsp;
-        |&lt;v-navbar-side-icon v-sidebar:sidebar&gt;&lt;/v-navbar-side-icon&gt;
-      markup(lang="js")
-        |data () {
-        |   return {
-        |     items: [
-        |       { header: 'Header' },
-        |       {
-        |         parent: { text: 'Parent', href: '#!" '},
-        |         items: [
-        |           { text: 'Child', href: '#!', router: false },
-        |           { text: 'Child', href: '#!' },
-        |           { text: 'Child', href: '#!', icon: 'list' }
-        |         ]
-        |       },
-        |       { text: 'Link', href: '#!' }
-        |     ]
-        |   }
-        |}
 </template>
 
 <script>
@@ -212,7 +180,7 @@
 
 <style lang="stylus">
   #sidebars
-    .component-example
+    .component-example__container
       > div
         flex: 1
         min-height: 40vh

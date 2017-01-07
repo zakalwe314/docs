@@ -1,0 +1,10 @@
+<v-navbar class="purple">
+  <v-navbar-logo class="hidden-sm-and-down">Navbar</v-navbar-logo>
+  <v-navbar-items>
+    <v-navbar-item v-bind:item="{ href: '#!', icon: 'chevron_left' }"></v-navbar-item>
+    <v-navbar-item v-bind:item="{ href: '#!', icon: 'dashboard' }"></v-navbar-item>
+    <v-navbar-item v-bind:item="{ href: '#!', icon: 'chevron_right' }"></v-navbar-item>
+    <v-navbar-item v-bind:item="{ href: '#!', icon: 'more_vert' }" v-dropdown:dropdown></v-navbar-item>
+    <v-dropdown id="dropdown" v-bind:items="dropdown_items" top right origin="top right"></v-dropdown>
+  </v-navbar-items>
+</v-navbar>

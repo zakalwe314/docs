@@ -60,6 +60,7 @@
     
     pre, code
       background: transparent
+      width: 100%
       
     code
       font-weight: 600 !important
@@ -71,6 +72,9 @@
       display: flex
       align-items: center
       
+      > div
+        width: 100%
+        
       &:before
         display: none
     
