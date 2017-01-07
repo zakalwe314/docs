@@ -280,7 +280,7 @@
     methods: {
       loader (load) {
         this[load] = !this[load]
-        setTimeout(() => this[load] = false, 3000)
+        // setTimeout(() => this[load] = false, 3000)
       },
 
       meta () {
@@ -308,7 +308,7 @@
         margin: 1rem 0
         
     .loader
-      animation: loader 1s infinite
+      // animation: loader 1s infinite
         
     @keyframes loader
       from

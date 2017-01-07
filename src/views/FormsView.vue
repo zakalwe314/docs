@@ -268,10 +268,11 @@
 </script>
 
 <style lang="stylus" scoped>
-  .component-example
+  .component-example__container
     justify-content: space-between
     flex-wrap: wrap
     
     > *
       margin: 2rem 0
+      flex: 1 0 100%
 </style>

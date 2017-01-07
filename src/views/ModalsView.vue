@@ -13,7 +13,7 @@
             v-spacer
             v-btn( v-on:click.native="modal('modal')" class="green white--text") Submit
       v-btn(v-modal:modal2="" class="secondary white--text") Bottom
-      v-modal(id="modal2" bottom)
+      v-modal(id="modal2" transition="v-modal-bottom-transition" bottom)
         v-card(class="secondary white--text")
           v-card-row(actions)
             div This is an example of a bottom modal.
@@ -76,7 +76,9 @@
       },
 
       modal (id) {
-        this.$vuetify.bus.pub(`modal:close:${id}`)
+        setTimeout(() => {
+          this.$vuetify.bus.pub(`modal:close:${id}`)
+        }, 0)
       }
     }
   }

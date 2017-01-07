@@ -187,9 +187,9 @@
           }
         },
         items: [
-          { text: 'Link', href: '#!', router: true },
-          { text: 'Link', href: '#!' },
-          { text: 'Link', href: '#!' }
+          { text: 'Link', href: 'javascript:;' },
+          { text: 'Link', href: 'javascript:;' },
+          { text: 'Link', href: 'javascript:;' }
         ],
         itemsGroup: [
           {
@@ -200,23 +200,15 @@
               {text: 'About Us', href: 'javascript:;'}
             ]
           },
-          { text: 'Portfolio', href: 'javascript:;', icon: 'work' },
+          { text: 'Portfolio', href: 'javascript:;', icon: 'work' }
+        ],
+        itemsGroupV: [
           {
             parent: { text: 'Apply', icon: 'favorite' },
             items: [
               {text: 'Our Mission', href: 'javascript:;'},
               {text: 'Partners', href: 'javascript:;'},
-              {text: 'Join Our Team', href: 'javascript:;', icon: 'people'}
-            ]
-          }
-        ],
-        itemsGroupV: [
-          {
-            parent: { text: 'Home', icon: 'home' },
-            items: [
-              {text: 'News', href: 'javascript:;'},
-              {text: 'Blog', href: 'javascript:;'},
-              {text: 'About', href: 'javascript:;'}
+              {text: 'Join Our Team', href: 'javascript:;'}
             ]
           }
         ],
@@ -259,6 +251,7 @@
   #navbar-image
     background: url('~public/doc-images/nature.jpg') center center / cover no-repeat
     height: 300px
+    width: 100%
     
     .navbar
       margin: 0
