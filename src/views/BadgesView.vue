@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="Character")
+    component-example(header="Character" file="badges/1")
       v-icon(
         large
         v-badge:6.left=""
@@ -11,7 +11,7 @@
         v-badge="{ value: '!' }"
         class="grey--text red--after"
       ) mail
-    component-example(header="Icon")
+    component-example(header="Icon" file="badges/2")
       v-icon(
         large
         v-badge:done.overlap.icon.left=""
@@ -22,7 +22,7 @@
         v-badge:notifications.icon.overlap=""
         class="grey--text text--darken-1 orange--after"
       ) account_box
-    component-example(header="Inline")
+    component-example(header="Inline" file="badges/3")
       span(
         v-badge:2.left=""
       ) Examples
@@ -30,14 +30,6 @@
         v-badge:list.icon=""
         class="green--after"
       ) Lists
-    markup(slot="markup" lang="xml")
-      |&lt;v-icon v-badge:done.overlap.icon.left&gt;...&lt;/v-icon&gt;
-      |&nbsp;
-      |&lt;v-icon v-badge:5.left&gt;...&lt;/v-icon&gt;
-      |&nbsp;
-      |&lt;v-icon v-badge="{ value: '!', overlap: true }"&gt;...&lt;/v-icon&gt;
-      |&nbsp;
-      |&lt;v-icon v-badge::notifications.icon.overlap&gt;...&lt;/v-icon&gt;
 </template>
 
 <script>
@@ -45,7 +37,6 @@
     data () {
       return {
         doc: {
-          stage: 'comp',
           title: 'Badge',
           desc: `
             <p>
@@ -54,26 +45,30 @@
             <p>
               The color can be changed by using the color--after helper class, or by apply a class that modifies the background of the badged elements <strong>:after</strong> psuedo-selector.
             </p>`,
-          types: [
-            'directive'
-          ],
-          params: [
-            [
-              '<code>v-badge:arg.icon</code>',
-              'Specifies the use of an icon',
-              'Default: false'
-            ],
-            [
-              '<code>v-badge:arg.left</code>',
-              'Positions the badge to the left of the element',
-              'Default: false'
-            ],
-            [
-              '<code>v-badge:arg.overlap</code>',
-              'Overlaps badge on element',
-              'Default: false'
-            ]
-          ]
+          props: {
+            'v-badge': {
+              params: [
+                [
+                  'v-badge:arg.icon',
+                  'Boolean',
+                  'False',
+                  'Specifies the use of an icon'
+                ],
+                [
+                  'v-badge:arg.left',
+                  'Boolean',
+                  'False',
+                  'Positions the badge to the left of the element'
+                ],
+                [
+                  'v-badge:arg.overlap',
+                  'Boolean',
+                  'False',
+                  'Overlaps badge on element'
+                ]
+              ]
+            }
+          }
         }
       }
     },
