@@ -103,10 +103,17 @@
               { href: '/css/content', text: 'Content', icon: 'text_format' },
               { href: '/css/grid', text: 'Grid', icon: 'view_comfy' },
               { href: '/css/colors', text: 'Colors', icon: 'invert_colors' },
-              { href: '/css/helpers', text: 'Helpers', icon: 'build' },
               { href: '/css/tables', text: 'Tables', icon: 'grid_on' },
             ]
-          }
+          },
+          {
+            parent: { text: 'Helpers', icon: 'build' },
+            items: [
+              { href: '/helpers/spacing', text: 'Spacing', icon: 'space_bar' }
+            ]
+          },
+          { header: 'Additional Resources' },
+          { text: 'Deploying', href: '#!', icon: 'important_devices' }
         ]
       }
     }
