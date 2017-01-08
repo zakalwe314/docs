@@ -44,8 +44,8 @@
         |   computed: {
         |     events () {
         |       return [
-        |         'modal:open:demo-modal', this.open,
-        |         'modal:close:demo-modal', this.popup
+        |         ['modal:open:demo-modal', this.open],
+        |         ['modal:close:demo-modal', this.popup]
         |       ]
         |     }
         |   }
