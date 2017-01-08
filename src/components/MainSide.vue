@@ -86,6 +86,7 @@
             parent: { href: '#!', text: 'Directives', icon: 'polymer' },
             items: [
               { href: '/directives/badges', text: 'Badges', icon: 'fiber_manual_record' },
+              { href: '/directives/ripples', text: 'Ripples', icon: 'album' },
               { href: '/directives/tooltips', text: 'Tooltips', icon: 'sms' }
             ]
           },

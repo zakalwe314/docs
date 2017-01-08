@@ -23,6 +23,7 @@ import NavbarView from '../views/NavbarView.vue'
 import ParallaxView from '../views/ParallaxView.vue'
 import PaginationView from '../views/PaginationView.vue'
 import ProgressCircularView from '../views/ProgressCircularView.vue'
+import RipplesView from '../views/RipplesView.vue'
 import SliderView from '../views/SliderView.vue'
 import SidebarView from '../views/SidebarView.vue'
 import TabsView from '../views/TabsView.vue'
@@ -64,6 +65,7 @@ const router = new Router({
     { path: '/components/tabs', component: TabsView },
     { path: '/functions/toasts', component: ToastsView },
     { path: '/directives/badges', component: BadgesView },
+    { path: '/directives/ripples', component: RipplesView },
     { path: '/directives/tooltips', component: TooltipsView },
     { path: '/css/typography', component: TypographyView },
     { path: '/css/grid', component: GridView },
