@@ -37,7 +37,7 @@
             this.subTitle = 'Vue components built semantically&mdash;easy to use, easy to remember'
           break
           case this.match('directives'):
-            this.subTitle = 'Vue directives designed to enchance user experience'
+            this.subTitle = 'Vue directives designed to enhance user experience'
           break
           case this.match('functions'):
             this.subTitle = 'Built in functions to customize your user experience'
