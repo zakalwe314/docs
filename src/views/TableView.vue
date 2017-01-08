@@ -1,25 +1,112 @@
 <template lang="pug">
-  section
-    v-row
-      v-grid(xs12)
-        v-table(v-bind:items="items")
+  div(class="view" id="table-view")
+    div
+      section-def
+        dt(slot="title") {{ doc.title }}
+        dd(slot="desc") {{ doc.desc }}
+    section
+      section-header Examples
+      component-example(header="Default" file="tables/1")
+        table
+          thead
+            tr
+              th
+              th(v-for="header in headers" v-text="header")
+              th
+          tbody
+            template(v-for="(item, index) in items")
+              tr
+                td
+                  v-checkbox(v-bind:id="'checkbox' + index" filled class="text-xs-center")
+                td(v-for="data in item" v-text="data")
+                td
+                  v-btn(icon)
+                    v-icon edit
+      component-example(header="Inside Card" file="tables/2")
+        v-card
+          table
+            thead
+              tr
+                th
+                th(v-for="header in headers" v-text="header")
+                th
+            tbody
+              template(v-for="(item, index) in items")
+                tr
+                  td
+                    v-checkbox(v-bind:id="'checkbox2' + index" filled class="text-xs-center")
+                  td(v-for="data in item" v-text="data")
+                  td
+                    v-btn(icon)
+                      v-icon edit
+      component-example(header="With Dropdown" file="tables/3")
+        table
+          thead
+            tr
+              th
+              th(v-for="header in headers" v-text="header")
+              th
+          tbody
+            template(v-for="(item, index) in items")
+              tr
+                td
+                  v-checkbox(v-bind:id="'checkbox2' + index" filled class="text-xs-center")
+                td(v-for="data in item" v-text="data")
+                td
+                  v-btn(v-dropdown="{ value: 'dropdown-' + index }") Options
+                  v-dropdown(
+                    v-bind:id="'dropdown-' + index"
+                    transition="v-slide-y-transition"
+                    origin="top center"
+                  )
+                    v-dropdown-item(v-bind:item="{ text: 'Edit', href: 'javascript:;' }")
+                    v-dropdown-item(v-bind:item="{ text: 'Reset Password', href: 'javascript:;' }")
+                    v-dropdown-item(v-bind:item="{ text: 'Delete', href: 'javascript:;' }")
 </template>
 
 <script>
   export default {
+    name: 'table-view',
+
     data () {
       return {
+        doc: {
+          title: 'Table',
+          desc: 'Tables are useful for displaying large rows of data. This is very common in CRUD (Create Read Update Delete) applications.'
+        },
+        headers: ['ID', 'Name', 'Email'],
         items: [
-          {
-            name: 'John',
-            edit: 'Edit'
-          },
-          {
-            name: 'John',
-            edit: 'Edit'
-          },
+          ['1', 'Thrall', 'thrall@blizzard.com'],
+          ['2', 'Jaina', 'jaina@blizzard.com'],
+          ['3', 'Grom', 'grom@blizzard.com']
         ]
+      }
+    },
+
+    mounted () {
+      this.$emit('view', this.meta())
+    },
+
+    preFetch () {
+      return this.methods.meta()
+    },
+
+    methods: {
+      meta () {
+        return {
+          title: 'Tables | Vuetify.js',
+          h1: 'Tables',
+          description: 'Table styles for the Vuetify Framework',
+          keywords: 'vuetify, tables'
+        }
       }
     }
   }
 </script>
+
+<style lang="stylus">
+  #content-view
+    .component-example__container
+      > div
+        width: 100%
+</style>

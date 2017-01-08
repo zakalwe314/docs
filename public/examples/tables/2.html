@@ -1,0 +1,26 @@
+<v-card>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th v-for="header in headers" v-text="header"></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <template v-for="(item, index) in items">
+        <tr>
+          <td>
+            <v-checkbox v-bind:id="'checkbox' + index" filled class="text-xs-center"></v-checkbox>
+          </td>
+          <td v-for="data in item" v-text="data"></td>
+          <td>
+            <v-btn icon="icon">
+              <v-icon>edit</v-icon>
+            </v-btn>
+          </td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
+</v-card>
