@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example
+    component-example(file="tooltips/1")
       v-btn(
         class="primary white--text"
         v-tooltip:top="{ html: 'Top tooptip' }"
@@ -17,14 +17,6 @@
         class="primary white--text"
         v-tooltip:left="{ html: 'Left Tooltip' }"
       ) Left
-    markup(slot="markup" lang="xml")
-      |&lt;v-btn primary v-tooltip:top="{ html: 'Top Tooltip' }"&gt;...&lt;/v-btn&gt;
-      |&nbsp;
-      |&lt;v-btn primary v-tooltip:right="{ html: 'Right Tooltip' }"&gt;...&lt;/v-btn&gt;
-      |&nbsp;
-      |&lt;v-btn primary v-tooltip:bottom="{ html: 'Bottom Tooltip' }"&gt;...&lt;/v-btn&gt;
-      |&nbsp;
-      |&lt;v-btn primary v-tooltip:left="{ html: 'Left Tooltip' }"&gt;...&lt;/v-btn&gt;
 </template>
 
 <script>
@@ -32,29 +24,26 @@
     data () {
       return {
         doc: {
-          stage: 'comp',
           title: 'Tooltip',
-          desc: 'Soon',
-          types: [
-            'directive'
-          ],
-          params: [
-            [
-              '<code>v-tooltip</code>',
-              '',
-              'Base directive'
-            ],
-            [
-              '<code>modifiers</code>',
-              'top, right, bottom, left',
-              'Required: true'
-            ],
-            [
-              '<code>html</code>',
-              'The content for the tooltip',
-              'Required: true'
-            ]
-          ]
+          desc: 'The <code>v-badge</code> directive is useful for conveying information when a user hovers over an element.',
+          props: {
+            'v-badge': {
+              params: [
+                [
+                  'modifiers',
+                  'String',
+                  'Required',
+                  'top, right, bottom, left',
+                ],
+                [
+                  'html',
+                  'String',
+                  'Required',
+                  'The content for the tooltip',
+                ]
+              ]
+            }
+          }
         }
       }
     },
