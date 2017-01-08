@@ -22,9 +22,9 @@
       h6 Existing Projects
       section-text If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn.
       markup(lang="cli")
-        |npm install vuetify --save-dev
+        |$  npm install vuetify --save-dev
         |&nbsp;
-        |yarn add vuetify --dev
+        |$  yarn add vuetify --dev
       section-text Now, in your index.js, import Vuetify and apply the plugin to Vue.
       markup(lang="js")
         |import Vue from 'vue'
@@ -52,35 +52,38 @@
                 h4 Simple HTML Quick Start
                 p This template is intended for users who want to try out Vue and Vuetify in the most simple way. It contains a basic index.html with no additional functionality. 
                 markup(lang="cli")
-                  |vue init vuetifyjs/simple
+                  |$  vue init vuetifyjs/simple
           v-tabs-item(id="webpack")
             v-card
               v-card-text
                 h4 Webpack Quick Start
                 p This template is intended for users who are already familiar with Vue/Webpack. This is a basic setup for Vue with Vuetify.. It is recommended for basic prototyping and mockups.
                 markup(lang="cli")
-                  |vue init vuetifyjs/webpack
+                  |$  vue init vuetifyjs/webpack
           v-tabs-item(id="webpack-ssr")
             v-card
               v-card-text
                 h4 Webpack SSR Quick Start
                 p This template is for advanced users looking to utilize the new Vue Server Renderer. Based off of structure setup in the VueJS 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository, the Vuetify SSR template provides next generation functionality for advanced web applications.
                 markup(lang="cli")
-                  |vue init vuetifyjs/webpack-ssr
+                  |$  vue init vuetifyjs/webpack-ssr
       
       h6 NPM Install
       section-text After the vue-cli installation finishes:
       markup(lang="cli")
-        |cd &lt;package-name&gt;
-        |npm install
+        |$  cd &lt;package-name&gt;
+        |$  npm install
       p Or alernatively, using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>.
       markup(lang="cli")
-        |cd &lt;package-name&gt;
-        |yarn
+        |$  cd &lt;package-name&gt;
+        |$  yarn
       section-text If you are using the <code>simple</code> vue-cli package, you are ready to go. Simply open up <code>index.html</code> in any browser. For any other package, type:
       markup(lang="cli")
-        |npm run dev
+        |$  npm run dev
       section-text into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
+    section
+      section-header Theme
+      section-text Coming Soon
     section
       section-header Color Pack
       section-text Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to <strong>src/stylus/main.styl</strong> and assign <code>$color-pack</code> to false.
