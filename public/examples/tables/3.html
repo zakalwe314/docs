@@ -10,12 +10,12 @@
     <template v-for="(item, index) in items">
       <tr>
         <td>
-          <v-checkbox v-bind:id="'checkbox2' + index" filled="filled" class="text-xs-center"></v-checkbox>
+          <v-checkbox filled v-bind:id="'checkbox3' + index" class="text-xs-center"></v-checkbox>
         </td>
         <td v-for="data in item" v-text="data"></td>
         <td>
-          <v-btn v-dropdown="{ value: 'dropdown-' + index }">Options</v-btn>
-          <v-dropdown v-bind:id="'dropdown-' + index" transition="v-slide-y-transition" origin="top center">
+          <v-btn v-dropdown="{ value: 'dropdown3-' + index }">Options</v-btn>
+          <v-dropdown v-bind:id="'dropdown3-' + index" transition="v-slide-y-transition" origin="top center">
             <v-dropdown-item v-bind:item="{ text: 'Edit', href: 'javascript:;' }"></v-dropdown-item>
             <v-dropdown-item v-bind:item="{ text: 'Reset Password', href: 'javascript:;' }"></v-dropdown-item>
             <v-dropdown-item v-bind:item="{ text: 'Delete', href: 'javascript:;' }"></v-dropdown-item>

@@ -50,12 +50,12 @@
             template(v-for="(item, index) in items")
               tr
                 td
-                  v-checkbox(v-bind:id="'checkbox2' + index" filled class="text-xs-center")
+                  v-checkbox(v-bind:id="'checkbox3' + index" filled class="text-xs-center")
                 td(v-for="data in item" v-text="data")
                 td
-                  v-btn(v-dropdown="{ value: 'dropdown-' + index }") Options
+                  v-btn(v-dropdown="{ value: 'dropdown3-' + index }") Options
                   v-dropdown(
-                    v-bind:id="'dropdown-' + index"
+                    v-bind:id="'dropdown3-' + index"
                     transition="v-slide-y-transition"
                     origin="top center"
                   )
