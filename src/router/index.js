@@ -12,6 +12,7 @@ import CardsView from '../views/CardsView.vue'
 import ChipsView from '../views/ChipsView.vue'
 import CollapsibleView from '../views/CollapsibleView.vue'
 import ColorsView from '../views/ColorsView.vue'
+import ContentView from '../views/ContentView.vue'
 import DropdownsView from '../views/DropdownsView.vue'
 import GridView from '../views/GridView.vue'
 import FormsView from '../views/FormsView.vue'
@@ -27,6 +28,7 @@ import RipplesView from '../views/RipplesView.vue'
 import SliderView from '../views/SliderView.vue'
 import SidebarView from '../views/SidebarView.vue'
 import TabsView from '../views/TabsView.vue'
+import TableView from '../views/TableView.vue'
 import ToastsView from '../views/ToastsView.vue'
 import TooltipsView from '../views/TooltipsView.vue'
 import TypographyView from '../views/TypographyView.vue'
@@ -68,8 +70,10 @@ const router = new Router({
     { path: '/directives/ripples', component: RipplesView },
     { path: '/directives/tooltips', component: TooltipsView },
     { path: '/css/typography', component: TypographyView },
+    { path: '/css/content', component: ContentView },
     { path: '/css/grid', component: GridView },
     { path: '/css/colors', component: ColorsView },
+    { path: '/css/tables', component: TableView },
     { path: '/css/helpers', component: HelpersView },
     { path: '/layouts', component: LayoutsView },
     { path: '/event-bus', component: EventBusView },
