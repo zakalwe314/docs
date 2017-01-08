@@ -69,7 +69,7 @@
               { href: '/components/collapsible', text: 'Collapsible', icon: 'reorder' },
               { href: '/components/dropdowns', text: 'Dropdowns', icon: 'arrow_drop_down_circle' },
               { href: '/components/footer', text: 'Footer', icon: 'call_to_action' },
-              { href: '/components/forms', text: 'Forms', icon: 'text_format' },
+              { href: '/components/forms', text: 'Forms', icon: 'assignment' },
               { href: '/components/icons', text: 'Icons', icon: 'favorite' },
               { href: '/components/lists', text: 'Lists', icon: 'format_list_bulleted' },
               { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
@@ -97,13 +97,14 @@
             ]
           },
           {
-            parent: { href: '#!', text: 'CSS', icon: 'brush'
-            },
+            parent: { href: '#!', text: 'CSS', icon: 'brush' },
             items: [
-              { href: '/css/typography', text: 'Typography', icon: 'title' },
-              { href: '/css/grid', text: 'Grid', icon: 'grid_on' },
+              { href: '/css/typography', text: 'Typography', icon: 'format_size' },
+              { href: '/css/content', text: 'Content', icon: 'text_format' },
+              { href: '/css/grid', text: 'Grid', icon: 'view_comfy' },
               { href: '/css/colors', text: 'Colors', icon: 'invert_colors' },
-              { href: '/css/helpers', text: 'Helpers', icon: 'build' }
+              { href: '/css/helpers', text: 'Helpers', icon: 'build' },
+              { href: '/css/tables', text: 'Tables', icon: 'grid_on' },
             ]
           }
         ]

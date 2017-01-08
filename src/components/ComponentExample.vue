@@ -4,20 +4,11 @@
     slot(name="details")
     v-collapsible(ref="source" class="component-example__collapsible")
       li
-        v-collapsible-body(ref="body" v-on:click.native="copyMarkup")
+        v-collapsible-body(ref="body")
           markup(lang="html" v-if="booted")
             div(v-html="content" ref="markup")
-          v-slide-x-transition
-            span(class="component-example-copied" v-if="copied") Copied
-          v-icon content_copy
     div(class="component-example__container")
       slot
-    textarea(
-      ref="copy" 
-      v-if="copy" 
-      class="component-example-copy" 
-      v-model="copy"
-    )
 </template>
 
 <script>
@@ -28,26 +19,11 @@
 
     data () {
       return {
-        booted: false,
-        copy: '',
-        copied: false,
-        content: ''
+        booted: false
       }
     },
 
     methods: {
-      copyMarkup () {
-        this.copy = this.$refs.markup.innerText
-
-        this.$nextTick(() => {
-          this.$refs.copy.select()
-          document.execCommand('copy')
-          this.copy = ''
-          this.copied = true
-          setTimeout(() => this.copied = false, 2000)
-        })
-      },
-
       toggleCollapsible () {
         this.$vuetify.bus.pub(
           `collapse:toggle:${this.$refs.source._uid}`,
@@ -85,27 +61,16 @@
   
   .component-example
     .component-example__collapsible
-        border: none
         box-shadow: none
         background: transparent
+        
+        li
+          border: none
         
       .collapsible__body
         border: none
         box-shadow: none
         background: transparent
-        
-      .collapsible__body
-        .icon
-          position: absolute
-          right: 1rem
-          transition: opacity .2s ease-in
-          font-size: 1.5rem
-          opacity: 0
-          top: 1rem
-            
-        &:hover
-          .icon
-            opacity: 1
       
     &-copy
       opacity: 0

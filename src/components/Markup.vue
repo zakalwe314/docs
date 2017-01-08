@@ -1,22 +1,56 @@
 <template lang="pug">
   div(class="markup" v-bind:data-lang="lang")
     pre
-      code(v-bind:class="lang" ref="code")
+      code(v-bind:class="lang" ref="markup" v-on:click="copyMarkup")
         div
           slot
+    v-icon content_copy
+    v-slide-x-transition
+      span(class="component-example-copied" v-if="copied") Copied
+    textarea(
+      ref="copy" 
+      v-if="copy" 
+      class="component-example-copy" 
+      v-model="copy"
+    )
 </template>
 
 <script>
   import hljs from 'highlight.js/lib/highlight.js'
 
 	export default {
+    name: 'markup',
+
+    data () {
+      return {
+        copy: '',
+        copied: false,
+        content: ''
+      }
+    },
+
     props: {
       lang: String,
     },
 
 		mounted () {
-      hljs.highlightBlock(this.$refs.code)
-		}
+      hljs.highlightBlock(this.$refs.markup)
+		},
+
+    methods: {
+      copyMarkup () {
+        console.log('here')
+        this.copy = this.$refs.markup.innerText
+
+        this.$nextTick(() => {
+          this.$refs.copy.select()
+          document.execCommand('copy')
+          this.copy = ''
+          this.copied = true
+          setTimeout(() => this.copied = false, 2000)
+        })
+      },
+    }
 	}
 </script>
 
@@ -56,8 +90,19 @@
       
       &:after
         opacity: 0
+
+    .icon
+      position: absolute
+      right: 1rem
+      transition: opacity .2s ease-in
+      font-size: 1.5rem
+      opacity: 0
+      top: 1rem
+ 
+    &:hover
+      .icon
+        opacity: 1
         
-    
     pre, code
       background: transparent
       width: 100%
