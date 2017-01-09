@@ -1,12 +1,13 @@
 <template lang="pug">
-  div(class="doc")
+  div(class="doc" id="colors-view")
     div
       section-def
-        dt(slot="title") Colors
-        dd(slot="desc") Soon
-    section(id="colors")
-      section-header Material Design
-      component-example(header="Classes")
+        dt(slot="title") {{ doc.title }}
+        dd(slot="desc") {{ doc.desc }}
+    section
+      section-header Classes
+      section-text You can change a background or text color by adding a class to the element. For background, use just the name, for example, <code>&lt;div class="red"&gt;</code>. To use a shade, just add the modifying type, such as, <strong>darken-3</strong>. Text is very similar, adding a modification class, <strong>red--text</strong>, you can change the color of text, or change the type with adding <strong>text--lighten-2</strong>. For some elements like the <code>v-badge</code>, you can use the <em>--after</em> type for the background, <code>&lt;span class="green--after" v-badge:5&gt;</code>.
+      div
         v-container(fluid)
           v-row
             v-col(xs6 sm6 md4 lg3 v-for="color in colors")
@@ -37,6 +38,10 @@
   export default {
     data () {
       return {
+        doc: {
+          title: 'Colors',
+          desc: 'Included with Vuetify is the entire Material Design color library. These color classes drastically help the prototyping phase or make the need for additional color declaration not needed.'
+        },
         colors: [
           'red', 'pink', 'purple', 'deep-purple',
           'indigo', 'blue', 'light-blue', 'cyan',
@@ -72,7 +77,7 @@
 </script>
 
 <style lang="stylus">
-  #colors
+  #colors-view
     .col
       margin: .5rem 0
       
@@ -82,6 +87,7 @@
       letter-spacing: .5px
       text-transform: uppercase
       padding: 1rem
+      border-radius: 0
         
       .card__text
         h3

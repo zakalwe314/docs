@@ -42,6 +42,7 @@ const router = new Router({
     route('/css/typography', 'Typography'),
     route('/css/content', 'Content'),
     route('/css/grid', 'Grid'),
+    route('/css/colors', 'Colors'),
     route('/css/tables', 'Table'),
     route('/helpers/spacing', 'Spacing'),
     route('/layouts', 'Layouts'),
