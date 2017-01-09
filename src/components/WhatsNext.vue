@@ -25,6 +25,8 @@
 
 <style lang="stylus">
   .whats-next
+    max-width: 800px
+    
     p
       margin: 0
       
