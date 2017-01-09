@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="view" id="quick-start")
+  div(class="view" id="quick-start-view")
     div
       section-def
         dt(slot="title") Getting Started
@@ -80,7 +80,13 @@
       section-text Coming Soon
     section
       section-header Color Pack
-      section-text Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. To disable this, navigate to <strong>src/stylus/main.styl</strong> and assign <code>$color-pack</code> to false.
+      section-text Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. This can be disabled in both the <strong>webpack</strong> and <strong>webpack-ssr</strong> Vue cli templates.
+      div(class="title pt-3 pb-3") Webpack
+      section-text Navigate to <kbd>src/App.vue</kbd>. Scroll to the style element and set <code>$color-pack = false</code> above the Vuetify css import.
+
+      div(class="title pt-3 pb-3") Webpack
+      section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
+
     section
       whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the <strong>webpack ssr</strong> template.
 </template>
