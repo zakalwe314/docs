@@ -24,9 +24,7 @@
 </script>
 
 <style lang="stylus">
-  .whats-next
-    max-width: 800px
-    
+  .whats-next    
     p
       margin: 0
       
