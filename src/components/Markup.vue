@@ -74,6 +74,7 @@
     position: relative
     margin-bottom: 1rem
     align-items: center
+    max-width: 800px
       
     &:after
       position: absolute

@@ -6,7 +6,7 @@
 <style lang="stylus">
   .section-text
     min-width: 50%
-    max-width: 700px
+    max-width: 800px
     text-align: justify
     margin-bottom: 1rem
     
