@@ -15,7 +15,13 @@
         <td v-for="data in item" v-text="data"></td>
         <td>
           <v-btn v-dropdown="{ value: 'dropdown3-' + index }">Options</v-btn>
-          <v-dropdown v-bind:id="'dropdown3-' + index" transition="v-slide-y-transition" origin="top center">
+          <v-dropdown 
+            v-bind:id="'dropdown3-' + index" 
+            transition="v-slide-y-transition" 
+            origin="top center"
+            top
+            right
+          >
             <v-dropdown-item v-bind:item="{ text: 'Edit', href: 'javascript:;' }"></v-dropdown-item>
             <v-dropdown-item v-bind:item="{ text: 'Reset Password', href: 'javascript:;' }"></v-dropdown-item>
             <v-dropdown-item v-bind:item="{ text: 'Delete', href: 'javascript:;' }"></v-dropdown-item>

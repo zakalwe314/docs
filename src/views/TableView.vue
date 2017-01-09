@@ -22,7 +22,8 @@
                 td
                   v-btn(icon)
                     v-icon edit
-      component-example(header="Inside Card" file="tables/2")
+      component-example(header="Inside Card" file="tables/2" id="table-overflow")
+        section-text(slot="details") Cards allow tables to overflow-x, creating a scroll-bar if the content is too wide.
         v-card
           table
             thead
@@ -58,6 +59,7 @@
                     v-bind:id="'dropdown3-' + index"
                     transition="v-slide-y-transition"
                     origin="top center"
+                    top right
                   )
                     v-dropdown-item(v-bind:item="{ text: 'Edit', href: 'javascript:;' }")
                     v-dropdown-item(v-bind:item="{ text: 'Reset Password', href: 'javascript:;' }")
@@ -105,8 +107,15 @@
 </script>
 
 <style lang="stylus">
-  #content-view
+  #table-view
     .component-example__container
       > div
         width: 100%
+        
+    #table-overflow
+      .card
+        width: 500px
+        
+        table
+          width: 500px
 </style>
