@@ -31,20 +31,20 @@
         |import Vuetify from 'vuetify'
         |&nbsp;
         |Vue.use(Vuetify)
-      section-text Once you have Vuetify installed, in your main App.vue file, add the Vuetify <code>init</code> function to the Vue mounted hook.
+      section-text Once you have Vuetify installed, add the Vuetify <code>init</code> function to the Vue mounted hook. This is normally in your application <code>App.vue</code>, the main entry-point for your application.
       markup(lang="js")
         |mounted () {
         |   this.$vuetify.init()
         |}
-      section-text The <code>init</code> function must be called in order for Vuetify.js components to communicate together.
+      section-text The <code>init</code> function must be called in order for Vuetify.js components to communicate together. This method starts the <strong>bus</strong>, which is used by all components to communicate with each other. This bus is exposed for you to hook into. For additional information, view the <router-link to="/event-bus">Event Bus</router-link> section.
     section
       section-header Vue CLI
       section-text Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official Vue.js templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
-      v-tabs(id="vue-cli" class="z-depth-1" grow)
+      v-tabs(id="vue-cli" class="z-depth-1" grow icons)
         v-tabs-tabs
-          v-tab-item(ripple v-bind:item="{ href: '#simple', text: 'Simple HTML' }")
-          v-tab-item(ripple v-bind:item="{ href: '#webpack', text: 'Webpack' }")
-          v-tab-item(ripple v-bind:item="{ href: '#webpack-ssr', text: 'Webpack SSR' }")
+          v-tab-item(ripple v-bind:item="{ href: '#simple', text: 'Simple HTML', icon: 'accessibility' }")
+          v-tab-item(ripple v-bind:item="{ href: '#webpack', text: 'Webpack', icon: 'web' }")
+          v-tab-item(ripple v-bind:item="{ href: '#webpack-ssr', text: 'Webpack SSR', icon: 'flash_on' }")
         
         v-tabs-items
           v-tabs-item(id="simple")
@@ -77,18 +77,29 @@
       section-text For any other package, type <kbd>npm run dev</kbd> into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section
       section-header Theme
-      section-text Coming Soon
+      section-text Changing your theme is as easy as updating a few variables in your <code>main.styl</code> file. Navigate to this file, <kbd>src/App.vue</kbd> for webpack and <kbd>src/stylus/main.styl</kbd> for webpack-ssr. The available theme array looks like this:
+      markup(lang="stylus")
+        |$theme := {
+        |   primary: $blue.darken-2
+        |   accent: $blue.accent-2
+        |   secondary: $grey.darken-3
+        |   info: $blue.base
+        |   warning: $amber.base
+        |   error: $red.base
+        |   success: $green.base
+        |}
+      section-text You can modify any of these properties by typing <code>$theme.attribute</code>. If you want to use a built in color, pick a color from the <router-link to="/css/colors">Colors</router-link> section and update the variable.
     section
       section-header Color Pack
-      section-text Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. This can be disabled in both the <strong>webpack</strong> and <strong>webpack-ssr</strong> Vue cli templates.
+      section-text Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. This can be disabled in both the webpack and webpack-ssr Vue cli templates.
       div(class="title pt-3 pb-3") Webpack
       section-text Navigate to <kbd>src/App.vue</kbd>. Scroll to the style element and set <code>$color-pack = false</code> above the Vuetify css import.
 
-      div(class="title pt-3 pb-3") Webpack
+      div(class="title pt-3 pb-3") Webpack-SSR
       section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
 
     section
-      whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the <strong>webpack ssr</strong> template.
+      whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the vue <strong>webpack-ssr</strong> template.
 </template>
 
 <script>

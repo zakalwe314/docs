@@ -39,7 +39,6 @@
 
     methods: {
       copyMarkup () {
-        console.log('here')
         this.copy = this.$refs.markup.innerText
 
         this.$nextTick(() => {
@@ -56,10 +55,6 @@
 
 <style lang="stylus">
   @import '../stylus/settings/_variables'
-  
-  .tabs
-    .markup
-      margin: 2rem 0
       
   .markup
     font-size: 1.2rem
@@ -75,6 +70,7 @@
     margin-bottom: 1rem
     align-items: center
     max-width: 800px
+    margin-bottom: 3rem
       
     &:after
       position: absolute
@@ -135,4 +131,9 @@
         
       .hljs-string, .hljs-literal, .hljs-number
         color: $red.lighten-2
+        
+  .tabs
+    .markup
+      margin: 2rem 0
+      max-width: 100%
 </style>
