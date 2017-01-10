@@ -138,27 +138,8 @@
       ) Icon Loader
         span(slot="loader" class="loader")
           v-icon cached
-    div(slot="markup")
-      markup(lang="js")
-        |data () {
-        |   return {
-        |     loading: false
-        |   }
-        |}
-      markup(lang="scss")
-        |@keyframes loader {
-        |   from {
-        |     transform: rotate(0);
-        |   }
-        |&nbsp;
-        |   to {
-        |     transform: rotate(360deg);
-        |   }
-        |}
-        |&nbsp;
-        |.loader {
-        |   animation: loader 1s infinite
-        |}
+
+    blockquote Remember, to listen to native events on components, you must use the .native modifier. Example: <code>v-on:click.native="handleClick"</code>.
 </template>
 
 <script>
