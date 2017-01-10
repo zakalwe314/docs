@@ -106,6 +106,8 @@
 </template>
 
 <script>
+  import ItemProps from '../constants/itemable-props'
+
   export default {
     name: 'tabs-view',
 
@@ -157,71 +159,9 @@
               ]
             },
             'v-tab-item': {
-              params: [
-                [
-                  'disabled',
-                  'Object',
-                  `{ href: '#!', text: '', router: false }`,
-                  'The navbar item object'
-                ],
-                [
-                  'item',
-                  'Object',
-                  `{ href: '#!', text: '', router: false }`,
-                  'The navbar item object'
-                ],
-                [
-                  'ripple',
-                  'Object, Boolean',
-                  'False',
-                  'Applies the v-ripple directive'
-                ],
-                [
-                  'router',
-                  'Boolean',
-                  'False',
-                  'Designates whether to use anchor or router-link'
-                ]
-              ]
+              params: ItemProps
             }
-          },
-          params: [
-            [
-              '<code>v-tabs</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>v-tab</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>href</code>',
-              'Assigns a tab-content to the tab',
-              'Required: true'
-            ],
-            [
-              '<code>selected</code>',
-              'Pre-selects a tab',
-              'Default: false'
-            ],
-            [
-              '<code>v-tabs-content-container</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>v-tabs-content</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>id</code>',
-              'Assigns the id of the tab content',
-              'Required: true'
-            ]
-          ]
+          }
         },
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
       }

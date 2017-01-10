@@ -60,6 +60,8 @@
 </template>
 
 <script>
+  import ItemProps from '../constants/itemable-props'
+
   export default {
     data () {
       return {
@@ -209,14 +211,7 @@
             },
 
             'v-sidebar-item': {
-              params: [
-                [
-                  'item',
-                  'Object',
-                  `{ text: '', icon: '', router: false, ripple: false }`,
-                  'The sidebar item object'
-                ]
-              ]
+              params: ItemProps
             }
           },
           slots: {

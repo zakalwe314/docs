@@ -69,6 +69,8 @@
 </template>
 
 <script>
+  import ItemProps from '../constants/itemable-props'
+
   export default {
     data () {
       return {
@@ -149,26 +151,7 @@
               ],
             },
             'v-navbar-item': {
-              params: [
-                [
-                  'item',
-                  'Object',
-                  `{ href: '#!', text: '', router: false }`,
-                  'The navbar item object'
-                ],
-                [
-                  'ripple',
-                  'Object, Boolean',
-                  'False',
-                  'Applies the v-ripple directive'
-                ],
-                [
-                  'router',
-                  'Boolean',
-                  'False',
-                  'Designates whether to use anchor or router-link'
-                ]
-              ]
+              params: ItemProps
             }
           },
           slots: {
