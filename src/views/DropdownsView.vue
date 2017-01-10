@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="dropdowns-view")
     component-example(header="On Click" file="dropdowns/1")
       v-btn(
         class="primary white--text"
@@ -59,7 +59,7 @@
             v-icon(class="secondary--text right") cloud_off
     component-example(header="Menus" file="dropdowns/3")
       v-card
-        v-card-row(class="blue white--text")
+        v-card-row(class="blue")
           v-btn(
               icon
               v-dropdown:menu=""
@@ -71,11 +71,11 @@
             id="menu"
             v-bind:items="items"
           )
-          v-card-title Menu
+          v-card-title(class="white--text") Menu
         v-card-text Lorem Ipsum
       v-card
-        v-card-row(class="blue white--text")
-          v-card-title Menu
+        v-card-row(class="blue")
+          v-card-title(class="white--text") Menu
           v-spacer
           v-btn(
             icon
@@ -86,20 +86,50 @@
             ) more_vert
           v-dropdown(
             id="menu2"
-            v-bind:items="items",
+            v-bind:items="items"
+            top
             right
+            origin="top right"
           )
         v-card-text Lorem Ipsum
-    div(slot="markup")
-      markup(lang="js")
-        |data () {
-        |   return {
-        |     items: [{ text: 'Link', href: '#!' }]
-        |   }
-        |}
+    component-example(header="Custom Transitions" file="dropdowns/4")
+      section-text(slot="details") Vuetify comes with 3 standard transitions, <strong>scale</strong>, <strong>slide-x</strong> and <strong>slide-y</strong>. You can also create your own and pass it as the transition argument. For an example of how the stock transitions are constructed, visit <a href="https://github.com/vuetifyjs/vuetify/blob/master/src/util/helpers.js#L13" target="_blank">here</a>.
+      div
+        v-btn(
+          class="primary white--text"
+          v-dropdown:dropdown-transition-1=""
+        ) Changed Origin
+        v-dropdown(
+          id="dropdown-transition-1"
+          v-bind:items="items"
+          origin="center center"
+        )
+        v-btn(
+          class="deep-orange white--text"
+          v-dropdown:dropdown-transition-2=""
+        ) Slide X Transition
+        v-dropdown(
+          id="dropdown-transition-2"
+          v-bind:items="items"
+          top
+          left
+          transition="v-slide-x-transition"
+        )
+        v-btn(
+          class="purple white--text"
+          v-dropdown:dropdown-transition-3=""
+        ) Slide Y Transition
+        v-dropdown(
+          id="dropdown-transition-3"
+          v-bind:items="items"
+          top
+          transition="v-slide-y-transition"
+        )
 </template>
 
 <script>
+  import ItemProps from '../constants/itemable'
+
   export default {
     data () {
       return {
@@ -122,22 +152,45 @@
                   'Optionally pass array of items'
                 ],
                 [
+                  'top',
+                  'Boolean',
+                  'False',
+                  'Set top coordinate for dropdown'
+                ],
+                [
                   'right',
                   'Boolean',
                   'False',
-                  'Open dropdown from right'
+                  'Set right coordinate for dropdown'
+                ],
+                [
+                  'bottom',
+                  'Boolean',
+                  'False',
+                  'Set bottom coordinate for dropdown'
+                ],
+                [
+                  'left',
+                  'Boolean',
+                  'False',
+                  'Set left coordinate for dropdown'
+                ],
+                [
+                  'origin',
+                  'String',
+                  'top left',
+                  'Set the transform-origin of the transition'
+                ],
+                [
+                  'transition',
+                  'String',
+                  'v-scale-transition',
+                  'Set the transition component'
                 ]
               ]
             },
             'v-dropdown-item': {
-              params: [
-                [
-                  'item',
-                  'Object',
-                  `{ href: '#!', text: ''`,
-                  'The invididual items'
-                ]
-              ]
+              params: ItemProps
             }
           },
           slots: {
@@ -188,12 +241,16 @@
   }
 </script>
 
-<style lang="stylus" scoped>
-  .btn
-    margin: 1rem
-    
-  .component-example
-    .card
-      flex: 1
+<style lang="stylus">
+  #dropdowns-view
+    .btn
       margin: 1rem
+      
+    .component-example__container
+      .card
+        flex: 1
+        margin: 1rem
+        
+        &__text
+          height: 200px
 </style>

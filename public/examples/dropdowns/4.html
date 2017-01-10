@@ -1,0 +1,27 @@
+<v-btn v-dropdown:dropdown-transition-1 class="primary white--text">
+  Changed Origin
+</v-btn>
+<v-dropdown 
+  id="dropdown-transition-1" 
+  v-bind:items="items"
+  origin="center center"
+></v-dropdown>
+
+<v-btn v-dropdown:dropdown-transition-2 class="deep-orange white--text">
+  Slide X Transition
+</v-btn>
+<v-dropdown 
+  id="dropdown-transition-2" 
+  v-bind:items="items" 
+  left 
+  transition="v-slide-x-transition"
+></v-dropdown>
+
+<v-btn v-dropdown:dropdown-transition-3 class="purple white--text">
+  Slide Y Transition
+</v-btn>
+<v-dropdown 
+  id="dropdown-transition-3" 
+  v-bind:items="items" 
+  top transition="v-slide-y-transition"
+></v-dropdown>
