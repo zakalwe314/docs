@@ -139,7 +139,7 @@
         span(slot="loader" class="loader")
           v-icon cached
 
-    blockquote Remember, to listen to native events on components, you must use the .native modifier. Example: <code>v-on:click.native="handleClick"</code>.
+    blockquote Vue 2 handles component events differently than previously. All events must have an added <strong>.native</strong> modifier.
 </template>
 
 <script>

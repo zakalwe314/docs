@@ -59,7 +59,7 @@
       return {
         doc: {
           title: 'Layouts',
-          desc: 'Vuetify supports numerous different pre-defined layouts, right out of the box.',
+          desc: 'Vuetify supports numerous different pre-defined layouts, right out of the box. The total number of variations is not limited to the examples below.',
           props: {
             'v-app': {
               params: [

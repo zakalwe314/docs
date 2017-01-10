@@ -64,7 +64,6 @@
     padding: 3rem 2rem
     background: rgba(#000, 0.04)
     border-radius: 2px
-    height: 100%
     cursor: pointer
     position: relative
     margin-bottom: 1rem

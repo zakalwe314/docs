@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="view")
+  div(class="view" id="about-view")
     section-def
       dt(slot="title") About
       dd(slot="desc") 
@@ -54,12 +54,13 @@
                   span Built with Vue.js Server Side Rendering
                   v-list-item-sub-title Using an internal bus, Vuetify.js is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.
 
-          v-col(xs12 class="text-xs-center mt-5")
+          v-col(xs12 class="text-xs-center")
             router-link(
-              class="btn btn--large btn--raised primary py-3" 
+              class="btn btn--large btn--raised primary cta" 
               to="/quick-start"
+              v-ripple=""
             ) Get Started Now
-              v-icon(right) forward
+              v-icon(right) fast_forward
 
     section
       section-header Ecosystem
@@ -116,3 +117,11 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #about-view
+    .cta
+      font-size: 18px
+      padding: 2rem 4rem
+      margin: 50px auto
+</style>

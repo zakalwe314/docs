@@ -1,8 +1,8 @@
 <template lang="pug">
   header
-    v-navbar
-      v-navbar-side-icon(v-sidebar:mainsidebar="" class="hidden-md-and-up")
-          v-icon reorder
+    v-navbar(fixed)
+      v-btn(floating v-sidebar:mainsidebar="" class="side-icon hidden-md-and-up transparent z-depth-0" ripple)
+        v-icon menu
       div(class="navbar__side-title")
         h1(class="text-xs-center text-md-left" v-text="title")
         span(class="hidden-md-and-down" v-html="subTitle")
@@ -77,10 +77,8 @@
     .navbar
       align-items: center
       color: #fff
-      padding: 2rem 0
-      height: 12rem
       
-      &__side-icon
+      .side-icon
         margin: 0 1rem
       
       &__side-title
@@ -91,23 +89,28 @@
         flex-direction: column
         margin: 0 4rem
         
-        @media screen and (max-width: $grid-breakpoints.sm)
-          margin: 0 1rem
+        @media screen and (max-width: $grid-breakpoints.md)
+          margin: 0 4rem 0 0
         
         span
           font-weight: 200
-          font-size: 2rem
+          font-size: 1.7rem
           max-width: 600px
-          line-height: 2rem
+          line-height: 1.7rem
       
       h1
         letter-spacing: 1px
         color: #fff
-        font-size: 4rem
+        font-size: 3.5rem
         font-weight: 400
         margin: 0
         word-break: break-word
+        text-transform: uppercase
         
-        @media screen and (max-width: $grid-breakpoints.sm)
-          font-size: 9vw
+    @media screen and (max-width: $grid-breakpoints.md)
+      .navbar
+        height: 4rem
+        
+        h1
+          font-size: 4vw
 </style>

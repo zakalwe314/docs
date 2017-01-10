@@ -44,7 +44,7 @@
         v-tabs-tabs
           v-tab-item(ripple v-bind:item="{ href: '#simple', text: 'Simple HTML', icon: 'accessibility' }")
           v-tab-item(ripple v-bind:item="{ href: '#webpack', text: 'Webpack', icon: 'web' }")
-          v-tab-item(ripple v-bind:item="{ href: '#webpack-ssr', text: 'Webpack SSR', icon: 'flash_on' }")
+          v-tab-item(ripple v-bind:item="{ href: '#webpack-ssr', text: 'Webpack SSR', icon: 'cloud_circle' }")
         
         v-tabs-items
           v-tabs-item(id="simple")
@@ -99,7 +99,7 @@
       section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
 
     section
-      whats-next(route="/overview" text="Overview") Now that you have your project setup and ready to go, let's go over application structure of the vue <strong>webpack-ssr</strong> template.
+      whats-next(route="/server-side-rendering" text="Vue SSR") Now that you have your project setup and ready to go, it's time to start your ssr application with the Vuetify.js <strong>webpack-ssr</strong> template.
 </template>
 
 <script>

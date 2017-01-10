@@ -3,7 +3,7 @@ export default [
     'disabled',
     'Boolean',
     'False',
-    'Sets the disabled property'
+    `Applies the item active class`
   ],
   [
     'item',

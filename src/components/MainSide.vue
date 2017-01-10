@@ -24,6 +24,8 @@
           img(src="~public/facebook.png" alt="facebook")
         a(href="mailto:john.j.leider@gmail.com")
           img(src="~public/mail.png" alt="mail")
+      div Need help?
+      div Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-item-header(v-if="item.header" v-html="item.header")
@@ -45,6 +47,7 @@
           ripple
         )
           v-chip(class="green" v-if="item.chip") {{ item.chip }}
+    div(class="gitter") 
 </template>
 
 <script>
@@ -77,7 +80,7 @@
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
               { href: '/components/progress-circular', text: 'Progress Circular', icon: 'replay' },
-              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt', chip: 'updated' },
+              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
             ]
@@ -113,7 +116,9 @@
             ]
           },
           { header: 'Additional Resources' },
-          { text: 'Deploying', href: '#!', icon: 'important_devices' }
+          { text: 'Optimization', href: '#!', icon: 'flash_on', disabled: true },
+          { text: 'Deployment', href: '#!', icon: 'important_devices', disabled: true },
+          { text: 'Examples', href: '#!', icon: 'web', disabled: true },
         ]
       }
     }
@@ -148,7 +153,8 @@
     text-align: center
     border-bottom: 1px solid rgba(#fff, .1)
     margin: 0 0 1rem
-    padding: 1rem 0 0
+    padding: 1rem 0 1rem
+    color: #fff
         
     .sidebar__logo
       display: block
