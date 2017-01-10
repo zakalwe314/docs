@@ -17,7 +17,7 @@ const router = new Router({
   routes: [
     route('/', 'About'),
     route('/quick-start', 'QuickStart'),
-    route('/overview', 'Overview'),
+    route('/server-side-rendering', 'SSR'),
     route('/components/alerts', 'Alerts'),
     route('/components/breadcrumbs', 'Breadcrumbs'),
     route('/components/buttons', 'Buttons'),

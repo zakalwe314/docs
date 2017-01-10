@@ -55,7 +55,7 @@
           { href: '/', text: 'About', icon: 'question_answer' },
           { header: 'Core Documentation' },
           { href: '/quick-start', text: 'Quick Start', icon: 'fast_forward' },
-          { href: '/overview', text: 'Overview', icon: 'info' },
+          { href: '/server-side-rendering', text: 'Server Side Rendering', icon: 'cloud_circle' },
           { href: '/event-bus', text: 'Event Bus', icon: 'device_hub' },
           { href: '/layouts', text: 'Layouts', icon: 'devices' },
           {

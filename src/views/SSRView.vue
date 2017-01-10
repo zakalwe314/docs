@@ -4,10 +4,10 @@
       section-def
         dt(slot="title") Overview
         dd(slot="desc")
-          p This overview is designed to help you become fluent in <strong>Vuetify's</strong> Webpack-SSR Template. If you have not already installed the <code>webpack-ssr</code> template, please do so <router-link to="/quick-start#webpack-ssr">here</router-link>.
+          p This overview is designed to help you become fluent in <strong>Vuetify's</strong> Vue SSR Template. If you have not already installed the <code>webpack-ssr</code> template, please do so <router-link to="/quick-start#webpack-ssr">here</router-link>.
     section
       section-header Introduction
-      section-text The Vuetify SSR template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes <code>buble</code> with webpack's buble-loader.
+      section-text This Vue CLI template was designed for performance, seo optimization and usability. This template is configured out of the box for css, sass and stylus pre-processors. It also utilizes <code>buble</code> with webpack's buble-loader.
       h6 Folder Structure
       markup(lang="cli")
         | / project
@@ -155,9 +155,9 @@
     methods: {
       meta () {
         return {
-          h1: 'Overview',
-          title: 'Overview | Vuetify.js',
-          description: 'Review the structure of the Vuetify SSR Template',
+          h1: 'Server Side Rendering',
+          title: 'Server Side Rendering | Vuetify.js',
+          description: 'Learn how to setup your first Vue SSR application with Vuetify.js\'s Webpack template',
           keywords: 'vue cli, vue template, vue ssr, vuetify ssr'
         }
       }
