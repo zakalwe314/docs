@@ -54,6 +54,13 @@
                   span Built with Vue.js Server Side Rendering
                   v-list-item-sub-title Using an internal bus, Vuetify.js is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.
 
+          v-col(xs12 class="text-xs-center mt-5")
+            router-link(
+              class="btn btn--large btn--raised primary py-3" 
+              to="/quick-start"
+            ) Get Started Now
+              v-icon(right) forward
+
     section
       section-header Ecosystem
       section-text Vuetify.js also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.
