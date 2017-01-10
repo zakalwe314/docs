@@ -6,9 +6,53 @@
           v-for="item in items"
           v-bind:src="item.src"
         )
+    component-example(header="Custom Transition" file="sliders/2")
+      v-slider(icon="remove")
+        v-slider-item(
+          v-for="item in items"
+          v-bind:src="item.src"
+          transition="fade"
+          reverseTransition="fade"
+        )
+    markup(lang="js")
+      |import Vue from 'vue'
+      |&nbsp;
+      |Vue.component('fade', {
+      |   function: true,
+      |&nbsp;
+      |   render (createElement, context) {
+      |     let data = context.data || {}
+      |     data.props = { name: 'fade' }
+      |     return createElement('transition', data, context.children)
+      |   }
+      |})
+    markup(lang="stylus")
+      |.fade
+      |   &amp;-enter-active, &amp;-leave-active, &amp;-leave-to
+      |     transition: .3s ease-out
+      |     position: absolute
+      |     top: 0
+      |     left: 0
+      |&nbsp;
+      |   &amp;-enter, &amp;-leave, &amp;-leave-to
+      |     opacity: 0
 </template>
 
 <script>
+  import Vue from 'vue'
+
+  Vue.component('fade', {
+    functional: true,
+
+    render (createElement, context) {
+      let data = context.data || {}
+
+      data.props = { name: 'fade' }
+
+      return createElement('transition', data, context.children)
+    }
+  })
+
   export default {
     data () {
       return {
@@ -17,7 +61,26 @@
           desc: 'The <code>v-slider</code> component is used to display large numbers of visual content on a rotating timer.',
           props: {
             'v-slider': {
-              params: [['None']]
+              params: [
+                [
+                  'cycle',
+                  'Boolean',
+                  'False',
+                  'Determines if slider should cycle through images'
+                ],
+                [
+                  'icon',
+                  'String',
+                  'fiber_manual_record',
+                  'Sets icon for slider delimiter'
+                ],
+                [
+                  'interval',
+                  'Number',
+                  '6000',
+                  'The duration between image cycles'
+                ]
+              ]
             },
             'v-slider-item': {
               params: [
@@ -26,6 +89,18 @@
                   'String',
                   'Required',
                   'The image src',
+                ],
+                [
+                  'transition',
+                  'String',
+                  'v-tab-transition',
+                  'Sets the normal transition',
+                ],
+                [
+                  'reverseTransition',
+                  'String',
+                  'v-tab-reverse-transition',
+                  'Sets the reverse transition',
                 ]
               ]
             }
@@ -73,3 +148,16 @@
     }
   }
 </script>
+
+
+<style lang="stylus">
+  .fade
+    &-enter-active, &-leave-active, &-leave-to
+      transition: .3s ease-out
+      position: absolute
+      top: 0
+      left: 0
+      
+    &-enter, &-leave, &-leave-to
+      opacity: 0
+</style>
