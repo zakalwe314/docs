@@ -9,6 +9,8 @@
           v-navbar-logo Logo
         v-sidebar(id="doc-sidebar-1" height="40vh")
           v-sidebar-items(v-bind:items="items")
+            
+    blockquote A sidebar is required to have an activator. This allows the sidebar to be opened on mobile.
 
     component-example(header="Drawer" file="sidebar/2")
       div(class="grey lighten-1")
