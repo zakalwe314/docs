@@ -12,21 +12,21 @@
           v-col(xs12 sm12 md12 lg6)
             v-list
               v-list-item
-                v-list-item-avatar(class="secondary" x-large) widgets
+                v-list-item-avatar(class="primary" x-large) widgets
                 v-list-item-title
                   span Vuetify.js Frontend Components
                   v-list-item-sub-title The Vuetify.js core is designed to provide a variety of reusable, plug and play components that fit any project spec.
           v-col(xs12 sm12 md12 lg6)
             v-list
               v-list-item
-                v-list-item-avatar(class="secondary" x-large) extension
+                v-list-item-avatar(class="primary" x-large) extension
                 v-list-item-title
                   span Vue Semantic Components
                   v-list-item-sub-title Utilizing the power of Vue.js 2 functional components, all class based markup that is used to aid main components, such as a <em>card title</em>, are accessible using <code>v-card-title</code>. This added benefit enables less cluttering of files for a miniscule performance cost.
           v-col(xs12 sm12 md12 lg6)
             v-list
               v-list-item
-                v-list-item-avatar(class="secondary" x-large) view_quilt
+                v-list-item-avatar(class="primary" x-large) view_quilt
                 v-list-item-title
                   span Prototyping Made Easy
                   v-list-item-sub-title Vuetify.js was built from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building your application. With the core philosophy of write less, do more, getting your project off the ground has never been easier.
@@ -34,7 +34,7 @@
           v-col(xs12 sm12 md12 lg6)
             v-list
               v-list-item
-                v-list-item-avatar(class="secondary" x-large) phone_android
+                v-list-item-avatar(class="primary" x-large) phone_android
                 v-list-item-title
                   span Made for Mobile
                   v-list-item-sub-title All Vuetify.js components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works.
@@ -42,7 +42,7 @@
           v-col(xs12 sm12 md12 lg6)
             v-list
               v-list-item
-                v-list-item-avatar(class="secondary" x-large) add_to_queue
+                v-list-item-avatar(class="primary" x-large) add_to_queue
                 v-list-item-title
                   span Premade Vue CLI Templates
                   v-list-item-sub-title Vuetify.js comes with 3 Vue CLI templates, pre-configured with Vuetify, and ready to go. <router-link to="/quick-start#simple">Simple HTML</router-link>, <router-link to="/quick-start#webpack">Webpack</router-link>, and <router-link to="/quick-start#webpack-ssr">Webpack SSR</router-link> <em>(server-side rendering)</em>.
@@ -50,7 +50,7 @@
           v-col(xs12 sm12 md12 lg6)
             v-list
               v-list-item
-                v-list-item-avatar(class="secondary" x-large) open_in_browser
+                v-list-item-avatar(class="primary" x-large) open_in_browser
                 v-list-item-title
                   span Built with Vue.js Server Side Rendering
                   v-list-item-sub-title Using an internal bus, Vuetify.js is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.
