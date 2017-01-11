@@ -30,14 +30,14 @@
       template(v-for="item in items")
         v-sidebar-item-header(v-if="item.header" v-html="item.header")
         v-sidebar-group(v-if="item.items" v-bind:item="item.parent" ripple)
-          v-sidebar-item(
-            v-for="child in item.items"
-            v-bind:item="child"
-            v-bind:router="item.router"
-            v-if="child.href"
-            router
-            ripple
-          )
+          //- v-sidebar-item(
+          //-   v-for="child in item.items"
+          //-   v-bind:item="child"
+          //-   v-bind:router="item.router"
+          //-   v-if="child.href"
+          //-   router
+          //-   ripple
+          //- )
             //- v-chip(class="green" v-if="child.chip") {{ child.chip }}
         v-sidebar-item(
           v-bind:item="item"
