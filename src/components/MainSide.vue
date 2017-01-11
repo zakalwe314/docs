@@ -27,9 +27,9 @@
       div Need help?
       div Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
     v-sidebar-items
-      template(v-for="item in items")
+      //- template(v-for="item in items")
         //- v-sidebar-item-header(v-if="item.header" v-html="item.header")
-        v-sidebar-group(v-if="item.items" v-bind:item="item.parent" ripple)
+        //- v-sidebar-group(v-if="item.items" v-bind:item="item.parent" ripple)
           //- v-sidebar-item(
           //-   v-for="child in item.items"
           //-   v-bind:item="child"
