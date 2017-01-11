@@ -29,7 +29,8 @@
     v-sidebar-items
       template(v-for="item in items")
         v-sidebar-item-header(v-if="item.header" v-html="item.header")
-        v-sidebar-group(v-if="item.items" v-bind:item="item.parent" ripple)
+        template(v-if="item.items")
+          v-sidebar-group(v-bind:item="item.parent" ripple)
           //- v-sidebar-item(
           //-   v-for="child in item.items"
           //-   v-bind:item="child"
