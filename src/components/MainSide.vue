@@ -26,28 +26,7 @@
           img(src="~public/mail.png" alt="mail")
       div Need help?
       div Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
-    v-sidebar-items
-      template(v-for="item in items")
-        v-sidebar-item-header(v-if="item.header" v-html="item.header")
-        template(v-if="item.items")
-          //- v-sidebar-group(ripple)
-          //- v-sidebar-item(
-          //-   v-for="child in item.items"
-          //-   v-bind:item="child"
-          //-   v-bind:router="item.router"
-          //-   v-if="child.href"
-          //-   router
-          //-   ripple
-          //- )
-            //- v-chip(class="green" v-if="child.chip") {{ child.chip }}
-        //- v-sidebar-item(
-        //-   v-bind:item="item"
-        //-   v-bind:router="item.router"
-        //-   v-else-if="item.href"
-        //-   router
-        //-   ripple
-        //- )
-          //- v-chip(class="green" v-if="item.chip") {{ item.chip }}
+    v-sidebar-items(v-bind:items="items" ripple router)
     div(class="gitter") 
 </template>
 
