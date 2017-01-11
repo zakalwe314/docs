@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="Selects")
+    component-example(header="Selects" file="forms/1")
       div
         v-select(
           v-bind:options="options",
@@ -20,7 +20,7 @@
           v-model="multiple"
         )
         div {{ multiple }}
-    component-example(header="Inputs")
+    component-example(header="Inputs" file="forms/2")
       div
         v-text-input(
           id="test2",
@@ -36,7 +36,7 @@
           label="Testing 3",
           placeholder="Testing 3"
         )
-    component-example(header="Radios")
+    component-example(header="Radios" file="forms/3")
       v-radio(
         id="test5",
         name="test5",
@@ -69,7 +69,7 @@
         label="Testing 71",
         disabled
       )
-    component-example(header="Checkboxes")
+    component-example(header="Checkboxes" file="forms/4")
       v-checkbox(
         id="test7",
         name="test7",

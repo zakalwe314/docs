@@ -42,6 +42,7 @@
       
     .source
       display: inline-flex
+      user-select: none
       
       &:hover
         color: rgba(#000, .9)

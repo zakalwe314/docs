@@ -51,7 +51,7 @@
   
   .view
     margin-bottom: 3rem
-    max-width: 900px
+    max-width: 1024px
   
   .version
     margin-top: -1rem

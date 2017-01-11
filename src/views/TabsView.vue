@@ -1,7 +1,7 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="components-tabs-view")
     component-example(header="Mobile tabs" file="tabs/1")
-      v-tabs(id="mobile-tabs-1" grow)
+      v-tabs(id="mobile-tabs-1" grow ripple)
         v-card(class="primary white--text")
           v-card-text
             v-card-row
@@ -13,7 +13,7 @@
               v-btn(icon)
                 v-icon more_vert
         v-tabs-tabs
-          v-tab-item(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-1-' + i }")
+          v-tab-item(v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-1-' + i }" ripple)
         v-tabs-items
           v-tabs-item(v-for="i in 3" v-bind:id="'mobile-tabs-1-' + i")
             v-card

@@ -47,6 +47,8 @@ const router = new Router({
     route('/css/colors', 'Colors'),
     route('/css/tables', 'Table'),
     route('/helpers/spacing', 'Spacing'),
+    route('/helpers/alignment', 'Alignment'),
+    route('/helpers/display', 'Display'),
     route('/layouts', 'Layouts'),
     route('/event-bus', 'EventBus'),
     { path: '*', redirect: '/' }

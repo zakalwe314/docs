@@ -24,12 +24,12 @@
         li
           v-collapsible-header(v-ripple="{ class: 'grey--text' }") Item
           v-collapsible-body
-            v-card(class="white--text blue darken-3")
+            v-card(class="grey lighten-3")
               v-card-text Content
         li
           v-collapsible-header(v-ripple="{ class: 'grey--text' }") Item
           v-collapsible-body
-            v-card(class="white--text blue darken-3")
+            v-card(class="grey lighten-3")
               v-card-text Content
 </template>
 
@@ -44,7 +44,7 @@
             'v-ripple': {
               params: [
                 [
-                  `class"`,
+                  `{ class: 'class' }`,
                   'Property',
                   '',
                   'Applies a custom class to the ripple, useful for changing color'

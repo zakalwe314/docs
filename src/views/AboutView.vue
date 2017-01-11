@@ -3,8 +3,9 @@
     section-def
       dt(slot="title") About
       dd(slot="desc") 
-        p Vuetify.js is a component framework for Vue.js 2. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify.js utilizes Google's <strong><a href="https://material.io/" target="_blank">Material Design</a></strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>.
+        p Vuetify.js is a component framework for Vue.js 2. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify.js utilizes Google's <strong><a href="https://material.io/" target="_blank">Material Design</a></strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>. <div class="text-xs-center"><router-link class="btn btn--large btn--raised primary cta" to="/quick-start"v-ripple="">Get Started Now <v-icon right>fast_forward</v-icon></router-link></div>
     section
+      img(src="~public/doc-images/featured.png" width="100%")
       section-header Features
       v-container(fluid)
         v-row
@@ -53,14 +54,6 @@
                 v-list-item-title
                   span Built with Vue.js Server Side Rendering
                   v-list-item-sub-title Using an internal bus, Vuetify.js is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.
-
-          v-col(xs12 class="text-xs-center")
-            router-link(
-              class="btn btn--large btn--raised primary cta" 
-              to="/quick-start"
-              v-ripple=""
-            ) Get Started Now
-              v-icon(right) fast_forward
 
     section
       section-header Ecosystem
@@ -123,5 +116,5 @@
     .cta
       font-size: 18px
       padding: 2rem 4rem
-      margin: 50px auto
+      margin: 50px auto 40px
 </style>

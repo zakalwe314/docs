@@ -38,17 +38,6 @@
             div(class="title grey--text text--darken-1") Regular 20sp
             strong title
             span font-weight 500
-      component-example(header="Block-quotes" file="typography/2")
-        div
-          blockquote(v-text="lorem")
-      component-example(header="Paragraphs" file="typography/3")
-        p(v-text="lorem" v-for="i in 2")
-      component-example(header="Code")
-        div Example of an inline <code>&lt;code&gt;</code> element.
-      component-example(header="Variables")
-        div <var>v</var> = <var>u</var> * <var>e</var>
-      component-example(header="User Input")
-        div To install Vuetify, type <kbd>npm install vuetify</kbd> into your console. Once complete, type <kbd>cd &lt;project name&gt;</kbd> and run <kbd>npm install</kbd>
 </template>
 
 <script>

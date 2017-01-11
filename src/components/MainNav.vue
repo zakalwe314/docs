@@ -107,10 +107,14 @@
         word-break: break-word
         text-transform: uppercase
         
-    @media screen and (max-width: $grid-breakpoints.md)
+  @media screen and (max-width: $grid-breakpoints.md)
+    header
       .navbar
-        height: 4rem
+        height: 50px
         
         h1
           font-size: 4vw
+          
+    #app
+      padding-top: 50px
 </style>

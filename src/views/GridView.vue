@@ -1,6 +1,6 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
-    component-example(header="Grid" id="grid")
+  doc-view(v-bind:doc="doc" id="grid-view")
+    component-example(header="Grid" file="grid/1")
       v-container(fluid)
         v-row
           v-col(xs12)
@@ -40,34 +40,38 @@
       return {
         doc: {
           title: 'Grid',
-          desc: 'Soon',
-          params: [
-            [
-              '<code>v-container</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>fluid</code>',
-              'Applies the container--fluid class',
-              'Default: false'
-            ],
-            [
-              '<code>v-row</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>v-col</code>',
-              '',
-              'Base component'
-            ],
-            [
-              '<code>static attrs</code>',
-              'Specify the size of the column',
-              'xs:extra small, sm:small, md:medium, lg:large, 1 through 12'
-            ]
-          ]
+          desc: 'The Vuetify.js uses a 12 point grid system. The grid is used to layout an applications content and contains 5 types (xs, sm, md, lg, xl) of media breakpoints.',
+          props: {
+            'v-container': {
+              params: [
+                [
+                  'fluid',
+                  'Boolean',
+                  'False',
+                  'Applies the .container--fluid class'
+                ]
+              ]
+            },
+            'v-col': {
+              params: [
+                [
+                  'static attrs',
+                  'Boolean',
+                  'False',
+                  'xs:extra small, sm:small, md:medium, lg:large, xl:extra large - 1 through 12'
+                ]
+              ]
+            }
+          },
+          functional: {
+            'grid': {
+              params: [
+                ['<v-content>', 'The main content wrapper for your application'],
+                ['<v-row>', 'The .row class'],
+                ['<v-spacer>', 'Spacer for flexbox grids']
+              ]
+            }
+          }
         }
       }
     },
@@ -94,13 +98,14 @@
 </script>
 
 <style lang="stylus">
-  #grid .component-example
-    .card
-      color: #fff
-      text-align: center
-      padding: 1rem 0
-      margin: .5rem 0
-      
-      &__text
-        padding: 0
+  #grid-view
+    .component-example
+      .card
+        color: #fff
+        text-align: center
+        padding: 1rem 0
+        margin: .5rem 0
+        
+        &__text
+          padding: 0
 </style>

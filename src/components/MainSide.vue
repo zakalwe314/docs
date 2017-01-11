@@ -112,7 +112,9 @@
           {
             parent: { text: 'Helpers', icon: 'build' },
             items: [
-              { href: '/helpers/spacing', text: 'Spacing', icon: 'space_bar' }
+              { href: '/helpers/spacing', text: 'Spacing', icon: 'space_bar' },
+              { href: '/helpers/alignment', text: 'Alignment', icon: 'vertical_align_center' },
+              { href: '/helpers/display', text: 'Display', icon: 'screen_share' }
             ]
           },
           { header: 'Additional Resources' },

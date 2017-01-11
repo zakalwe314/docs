@@ -11,11 +11,11 @@
           blockquote(v-text="lorem")
       component-example(header="Paragraphs" file="content/2")
         p(v-text="lorem" v-for="i in 2")
-      component-example(header="Code")
+      component-example(header="Code" file="content/3")
         div Example of an inline <code>&lt;code&gt;</code> element.
-      component-example(header="Variables")
+      component-example(header="Variables" file="content/4")
         div <var>v</var> = <var>u</var> * <var>e</var>
-      component-example(header="User Input")
+      component-example(header="User Input" file="content/5")
         div To install Vuetify, type <kbd>npm install vuetify</kbd> into your console. Once complete, type <kbd>cd &lt;project name&gt;</kbd> and run <kbd>npm install</kbd>
 </template>
 
