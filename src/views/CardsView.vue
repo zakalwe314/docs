@@ -26,12 +26,12 @@
       div
         v-card
           v-card-row(class="green darken-1")
-            v-card-title(class="white--text")
-              span Marriot Rewards
+            v-card-title
+              span(class="white--text") Marriot Rewards
               v-spacer
               div
-                v-btn(icon class="white--text" v-dropdown:marriot="")
-                  v-icon more_vert
+                v-btn(icon v-dropdown:marriot="")
+                  v-icon(class="white--text") more_vert
                 v-dropdown(id="marriot" top right origin="top right")
                   v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }")
                   v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
@@ -58,9 +58,9 @@
             v-btn(flat, class="primary--text") View Updates
       div
         v-card
-          v-card-row(class="blue-grey darken-1 white--text")
+          v-card-row(class="blue-grey darken-1")
             v-card-title
-              span Visit Space
+              span(class="white--text") Visit Space
               v-spacer
               v-btn(icon class="white--text" v-dropdown:space="")
                 v-icon more_vert
