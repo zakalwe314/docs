@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example
+    component-example(file="toasts/1")
       v-btn(
         secondary
         v-on:click.native="toast(left)"
@@ -25,23 +25,18 @@
         secondary
         v-on:click.native="toast(cb)"
       ) Callback
-    div(slot="markup")
-      markup(lang="xml")
-        |&lt;v-btn v-on:click.native="toast(info)"&gt;...&lt;/v-btn&gt;
-        |&nbsp;
-        |&lt;v-btn v-on:click.native="toast(cb)"&gt;...&lt;/v-btn&gt;
-      markup(lang="js")
-        |data () {
-        |   return {
-        |     cb: ['Toast with callback', 'right', 4000, () =&gt;('Callback')],
-        |     info: ['Toast', 'left'],
-        |   }
-        |},
-        |methods: {
-        |   toast (data) {
-        |     this.$vuetify.toast.create(...data)
-        |   }
-        |}
+    markup(lang="js")
+      |data () {
+      |   return {
+      |     cb: ['Toast with callback', 'right', 4000, () =&gt;('Callback')],
+      |     info: ['Toast', 'left'],
+      |   }
+      |},
+      |methods: {
+      |   toast (data) {
+      |     this.$vuetify.toast.create(...data)
+      |   }
+      |}
 </template>
 
 <script>
@@ -50,19 +45,19 @@
       return {
         doc: {
           title: 'Toast',
-          desc: 'Soon',
-          params: [
-            [
-              '<code>$vuetify.toast</code>',
-              '',
-              'Base function'
-            ],
-            [
-              '<code>arguments</code>',
-              '(content, type, duration, callback)',
-              'Types: top, right, left, bottom, snack, callback'
-            ]
-          ]
+          desc: 'The <code>v-toast</code> component is used to display a quick message to a user. Toasts support positioning, removal delay and callbacks.',
+          props: {
+            '$vuetify.toast': {
+              params: [
+                [
+                  'arguments',
+                  'Boolean',
+                  'False',
+                  'Types: top, right, left, bottom, snack, callback'
+                ]
+              ]
+            }
+          }
         },
         left: ['Left Toast', 'left'],
         right: ['Right Toast', 'right'],

@@ -51,6 +51,7 @@ const router = new Router({
     route('/helpers/display', 'Display'),
     route('/layouts', 'Layouts'),
     route('/event-bus', 'EventBus'),
+    { path: '/overview', redirect: '/server-side-rendering' },
     { path: '*', redirect: '/' }
   ]
 })

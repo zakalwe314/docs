@@ -48,7 +48,7 @@
       return {
         doc: {
           title: 'Typography',
-          desc: 'Soon'
+          desc: 'The typography of an application is just as important as its functionality. Vuetify.js uses the Material Design spec Roboto Font. Each heading size also has a corresponding helper class to style other elements the same.'
         },
         lorem: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
       }

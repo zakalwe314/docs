@@ -27,7 +27,7 @@
       return {
         doc: {
           title: 'Content',
-          desc: 'Soon'
+          desc: 'Vuetify has custom styling for multiple standard elements.'
         },
         lorem: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
       }
@@ -44,7 +44,7 @@
     methods: {
       meta () {
         return {
-          title: 'Content | Vuetify.js',
+          title: 'Content Styles | Vuetify.js',
           h1: 'Content',
           description: 'Content styles for the Vuetify Framework',
           keywords: 'vuetify, content'
