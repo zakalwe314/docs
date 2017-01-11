@@ -39,13 +39,13 @@
           //-   ripple
           //- )
             //- v-chip(class="green" v-if="child.chip") {{ child.chip }}
-        v-sidebar-item(
-          v-bind:item="item"
-          v-bind:router="item.router"
-          v-else-if="item.href"
-          router
-          ripple
-        )
+        //- v-sidebar-item(
+        //-   v-bind:item="item"
+        //-   v-bind:router="item.router"
+        //-   v-else-if="item.href"
+        //-   router
+        //-   ripple
+        //- )
           //- v-chip(class="green" v-if="item.chip") {{ item.chip }}
     div(class="gitter") 
 </template>
