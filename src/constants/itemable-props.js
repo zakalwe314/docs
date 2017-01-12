@@ -8,7 +8,7 @@ export default [
   [
     'item',
     'Object',
-    `{ href: '#!', text: '', router: false }`,
+    `{ href: '#!', text: '', router: false, ripple: false, disabled: false }`,
     'The invididual items'
   ],
   [
