@@ -6,7 +6,8 @@
         v-navbar-items(v-bind:items="items")
     component-example(file="navbar/2")
       v-navbar(class="orange")
-        v-navbar-side-icon(class="hidden-sm-and-up")
+        v-navbar-toolbar
+          v-navbar-side-icon(class="hidden-sm-and-up")
         v-spacer(class="hidden-sm-and-down")
         v-navbar-logo Navbar
         v-navbar-items(class="hidden-sm-and-down" v-bind:items="items")

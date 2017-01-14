@@ -124,9 +124,3 @@
     }
   }
 </script>
-
-<style lang="stylus">
-  #quick-start-view
-    .tabs
-      max-width: 800px
-</style>

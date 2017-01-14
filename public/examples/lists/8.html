@@ -1,0 +1,26 @@
+<v-card>
+  <v-navbar class="white--text pink">
+    <v-navbar-toolbar>
+      <v-navbar-side-icon></v-navbar-side-icon>
+      <v-navbar-title>Inbox</v-navbar-title>
+      <v-icon class="mr-4">search</v-icon>
+      <v-icon>check_circle</v-icon>
+    </v-navbar-toolbar>
+  </v-navbar>
+  <v-card-text>
+    <v-list>
+      <v-list-item v-for="item in list">
+        <v-list-item-content>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-sub-title><span class="grey--text text--darken-4">{{ item.headline }} <br></span>
+            <v-list-item-sub-title>{{ item.subtitle }}</v-list-item-sub-title>
+          </v-list-item-sub-title>
+        </v-list-item-content>
+        <v-list-item-action>
+          <v-list-item-action-text>{{ item.action }}</v-list-item-action-text>
+          <v-icon class="grey--text text--lighten-1">star_border</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+    </v-list>
+  </v-card-text>
+</v-card>

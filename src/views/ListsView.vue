@@ -1,7 +1,8 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="lists-view")
-    component-example
-      v-card(class="card-view card-1")
+    //- Example 1
+    component-example(header="Avatar with 2 lines" file="lists/1")
+      v-card(class="card-view")
         v-navbar(class="cyan")
           v-navbar-toolbar
             v-navbar-side-icon(class="grey--text text--darken-4")
@@ -18,8 +19,16 @@
                 v-list-item-content
                   v-list-item-title(v-html="item.title")
                   v-list-item-sub-title(v-html="item.subtitle")
-    component-example
-      v-card(class="card-view card-2")
+    markup(lang="js")
+      |list: [
+      |  { src: '...', title: 'Brunch this weekend?', subtitle: "..." },
+      |  { src: '...', title: 'Summer BBQ', subtitle: "..." },
+      |  { src: '...', title: 'Qui Qui', subtitle: "..." }
+      |]
+
+    //- Example 2
+    component-example(header="Avatar with title and action" file="lists/2")
+      v-card(class="card-view")
         v-navbar(class="white--text indigo")
           v-navbar-toolbar
             v-navbar-side-icon
@@ -35,8 +44,10 @@
                 v-list-item-title(v-text="item.title")
               v-list-item-avatar
                 img(v-bind:src="item.src")
-    component-example
-      v-card(class="card-view card-2")
+
+    //- Example 3
+    component-example(header="Icons with 2 lines and action" file="lists/3")
+      v-card(class="card-view")
         v-navbar(class="light-blue")
           v-navbar-toolbar
             v-navbar-side-icon
@@ -75,8 +86,10 @@
               v-list-item-action
                 v-btn(icon ripple)
                   v-icon(class="grey--text text--lighten-1") info
-    component-example
-      v-card(class="card-view card-1")
+
+    //- Example 4
+    component-example(header="Avatar with title and clamped sub-title" file="lists/4")
+      v-card(class="card-view")
         v-navbar(class="cyan")
           v-navbar-toolbar
             v-navbar-side-icon(class="grey--text text--darken-4")
@@ -92,8 +105,11 @@
               v-list-item-content
                 v-list-item-title(v-html="item.title")
                 v-list-item-sub-title(v-html="item.subtitle" clamp)
-    component-example
-      v-card(class="card-view card-1")
+    blockquote The clamped prop uses <code>-webkit-line-clamp</code> which is not supported on all browsers.
+
+    //- Example 5
+    component-example(header="Avatar with title and action" file="lists/5")
+      v-card(class="card-view")
         v-navbar(class="teal")
           v-navbar-toolbar
             v-navbar-side-icon(class="grey--text text--darken-4")
@@ -119,8 +135,10 @@
                 img(v-bind:src="item.src")
               v-list-item-content
                 v-list-item-title(v-html="item.title")
-    component-example
-      v-card(class="card-view card-1")
+
+    //- Example 6
+    component-example(header="Action with title and sub-title" file="lists/6")
+      v-card(class="card-view")
         v-navbar(class="teal")
           v-navbar-toolbar
             v-navbar-side-icon(class="grey--text text--darken-4")
@@ -166,9 +184,10 @@
                 v-list-item-title Invites
                 v-list-item-sub-title Notify when receiving invites
 
-    component-example
-      v-card(class="card-view card-1")
-        v-card-row(img="https://assets.entrepreneur.com/content/16x9/822/20150406145944-dos-donts-taking-perfect-linkedin-profile-picture-selfie-mobile-camera-2.jpeg" height="300px")
+    //- Example 7
+    component-example(header="Card image with toolbar and list" file="lists/7")
+      v-card(class="card-view")
+        v-card-row(img="/public/doc-images/lists/alison.jpeg" height="300px")
           v-card-text(class="white--text pa-0")
             v-card-title
               v-btn(icon)
@@ -215,8 +234,9 @@
                 v-list-item-title 1400 Main Street
                 v-list-item-sub-title Orlando, FL 79938
 
-    component-example
-      v-card(class="card-view card-1")
+    //- Example 8
+    component-example(header="Title with sub-title, actions and action-text" file="lists/8")
+      v-card(class="card-view")
         v-navbar(class="white--text pink")
           v-navbar-toolbar
             v-navbar-side-icon
@@ -235,8 +255,9 @@
                 v-list-item-action-text {{ item.action }}
                 v-icon(class="grey--text text--lighten-1") star_border
 
-    component-example
-      v-card(class="card-view card-1")
+    //- Example 9
+    component-example(header="Action with title and sub-title" file="lists/9")
+      v-card(class="card-view")
         v-navbar(class="purple white--text")
           v-navbar-toolbar
             v-navbar-side-icon
@@ -276,7 +297,14 @@
               v-list-item-content
                 v-list-item-title Auto-add widgets
                 v-list-item-sub-title Automatically add home screen widgets
-
+    markup(lang="stylus")
+      |.card
+      |   width: 400px
+      |&nbsp;
+      |   .navbar
+      |     height: auto
+      |     min-height: 55px
+      |     padding-left: 0
 </template>
 
 <script>
@@ -285,10 +313,11 @@
 
     data () {
       let srcs = {
-        1: 'https://pbs.twimg.com/profile_images/782474226020200448/zDo-gAo0_400x400.jpg',
-        2: 'http://www.gamasutra.com/db_area/images/news/2016/Sep/281244/metzen.jpg',
-        3: 'http://metagearsolid.org/wp-content/uploads/2011/08/blog_newell1.jpg',
-        4: 'http://topnews.ae/images/John_Carmack.jpg',
+        1: '/public/doc-images/lists/elon.jpg',
+        2: '/public/doc-images/lists/carmack.jpg',
+        3: '/public/doc-images/lists/seth.jpg',
+        4: '/public/doc-images/lists/gabe.jpg',
+        5: '/public/doc-images/lists/jobs.jpg'
       }
 
       return {
@@ -297,14 +326,7 @@
           { src: srcs[2], title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>', subtitle: "<span class='grey--text text--darken-2'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend." },
           { src: srcs[3], title: 'Oui oui', subtitle: "<span class='grey--text text--darken-2'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?" },
           { src: srcs[4], title: 'Birthday gift', subtitle: "<span class='grey--text text--darken-2'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?" },
-          { src: srcs[1], title: 'Recipe to try', subtitle: "<span class='grey--text text--darken-2'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
-        ],
-        card7: [
-          { action: '15 min', headline: 'Brunch this weekend?', title: 'Ali Connors', subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
-          { action: '2 hr', headline: 'Summer BBQ', title: 'me, Scrott, Jennifer', subtitle: "Wish I could come, but I'm out of town this weekend." },
-          { action: '6 hr', headline: 'Oui oui', title: 'Sandra Adams', subtitle: "Do you have Paris recommendations? Have you ever been?" },
-          { action: '12 hr', headline: 'Birthday gift', title: 'Trevor Hansen', subtitle: "Have any ideas about what we should get Heidi for her birthday?" },
-          { action: '18hr', headline: 'Recipe to try', title: 'Britta Holt', subtitle: "We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
+          { src: srcs[5], title: 'Recipe to try', subtitle: "<span class='grey--text text--darken-2'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
         ],
         card2: [
           { icon: true, title: 'Elon Musk', src: srcs[1] },
@@ -323,28 +345,44 @@
         ],
         card41: [
           { active: true, title: 'Elon Musk', src: srcs[1] },
-          { active: true, title: 'Elon Musk', src: srcs[1] },
-          { title: 'Gabe Newell', src: srcs[3] },
-          { title: 'Christ Metzen', src: srcs[2] },
-          { title: 'John Carmack', src: srcs[4] },
+          { active: true, title: 'Steve Jobs', src: srcs[5] },
+          { title: 'Gabe Newell', src: srcs[4] },
+          { title: 'Seth Macfarlane', src: srcs[3] },
         ],
         card42: [
-          { title: 'Elon Musk', src: srcs[1] },
-          { title: 'Elon Musk', src: srcs[1] }
+          { title: 'John Carmack', src: srcs[2] },
+        ],
+        card7: [
+          { action: '15 min', headline: 'Brunch this weekend?', title: 'Ali Connors', subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
+          { action: '2 hr', headline: 'Summer BBQ', title: 'me, Scrott, Jennifer', subtitle: "Wish I could come, but I'm out of town this weekend." },
+          { action: '6 hr', headline: 'Oui oui', title: 'Sandra Adams', subtitle: "Do you have Paris recommendations? Have you ever been?" },
+          { action: '12 hr', headline: 'Birthday gift', title: 'Trevor Hansen', subtitle: "Have any ideas about what we should get Heidi for her birthday?" },
+          { action: '18hr', headline: 'Recipe to try', title: 'Britta Holt', subtitle: "We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
         ],
         doc: {
           title: 'List',
           desc: 'The <code>v-list</code> component is used to display, you guessed it, lists!. Combine the list with a <code>v-badge</code> directive or a <code>v-dropdown</code> to enhance and add functionality.',
+          props: {
+            'v-list-item': {
+              params: [
+                ['disabled', 'Boolean', 'False', 'Disables the item']
+              ]
+            },
+            'v-list-item-sub-title': {
+              params: [
+                ['clamped', 'Boolean', 'False', 'Clamps text at 2 lines, does not work in all browsers']
+              ]
+            }
+          },
+
           functional: {
             'v-list': {
               params: [
-                ['v-list-item', 'list__item'],
-                ['v-list-title', 'list__item__title'],
-                ['v-list-sub-title', 'list__item__sub-title'],
-                ['v-list-action', 'list__action'],
-                ['v-list-action-title', 'list__action__title'],
-                ['v-list-icon', 'list__icon'],
-                ['v-list-avatar', 'list__avatar'],
+                ['v-list-item-action', 'list__item__action'],
+                ['v-list-item-action-text', 'list__item__action-text'],
+                ['v-list-item-avatar', 'list__item__avatar'],
+                ['v-list-item-content', 'list__item__content'],
+                ['v-list-item-title', 'list__item__title']
               ]
             }
           }
@@ -376,11 +414,9 @@
 <style lang="stylus">
   #lists-view
     .card-view
+      width: 400px
       .navbar
         height: auto
         min-height: 55px
         padding-left: 0
-        
-      &.card-1, &.card-2
-        width: 400px
 </style>

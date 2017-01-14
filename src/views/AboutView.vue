@@ -9,69 +9,70 @@
       section-header Features
       v-container(fluid)
         v-row
-          v-col(xs12 sm12 md12 lg6)
+          v-col(xs12 sm12 md12 lg6 class="my-3")
             v-list
-              v-list-item
-                v-list-item-avatar(class="primary" x-large) widgets
-                v-list-item-title
-                  span Vuetify.js Frontend Components
-                  v-list-item-sub-title The Vuetify.js core is designed to provide a variety of reusable, plug and play components that fit any project spec.
-          v-col(xs12 sm12 md12 lg6)
-            v-list
-              v-list-item
-                v-list-item-avatar(class="primary" x-large) extension
-                v-list-item-title
-                  span Vue Semantic Components
-                  v-list-item-sub-title Utilizing the power of Vue.js 2 functional components, all class based markup that is used to aid main components, such as a <em>card title</em>, are accessible using <code>v-card-title</code>. This added benefit enables less cluttering of files for a miniscule performance cost.
-          v-col(xs12 sm12 md12 lg6)
-            v-list
-              v-list-item
-                v-list-item-avatar(class="primary" x-large) view_quilt
-                v-list-item-title
-                  span Prototyping Made Easy
-                  v-list-item-sub-title Vuetify.js was built from the ground up with prototyping in mind. Every component, directive and function all work seemlessly together, allowing you to focus on building your application. With the core philosophy of write less, do more, getting your project off the ground has never been easier.
+              v-list-item(disabled)
+                v-list-item-avatar
+                  v-icon(class="primary white--text") widgets
+                v-list-item-content
+                  v-list-item-title Vuetify.js Frontend Components
+                  v-list-item-sub-title(clamp) The Vuetify.js core is designed to provide a variety of reusable, plug and play components.
+              v-list-item(disabled)
+                v-list-item-avatar
+                  v-icon(class="primary white--text") extension
+                v-list-item-content
+                  v-list-item-title Vue Semantic Components
+                  v-list-item-sub-title(clamp) Utilize the power of Vue.js 2 functional components with helper components.
+              v-list-item(disabled)
+                v-list-item-avatar
+                  v-icon(class="primary white--text") view_quilt
+                v-list-item-content
+                  v-list-item-title Prototyping Made Easy
+                  v-list-item-sub-title(clamp) Prototype your project in no time with easy to understand components.
 
-          v-col(xs12 sm12 md12 lg6)
+          v-col(xs12 sm12 md12 lg6 class="my-3")
             v-list
-              v-list-item
-                v-list-item-avatar(class="primary" x-large) phone_android
-                v-list-item-title
-                  span Made for Mobile
-                  v-list-item-sub-title All Vuetify.js components are designed for mobile. Applications easily transfer from different orientations and screen sizes. From desktop, to tablet or phone, it just works.
-
-          v-col(xs12 sm12 md12 lg6)
-            v-list
-              v-list-item
-                v-list-item-avatar(class="primary" x-large) add_to_queue
-                v-list-item-title
-                  span Premade Vue CLI Templates
-                  v-list-item-sub-title Vuetify.js comes with 3 Vue CLI templates, pre-configured with Vuetify, and ready to go. <router-link to="/quick-start#simple">Simple HTML</router-link>, <router-link to="/quick-start#webpack">Webpack</router-link>, and <router-link to="/quick-start#webpack-ssr">Webpack SSR</router-link> <em>(server-side rendering)</em>.
-
-          v-col(xs12 sm12 md12 lg6)
-            v-list
-              v-list-item
-                v-list-item-avatar(class="primary" x-large) open_in_browser
-                v-list-item-title
-                  span Built with Vue.js Server Side Rendering
-                  v-list-item-sub-title Using an internal bus, Vuetify.js is ready from installation for SSR based applications. This bus is also exposed, making it available for hooking into, further customizing your application.
+              v-list-item(disabled)
+                v-list-item-avatar
+                  v-icon(class="primary white--text") phone_android
+                v-list-item-content
+                  v-list-item-title Made for Mobile
+                  v-list-item-sub-title(clamp) Applications easily transfer from different orientations and screen sizes.
+              v-list-item(disabled)
+                v-list-item-avatar
+                  v-icon(class="primary white--text") add_to_queue
+                v-list-item-content
+                  v-list-item-title Premade Vue CLI Templates
+                  v-list-item-sub-title(clamp) Vuetify.js comes with 3 Vue CLI templates, pre-configured with Vuetify, and ready to go.
+              v-list-item(disabled)
+                v-list-item-avatar
+                  v-icon(class="primary white--text") open_in_browser
+                v-list-item-content
+                  v-list-item-title Built with Vue.js Server Side Rendering
+                  v-list-item-sub-title(clamp) Using an internal bus, Vuetify.js is ready from installation for SSR based applications.
 
     section
       section-header Ecosystem
       section-text Vuetify.js also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.
 
       v-list
-        v-list-item
-          v-list-item-icon color_lens
-          v-list-item-title Material Design Color Pack
+        v-list-item(disabled)
+          v-list-item-avatar
+            v-icon color_lens
+          v-list-item-content
+            v-list-item-title Material Design Color Pack
 
-        v-list-item
-          v-list-item-icon play_arrow
-          v-list-item-title Vue.js CLI Templates including SSR (server-side rendering)
+        v-list-item(disabled)
+          v-list-item-avatar
+            v-icon play_arrow
+          v-list-item-content
+            v-list-item-title Vue.js CLI Templates including SSR (server-side rendering)
 
-        v-list-item
-          v-list-item-icon security
-          v-list-item-title
-            span Vuetify.js Admin Components <v-chip label class="green white--text">Coming Soon</v-chip>
+        v-list-item(disabled)
+          v-list-item-avatar
+            v-icon security
+          v-list-item-content
+            v-list-item-title Vuetify.js Admin Components <v-chip label class="green white--text">Coming Soon</v-chip>
 
     section
       h6 Roadmap

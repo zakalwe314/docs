@@ -1,14 +1,23 @@
-<v-list>
-  <v-list-item>
-    <v-list-item-icon>person</v-list-item-icon>
-    <v-list-item-title>Person</v-list-item-title>
-  </v-list-item>
-  <v-list-item> 
-    <v-list-item-icon>person</v-list-item-icon>
-    <v-list-item-title>Person</v-list-item-title>
-  </v-list-item>
-  <v-list-item> 
-    <v-list-item-icon>person</v-list-item-icon>
-    <v-list-item-title>Person</v-list-item-title>
-  </v-list-item>
-</v-list>
+<v-card>
+  <v-navbar class="white--text indigo">
+    <v-navbar-toolbar>
+      <v-navbar-side-icon></v-navbar-side-icon>
+      <v-navbar-title>Inbox</v-navbar-title>
+      <v-icon class="mr-2">search</v-icon>
+      <v-icon>more_vert</v-icon>
+    </v-navbar-toolbar>
+  </v-navbar>
+  <v-card-text>
+    <v-list>
+      <v-list-item v-for="item in list">
+        <v-list-item-action>
+          <v-icon v-if="item.icon" class="pink--text">star</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title v-text="item.title"></v-list-item-title>
+        </v-list-item-content>
+        <v-list-item-avatar><img v-bind:src="item.src"/></v-list-item-avatar>
+      </v-list-item>
+    </v-list>
+  </v-card-text>
+</v-card>
