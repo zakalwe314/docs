@@ -16,7 +16,7 @@
     </v-card-text>
   </v-card>
   <v-tabs-tabs>
-    <v-tab v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-1-' + i }"></v-tab>
+    <v-tab-item v-for="i in 3" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-1-' + i }" ripple></v-tab-item>
   </v-tabs-tabs>
   <v-tabs-items>
     <v-tabs-item v-for="i in 3" v-bind:id="'mobile-tabs-1-' + i">
