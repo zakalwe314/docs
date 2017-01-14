@@ -25,21 +25,22 @@
       component-example(header="Inside Card" file="tables/2" id="table-overflow")
         section-text(slot="details") Cards allow tables to overflow-x, creating a scroll-bar if the content is too wide.
         v-card
-          table
-            thead
-              tr
-                th
-                th(v-for="header in headers" v-text="header")
-                th
-            tbody
-              template(v-for="(item, index) in items")
+          v-table-overflow
+            table
+              thead
                 tr
-                  td
-                    v-checkbox(v-bind:id="'checkbox2' + index" filled class="text-xs-center")
-                  td(v-for="data in item" v-text="data")
-                  td
-                    v-btn(icon)
-                      v-icon edit
+                  th
+                  th(v-for="header in headers" v-text="header")
+                  th
+              tbody
+                template(v-for="(item, index) in items")
+                  tr
+                    td
+                      v-checkbox(v-bind:id="'checkbox2' + index" filled class="text-xs-center")
+                    td(v-for="data in item" v-text="data")
+                    td
+                      v-btn(icon)
+                        v-icon edit
       component-example(header="With Dropdown" file="tables/3")
         table
           thead
