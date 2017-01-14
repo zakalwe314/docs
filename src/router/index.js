@@ -34,6 +34,7 @@ const router = new Router({
     route('/components/pagination', 'Pagination'),
     route('/components/parallax', 'Parallax'),
     route('/components/progress-circular', 'ProgressCircular'),
+    route('/components/progress-linear', 'ProgressLinear'),
     route('/components/sidebar', 'Sidebar'),
     route('/components/slider', 'Slider'),
     route('/components/tabs', 'Tabs'),

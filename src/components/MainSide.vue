@@ -80,6 +80,7 @@
               { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
               { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
               { href: '/components/progress-circular', text: 'Progress Circular', icon: 'replay' },
+              { href: '/components/progress-linear', text: 'Progress Linear', icon: 'remove' },
               { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
               { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
               { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
