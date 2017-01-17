@@ -38,14 +38,14 @@
       return {
         items: [
           { header: 'Core Documentation' },
-          { href: '/', title: 'About', avatar: 'question_answer' },
-          { href: '/quick-start', title: 'Quick Start', avatar: 'fast_forward' },
-          { href: '/server-side-rendering', title: 'Server Side Rendering', avatar: 'cloud_circle' },
-          { href: '/event-bus', title: 'Event Bus', avatar: 'device_hub' },
-          { href: '/layouts', title: 'Layouts', avatar: 'devices' },
+          { href: '/', title: 'About', action: 'question_answer' },
+          { href: '/quick-start', title: 'Quick Start', action: 'fast_forward' },
+          { href: '/server-side-rendering', title: 'Server Side Rendering', action: 'cloud_circle' },
+          { href: '/event-bus', title: 'Event Bus', action: 'device_hub' },
+          { href: '/layouts', title: 'Layouts', action: 'devices' },
           {
             title: 'Components',
-            avatar: 'widgets',
+            action: 'widgets',
             group: '/components',
             items: [
               { href: '/components/alerts', title: 'Alerts' },
@@ -72,7 +72,7 @@
           },
           {
             title: 'Directives',
-            avatar: 'polymer',
+            action: 'polymer',
             group: '/directives',
             items: [
               { href: '/directives/badges', title: 'Badges' },
@@ -82,7 +82,7 @@
           },
           {
             title: 'Functions', 
-            avatar: 'functions',
+            action: 'functions',
             group: '/functions',
             items: [
               { href: '/functions/toasts', title: 'Toasts' }
@@ -90,7 +90,7 @@
           },
           {
             title: 'CSS', 
-            avatar: 'brush',
+            action: 'brush',
             group: '/css',
             items: [
               { href: '/css/typography', title: 'Typography' },
@@ -102,7 +102,7 @@
           },
           {
             title: 'Helpers', 
-            avatar: 'build',
+            action: 'build',
             group: '/helpers',
             items: [
               { href: '/helpers/spacing', title: 'Spacing' },
@@ -112,9 +112,9 @@
           },
           { divider: true, light: true },
           { header: 'Additional Documentation' },
-          { title: 'Optimization', avatar: 'flash_on', disabled: true },
-          { title: 'Deployment', avatar: 'important_devices', disabled: true },
-          { title: 'Examples', avatar: 'web', disabled: true },
+          { title: 'Optimization', action: 'flash_on', disabled: true },
+          { title: 'Deployment', action: 'important_devices', disabled: true },
+          { title: 'Examples', action: 'web', disabled: true },
         ]
       }
     }
