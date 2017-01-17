@@ -8,21 +8,12 @@
             v-navbar-side-icon(class="grey--text text--darken-4")
             v-navbar-title Inbox
             v-icon search
-        v-card-text
-          strong(class="grey--text text--darken-1") Today
-        v-list(two-line)
-          v-list-row(v-for="(item, index) in card1" v-if="index < 3")
-            v-list-tile
-              v-list-tile-avatar
-                img(v-bind:src="item.src")
-              v-list-tile-content
-                v-list-tile-title(v-html="item.title")
-                v-list-tile-sub-title(v-html="item.subtitle")
+        v-list(two-line v-bind:items="card1.slice(0, 6)")
     markup(lang="js")
       |list: [
-      |  { src: '...', title: 'Brunch this weekend?', subtitle: "..." },
-      |  { src: '...', title: 'Summer BBQ', subtitle: "..." },
-      |  { src: '...', title: 'Qui Qui', subtitle: "..." }
+      |  { avatar: '...', title: 'Brunch this weekend?', subtitle: "..." },
+      |  { avatar: '...', title: 'Summer BBQ', subtitle: "..." },
+      |  { avatar: '...', title: 'Qui Qui', subtitle: "..." }
       |]
 
     //- Example 2
@@ -42,7 +33,7 @@
               v-list-tile-content
                 v-list-tile-title(v-text="item.title")
               v-list-tile-avatar
-                img(v-bind:src="item.src")
+                img(v-bind:src="item.avatar")
 
     //- Example 3
     component-example(header="Icons with 2 lines and action" file="lists/3")
@@ -56,11 +47,7 @@
           v-navbar-sub
             div(class="headline white--text") My files
         v-list(two-line)
-          //- v-list-item(disabled)
-          //-   v-list-item-avatar
-          //-   v-list-item-content
-          //-     v-list-item-sub-title
-          //-       strong Folders
+          v-list-sub-header(inset) Folders
           v-list-row(v-for="item in card31")
             v-list-tile
               v-list-tile-avatar
@@ -71,11 +58,8 @@
               v-list-tile-action
                 v-btn(icon ripple)
                   v-icon(class="grey--text text--lighten-1") info
-          //- v-list-item(disabled)
-          //-   v-list-item-avatar
-          //-   v-list-item-content
-          //-     v-list-item-sub-title
-          //-       strong Files
+          v-divider(inset)
+          v-list-sub-header(inset) Files
           v-list-row(v-for="item in card32")
             v-list-tile
               v-list-tile-avatar
@@ -95,16 +79,7 @@
             v-navbar-side-icon(class="grey--text text--darken-4")
             v-navbar-title Inbox
             v-icon search
-        v-card-text
-          strong(class="grey--text text--darken-1") Today
-        v-list(three-line)
-          v-list-row(v-for="item in card1")
-            v-list-tile
-              v-list-tile-avatar
-                img(v-bind:src="item.src")
-              v-list-tile-content
-                v-list-tile-title(v-html="item.title")
-                v-list-tile-sub-title(v-html="item.subtitle")
+        v-list(three-line v-bind:items="card1")
     blockquote The clamped prop uses <code>-webkit-line-clamp</code> which is not supported on all browsers.
 
     //- Example 5
@@ -115,24 +90,23 @@
             v-navbar-side-icon(class="grey--text text--darken-4")
             v-navbar-title(class="text-xs-center") New Chat
             v-icon search
-        v-card-text
-          strong(class="grey--text text--darken-1") Recent chat
-        v-list(avatar)
+        v-list
+          v-list-sub-header Recent chat
           v-list-row(v-for="item in card41")
             v-list-tile
               v-list-tile-avatar
-                img(v-bind:src="item.src")
+                img(v-bind:src="item.avatar")
               v-list-tile-content
                 v-list-tile-title(v-html="item.title")
               v-list-tile-action
                 v-icon(v-bind:class="[item.active ? 'teal--text' : 'grey--text']") chat_bubble
-        v-card-text
-          strong(class="grey--text text--darken-1") Previous chats
-        v-list(avatar)
+        v-divider
+        v-list
+          v-list-sub-header Previous chats
           v-list-row(v-for="item in card42")
             v-list-tile
               v-list-tile-avatar
-                img(v-bind:src="item.src")
+                img(v-bind:src="item.avatar")
               v-list-tile-content
                 v-list-tile-title(v-html="item.title")
 
@@ -143,9 +117,8 @@
           v-navbar-toolbar
             v-navbar-side-icon(class="grey--text text--darken-4")
             v-navbar-title Settings
-        v-card-text
-          strong(class="grey--text text--darken-1") General
         v-list(two-line)
+          v-list-sub-header General
           v-list-row
             v-list-tile
               v-list-tile-content
@@ -156,9 +129,9 @@
               v-list-tile-content
                 v-list-tile-title Show your status
                 v-list-tile-sub-title Your status is visible to everyone
-        v-card-text
-          strong(class="grey--text text--darken-1") Hangout notifications
+        v-divider
         v-list(two-line)
+          v-list-sub-header Hangout notifications
           v-list-row
             v-list-tile
               v-list-tile-action
@@ -221,6 +194,7 @@
                 v-list-tile-sub-title Work
               v-list-tile-action
                 v-icon chat
+          v-divider(inset)
           v-list-row
             v-list-tile
               v-list-tile-avatar
@@ -234,6 +208,7 @@
               v-list-tile-content
                 v-list-tile-title ali_connors@example.com
                 v-list-tile-sub-title Work
+          v-divider(inset)
           v-list-row
             v-list-tile
               v-list-tile-avatar
@@ -252,7 +227,7 @@
             v-icon(class="mr-4") search
             v-icon check_circle
         v-list(two-line)
-          v-list-row(v-for="item in card7")
+          v-list-row(v-for="(item, index) in card7")
             v-list-tile
               v-list-tile-content
                 v-list-tile-title {{ item.title }}
@@ -261,6 +236,7 @@
               v-list-tile-action
                 v-list-tile-action-text {{ item.action }}
                 v-icon(class="grey--text text--lighten-1") star_border
+            v-divider(v-if="index + 1 < card7.length")
 
     //- Example 9
     component-example(header="Action with title and sub-title" file="lists/9")
@@ -270,8 +246,7 @@
             v-navbar-side-icon
             v-navbar-title Settings
             v-icon search
-        v-card-text
-          strong(class="grey--text text--darken-1") User Controls
+        v-list-sub-header User Controls
         v-list(three-line)
           v-list-row
             v-list-tile
@@ -283,27 +258,27 @@
               v-list-tile-content
                 v-list-tile-title Password
                 v-list-tile-sub-title Require password for purchase or use password to restrict purchase
-        v-card-text
-          strong(class="grey--text text--darken-1") General
+        v-divider
+        v-list-sub-header General
         v-list(three-line)
           v-list-row
             v-list-tile
               v-list-tile-action
-                v-checkbox(label="&nbsp;" id="check4" filled)
+                v-checkbox(label="&nbsp;" id="check5" filled)
               v-list-tile-content
                 v-list-tile-title Notifications
                 v-list-tile-sub-title Notify me about updates to apps or games that I downloaded
           v-list-row
             v-list-tile
               v-list-tile-action
-                v-checkbox(label="&nbsp;" id="check5" filled)
+                v-checkbox(label="&nbsp;" id="check6" filled)
               v-list-tile-content
                 v-list-tile-title Sound
                 v-list-tile-sub-title Auto-update apps at any time. Data charges may apply
           v-list-row
             v-list-tile
               v-list-tile-action
-                v-checkbox(label="&nbsp;" id="check6" filled)
+                v-checkbox(label="&nbsp;" id="check7" filled)
               v-list-tile-content
                 v-list-tile-title Auto-add widgets
                 v-list-tile-sub-title Automatically add home screen widgets
@@ -332,17 +307,22 @@
 
       return {
         card1: [
-          { src: srcs[1], title: 'Brunch this weekend?', subtitle: "<span class='grey--text text--darken-2'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
-          { src: srcs[2], title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>', subtitle: "<span class='grey--text text--darken-2'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend." },
-          { src: srcs[3], title: 'Oui oui', subtitle: "<span class='grey--text text--darken-2'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?" },
-          { src: srcs[4], title: 'Birthday gift', subtitle: "<span class='grey--text text--darken-2'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?" },
-          { src: srcs[5], title: 'Recipe to try', subtitle: "<span class='grey--text text--darken-2'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
+          { header: 'Today' },
+          { avatar: srcs[1], title: 'Brunch this weekend?', subtitle: "<span class='grey--text text--darken-2'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
+          { divider: true, inset: true },
+          { avatar: srcs[2], title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>', subtitle: "<span class='grey--text text--darken-2'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend." },
+          { divider: true, inset: true },
+          { avatar: srcs[3], title: 'Oui oui', subtitle: "<span class='grey--text text--darken-2'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?" },
+          { divider: true, inset: true },
+          { avatar: srcs[4], title: 'Birthday gift', subtitle: "<span class='grey--text text--darken-2'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?" },
+          { divider: true, inset: true },
+          { avatar: srcs[5], title: 'Recipe to try', subtitle: "<span class='grey--text text--darken-2'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
         ],
         card2: [
-          { icon: true, title: 'Elon Musk', src: srcs[1] },
-          { title: 'Gabe Newell', src: srcs[3] },
-          { title: 'Christ Metzen', src: srcs[2] },
-          { title: 'John Carmack', src: srcs[4] },
+          { icon: true, title: 'Elon Musk', avatar: srcs[1] },
+          { title: 'Gabe Newell', avatar: srcs[3] },
+          { title: 'Christ Metzen', avatar: srcs[2] },
+          { title: 'John Carmack', avatar: srcs[4] },
         ],
         card31: [
           { icon: 'folder', iconClass: 'grey lighten-1 white--text', title: 'Photos', subtitle: 'Jan 9, 2014' },
@@ -354,13 +334,13 @@
           { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Kitchen remodel', subtitle: 'Jan 10, 2014' },
         ],
         card41: [
-          { active: true, title: 'Elon Musk', src: srcs[1] },
-          { active: true, title: 'Steve Jobs', src: srcs[5] },
-          { title: 'Gabe Newell', src: srcs[4] },
-          { title: 'Seth Macfarlane', src: srcs[3] },
+          { active: true, title: 'Elon Musk', avatar: srcs[1] },
+          { active: true, title: 'Steve Jobs', avatar: srcs[5] },
+          { title: 'Gabe Newell', avatar: srcs[4] },
+          { title: 'Seth Macfarlane', avatar: srcs[3] },
         ],
         card42: [
-          { title: 'John Carmack', src: srcs[2] },
+          { title: 'John Carmack', avatar: srcs[2] },
         ],
         card7: [
           { action: '15 min', headline: 'Brunch this weekend?', title: 'Ali Connors', subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
@@ -371,7 +351,7 @@
         ],
         doc: {
           title: 'List',
-          desc: 'The <code>v-list</code> component is used to display, you guessed it, lists!. Combine the list with a <code>v-badge</code> directive or a <code>v-dropdown</code> to enhance and add functionality.',
+          desc: 'The <code>v-list</code> component is used to display information. It can contain an avatar, content and an action. Lists are the basis for other component functionality such as the sidebar, toolbar and dropdowns.',
           props: {
             'v-list-item': {
               params: [

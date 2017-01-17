@@ -31,6 +31,7 @@
             v-list-tile(
               v-bind:item="{ avatar: 'more_vert' }" 
               v-dropdown:dropdown=""
+              id="test"
             )
         v-dropdown(v-bind:items="dropdown_items" id="dropdown" top right origin="top right")
     component-example(header="Transparent" file="navbar/5")
@@ -238,9 +239,9 @@
       margin: 1rem 0
       
       .list--group__container,
-      .list--group__container > li,
-      .list__row > li
-        height: 5rem !important
+      .list--group__container > .list__tile,
+      > .list .list__row
+        height: 5rem
       
   #navbar-image
     background: url('~public/doc-images/nature.jpg') center center / cover no-repeat

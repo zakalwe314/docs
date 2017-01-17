@@ -28,8 +28,8 @@
         a(href="mailto:john.j.leider@gmail.com")
           img(src="~public/mail.png" alt="mail")
       div Need help?
-      div Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
-    div(class="gitter") 
+      div(class="gitter") Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
+      v-divider(light)
 </template>
 
 <script>
@@ -37,9 +37,10 @@
     data () {
       return {
         items: [
+          { header: 'Core Documentation' },
           { href: '/', title: 'About', avatar: 'question_answer' },
           { href: '/quick-start', title: 'Quick Start', avatar: 'fast_forward' },
-          { href: '/server-side-rendering', title: 'Server Side Rendering that is very long', avatar: 'cloud_circle' },
+          { href: '/server-side-rendering', title: 'Server Side Rendering', avatar: 'cloud_circle' },
           { href: '/event-bus', title: 'Event Bus', avatar: 'device_hub' },
           { href: '/layouts', title: 'Layouts', avatar: 'devices' },
           {
@@ -109,6 +110,8 @@
               { href: '/helpers/display', title: 'Display' }
             ]
           },
+          { divider: true, light: true },
+          { header: 'Additional Documentation' },
           { title: 'Optimization', avatar: 'flash_on', disabled: true },
           { title: 'Deployment', avatar: 'important_devices', disabled: true },
           { title: 'Examples', avatar: 'web', disabled: true },
@@ -144,15 +147,13 @@
   
   .vuetify
     text-align: center
-    border-bottom: 1px solid rgba(#fff, .1)
-    margin: 0 0 1rem
-    padding: 1rem 0 1rem
+    margin-top: 16px
     color: #fff
         
     .sidebar__logo
       display: block
       position: relative
-      margin-bottom: 1rem
+      margin-bottom: 16px
       text-decoration: none
       
       img
@@ -160,6 +161,9 @@
     
     a
       color: #fff
+      
+    .gitter
+      margin-bottom: 16px
         
   .sidebar__item-header
     color: #fff
