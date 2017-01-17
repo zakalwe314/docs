@@ -5,18 +5,38 @@
   )
     component-example(header="Determinate")
       v-progress-linear(v-model="valueDeterminate")
+
     component-example(header="Indeterminate")
       v-progress-linear(v-bind:indeterminate="true")
+
     component-example(header="Buffer")
-      v-progress-linear(v-model="buffer" buffer v-bind:buffer-value="bufferValue" v-bind:hide="bufferHide")
+      v-progress-linear(
+        v-model="buffer" 
+        buffer 
+        v-bind:buffer-value="bufferValue" 
+        v-bind:active="bufferHide"
+      )
+
     component-example(header="Query Indeterminate and Determinate")
-      v-progress-linear(v-bind:indeterminate="query" v-bind:query="true" v-model="value" v-bind:hide="hide")
+      v-progress-linear(
+        v-bind:indeterminate="query" 
+        v-bind:query="true" 
+        v-model="value" 
+        v-bind:active="show"
+      )
+
+    component-example(header="In Navbar")
+      v-navbar(class="indigo white--text")
+        v-navbar-toolbar
+          v-icon search
+        v-progress-linear(v-bind:indeterminate="query" v-bind:query="true" v-model="value" v-bind:active="show")
 </template>
 
 <script>
   export default {
     data () {
       return {
+        loader: false,
         doc: {
           title: 'Progress Linear',
           desc: 'The <code>v-progress-linear</code> component is used to convey data visually to users. It can also represent an indeterminate amount, such as loading or processing. This component contains a slot that is centered within the component container.',
@@ -30,7 +50,7 @@
         value: 0,
         valueDeterminate: 0,
         query: false,
-        hide: false,
+        show: true,
         bufferHide: false
       }
     },
@@ -99,7 +119,7 @@
 
       queryAndIndeterminate () {
         this.query = true
-        this.hide = false
+        this.show = true
         this.value = 0
         let int
 
@@ -108,7 +128,7 @@
           int = setInterval(() => {
             if (this.value === 100) {
               clearInterval(int)
-              this.hide = true
+              this.show = false
               return setTimeout(this.queryAndIndeterminate, 2000)
             }
             this.value += 25
@@ -130,6 +150,9 @@
 
 <style lang="stylus">
   #progress-linear-view .component-example__container
-    .progress-linear
+    > .progress-linear
       margin: 2rem 0
+      
+    .navbar
+      height: 55px
 </style>

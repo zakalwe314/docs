@@ -10,15 +10,14 @@
             v-icon search
         v-card-text
           strong(class="grey--text text--darken-1") Today
-        v-card-text
-          v-list
-            template(v-for="(item, index) in card1")
-              v-list-item(v-if="index < 3")
-                v-list-item-avatar
-                  img(v-bind:src="item.src")
-                v-list-item-content
-                  v-list-item-title(v-html="item.title")
-                  v-list-item-sub-title(v-html="item.subtitle")
+        v-list(two-line)
+          v-list-row(v-for="(item, index) in card1" v-if="index < 3")
+            v-list-tile
+              v-list-tile-avatar
+                img(v-bind:src="item.src")
+              v-list-tile-content
+                v-list-tile-title(v-html="item.title")
+                v-list-tile-sub-title(v-html="item.subtitle")
     markup(lang="js")
       |list: [
       |  { src: '...', title: 'Brunch this weekend?', subtitle: "..." },
@@ -35,14 +34,14 @@
             v-navbar-title Inbox
             v-icon(class="mr-2") search
             v-icon more_vert
-        v-card-text
-          v-list
-            v-list-item(v-for="item in card2")
-              v-list-item-action
+        v-list
+          v-list-row(v-for="item in card2")
+            v-list-tile
+              v-list-tile-action
                 v-icon(class="pink--text" v-if="item.icon") star
-              v-list-item-content
-                v-list-item-title(v-text="item.title")
-              v-list-item-avatar
+              v-list-tile-content
+                v-list-tile-title(v-text="item.title")
+              v-list-tile-avatar
                 img(v-bind:src="item.src")
 
     //- Example 3
@@ -56,34 +55,35 @@
             v-icon view_module
           v-navbar-sub
             div(class="headline white--text") My files
-        v-card-text
-          v-list
-            v-list-item(disabled)
-              v-list-item-avatar
-              v-list-item-content
-                v-list-item-sub-title
-                  strong Folders
-            v-list-item(v-for="item in card31")
-              v-list-item-avatar
+        v-list(two-line)
+          //- v-list-item(disabled)
+          //-   v-list-item-avatar
+          //-   v-list-item-content
+          //-     v-list-item-sub-title
+          //-       strong Folders
+          v-list-row(v-for="item in card31")
+            v-list-tile
+              v-list-tile-avatar
                 v-icon(v-bind:class="[item.iconClass]") {{ item.icon }}
-              v-list-item-content
-                v-list-item-title {{ item.title }}
-                v-list-item-sub-title {{ item.subtitle }}
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title {{ item.title }}
+                v-list-tile-sub-title {{ item.subtitle }}
+              v-list-tile-action
                 v-btn(icon ripple)
                   v-icon(class="grey--text text--lighten-1") info
-            v-list-item(disabled)
-              v-list-item-avatar
-              v-list-item-content
-                v-list-item-sub-title
-                  strong Files
-            v-list-item(v-for="item in card32")
-              v-list-item-avatar
+          //- v-list-item(disabled)
+          //-   v-list-item-avatar
+          //-   v-list-item-content
+          //-     v-list-item-sub-title
+          //-       strong Files
+          v-list-row(v-for="item in card32")
+            v-list-tile
+              v-list-tile-avatar
                 v-icon(v-bind:class="[item.iconClass]") {{ item.icon }}
-              v-list-item-content
-                v-list-item-title {{ item.title }}
-                v-list-item-sub-title {{ item.subtitle }}
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title {{ item.title }}
+                v-list-tile-sub-title {{ item.subtitle }}
+              v-list-tile-action
                 v-btn(icon ripple)
                   v-icon(class="grey--text text--lighten-1") info
 
@@ -97,14 +97,14 @@
             v-icon search
         v-card-text
           strong(class="grey--text text--darken-1") Today
-        v-card-text
-          v-list
-            v-list-item(v-for="item in card1")
-              v-list-item-avatar
+        v-list(three-line)
+          v-list-row(v-for="item in card1")
+            v-list-tile
+              v-list-tile-avatar
                 img(v-bind:src="item.src")
-              v-list-item-content
-                v-list-item-title(v-html="item.title")
-                v-list-item-sub-title(v-html="item.subtitle" clamp)
+              v-list-tile-content
+                v-list-tile-title(v-html="item.title")
+                v-list-tile-sub-title(v-html="item.subtitle")
     blockquote The clamped prop uses <code>-webkit-line-clamp</code> which is not supported on all browsers.
 
     //- Example 5
@@ -117,24 +117,24 @@
             v-icon search
         v-card-text
           strong(class="grey--text text--darken-1") Recent chat
-        v-card-text
-          v-list
-            v-list-item(v-for="item in card41")
-              v-list-item-avatar
+        v-list(avatar)
+          v-list-row(v-for="item in card41")
+            v-list-tile
+              v-list-tile-avatar
                 img(v-bind:src="item.src")
-              v-list-item-content
-                v-list-item-title(v-html="item.title")
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title(v-html="item.title")
+              v-list-tile-action
                 v-icon(v-bind:class="[item.active ? 'teal--text' : 'grey--text']") chat_bubble
         v-card-text
           strong(class="grey--text text--darken-1") Previous chats
-        v-card-text
-          v-list
-            v-list-item(v-for="item in card42")
-              v-list-item-avatar
+        v-list(avatar)
+          v-list-row(v-for="item in card42")
+            v-list-tile
+              v-list-tile-avatar
                 img(v-bind:src="item.src")
-              v-list-item-content
-                v-list-item-title(v-html="item.title")
+              v-list-tile-content
+                v-list-tile-title(v-html="item.title")
 
     //- Example 6
     component-example(header="Action with title and sub-title" file="lists/6")
@@ -145,44 +145,48 @@
             v-navbar-title Settings
         v-card-text
           strong(class="grey--text text--darken-1") General
-        v-card-text
-          v-list
-            v-list-item
-              v-list-item-content
-                v-list-item-title Profile photo
-                v-list-item-sub-title Change your Google+ profile photo
-            v-list-item
-              v-list-item-content
-                v-list-item-title Show your status
-                v-list-item-sub-title Your status is visible to everyone
+        v-list(two-line)
+          v-list-row
+            v-list-tile
+              v-list-tile-content
+                v-list-tile-title Profile photo
+                v-list-tile-sub-title Change your Google+ profile photo
+          v-list-row
+            v-list-tile
+              v-list-tile-content
+                v-list-tile-title Show your status
+                v-list-tile-sub-title Your status is visible to everyone
         v-card-text
           strong(class="grey--text text--darken-1") Hangout notifications
-        v-card-text
-          v-list
-            v-list-item
-              v-list-item-action
+        v-list(two-line)
+          v-list-row
+            v-list-tile
+              v-list-tile-action
                 v-checkbox(label="&nbsp;" id="check1" filled)
-              v-list-item-content
-                v-list-item-title Notifications
-                v-list-item-sub-title Allow notifications
-            v-list-item
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title Notifications
+                v-list-tile-sub-title Allow notifications
+          v-list-row
+            v-list-tile
+              v-list-tile-action
                 v-checkbox(label="&nbsp;" id="check2" filled)
-              v-list-item-content
-                v-list-item-title Sound
-                v-list-item-sub-title Hangouts message
-            v-list-item
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title Sound
+                v-list-tile-sub-title Hangouts message
+          v-list-row
+            v-list-tile
+              v-list-tile-action
                 v-checkbox(label="&nbsp;" id="check3" filled)
-              v-list-item-content
-                v-list-item-title Video sounds
-                v-list-item-sub-title Hangouts vidoe call
-            v-list-item
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title Video sounds
+                v-list-tile-sub-title Hangouts vidoe call
+          v-list-row
+            v-list-tile
+              v-list-tile-action
                 v-checkbox(label="&nbsp;" id="check4" filled)
-              v-list-item-content
-                v-list-item-title Invites
-                v-list-item-sub-title Notify when receiving invites
+              v-list-tile-content
+                v-list-tile-title Invites
+                v-list-tile-sub-title Notify when receiving invites
 
     //- Example 7
     component-example(header="Card image with toolbar and list" file="lists/7")
@@ -199,40 +203,44 @@
                 v-icon more_vert
             v-card-row(height="100%" class="pl-5 pt-5")
               div(class="display-1 pl-5 pt-5") Ali Conners
-        v-card-text
-          v-list
-            v-list-item
-              v-list-item-avatar
+        v-list(two-line)
+          v-list-row
+            v-list-tile
+              v-list-tile-avatar
                 v-icon(class="indigo--text") phone
-              v-list-item-content
-                v-list-item-title (650) 555-1234
-                v-list-item-sub-title Mobile
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title (650) 555-1234
+                v-list-tile-sub-title Mobile
+              v-list-tile-action
                 v-icon chat
-            v-list-item
-              v-list-item-avatar
-              v-list-item-content
-                v-list-item-title (323) 555-6789
-                v-list-item-sub-title Work
-              v-list-item-action
+          v-list-row
+            v-list-tile
+              v-list-tile-avatar
+              v-list-tile-content
+                v-list-tile-title (323) 555-6789
+                v-list-tile-sub-title Work
+              v-list-tile-action
                 v-icon chat
-            v-list-item
-              v-list-item-avatar
+          v-list-row
+            v-list-tile
+              v-list-tile-avatar
                 v-icon(class="indigo--text") mail
-              v-list-item-content
-                v-list-item-title aliconnors@example.com
-                v-list-item-sub-title Personal
-            v-list-item
-              v-list-item-avatar
-              v-list-item-content
-                v-list-item-title ali_connors@example.com
-                v-list-item-sub-title Work
-            v-list-item
-              v-list-item-avatar
+              v-list-tile-content
+                v-list-tile-title aliconnors@example.com
+                v-list-tile-sub-title Personal
+          v-list-row
+            v-list-tile
+              v-list-tile-avatar
+              v-list-tile-content
+                v-list-tile-title ali_connors@example.com
+                v-list-tile-sub-title Work
+          v-list-row
+            v-list-tile
+              v-list-tile-avatar
                 v-icon(class="indigo--text") location_on
-              v-list-item-content
-                v-list-item-title 1400 Main Street
-                v-list-item-sub-title Orlando, FL 79938
+              v-list-tile-content
+                v-list-tile-title 1400 Main Street
+                v-list-tile-sub-title Orlando, FL 79938
 
     //- Example 8
     component-example(header="Title with sub-title, actions and action-text" file="lists/8")
@@ -243,16 +251,15 @@
             v-navbar-title Inbox
             v-icon(class="mr-4") search
             v-icon check_circle
-        v-card-text
-          v-list
-            v-list-item(v-for="item in card7")
-              v-list-item-content
-                v-list-item-title {{ item.title }}
-                v-list-item-sub-title
-                  span(class="grey--text text--darken-4") {{ item.headline }} <br>
-                  v-list-item-sub-title {{ item.subtitle }}
-              v-list-item-action
-                v-list-item-action-text {{ item.action }}
+        v-list(two-line)
+          v-list-row(v-for="item in card7")
+            v-list-tile
+              v-list-tile-content
+                v-list-tile-title {{ item.title }}
+                v-list-tile-sub-title(class="grey--text text--darken-4") {{ item.headline }}
+                v-list-tile-sub-title {{ item.subtitle }}
+              v-list-tile-action
+                v-list-tile-action-text {{ item.action }}
                 v-icon(class="grey--text text--lighten-1") star_border
 
     //- Example 9
@@ -265,38 +272,41 @@
             v-icon search
         v-card-text
           strong(class="grey--text text--darken-1") User Controls
-        v-card-text
-          v-list
-            v-list-item
-              v-list-item-content
-                v-list-item-title Content filtering
-                v-list-item-sub-title Set the content filtering level to restrict appts that can be downloaded
-            v-list-item
-              v-list-item-content
-                v-list-item-title Password
-                v-list-item-sub-title Require password for purchase or use password to restrict purchase
+        v-list(three-line)
+          v-list-row
+            v-list-tile
+              v-list-tile-content
+                v-list-tile-title Content filtering
+                v-list-tile-sub-title Set the content filtering level to restrict appts that can be downloaded
+          v-list-row
+            v-list-tile
+              v-list-tile-content
+                v-list-tile-title Password
+                v-list-tile-sub-title Require password for purchase or use password to restrict purchase
         v-card-text
           strong(class="grey--text text--darken-1") General
-        v-card-text
-          v-list
-            v-list-item
-              v-list-item-action
+        v-list(three-line)
+          v-list-row
+            v-list-tile
+              v-list-tile-action
                 v-checkbox(label="&nbsp;" id="check4" filled)
-              v-list-item-content
-                v-list-item-title Notifications
-                v-list-item-sub-title Notify me about updates to apps or games that I downloaded
-            v-list-item
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title Notifications
+                v-list-tile-sub-title Notify me about updates to apps or games that I downloaded
+          v-list-row
+            v-list-tile
+              v-list-tile-action
                 v-checkbox(label="&nbsp;" id="check5" filled)
-              v-list-item-content
-                v-list-item-title Sound
-                v-list-item-sub-title Auto-update apps at any time. Data charges may apply
-            v-list-item
-              v-list-item-action
+              v-list-tile-content
+                v-list-tile-title Sound
+                v-list-tile-sub-title Auto-update apps at any time. Data charges may apply
+          v-list-row
+            v-list-tile
+              v-list-tile-action
                 v-checkbox(label="&nbsp;" id="check6" filled)
-              v-list-item-content
-                v-list-item-title Auto-add widgets
-                v-list-item-sub-title Automatically add home screen widgets
+              v-list-tile-content
+                v-list-tile-title Auto-add widgets
+                v-list-tile-sub-title Automatically add home screen widgets
     markup(lang="stylus")
       |.card
       |   width: 400px

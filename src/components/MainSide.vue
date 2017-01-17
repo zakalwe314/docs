@@ -2,6 +2,9 @@
   v-sidebar(
     id="mainsidebar"
     fixed
+    v-bind:items="items"
+    ripple
+    router
   )
     div(class="vuetify" slot="top")
       router-link(
@@ -26,7 +29,6 @@
           img(src="~public/mail.png" alt="mail")
       div Need help?
       div Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
-    v-sidebar-items(v-bind:items="items" ripple router)
     div(class="gitter") 
 </template>
 
@@ -35,73 +37,81 @@
     data () {
       return {
         items: [
-          { href: '/', text: 'About', icon: 'question_answer' },
-          { header: 'Core Documentation' },
-          { href: '/quick-start', text: 'Quick Start', icon: 'fast_forward' },
-          { href: '/server-side-rendering', text: 'Server Side Rendering', icon: 'cloud_circle' },
-          { href: '/event-bus', text: 'Event Bus', icon: 'device_hub' },
-          { href: '/layouts', text: 'Layouts', icon: 'devices' },
+          { href: '/', title: 'About', avatar: 'question_answer' },
+          { href: '/quick-start', title: 'Quick Start', avatar: 'fast_forward' },
+          { href: '/server-side-rendering', title: 'Server Side Rendering that is very long', avatar: 'cloud_circle' },
+          { href: '/event-bus', title: 'Event Bus', avatar: 'device_hub' },
+          { href: '/layouts', title: 'Layouts', avatar: 'devices' },
           {
-            parent: { href: '#!', text: 'Components', icon: 'widgets', },
+            title: 'Components',
+            avatar: 'widgets',
+            group: '/components',
             items: [
-              { href: '/components/alerts', text: 'Alerts', icon: 'priority_high' },
-              { href: '/components/breadcrumbs', text: 'Breadcrumbs', icon: 'linear_scale' },
-              { href: '/components/buttons', text: 'Buttons', icon: 'arrow_forward' },
-              { href: '/components/cards', text: 'Cards', icon: 'note' },
-              { href: '/components/chips', text: 'Chips', icon: 'label' },
-              { href: '/components/collapsible', text: 'Collapsible', icon: 'reorder' },
-              { href: '/components/dropdowns', text: 'Dropdowns', icon: 'arrow_drop_down_circle' },
-              { href: '/components/footer', text: 'Footer', icon: 'call_to_action' },
-              { href: '/components/forms', text: 'Forms', icon: 'assignment' },
-              { href: '/components/icons', text: 'Icons', icon: 'favorite' },
-              { href: '/components/lists', text: 'Lists', icon: 'format_list_bulleted' },
-              { href: '/components/modals', text: 'Modals', icon: 'picture_in_picture' },
-              { href: '/components/navbar', text: 'Navbars', icon: 'web' },
-              { href: '/components/pagination', text: 'Pagination', icon: 'looks_one' },
-              { href: '/components/parallax', text: 'Parallax', icon: 'import_export' },
-              { href: '/components/progress-circular', text: 'Progress Circular', icon: 'replay' },
-              { href: '/components/progress-linear', text: 'Progress Linear', icon: 'remove' },
-              { href: '/components/sidebar', text: 'Sidebars', icon: 'view_quilt' },
-              { href: '/components/slider', text: 'Sliders', icon: 'slideshow' },
-              { href: '/components/tabs', text: 'Tabs', icon: 'more_horiz' }
+              { href: '/components/alerts', title: 'Alerts' },
+              { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
+              { href: '/components/buttons', title: 'Buttons' },
+              { href: '/components/cards', title: 'Cards' },
+              { href: '/components/chips', title: 'Chips' },
+              { href: '/components/collapsible', title: 'Collapsible' },
+              { href: '/components/dropdowns', title: 'Dropdowns' },
+              { href: '/components/footer', title: 'Footer' },
+              { href: '/components/forms', title: 'Forms' },
+              { href: '/components/icons', title: 'Icons' },
+              { href: '/components/lists', title: 'Lists' },
+              { href: '/components/modals', title: 'Modals' },
+              { href: '/components/navbar', title: 'Navbars' },
+              { href: '/components/pagination', title: 'Pagination' },
+              { href: '/components/parallax', title: 'Parallax' },
+              { href: '/components/progress-circular', title: 'Progress Circular' },
+              { href: '/components/progress-linear', title: 'Progress Linear' },
+              { href: '/components/sidebar', title: 'Sidebars' },
+              { href: '/components/slider', title: 'Sliders' },
+              { href: '/components/tabs', title: 'Tabs' }
             ]
           },
           {
-            parent: { href: '#!', text: 'Directives', icon: 'polymer' },
+            title: 'Directives',
+            avatar: 'polymer',
+            group: '/directives',
             items: [
-              { href: '/directives/badges', text: 'Badges', icon: 'fiber_manual_record' },
-              { href: '/directives/ripples', text: 'Ripples', icon: 'album' },
-              { href: '/directives/tooltips', text: 'Tooltips', icon: 'sms' }
+              { href: '/directives/badges', title: 'Badges' },
+              { href: '/directives/ripples', title: 'Ripples' },
+              { href: '/directives/tooltips', title: 'Tooltips' }
             ]
           },
           {
-            parent: { href: '#!', text: 'Functions', icon: 'functions' },
+            title: 'Functions', 
+            avatar: 'functions',
+            group: '/functions',
             items: [
-              { href: '/functions/toasts', text: 'Toasts', icon: 'flip_to_front' }
+              { href: '/functions/toasts', title: 'Toasts' }
             ]
           },
           {
-            parent: { href: '#!', text: 'CSS', icon: 'brush' },
+            title: 'CSS', 
+            avatar: 'brush',
+            group: '/css',
             items: [
-              { href: '/css/typography', text: 'Typography', icon: 'format_size' },
-              { href: '/css/content', text: 'Content', icon: 'text_format' },
-              { href: '/css/grid', text: 'Grid', icon: 'view_comfy' },
-              { href: '/css/colors', text: 'Colors', icon: 'invert_colors' },
-              { href: '/css/tables', text: 'Tables', icon: 'grid_on' },
+              { href: '/css/typography', title: 'Typography' },
+              { href: '/css/content', title: 'Content' },
+              { href: '/css/grid', title: 'Grid' },
+              { href: '/css/colors', title: 'Colors' },
+              { href: '/css/tables', title: 'Tables' },
             ]
           },
           {
-            parent: { text: 'Helpers', icon: 'build' },
+            title: 'Helpers', 
+            avatar: 'build',
+            group: '/helpers',
             items: [
-              { href: '/helpers/spacing', text: 'Spacing', icon: 'space_bar' },
-              { href: '/helpers/alignment', text: 'Alignment', icon: 'vertical_align_center' },
-              { href: '/helpers/display', text: 'Display', icon: 'screen_share' }
+              { href: '/helpers/spacing', title: 'Spacing' },
+              { href: '/helpers/alignment', title: 'Alignment' },
+              { href: '/helpers/display', title: 'Display' }
             ]
           },
-          { header: 'Additional Resources' },
-          { text: 'Optimization', href: '#!', icon: 'flash_on', disabled: true },
-          { text: 'Deployment', href: '#!', icon: 'important_devices', disabled: true },
-          { text: 'Examples', href: '#!', icon: 'web', disabled: true },
+          { title: 'Optimization', avatar: 'flash_on', disabled: true },
+          { title: 'Deployment', avatar: 'important_devices', disabled: true },
+          { title: 'Examples', avatar: 'web', disabled: true },
         ]
       }
     }

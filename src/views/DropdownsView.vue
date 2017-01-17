@@ -16,17 +16,13 @@
       v-dropdown(
         id="dropdown3"
       )
-        li
-          a(href="#!", class="dropdown__item")
-            | Profile
-            v-chip(label, class="teal white--text right", small) new
-        li
-          a(href="#!", class="dropdown__item")
-            span(v-badge:2="") Notifications
-        li
-          a(href="#!", class="dropdown__item")
-            | Logout
-            v-icon(class="secondary--text right") cloud_off
+        v-list
+          v-list-row
+            v-list-tile(v-bind:item="{ title: 'Profile', action: { icon: 'check', 'class': 'green--text' } }")
+          v-list-row
+            v-list-tile(v-bind:item="{ title: 'Notifications', action: { icon: 'notifications', 'class': 'indigo--text' } }")
+          v-list-row
+            v-list-tile(v-bind:item="{ title: 'Logout', action: 'cloud_off' }")
     component-example(header="On Hover" file="dropdowns/2")
       v-btn(
         class="primary white--text"
@@ -46,17 +42,13 @@
         id="dropdown4"
         hover
       )
-        li
-          a(href="#!", class="dropdown__item")
-            | Profile
-            v-chip(label, class="teal white--text right", small) new
-        li
-          a(href="#!", class="dropdown__item")
-            span(v-badge:2="") Notifications
-        li
-          a(href="#!", class="dropdown__item")
-            | Logout
-            v-icon(class="secondary--text right") cloud_off
+        v-list
+          v-list-row
+            v-list-tile(v-bind:item="{ title: 'Profile', action: { icon: 'check', 'class': 'green--text' } }")
+          v-list-row
+            v-list-tile(v-bind:item="{ title: 'Notifications', action: { icon: 'notifications', 'class': 'indigo--text' } }")
+          v-list-row
+            v-list-tile(v-bind:item="{ title: 'Logout', action: 'cloud_off' }")
     component-example(header="Menus" file="dropdowns/3")
       v-card
         v-card-row(class="blue")
@@ -201,20 +193,16 @@
         },
         items: [
           {
-            href: '#!',
-            text: 'Click Me'
+            title: 'Click Me'
           },
           {
-            href: '#!',
-            text: 'Click Me'
+            title: 'Click Me'
           },
           {
-            href: '#!',
-            text: 'Click Me'
+            title: 'Click Me'
           },
           {
-            href: '#!',
-            text: 'Click Me 2'
+            title: 'Click Me 2'
           }
         ]
       }

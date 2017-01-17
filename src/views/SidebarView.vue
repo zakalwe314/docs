@@ -19,8 +19,7 @@
             a(href="#!" v-side-bar:doc-sidebar-2="")
               v-icon reorder
           v-navbar-logo Logo
-        v-sidebar(class="blue darken-3" id="doc-sidebar-2" height="40vh" drawer)
-          v-sidebar-items(v-bind:items="items")
+        v-sidebar(class="blue darken-3" id="doc-sidebar-2" height="40vh" v-bind:items="items" drawer)
 
     component-example(header="Item Groups" file="sidebar/3")
       div(class="grey lighten-1")
@@ -28,8 +27,7 @@
           v-navbar-side-icon(v-side-bar:doc-sidebar-3="" class="hidden-md-and-up")
             v-icon reorder
           v-navbar-logo Logo
-        v-sidebar(id="doc-sidebar-3" height="40vh" right fixed)
-          v-sidebar-items(v-bind:items="item_group")
+        v-sidebar(id="doc-sidebar-3" height="40vh" right fixed v-bind:items="item_group")
 
     component-example(header="Ripples" file="sidebar/4")
       div(class="grey lighten-1")
