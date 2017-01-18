@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc" id="sidebars")
+  doc-view(v-bind:doc="doc" id="sidebars-view")
     component-example(header="Left" file="sidebar/1")
       div(class="grey lighten-1")
         v-navbar
@@ -7,8 +7,7 @@
             a(href="#!" v-side-bar:doc-sidebar-1="")
               v-icon reorder
           v-navbar-logo Logo
-        v-sidebar(id="doc-sidebar-1" height="40vh")
-          v-sidebar-items(v-bind:items="items")
+        v-sidebar(id="doc-sidebar-1" height="40vh" v-bind:items="items")
             
     blockquote A sidebar is required to have an activator. This allows the sidebar to be opened on mobile.
 
@@ -43,17 +42,17 @@
       |     items: [
       |       { header: 'Header' },
       |       {
-      |         parent: { text: 'Parent', href: '#!' },
+      |         title: 'Parent' },
       |         items: [
-      |           { text: 'Child', href: '#!', icon: 'link' },
-      |           { text: 'Child', href: '#!', icon: 'link' },
-      |           { text: 'Child', href: '#!', icon: 'link' }
+      |           { title: 'Home', href: '/home', action: 'link' },
+      |           { title: 'About', href: '/about', action: 'link' },
+      |           { title: 'Contact', href: '/contact', action: 'link' }
       |         ]
       |       },
-      |       { text: 'Link', href: "#!" },
-      |       { text: 'Link', href: "#!" },
+      |       { title: 'Link', href: "#!" },
+      |       { title: 'Link', href: "#!" },
       |       { header: 'Another Header' },
-      |       { text: 'Link', href: "#!" }
+      |       { title: 'Link', href: "#!" }
       |     ]
       |   }
       |}
@@ -237,24 +236,25 @@
           }
         },
         items: [
-          { text: 'Link', href: "#!" },
-          { text: 'Link', href: "#!" },
-          { text: 'Link', href: "#!" }
+          { title: 'Home', avatar: 'dashboard' },
+          { title: 'Profile', avatar: 'account_box' },
+          { title: 'Contact', avatar: 'import_contacts' }
         ],
         item_group: [
           { header: 'Header' },
           {
-            parent: { text: 'Parent', href: '#!' },
+            title: 'Parent',
             items: [
-              { text: 'Child', href: '#!', icon: 'link' },
-              { text: 'Child', href: '#!', icon: 'link' },
-              { text: 'Child', href: '#!', icon: 'link' }
+              { title: 'Child' },
+              { title: 'Child' },
+              { title: 'Child' }
             ]
           },
-          { text: 'Link', href: "#!" },
-          { text: 'Link', href: "#!" },
+          { title: 'Link' },
+          { title: 'Link' },
+          { divider: true, light: true },
           { header: 'Another Header' },
-          { text: 'Link', href: "#!" }
+          { title: 'Link' }
         ]
       }
     },
@@ -281,7 +281,7 @@
 </script>
 
 <style lang="stylus">
-  #sidebars
+  #sidebars-view
     .component-example__container
       > div
         flex: 1
