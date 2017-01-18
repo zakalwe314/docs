@@ -1,50 +1,45 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="navbar")
     component-example(header="Variants" file="navbar/1")
-      v-navbar(class="green" v-bind:items="items")
+      v-navbar(class="green")
         v-navbar-logo(class="hidden-sm-and-down") Navbar
+        v-navbar-items(v-bind:items="items")
     component-example(file="navbar/2")
       v-navbar(class="orange")
-        v-navbar-toolbar(class="hidden-sm-and-up")
-          v-navbar-side-icon
-        v-list
-          v-list-row(v-for="item in items")
-            v-list-tile(v-bind:item="item")
+        v-navbar-side-icon(class="hidden-sm-and-up")
         v-spacer(class="hidden-sm-and-down")
         v-navbar-logo Navbar
+        v-navbar-items(class="hidden-sm-and-down" v-bind:items="items")
     component-example(file="navbar/3")
-      v-navbar(class="red" v-bind:items="items")
+      v-navbar(class="red")
+        v-navbar-items(v-bind:items="items")
         v-navbar-logo(class="hidden-sm-and-down")
           v-spacer
           | Navbar
     component-example(header="Icons" file="navbar/4")
       v-navbar(class="purple")
         v-navbar-logo(class="hidden-sm-and-down") Navbar
-        v-list
-          v-list-row
-            v-list-tile(v-bind:item="{ avatar: 'chevron_left' }")
-          v-list-row
-            v-list-tile(v-bind:item="{ avatar: 'dashboard' }")
-          v-list-row
-            v-list-tile(v-bind:item="{ avatar: 'chevron_right' }")
-          v-list-row
-            v-list-tile(
-              v-bind:item="{ avatar: 'more_vert' }" 
-              v-dropdown:dropdown=""
-              id="test"
-            )
-        v-dropdown(v-bind:items="dropdown_items" id="dropdown" top right origin="top right")
+        v-navbar-items
+          v-navbar-item(v-bind:item="{ href: '#!', icon: 'chevron_left' }")
+          v-navbar-item(v-bind:item="{ href: '#!', icon: 'dashboard' }")
+          v-navbar-item(v-bind:item="{ href: '#!', icon: 'chevron_right' }")
+          v-navbar-item(
+            v-bind:item="{ href: '#!', icon: 'more_vert' }" 
+            v-dropdown:dropdown=""
+          )
+          v-dropdown(v-bind:items="dropdown_items" id="dropdown" top right origin="top right")
     component-example(header="Transparent" file="navbar/5")
       div(id="navbar-image")
-        v-navbar(class="transparent z-depth-0" v-bind:items="items")
+        v-navbar(class="transparent z-depth-0")
           v-navbar-logo(class="hidden-sm-and-down") Navbar
           v-spacer
+          v-navbar-items(v-bind:items="items")
     component-example(header="Groups" file="navbar/6")
       v-navbar(v-bind:items="itemsGroup")
         v-navbar-logo(class="hidden-sm-and-down" slot="right")
           v-spacer
           | Vuetify
-    //- markup(lang='js')
+    markup(lang='js')
       |data () {
       |   return {
       |     itemsGroup: [
@@ -52,17 +47,17 @@
       |         parent: { text: 'Home', icon: 'home'},
       |         items: [
       |           {text: 'Our Services', href: '/components/navbar'},
-      |           {text: 'Contact Us'},
-      |           {text: 'About Us'}
+      |           {text: 'Contact Us', href: 'javascript:;'},
+      |           {text: 'About Us', href: 'javascript:;'}
       |         ]
       |       },
-      |       { text: 'Portfolio', icon: 'work' },
+      |       { text: 'Portfolio', href: 'javascript:;', icon: 'work' },
       |       {
       |         parent: { text: 'Apply', icon: 'favorite' },
       |         items: [
-      |           {text: 'Our Mission'},
-      |           {text: 'Partners'},
-      |           {text: 'Join Our Team', icon: 'people'}
+      |           {text: 'Our Mission', href: 'javascript:;'},
+      |           {text: 'Partners', href: 'javascript:;'},
+      |           {text: 'Join Our Team', href: 'javascript:;', icon: 'people'}
       |         ]
       |       }
       |     ]
@@ -175,37 +170,35 @@
           }
         },
         items: [
-          { title: 'Portfolio', subtitle: 'Test', avatar: 'favorite' },
-          { avatar: 'link' },
-          { title: 'Link' }
+          { text: 'Link', href: 'javascript:;' },
+          { text: 'Link', href: 'javascript:;' },
+          { text: 'Link', href: 'javascript:;' }
         ],
         itemsGroup: [
           {
-            title: 'Home',
-            avatar: 'home',
+            parent: { text: 'Home', icon: 'home' },
             items: [
-              { title: 'Our Services' },
-              { title: 'Contact Us' },
-              { title: 'About Us' }
+              {text: 'Our Services', href: 'javascript:;'},
+              {text: 'Contact Us', href: 'javascript:;'},
+              {text: 'About Us', href: 'javascript:;'}
             ]
           },
-          { title: 'Portfolio', avatar: 'work' }
+          { text: 'Portfolio', href: 'javascript:;', icon: 'work' }
         ],
         itemsGroupV: [
           {
-            title: 'Apply',
-            avatar: 'favorite',
+            parent: { text: 'Apply', icon: 'favorite' },
             items: [
-              {title: 'Our Mission'},
-              {title: 'Partners'},
-              {title: 'Join Our Team'}
+              {text: 'Our Mission', href: 'javascript:;'},
+              {text: 'Partners', href: 'javascript:;'},
+              {text: 'Join Our Team', href: 'javascript:;'}
             ]
           }
         ],
         dropdown_items: [
-          { title: 'Send Feedback' },
-          { title: 'Request Help' },
-          { title: 'Contact Developer' }
+          { text: 'Send Feedback', href: '#!' },
+          { text: 'Request Help', href: '#!' },
+          { text: 'Contact Developer', href: '#!' }
         ]
       }
     },
@@ -237,11 +230,6 @@
       padding-left: 0
       height: 5rem !important
       margin: 1rem 0
-      
-      .list--group__container,
-      .list--group__container > .list__tile,
-      > .list .list__row
-        height: 5rem
       
   #navbar-image
     background: url('~public/doc-images/nature.jpg') center center / cover no-repeat

@@ -26,20 +26,16 @@
       div
         v-card
           v-card-row(class="green darken-1")
-            v-card-title
-              span(class="white--text") Marriot Rewards
+            v-card-title(class="white--text")
+              span Marriot Rewards
               v-spacer
               div
-                v-btn(icon v-dropdown:marriot="")
-                  v-icon(class="white--text") more_vert
-                v-dropdown(id="marriot" top right origin="top right")
-                  v-list
-                    v-list-row
-                      v-list-tile(v-bind:item="{ title: 'Never show rewards' }")
-                    v-list-row
-                      v-list-tile(v-bind:item="{ title: 'Remove Card' }")
-                    v-list-row
-                      v-list-tile(v-bind:item="{ title: 'Send Feedback' }")
+                v-btn(icon class="white--text" v-dropdown:marriot="")
+                  v-icon more_vert
+                v-dropdown(id="marriot" top right origin="top right" class="grey--text text--darken-2")
+                  v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }")
+                  v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
+                  v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
           v-card-text
             v-card-row(height="75px")
               v-icon(class="mr-5") card_membership
@@ -62,18 +58,15 @@
             v-btn(flat, class="primary--text") View Updates
       div
         v-card
-          v-card-row(class="blue-grey darken-1")
+          v-card-row(class="blue-grey darken-1 white--text")
             v-card-title
-              span(class="white--text") Visit Space
+              span Visit Space
               v-spacer
               v-btn(icon class="white--text" v-dropdown:space="")
                 v-icon more_vert
-              v-dropdown(id="space" top right origin="top right")
-                v-list
-                  v-list-row
-                    v-list-tile(v-bind:item="{ title: 'Remove Card' }")
-                  v-list-row
-                    v-list-tile(v-bind:item="{ title: 'Send Feedback' }")
+              v-dropdown(id="space" top right origin="top right" class="grey--text text--darken-2")
+                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }")
+                v-dropdown-item(v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }")
           v-card-row(
             img="https://s-media-cache-ak0.pinimg.com/564x/e6/f5/27/e6f5279ad0965b9ccdadc3934429d122.jpg",
             height="300px"
