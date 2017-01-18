@@ -5,62 +5,71 @@
       <v-navbar-title>Settings</v-navbar-title>
     </v-navbar-toolbar>
   </v-navbar>
-  <v-card-text><strong class="grey--text text--darken-1">General</strong></v-card-text>
-  <v-card-text>
-    <v-list>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title>Profile photo</v-list-item-title>
-          <v-list-item-sub-title>Change your Google+ profile photo</v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title>Show your status</v-list-item-title>
-          <v-list-item-sub-title>Your status is visible to everyone</v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </v-card-text>
-  <v-card-text><strong class="grey--text text--darken-1">Hangout notifications</strong></v-card-text>
-  <v-card-text>
-    <v-list>
-      <v-list-item>
-        <v-list-item-action>
-          <v-checkbox label="&amp;nbsp;" id="check1" filled="filled"></v-checkbox>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>Notifications</v-list-item-title>
-          <v-list-item-sub-title>Allow notifications</v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-action>
-          <v-checkbox label="&amp;nbsp;" id="check2" filled="filled"></v-checkbox>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>Sound</v-list-item-title>
-          <v-list-item-sub-title>Hangouts message</v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-action>
-          <v-checkbox label="&amp;nbsp;" id="check3" filled="filled"></v-checkbox>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>Video sounds</v-list-item-title>
-          <v-list-item-sub-title>Hangouts vidoe call</v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-action>
-          <v-checkbox label="&amp;nbsp;" id="check4" filled="filled"></v-checkbox>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>Invites</v-list-item-title>
-          <v-list-item-sub-title>Notify when receiving invites</v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </v-card-text>
+  <v-list two-line sub-header>
+    <v-list-sub-header>General</v-list-sub-header>
+    <v-list-item>
+      <v-list-tile avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Profile photo</v-list-tile-title>
+          <v-list-tile-sub-title>Change your Google+ profile photo</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list-item>
+    <v-list-item>
+      <v-list-tile avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>Show your status</v-list-tile-title>
+          <v-list-tile-sub-title>Your status is visible to everyone</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list-item>
+  </v-list>
+  <v-divider></v-divider>
+  <v-list two-line sub-header>
+    <v-list-sub-header>Hangout notifications</v-list-sub-header>
+    <v-list-item>
+      <v-list-tile avatar>
+        <v-list-tile-action>
+          <v-checkbox label="&amp;nbsp;" id="check-e6-1" filled></v-checkbox>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Notifications</v-list-tile-title>
+          <v-list-tile-sub-title>Allow notifications</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list-item>
+    <v-list-item>
+      <v-list-tile avatar>
+        <v-list-tile-action>
+          <v-checkbox label="&amp;nbsp;" id="check-e6-2" filled></v-checkbox>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Sound</v-list-tile-title>
+          <v-list-tile-sub-title>Hangouts message</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list-item>
+    <v-list-item>
+      <v-list-tile avatar>
+        <v-list-tile-action>
+          <v-checkbox label="&amp;nbsp;" id="check-e6-3" filled></v-checkbox>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Video sounds</v-list-tile-title>
+          <v-list-tile-sub-title>Hangouts vidoe call</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list-item>
+    <v-list-item>
+      <v-list-tile avatar>
+        <v-list-tile-action>
+          <v-checkbox label="&amp;nbsp;" id="check-e6-4" filled></v-checkbox>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Invites</v-list-tile-title>
+          <v-list-tile-sub-title>Notify when receiving invites</v-list-tile-sub-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list-item>
+  </v-list>
 </v-card>

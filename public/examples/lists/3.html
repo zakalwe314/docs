@@ -1,4 +1,4 @@
-<v-card class="card-view card-2">
+<v-card>
   <v-navbar class="light-blue">
     <v-navbar-toolbar>
       <v-navbar-side-icon></v-navbar-side-icon>
@@ -10,48 +10,41 @@
       <div class="headline white--text">My files</div>
     </v-navbar-sub>
   </v-navbar>
-  <v-card-text>
-    <v-list>
-      <v-list-item disabled="disabled">
-        <v-list-item-avatar></v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-sub-title><strong>Folders</strong></v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item v-for="item in folders">
-        <v-list-item-avatar>
+  <v-list two-line sub-header>
+    <v-list-sub-header inset>Folders</v-list-sub-header>
+    <v-list-item v-for="item in e31">
+      <v-list-tile avatar>
+        <v-list-tile-avatar>
           <v-icon v-bind:class="[item.iconClass]">{{ item.icon }}</v-icon>
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-          <v-list-item-sub-title>{{ item.subtitle }}</v-list-item-sub-title>
-        </v-list-item-content>
-        <v-list-item-action>
-          <v-btn icon="icon" ripple="ripple">
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+          <v-btn icon="icon" ripple>
             <v-icon class="grey--text text--lighten-1">info</v-icon>
           </v-btn>
-        </v-list-item-action>
-      </v-list-item>
-      <v-list-item disabled="disabled">
-        <v-list-item-avatar></v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-sub-title><strong>Files</strong></v-list-item-sub-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item v-for="item in files">
-        <v-list-item-avatar>
+        </v-list-tile-action>
+      </v-list-tile>
+    </v-list-item>
+    <v-divider inset></v-divider>
+    <v-list-sub-header inset>Files</v-list-sub-header>
+    <v-list-item v-for="item in e32">
+      <v-list-tile>
+        <v-list-tile-avatar>
           <v-icon v-bind:class="[item.iconClass]">{{ item.icon }}</v-icon>
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-          <v-list-item-sub-title>{{ item.subtitle }}</v-list-item-sub-title>
-        </v-list-item-content>
-        <v-list-item-action>
-          <v-btn icon="icon" ripple="ripple">
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+          <v-btn icon ripple>
             <v-icon class="grey--text text--lighten-1">info</v-icon>
           </v-btn>
-        </v-list-item-action>
-      </v-list-item>
-    </v-list>
-  </v-card-text>
+        </v-list-tile-action>
+      </v-list-tile>
+    </v-list-item>
+  </v-list>
 </v-card>

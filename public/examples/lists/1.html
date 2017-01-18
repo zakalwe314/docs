@@ -6,18 +6,5 @@
       <v-icon>search</v-icon>
     </v-navbar-toolbar>
   </v-navbar>
-  <v-card-text><strong class="grey--text text--darken-1">Today</strong></v-card-text>
-  <v-card-text>
-    <v-list>
-      <template v-for="(item, index) in list">
-        <v-list-item v-if="index &lt; 3">
-          <v-list-item-avatar><img v-bind:src="item.src"/></v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title v-html="item.title"></v-list-item-title>
-            <v-list-item-sub-title v-html="item.subtitle"></v-list-item-sub-title>
-          </v-list-item-content>
-        </v-list-item>
-      </template>
-    </v-list>
-  </v-card-text>
+  <v-list two-line v-bind:items="e1.slice(0, 6)"></v-list>
 </v-card>
