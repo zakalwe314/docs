@@ -3,33 +3,31 @@
     id="progress-linear-view"
     v-bind:doc="doc"
   )
-    component-example(header="Determinate")
+    component-example(header="Determinate" file="progress-linear/1")
+      section-text(slot="details") A determinate state is controlled by a model
       v-progress-linear(v-model="valueDeterminate")
 
-    component-example(header="Indeterminate")
+    component-example(header="Indeterminate" file="progress-linear/2")
+      section-text(slot="details") An indeterminate state represents an unknown duration
       v-progress-linear(v-bind:indeterminate="true")
 
-    component-example(header="Buffer")
+    component-example(header="Buffer" file="progress-linear/3")
+      section-text(slot="details") A buffer state represents two values simultaneously. The primary value is controled by the model, whereas the buffer is controlled by the <code>buffer-value</code> prop.
       v-progress-linear(
         v-model="buffer" 
         buffer 
         v-bind:buffer-value="bufferValue" 
-        v-bind:active="bufferHide"
+        v-bind:active="bufferActive"
       )
 
-    component-example(header="Query Indeterminate and Determinate")
+    component-example(header="Query Indeterminate and Determinate" file="progress-linear/4")
+      section-text(slot="details") To query state is controlled by the truthiness of indeterminate with the query prop set to true.
       v-progress-linear(
         v-bind:indeterminate="query" 
         v-bind:query="true" 
         v-model="value" 
         v-bind:active="show"
       )
-
-    component-example(header="In Navbar")
-      v-navbar(class="indigo white--text")
-        v-navbar-toolbar
-          v-icon search
-        v-progress-linear(v-bind:indeterminate="query" v-bind:query="true" v-model="value" v-bind:active="show")
 </template>
 
 <script>
@@ -39,10 +37,46 @@
         loader: false,
         doc: {
           title: 'Progress Linear',
-          desc: 'The <code>v-progress-linear</code> component is used to convey data visually to users. It can also represent an indeterminate amount, such as loading or processing. This component contains a slot that is centered within the component container.',
+          desc: 'The <code>v-progress-linear</code> component is used to convey data visually to users. It has 4 potential states. Determinate, which is % value defined by model. Indeterminate which conveys processing. Buffer, which is used to show varying states of progress and Query, which is Indeterminate in reverse.',
           props: {
-          },
-          slots: {
+            'v-progress-linear': {
+              params: [
+                [
+                  'buffer',
+                  'Boolean',
+                  'False',
+                  'Designates whether the buffer bar is shown'
+                ],
+                [
+                  'bufferValue',
+                  'Number',
+                  '',
+                  'The percentage value for the buffer'
+                ],
+                [
+                  'indeterminate',
+                  'Boolean',
+                  'False',
+                  'Sets the indeterminate state of the component'
+                ],
+                [
+                  'active',
+                  'Boolean',
+                  'True',
+                  'When disabled, the component will shrink up'
+                ],
+                [
+                  'query',
+                  'Boolean',
+                  'False',
+                  'Sets the query state of the component'
+                ]
+              ],
+              model: {
+                types: ['Number'],
+                default: '0'
+              }
+            }
           }
         },
         buffer: 10,
@@ -51,7 +85,7 @@
         valueDeterminate: 0,
         query: false,
         show: true,
-        bufferHide: false
+        bufferActive: true
       }
     },
 
@@ -69,7 +103,7 @@
 
     methods: {
       startBuffer () {
-        this.bufferHide = false
+        this.bufferActive = true
 
         let int
         let intTwo
@@ -94,9 +128,9 @@
             }
 
             if (this.buffer === 100) {
-              this.bufferHide = true
               clearInterval(int)
               clearInterval(intTwo)
+              this.bufferActive = false
               setTimeout(() => {
                 this.buffer = 0
                 this.bufferValue = 0
