@@ -11,21 +11,21 @@
         v-row
           v-col(xs12 sm12 md12 lg6)
             v-list(three-line)
-              v-list-row(class="my-3")
+              v-list-item(class="my-3")
                 v-list-tile(disabled)
                   v-list-tile-avatar
                     v-icon(class="primary white--text") widgets
                   v-list-tile-content
                     v-list-tile-title Frontend Components
                     v-list-tile-sub-title(clamp) The Vuetify.js core is designed to provide a variety of reusable, plug and play components.
-              v-list-row(class="my-3")
+              v-list-item(class="my-3")
                 v-list-tile(disabled)
                   v-list-tile-avatar
                     v-icon(class="primary white--text") extension
                   v-list-tile-content
                     v-list-tile-title Vue Semantic Components
                     v-list-tile-sub-title(clamp) Utilize the power of Vue.js 2 functional components with helper components.
-              v-list-row(class="my-3")
+              v-list-item(class="my-3")
                 v-list-tile(disabled)
                   v-list-tile-avatar
                     v-icon(class="primary white--text") view_quilt
@@ -35,21 +35,21 @@
 
           v-col(xs12 sm12 md12 lg6)
             v-list(three-line)
-              v-list-row(class="my-3")
+              v-list-item(class="my-3")
                 v-list-tile(disabled)
                   v-list-tile-avatar
                     v-icon(class="primary white--text") phone_android
                   v-list-tile-content
                     v-list-tile-title Made for Mobile
                     v-list-tile-sub-title(clamp) Applications easily transfer from different orientations and screen sizes.
-              v-list-row(class="my-3")
+              v-list-item(class="my-3")
                 v-list-tile(disabled)
                   v-list-tile-avatar
                     v-icon(class="primary white--text") add_to_queue
                   v-list-tile-content
                     v-list-tile-title Premade Vue CLI Templates
                     v-list-tile-sub-title(clamp) Vuetify.js comes with 3 Vue CLI templates, pre-configured with Vuetify, and ready to go.
-              v-list-row(class="my-3")
+              v-list-item(class="my-3")
                 v-list-tile(disabled)
                   v-list-tile-avatar
                     v-icon(class="primary white--text") open_in_browser
@@ -62,21 +62,21 @@
       section-text Vuetify.js also comes with a subset of packages to help expedite the prototyping process, add additional functionality and additional components.
 
       v-list
-        v-list-row
+        v-list-item
           v-list-tile(disabled)
             v-list-tile-avatar
               v-icon color_lens
             v-list-tile-content
               v-list-tile-title Material Design Color Pack
 
-        v-list-row
+        v-list-item
           v-list-tile(disabled)
             v-list-tile-avatar
               v-icon play_arrow
             v-list-tile-content
               v-list-tile-title Vue.js CLI Templates including SSR (server-side rendering)
 
-        v-list-row
+        v-list-item
           v-list-tile(disabled)
             v-list-tile-avatar
               v-icon security
@@ -127,4 +127,7 @@
       font-size: 18px
       padding: 2rem 4rem
       margin: 50px auto 40px
+      
+    .list__tile--disabled
+      opacity: 1
 </style>
