@@ -170,7 +170,7 @@
                 v-list-tile-title Invites
                 v-list-tile-sub-title Notify when receiving invites
 
-    blockquote When an array is used, a list will always order a tile, avatar, action, content. The exception is when the router option is used without an avatar, the list will splice the action in front. It is recommended to explitly define a list markup for specific customizations.
+    blockquote When an array is used, a list will always order a tile, avatar, content, action. If you have no avatar and require the action to be in front, use the unshift prop.
 
     //- Example 7
     component-example(header="Card image with toolbar and list" file="lists/7")
