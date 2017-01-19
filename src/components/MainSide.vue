@@ -5,6 +5,7 @@
     v-bind:items="items"
     ripple
     router
+    unshift
   )
     div(class="vuetify" slot="top")
       router-link(
@@ -17,7 +18,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.6" target="_blank") v0.8.6
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.7" target="_blank") v0.8.7
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -38,7 +39,7 @@
       return {
         items: [
           { header: 'Core Documentation' },
-          { href: '/', title: 'About', action: 'question_answer' },
+          { href: '/', title: 'About', action: { icon: 'question_answer' } },
           { href: '/quick-start', title: 'Quick Start', action: 'fast_forward' },
           { href: '/server-side-rendering', title: 'Server Side Rendering', action: 'cloud_circle' },
           { href: '/event-bus', title: 'Event Bus', action: 'device_hub' },
@@ -54,18 +55,19 @@
               { href: '/components/cards', title: 'Cards' },
               { href: '/components/chips', title: 'Chips' },
               { href: '/components/collapsible', title: 'Collapsible' },
+              { href: '/components/dividers', title: 'Dividers', disabled: true },
               { href: '/components/dropdowns', title: 'Dropdowns' },
               { href: '/components/footer', title: 'Footer' },
               { href: '/components/forms', title: 'Forms' },
               { href: '/components/icons', title: 'Icons' },
-              { href: '/components/lists', title: 'Lists' },
+              { href: '/components/lists', title: 'Lists', action: { icon: 'update', class: 'success--text' } },
               { href: '/components/modals', title: 'Modals' },
               { href: '/components/navbar', title: 'Navbars' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress-circular', title: 'Progress Circular' },
-              { href: '/components/progress-linear', title: 'Progress Linear' },
-              { href: '/components/sidebar', title: 'Sidebars' },
+              { href: '/components/progress-linear', title: 'Progress Linear', action: { icon: 'fiber_new', class: 'success--text' } },
+              { href: '/components/sidebar', title: 'Sidebars', action: { icon: 'update', class: 'success--text' } },
               { href: '/components/slider', title: 'Sliders' },
               { href: '/components/tabs', title: 'Tabs' }
             ]

@@ -28,6 +28,14 @@
         v-model="value" 
         v-bind:active="show"
       )
+
+    component-example(header="Custom height and contextual colors", file="progress-linear/5")
+      section-text(slot="details") A custom height or contextual color can be applied to a progress bar. The bars primary color is your applications primary color.
+      v-progress-linear(value="15" height="15" secondary)
+      v-progress-linear(v-bind:value="30" height="15" success)
+      v-progress-linear(v-bind:value="45" height="15" info)
+      v-progress-linear(v-bind:value="60" height="15" warning)
+      v-progress-linear(v-bind:value="75" height="15" error)
 </template>
 
 <script>
@@ -37,7 +45,7 @@
         loader: false,
         doc: {
           title: 'Progress Linear',
-          desc: 'The <code>v-progress-linear</code> component is used to convey data visually to users. It has 4 potential states. Determinate, which is % value defined by model. Indeterminate which conveys processing. Buffer, which is used to show varying states of progress and Query, which is Indeterminate in reverse.',
+          desc: 'The <code>v-progress-linear</code> component is used to convey data visually to users. It has 4 potential states with 5 color variations. Determinate, which is % value defined by model. Indeterminate which conveys processing. Buffer, which is used to show varying states of progress and Query, which is Indeterminate in reverse.',
           props: {
             'v-progress-linear': {
               params: [
@@ -49,9 +57,15 @@
                 ],
                 [
                   'bufferValue',
-                  'Number',
-                  '',
+                  '[Number, String]',
+                  'None',
                   'The percentage value for the buffer'
+                ],
+                [
+                  'height',
+                  '[Number, String]',
+                  '7',
+                  'The height of the progress bar'
                 ],
                 [
                   'indeterminate',
@@ -73,7 +87,7 @@
                 ]
               ],
               model: {
-                types: ['Number'],
+                types: ['Number', 'String'],
                 default: '0'
               }
             }
@@ -174,8 +188,8 @@
         return {
           title: 'Progress Linear Component | Vuetify.js',
           h1: 'Progress Linear',
-          description: 'Progress Linear component for Vuetify Framework',
-          keywords: 'vuetify, progress, progress circle, progress circular, components'
+          description: 'The progress linear component is used to convey data visually to users. It has 4 potential states with 5 color variations.',
+          keywords: 'vuetify, progress, progress bar, progress linear, components'
         }
       }
     }

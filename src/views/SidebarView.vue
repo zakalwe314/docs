@@ -21,12 +21,15 @@
         v-sidebar(class="blue darken-3" id="doc-sidebar-2" height="40vh" v-bind:items="items" drawer)
 
     component-example(header="Item Groups" file="sidebar/3")
+      section-text(slot="details") For more details on the available item options, check out the <a href="javascript:;" v-on:click.stop="$router.push('/components/lists')">lists</a> section.
       div(class="grey lighten-1")
         v-navbar
           v-navbar-side-icon(v-side-bar:doc-sidebar-3="" class="hidden-md-and-up")
             v-icon reorder
           v-navbar-logo Logo
         v-sidebar(id="doc-sidebar-3" height="40vh" right fixed v-bind:items="item_group")
+
+    blockquote Sidebars groups require an additional property in the item array to designate the base path for their sub routes. This is used for highlighting with vue-router.
 
     component-example(header="Ripples" file="sidebar/4")
       div(class="grey lighten-1")
@@ -42,11 +45,12 @@
       |     items: [
       |       { header: 'Header' },
       |       {
-      |         title: 'Parent' },
+      |         title: 'Parent',
+      |         group: '/company',
       |         items: [
-      |           { title: 'Home', href: '/home', action: 'link' },
-      |           { title: 'About', href: '/about', action: 'link' },
-      |           { title: 'Contact', href: '/contact', action: 'link' }
+      |           { title: 'Home', href: '/company/home', action: 'link' },
+      |           { title: 'About', href: '/company/about', action: 'link' },
+      |           { title: 'Contact', href: '/company/contact', action: 'link' }
       |         ]
       |       },
       |       { title: 'Link', href: "#!" },
@@ -66,7 +70,7 @@
       return {
         doc: {
           title: 'Sidebar',
-          desc: `The <code>v-sidebar</code> component is what your users will utilize to navigate through the application. The sidebar is pre-configured to work with or without <strong>vue-router</strong> right out the box. By default, the <code>v-sidebar-item</code> component renders an anchor tag, but can be changed to a Vue Router <code>router-link</code> component by either specifying the <strong>router</strong> prop as <em>true</em> or by passing it as an option in the item object.`,
+          desc: `The <code>v-sidebar</code> component is what your users will utilize to navigate through the application. The sidebar is pre-configured to work with or without <strong>vue-router</strong> right out the box.`,
           props: {
             'v-sidebar': {
               params: [
@@ -95,12 +99,6 @@
                   'Sets height of the navbar',
                 ],
                 [
-                  'group-class',
-                  'String',
-                  `''`,
-                  'Applies custom class to group dropdown',
-                ],
-                [
                   'id',
                   'String',
                   'Required',
@@ -122,7 +120,7 @@
                   'items',
                   'Object',
                   '[]',
-                  'Array of navbar items',
+                  'Array of list items',
                 ],
                 [
                   'right',
@@ -141,76 +139,14 @@
                   'Boolean',
                   'False',
                   'Applies the router property to all items'
+                ],
+                [
+                  'unshift',
+                  'Boolean',
+                  'False',
+                  'Forces all actions to the front when using an array'
                 ]
               ]
-            },
-
-            'v-sidebar-group': {
-              params: [
-                [
-                  'group-class',
-                  'String',
-                  `''`,
-                  'Applies custom class to group dropdown',
-                ],
-                [
-                  'items',
-                  'Object',
-                  '[]',
-                  'Array of navbar items',
-                ],
-                [
-                  'item',
-                  'Object',
-                  `{ text: '', icon: '', ripple: false }`,
-                  'The sidebar group item object'
-                ],
-                [
-                  'ripple',
-                  'Boolean',
-                  'False',
-                  'Applies the v-ripple directive to all items'
-                ],
-                [
-                  'router',
-                  'Boolean',
-                  'False',
-                  'Applies the router property to all items'
-                ]
-              ]
-            },
-
-            'v-sidebar-items': {
-              params: [
-                [
-                  'group-class',
-                  'String',
-                  `''`,
-                  'Applies custom class to group dropdown'
-                ],
-                [
-                  'items',
-                  'Object',
-                  '[]',
-                  'Array of navbar items',
-                ],
-                [
-                  'ripple',
-                  'Boolean',
-                  'False',
-                  'Applies the v-ripple directive to all items'
-                ],
-                [
-                  'router',
-                  'Boolean',
-                  'False',
-                  'Applies the router property to all items'
-                ]
-              ]
-            },
-
-            'v-sidebar-item': {
-              params: ItemProps
             }
           },
           slots: {
@@ -218,19 +154,6 @@
               default: true,
               params: [
                 ['top', 'Slot located at top of navbar']
-              ]
-            },
-            'v-sidebar-group': {
-              default: true
-            },
-            'v-sidebar-items': {
-              default: true
-            }
-          },
-          functional: {
-            'v-sidebar': {
-              params: [
-                ['v-sidebar-header', '.sidebar__item-header']
               ]
             }
           }

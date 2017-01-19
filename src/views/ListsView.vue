@@ -2,7 +2,7 @@
   doc-view(v-bind:doc="doc" id="lists-view")
     //- Example 1
     component-example(header="Avatar with 2 lines" file="lists/1")
-      section-text(slot="details") Lists can take an array of list items. When given an array, the list component will figure out the classes that are needed depending on what it was given. You can also define headers and dividers here.
+      section-text(slot="details") Lists can take an array of list items. When given an array, the list component will figure out the classes that are needed depending on what it was given. You can also define headers or dividers within the items array.
       v-card(class="card-view")
         v-navbar(class="cyan")
           v-navbar-toolbar
@@ -22,7 +22,7 @@
 
     //- Example 2
     component-example(header="Avatar with title and action" file="lists/2")
-      section-text(slot="details") Lists also contain slots for a more explicit approach.
+      section-text(slot="details") Lists also contain slots for a more explicit approach. If you choose this approach, remember you must provide additional props for correct spacing. In this example, we have a tile with an avatar, so we must provide an <code>avatar</code> property.
       v-card(class="card-view")
         v-navbar(class="white--text indigo")
           v-navbar-toolbar
@@ -42,7 +42,7 @@
 
     //- Example 3
     component-example(header="Icons with 2 lines and action" file="lists/3")
-      section-text(slot="details") Lists can contain sub-headers, dividers, and be specified as more than 1 line.
+      section-text(slot="details") Lists can contain sub-headers, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.
       v-card(class="card-view")
         v-navbar(class="light-blue")
           v-navbar-toolbar
@@ -78,7 +78,8 @@
                   v-icon(class="grey--text text--lighten-1") info
 
     //- Example 4
-    component-example(header="Avatar with title and clamped sub-title" file="lists/4")
+    component-example(header="Avatar with 3 lines" file="lists/4")
+      section-text(slot="details") For three line lists, the subtitle will clamp vertically at 2 lines and then ellipsis. If you need more than 3 lines, it is adviced to use a <router-link to="/components/cards">card</router-link>.
       v-card(class="card-view")
         v-navbar(class="cyan")
           v-navbar-toolbar
@@ -86,11 +87,11 @@
             v-navbar-title Inbox
             v-icon search
         v-list(three-line v-bind:items="e1")
-    blockquote The clamped prop uses <code>-webkit-line-clamp</code> which is not supported on all browsers.
+    blockquote The three-line prop uses <code>-webkit-line-clamp</code> which is not supported on all browsers. If not supposed, the line will just continue to wrap.
 
     //- Example 5
     component-example(header="Avatar with title and action" file="lists/5")
-      section-text(slot="details") When a lists slot is used, in order to obtain the proper spacing, you must manually define whether it contains headers, or if the items contain an avatar.
+      section-text(slot="details") When a lists slot is used, you must manually define whether it contains headers, or if the items contain an avatar. This is required to maintain proper spacing.
       v-card(class="card-view")
         v-navbar(class="teal")
           v-navbar-toolbar
@@ -168,6 +169,8 @@
               v-list-tile-content
                 v-list-tile-title Invites
                 v-list-tile-sub-title Notify when receiving invites
+
+    blockquote When an array is used, a list will always order a tile, avatar, action, content. The exception is when the router option is used without an avatar, the list will splice the action in front. It is recommended to explitly define a list markup for specific customizations.
 
     //- Example 7
     component-example(header="Card image with toolbar and list" file="lists/7")
@@ -247,7 +250,17 @@
                 v-list-tile-action-text {{ item.action }}
                 v-icon(class="grey--text text--lighten-1") star_border
             v-divider(v-if="index + 1 < e7.length")
-
+    markup(lang="js")
+      |e7: [
+      |   { 
+      |     title: '...',
+      |     subtitle: '...',
+      |     action : { 
+      |       text: '...',
+      |       icon: 'star_border' 
+      |     }
+      |   }
+      |]
     //- Example 9
     component-example(header="Action with title and sub-title" file="lists/9")
       section-text(slot="details") A list can contain up to 3 lines.
@@ -301,6 +314,27 @@
       |     height: auto
       |     min-height: 55px
       |     padding-left: 0
+    
+    //- Example 10
+    component-example(header="Expansion Lists" file="lists/10")
+      section-text(slot="details") A list can contain a group of items which will display on click. Expansion lists are also used within the <code>sidebar</code> component.
+      v-card(class="card-view")
+        v-navbar(class="teal white--text")
+          v-navbar-toolbar
+            v-navbar-side-icon
+            v-navbar-title Topics
+            v-icon more_vert
+        v-list(v-bind:items="e10")
+    markup(lang="js")
+      |{ 
+      |  action: { icon: 'restaurant', class: 'grey--text' },
+      |  title: 'Dining', 
+      |  items: [
+      |    { title: 'Breakfast &amp; brunch' },
+      |    { title: 'New American' },
+      |    { title: 'Sushi' }
+      |  ]
+      |}
 </template>
 
 <script>
@@ -309,11 +343,11 @@
 
     data () {
       let srcs = {
-        1: '/public/doc-images/lists/elon.jpg',
-        2: '/public/doc-images/lists/carmack.jpg',
-        3: '/public/doc-images/lists/seth.jpg',
-        4: '/public/doc-images/lists/gabe.jpg',
-        5: '/public/doc-images/lists/jobs.jpg'
+        1: '/public/doc-images/lists/1.jpg',
+        2: '/public/doc-images/lists/2.jpg',
+        3: '/public/doc-images/lists/3.jpg',
+        4: '/public/doc-images/lists/4.jpg',
+        5: '/public/doc-images/lists/5.jpg'
       }
 
       return {
@@ -330,10 +364,10 @@
           { avatar: srcs[5], title: 'Recipe to try', subtitle: "<span class='grey--text text--darken-2'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
         ],
         e2: [
-          { icon: true, title: 'Elon Musk', avatar: srcs[1] },
-          { title: 'Gabe Newell', avatar: srcs[3] },
-          { title: 'Christ Metzen', avatar: srcs[2] },
-          { title: 'John Carmack', avatar: srcs[4] },
+          { icon: true, title: 'Jason Oner', avatar: srcs[1] },
+          { title: 'Travis Howard', avatar: srcs[3] },
+          { title: 'Ali Connors', avatar: srcs[2] },
+          { title: 'Cindy Baker', avatar: srcs[4] },
         ],
         e31: [
           { icon: 'folder', iconClass: 'grey lighten-1 white--text', title: 'Photos', subtitle: 'Jan 9, 2014' },
@@ -345,13 +379,13 @@
           { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Kitchen remodel', subtitle: 'Jan 10, 2014' },
         ],
         e41: [
-          { active: true, title: 'Elon Musk', avatar: srcs[1] },
-          { active: true, title: 'Steve Jobs', avatar: srcs[5] },
-          { title: 'Gabe Newell', avatar: srcs[4] },
-          { title: 'Seth Macfarlane', avatar: srcs[3] },
+          { active: true, title: 'Jason Oner', avatar: srcs[1] },
+          { active: true, title: 'Ranee Carlson', avatar: srcs[5] },
+          { title: 'Cindy Baker', avatar: srcs[4] },
+          { title: 'Ali Connors', avatar: srcs[3] },
         ],
         e42: [
-          { title: 'John Carmack', avatar: srcs[2] },
+          { title: 'Travis Howard', avatar: srcs[2] },
         ],
         e7: [
           { action: '15 min', headline: 'Brunch this weekend?', title: 'Ali Connors', subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
@@ -359,6 +393,59 @@
           { action: '6 hr', headline: 'Oui oui', title: 'Sandra Adams', subtitle: "Do you have Paris recommendations? Have you ever been?" },
           { action: '12 hr', headline: 'Birthday gift', title: 'Trevor Hansen', subtitle: "Have any ideas about what we should get Heidi for her birthday?" },
           { action: '18hr', headline: 'Recipe to try', title: 'Britta Holt', subtitle: "We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
+        ],
+        e10: [
+          { 
+            action: { icon: 'local_activity', class: 'grey--text' },
+            title: 'Attractions', 
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          { 
+            action: { icon: 'restaurant', class: 'grey--text' },
+            title: 'Dining', 
+            items: [
+              { title: 'Breakfast & brunch' },
+              { title: 'New American' },
+              { title: 'Sushi' }
+            ]
+          },
+          { 
+            action: { icon: 'school', class: 'grey--text' },
+            title: 'Education', 
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          { 
+            action: { icon: 'directions_run', class: 'grey--text' },
+            title: 'Family', 
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          { 
+            action: { icon: 'healing', class: 'grey--text' },
+            title: 'Health', 
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          { 
+            action: { icon: 'content_cut', class: 'grey--text' },
+            title: 'Office', 
+            items: [
+              { title: 'List Item' }
+            ]
+          },
+          { 
+            action: { icon: 'local_offer', class: 'grey--text' },
+            title: 'Promotions', 
+            items: [
+              { title: 'List Item' }
+            ]
+          }
         ],
         doc: {
           title: 'List',
@@ -407,6 +494,12 @@
                   'Boolean',
                   'False',
                   'Designates whether the list tiles will attach the ripple directive, only needed when items prop is used'
+                ],
+                [
+                  'unshift',
+                  'Boolean',
+                  'False',
+                  'Forces all items to the front when using an array'
                 ]
               ]
             },
@@ -427,8 +520,20 @@
                 [
                   'item',
                   'Object',
-                  `{ href: 'javascript:;', title: false, subtitle: false, icon: false, router: false, ripple: false, action: false, disabled: false }`,
+                  `{ href: 'javascript:;', title: false, subtitle: false, icon: false, router: false, ripple: false, action: false, disabled: false, tag: false, items: [] }`,
                   'The list-tile object. The action property can be an object containing a class or text property'
+                ],
+                [
+                  'tag',
+                  'String',
+                  'undefined',
+                  'Use a custom tag for the list tile'
+                ],
+                [
+                  'unshift',
+                  'Boolean',
+                  'False',
+                  'Forces all items to the front when using an item object'
                 ]
               ]
             },
