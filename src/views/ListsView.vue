@@ -520,7 +520,7 @@
                 [
                   'item',
                   'Object',
-                  `{ href: 'javascript:;', title: false, subtitle: false, icon: false, router: false, ripple: false, action: false, disabled: false, tag: false, items: [] }`,
+                  `{ href: 'javascript:;', title: false, subtitle: false, avatar: false, router: false, ripple: false, action: false, disabled: false, tag: false, items: [] }`,
                   'The list-tile object. The action property can be an object containing a class or text property'
                 ],
                 [
