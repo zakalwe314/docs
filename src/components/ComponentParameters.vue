@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-table-overflow
     table(class="table--component" v-for="(options, type) in params")
       caption <strong>&lt;{{ type }}&gt;</strong>
       colgroup
