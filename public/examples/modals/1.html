@@ -7,9 +7,9 @@
       <p>This information is used to improve your experience on our site.</p>
     </v-card-text>
     <v-card-row actions>
-      <v-btn v-on:click.native="modal('modal')">Cancel</v-btn>
+      <v-btn v-on:click.native.stop="$vuetify.bus.pub('modal:toggle:modal')">Cancel</v-btn>
       <v-spacer></v-spacer>
-      <v-btn v-on:click.native="modal('modal')" class="green white--text">Submit</v-btn>
+      <v-btn v-on:click.native.stop="$vuetify.bus.pub('modal:toggle:modal')" class="green white--text">Submit</v-btn>
     </v-card-row>
   </v-card>
 </v-modal>
