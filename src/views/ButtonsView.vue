@@ -11,8 +11,8 @@
     //-   v-btn(info disabled) Info Disabled
     //-   v-btn(warning disabled) Warning Disabled
     //-   v-btn(error disabled) Error Disabled
-    component-example(header="Flat" file="buttons/2")
-      v-container(fluid class="text-xs-center" id="e2-1")
+    component-example(header="Flat" file="buttons/2" id="e1")
+      v-container(fluid class="text-xs-center")
         v-row
           v-col(xs6)
             span Light Theme
@@ -40,7 +40,7 @@
                   v-btn(flat dark disabled) Disabled
 
     component-example(header="Raised" file="buttons/2")
-      v-container(fluid class="text-xs-center" id="e3-1")
+      v-container(fluid class="text-xs-center")
         v-row
           v-col(xs6)
             span Raised Light Theme
@@ -68,17 +68,27 @@
                   v-btn(primary dark disabled) Disabled
 
     component-example(header="Button Dropdown")
-      v-btn-dropdown
+      div
+        v-btn-dropdown(v-bind:items="dropdown" v-model="selected")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        loading: false,
-        loading2: false,
-        loading3: false,
-        loading4: false,
+        dropdown: [
+          { title: 'State 1' },
+          { title: 'State 2' },
+          { title: 'State 3' },
+          { title: 'State 4' },
+          { title: 'State 5' },
+          { title: 'State 6' },
+          { title: 'State 7' },
+          { title: 'State 8' },
+          { title: 'State 9' },
+          { title: 'State 10' }
+        ],
+        selected: null,
         doc: {
           title: 'Button',
           desc: `
@@ -210,41 +220,42 @@
   @import '../../node_modules/vuetify/src/stylus/settings/_variables'
   
   #buttons-view
-    .card
-      margin: 2rem 0
-      
-      .card__text > div
-        margin: 1rem 0
+    #e1
+      .card
+        margin: 2rem 0
         
-    .btn-focused
-      &:after
-        background-color: $button-focus-background-color
-        
-      &-dark
+        .card__text > div
+          margin: 1rem 0
+          
+      .btn-focused
         &:after
-          background-color: $button-focus-dark-background-color
-        
-    .btn-pressed
-      &:after
-        background-color: $button-active-background-color
-        
-      &-dark
+          background-color: $button-focus-background-color
+          
+        &-dark
+          &:after
+            background-color: $button-focus-dark-background-color
+          
+      .btn-pressed
         &:after
-          background-color: $button-active-dark-background-color
-        
-    .btn-flat-focused
-      &:after
-        background-color: $button-flat-focus-background-color
-        
-      &-dark
+          background-color: $button-active-background-color
+          
+        &-dark
+          &:after
+            background-color: $button-active-dark-background-color
+          
+      .btn-flat-focused
         &:after
-          background-color: $button-flat-dark-focus-background-color
-      
-    .btn-flat-pressed
-      &:after
-        background-color: $button-flat-active-background-color
-      
-      &-dark
+          background-color: $button-flat-focus-background-color
+          
+        &-dark
+          &:after
+            background-color: $button-flat-dark-focus-background-color
+        
+      .btn-flat-pressed
         &:after
-          background-color: $button-flat-dark-active-background-color
+          background-color: $button-flat-active-background-color
+        
+        &-dark
+          &:after
+            background-color: $button-flat-dark-active-background-color
 </style>
