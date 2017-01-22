@@ -1,6 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="buttons-view")
-    component-example(header="Flat" file="buttons/2" id="e1")
+    component-example(header="Flat" file="buttons/2" id="e1-1")
       v-container(fluid class="text-xs-center")
         v-row
           v-col(xs6)
@@ -28,7 +28,7 @@
                 div
                   v-btn(flat dark disabled) Disabled
 
-    component-example(header="Raised" file="buttons/2")
+    component-example(header="Raised" file="buttons/2" id="e1-2")
       v-container(fluid class="text-xs-center")
         v-row
           v-col(xs6)
@@ -59,8 +59,6 @@
     component-example(header="Button Dropdown")
       div
         v-btn-dropdown(v-bind:items="dropdown" v-model="selected")
-        //- v-btn(menu v-menu:menu="") Select
-        //- v-menu(v-bind:items="dropdown" id="menu" v-model="selected")
       div {{ selected }}
 </template>
 
@@ -211,7 +209,7 @@
   @import '../../node_modules/vuetify/src/stylus/settings/_variables'
   
   #buttons-view
-    #e1
+    #e1-1, #e1-2
       .card
         margin: 2rem 0
         
