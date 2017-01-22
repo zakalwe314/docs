@@ -1,73 +1,73 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc" id="dropdowns-view")
-    component-example(header="On Click" file="dropdowns/1")
+  doc-view(v-bind:doc="doc" id="menus-view")
+    component-example(header="On Click" file="menus/1")
       v-btn(
         class="primary white--text"
-        v-dropdown:dropdown=""
-      ) Click Dropdown
-      v-dropdown(
-        id="dropdown"
+        v-menu:menu=""
+      ) Click Menu
+      v-menu(
+        id="menu"
         v-bind:items="items"
       )
       v-btn(
         class="secondary white--text"
-        v-dropdown:dropdown3=""
+        v-menu:menu3=""
       ) Click With Labels
-      v-dropdown(
-        id="dropdown3"
+      v-menu(
+        id="menu3"
       )
         li
-          a(href="#!", class="dropdown__item")
+          a(href="#!", class="menu__item")
             | Profile
             v-chip(label, class="teal white--text right", small) new
         li
-          a(href="#!", class="dropdown__item")
+          a(href="#!", class="menu__item")
             span(v-badge:2="") Notifications
         li
-          a(href="#!", class="dropdown__item")
+          a(href="#!", class="menu__item")
             | Logout
             v-icon(class="secondary--text right") cloud_off
-    component-example(header="On Hover" file="dropdowns/2")
+    component-example(header="On Hover" file="menus/2")
       v-btn(
         class="primary white--text"
-        v-dropdown:dropdown2=""
-      ) Hover Dropdown
-      v-dropdown(
-        id="dropdown2"
+        v-menu:menu2=""
+      ) Hover Menu
+      v-menu(
+        id="menu2"
         v-bind:items="items"
         right
         hover
       )
       v-btn(
         class="secondary white--text"
-        v-dropdown:dropdown4=""
+        v-menu:menu4=""
       ) Hover With Labels
-      v-dropdown(
-        id="dropdown4"
+      v-menu(
+        id="menu4"
         hover
       )
         li
-          a(href="#!", class="dropdown__item")
+          a(href="#!", class="menu__item")
             | Profile
             v-chip(label, class="teal white--text right", small) new
         li
-          a(href="#!", class="dropdown__item")
+          a(href="#!", class="menu__item")
             span(v-badge:2="") Notifications
         li
-          a(href="#!", class="dropdown__item")
+          a(href="#!", class="menu__item")
             | Logout
             v-icon(class="secondary--text right") cloud_off
-    component-example(header="Menus" file="dropdowns/3")
+    component-example(header="Menus" file="menus/3")
       v-card
         v-card-row(class="blue")
           v-btn(
               icon
-              v-dropdown:menu=""
+              v-menu:menu=""
           )
             v-icon(
               class="white--text"
             ) more_vert
-          v-dropdown(
+          v-menu(
             id="menu"
             v-bind:items="items"
           )
@@ -79,12 +79,12 @@
           v-spacer
           v-btn(
             icon
-            v-dropdown:menu2=""
+            v-menu:menu2=""
           )
             v-icon(
               class="white--text"
             ) more_vert
-          v-dropdown(
+          v-menu(
             id="menu2"
             v-bind:items="items"
             top
@@ -92,24 +92,24 @@
             origin="top right"
           )
         v-card-text Lorem Ipsum
-    component-example(header="Custom Transitions" file="dropdowns/4")
+    component-example(header="Custom Transitions" file="menus/4")
       section-text(slot="details") Vuetify comes with 3 standard transitions, <strong>scale</strong>, <strong>slide-x</strong> and <strong>slide-y</strong>. You can also create your own and pass it as the transition argument. For an example of how the stock transitions are constructed, visit <a href="https://github.com/vuetifyjs/vuetify/blob/master/src/util/helpers.js#L13" target="_blank">here</a>.
       div
         v-btn(
           class="primary white--text"
-          v-dropdown:dropdown-transition-1=""
+          v-menu:menu-transition-1=""
         ) Changed Origin
-        v-dropdown(
-          id="dropdown-transition-1"
+        v-menu(
+          id="menu-transition-1"
           v-bind:items="items"
           origin="center center"
         )
         v-btn(
           class="deep-orange white--text"
-          v-dropdown:dropdown-transition-2=""
+          v-menu:menu-transition-2=""
         ) Slide X Transition
-        v-dropdown(
-          id="dropdown-transition-2"
+        v-menu(
+          id="menu-transition-2"
           v-bind:items="items"
           top
           left
@@ -117,10 +117,10 @@
         )
         v-btn(
           class="purple white--text"
-          v-dropdown:dropdown-transition-3=""
+          v-menu:menu-transition-3=""
         ) Slide Y Transition
-        v-dropdown(
-          id="dropdown-transition-3"
+        v-menu(
+          id="menu-transition-3"
           v-bind:items="items"
           top
           transition="v-slide-y-transition"
@@ -134,16 +134,16 @@
     data () {
       return {
         doc: {
-          title: 'Dropdown',
-          desc: `The <code>v-dropdown</code> component utilizes the v-dropdown directive to link itself to another element. Once binded, clicking the element, or by hovering (if using the <code>hover</code> parameter), the dropdown will reposition absolutely positioned on top of the selected activator.`,
+          title: 'Menu',
+          desc: `The <code>v-menu</code> component utilizes the v-menu directive to link itself to another element. Once binded, clicking the element, or by hovering (if using the <code>hover</code> parameter), the menu will reposition absolutely positioned on top of the selected activator.`,
           props: {
-            'v-dropdown': {
+            'v-menu': {
               params: [
                 [
                   'id',
                   'String',
                   'Required',
-                  'Sets the id of the dropdown'
+                  'Sets the id of the menu'
                 ],
                 [
                   'items',
@@ -155,25 +155,25 @@
                   'top',
                   'Boolean',
                   'False',
-                  'Set top coordinate for dropdown'
+                  'Set top coordinate for menu'
                 ],
                 [
                   'right',
                   'Boolean',
                   'False',
-                  'Set right coordinate for dropdown'
+                  'Set right coordinate for menu'
                 ],
                 [
                   'bottom',
                   'Boolean',
                   'False',
-                  'Set bottom coordinate for dropdown'
+                  'Set bottom coordinate for menu'
                 ],
                 [
                   'left',
                   'Boolean',
                   'False',
-                  'Set left coordinate for dropdown'
+                  'Set left coordinate for menu'
                 ],
                 [
                   'origin',
@@ -189,32 +189,28 @@
                 ]
               ]
             },
-            'v-dropdown-item': {
+            'v-menu-item': {
               params: ItemProps
             }
           },
           slots: {
-            'v-dropdown': {
+            'v-menu': {
               default: true
             }
           }
         },
         items: [
           {
-            href: '#!',
-            text: 'Click Me'
+            title: 'Click Me'
           },
           {
-            href: '#!',
-            text: 'Click Me'
+            title: 'Click Me'
           },
           {
-            href: '#!',
-            text: 'Click Me'
+            title: 'Click Me'
           },
           {
-            href: '#!',
-            text: 'Click Me 2'
+            title: 'Click Me 2'
           }
         ]
       }
@@ -231,10 +227,10 @@
     methods: {
       meta () {
         return {
-          title: 'Dropdown Component | Vuetify.js',
-          h1: 'Dropdowns',
-          description: 'Dropdown component for Vuetify Framework',
-          keywords: 'vuetify, dropdowns, components'
+          title: 'Menu Component | Vuetify.js',
+          h1: 'Menus',
+          description: 'Menu component for Vuetify Framework',
+          keywords: 'vuetify, menus, components'
         }
       }
     }
@@ -242,7 +238,7 @@
 </script>
 
 <style lang="stylus">
-  #dropdowns-view
+  #menus-view
     .btn
       margin: 1rem
       

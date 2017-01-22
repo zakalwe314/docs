@@ -196,9 +196,9 @@
           }
         ],
         dropdown_items: [
-          { text: 'Send Feedback', href: '#!' },
-          { text: 'Request Help', href: '#!' },
-          { text: 'Contact Developer', href: '#!' }
+          { title: 'Send Feedback' },
+          { title: 'Request Help' },
+          { title: 'Contact Developer' }
         ]
       }
     },

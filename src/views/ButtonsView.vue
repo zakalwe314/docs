@@ -1,16 +1,5 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="buttons-view")
-    //- component-example(header="Normal" file="buttons/1")
-    //-   v-btn Default
-    //-   v-btn(success) Success
-    //-   v-btn(info) Info
-    //-   v-btn(warning) Warning
-    //-   v-btn(error) Error
-    //-   v-btn(disabled) Default Disabled
-    //-   v-btn(success disabled) Success Disabled
-    //-   v-btn(info disabled) Info Disabled
-    //-   v-btn(warning disabled) Warning Disabled
-    //-   v-btn(error disabled) Error Disabled
     component-example(header="Flat" file="buttons/2" id="e1")
       v-container(fluid class="text-xs-center")
         v-row
@@ -70,6 +59,9 @@
     component-example(header="Button Dropdown")
       div
         v-btn-dropdown(v-bind:items="dropdown" v-model="selected")
+        //- v-btn(menu v-menu:menu="") Select
+        //- v-menu(v-bind:items="dropdown" id="menu" v-model="selected")
+      div {{ selected }}
 </template>
 
 <script>
@@ -200,7 +192,6 @@
     methods: {
       loader (load) {
         this[load] = !this[load]
-        // setTimeout(() => this[load] = false, 3000)
       },
 
       meta () {
