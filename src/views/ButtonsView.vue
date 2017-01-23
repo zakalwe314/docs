@@ -3,7 +3,7 @@
     component-example(header="Flat" file="buttons/2" id="e1-1")
       v-container(fluid class="text-xs-center")
         v-row
-          v-col(xs6)
+          v-col(xs12 sm6)
             span Light Theme
             v-card(class="grey lighten-4 z-depth-0" height="300px")
               v-card-text
@@ -15,7 +15,7 @@
                   v-btn(flat class="btn-flat-pressed") Pressed
                 div
                   v-btn(flat disabled) Disabled
-          v-col(xs6)
+          v-col(xs12 sm6)
             span Dark Theme
             v-card(class="secondary z-depth-0" height="300px")
               v-card-text
@@ -31,7 +31,7 @@
     component-example(header="Raised" file="buttons/2" id="e1-2")
       v-container(fluid class="text-xs-center")
         v-row
-          v-col(xs6)
+          v-col(xs12 sm6)
             span Raised Light Theme
             v-card(class="grey lighten-4 z-depth-0" height="300px")
               v-card-text
@@ -43,7 +43,7 @@
                   v-btn(class="btn-pressed z-depth-2") Pressed
                 div
                   v-btn(disabled) Disabled
-          v-col(xs6)
+          v-col(xs12 sm6)
             span Raised Dark Theme
             v-card(class="secondary z-depth-0" height="300px")
               v-card-text
@@ -81,7 +81,7 @@
                 v-btn-dropdown(v-bind:items="dropdown.slice(0, 7)" segmented)
               v-col(xs12 sm4 class="py-2")
                 p Editable
-                v-btn-dropdown(v-bind:items="dropdown" max-height="auto" editable)
+                v-btn-dropdown(v-bind:items="dropdowns" max-height="auto" editable)
 </template>
 
 <script>
@@ -99,6 +99,13 @@
           { title: 'State 8' },
           { title: 'State 9' },
           { title: 'State 10' },
+        ],
+        dropdowns: [
+          { action: 'list' },
+          { action: 'list' },
+          { action: 'list' },
+          { action: 'list' },
+          { action: 'list' },
         ],
         selected: null,
         doc: {
