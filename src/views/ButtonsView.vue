@@ -56,10 +56,32 @@
                 div
                   v-btn(primary dark disabled) Disabled
 
-    component-example(header="Button Dropdown")
-      div
-        v-btn-dropdown(v-bind:items="dropdown" v-model="selected")
-      div {{ selected }}
+    component-example(header="Button Dropdown" id="e2-1")
+      v-card(class="grey lighten-4 z-depth-0 py-5")
+        v-card-text
+          v-container(fluid)
+            v-row
+              v-col(xs12 sm4 class="py-2")
+                v-btn-dropdown(v-bind:items="dropdown.slice(0, 4)" max-height="auto")
+              v-col(xs12 sm4 class="py-2")
+                v-btn-dropdown(v-bind:items="dropdown.slice(0, 7)")
+              v-col(xs12 sm4 class="py-2")
+                v-btn-dropdown(v-bind:items="dropdown")
+
+    component-example(header="Button Dropdown Variants" id="e2-2")
+      v-card(class="grey lighten-4 z-depth-0 py-5")
+        v-card-text
+          v-container(fluid)
+            v-row
+              v-col(xs12 sm4 class="py-2")
+                p Overflow
+                v-btn-dropdown(v-bind:items="dropdown.slice(0, 4)" max-height="auto" overflow)
+              v-col(xs12 sm4 class="py-2")
+                p Segmented
+                v-btn-dropdown(v-bind:items="dropdown.slice(0, 7)" segmented)
+              v-col(xs12 sm4 class="py-2")
+                p Editable
+                v-btn-dropdown(v-bind:items="dropdown" max-height="auto" editable)
 </template>
 
 <script>
@@ -76,7 +98,7 @@
           { title: 'State 7' },
           { title: 'State 8' },
           { title: 'State 9' },
-          { title: 'State 10' }
+          { title: 'State 10' },
         ],
         selected: null,
         doc: {
@@ -247,4 +269,9 @@
         &-dark
           &:after
             background-color: $button-flat-dark-active-background-color
+            
+    #e2-1, #e2-2
+      .card
+        width: 100%
+        text-align: center
 </style>
