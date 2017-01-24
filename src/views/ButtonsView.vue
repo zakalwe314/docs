@@ -81,15 +81,67 @@
                 v-btn-dropdown(v-bind:items="dropdown_icon" segmented)
               v-col(xs12 sm4 class="py-2")
                 p Editable
-                v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" editable v-model="editable")
-                div {{ editable }}
+                v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" editable)
+
+    component-example(header="Dropdown Toggle" id="e3")
+      v-card(class="grey lighten-4 z-depth-0 py-5")
+        v-card-text
+          v-container(fluid)
+            v-row
+              v-col(xs12 sm6 class="py-2")
+                p Exclusive
+                v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_exclusive")
+              v-col(xs12 sm6 class="py-2")
+                p Multiple
+                v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_multiple")
+              v-col(xs12 sm6 class="py-2")
+                p No Options Selected
+                v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_none")
+              v-col(xs12 sm6 class="py-2")
+                p One Option Selected
+                v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_one")  
+              v-col(xs12 sm6 class="py-2")
+                p Text Options
+                v-btn-toggle(v-bind:items="toggle_text" v-model="text")
+              v-col(xs12 sm6 class="py-2")
+                p Text &amp; Icon Options
+                v-btn-toggle(v-bind:items="toggle_text_icon" v-model="icon")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        editable: null,
+        text: 4,
+        icon: null,
+        toggle_none: null,
+        toggle_one: [2],
+        toggle_exclusive: 2,
+        toggle_multiple: [1, 2, 3],
+        toggle_text_icon: [
+          { text: 'Left', icon: 'format_align_left', value: 1 },
+          { text: 'Center', icon: 'format_align_center', value: 2 },
+          { text: 'Right', icon: 'format_align_right', value: 3 },
+          { text: 'Justify', icon: 'format_align_justify', value: 4 },
+        ],
+        toggle_text: [
+          { text: 'Left', value: 1 },
+          { text: 'Center', value: 2 },
+          { text: 'Right', value: 3 },
+          { text: 'Justify', value: 4 },
+        ],
+        toggle_options: [
+          { icon: 'format_align_left', value: 1 },
+          { icon: 'format_align_center', value: 2 },
+          { icon: 'format_align_right', value: 3 },
+          { icon: 'format_align_justify', value: 4 },
+        ],
+        toggle_options_multiple: [
+          { icon: 'format_bold', value: 1 },
+          { icon: 'format_italic', value: 2 },
+          { icon: 'format_underlined', value: 3 },
+          { icon: 'format_color_fill', value: 4 },
+        ],
         dropdown: [
           { title: 'State 1' },
           { title: 'State 2' },
@@ -290,7 +342,7 @@
           &:after
             background-color: $button-flat-dark-active-background-color
             
-    #e2-1, #e2-2
+    #e2-1, #e2-2, #e3
       .card
         width: 100%
         text-align: center
