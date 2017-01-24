@@ -83,7 +83,7 @@
                 p Editable
                 v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" editable)
 
-    component-example(header="Dropdown Toggle" id="e3")
+    component-example(header="Button Toggle" id="e3")
       v-card(class="grey lighten-4 z-depth-0 py-5")
         v-card-text
           v-container(fluid)
