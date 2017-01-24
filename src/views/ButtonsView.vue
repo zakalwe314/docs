@@ -106,6 +106,41 @@
               v-col(xs12 sm6 class="py-2")
                 p Text &amp; Icon Options
                 v-btn-toggle(v-bind:items="toggle_text_icon" v-model="icon")
+
+    component-example(header="Icon" id="e4")
+      v-card(class="grey lighten-4 z-depth-0 py-5")
+        v-card-text
+          v-container(fluid)
+            v-row
+              v-col(xs12)
+                p Normal
+              v-col(xs3)
+                v-btn(icon class="pink--text")
+                  v-icon favorite
+              v-col(xs3)
+                v-btn(icon class="indigo--text")
+                  v-icon star
+              v-col(xs3)
+                v-btn(icon class="green--text")
+                  v-icon cached
+              v-col(xs3)
+                v-btn(icon class="deep-orange--text")
+                  v-icon thumb_up
+            v-row(class="mt-5")
+              v-col(xs12)
+                p Disabled
+              v-col(xs3)
+                v-btn(icon disabled class="pink--text")
+                  v-icon favorite
+              v-col(xs3)
+                v-btn(icon disabled class="indigo--text")
+                  v-icon star
+              v-col(xs3)
+                v-btn(icon disabled class="green--text")
+                  v-icon cached
+              v-col(xs3)
+                v-btn(icon disabled class="deep-orange--text")
+                  v-icon thumb_up
 </template>
 
 <script>
@@ -342,7 +377,7 @@
           &:after
             background-color: $button-flat-dark-active-background-color
             
-    #e2-1, #e2-2, #e3
+    #e2-1, #e2-2, #e3, #e4
       .card
         width: 100%
         text-align: center
