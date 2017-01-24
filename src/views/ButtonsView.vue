@@ -75,19 +75,21 @@
             v-row
               v-col(xs12 sm4 class="py-2")
                 p Overflow
-                v-btn-dropdown(v-bind:items="dropdown.slice(0, 4)" max-height="auto" overflow)
+                v-btn-dropdown(v-bind:items="dropdown_font" max-height="auto" overflow)
               v-col(xs12 sm4 class="py-2")
                 p Segmented
-                v-btn-dropdown(v-bind:items="dropdown.slice(0, 7)" segmented)
+                v-btn-dropdown(v-bind:items="dropdown_icon" segmented)
               v-col(xs12 sm4 class="py-2")
                 p Editable
-                v-btn-dropdown(v-bind:items="dropdowns" max-height="auto" editable)
+                v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" editable v-model="editable")
+                div {{ editable }}
 </template>
 
 <script>
   export default {
     data () {
       return {
+        editable: null,
         dropdown: [
           { title: 'State 1' },
           { title: 'State 2' },
@@ -100,12 +102,23 @@
           { title: 'State 9' },
           { title: 'State 10' },
         ],
-        dropdowns: [
+        dropdown_font: [
+          { title: 'Arial' },
+          { title: 'Calibri' },
+          { title: 'Courier' },
+          { title: 'Verdana' }
+        ],
+        dropdown_icon: [
           { action: 'list' },
-          { action: 'list' },
-          { action: 'list' },
-          { action: 'list' },
-          { action: 'list' },
+          { action: 'favorite' },
+          { action: 'delete' },
+        ],
+        dropdown_edit: [
+          { title: '100%' },
+          { title: '75%' },
+          { title: '50%' },
+          { title: '25%' },
+          { title: '0%' }
         ],
         selected: null,
         doc: {
