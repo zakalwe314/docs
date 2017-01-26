@@ -2,11 +2,11 @@
   div(class="component-example")
     component-header(@source="source") {{ header }}
     slot(name="details")
-    //- v-collapsible(ref="source" class="component-example__collapsible")
-    //-   li
-    //-     v-collapsible-body(ref="body")
-    //-       markup(lang="html" v-if="booted")
-    //-         div(v-html="content" ref="markup")
+    v-collapsible(ref="source" class="component-example__collapsible")
+      li
+        v-collapsible-body(ref="body")
+          markup(lang="html" v-if="booted")
+            div(v-html="content" ref="markup")
     div(class="component-example__container")
       slot
 </template>
@@ -25,32 +25,32 @@
 
     methods: {
       toggleCollapsible () {
-        // this.$vuetify.bus.pub(
-        //   `collapse:toggle:${this.$refs.source._uid}`,
-        //   Number(this.$refs.body._uid)
-        // )
+        this.$store.commit('vuetify/COLLAPSIBLE_TOGGLE', { 
+          id: this.$refs.source._uid,
+          bodyId: Number(this.$refs.body._uid)
+        })
       },
 
       source () {
-        // if (this.booted) {
-        //   return this.toggleCollapsible()
-        // }
+        if (this.booted) {
+          return this.toggleCollapsible()
+        }
 
-        // const xmlhttp = new XMLHttpRequest()
-        // var vm = this
+        const xmlhttp = new XMLHttpRequest()
+        var vm = this
 
-        // xmlhttp.open('GET', `/public/examples/${this.file}.html`, true)
+        xmlhttp.open('GET', `/public/examples/${this.file}.html`, true)
 
-        // xmlhttp.onreadystatechange = function () {
-        //   if(xmlhttp.status == 200 && xmlhttp.readyState == 4) {
-        //     vm.content = xmlhttp.responseText.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        //     vm.booted = true
-        //     vm.$nextTick(() => {
-        //       vm.toggleCollapsible()
-        //     })
-        //   }
-        // }
-        // xmlhttp.send()
+        xmlhttp.onreadystatechange = function () {
+          if(xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+            vm.content = xmlhttp.responseText.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            vm.booted = true
+            vm.$nextTick(() => {
+              vm.toggleCollapsible()
+            })
+          }
+        }
+        xmlhttp.send()
       }
     }
   }
