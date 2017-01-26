@@ -9,9 +9,9 @@
             v-select(v-bind:options="[{ text: '10-19', value: 1 }, { text: '20+', value: 2 }]" label="What is your age?")
             p This information is used to improve your experience on our site.
           v-card-row(actions)
-            v-btn(v-on:click.native="modal('modal')") Cancel
+            v-btn(v-on:click.native.stop="modal('modal')") Cancel
             v-spacer
-            v-btn( v-on:click.native="modal('modal')" class="green white--text") Submit
+            v-btn(v-on:click.native.stop="modal('modal')" class="green white--text") Submit
       v-btn(v-modal:modal2="" class="secondary white--text") Bottom
       v-modal(id="modal2" transition="v-modal-bottom-transition" bottom)
         v-card(class="secondary white--text")
@@ -76,9 +76,7 @@
       },
 
       modal (id) {
-        setTimeout(() => {
-          this.$vuetify.bus.pub(`modal:close:${id}`)
-        }, 0)
+        this.$vuetify().event('modal toggle', { id, active: false })
       }
     }
   }
