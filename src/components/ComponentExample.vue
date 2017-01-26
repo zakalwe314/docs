@@ -25,7 +25,7 @@
 
     methods: {
       toggleCollapsible () {
-        this.$store.commit('vuetify/COLLAPSIBLE_TOGGLE', { 
+        this.$vuetify().event('collapsible toggle', { 
           id: this.$refs.source._uid,
           bodyId: Number(this.$refs.body._uid)
         })

@@ -62,7 +62,7 @@
       section-text Depending on the state of your application, you may need to wait for the <strong>DOM</strong> to be ready or just call immediately. Vuetify provides a simple function that will do this for you.
       markup(lang="js")
         |mounted () {
-        |   this.$vuetify.load(this.init)
+        |   this.$vuetify().load(this.init)
         |},
         |methods: {
         |   init () {
