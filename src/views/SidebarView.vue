@@ -4,7 +4,7 @@
       div(class="grey lighten-1")
         v-navbar
           div(class="navbar__side-icon hidden-md-and-up")
-            a(href="#!" v-side-bar:doc-sidebar-1="")
+            a(href="#!" v-sidebar:doc-sidebar-1="")
               v-icon reorder
           v-navbar-logo Logo
         v-sidebar(id="doc-sidebar-1" height="40vh" v-bind:items="items")
@@ -15,7 +15,7 @@
       div(class="grey lighten-1")
         v-navbar
           div(class="navbar__side-icon")
-            a(href="#!" v-side-bar:doc-sidebar-2="")
+            a(href="#!" v-sidebar:doc-sidebar-2="")
               v-icon reorder
           v-navbar-logo Logo
         v-sidebar(class="blue darken-3" id="doc-sidebar-2" height="40vh" v-bind:items="items" drawer)
@@ -24,7 +24,7 @@
       section-text(slot="details") For more details on the available item options, check out the <a href="javascript:;" v-on:click.stop="$router.push('/components/lists')">lists</a> section.
       div(class="grey lighten-1")
         v-navbar
-          v-navbar-side-icon(v-side-bar:doc-sidebar-3="" class="hidden-md-and-up")
+          v-navbar-side-icon(v-sidebar:doc-sidebar-3="" class="hidden-md-and-up")
             v-icon reorder
           v-navbar-logo Logo
         v-sidebar(id="doc-sidebar-3" height="40vh" right fixed v-bind:items="item_group")
@@ -34,7 +34,7 @@
     component-example(header="Ripples" file="sidebar/4")
       div(class="grey lighten-1")
         v-navbar
-          v-navbar-side-icon(v-side-bar:doc-sidebar-4="" class="hidden-md-and-up")
+          v-navbar-side-icon(v-sidebar:doc-sidebar-4="" class="hidden-md-and-up")
             v-icon reorder
           v-navbar-logo Logo
         v-sidebar(id="doc-sidebar-4" height="40vh" v-bind:items="item_group" ripple)
