@@ -141,6 +141,14 @@
               v-col(xs3)
                 v-btn(icon disabled class="deep-orange--text")
                   v-icon thumb_up
+    component-example(header="App Bar")
+      v-app-bar
+        v-btn-dropdown(v-bind:items="dropdown_font" max-height="auto" overflow)
+        v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" overflow editable)
+        v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_multiple")
+        v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_exclusive")
+
+
 </template>
 
 <script>
