@@ -32,7 +32,7 @@
       div(class="gitter") Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
       v-divider(light)
 </template>
-
+ 
 <script>
   export default {
     data () {
@@ -53,6 +53,7 @@
               { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
               { href: '/components/buttons', title: 'Buttons' },
               { href: '/components/cards', title: 'Cards' },
+              { href: '/components/carousel', title: 'Carousel' },
               { href: '/components/chips', title: 'Chips' },
               { href: '/components/collapsible', title: 'Collapsible' },
               { href: '/components/dividers', title: 'Dividers', disabled: true },
@@ -68,7 +69,6 @@
               { href: '/components/progress-circular', title: 'Progress Circular' },
               { href: '/components/progress-linear', title: 'Progress Linear', action: { icon: 'fiber_new', class: 'success--text' } },
               { href: '/components/sidebar', title: 'Sidebars', action: { icon: 'update', class: 'success--text' } },
-              { href: '/components/slider', title: 'Sliders' },
               { href: '/components/tabs', title: 'Tabs' }
             ]
           },

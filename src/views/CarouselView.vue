@@ -1,14 +1,14 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(file="sliders/1")
-      v-slider
-        v-slider-item(
+    component-example(file="carousels/1")
+      v-carousel
+        v-carousel-item(
           v-for="item in items"
           v-bind:src="item.src"
         )
-    component-example(header="Custom Transition" file="sliders/2")
-      v-slider(icon="remove")
-        v-slider-item(
+    component-example(header="Custom Transition" file="carousels/2")
+      v-carousel(icon="remove")
+        v-carousel-item(
           v-for="item in items"
           v-bind:src="item.src"
           transition="fade"
@@ -57,22 +57,22 @@
     data () {
       return {
         doc: {
-          title: 'Slider',
-          desc: 'The <code>v-slider</code> component is used to display large numbers of visual content on a rotating timer.',
+          title: 'Carousel',
+          desc: 'The <code>v-carousel</code> component is used to display large numbers of visual content on a rotating timer.',
           props: {
-            'v-slider': {
+            'v-carousel': {
               params: [
                 [
                   'cycle',
                   'Boolean',
                   'False',
-                  'Determines if slider should cycle through images'
+                  'Determines if carousel should cycle through images'
                 ],
                 [
                   'icon',
                   'String',
                   'fiber_manual_record',
-                  'Sets icon for slider delimiter'
+                  'Sets icon for carousel delimiter'
                 ],
                 [
                   'interval',
@@ -82,7 +82,7 @@
                 ]
               ]
             },
-            'v-slider-item': {
+            'v-carousel-item': {
               params: [
                 [
                   'src',
@@ -106,7 +106,7 @@
             }
           },
           slots: {
-            'v-slider': {
+            'v-carousel': {
               default: true
             }
           }
@@ -139,10 +139,10 @@
     methods: {
       meta () {
         return {
-          title: 'Slider Component | Vuetify.js',
-          h1: 'Sliders',
-          description: 'Slider component for Vuetify Framework',
-          keywords: 'vuetify, sliders, components'
+          title: 'Carousel Component | Vuetify.js',
+          h1: 'Carousels',
+          description: 'Carousel component for Vuetify Framework',
+          keywords: 'vuetify, carousels, components'
         }
       }
     }
