@@ -52,7 +52,7 @@
     "vuetify": "^0.8.0",
     "vuex": "^2.0.0",
     "vuex-router-sync": "^4.0.1",
-    "webpack": "2.2.0-rc.2",
+    "webpack": "^2",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-hot-middleware": "^2.13.2"
   }
