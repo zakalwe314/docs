@@ -42,7 +42,7 @@
           { href: '/', title: 'About', action: { icon: 'question_answer' } },
           { href: '/quick-start', title: 'Quick Start', action: 'fast_forward' },
           { href: '/server-side-rendering', title: 'Server Side Rendering', action: 'cloud_circle' },
-          { href: '/event-bus', title: 'Event Bus', action: 'device_hub' },
+          { href: '/vuex', title: 'Vuex', action: 'device_hub' },
           { href: '/layouts', title: 'Layouts', action: 'devices' },
           {
             title: 'Components',

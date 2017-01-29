@@ -6,26 +6,24 @@
         dd(slot="desc") Use one of the Vuetify.js Vue CLI packages <em>(based on the official examples)</em> to get your project started in no time. Vuetify.js supports Vue SSR (server-side rendering), SPA (single page application) and standard HTML pages.
 
     section
-      section-header Required Files
-      section-text Vuetify.js requires Google's Roboto Font and Material Icons.
-      markup(lang="html")
-        |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
-
-    section
       section-header Manual Install
       section-text To test using Vuetify.js without installing a template from Vue CLI, include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use. This will <strong>also require</strong> the dependency above.
       markup(lang="html")
+        |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
+        |&nbsp;
         |&lt;link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"&gt;
+        |&nbsp;
+        |&lt;script src="https://unpkg.com/vue/dist/vue.js"&gt;&lt;/script&gt;
         |&nbsp;
         |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
 
       h6 Existing Projects
-      section-text If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn.
+      section-text If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn. Keep in mind, you will still need to include the above css files as they are not part of the javascript import.
       markup(lang="cli")
         |$  npm install vuetify --save-dev
         |&nbsp;
         |$  yarn add vuetify --dev
-      section-text Now, in your index.js, import Vuetify and apply the plugin to Vue.
+      section-text I your index.js, import Vuetify and apply the plugin to Vue.
       markup(lang="js")
         |import Vue from 'vue'
         |import Vuetify from 'vuetify'
@@ -34,7 +32,7 @@
       section-text Once you have Vuetify installed, add the Vuetify <code>init</code> function to the Vue mounted hook. This is normally in your application <code>App.vue</code>, the main entry-point for your application.
       markup(lang="js")
         |mounted () {
-        |   this.$vuetify.init()
+        |   this.$vuetify().init()
         |}
       section-text The <code>init</code> function must be called in order for Vuetify.js components to communicate together. This method starts the <strong>bus</strong>, which is used by all components to communicate with each other. This bus is exposed for you to hook into. For additional information, view the <router-link to="/event-bus">Event Bus</router-link> section.
     section
@@ -51,9 +49,9 @@
             v-card
               v-card-text
                 h4 Simple HTML Quick Start
-                p This template is intended for users who want to try out Vue.js and Vuetify.js in the most simple way. It contains a basic index.html with no additional functionality. This is useful for developers who want to easily preview the features of the framework.
+                p Current the Simple HTML does not work with the new Vuex integration. An update is being prepared to move the storage to <code>sessionStorage</code> and will be ready in a future patch. If you wish to use this template, it is recommended to stay with <code>v0.8.7</code>.
                 markup(lang="cli")
-                  |$  vue init vuetifyjs/simple
+                  |<strike>$  vue init vuetifyjs/simple</strike>
           v-tabs-item(id="webpack")
             v-card
               v-card-text

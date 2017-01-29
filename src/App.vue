@@ -33,9 +33,9 @@
         }
 
         this.title = obj.h1
-        // this.$vuetify.bus.pub('meta:title', obj.title)
-        // this.$vuetify.bus.pub('meta:description', obj.description)
-        // this.$vuetify.bus.pub('meta:keywords', obj.keywords)
+        this.$vuetify().event('meta.title', obj.title)
+        this.$vuetify().event('meta.description', obj.description)
+        this.$vuetify().event('meta.keywords', obj.keywords)
       }
     }
   }

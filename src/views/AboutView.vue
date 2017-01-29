@@ -3,29 +3,31 @@
     section-def
       dt(slot="title") About
       dd(slot="desc") 
-        p Vuetify.js is a component framework for Vue.js 2. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify.js utilizes Google's <strong><a href="https://material.io/" target="_blank">Material Design</a></strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>. <div class="text-xs-center"><router-link class="btn btn--large btn--raised primary cta" to="/quick-start"v-ripple="">Get Started Now <v-icon right>fast_forward</v-icon></router-link></div>
+        p Vuetify.js is a component framework for Vue.js 2. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify.js utilizes Google's <strong><a href="https://material.io/" target="_blank">Material Design</a></strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>. <div class="text-xs-center"><router-link class="btn btn--large btn--raised primary white--text cta" to="/quick-start"v-ripple="">Get Started Now <v-icon right>fast_forward</v-icon></router-link></div>
     section
       img(src="~public/doc-images/featured.png" width="100%")
       section-header Features
-      v-container(fluid)
-        v-row
-          v-col(xs12 sm12 md12 lg6)
-            v-list(three-line)
-              v-list-item(class="my-3")
+      v-list(three-line)
+        v-container(fluid)
+          v-row
+            v-col(xs12 lg6)
+              v-list-item(class="py-1")
                 v-list-tile(tag="div")
                   v-list-tile-avatar
                     v-icon(class="primary white--text") widgets
                   v-list-tile-content
                     v-list-tile-title Frontend Components
                     v-list-tile-sub-title The Vuetify.js core is designed to provide a variety of reusable, plug and play components.
-              v-list-item(class="my-3")
+            v-col(xs12 lg6)
+              v-list-item(class="py-1")
                 v-list-tile(tag="div")
                   v-list-tile-avatar
                     v-icon(class="primary white--text") extension
                   v-list-tile-content
                     v-list-tile-title Vue Semantic Components
                     v-list-tile-sub-title Utilize the power of Vue.js 2 functional components with helper components.
-              v-list-item(class="my-3")
+            v-col(xs12 lg6)
+              v-list-item(class="py-1")
                 v-list-tile(tag="div")
                   v-list-tile-avatar
                     v-icon(class="primary white--text") view_quilt
@@ -33,29 +35,38 @@
                     v-list-tile-title Prototyping Made Easy
                     v-list-tile-sub-title Prototype your project in no time with easy to understand components.
 
-          v-col(xs12 sm12 md12 lg6)
-            v-list(three-line)
-              v-list-item(class="my-3")
+            v-col(xs12 lg6)
+              v-list-item(class="py-1")
                 v-list-tile(tag="div")
                   v-list-tile-avatar
                     v-icon(class="primary white--text") phone_android
                   v-list-tile-content
                     v-list-tile-title Made for Mobile
                     v-list-tile-sub-title Applications easily transfer from different orientations and screen sizes.
-              v-list-item(class="my-3")
+            v-col(xs12 lg6)
+              v-list-item(class="py-1")
                 v-list-tile(tag="div")
                   v-list-tile-avatar
                     v-icon(class="primary white--text") add_to_queue
                   v-list-tile-content
                     v-list-tile-title Premade Vue CLI Templates
                     v-list-tile-sub-title Vuetify.js comes with 3 Vue CLI templates, pre-configured with Vuetify, and ready to go.
-              v-list-item(class="my-3")
+            v-col(xs12 lg6)
+              v-list-item(class="py-1")
                 v-list-tile(tag="div")
                   v-list-tile-avatar
                     v-icon(class="primary white--text") open_in_browser
                   v-list-tile-content
                     v-list-tile-title Built with Vue.js Server Side Rendering
                     v-list-tile-sub-title Using an internal bus, Vuetify.js is ready from installation for SSR based applications.
+            v-col(xs12 lg6)
+              v-list-item(class="py-1")
+                v-list-tile(tag="div")
+                  v-list-tile-avatar
+                    v-icon(class="primary white--text") device_hub
+                  v-list-tile-content
+                    v-list-tile-title Vuex Integration
+                    v-list-tile-sub-title Out of the box support for Vuex for easier debugging and control.
 
     section
       section-header Ecosystem

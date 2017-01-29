@@ -82,6 +82,8 @@
       section-text
         p This is useful for bootstrapping your application so that any necessary data is available before the initial render.
         p For more information on State Control and Vuex, view the official <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">documentation</a>.
+      section-text
+        p Vuetify integrates into Vuex to allow for easy debugging and access to stored properties. You can also use watchers to hook into store states and react when they change. More information can be found <a href="https://vuejs.org/v2/guide/reactivity.html" target="_blank">here</a>.
       h3 Meta Data
       section-text In order to ensure that page specific meta data is viewable when your pages are crawled, you can return an object containing <code>title</code>, <code>description</code> and <code>keywords</code>.
       markup(lang="js")
@@ -103,13 +105,13 @@
         |// App.vue
         |export default {
         |   mounted () {
-        |     this.$vuetify.init()
+        |     this.$vuetify().init()
         |   },
         |   methods: {
         |     view (meta) {
-        |       this.$vuetify.bus.pub('meta:title', obj.title)
-        |       this.$vuetify.bus.pub('meta:description', obj.description)
-        |       this.$vuetify.bus.pub('meta:keywords', obj.keywords)
+        |       this.$vuetify().event('meta.title', obj.title)
+        |       this.$vuetify().event('meta.description', obj.description)
+        |       this.$vuetify().event('meta.keywords', obj.keywords)
         |     }
         |   }
         |}
@@ -139,7 +141,7 @@
       section-text Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Mozilla Developer Network</a>. To see a live example, add the Vuetify documentation on your mobile device's homescreen.
 
     section
-      whats-next(route="/event-bus" text="Event Bus") With a better understanding of the <strong>webpack ssr</strong> template, let's learn about one of the most powerful features of Vuetify, the bus system.
+      whats-next(route="/vuex" text="Vuex") With a better understanding of the <strong>webpack ssr</strong> template, let's learn about one of the most powerful features of Vuetify, Vuex integration.
 </template>
 
 <script>
