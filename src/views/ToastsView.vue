@@ -3,38 +3,44 @@
     component-example(file="toasts/1")
       v-btn(
         secondary
+        dark
         v-on:click.native="toast(left)"
       ) Left
       v-btn(
         secondary
+        dark
         v-on:click.native="toast(right)"
       ) Right
       v-btn(
         secondary
+        dark
         v-on:click.native="toast(top)"
       ) Top
       v-btn(
         secondary
+        dark
         v-on:click.native="toast(bottom)"
       ) Bottom
       v-btn(
         secondary
+        dark
         v-on:click.native="toast(snack)"
       ) Snack
       v-btn(
         secondary
+        dark
         v-on:click.native="toast(cb)"
       ) Callback
     markup(lang="js")
       |data () {
       |   return {
-      |     cb: ['Toast with callback', 'right', 4000, () =&gt;('Callback')],
+      |     cb: ['Toast with callback', 'right', 4000, () =&gt; ('Callback')],
       |     info: ['Toast', 'left'],
       |   }
       |},
       |methods: {
       |   toast (data) {
-      |     this.$vuetify.toast.create(...data)
+      |     this.$vuetify().toast.create(...data)
       |   }
       |}
 </template>
@@ -82,7 +88,7 @@
       },
 
       toast (data) {
-        this.$vuetify.toast.create(...data)
+        this.$vuetify().toast.create(...data)
       },
       
       meta () {

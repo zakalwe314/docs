@@ -26,44 +26,45 @@
         li <code>3</code> - applies margin or padding with <code>1rem</code> (14px)
         li <code>4</code> - applies margin or padding with <code>1rem * 1.5</code>
         li <code>5</code> - applies margin or padding with <code>1rem * 3</code>
-    h6 Example of spacers variable
-    markup(lang="html")
-      |&lt;p class="mt-1"&gt;...&lt;/p&gt;
-      |&nbsp;
-      |&lt;li class="pb-2"&gt;...&lt;/li&gt;
-      |&nbsp;
-      |&lt;v-btn class="primary ma-3"&gt;...&lt;/v-btn&gt;
-    markup(lang="stylus")
-      |$spacer := 1rem
-      |$spacer-x := $spacer
-      |$spacer-y := $spacer
-      |&nbsp;
-      |$spacers := {
-      |  zero: {
-      |    x: 0,
-      |    y: 0
-      |  },
-      |  one: {
-      |    x: ($spacer-x * .25),
-      |    y: ($spacer-y * .25)
-      |  },
-      |  two: {
-      |    x: ($spacer-x * .5),
-      |    y: ($spacer-y * .5)
-      |  },
-      |  three: {
-      |    x: $spacer-x,
-      |    y: $spacer-y
-      |  },
-      |  four: {
-      |    x: ($spacer-x * 1.5),
-      |    y: ($spacer-y * 1.5)
-      |  },
-      |  five: {
-      |    x: ($spacer-x * 3),
-      |    y: ($spacer-y * 3)
-      |  }
-      |}
+    section
+      h6 Example of spacers variable
+      markup(lang="html")
+        |&lt;p class="mt-1"&gt;...&lt;/p&gt;
+        |&nbsp;
+        |&lt;li class="pb-2"&gt;...&lt;/li&gt;
+        |&nbsp;
+        |&lt;v-btn class="primary ma-3"&gt;...&lt;/v-btn&gt;
+      markup(lang="stylus")
+        |$spacer := 1rem
+        |$spacer-x := $spacer
+        |$spacer-y := $spacer
+        |&nbsp;
+        |$spacers := {
+        |  zero: {
+        |    x: 0,
+        |    y: 0
+        |  },
+        |  one: {
+        |    x: ($spacer-x * .25),
+        |    y: ($spacer-y * .25)
+        |  },
+        |  two: {
+        |    x: ($spacer-x * .5),
+        |    y: ($spacer-y * .5)
+        |  },
+        |  three: {
+        |    x: $spacer-x,
+        |    y: $spacer-y
+        |  },
+        |  four: {
+        |    x: ($spacer-x * 1.5),
+        |    y: ($spacer-y * 1.5)
+        |  },
+        |  five: {
+        |    x: ($spacer-x * 3),
+        |    y: ($spacer-y * 3)
+        |  }
+        |}
 </template>
 
 <script>

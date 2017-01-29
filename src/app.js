@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Vuetify from 'vuetify'
-import { vuetifySync } from 'vuetify'
+import { default as Vuetify, vuetifySync } from 'vuetify'
 import Components from './components/_index'
 import store from './store/index'
 import router from './router/index'

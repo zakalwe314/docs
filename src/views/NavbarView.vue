@@ -25,9 +25,9 @@
           v-navbar-item(v-bind:item="{ href: '#!', icon: 'chevron_right' }")
           v-navbar-item(
             v-bind:item="{ href: '#!', icon: 'more_vert' }" 
-            v-dropdown:dropdown=""
+            v-menu:menu=""
           )
-          v-dropdown(v-bind:items="dropdown_items" id="dropdown" top right origin="top right")
+          v-menu(v-bind:items="dropdown_items" id="menu" top right origin="top right")
     component-example(header="Transparent" file="navbar/5")
       div(id="navbar-image")
         v-navbar(class="transparent z-depth-0")

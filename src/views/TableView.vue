@@ -49,16 +49,20 @@
                 v-checkbox(v-bind:id="'checkbox3' + index" filled class="text-xs-center")
               td(v-for="data in item" v-text="data")
               td
-                v-btn(v-dropdown="{ value: 'dropdown3-' + index }") Options
-                v-dropdown(
-                  v-bind:id="'dropdown3-' + index"
+                v-btn(v-menu="{ value: 'menu3-' + index }") Options
+                v-menu(
+                  v-bind:id="'menu3-' + index"
                   transition="v-slide-y-transition"
                   origin="top center"
                   top right
                 )
-                  v-dropdown-item(v-bind:item="{ text: 'Edit', href: 'javascript:;' }")
-                  v-dropdown-item(v-bind:item="{ text: 'Reset Password', href: 'javascript:;' }")
-                  v-dropdown-item(v-bind:item="{ text: 'Delete', href: 'javascript:;' }")
+                  v-list
+                    v-list-item
+                      v-list-tile(v-bind:item="{ title: 'Edit' }")
+                    v-list-item
+                      v-list-tile(v-bind:item="{ title: 'Reset Password' }")
+                    v-list-item
+                      v-list-tile(v-bind:item="{ title: 'Delete' }")
 </template>
 
 <script>

@@ -26,15 +26,22 @@
       section-text I your index.js, import Vuetify and apply the plugin to Vue.
       markup(lang="js")
         |import Vue from 'vue'
-        |import Vuetify from 'vuetify'
+        |import Vuex from 'vuex'
+        |import { default as Vuetify, vuetifySync } from 'vuetify'
+        |import App from './App'
+        |&nbsp;
+        |const store = new Vuex.Store()
+        |&nbsp;
+        |vuetifySync(store)
         |&nbsp;
         |Vue.use(Vuetify)
+        |&nbsp;
+        |new Vue(Vue.util.extend({ store }, App))
       section-text Once you have Vuetify installed, add the Vuetify <code>init</code> function to the Vue mounted hook. This is normally in your application <code>App.vue</code>, the main entry-point for your application.
       markup(lang="js")
         |mounted () {
         |   this.$vuetify().init()
         |}
-      section-text The <code>init</code> function must be called in order for Vuetify.js components to communicate together. This method starts the <strong>bus</strong>, which is used by all components to communicate with each other. This bus is exposed for you to hook into. For additional information, view the <router-link to="/event-bus">Event Bus</router-link> section.
     section
       section-header Vue CLI
       section-text Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official Vue.js templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
@@ -69,8 +76,6 @@
       
       h6 NPM Install
       section-text After the vue-cli installation finishes, <kbd>cd</kbd> into your project directory and type <kbd>npm install</kbd>. Alternatively, if you are using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>, you can simply type <kbd>yarn</kbd>.
-
-      section-text If you are using the <code>simple</code> vue-cli package, you are ready to go. Open up <code>index.html</code> in any browser. 
 
       section-text For any other package, type <kbd>npm run dev</kbd> into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section

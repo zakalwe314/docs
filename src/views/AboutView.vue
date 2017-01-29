@@ -66,7 +66,7 @@
                     v-icon(class="primary white--text") device_hub
                   v-list-tile-content
                     v-list-tile-title Vuex Integration
-                    v-list-tile-sub-title Out of the box support for Vuex for easier debugging and control.
+                    v-list-tile-sub-title Out of the box Vuex support for easier debugging and control.
 
     section
       section-header Ecosystem
