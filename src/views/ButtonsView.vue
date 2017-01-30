@@ -88,22 +88,22 @@
         v-card-text
           v-container(fluid)
             v-row
-              v-col(xs12 sm6 class="py-2")
+              v-col(xs12 sm12 md6 class="py-2")
                 p Exclusive
                 v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_exclusive")
-              v-col(xs12 sm6 class="py-2")
+              v-col(xs12 sm12 md6 class="py-2")
                 p Multiple
                 v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_multiple")
-              v-col(xs12 sm6 class="py-2")
+              v-col(xs12 sm12 md6 class="py-2")
                 p No Options Selected
                 v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_none")
-              v-col(xs12 sm6 class="py-2")
+              v-col(xs12 sm12 md6 class="py-2")
                 p One Option Selected
                 v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_one")  
-              v-col(xs12 sm6 class="py-2")
+              v-col(xs12 sm12 md6 class="py-2")
                 p Text Options
                 v-btn-toggle(v-bind:items="toggle_text" v-model="text")
-              v-col(xs12 sm6 class="py-2")
+              v-col(xs12 sm12 md6 class="py-2")
                 p Text &amp; Icon Options
                 v-btn-toggle(v-bind:items="toggle_text_icon" v-model="icon")
 
@@ -143,12 +143,52 @@
                   v-icon thumb_up
     component-example(header="App Bar")
       v-app-bar
-        v-btn-dropdown(v-bind:items="dropdown_font" max-height="auto" overflow)
-        v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" overflow editable)
-        v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_multiple")
-        v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_exclusive")
+        v-btn-dropdown(
+          v-bind:items="dropdown_font"
+          max-height="auto"
+          overflow
+          v-model="text"
+        )
+        v-btn-dropdown(
+          v-bind:items="dropdown_edit"
+          max-height="auto"
+          overflow
+          editable
+        )
+        v-btn-toggle(
+          class="hidden-md-and-down"
+          v-bind:items="toggle_options_multiple" 
+          v-model="toggle_multiple"
+          multiple 
+        )
+        v-btn-toggle(
+          class="hidden-sm-and-down"
+          v-bind:items="toggle_options" 
+          v-model="toggle_exclusive"
+        )
 
+    component-example(header="Floating")
+      v-btn(floating)
+        v-icon add
 
+    component-example(header="Progress")
+      v-progress-circular(button class="deep-orange--text" size="56")
+        v-btn(progress class="indigo white--text")
+          v-icon list
+
+    component-example(header="Sizing")
+      v-btn(small) Small
+
+    h4 Custom Styles
+
+    component-example(header="Outline")
+      v-btn(outline) Button
+
+    component-example(header="Round")
+      v-btn(round) Button
+
+    component-example(header="Block")
+      v-btn(block) Button
 </template>
 
 <script>
