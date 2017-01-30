@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { default as Vuetify, vuetifySync } from 'vuetify'
+import Vuetify from 'vuetify'
 import Components from './components/_index'
 import store from './store/index'
 import router from './router/index'
@@ -19,9 +19,8 @@ highlight.registerLanguage('html', highlightXML)
 highlight.registerLanguage('js', highlightJS)
 
 sync(store, router)
-vuetifySync(store)
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, { store })
 
 Object.keys(Components).forEach(key => {
   Vue.component(key, Components[key])
