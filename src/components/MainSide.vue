@@ -38,9 +38,9 @@
               v-list-tile-content
                 v-list-tile-title {{ item.title }}
               v-list-tile-action
-                v-icon arrow_drop_down
+                v-icon keyboard_arrow_down
             v-list-item(v-for="subItem in item.items")
-              v-list-tile
+              v-list-tile(router)
                 v-list-tile-avatar
                   v-icon {{ subItem.action }}
                 v-list-tile-content
@@ -48,7 +48,7 @@
         v-list-sub-header(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider" light)
         v-list-item(v-else)
-          v-list-tile
+          v-list-tile(:href="item.href" router)
             v-list-tile-avatar
               v-icon {{ item.action }}
             v-list-tile-content
