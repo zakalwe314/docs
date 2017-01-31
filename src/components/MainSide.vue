@@ -30,26 +30,25 @@
       v-divider(light)
     v-list(dense)
       template(v-for="item in items")
-        v-list-item(v-if="item.items")
-          v-list-group
-            v-list-tile(slot="item")
-              v-list-tile-avatar
-                v-icon {{ item.action }}
+        v-list-group(v-if="item.items")
+          v-list-tile(slot="item")
+            v-list-tile-action
+              v-icon {{ item.action }}
+            v-list-tile-content
+              v-list-tile-title {{ item.title }}
+            v-list-tile-action
+              v-icon keyboard_arrow_down
+          v-list-item(v-for="subItem in item.items")
+            v-list-tile(:href="subItem.href" router v-bind:disabled="subItem.disabled")
               v-list-tile-content
-                v-list-tile-title {{ item.title }}
+                v-list-tile-title {{ subItem.title }}
               v-list-tile-action
-                v-icon keyboard_arrow_down
-            v-list-item(v-for="subItem in item.items")
-              v-list-tile(router)
-                v-list-tile-avatar
-                  v-icon {{ subItem.action }}
-                v-list-tile-content
-                  v-list-tile-title {{ subItem.title }}
+                v-icon {{ subItem.action }}
         v-list-sub-header(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider" light)
         v-list-item(v-else)
-          v-list-tile(:href="item.href" router)
-            v-list-tile-avatar
+          v-list-tile(:href="item.href" router v-bind:disabled="item.disabled")
+            v-list-tile-action
               v-icon {{ item.action }}
             v-list-tile-content
               v-list-tile-title {{ item.title }}
@@ -83,15 +82,15 @@
               { href: '/components/footer', title: 'Footer' },
               { href: '/components/forms', title: 'Forms' },
               { href: '/components/icons', title: 'Icons' },
-              { href: '/components/lists', title: 'Lists', action: { icon: 'update', class: 'success--text' } },
+              { href: '/components/lists', title: 'Lists', action: 'update' },
               { href: '/components/menus', title: 'Menus' },
               { href: '/components/modals', title: 'Modals' },
               { href: '/components/navbar', title: 'Navbars' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress-circular', title: 'Progress Circular' },
-              { href: '/components/progress-linear', title: 'Progress Linear', action: { icon: 'fiber_new', class: 'success--text' } },
-              { href: '/components/sidebar', title: 'Sidebars', action: { icon: 'update', class: 'success--text' } },
+              { href: '/components/progress-linear', title: 'Progress Linear', action: 'fiber_new' },
+              { href: '/components/sidebar', title: 'Sidebars', action: 'update' },
               { href: '/components/tabs', title: 'Tabs' }
             ]
           },
