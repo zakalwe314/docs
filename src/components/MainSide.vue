@@ -30,7 +30,7 @@
       v-divider(light)
     v-list(dense)
       template(v-for="item in items")
-        v-list-group(v-if="item.items")
+        v-list-group(v-if="item.items" v-bind:group="item.group")
           v-list-tile(slot="item")
             v-list-tile-action
               v-icon {{ item.action }}

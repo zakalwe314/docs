@@ -324,7 +324,21 @@
             v-navbar-side-icon
             v-navbar-title Topics
             v-icon more_vert
-        v-list(v-bind:items="e10")
+        v-list
+          v-list-group(v-for="item in e10" v-bind:active="item.active")
+            v-list-tile(slot="item")
+              v-list-tile-action
+                v-icon {{ item.action }}
+              v-list-tile-content
+                v-list-tile-title {{ item.title }}
+              v-list-tile-action
+                v-icon keyboard_arrow_down
+            v-list-item(v-for="subItem in item.items")
+              v-list-tile
+                v-list-tile-content
+                  v-list-tile-title {{ subItem.title }}
+                v-list-tile-action
+                  v-icon {{ subItem.action }}
     markup(lang="js")
       |{ 
       |  action: { icon: 'restaurant', class: 'grey--text' },
@@ -396,15 +410,16 @@
         ],
         e10: [
           { 
-            action: { icon: 'local_activity', class: 'grey--text' },
+            action: 'local_activity',
             title: 'Attractions', 
             items: [
               { title: 'List Item' }
             ]
           },
           { 
-            action: { icon: 'restaurant', class: 'grey--text' },
+            action: 'restaurant',
             title: 'Dining', 
+            active: true,
             items: [
               { title: 'Breakfast & brunch' },
               { title: 'New American' },
@@ -412,35 +427,35 @@
             ]
           },
           { 
-            action: { icon: 'school', class: 'grey--text' },
+            action: 'school',
             title: 'Education', 
             items: [
               { title: 'List Item' }
             ]
           },
           { 
-            action: { icon: 'directions_run', class: 'grey--text' },
+            action: 'directions_run',
             title: 'Family', 
             items: [
               { title: 'List Item' }
             ]
           },
           { 
-            action: { icon: 'healing', class: 'grey--text' },
+            action: 'healing',
             title: 'Health', 
             items: [
               { title: 'List Item' }
             ]
           },
           { 
-            action: { icon: 'content_cut', class: 'grey--text' },
+            action: 'content_cut',
             title: 'Office', 
             items: [
               { title: 'List Item' }
             ]
           },
           { 
-            action: { icon: 'local_offer', class: 'grey--text' },
+            action: 'local_offer',
             title: 'Promotions', 
             items: [
               { title: 'List Item' }
