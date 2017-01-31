@@ -20,7 +20,7 @@ highlight.registerLanguage('js', highlightJS)
 
 sync(store, router)
 
-Vue.use(Vuetify, { store })
+Vue.use(Vuetify)
 
 Object.keys(Components).forEach(key => {
   Vue.component(key, Components[key])

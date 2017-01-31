@@ -22,10 +22,6 @@
       }
     },
 
-    mounted () {
-      this.$vuetify().init()
-    },
-
     methods: {
       meta (obj) {
         if (typeof obj === 'string') {
@@ -33,9 +29,6 @@
         }
 
         this.title = obj.h1
-        this.$vuetify().event('meta.title', obj.title)
-        this.$vuetify().event('meta.description', obj.description)
-        this.$vuetify().event('meta.keywords', obj.keywords)
       }
     }
   }

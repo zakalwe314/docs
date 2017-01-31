@@ -1,13 +1,10 @@
 <template lang="pug">
   v-sidebar(
-    id="mainsidebar"
     fixed
-    v-bind:items="items"
-    ripple
-    router
-    unshift
+    :active="active"
+    @active="active = arguments[0]"
   )
-    div(class="vuetify" slot="top")
+    div(class="vuetify")
       router-link(
         to="/about",
         class="sidebar__logo"
@@ -31,15 +28,41 @@
       div Need help?
       div(class="gitter") Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
       v-divider(light)
+    v-list(dense)
+      template(v-for="item in items")
+        v-list-item(v-if="item.items")
+          v-list-group
+            v-list-tile(slot="item")
+              v-list-tile-avatar
+                v-icon {{ item.action }}
+              v-list-tile-content
+                v-list-tile-title {{ item.title }}
+              v-list-tile-action
+                v-icon arrow_drop_down
+            v-list-item(v-for="subItem in item.items")
+              v-list-tile
+                v-list-tile-avatar
+                  v-icon {{ subItem.action }}
+                v-list-tile-content
+                  v-list-tile-title {{ subItem.title }}
+        v-list-sub-header(v-else-if="item.header") {{ item.header }}
+        v-divider(v-else-if="item.divider" light)
+        v-list-item(v-else)
+          v-list-tile
+            v-list-tile-avatar
+              v-icon {{ item.action }}
+            v-list-tile-content
+              v-list-tile-title {{ item.title }}
 </template>
  
 <script>
   export default {
     data () {
       return {
+        active: true,
         items: [
           { header: 'Core Documentation' },
-          { href: '/', title: 'About', action: { icon: 'question_answer' } },
+          { href: '/', title: 'About', action: 'question_answer' },
           { href: '/quick-start', title: 'Quick Start', action: 'fast_forward' },
           { href: '/server-side-rendering', title: 'Server Side Rendering', action: 'cloud_circle' },
           { href: '/vuex', title: 'Vuex', action: 'device_hub' },

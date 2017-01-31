@@ -109,9 +109,6 @@
         |   },
         |   methods: {
         |     view (meta) {
-        |       this.$vuetify().event('meta.title', obj.title)
-        |       this.$vuetify().event('meta.description', obj.description)
-        |       this.$vuetify().event('meta.keywords', obj.keywords)
         |     }
         |   }
         |}

@@ -76,11 +76,6 @@
       },
 
       modal (id) {
-        this.$vuetify().event('component toggle', { 
-          active: false ,
-          component: 'modal',
-          id
-        })
       }
     }
   }
