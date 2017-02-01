@@ -25,7 +25,7 @@ const router = new Router({
     route('/components/cards', 'Cards'),
     route('/components/carousel', 'Carousel'),
     route('/components/chips', 'Chips'),
-    route('/components/collapsible', 'Collapsible'),
+    route('/components/expansion-panel', 'ExpansionPanel'),
     route('/components/footer', 'Footer'),
     route('/components/forms', 'Forms'),
     route('/components/lists', 'Lists'),

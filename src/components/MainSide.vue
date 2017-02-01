@@ -77,7 +77,7 @@
               { href: '/components/cards', title: 'Cards' },
               { href: '/components/carousel', title: 'Carousel' },
               { href: '/components/chips', title: 'Chips' },
-              { href: '/components/collapsible', title: 'Collapsible' },
+              { href: '/components/expansion-panel', title: 'Expansion Panel' },
               { href: '/components/dividers', title: 'Dividers', disabled: true },
               { href: '/components/footer', title: 'Footer' },
               { href: '/components/forms', title: 'Forms' },

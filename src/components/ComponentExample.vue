@@ -2,11 +2,10 @@
   div(class="component-example")
     component-header(@source="source") {{ header }}
     slot(name="details")
-    v-collapsible(ref="source" class="component-example__collapsible")
-      li
-        v-collapsible-body(ref="body")
-          markup(lang="html" v-if="booted")
-            div(v-html="content" ref="markup")
+    v-expansion-panel(ref="source" class="component-example__expansion-panel")
+      v-expansion-panel-content(ref="body" v-bind:active="active" v-on:active="active = arguments[0]")
+        markup(lang="html" v-if="booted")
+          div(v-html="content" ref="markup")
     div(class="component-example__container")
       slot
 </template>
@@ -19,17 +18,19 @@
 
     data () {
       return {
+        active: false,
         booted: false
       }
     },
 
     methods: {
-      toggleCollapsible () {
+      toggle () {
+        this.active = !this.active
       },
-
+      
       source () {
         if (this.booted) {
-          return this.toggleCollapsible()
+          return this.toggle()
         }
 
         const xmlhttp = new XMLHttpRequest()
@@ -42,7 +43,7 @@
             vm.content = xmlhttp.responseText.replace(/</g, '&lt;').replace(/>/g, '&gt;')
             vm.booted = true
             vm.$nextTick(() => {
-              vm.toggleCollapsible()
+              vm.toggle()
             })
           }
         }
@@ -56,14 +57,14 @@
   @import '../stylus/settings/_variables'
   
   .component-example
-    .component-example__collapsible
+    .component-example__expansion-panel
         box-shadow: none
         background: transparent
         
         li
           border: none
         
-      .collapsible__body
+      .expansion-panel__body
         border: none
         box-shadow: none
         background: transparent
