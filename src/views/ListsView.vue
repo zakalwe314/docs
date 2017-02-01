@@ -9,7 +9,17 @@
             v-navbar-side-icon(class="grey--text text--darken-4")
             v-navbar-title Inbox
             v-icon search
-        v-list(two-line v-bind:items="e1.slice(0, 6)")
+        v-list(two-line)
+          template(v-for="item in e1.slice(0, 6)")
+            v-list-sub-header(v-if="item.header") {{ item.header }}
+            v-divider(v-else-if="item.divider" v-bind:inset="item.inset")
+            v-list-item(v-else)
+              v-list-tile(avatar)
+                v-list-tile-avatar
+                  img(v-bind:src="item.avatar")
+                v-list-tile-content
+                  v-list-tile-title(v-html="item.title")
+                  v-list-tile-sub-title(v-html="item.subtitle")
     markup(lang="js")
       |list: [
       |   { header: 'Today' },
@@ -86,7 +96,18 @@
             v-navbar-side-icon(class="grey--text text--darken-4")
             v-navbar-title Inbox
             v-icon search
-        v-list(three-line v-bind:items="e1")
+        v-list(three-line)
+          template(v-for="item in e1")
+            v-list-sub-header(v-if="item.header" v-text="item.header")
+            v-divider(v-else-if="item.divider" v-bind:inset="item.inset")
+            v-list-item(v-else)
+              v-list-tile(avatar)
+                v-list-tile-avatar
+                  img(v-bind:src="item.avatar")
+                v-list-tile-content
+                  v-list-tile-title(v-html="item.title")
+                  v-list-tile-sub-title(v-html="item.subtitle")
+
     blockquote The three-line prop uses <code>-webkit-line-clamp</code> which is not supported on all browsers. If not supposed, the line will just continue to wrap.
 
     //- Example 5
