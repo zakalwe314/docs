@@ -25,9 +25,9 @@
       return {
         doc: {
           title: 'Tooltip',
-          desc: 'The <code>v-badge</code> directive is useful for conveying information when a user hovers over an element.',
+          desc: 'The <code>v-tooltip</code> directive is useful for conveying information when a user hovers over an element.',
           props: {
-            'v-badge': {
+            'v-tooltip': {
               params: [
                 [
                   'modifiers',
