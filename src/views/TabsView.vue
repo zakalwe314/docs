@@ -2,18 +2,18 @@
   doc-view(v-bind:doc="doc" id="components-tabs-view")
     component-example(header="Mobile tabs" file="tabs/1")
       v-tabs(id="mobile-tabs-1" grow ripple)
-        template(slot="activators")
-          v-tab-item(
-            v-for="i in 3"
-            v-bind:href="'#mobile-tabs-1-' + i"
-          ) Item {{ i }}
-        template(slot="content")
-          v-tab-content(
-            v-for="i in 3"
-            v-bind:id="'mobile-tabs-1-' + i"
-          )
-            v-card
-              v-card-text Testing {{ i }}
+        v-tab-item(
+          v-for="i in 3"
+          v-bind:href="'#mobile-tabs-1-' + i"
+          slot="activators"
+        ) Item {{ i }}
+        v-tab-content(
+          v-for="i in 3"
+          v-bind:id="'mobile-tabs-1-' + i"
+          slot="content"
+        )
+          v-card
+            v-card-text {{ content }}
     // component-example(file="tabs/2")
     //   v-tabs(id="mobile-tabs-2" grow)
     //     v-card(class="primary white--text")
