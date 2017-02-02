@@ -1,10 +1,17 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="components-tabs-view")
     component-example(header="Mobile tabs" file="tabs/1")
-      v-tabs(id="mobile-tabs-1" grow ripple)
+      v-tabs(
+        id="mobile-tabs-1"
+        grow
+        scroll-bars
+        v-bind:active="active"
+        v-on:active="active = arguments[0]"
+      )
         v-tab-item(
           v-for="i in 3"
           v-bind:href="'#mobile-tabs-1-' + i"
+          ripple
           slot="activators"
         ) Item {{ i }}
         v-tab-content(
@@ -109,6 +116,7 @@
 
     data () {
       return {
+        active: 0,
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         items: [{text: 'Item One', href: '#!'}, {text: 'Item Two', href: '#!'}, {text: 'Item Three', href: '#!'}],
         doc: {
@@ -164,6 +172,7 @@
     },
 
     mounted () {
+      setTimeout(() => this.active = 2, 3000)
       this.$emit('view', this.meta())
     },
 
