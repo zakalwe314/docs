@@ -18,7 +18,6 @@ const router = new Router({
     route('/', 'About'),
     route('/quick-start', 'QuickStart'),
     route('/server-side-rendering', 'SSR'),
-    route('/vuex', 'Vuex'),
     route('/components/alerts', 'Alerts'),
     route('/components/breadcrumbs', 'Breadcrumbs'),
     route('/components/buttons', 'Buttons'),
@@ -54,7 +53,7 @@ const router = new Router({
     route('/layouts', 'Layouts'),
     // 301 redirects
     { path: '/overview', redirect: '/server-side-rendering' },
-    { path: '/event-bus', redirect: '/vuex' },
+    { path: '/event-bus', redirect: '/' },
     // Global redirect for 404
     { path: '*', redirect: '/' }
   ]

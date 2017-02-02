@@ -46,33 +46,33 @@
       section-header Vue CLI
       section-text Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official Vue.js templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
       v-tabs(id="vue-cli" class="z-depth-1" grow icons)
-        v-tabs-tabs
-          v-tab-item(ripple v-bind:item="{ href: '#simple', text: 'Simple HTML', icon: 'accessibility' }")
-          v-tab-item(ripple v-bind:item="{ href: '#webpack', text: 'Webpack', icon: 'web' }")
-          v-tab-item(ripple v-bind:item="{ href: '#webpack-ssr', text: 'Webpack SSR', icon: 'cloud_circle' }")
-        
-        v-tabs-items
-          v-tabs-item(id="simple")
-            v-card
-              v-card-text
-                h4 Simple HTML Quick Start
-                p Current the Simple HTML does not work with the new Vuex integration. An update is being prepared to move the storage to <code>sessionStorage</code> and will be ready in a future patch. If you wish to use this template, it is recommended to stay with <code>v0.8.7</code>.
-                markup(lang="cli")
-                  |<strike>$  vue init vuetifyjs/simple</strike>
-          v-tabs-item(id="webpack")
-            v-card
-              v-card-text
-                h4 Webpack Quick Start
-                p This template is intended for users who are already familiar with Vue/Webpack. It contains a very simple webpack setup and is targetted at developers creating prototype or basic applications.
-                markup(lang="cli")
-                  |$  vue init vuetifyjs/webpack
-          v-tabs-item(id="webpack-ssr")
-            v-card
-              v-card-text
-                h4 Webpack SSR Quick Start
-                p This template is for advanced users looking to utilize the new Vue SSR (server-side rendering). Based off of the structure in the Vue.js 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository. The Vuetify.js SSR template provides next generation functionality for advanced Vue applications.
-                markup(lang="cli")
-                  |$  vue init vuetifyjs/webpack-ssr
+        v-tab-item(ripple slot="activators" href="#simple") Simple HTML
+          v-icon accessibility
+        v-tab-item(ripple slot="activators" href="#webpack") Webpack
+          v-icon web
+        v-tab-item(ripple slot="activators" href="#webpack-ssr") Webpack SSR
+          v-icon cloud_circle
+        v-tab-content(id="simple" slot="content")
+          v-card
+            v-card-text
+              h4 Simple HTML Quick Start
+              p This template is intended for users who want to try out Vue.js and Vuetify.js in the most simple way. It contains a basic index.html with no additional functionality. This is useful for developers who want to easily preview the features of the framework.
+              markup(lang="cli")
+                |$  vue init vuetifyjs/simple
+        v-tab-content(id="webpack" slot="content")
+          v-card
+            v-card-text
+              h4 Webpack Quick Start
+              p This template is intended for users who are already familiar with Vue/Webpack. It contains a very simple webpack setup and is targetted at developers creating prototype or basic applications.
+              markup(lang="cli")
+                |$  vue init vuetifyjs/webpack
+        v-tab-content(id="webpack-ssr" slot="content")
+          v-card
+            v-card-text
+              h4 Webpack SSR Quick Start
+              p This template is for advanced users looking to utilize the new Vue SSR (server-side rendering). Based off of the structure in the Vue.js 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository. The Vuetify.js SSR template provides next generation functionality for advanced Vue applications.
+              markup(lang="cli")
+                |$  vue init vuetifyjs/webpack-ssr
       
       h6 NPM Install
       section-text After the vue-cli installation finishes, <kbd>cd</kbd> into your project directory and type <kbd>npm install</kbd>. Alternatively, if you are using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>, you can simply type <kbd>yarn</kbd>.
