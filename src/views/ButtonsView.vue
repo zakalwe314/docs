@@ -68,7 +68,7 @@
               v-col(xs12 sm4 class="py-2")
                 v-btn-dropdown(v-bind:items="dropdown")
 
-    component-example(header="Button Dropdown Variants" id="e2-2")
+    //- component-example(header="Button Dropdown Variants" id="e2-2")
       v-card(class="grey lighten-4 z-depth-0 py-5")
         v-card-text
           v-container(fluid)
@@ -83,7 +83,7 @@
                 p Editable
                 v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" editable)
 
-    component-example(header="Button Toggle" id="e3")
+    //- component-example(header="Button Toggle" id="e3")
       v-card(class="grey lighten-4 z-depth-0 py-5")
         v-card-text
           v-container(fluid)
@@ -107,7 +107,7 @@
                 p Text &amp; Icon Options
                 v-btn-toggle(v-bind:items="toggle_text_icon" v-model="icon")
 
-    component-example(header="Icon" id="e4")
+    //- component-example(header="Icon" id="e4")
       v-card(class="grey lighten-4 z-depth-0 py-5")
         v-card-text
           v-container(fluid)
@@ -141,7 +141,7 @@
               v-col(xs3)
                 v-btn(icon disabled class="deep-orange--text")
                   v-icon thumb_up
-    component-example(header="App Bar")
+    //- component-example(header="App Bar")
       v-app-bar
         v-btn-dropdown(
           v-bind:items="dropdown_font"
@@ -167,27 +167,27 @@
           v-model="toggle_exclusive"
         )
 
-    component-example(header="Floating")
+    //- component-example(header="Floating")
       v-btn(floating)
         v-icon add
 
-    component-example(header="Progress")
+    //- component-example(header="Progress")
       v-progress-circular(button class="deep-orange--text" size="56")
         v-btn(progress class="indigo white--text")
           v-icon list
 
-    component-example(header="Sizing")
+    //- component-example(header="Sizing")
       v-btn(small) Small
 
     h4 Custom Styles
 
-    component-example(header="Outline")
+    //- component-example(header="Outline")
       v-btn(outline) Button
 
-    component-example(header="Round")
+    //- component-example(header="Round")
       v-btn(round) Button
 
-    component-example(header="Block")
+    //- component-example(header="Block")
       v-btn(block) Button
 </template>
 
