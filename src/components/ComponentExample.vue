@@ -3,7 +3,7 @@
     component-header(@source="source") {{ header }}
     slot(name="details")
     v-expansion-panel(ref="source" class="component-example__expansion-panel")
-      v-expansion-panel-content(ref="body" v-bind:active="active" v-on:active="active = arguments[0]")
+      v-expansion-panel-content(ref="body" v-model="active")
         markup(lang="html" v-if="booted")
           div(v-html="content" ref="markup")
     div(class="component-example__container")

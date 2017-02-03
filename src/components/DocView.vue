@@ -46,6 +46,7 @@
   @import '../stylus/settings/_variables'
   
   .view
+    margin-top: 50rem
     margin-bottom: 3rem
     max-width: 1024px
   

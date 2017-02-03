@@ -1,10 +1,10 @@
 <template lang="pug">
   v-app(left-fixed-sidebar top-fixed-navbar footer)
   
-    main-nav(v-bind:title="title")
+    main-nav(v-bind:title="title" v-on:sidebar="sidebar = !sidebar")
 
     main
-      main-side
+      main-side(v-model="sidebar")
 
       v-content
         v-container(fluid)
@@ -18,6 +18,7 @@
   export default {
     data () {
       return {
+        sidebar: true,
         title: ''
       }
     },

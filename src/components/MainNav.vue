@@ -1,7 +1,13 @@
 <template lang="pug">
   header
     v-navbar(fixed)
-      v-btn(floating v-sidebar:mainsidebar="" class="side-icon hidden-md-and-up transparent z-depth-0" ripple)
+      v-btn(
+        class="side-icon hidden-md-and-up"
+        icon
+        dark
+        ripple
+        v-on:click.native.stop="$emit('sidebar')"
+      )
         v-icon menu
       div(class="navbar__side-title")
         h1(class="text-xs-center text-md-left" v-text="title")

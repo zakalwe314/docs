@@ -1,97 +1,72 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="menus-view")
     component-example(header="On Click" file="menus/1")
-      v-btn(
-        class="primary white--text"
-        v-menu:menu=""
-      ) Click Menu
       v-menu(
-        id="menu"
-        v-bind:items="items"
-      )
-      //- v-btn(
-      //-   class="secondary white--text"
-      //-   v-menu:menu3=""
-      //- ) Click With Labels
-      //- v-menu(
-      //-   id="menu3"
-      //- )
-      //-   li
-      //-     a(href="#!", class="menu__item")
-      //-       | Profile
-      //-       v-chip(label, class="teal white--text right", small) new
-      //-   li
-      //-     a(href="#!", class="menu__item")
-      //-       span(v-badge:2="") Notifications
-      //-   li
-      //-     a(href="#!", class="menu__item")
-      //-       | Logout
-      //-       v-icon(class="secondary--text right") cloud_off
-    component-example(header="On Hover" file="menus/2")
-      v-btn(
-        class="primary white--text"
-        v-menu:menu2=""
-      ) Hover Menu
-      v-menu(
-        id="menu2"
-        v-bind:items="items"
+        bottom
         right
-        hover
       )
-      //- v-btn(
-      //-   class="secondary white--text"
-      //-   v-menu:menu4=""
-      //- ) Hover With Labels
-      //- v-menu(
-      //-   id="menu4"
-      //-   hover
-      //- )
-      //-   li
-      //-     a(href="#!", class="menu__item")
-      //-       | Profile
-      //-       v-chip(label, class="teal white--text right", small) new
-      //-   li
-      //-     a(href="#!", class="menu__item")
-      //-       span(v-badge:2="") Notifications
-      //-   li
-      //-     a(href="#!", class="menu__item")
-      //-       | Logout
-      //-       v-icon(class="secondary--text right") cloud_off
-    //- component-example(header="Menus" file="menus/3")
-    //-   v-card
-    //-     v-card-row(class="blue")
-    //-       v-btn(
-    //-           icon
-    //-           v-menu:menu=""
-    //-       )
-    //-         v-icon(
-    //-           class="white--text"
-    //-         ) more_vert
-    //-       v-menu(
-    //-         id="menu"
-    //-         v-bind:items="items"
-    //-       )
-    //-       v-card-title(class="white--text") Menu
-    //-     v-card-text Lorem Ipsum
-    //-   v-card
-    //-     v-card-row(class="blue")
-    //-       v-card-title(class="white--text") Menu
-    //-       v-spacer
-    //-       v-btn(
-    //-         icon
-    //-         v-menu:menu2=""
-    //-       )
-    //-         v-icon(
-    //-           class="white--text"
-    //-         ) more_vert
-    //-       v-menu(
-    //-         id="menu2"
-    //-         v-bind:items="items"
-    //-         top
-    //-         right
-    //-         origin="top right"
-    //-       )
-    //-     v-card-text Lorem Ipsum
+        v-btn(
+          class="primary white--text"
+          slot="activator"
+        ) Click Menu
+        v-list
+          v-list-item
+            v-list-tile
+              v-list-tile-title Title
+          v-list-item
+            v-list-tile
+              v-list-tile-title Title
+          v-list-item
+            v-list-tile
+              v-list-tile-title Title
+      v-menu
+        v-btn(
+          class="secondary white--text"
+          slot="activator"
+        ) Click With Labels
+        v-list
+          v-list-item
+            v-list-tile
+              v-list-tile-avatar
+                v-icon edit
+              v-list-tile-content
+                v-list-tile-title Edit Profile
+          v-list-item
+            v-list-tile
+              v-list-tile-avatar
+                v-icon cloud_off
+              v-list-tile-content
+                v-list-tile-title Logoff
+    component-example(header="Menus" file="menus/3")
+      v-card
+        v-card-row(class="blue")
+          v-menu
+            v-btn(icon slot="activator")
+              v-icon(class="white--text") more_vert
+            v-list
+              v-list-item(v-for="item in items")
+                v-list-tile
+                  v-list-tile-content
+                    v-list-tile-title {{ item.title }}
+          v-card-title(class="white--text") Menu
+        v-card-text Lorem Ipsum
+      v-card
+        v-card-row(class="blue")
+          v-card-title(class="white--text") Menu
+          v-spacer
+          v-menu(
+            bottom
+            left
+            origin="top right"
+          )
+            v-btn(icon slot="activator")
+              v-icon(class="white--text") more_vert
+            v-list
+              v-list-item(v-for="item in items")
+                v-list-tile
+                  v-list-tile-content
+                    v-list-tile-title {{ item.title }}
+        v-card-text Lorem Ipsum
     //- component-example(header="Custom Transitions" file="menus/4")
     //-   section-text(slot="details") Vuetify comes with 3 standard transitions, <strong>scale</strong>, <strong>slide-x</strong> and <strong>slide-y</strong>. You can also create your own and pass it as the transition argument. For an example of how the stock transitions are constructed, visit <a href="https://github.com/vuetifyjs/vuetify/blob/master/src/util/helpers.js#L13" target="_blank">here</a>.
     //-   div

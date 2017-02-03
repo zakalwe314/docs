@@ -138,7 +138,7 @@
       section-text Vuetify SSR has support for native Web Applications on smart phones. Also known as progressive web apps, your websites can be saved on the homescreen of a device, allowing it to be usable offline and receive push notifications. For more information on Web App Manifest's, navigate to the <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Mozilla Developer Network</a>. To see a live example, add the Vuetify documentation on your mobile device's homescreen.
 
     section
-      whats-next(route="/vuex" text="Vuex") With a better understanding of the <strong>webpack ssr</strong> template, let's learn about one of the most powerful features of Vuetify, Vuex integration.
+      whats-next(route="/layouts" text="Layouts") Now that you have all the tools needed to build your next awesome application, head over to the layouts section to choose a ui.
 </template>
 
 <script>

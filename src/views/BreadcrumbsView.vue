@@ -3,23 +3,23 @@
     component-example(header="Text Dividers" file="breadcrumbs/1")
       v-breadcrumbs(
         divider="/"
-        v-bind:items="items"
       )
+        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
       v-breadcrumbs(
         divider="-"
-        v-bind:items="items"
       )
+        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
     component-example(header="Icon Dividers" file="breadcrumbs/2")
       v-breadcrumbs(
         icons,
         divider="forward"
-        v-bind:items="items"
       )
+        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
       v-breadcrumbs(
         icons,
         divider="chevron_right"
-        v-bind:items="items"
       )
+        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
 </template>
 
 <script>
@@ -70,17 +70,14 @@
         },
         items: [
           {
-            href: '#!',
             text: 'Dashboard',
             disabled: false
           },
           {
-            href: '#!',
             text: 'Link 1',
             disabled: false
           },
           {
-            href: '#!',
             text: 'Link 2',
             disabled: true
           }

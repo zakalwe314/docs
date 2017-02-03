@@ -1,8 +1,7 @@
 <template lang="pug">
   v-sidebar(
     fixed
-    :active="active"
-    @active="active = arguments[0]"
+    v-model="isActive"
   )
     div(class="vuetify")
       router-link(
@@ -58,7 +57,7 @@
   export default {
     data () {
       return {
-        active: true,
+        isActive: true,
         items: [
           { header: 'Core Documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
@@ -139,6 +138,20 @@
           { title: 'Deployment', action: 'important_devices', disabled: true },
           { title: 'Examples', action: 'web', disabled: true },
         ]
+      }
+    },
+
+    props: {
+      value: Boolean,
+    },
+
+    watch: {
+      isActive () {
+        this.$emit('input', this.isActive)
+      },
+
+      value () {
+        this.isActive = this.value
       }
     }
   }
