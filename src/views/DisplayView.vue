@@ -16,9 +16,9 @@
         li <code>up</code> - from specified viewport and up
         li <code>down</code> - from specified viewport and down
       component-example(header="Hidden elements" file="display/1")
-        v-navbar(class="pl-0")
-          v-navbar-logo Logo
-          v-navbar-items(class="hidden-sm-and-down" v-bind:items="items")
+        v-toolbar(class="pl-0")
+          v-toolbar-logo Logo
+          v-toolbar-items(class="hidden-sm-and-down" v-bind:items="items")
 </template>
 
 <script>

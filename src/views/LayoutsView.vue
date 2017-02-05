@@ -1,8 +1,8 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="layout-view")
-    component-example(header="Navbar and Footer" file="layouts/1" v-bind:data="example")
-    component-example(header="Navbar and Sidebar" file="layouts/2" v-bind:data="example")
-    component-example(header="Navbar, Sidebar & Footer" file="layouts/3" v-bind:data="example")
+    component-example(header="Toolbar and Footer" file="layouts/1" v-bind:data="example")
+    component-example(header="Toolbar and Sidebar" file="layouts/2" v-bind:data="example")
+    component-example(header="Toolbar, Sidebar & Footer" file="layouts/3" v-bind:data="example")
 </template>
 
 <script>
@@ -21,7 +21,7 @@
             'v-app': {
               params: [
                 [
-                  'navbar',
+                  'toolbar',
                   'Boolean',
                   'False',
                   'Variations: top, bottom, top-fixed, bottom-fixed'
@@ -81,7 +81,7 @@
         min-height: 300px
         padding-left: 0
         
-      .navbar
+      .toolbar
         height: 5rem
         
       .sidebar

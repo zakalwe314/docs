@@ -83,13 +83,13 @@
               { href: '/components/lists', title: 'Lists', action: 'update' },
               { href: '/components/menus', title: 'Menus' },
               { href: '/components/modals', title: 'Modals' },
-              { href: '/components/navbar', title: 'Navbars' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress-circular', title: 'Progress Circular' },
               { href: '/components/progress-linear', title: 'Progress Linear', action: 'fiber_new' },
               { href: '/components/sidebar', title: 'Sidebars', action: 'update' },
-              { href: '/components/tabs', title: 'Tabs' }
+              { href: '/components/tabs', title: 'Tabs' },
+              { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },
           {

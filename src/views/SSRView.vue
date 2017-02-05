@@ -45,14 +45,14 @@
         p The <strong>Build</strong> folder contains all of the webpack specific build configurations for your project. <strong>Src</strong> is where all the development project files reside. Notice that the Webpack-SSR template is out-of-the-box configured to use <a href="https://router.vuejs.org/en/" target="_blank">Vue Router</a>, <a href="https://vuex.vuejs.org/en/intro.html" target="_blank">Vuex</a>, and the <a href="https://vuejs.org/v2/guide/ssr.html" target="_blank">Vue Server Renderer</a>. This will allow you to make simple or complex applications that are not only fast/efficient, but <strong>SEO</strong> friendly.
       h3 Application
       section-text
-        p Navigate to the <strong>src</strong> folder and open up <code>App.vue</code>. Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is <code>v-app</code>. This component allows you to define your application layout. This is used in conjunction with <code>v-navbar</code>, <code>v-sidebar</code>, <code>v-content</code> and <code>v-footer</code>.
-        p The markup below tells the application that you have a <code>top navbar</code> and <code>footer</code>. Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the <router-link to="/layouts">Layouts</router-link> section.
+        p Navigate to the <strong>src</strong> folder and open up <code>App.vue</code>. Vuetify is a semantic-focused framework. The code you write should be easy to remember, and easy to manage. To do this, one of the main components of Vuetify is <code>v-app</code>. This component allows you to define your application layout. This is used in conjunction with <code>v-toolbar</code>, <code>v-sidebar</code>, <code>v-content</code> and <code>v-footer</code>.
+        p The markup below tells the application that you have a <code>top toolbar</code> and <code>footer</code>. Once defined, the content area will be resized to accommodate. For more information on layouts, navigate to the <router-link to="/layouts">Layouts</router-link> section.
       markup(lang="html")
-        |&lt;v-app top-navbar footer&gt;
+        |&lt;v-app top-toolbar footer&gt;
         |   &lt;header&gt;
-        |     &lt;v-navbar&gt;
-        |       &lt;h1&gt;Portfolio&lt;/h1&gt;
-        |     &lt;/v-navbar&gt;
+        |     &lt;v-toolbar&gt;
+        |       &lt;v-toolbar-logo&gt;Portfolio&lt;/v-toolbar-logo&gt;
+        |     &lt;/v-toolbar&gt;
         |   &lt;/header&gt;
         |   &lt;main&gt;
         |     &lt;v-content&gt;
@@ -105,7 +105,7 @@
         |// App.vue
         |export default {
         |   mounted () {
-        |     this.$vuetify().init()
+        |     this.$vuetify.init()
         |   },
         |   methods: {
         |     view (meta) {

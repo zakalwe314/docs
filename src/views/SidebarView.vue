@@ -58,19 +58,19 @@
                   'drawer',
                   'Boolean',
                   'False',
-                  'Applies the navbar--drawer class',
+                  'Applies the toolbar--drawer class',
                 ],
                 [
                   'fixed',
                   'Boolean',
                   'False',
-                  'Applies the navbar--fixed class',
+                  'Applies the toolbar--fixed class',
                 ],
                 [
                   'height',
                   'String',
                   '100vh',
-                  'Sets height of the navbar',
+                  'Sets height of the toolbar',
                 ],
                 [
                   'id',
@@ -100,7 +100,7 @@
                   'right',
                   'Boolean',
                   'False',
-                  'Applies the navbar--right class'
+                  'Applies the toolbar--right class'
                 ],
                 [
                   'ripple',
@@ -127,7 +127,7 @@
             'v-sidebar': {
               default: true,
               params: [
-                ['top', 'Slot located at top of navbar']
+                ['top', 'Slot located at top of toolbar']
               ]
             }
           }
@@ -190,7 +190,7 @@
       position: relative
       overflow: hidden
         
-    .navbar
+    .toolbar
       min-height: 5rem
       padding-left: 0
       

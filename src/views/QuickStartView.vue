@@ -7,7 +7,7 @@
 
     section
       section-header Manual Install
-      section-text To test using Vuetify.js without installing a template from Vue CLI, include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install into Vue and be ready to use. This will <strong>also require</strong> the dependency above.
+      section-text To test using Vuetify.js without installing a template from Vue CLI, include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install and be ready to use.
       markup(lang="html")
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
         |&nbsp;
@@ -26,17 +26,9 @@
       section-text I your index.js, import Vuetify and apply the plugin to Vue.
       markup(lang="js")
         |import Vue from 'vue'
-        |import Vuex from 'vuex'
-        |import { default as Vuetify, vuetifySync } from 'vuetify'
-        |import App from './App'
-        |&nbsp;
-        |const store = new Vuex.Store()
-        |&nbsp;
-        |vuetifySync(store)
+        |import Vuetify from 'vuetify'
         |&nbsp;
         |Vue.use(Vuetify)
-        |&nbsp;
-        |new Vue(Vue.util.extend({ store }, App))
       section-text Once you have Vuetify installed, add the Vuetify <code>init</code> function to the Vue mounted hook. This is normally in your application <code>App.vue</code>, the main entry-point for your application.
       markup(lang="js")
         |mounted () {

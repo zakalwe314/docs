@@ -64,7 +64,7 @@
       |.card
       |   width: 400px
       |&nbsp;
-      |   .navbar
+      |   .toolbar
       |     height: auto
       |     min-height: 55px
       |     padding-left: 0
@@ -382,7 +382,7 @@
   #lists-view .component-example
     .card
       width: 400px
-      .navbar
+      .toolbar
         height: auto
         min-height: 55px
         padding-left: 0

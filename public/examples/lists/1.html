@@ -1,11 +1,11 @@
 <v-card>
-  <v-navbar class="cyan">
-    <v-navbar-toolbar>
-      <v-navbar-side-icon class="grey--text text--darken-4">
-      <v-navbar-title>Inbox</v-navbar-title>
+  <v-toolbar class="cyan">
+    <v-toolbar-toolbar>
+      <v-toolbar-side-icon class="grey--text text--darken-4">
+      <v-toolbar-title>Inbox</v-toolbar-title>
       <v-icon>search</v-icon>
-    </v-navbar-toolbar>
-  </v-navbar>
+    </v-toolbar-toolbar>
+  </v-toolbar>
   <v-list two-line>
     <template v-for="item in e1.slice(0, 6)">
       <v-list-sub-header v-if="item.header" v-text="item.header"/>

@@ -1,6 +1,6 @@
 <template lang="pug">
   header
-    v-navbar(fixed)
+    v-toolbar(fixed)
       v-btn(
         class="side-icon hidden-md-and-up"
         icon
@@ -9,7 +9,7 @@
         v-on:click.native.stop="$emit('sidebar')"
       )
         v-icon menu
-      div(class="navbar__side-title")
+      div(class="toolbar__side-title")
         h1(class="text-xs-center text-md-left" v-text="title")
         span(class="hidden-md-and-down" v-html="subTitle")
 </template>
@@ -80,7 +80,7 @@
   @import '../stylus/settings/_variables'
   
   header
-    .navbar
+    .toolbar
       align-items: center
       color: #fff
       
@@ -115,7 +115,7 @@
         
   @media screen and (max-width: $grid-breakpoints.md)
     header
-      .navbar
+      .toolbar
         height: 50px
         
         h1

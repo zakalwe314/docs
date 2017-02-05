@@ -4,7 +4,7 @@
     component-example(header="Custom Color" file="ripples/2")
     component-example(header="Tabs" file="ripples/3")
     component-example(header="Sidebars" file="ripples/4")
-    component-example(header="Navbar" file="ripples/5")
+    component-example(header="Toolbar" file="ripples/5")
     component-example(header="Collapsible" file="ripples/6")
 </template>
 
@@ -54,7 +54,7 @@
 
 <style lang="stylus">
   #ripple-doc
-    .navbar
+    .toolbar
       height: 5rem
       padding-left: 0
       

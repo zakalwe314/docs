@@ -181,6 +181,6 @@
     > .progress-linear
       margin: 2rem 0
       
-    .navbar
+    .toolbar
       height: 55px
 </style>

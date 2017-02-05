@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app(left-fixed-sidebar top-fixed-navbar footer)
+  v-app(left-fixed-sidebar top-fixed-toolbar footer)
   
     main-nav(v-bind:title="title" v-on:sidebar="sidebar = !sidebar")
 

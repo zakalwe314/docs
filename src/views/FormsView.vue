@@ -1,105 +1,9 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="Selects" file="forms/1")
-      div
-        v-select(
-          v-bind:options="options",
-          id="test",
-          label="Testing",
-          name="test",
-          v-model="input"
-        )
-        div {{ input }}
-      div
-        v-select(
-          v-bind:options="options",
-          id="test4",
-          label="Testing4",
-          name="test4",
-          multiple,
-          v-model="multiple"
-        )
-        div {{ multiple }}
-    component-example(header="Inputs" file="forms/2")
-      div
-        v-text-input(
-          id="test2",
-          name="test2",
-          label="Testing 2"
-          v-model="text"
-        )
-        div {{ text }}
-      div
-        v-text-input(
-          id="test3",
-          name="test3",
-          label="Testing 3",
-          placeholder="Testing 3"
-        )
-    component-example(header="Radios" file="forms/3")
-      v-radio(
-        id="test5",
-        name="test5",
-        label="Testing 5"
-      )
-      v-radio(
-        id="test6",
-        name="test5",
-        label="Testing 6",
-        gap
-      )
-      v-radio(
-        id="test62",
-        name="test52",
-        label="Testing 62",
-        gap,
-        checked,
-        disabled
-      )
-      v-radio(
-        id="test61",
-        name="test54",
-        label="Testing 61",
-        disabled,
-        checked
-      )
-      v-radio(
-        id="test71",
-        name="test5",
-        label="Testing 71",
-        disabled
-      )
-    component-example(header="Checkboxes" file="forms/4")
-      v-checkbox(
-        id="test7",
-        name="test7",
-        label="Testing 7"
-      )
-      v-checkbox(
-        id="test8",
-        name="test8",
-        label="Testing 8",
-        filled
-      )
-      v-checkbox(
-        id="test9",
-        name="test9",
-        label="Testing 9",
-        indeterminate
-      )
-      v-checkbox(
-        id="test10",
-        name="test10",
-        label="Testing 10",
-        disabled
-      )
-      v-checkbox(
-        id="test10",
-        name="test10",
-        label="Testing 10",
-        checked,
-        disabled
-      )
+    component-example(header="Selects" file="forms/1" v-bind:data="example")
+    component-example(header="Inputs" file="forms/2" v-bind:data="example")
+    component-example(header="Radios" file="forms/3" v-bind:data="example")
+    component-example(header="Checkboxes" file="forms/4" v-bind:data="example")
 </template>
 
 <script>
@@ -226,23 +130,25 @@
             }
           }
         },
-        input: null,
-        multiple: ['2'],
-        options: [
-          {
-            value: 1,
-            text: 'Option 1'
-          },
-          {
-            value: 2,
-            text: 'Option 2'
-          },
-          {
-            value: 3,
-            text: 'Option 3'
-          }
-        ],
-        text: ''
+        example: {
+          input: null,
+          multiple: ['2'],
+          options: [
+            {
+              value: 1,
+              text: 'Option 1'
+            },
+            {
+              value: 2,
+              text: 'Option 2'
+            },
+            {
+              value: 3,
+              text: 'Option 3'
+            }
+          ],
+          text: null
+        }
       }
     },
 
