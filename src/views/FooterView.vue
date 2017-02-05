@@ -1,10 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="footer")
     component-example(file="footer/1")
-      div
-        v-footer
-          div(class="text-xs-right") &copy; 2016
-    markup(slot="markup" lang="xml")
 </template>
 
 <script>

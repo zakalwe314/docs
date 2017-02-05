@@ -15,14 +15,20 @@
       </v-card-row>
     </v-card-text>
   </v-card>
-  <v-tabs-tabs>
-    <v-tab-item v-for="i in 13" v-bind:item="{ text: 'Item ' + i, href: '#mobile-tabs-6-' + i }"></v-tab-item>
-  </v-tabs-tabs>
-  <v-tabs-items>
-    <v-tabs-item v-for="i in 13" v-bind:id="'mobile-tabs-6-' + i">
-      <v-card>
-        <v-card-text>...</v-card-text>
-      </v-card>
-    </v-tabs-item>
-  </v-tabs-items>
+  <v-tab-item 
+    v-for="i in 13"
+    v-bind:href="'#mobile-tabs-6-' + i"
+    slot="activators"
+  >
+    Item {{ i }}
+  </v-tab-item>
+  <v-tab-content
+    v-for="i in 13" 
+    v-bind:id="'mobile-tabs-6-' + i"
+    slot="content"
+  >
+    <v-card>
+      <v-card-text>{{ text }}</v-card-text>
+    </v-card>
+  </v-tab-content>
 </v-tabs>

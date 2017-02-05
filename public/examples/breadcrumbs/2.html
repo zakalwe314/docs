@@ -1,3 +1,19 @@
-<v-breadcrumbs icons divider="forward" v-bind:items="items"></v-breadcrumbs>
+<div>
+  <v-breadcrumbs icons divider="forward">
+    <v-breadcrumbs-item 
+      v-for="item in items"
+      :disabled="item.disabled"
+    >
+      {{ item.text }}
+    </v-breadcrumbs-item>
+  </v-breadcrumbs>
 
-<v-breadcrumbs icons divider="chevron_right" v-bind:items="items"></v-breadcrumbs>
+  <v-breadcrumbs icons divider="chevron_right">
+    <v-breadcrumbs-item 
+      v-for="item in items"
+      :disabled="item.disabled"
+    >
+      {{ item.text }}
+    </v-breadcrumbs-item>
+  </v-breadcrumbs>
+</div>

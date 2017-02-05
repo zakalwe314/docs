@@ -1,14 +1,20 @@
 <v-tabs id="mobile-tabs-5" grow>
-  <v-tabs-tabs>
-    <v-tab-item v-bind:item="{ href: '#mobile-tabs-5-1', icon: 'phone' }"></v-tab-item>
-    <v-tab-item v-bind:item="{ href: '#mobile-tabs-5-2', icon: 'favorite' }"></v-tab-item>
-    <v-tab-item v-bind:item="{ href: '#mobile-tabs-5-3', icon: 'account_box' }"></v-tab-item>
-  </v-tabs-tabs>
-  <v-tabs-items>
-    <v-tabs-item v-for="i in 3" v-bind:id="'mobile-tabs-5-' + i">
-      <v-card>
-        <v-card-text></v-card-text>
-      </v-card>
-    </v-tabs-item>
-  </v-tabs-items>
+  <v-tab-item href="#mobile-tabs-5-1" slot="activators">
+    <v-icon>phone</v-icon>
+  </v-tab-item>
+  <v-tab-item href="#mobile-tabs-5-2" slot="activators">
+    <v-icon>favorite</v-icon>
+  </v-tab-item>
+  <v-tab-item href="#mobile-tabs-5-3" slot="activators">
+    <v-icon>account_box</v-icon>
+  </v-tab-item>
+  <v-tab-content 
+    v-for="i in 3" 
+    v-bind:id="'mobile-tabs-5-' + i"
+    slot="content"
+  >
+    <v-card>
+      <v-card-text>{{ text }}</v-card-text>
+    </v-card>
+  </v-tab-content>
 </v-tabs>

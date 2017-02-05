@@ -1,19 +1,7 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(file="carousels/1")
-      v-carousel
-        v-carousel-item(
-          v-for="item in items"
-          v-bind:src="item.src"
-        )
-    component-example(header="Custom Transition" file="carousels/2")
-      v-carousel(icon="remove")
-        v-carousel-item(
-          v-for="item in items"
-          v-bind:src="item.src"
-          transition="fade"
-          reverseTransition="fade"
-        )
+    component-example(file="carousel/1" v-bind:data="example")
+    component-example(header="Custom Transition" file="carousel/2" v-bind:data="example")
     markup(lang="js")
       |import Vue from 'vue'
       |&nbsp;
@@ -111,20 +99,22 @@
             }
           }
         },
-        items: [
-          {
-            src: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/cute-almonds-picture-1440x500.jpg'
-          },
-          {
-            src: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/sky-hd-picture-1440x500.jpg'
-          },
-          {
-            src: 'https://burlingtonontariobirder.files.wordpress.com/2015/03/cropped-red-tailed-hawk-my-favourite-picture.jpg'
-          },
-          {
-            src: 'http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg'
-          }
-        ]
+        example: {
+          items: [
+            {
+              src: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/cute-almonds-picture-1440x500.jpg'
+            },
+            {
+              src: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/sky-hd-picture-1440x500.jpg'
+            },
+            {
+              src: 'https://burlingtonontariobirder.files.wordpress.com/2015/03/cropped-red-tailed-hawk-my-favourite-picture.jpg'
+            },
+            {
+              src: 'http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg'
+            }
+          ]
+        }
       }
     },
 

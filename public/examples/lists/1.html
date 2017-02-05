@@ -1,10 +1,26 @@
 <v-card>
   <v-navbar class="cyan">
     <v-navbar-toolbar>
-      <v-navbar-side-icon class="grey--text text--darken-4"></v-navbar-side-icon>
+      <v-navbar-side-icon class="grey--text text--darken-4">
       <v-navbar-title>Inbox</v-navbar-title>
       <v-icon>search</v-icon>
     </v-navbar-toolbar>
   </v-navbar>
-  <v-list two-line v-bind:items="e1.slice(0, 6)"></v-list>
+  <v-list two-line>
+    <template v-for="item in e1.slice(0, 6)">
+      <v-list-sub-header v-if="item.header" v-text="item.header"/>
+      <v-divider v-else-if="item.divider" v-bind:inset="item.inset"/>
+      <v-list-item v-else>
+        <v-list-tile avatar>
+          <v-list-tile-avatar>
+            <img v-bind:src="item.avatar"/>
+          </v-list-tile-avatar>
+          <v-list-tile-content>
+            <v-list-tile-title v-html="item.title"/>
+            <v-list-tile-sub-title v-html="item.subtitle"/>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list-item>
+    </template>
+  </v-list>
 </v-card>

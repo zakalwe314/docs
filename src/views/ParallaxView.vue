@@ -1,9 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     component-example(file="parallax/1")
-    v-parallax(
-      src="https://s-media-cache-ak0.pinimg.com/originals/e1/00/ef/e100ef3699fa021506561d41e392a148.jpg"
-    )
 </template>
 
 <script>

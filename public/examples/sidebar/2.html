@@ -1,1 +1,16 @@
-<v-sidebar class="blue darken-3" height="40vh" drawer v-bind:items="items"></v-sidebar>
+<v-app id="sidebar-example-2" left-fixed-sidebar>
+  <v-navbar>
+    <v-navbar-side-icon />
+  </v-navbar>
+  <main>
+    <v-sidebar class="blue darken-3" height="40vh" drawer>
+      <v-list dense>
+        <v-list-item v-for="item in items">
+          <v-list-tile>
+            <v-list-tile-title v-text="item.title" />    
+          </v-list-tile>
+        </v-list-item>
+      </v-list>
+    </v-sidebar>
+  </main>
+</v-app>

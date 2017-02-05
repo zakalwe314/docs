@@ -1,25 +1,7 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(header="Text Dividers" file="breadcrumbs/1")
-      v-breadcrumbs(
-        divider="/"
-      )
-        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
-      v-breadcrumbs(
-        divider="-"
-      )
-        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
-    component-example(header="Icon Dividers" file="breadcrumbs/2")
-      v-breadcrumbs(
-        icons,
-        divider="forward"
-      )
-        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
-      v-breadcrumbs(
-        icons,
-        divider="chevron_right"
-      )
-        v-breadcrumbs-item(v-for="item in items" v-bind:disabled="item.disabled") {{ item.text }}
+    component-example(header="Text Dividers" file="breadcrumbs/1" v-bind:data="example")
+    component-example(header="Icon Dividers" file="breadcrumbs/2" v-bind:data="example")
 </template>
 
 <script>
@@ -68,20 +50,22 @@
             }
           }
         },
-        items: [
-          {
-            text: 'Dashboard',
-            disabled: false
-          },
-          {
-            text: 'Link 1',
-            disabled: false
-          },
-          {
-            text: 'Link 2',
-            disabled: true
-          }
-        ]
+        example: {
+          items: [
+            {
+              text: 'Dashboard',
+              disabled: false
+            },
+            {
+              text: 'Link 1',
+              disabled: false
+            },
+            {
+              text: 'Link 2',
+              disabled: true
+            }
+          ]
+        }
       }
     },
 

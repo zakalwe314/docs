@@ -1,43 +1,17 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="sidebars-view")
-    component-example(header="Left" file="sidebar/1")
-      div(class="grey lighten-1")
-        v-navbar
-          div(class="navbar__side-icon hidden-md-and-up")
-            a(href="#!" v-sidebar:doc-sidebar-1="")
-              v-icon reorder
-          v-navbar-logo Logo
-        v-sidebar(id="doc-sidebar-1" height="40vh" v-bind:items="items")
+    component-example(header="Left" file="sidebar/1" v-bind:data="example")
             
     blockquote A sidebar is required to have an activator. This allows the sidebar to be opened on mobile.
 
-    component-example(header="Drawer" file="sidebar/2")
-      div(class="grey lighten-1")
-        v-navbar
-          div(class="navbar__side-icon")
-            a(href="#!" v-sidebar:doc-sidebar-2="")
-              v-icon reorder
-          v-navbar-logo Logo
-        v-sidebar(class="blue darken-3" id="doc-sidebar-2" height="40vh" v-bind:items="items" drawer)
+    component-example(header="Drawer" file="sidebar/2" v-bind:data="example")
 
-    component-example(header="Item Groups" file="sidebar/3")
+    component-example(header="Item Groups" file="sidebar/3" v-bind:data="example")
       section-text(slot="details") For more details on the available item options, check out the <a href="javascript:;" v-on:click.stop="$router.push('/components/lists')">lists</a> section.
-      div(class="grey lighten-1")
-        v-navbar
-          v-navbar-side-icon(v-sidebar:doc-sidebar-3="" class="hidden-md-and-up")
-            v-icon reorder
-          v-navbar-logo Logo
-        v-sidebar(id="doc-sidebar-3" height="40vh" right fixed v-bind:items="item_group")
 
     blockquote Sidebars groups require an additional property in the item array to designate the base path for their sub routes. This is used for highlighting with vue-router.
 
-    component-example(header="Ripples" file="sidebar/4")
-      div(class="grey lighten-1")
-        v-navbar
-          v-navbar-side-icon(v-sidebar:doc-sidebar-4="" class="hidden-md-and-up")
-            v-icon reorder
-          v-navbar-logo Logo
-        v-sidebar(id="doc-sidebar-4" height="40vh" v-bind:items="item_group" ripple)
+    component-example(header="Ripples" file="sidebar/4" v-bind:data="example")
 
     markup(lang="js")
       |data () {
@@ -158,27 +132,29 @@
             }
           }
         },
-        items: [
-          { title: 'Home', avatar: 'dashboard' },
-          { title: 'Profile', avatar: 'account_box' },
-          { title: 'Contact', avatar: 'import_contacts' }
-        ],
-        item_group: [
-          { header: 'Header' },
-          {
-            title: 'Parent',
-            items: [
-              { title: 'Child' },
-              { title: 'Child' },
-              { title: 'Child' }
-            ]
-          },
-          { title: 'Link' },
-          { title: 'Link' },
-          { divider: true, light: true },
-          { header: 'Another Header' },
-          { title: 'Link' }
-        ]
+        example: {
+          items: [
+            { title: 'Home', avatar: 'dashboard' },
+            { title: 'Profile', avatar: 'account_box' },
+            { title: 'Contact', avatar: 'import_contacts' }
+          ],
+          item_group: [
+            { header: 'Header' },
+            {
+              title: 'Parent',
+              items: [
+                { title: 'Child' },
+                { title: 'Child' },
+                { title: 'Child' }
+              ]
+            },
+            { title: 'Link' },
+            { title: 'Link' },
+            { divider: true, light: true },
+            { header: 'Another Header' },
+            { title: 'Link' }
+          ]
+        }
       }
     },
 
@@ -205,12 +181,14 @@
 
 <style lang="stylus">
   #sidebars-view
+    .with, main
+      min-height: 40vh
+      
     .component-example__container
-      > div
-        flex: 1
-        min-height: 40vh
-        position: relative
-        overflow: hidden
+      flex: 1
+      min-height: 40vh
+      position: relative
+      overflow: hidden
         
     .navbar
       min-height: 5rem

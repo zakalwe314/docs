@@ -3,65 +3,20 @@
     id="progress"
     v-bind:doc="doc"
   )
-    component-example(header="Default" file="progress-circular/1")
-      v-progress-circular(v-bind:value="20")
-      v-progress-circular(v-bind:value="40")
-      v-progress-circular(v-bind:value="60")
-      v-progress-circular(v-bind:value="80")
-      v-progress-circular(v-bind:value="100")
-    component-example(header="Colored" file="progress-circular/2")
-      v-progress-circular(class="blue-grey--text" v-bind:value="100")
-      v-progress-circular(class="deep-orange--text" v-bind:value="80")
-      v-progress-circular(class="brown--text" v-bind:value="60")
-      v-progress-circular(class="lime--text" v-bind:value="40")
-      v-progress-circular(class="indigo--text" v-bind:value="20")
-    component-example(header="Indeterminate" file="progress-circular/3")
-      v-progress-circular(class="primary--text" indeterminate)
-      v-progress-circular(class="red--text" indeterminate)
-      v-progress-circular(class="purple--text" indeterminate)
-      v-progress-circular(class="green--text" indeterminate)
-      v-progress-circular(class="amber--text" indeterminate)
-    component-example(header="Size & Width" file="progress-circular/4")
-      v-progress-circular(class="primary--text" indeterminate v-bind:size="50")
-      v-progress-circular(class="red--text" indeterminate v-bind:width="3")
-      v-progress-circular(class="purple--text" v-bind:size="70" v-bind:width="7" indeterminate)
-      v-progress-circular(class="green--text" indeterminate v-bind:width="3")
-      v-progress-circular(class="amber--text" indeterminate v-bind:size="50")
-    component-example(header="Rotate" file="progress-circular/5")
-      v-progress-circular(
-        class="teal--text" 
-        v-bind:size="100" 
-        v-bind:width="15" 
-        v-bind:rotate="360"
-        v-bind:value="value"
-      ) {{ value }}
-      v-progress-circular(
-        class="primary--text" 
-        v-bind:size="100" 
-        v-bind:width="15" 
-        v-bind:rotate="-90"
-        v-bind:value="value"
-      ) {{ value }}
-      v-progress-circular(
-        class="red--text" 
-        v-bind:size="100" 
-        v-bind:width="15" 
-        v-bind:rotate="90"
-        v-bind:value="value"
-      ) {{ value }}
-      v-progress-circular(
-        class="pink--text" 
-        v-bind:size="100" 
-        v-bind:width="15" 
-        v-bind:rotate="180"
-        v-bind:value="value"
-      ) {{ value }}
+    component-example(header="Default" file="progress-circular/1" v-bind:data="example")
+    component-example(header="Colored" file="progress-circular/2" v-bind:data="example")
+    component-example(header="Indeterminate" file="progress-circular/3" v-bind:data="example")
+    component-example(header="Size & Width" file="progress-circular/4" v-bind:data="example")
+    component-example(header="Rotate" file="progress-circular/5" v-bind:data="example")
 </template>
 
 <script>
   export default {
     data () {
       return {
+        example: {
+          value: 40
+        },
         doc: {
           title: 'Progress Circular',
           desc: 'The <code>v-progress-circular</code> component is used to convey data visually to users. It can also represent an indeterminate amount, such as loading or processing. This component contains a slot that is centered within the component container.',
@@ -110,8 +65,7 @@
               default: true
             }
           }
-        },
-        value: 40
+        }
       }
     },
 
@@ -119,10 +73,10 @@
       this.$emit('view', this.meta())
 
       setInterval(() => {
-        if (this.value === 100) {
-          return this.value = 0
+        if (this.example.value === 100) {
+          return this.example.value = 0
         }
-        this.value += 10
+        this.example.value += 10
       }, 1000)
     },
 

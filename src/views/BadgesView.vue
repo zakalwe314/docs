@@ -1,35 +1,8 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     component-example(header="Character" file="badges/1")
-      v-icon(
-        large
-        v-badge:6.left=""
-        class="grey--text text--lighten-1"
-      ) shopping_cart
-      v-icon(
-        large,
-        v-badge="{ value: '!' }"
-        class="grey--text red--after"
-      ) mail
     component-example(header="Icon" file="badges/2")
-      v-icon(
-        large
-        v-badge:done.overlap.icon.left=""
-        class="grey--text text--lighten-1"
-      ) account_circle
-      v-icon(
-        large
-        v-badge:notifications.icon.overlap=""
-        class="grey--text text--darken-1 orange--after"
-      ) account_box
     component-example(header="Inline" file="badges/3")
-      span(
-        v-badge:2.left=""
-      ) Examples
-      span(
-        v-badge:list.icon=""
-        class="green--after"
-      ) Lists
 </template>
 
 <script>

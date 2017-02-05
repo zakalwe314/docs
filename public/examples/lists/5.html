@@ -1,7 +1,7 @@
-<v-car>
+<v-card>
   <v-navbar class="teal">
     <v-navbar-toolbar>
-      <v-navbar-side-icon class="grey--text text--darken-4"></v-navbar-side-icon>
+      <v-navbar-side-icon class="grey--text text--darken-4">
       <v-navbar-title class="text-xs-center">New Chat</v-navbar-title>
       <v-icon>search</v-icon>
     </v-navbar-toolbar>
@@ -10,9 +10,11 @@
     <v-list-sub-header>Recent chat</v-list-sub-header>
     <v-list-item v-for="item in e41">
       <v-list-tile avatar>
-        <v-list-tile-avatar><img v-bind:src="item.avatar"/></v-list-tile-avatar>
+        <v-list-tile-avatar>
+          <img v-bind:src="item.avatar"/>
+        </v-list-tile-avatar>
         <v-list-tile-content>
-          <v-list-tile-title v-html="item.title"></v-list-tile-title>
+          <v-list-tile-title v-html="item.title">
         </v-list-tile-content>
         <v-list-tile-action>
           <v-icon v-bind:class="[item.active ? 'teal--text' : 'grey--text']">chat_bubble</v-icon>
@@ -20,14 +22,16 @@
       </v-list-tile>
     </v-list-item>
   </v-list>
-  <v-divider></v-divider>
+  <v-divider>
   <v-list sub-header>
     <v-list-sub-header>Previous chats</v-list-sub-header>
     <v-list-item v-for="item in e42">
       <v-list-tile avatar>
-        <v-list-tile-avatar><img v-bind:src="item.avatar"/></v-list-tile-avatar>
+        <v-list-tile-avatar>
+          <img v-bind:src="item.avatar"/>
+        </v-list-tile-avatar>
         <v-list-tile-content>
-          <v-list-tile-title v-html="item.title"></v-list-tile-title>
+          <v-list-tile-title v-html="item.title">
         </v-list-tile-content>
       </v-list-tile>
     </v-list-item>

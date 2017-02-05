@@ -53,9 +53,6 @@
     margin-top: -1rem
     margin-bottom: 1rem
     text-align: right
-
-  .breadcrumbs
-    justify-content: flex-end
   
   .chip--component
     margin-right: 1rem

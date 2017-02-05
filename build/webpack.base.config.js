@@ -22,7 +22,8 @@ const config = {
   resolve: {
     extensions: ['*', '.js', '.json', '.vue'],
     alias: {
-      'public': path.resolve(__dirname, '../public')
+      'public': path.resolve(__dirname, '../public'),
+      'vue$': 'vue/dist/vue.common.js'
     }
   },
   module: {
