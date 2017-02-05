@@ -382,8 +382,8 @@
   #lists-view .component-example
     .card
       width: 400px
+      
       .toolbar
         height: auto
         min-height: 55px
-        padding-left: 0
 </style>

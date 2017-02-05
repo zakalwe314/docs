@@ -112,8 +112,6 @@
       color: rgba(#000, 0.3)
       
     &__container
-      padding: 1rem 4rem
-      margin: 0 -4rem 1rem
       flex-wrap: wrap
       transition: .3s ease-out
       text-align: center
