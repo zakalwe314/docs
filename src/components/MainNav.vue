@@ -1,14 +1,10 @@
 <template lang="pug">
   header
     v-toolbar(fixed)
-      v-btn(
+      v-toolbar-side-icon(
         class="side-icon hidden-md-and-up"
-        icon
-        dark
-        ripple
         v-on:click.native.stop="$emit('sidebar')"
       )
-        v-icon menu
       div(class="toolbar__side-title")
         h1(class="text-xs-center text-md-left" v-text="title")
         span(class="hidden-md-and-down" v-html="subTitle")
@@ -83,9 +79,6 @@
     .toolbar
       align-items: center
       color: #fff
-      
-      .side-icon
-        margin: 0 1rem
       
       &__side-title
         display: flex

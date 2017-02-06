@@ -1,68 +1,8 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="table-view")
-    component-example(header="Default" file="tables/1")
-      table
-        thead
-          tr
-            th
-            th(v-for="header in headers" v-text="header")
-            th
-        tbody
-          template(v-for="(item, index) in items")
-            tr
-              td
-                v-checkbox(v-bind:id="'checkbox' + index" filled class="text-xs-center")
-              td(v-for="data in item" v-text="data")
-              td
-                v-btn(icon)
-                  v-icon edit
-      component-example(header="Inside Card" file="tables/2" id="table-overflow")
-        section-text(slot="details") Cards allow tables to overflow-x, creating a scroll-bar if the content is too wide.
-        v-card
-          v-table-overflow
-            table
-              thead
-                tr
-                  th
-                  th(v-for="header in headers" v-text="header")
-                  th
-              tbody
-                template(v-for="(item, index) in items")
-                  tr
-                    td
-                      v-checkbox(v-bind:id="'checkbox2' + index" filled class="text-xs-center")
-                    td(v-for="data in item" v-text="data")
-                    td
-                      v-btn(icon)
-                        v-icon edit
-    component-example(header="With Dropdown" file="tables/3")
-      table
-        thead
-          tr
-            th
-            th(v-for="header in headers" v-text="header")
-            th
-        tbody
-          template(v-for="(item, index) in items")
-            tr
-              td
-                v-checkbox(v-bind:id="'checkbox3' + index" filled class="text-xs-center")
-              td(v-for="data in item" v-text="data")
-              td
-                v-btn(v-menu="{ value: 'menu3-' + index }") Options
-                v-menu(
-                  v-bind:id="'menu3-' + index"
-                  transition="v-slide-y-transition"
-                  origin="top center"
-                  top right
-                )
-                  v-list
-                    v-list-item
-                      v-list-tile(v-bind:item="{ title: 'Edit' }")
-                    v-list-item
-                      v-list-tile(v-bind:item="{ title: 'Reset Password' }")
-                    v-list-item
-                      v-list-tile(v-bind:item="{ title: 'Delete' }")
+    component-example(header="Default" file="tables/1" v-bind:data="example")
+    component-example(header="Inside Card" file="tables/2" id="table-overflow" v-bind:data="example")
+    component-example(header="With Dropdown" file="tables/3" v-bind:data="example")
 </template>
 
 <script>
@@ -82,12 +22,15 @@
             }
           }
         },
-        headers: ['ID', 'Name', 'Email'],
-        items: [
-          ['1', 'Thrall', 'thrall@blizzard.com'],
-          ['2', 'Jaina', 'jaina@blizzard.com'],
-          ['3', 'Grom', 'grom@blizzard.com']
-        ]
+        example: {
+          modal: false,
+          headers: ['ID', 'Name', 'Email'],
+          items: [
+            ['1', 'Thrall', 'thrall@blizzard.com'],
+            ['2', 'Jaina', 'jaina@blizzard.com'],
+            ['3', 'Grom', 'grom@blizzard.com']
+          ]
+        }
       }
     },
 
