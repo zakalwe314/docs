@@ -4,9 +4,25 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    title: null,
+    description: null,
+    keywords: null
+  },
 
   actions: {},
 
-  mutations: {}
+  mutations: {
+    'vuetify/TITLE' (state, payload) {
+      state.title = payload
+    },
+
+    'vuetify/DESCRIPTION' (state, payload) {
+      state.description = payload
+    },
+
+    'vuetify/KEYWORDS' (state, payload) {
+      state.keywords = payload
+    }
+  }
 })

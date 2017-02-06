@@ -23,6 +23,18 @@
       }
     },
 
+    mounted () {
+      this.$store.watch(state => state.title, title => {
+        document.title = title
+      })
+      this.$store.watch(state => state.description, description => {
+        document.head.querySelector('meta[name=description]').content = description
+      })
+      this.$store.watch(state => state.keywords, keywords => {
+        document.head.querySelector('meta[name=keywords]').content = keywords
+      })
+    },
+
     methods: {
       meta (obj) {
         if (typeof obj === 'string') {
@@ -30,6 +42,10 @@
         }
 
         this.title = obj.h1
+        this.$store.commit('vuetify/TITLE', obj.title)
+        this.$store.commit('vuetify/DESCRIPTION', obj.description)
+        this.$store.commit('vuetify/KEYWORDS', obj.keywords)
+
       }
     }
   }
