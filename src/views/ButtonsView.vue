@@ -1,72 +1,8 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="buttons-view")
-    component-example(header="Flat" file="buttons/2" id="e1-1")
-      v-container(fluid class="text-xs-center")
-        v-row
-          v-col(xs12 sm6)
-            span Light Theme
-            v-card(class="grey lighten-4 z-depth-0" height="300px")
-              v-card-text
-                div
-                  v-btn(flat) Normal
-                div
-                  v-btn(flat class="btn-flat-focused") Focused
-                div
-                  v-btn(flat class="btn-flat-pressed") Pressed
-                div
-                  v-btn(flat disabled) Disabled
-          v-col(xs12 sm6)
-            span Dark Theme
-            v-card(class="secondary z-depth-0" height="300px")
-              v-card-text
-                div
-                  v-btn(flat dark) Normal
-                div
-                  v-btn(flat dark class="btn-flat-focused-dark") Focused
-                div
-                  v-btn(flat dark class="btn-flat-pressed-dark") Pressed
-                div
-                  v-btn(flat dark disabled) Disabled
-
-    component-example(header="Raised" file="buttons/2" id="e1-2")
-      v-container(fluid class="text-xs-center")
-        v-row
-          v-col(xs12 sm6)
-            span Raised Light Theme
-            v-card(class="grey lighten-4 z-depth-0" height="300px")
-              v-card-text
-                div
-                  v-btn Normal
-                div
-                  v-btn(class="btn-focused") Focused
-                div
-                  v-btn(class="btn-pressed z-depth-2") Pressed
-                div
-                  v-btn(disabled) Disabled
-          v-col(xs12 sm6)
-            span Raised Dark Theme
-            v-card(class="secondary z-depth-0" height="300px")
-              v-card-text
-                div
-                  v-btn(primary dark) Normal
-                div
-                  v-btn(primary dark class="btn-focused") Focused
-                div
-                  v-btn(primary dark class="btn-pressed z-depth-2") Pressed
-                div
-                  v-btn(primary dark disabled) Disabled
-
-    component-example(header="Button Dropdown" id="e2-1")
-      v-card(class="grey lighten-4 z-depth-0 py-5")
-        v-card-text
-          v-container(fluid)
-            v-row
-              v-col(xs12 sm4 class="py-2")
-                v-btn-dropdown(v-bind:items="dropdown.slice(0, 4)" max-height="auto")
-              v-col(xs12 sm4 class="py-2")
-                v-btn-dropdown(v-bind:items="dropdown.slice(0, 7)")
-              v-col(xs12 sm4 class="py-2")
-                v-btn-dropdown(v-bind:items="dropdown")
+    component-example(header="Flat" file="buttons/1" id="e1-1" v-bind:data="$data")
+    component-example(header="Raised" file="buttons/2" id="e1-2" v-bind:data="$data")
+    component-example(header="Button Dropdown" file="buttons/3" id="e2-1" v-bind:data="$data")
 
     //- component-example(header="Button Dropdown Variants" id="e2-2")
       v-card(class="grey lighten-4 z-depth-0 py-5")

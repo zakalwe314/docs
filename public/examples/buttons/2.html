@@ -1,9 +1,40 @@
-<v-btn flat>Default Flat</v-btn>
-
-<v-btn success flat>Success Flat</v-btn>
-
-<v-btn info flat>Info Flat</v-btn>
-
-<v-btn warning flat>Warning Flat</v-btn>
-
-<v-btn error flat>Error Flat</v-btn>
+<v-container fluid="fluid" class="text-xs-center">
+  <v-row>
+    <v-col xs12="xs12" sm6="sm6"><span>Raised Light Theme</span>
+      <v-card height="300px" class="grey lighten-4 z-depth-0">
+        <v-card-text>
+          <div>
+            <v-btn>Normal</v-btn>
+          </div>
+          <div>
+            <v-btn class="btn-focused">Focused</v-btn>
+          </div>
+          <div>
+            <v-btn class="btn-pressed z-depth-2">Pressed</v-btn>
+          </div>
+          <div>
+            <v-btn disabled="disabled">Disabled</v-btn>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col xs12="xs12" sm6="sm6"><span>Raised Dark Theme</span>
+      <v-card height="300px" class="secondary z-depth-0">
+        <v-card-text>
+          <div>
+            <v-btn primary="primary" dark="dark">Normal</v-btn>
+          </div>
+          <div>
+            <v-btn primary="primary" dark="dark" class="btn-focused">Focused</v-btn>
+          </div>
+          <div>
+            <v-btn primary="primary" dark="dark" class="btn-pressed z-depth-2">Pressed</v-btn>
+          </div>
+          <div>
+            <v-btn primary="primary" dark="dark" disabled="disabled">Disabled</v-btn>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>
