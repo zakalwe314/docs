@@ -1,7 +1,11 @@
 <div id="toolbar-image">
   <v-toolbar class="transparent z-depth-0">
     <v-toolbar-logo class="hidden-sm-and-down">Toolbar</v-toolbar-logo>
-    <v-spacer></v-spacer>
-    <v-toolbar-items v-bind:items="items"></v-toolbar-items>
+    <v-spacer />
+    <v-toolbar-items>
+      <v-toolbar-item v-for="item in items">
+        {{ item.text }}
+      </v-toolbar-item>
+    </v-toolbar-items>
   </v-toolbar>
 </div>

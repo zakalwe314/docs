@@ -1,9 +1,7 @@
 <v-app id="example-2" top-navbar left-fixed-sidebar>
   <v-toolbar>
-    <v-toolbar-toolbar>
-      <v-toolbar-side-icon @click.stop="nav2 = !nav2" />
-      <v-toolbar-logo>Toolbar</v-toolbar-logo>
-    </v-toolbar-toolbar>
+    <v-toolbar-side-icon @click.stop="nav2 = !nav2" />
+    <v-toolbar-logo>Toolbar</v-toolbar-logo>
   </v-toolbar>
   <main>
     <v-sidebar left fixed drawer v-model="nav2">

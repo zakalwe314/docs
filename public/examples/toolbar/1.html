@@ -1,4 +1,14 @@
 <v-toolbar class="green">
-  <v-toolbar-logo class="hidden-sm-and-down">Toolbar</v-toolbar-logo>
-  <v-toolbar-items v-bind:items="items"></v-toolbar-items>
+  <v-toolbar-side-icon />
+  <v-toolbar-title class="hidden-sm-and-down">Toolbar</v-toolbar-title>
+  <v-spacer />
+  <v-btn icon dark>
+    <v-icon>account_circle</v-icon>
+  </v-btn>
+  <v-btn icon dark>
+    <v-icon>favorite</v-icon>
+  </v-btn>
+  <v-btn icon dark>
+    <v-icon>more_vert</v-icon>
+  </v-btn>
 </v-toolbar>

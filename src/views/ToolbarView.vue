@@ -1,9 +1,9 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="toolbar")
-    component-example(header="Variants" file="toolbar/1" v-bind:data="example")
+    component-example(header="Toolbars" file="toolbar/1" v-bind:data="example")
     component-example(file="toolbar/2" v-bind:data="example")
     component-example(file="toolbar/3" v-bind:data="example")
-    component-example(header="Icons" file="toolbar/4" v-bind:data="example")
+    component-example(file="toolbar/4" v-bind:data="example")
     component-example(header="Transparent" file="toolbar/5" v-bind:data="example")
     markup(lang="css")
       |&lt;style&gt;
@@ -143,9 +143,9 @@
         },
         example: {
           items: [
-            { text: 'Link', href: 'javascript:;' },
-            { text: 'Link', href: 'javascript:;' },
-            { text: 'Link', href: 'javascript:;' }
+            { text: 'Link' },
+            { text: 'Link' },
+            { text: 'Link' }
           ],
           itemsGroup: [
             {
@@ -201,7 +201,7 @@
 <style lang="stylus">
   #toolbar
     .toolbar
-      height: 5rem !important
+      height: 64px !important
       margin: 1rem 0
       
   #toolbar-image

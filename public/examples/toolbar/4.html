@@ -1,11 +1,13 @@
 <v-toolbar class="purple">
-  <v-toolbar-logo class="hidden-sm-and-down">Toolbar</v-toolbar-logo>
+  <v-toolbar-side-icon />
+  <v-toolbar-title class="hidden-sm-and-down">Toolbar</v-toolbar-title>
   <v-toolbar-items>
-    <v-toolbar-item v-bind:item="{ href: 'javascript:;', icon: 'chevron_left' }"></v-toolbar-item>
-    <v-toolbar-item v-bind:item="{ href: 'javascript:;', icon: 'dashboard' }"></v-toolbar-item>
-    <v-toolbar-item v-bind:item="{ href: 'javascript:;', icon: 'chevron_right' }"></v-toolbar-item>
-    <v-menu top right origin="top right">
-      <v-toolbar-item v-bind:item="{ href: 'javascript:;', icon: 'more_vert' }" slot="activator"></v-toolbar-item>
+    <v-toolbar-item>Home</v-toolbar-item>
+    <v-toolbar-item>Contact</v-toolbar-item>
+    <v-menu bottom right offset-y origin="top right" transition="v-slide-y-transition">
+      <v-btn icon dark slot="activator">
+        <v-icon>more_vert</v-icon>
+      </v-btn>
       <v-list>
         <v-list-item v-for="item in dropdown_items">
           <v-list-tile>

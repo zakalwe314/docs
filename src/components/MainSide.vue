@@ -30,7 +30,7 @@
     v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:group="item.group")
-          v-list-tile(slot="item")
+          v-list-tile(slot="item" ripple)
             v-list-tile-action
               v-icon {{ item.action }}
             v-list-tile-content
@@ -38,7 +38,7 @@
             v-list-tile-action
               v-icon keyboard_arrow_down
           v-list-item(v-for="subItem in item.items")
-            v-list-tile(:href="subItem.href" router v-bind:disabled="subItem.disabled")
+            v-list-tile(:href="subItem.href" router ripple v-bind:disabled="subItem.disabled")
               v-list-tile-content
                 v-list-tile-title {{ subItem.title }}
               v-list-tile-action
@@ -46,7 +46,7 @@
         v-list-sub-header(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider" light)
         v-list-item(v-else)
-          v-list-tile(:href="item.href" router v-bind:disabled="item.disabled")
+          v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
             v-list-tile-action
               v-icon {{ item.action }}
             v-list-tile-content
