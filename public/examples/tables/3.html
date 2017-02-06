@@ -14,18 +14,31 @@
         </td>
         <td v-for="data in item" v-text="data"></td>
         <td>
-          <v-btn v-dropdown="{ value: 'dropdown3-' + index }">Options</v-btn>
-          <v-dropdown 
-            v-bind:id="'dropdown3-' + index" 
+          <v-menu
             transition="v-slide-y-transition" 
             origin="top center"
             top
             right
           >
-            <v-dropdown-item v-bind:item="{ text: 'Edit', href: 'javascript:;' }"></v-dropdown-item>
-            <v-dropdown-item v-bind:item="{ text: 'Reset Password', href: 'javascript:;' }"></v-dropdown-item>
-            <v-dropdown-item v-bind:item="{ text: 'Delete', href: 'javascript:;' }"></v-dropdown-item>
-          </v-dropdown>
+            <v-btn slot="activator">Options</v-btn>
+            <v-list>
+              <v-list-item>
+                <v-list-tile>
+                  <v-list-tile-title>Edit</v-list-tile-title>
+                </v-list-tile>
+              </v-list-item>
+              <v-list-item>
+                <v-list-tile>
+                  <v-list-tile-title>Reset Password</v-list-tile-title>
+                </v-list-tile>
+              </v-list-item>
+              <v-list-item>
+                <v-list-tile>
+                  <v-list-tile-title>Delete</v-list-tile-title>
+                </v-list-tile>
+              </v-list-item>
+            </v-list>
+          </v-menu>
         </td>
       </tr>
     </template>
