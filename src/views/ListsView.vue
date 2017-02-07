@@ -208,49 +208,25 @@
                   'dense',
                   'Boolean',
                   'False',
-                  'Applies the list--dense class'
+                  'Lowers max height of list tiles'
                 ],
                 [
                   'sub-header',
                   'Boolean',
                   'False',
-                  'Applies the list--sub-header class'
-                ],
-                [
-                  'items',
-                  'Array',
-                  '[]',
-                  'Array of list tiles, sub-headers and dividers. See example 1 for an example array.'
+                  'Designates that list has a previous sibling sub-header'
                 ],
                 [
                   'two-line',
                   'Boolean',
                   'False',
-                  'Applies the list--two-line class'
+                  'Designates list contains two-line list tiles'
                 ],
                 [
                   'three-line',
                   'Boolean',
                   'False',
-                  'Applies the list--three-line class'
-                ],
-                [
-                  'router',
-                  'Boolean',
-                  'False',
-                  'Designates whether the list tiles will be a router-link, only needed when items prop is used'
-                ],
-                [
-                  'ripple',
-                  'Boolean',
-                  'False',
-                  'Designates whether the list tiles will attach the ripple directive, only needed when items prop is used'
-                ],
-                [
-                  'unshift',
-                  'Boolean',
-                  'False',
-                  'Forces all items to the front when using an array'
+                  'Designates list contains three-line list tiles'
                 ]
               ]
             },
@@ -269,22 +245,22 @@
                   'Applies the list__tile--disabled class'
                 ],
                 [
-                  'item',
-                  'Object',
-                  `{ href: 'javascript:;', title: false, subtitle: false, icon: false, router: false, ripple: false, action: false, disabled: false, tag: false, items: [] }`,
-                  'The list-tile object. The action property can be an object containing a class or text property'
+                  'router',
+                  'Boolean',
+                  'False',
+                  'Designates whether the list tiles will be a router-link'
+                ],
+                [
+                  'ripple',
+                  'Boolean',
+                  'False',
+                  'Designates whether the list tiles will attach the ripple directive'
                 ],
                 [
                   'tag',
                   'String',
                   'undefined',
                   'Use a custom tag for the list tile'
-                ],
-                [
-                  'unshift',
-                  'Boolean',
-                  'False',
-                  'Forces all items to the front when using an item object'
                 ]
               ]
             },
@@ -294,7 +270,7 @@
                   'stack',
                   'Boolean',
                   'False',
-                  'Applies the list__tile__action--stack class. Automatically applied if array is used and action-text property exists.'
+                  'Applies the list__tile__action--stack class.'
                 ]
               ]
             },
@@ -382,6 +358,7 @@
   #lists-view .component-example
     .card
       width: 400px
+      margin: 1rem auto
       
       .toolbar
         height: auto

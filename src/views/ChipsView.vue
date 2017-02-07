@@ -87,6 +87,9 @@
 
 <style lang="stylus">
   #chips-view
+    .component-example__container > div
+      text-align: center
+      
     .chip
       margin: 1rem
 </style>

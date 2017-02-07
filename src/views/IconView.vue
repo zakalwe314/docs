@@ -79,9 +79,12 @@
 <style lang="stylus">
   #icons
     .component-example__container
-      > .icon
+      > div
+        text-align: center
+            
+      > div > .icon
         margin: 1rem
         
-      > .btn
+      .btn
         margin: 1rem
 </style>

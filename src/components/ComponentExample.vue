@@ -11,7 +11,7 @@
         v-progress-circular(
           indeterminate 
           v-bind:size="50"
-          v-show="loading"
+          v-if="loading"
           class="primary--text" 
         )
       div(v-bind:id="'example-' + _uid")
