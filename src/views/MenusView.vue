@@ -1,41 +1,9 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="menus-view")
-    component-example(header="On Click" file="menus/1")
-    //- component-example(header="On Click" file="menus/2")
-    //- component-example(header="Menus" file="menus/3")
-    //- component-example(header="Custom Transitions" file="menus/4")
-    //-   section-text(slot="details") Vuetify comes with 3 standard transitions, <strong>scale</strong>, <strong>slide-x</strong> and <strong>slide-y</strong>. You can also create your own and pass it as the transition argument. For an example of how the stock transitions are constructed, visit <a href="https://github.com/vuetifyjs/vuetify/blob/master/src/util/helpers.js#L13" target="_blank">here</a>.
-    //-   div
-    //-     v-btn(
-    //-       class="primary white--text"
-    //-       v-menu:menu-transition-1=""
-    //-     ) Changed Origin
-    //-     v-menu(
-    //-       id="menu-transition-1"
-    //-       v-bind:items="items"
-    //-       origin="center center"
-    //-     )
-    //-     v-btn(
-    //-       class="deep-orange white--text"
-    //-       v-menu:menu-transition-2=""
-    //-     ) Slide X Transition
-    //-     v-menu(
-    //-       id="menu-transition-2"
-    //-       v-bind:items="items"
-    //-       top
-    //-       left
-    //-       transition="v-slide-x-transition"
-    //-     )
-    //-     v-btn(
-    //-       class="purple white--text"
-    //-       v-menu:menu-transition-3=""
-    //-     ) Slide Y Transition
-    //-     v-menu(
-    //-       id="menu-transition-3"
-    //-       v-bind:items="items"
-    //-       top
-    //-       transition="v-slide-y-transition"
-    //-     )
+    component-example(header="On Click" file="menus/1" v-bind:data="$data")
+    component-example(header="Menus" file="menus/3" v-bind:data="$data")
+    component-example(header="Custom Transitions" file="menus/4" v-bind:data="$data")
+      section-text(slot="details") Vuetify comes with 3 standard transitions, <strong>scale</strong>, <strong>slide-x</strong> and <strong>slide-y</strong>. You can also create your own and pass it as the transition argument. For an example of how the stock transitions are constructed, visit <a href="https://github.com/vuetifyjs/vuetify/blob/master/src/util/helpers.js#L13" target="_blank">here</a>.
 </template>
 
 <script>
