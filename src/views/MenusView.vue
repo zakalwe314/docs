@@ -19,18 +19,6 @@
             'v-menu': {
               params: [
                 [
-                  'id',
-                  'String',
-                  'Required',
-                  'Sets the id of the menu'
-                ],
-                [
-                  'items',
-                  'Object',
-                  '[]',
-                  'Optionally pass array of items'
-                ],
-                [
                   'top',
                   'Boolean',
                   'False',
@@ -67,13 +55,16 @@
                   'Set the transition component'
                 ]
               ]
-            },
-            'v-menu-item': {
-              params: ItemProps
             }
           },
           slots: {
             'v-menu': {
+              params: [
+                [
+                  'activator',
+                  'The element that will activate the menu'
+                ]
+              ],
               default: true
             }
           }
