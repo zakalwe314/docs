@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="forms-view")
     component-example(header="Selects" file="forms/1" v-bind:data="example")
     component-example(header="Inputs" file="forms/2" v-bind:data="example")
     component-example(header="Radios" file="forms/3" v-bind:data="example")
@@ -132,7 +132,7 @@
         },
         example: {
           input: null,
-          multiple: ['2'],
+          multiple: ['1', '2'],
           options: [
             {
               value: 1,
@@ -173,12 +173,13 @@
   }
 </script>
 
-<style lang="stylus" scoped>
-  .component-example__container
-    justify-content: space-between
-    flex-wrap: wrap
-    
-    > *
-      margin: 2rem 0
-      flex: 1 0 100%
+<style lang="stylus">
+  #forms-view
+    .component-example__container
+      justify-content: space-between
+      flex-wrap: wrap
+      
+      > div > *
+        margin: 2rem 0
+        flex: 1 0 100%
 </style>
