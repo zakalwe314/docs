@@ -29,22 +29,28 @@
                   'Boolean',
                   'False',
                   'Specifies that the divider is an icon'
-                ],
-                [
-                  'items',
-                  'Array',
-                  '[]',
-                  'Accepts v-breadcrumbs object'
                 ]
               ]
             },
             'v-breadcrumbs-item': {
               params: [
                 [
-                  'item',
-                  'Object',
-                  `{ href: '#!', text: '', disabled: false }`,
-                  'The individual breadcrumbs'
+                  'disabled',
+                  'Boolean',
+                  'False',
+                  'Disables a the breadcrumb item'
+                ],
+                [
+                  'href',
+                  'String',
+                  'javascript:;',
+                  'Applies the href attribute'
+                ],
+                [
+                  'target',
+                  'String',
+                  '',
+                  'Applies the target attribute'
                 ]
               ]
             }
