@@ -3,9 +3,9 @@
     table(class="table--component" v-for="(options, type) in params")
       caption <strong>&lt;{{ type }}&gt;</strong>
       colgroup
-        col(width="15%")
+        col(width="20%")
         col(width="10%")
-        col(width="25%")
+        col(width="20%")
         col(width="50%")
       thead
         tr
@@ -46,6 +46,7 @@
     caption
       background: rgba(#000, 0.05)
       padding: 5px 0
+      margin-bottom: 8px
       
     &:not(:first-child)
       margin-top: 2rem

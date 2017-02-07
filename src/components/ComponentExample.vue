@@ -7,6 +7,13 @@
         markup(lang="html" v-if="content")
           div(v-html="content" ref="markup")
     div(class="component-example__container")
+      v-fade-transition
+        v-progress-circular(
+          indeterminate 
+          v-bind:size="50"
+          v-show="loading"
+          class="primary--text" 
+        )
       div(v-bind:id="'example-' + _uid")
 </template>
 
@@ -20,7 +27,8 @@
       return {
         active: false,
         template: null,
-        content: null
+        content: null,
+        loading: false
       }
     },
 
@@ -66,11 +74,14 @@
 
       request (file, cb) {
         const xmlhttp = new XMLHttpRequest()
-
+        const vm = this
+        const timeout = setTimeout(() => this.loading = true, 500)
         xmlhttp.open('GET', `/public/examples/${file}`, true)
 
         xmlhttp.onreadystatechange = function () {
           if(xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+            clearTimeout(timeout)
+            vm.loading = false
             cb(xmlhttp.responseText)
           }
         }
@@ -84,6 +95,8 @@
   @import '../stylus/settings/_variables'
   
   .component-example
+    min-height: 300px
+    
     > div
       margin: 3rem auto
     

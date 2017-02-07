@@ -104,11 +104,11 @@
       markup(lang="js")
         |// App.vue
         |export default {
-        |   mounted () {
-        |     this.$vuetify.init()
-        |   },
         |   methods: {
-        |     view (meta) {
+        |     view (meta) {       
+        |       this.$store.commit('vuetify/TITLE', meta.title)
+        |       this.$store.commit('vuetify/DESCRIPTION', meta.description)
+        |       this.$store.commit('vuetify/KEYWORDS', meta.keywords)
         |     }
         |   }
         |}

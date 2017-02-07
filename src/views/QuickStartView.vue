@@ -18,22 +18,17 @@
         |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
 
       h6 Existing Projects
-      section-text If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn. Keep in mind, you will still need to include the above css files as they are not part of the javascript import.
+      section-text If you are wanting to use Vuetify in an existing project, you can install by using npm or yarn. Keep in mind, you will still need to <strong><em>include</em></strong> the above css files as they are not part of the javascript import.
       markup(lang="cli")
         |$  npm install vuetify --save-dev
         |&nbsp;
         |$  yarn add vuetify --dev
-      section-text I your index.js, import Vuetify and apply the plugin to Vue.
+      section-text In your index.js, import Vuetify and apply the plugin to Vue.
       markup(lang="js")
         |import Vue from 'vue'
         |import Vuetify from 'vuetify'
         |&nbsp;
         |Vue.use(Vuetify)
-      section-text Once you have Vuetify installed, add the Vuetify <code>init</code> function to the Vue mounted hook. This is normally in your application <code>App.vue</code>, the main entry-point for your application.
-      markup(lang="js")
-        |mounted () {
-        |   this.$vuetify().init()
-        |}
     section
       section-header Vue CLI
       section-text Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official Vue.js templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.

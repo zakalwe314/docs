@@ -37,6 +37,18 @@
                   'Boolean',
                   'False',
                   '',
+                ],
+                [
+                  'id',
+                  'String',
+                  'app',
+                  'The mounting point id'
+                ],
+                [
+                  'sidebar-under-toolbar',
+                  'Boolean',
+                  'False',
+                  'Positions a fixed sidebar under the toolbar'
                 ]
               ]
             }
