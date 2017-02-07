@@ -101,16 +101,16 @@
         },
         items: [
           {
-            src: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/cute-almonds-picture-1440x500.jpg'
+            src: '/public/doc-images/carousel/squirrel.jpg'
           },
           {
-            src: 'http://hddesktopwallpapers.in/wp-content/uploads/2015/09/sky-hd-picture-1440x500.jpg'
+            src: '/public/doc-images/carousel/sky.jpg'
           },
           {
-            src: 'https://burlingtonontariobirder.files.wordpress.com/2015/03/cropped-red-tailed-hawk-my-favourite-picture.jpg'
+            src: '/public/doc-images/carousel/bird.jpg'
           },
           {
-            src: 'http://www.mrwallpaper.com/wallpapers/Space-Planet-Aurora-1366x768.jpg'
+            src: '/public/doc-images/carousel/planet.jpg'
           }
         ]
       }

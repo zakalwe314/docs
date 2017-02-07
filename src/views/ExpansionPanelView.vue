@@ -28,20 +28,26 @@
                   'Leaves expansion-panel open when selecting another'
                 ]
               ]
+            },
+            'v-expansion-panel-content': {
+              model: {
+                types: ['Number'],
+                default: 0
+              }
             }
           },
-          functional: {
+          slots: {
             'v-expansion-panel': {
+              default: true
+            },
+            'v-expansion-panel-content': {
               params: [
                 [
-                  'v-expansion-panel-header',
-                  '.expansion-panel__header'
-                ],
-                [
-                  'v-expansion-panel-body',
-                  '.expansion-panel__body'
+                  'header',
+                  'Expansion header content'
                 ]
-              ]
+              ],
+              default: true
             }
           }
         }
