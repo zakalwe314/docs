@@ -1,10 +1,11 @@
 <template lang="pug">
   div(class="markup" v-bind:data-lang="lang")
     pre
-      code(v-bind:class="lang" ref="markup" v-on:click="copyMarkup")
+      code(v-bind:class="lang" ref="markup")
         div
           slot
-    v-icon content_copy
+    div(v-on:click="copyMarkup" class="markup__copy")
+      v-icon content_copy
     v-slide-x-transition
       span(class="component-example-copied" v-if="copied") Copied
     textarea(
@@ -64,11 +65,19 @@
     padding: 3rem 2rem
     background: rgba(#000, 0.04)
     border-radius: 2px
-    cursor: pointer
     position: relative
     margin-bottom: 1rem
     align-items: center
     margin-bottom: 3rem
+    
+    &__copy
+      position: absolute
+      right: 1rem
+      top: 1rem
+      cursor: pointer
+      width: 25px
+      height: 25px
+      z-index: 2
       
     &:after
       position: absolute
@@ -87,12 +96,9 @@
         opacity: 0
 
     .icon
-      position: absolute
-      right: 1rem
       transition: opacity .2s ease-in
       font-size: 1.5rem
       opacity: 0
-      top: 1rem
  
     &:hover
       .icon
