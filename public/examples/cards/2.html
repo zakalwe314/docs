@@ -4,14 +4,28 @@
       <span class="white--text">Marriot Rewards</span>
       <v-spacer></v-spacer>
       <div>
-        <v-btn icon="icon" v-dropdown:marriot class="white--text">
-          <v-icon>more_vert</v-icon>
-        </v-btn>
-        <v-dropdown id="marriot" top right origin="top right">
-          <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Never show rewards' }"></v-dropdown-item>
-          <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }"></v-dropdown-item>
-          <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }"></v-dropdown-item>
-        </v-dropdown>
+        <v-menu id="marriot" bottom left origin="top right">
+          <v-btn icon="icon" slot="activator" class="white--text">
+            <v-icon>more_vert</v-icon>
+          </v-btn>
+          <v-list>
+            <v-list-item>
+              <v-list-tile>
+                <v-list-tile-title>Never show rewards</v-list-tile-title>
+              </v-list-tile>
+            </v-list-item>
+            <v-list-item>
+              <v-list-tile>
+                <v-list-tile-title>Remove Card</v-list-tile-title>
+              </v-list-tile>
+            </v-list-item>
+            <v-list-item>
+              <v-list-tile>
+                <v-list-tile-title>Send Feedback</v-list-tile-title>
+              </v-list-tile>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </div>
     </v-card-title>
   </v-card-row>

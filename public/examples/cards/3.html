@@ -3,22 +3,34 @@
     <v-card-title>
       <span class="white--text">Visit Space</span>
       <v-spacer></v-spacer>
-      <v-btn icon="icon" v-dropdown:space class="white--text">
-        <v-icon>more_vert</v-icon>
-      </v-btn>
-      <v-dropdown id="space" top right origin="top right">
-        <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Remove Card' }"></v-dropdown-item>
-        <v-dropdown-item v-bind:item="{ href: 'javascript:;', text: 'Send Feedback' }"></v-dropdown-item>
-      </v-dropdown>
+      <v-menu id="space" bottom left origin="top right" transition="v-scale-transition">
+        <v-btn icon="icon" slot="activator" class="white--text">
+          <v-icon>more_vert</v-icon>
+        </v-btn>
+        <v-list>
+          <v-list-item>
+            <v-list-tile>
+              <v-list-tile-title>Remove Card</v-list-tile-title>
+            </v-list-tile>
+          </v-list-item>
+          <v-list-item>
+            <v-list-tile>
+              <v-list-tile-title>Send Feedback</v-list-tile-title>
+            </v-list-tile>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-card-title>
   </v-card-row>
-  <v-card-row img="..." height="300px"></v-card-row>
+  <v-card-row img="http://www.bendut.com/i/2015/12/hotel-room-design-pictures-solid-wood-couch-light-brown-fabric-cushioning-dark-brown-blankets-artistic-wall-painting-twin-wall-lamp-rectangle-oak-wood-coffee-table-black-glass-table-top-brown-motive-c-936x702.jpg" height="300px"></v-card-row>
   <v-card-text class="blue-grey darken-3 white--text">
     <div v-text="card_text"></div>
   </v-card-text>
-  <v-card-row actions class="blue-grey darken-1">
+  <v-card-row actions class="blue-grey darken-1 mt-0">
     <v-btn flat class="white--text">Get Started</v-btn>
     <v-spacer></v-spacer>
-    <v-icon class="white--text">explore</v-icon>
+    <v-btn icon>
+      <v-icon class="white--text">explore</v-icon>
+    </v-btn>
   </v-card-row>
 </v-card>
