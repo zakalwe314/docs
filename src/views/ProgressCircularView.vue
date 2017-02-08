@@ -98,7 +98,12 @@
 </script>
 
 <style lang="stylus">
-  #progress .component-example
-    .progress-circular
-      margin: 1rem
+  #progress 
+    .component-example
+      .progress-circular
+        margin: 1rem
+        
+    .component-example__container
+      > div
+        text-align: center
 </style>
