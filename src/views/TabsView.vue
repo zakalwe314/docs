@@ -57,18 +57,43 @@
                 ]
               ]
             },
-            'v-tabs-tabs': {
+            'v-tab-item': {
               params: [
                 [
-                  'items',
-                  'Array',
-                  '[]',
-                  'The array of tabs'
+                  'href',
+                  'String',
+                  'javascript:;',
+                  'The target content id'
+                ],
+                [
+                  'ripple',
+                  'Boolean',
+                  'false',
+                  'Designates whether the list tiles will attach the ripple directive'
                 ]
               ]
             },
-            'v-tab-item': {
-              params: ItemProps
+            'v-tab-content': {
+              params: [
+                [
+                  'id',
+                  'String',
+                  '',
+                  'The content id'
+                ],
+                [
+                  'transition',
+                  'String',
+                  'v-tab-transition',
+                  'Sets the default transition'
+                ],
+                [
+                  'reverse-transition',
+                  'String',
+                  'v-tab-reverse-transition',
+                  'Sets the reverse transition'
+                ]
+              ]
             }
           }
         }

@@ -1,36 +1,37 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="sidebars-view")
-    component-example(header="Left" file="sidebar/1" v-bind:data="example")
+    component-example(header="Left" file="sidebar/1" v-bind:data="$data")
             
     blockquote A sidebar is required to have an activator. This allows the sidebar to be opened on mobile.
 
-    component-example(header="Drawer" file="sidebar/2" v-bind:data="example")
+    component-example(header="Drawer" file="sidebar/2" v-bind:data="$data")
 
-    component-example(header="Item Groups" file="sidebar/3" v-bind:data="example")
+    component-example(header="Item Groups" file="sidebar/3" v-bind:data="$data")
       section-text(slot="details") For more details on the available item options, check out the <a href="javascript:;" v-on:click.stop="$router.push('/components/lists')">lists</a> section.
 
     blockquote Sidebars groups require an additional property in the item array to designate the base path for their sub routes. This is used for highlighting with vue-router.
 
-    component-example(header="Ripples" file="sidebar/4" v-bind:data="example")
+    component-example(header="Ripples" file="sidebar/4" v-bind:data="$data")
 
     markup(lang="js")
       |data () {
       |   return {
-      |     items: [
+      |     itemGroup: [
       |       { header: 'Header' },
       |       {
       |         title: 'Parent',
       |         group: '/company',
       |         items: [
-      |           { title: 'Home', href: '/company/home', action: 'link' },
-      |           { title: 'About', href: '/company/about', action: 'link' },
-      |           { title: 'Contact', href: '/company/contact', action: 'link' }
+      |           { title: 'Child' },
+      |           { title: 'Child' },
+      |           { title: 'Child' }
       |         ]
       |       },
-      |       { title: 'Link', href: "#!" },
-      |       { title: 'Link', href: "#!" },
+      |       { title: 'Link' },
+      |       { title: 'Link' },
+      |       { divider: true },
       |       { header: 'Another Header' },
-      |       { title: 'Link', href: "#!" }
+      |       { title: 'Link' }
       |     ]
       |   }
       |}
@@ -58,19 +59,19 @@
                   'drawer',
                   'Boolean',
                   'False',
-                  'Applies the toolbar--drawer class',
+                  'Applies the sidebar--drawer class',
                 ],
                 [
                   'fixed',
                   'Boolean',
                   'False',
-                  'Applies the toolbar--fixed class',
+                  'Applies the sidebar--fixed class',
                 ],
                 [
                   'height',
                   'String',
                   '100vh',
-                  'Sets height of the toolbar',
+                  'Sets height of the sidebar',
                 ],
                 [
                   'id',
@@ -100,25 +101,7 @@
                   'right',
                   'Boolean',
                   'False',
-                  'Applies the toolbar--right class'
-                ],
-                [
-                  'ripple',
-                  'Boolean',
-                  'False',
-                  'Applies the v-ripple directive to all items'
-                ],
-                [
-                  'router',
-                  'Boolean',
-                  'False',
-                  'Applies the router property to all items'
-                ],
-                [
-                  'unshift',
-                  'Boolean',
-                  'False',
-                  'Forces all actions to the front when using an array'
+                  'Applies the sidebar--right class'
                 ]
               ]
             }
@@ -127,34 +110,36 @@
             'v-sidebar': {
               default: true,
               params: [
-                ['top', 'Slot located at top of toolbar']
+                ['top', 'Slot located at top of sidebar']
               ]
             }
           }
         },
-        example: {
-          items: [
-            { title: 'Home', avatar: 'dashboard' },
-            { title: 'Profile', avatar: 'account_box' },
-            { title: 'Contact', avatar: 'import_contacts' }
-          ],
-          item_group: [
-            { header: 'Header' },
-            {
-              title: 'Parent',
-              items: [
-                { title: 'Child' },
-                { title: 'Child' },
-                { title: 'Child' }
-              ]
-            },
-            { title: 'Link' },
-            { title: 'Link' },
-            { divider: true, light: true },
-            { header: 'Another Header' },
-            { title: 'Link' }
-          ]
-        }
+        items: [
+          { title: 'Home', avatar: 'dashboard' },
+          { title: 'Profile', avatar: 'account_box' },
+          { title: 'Contact', avatar: 'import_contacts' }
+        ],
+        sidebar: null,
+        sidebar2: null,
+        sidebar3: null,
+        sidebar4: null,
+        itemGroup: [
+          { header: 'Header' },
+          {
+            title: 'Parent',
+            items: [
+              { title: 'Child' },
+              { title: 'Child' },
+              { title: 'Child' }
+            ]
+          },
+          { title: 'Link' },
+          { title: 'Link' },
+          { divider: true },
+          { header: 'Another Header' },
+          { title: 'Link' }
+        ]
       }
     },
 
@@ -184,15 +169,18 @@
     .with, main
       min-height: 40vh
       
+    main
+      padding-left: 0
+      
     .component-example__container
       flex: 1
       min-height: 40vh
       position: relative
       overflow: hidden
+      justify-content: center
         
     .toolbar
       min-height: 5rem
-      padding-left: 0
       
       &__side-icon
         margin: 0 2rem
@@ -201,6 +189,7 @@
         position: absolute
         
     .sidebar
+      z-index: 2
       &--fixed
         position: absolute
 </style>

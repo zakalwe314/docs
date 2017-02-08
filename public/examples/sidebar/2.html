@@ -1,9 +1,9 @@
-<v-app id="sidebar-example-2" left-fixed-sidebar>
-  <v-toolbar>
-    <v-toolbar-side-icon />
+<v-app id="sidebar-example-2" class="grey darken-1" top-toolbar left-fixed-sidebar sidebar-under-toolbar>
+  <v-toolbar class="secondary">
+    <v-toolbar-side-icon @click.native.stop="sidebar2 = !sidebar2" />
   </v-toolbar>
   <main>
-    <v-sidebar class="blue darken-3" height="40vh" drawer>
+    <v-sidebar class="blue darken-3" drawer v-model="sidebar2">
       <v-list dense>
         <v-list-item v-for="item in items">
           <v-list-tile>
