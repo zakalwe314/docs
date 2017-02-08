@@ -1,9 +1,56 @@
-<v-btn outline>Default Outline</v-btn>
-
-<v-btn success outline>Success Outline</v-btn>
-
-<v-btn info outline>Info Outline</v-btn>
-
-<v-btn warning outline>Warning Outline</v-btn>
-
-<v-btn error outline>Error Outline</v-btn>
+<v-card class="grey lighten-4 z-depth-0 py-5">
+  <v-card-text>
+    <v-container fluid="fluid">
+      <v-row>
+        <v-col xs12="xs12">
+          <p>Normal</p>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" class="pink--text">
+            <v-icon>favorite</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" class="indigo--text">
+            <v-icon>star</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" class="green--text">
+            <v-icon>cached</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" class="deep-orange--text">
+            <v-icon>thumb_up</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+      <v-row class="mt-5">
+        <v-col xs12="xs12">
+          <p>Disabled</p>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" disabled="disabled" class="pink--text">
+            <v-icon>favorite</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" disabled="disabled" class="indigo--text">
+            <v-icon>star</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" disabled="disabled" class="green--text">
+            <v-icon>cached</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col xs3="xs3">
+          <v-btn icon="icon" disabled="disabled" class="deep-orange--text">
+            <v-icon>thumb_up</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card-text>
+</v-card>

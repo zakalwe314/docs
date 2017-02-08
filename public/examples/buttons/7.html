@@ -1,23 +1,6 @@
-<v-btn floating success small>
-  <v-icon>check</v-icon>
-</v-btn>
-
-<v-btn floating info small>
-  <v-icon>info</v-icon>
-</v-btn>
-
-<v-btn floating warning>
-  <v-icon>warning</v-icon>
-</v-btn>
-
-<v-btn floating error>
-  <v-icon>priority_high</v-icon>
-</v-btn>
-
-<v-btn floating large success>
-  <v-icon>check</v-icon>
-</v-btn>
-
-<v-btn floating large error>
-  <v-icon>priority_high</v-icon>
-</v-btn>
+<v-app-bar>
+  <v-btn-dropdown v-bind:items="dropdown_font" max-height="auto" overflow="overflow" v-model="text"></v-btn-dropdown>
+  <v-btn-dropdown v-bind:items="dropdown_edit" max-height="auto" overflow="overflow" editable="editable"></v-btn-dropdown>
+  <v-btn-toggle v-bind:items="toggle_options_multiple" v-model="toggle_multiple" multiple="multiple" class="hidden-md-and-down"></v-btn-toggle>
+  <v-btn-toggle v-bind:items="toggle_options" v-model="toggle_exclusive" class="hidden-sm-and-down"></v-btn-toggle>
+</v-app-bar>

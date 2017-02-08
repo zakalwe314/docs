@@ -3,128 +3,19 @@
     component-example(header="Flat" file="buttons/1" id="e1-1" v-bind:data="$data")
     component-example(header="Raised" file="buttons/2" id="e1-2" v-bind:data="$data")
     component-example(header="Button Dropdown" file="buttons/3" id="e2-1" v-bind:data="$data")
-
-    //- component-example(header="Button Dropdown Variants" id="e2-2")
-      v-card(class="grey lighten-4 z-depth-0 py-5")
-        v-card-text
-          v-container(fluid)
-            v-row
-              v-col(xs12 sm4 class="py-2")
-                p Overflow
-                v-btn-dropdown(v-bind:items="dropdown_font" max-height="auto" overflow)
-              v-col(xs12 sm4 class="py-2")
-                p Segmented
-                v-btn-dropdown(v-bind:items="dropdown_icon" segmented)
-              v-col(xs12 sm4 class="py-2")
-                p Editable
-                v-btn-dropdown(v-bind:items="dropdown_edit" max-height="auto" editable)
-
-    //- component-example(header="Button Toggle" id="e3")
-      v-card(class="grey lighten-4 z-depth-0 py-5")
-        v-card-text
-          v-container(fluid)
-            v-row
-              v-col(xs12 sm12 md6 class="py-2")
-                p Exclusive
-                v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_exclusive")
-              v-col(xs12 sm12 md6 class="py-2")
-                p Multiple
-                v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_multiple")
-              v-col(xs12 sm12 md6 class="py-2")
-                p No Options Selected
-                v-btn-toggle(v-bind:items="toggle_options" v-model="toggle_none")
-              v-col(xs12 sm12 md6 class="py-2")
-                p One Option Selected
-                v-btn-toggle(v-bind:items="toggle_options_multiple" multiple v-model="toggle_one")  
-              v-col(xs12 sm12 md6 class="py-2")
-                p Text Options
-                v-btn-toggle(v-bind:items="toggle_text" v-model="text")
-              v-col(xs12 sm12 md6 class="py-2")
-                p Text &amp; Icon Options
-                v-btn-toggle(v-bind:items="toggle_text_icon" v-model="icon")
-
-    //- component-example(header="Icon" id="e4")
-      v-card(class="grey lighten-4 z-depth-0 py-5")
-        v-card-text
-          v-container(fluid)
-            v-row
-              v-col(xs12)
-                p Normal
-              v-col(xs3)
-                v-btn(icon class="pink--text")
-                  v-icon favorite
-              v-col(xs3)
-                v-btn(icon class="indigo--text")
-                  v-icon star
-              v-col(xs3)
-                v-btn(icon class="green--text")
-                  v-icon cached
-              v-col(xs3)
-                v-btn(icon class="deep-orange--text")
-                  v-icon thumb_up
-            v-row(class="mt-5")
-              v-col(xs12)
-                p Disabled
-              v-col(xs3)
-                v-btn(icon disabled class="pink--text")
-                  v-icon favorite
-              v-col(xs3)
-                v-btn(icon disabled class="indigo--text")
-                  v-icon star
-              v-col(xs3)
-                v-btn(icon disabled class="green--text")
-                  v-icon cached
-              v-col(xs3)
-                v-btn(icon disabled class="deep-orange--text")
-                  v-icon thumb_up
-    //- component-example(header="App Bar")
-      v-app-bar
-        v-btn-dropdown(
-          v-bind:items="dropdown_font"
-          max-height="auto"
-          overflow
-          v-model="text"
-        )
-        v-btn-dropdown(
-          v-bind:items="dropdown_edit"
-          max-height="auto"
-          overflow
-          editable
-        )
-        v-btn-toggle(
-          class="hidden-md-and-down"
-          v-bind:items="toggle_options_multiple" 
-          v-model="toggle_multiple"
-          multiple 
-        )
-        v-btn-toggle(
-          class="hidden-sm-and-down"
-          v-bind:items="toggle_options" 
-          v-model="toggle_exclusive"
-        )
-
-    //- component-example(header="Floating")
-      v-btn(floating)
-        v-icon add
-
-    //- component-example(header="Progress")
-      v-progress-circular(button class="deep-orange--text" size="56")
-        v-btn(progress class="indigo white--text")
-          v-icon list
-
-    //- component-example(header="Sizing")
-      v-btn(small) Small
+    component-example(header="Button Dropdown Variants" file="buttons/4" id="e2-2" v-bind:data="$data")
+    component-example(header="Button Toggle" file="buttons/5" id="e3" v-bind:data="$data")
+    component-example(header="Icon" file="buttons/6" id="e4" v-bind:data="$data")
+    component-example(header="App Bar" file="buttons/7" v-bind:data="$data")
+    component-example(header="Floating" file="buttons/8" v-bind:data="$data")
+    component-example(header="Progress" file="buttons/9" v-bind:data="$data")
+    component-example(header="Sizing" file="buttons/10" v-bind:data="$data")
 
     h4 Custom Styles
 
-    //- component-example(header="Outline")
-      v-btn(outline) Button
-
-    //- component-example(header="Round")
-      v-btn(round) Button
-
-    //- component-example(header="Block")
-      v-btn(block) Button
+    component-example(header="Outline" file="buttons/11" v-bind:data="$data")
+    component-example(header="Round" file="buttons/12" v-bind:data="$data")
+    component-example(header="Block" file="buttons/13" v-bind:data="$data")
 </template>
 
 <script>

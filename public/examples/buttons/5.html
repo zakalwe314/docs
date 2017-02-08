@@ -1,9 +1,32 @@
-<v-btn round>Default Rounded</v-btn>
-
-<v-btn success round>Success Rounded</v-btn>
-
-<v-btn info round>Info Rounded</v-btn>
-
-<v-btn warning round>Warning Rounded</v-btn>
-
-<v-btn error round>Error Rounded</v-btn>
+<v-card class="grey lighten-4 z-depth-0 py-5">
+  <v-card-text>
+    <v-container fluid="fluid">
+      <v-row>
+        <v-col xs12="xs12" sm12="sm12" md6="md6" class="py-2">
+          <p>Exclusive</p>
+          <v-btn-toggle v-bind:items="toggle_options" v-model="toggle_exclusive"></v-btn-toggle>
+        </v-col>
+        <v-col xs12="xs12" sm12="sm12" md6="md6" class="py-2">
+          <p>Multiple</p>
+          <v-btn-toggle v-bind:items="toggle_options_multiple" multiple="multiple" v-model="toggle_multiple"></v-btn-toggle>
+        </v-col>
+        <v-col xs12="xs12" sm12="sm12" md6="md6" class="py-2">
+          <p>No Options Selected</p>
+          <v-btn-toggle v-bind:items="toggle_options" v-model="toggle_none"></v-btn-toggle>
+        </v-col>
+        <v-col xs12="xs12" sm12="sm12" md6="md6" class="py-2">
+          <p>One Option Selected</p>
+          <v-btn-toggle v-bind:items="toggle_options_multiple" multiple="multiple" v-model="toggle_one"> </v-btn-toggle>
+        </v-col>
+        <v-col xs12="xs12" sm12="sm12" md6="md6" class="py-2">
+          <p>Text Options</p>
+          <v-btn-toggle v-bind:items="toggle_text" v-model="text"></v-btn-toggle>
+        </v-col>
+        <v-col xs12="xs12" sm12="sm12" md6="md6" class="py-2">
+          <p>Text &amp; Icon Options</p>
+          <v-btn-toggle v-bind:items="toggle_text_icon" v-model="icon"></v-btn-toggle>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card-text>
+</v-card>
