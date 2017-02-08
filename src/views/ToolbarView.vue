@@ -1,8 +1,8 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="toolbar")
-    component-example(header="Toolbars" file="toolbar/1" v-bind:data="example")
-    component-example(file="toolbar/2" v-bind:data="example")
-    component-example(file="toolbar/3" v-bind:data="example")
+    component-example(header="With Icons" file="toolbar/1" v-bind:data="example")
+    component-example(header="With Items" file="toolbar/2" v-bind:data="example")
+    component-example(header="With Dropdown" file="toolbar/3" v-bind:data="example")
     component-example(file="toolbar/4" v-bind:data="example")
     component-example(header="Transparent" file="toolbar/5" v-bind:data="example")
     markup(lang="css")
@@ -12,32 +12,6 @@
       |    height: 300px;
       |  }
       |&lt;/style&gt;
-    component-example(header="Groups" file="toolbar/6" v-bind:data="example")
-    markup(lang='js')
-      |data () {
-      |   return {
-      |     itemsGroup: [
-      |       {
-      |         parent: { text: 'Home', icon: 'home'},
-      |         items: [
-      |           {text: 'Our Services', href: '/components/toolbar'},
-      |           {text: 'Contact Us', href: 'javascript:;'},
-      |           {text: 'About Us', href: 'javascript:;'}
-      |         ]
-      |       },
-      |       { text: 'Portfolio', href: 'javascript:;', icon: 'work' },
-      |       {
-      |         parent: { text: 'Apply', icon: 'favorite' },
-      |         items: [
-      |           {text: 'Our Mission', href: 'javascript:;'},
-      |           {text: 'Partners', href: 'javascript:;'},
-      |           {text: 'Join Our Team', href: 'javascript:;', icon: 'people'}
-      |         ]
-      |       }
-      |     ]
-      |   }
-      |}
-    component-example(file="toolbar/7" v-bind:data="example")
 </template>
 
 <script>
@@ -53,90 +27,75 @@
             'v-toolbar': {
               params: [
                 [
-                  'items',
-                  'Array',
-                  `[]`,
-                  'The array of toolbar items'
-                ],
-                [
                   'fixed',
                   'Boolean',
                   'false',
                   'Applies the toolbar--fixed class'
-                ],
-                [
-                  'group-class',
-                  'String',
-                  '',
-                  'Applies a custom class to the group dropdown'
-                ]
-              ],
-            },
-            'v-toolbar-group': {
-              params: [
-                [
-                  'item',
-                  'Object',
-                  { text: '', icon: '' },
-                  'The group toolbar item'
-                ],
-                [
-                  'group-class',
-                  'String',
-                  '',
-                  'Applies a custom class to the group dropdown'
-                ],
-                [
-                  'items',
-                  'Array',
-                  `[]`,
-                  'The array of Toolbar items'
-                ],
-                [
-                  'origin',
-                  'String',
-                  'top center',
-                  'Specifies transform origin'
-                ],
-                [
-                  'transition',
-                  'String',
-                  'v-slide-x-transition',
-                  'Applies a transition to the group dropdown'
                 ]
               ]
             },
-            'v-toolbar-items': {
+            'v-toolbar-item': {
               params: [
                 [
-                  'group-class',
-                  'String',
-                  '',
-                  'Applies a custom class to the group dropdown'
+                  'disabled',
+                  'Boolean',
+                  'False',
+                  'Disables the item'
                 ],
                 [
-                  'items',
-                  'Array',
-                  `[]`,
-                  'The array of toolbar items'
+                  'href',
+                  'String',
+                  'javascript:;',
+                  'Sets the href attribute'
+                ],
+                [
+                  'ripple',
+                  'Boolean',
+                  'False',
+                  'Applies the ripple directive'
+                ],
+                [
+                  'router',
+                  'Boolean',
+                  'False',
+                  'Designates the item as a router-link'
+                ],
+                [
+                  'tag',
+                  'String',
+                  '',
+                  'Specifies the tag'
                 ]
-              ],
-            },
-            'v-toolbar-item': {
-              params: ItemProps
+              ]
+            }
+          },
+          functional: {
+            'v-toolbar': {
+              params: [
+                [
+                  'v-toolbar-items',
+                  '.toolbar__items'
+                ],
+                [
+                  'v-toolbar-logo',
+                  '.toolbar__logo'
+                ],
+                [
+                  'v-toolbar-title',
+                  '.toolbar__title'
+                ],
+                [
+                  'v-toolbar-side-icon',
+                  '.toolbar__side-icon'
+                ]
+              ]
             }
           },
           slots: {
             'v-toolbar': {
-              default: true,
-              params: [
-                ['right', 'Slot positioned on right side of toolbar']
-              ]
-            },
-            'v-toolbar-group': {
               default: true
             },
-            'v-toolbar-items': {
+            'v-toolbar-item': {
               default: true
             }
           }
