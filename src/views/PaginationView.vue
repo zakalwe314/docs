@@ -3,6 +3,7 @@
     component-example(header="Short" file="pagination/1" v-bind:data="example")
     component-example(header="Long" file="pagination/2" v-bind:data="example")
     component-example(header="Round" file="pagination/3" v-bind:data="example")
+    component-example(header="Disabled" file="pagination/4" v-bind:data="example")
 </template>
 
 <script>
