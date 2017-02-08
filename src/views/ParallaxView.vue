@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="parallax-view")
     component-example(file="parallax/1")
 </template>
 
@@ -60,24 +60,25 @@
   }
 </script>
 
-<style lang="stylus" scoped>
-  .parallax
-    margin: 15rem 0
-    
-  .parallax__content    
-    h1
-      font-weight: 300
-      white-space: nowrap
+<style lang="stylus">
+  #parallax-view
+    .parallax
+      margin: 0 0 25rem
       
-    p
-      font-weight: 100
-    h1
-      margin: 2rem 0
-      
-    p
-      font-size: 1.2rem      
-      
-    .btn
-      border-radius: 0
-      margin: 4rem 2rem 0 0
+    .parallax__content    
+      h1
+        font-weight: 300
+        white-space: nowrap
+        
+      p
+        font-weight: 100
+      h1
+        margin: 2rem 0
+        
+      p
+        font-size: 1.2rem      
+        
+      .btn
+        border-radius: 0
+        margin: 4rem 2rem 0 0
 </style>
