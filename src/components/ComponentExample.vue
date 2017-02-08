@@ -95,7 +95,7 @@
   @import '../stylus/settings/_variables'
   
   .component-example
-    min-height: 300px
+    min-height: 100px
     
     > div
       margin: 3rem auto

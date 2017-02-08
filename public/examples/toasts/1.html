@@ -1,11 +1,13 @@
-<v-btn secondary v-on:click.native="toast(left)">Left</v-btn>
+<div class="text-xs-center">
+  <v-btn dark secondary v-on:click.native="active = left">Left</v-btn>
 
-<v-btn secondary v-on:click.native="toast(right)">Right</v-btn>
+  <v-btn dark secondary v-on:click.native="active = right">Right</v-btn>
 
-<v-btn secondary v-on:click.native="toast(top)">Top</v-btn>
+  <v-btn dark secondary v-on:click.native="active = top">Top</v-btn>
 
-<v-btn secondary v-on:click.native="toast(bottom)">Bottom</v-btn>
+  <v-btn dark secondary v-on:click.native="active = bottom">Bottom</v-btn>
 
-<v-btn secondary v-on:click.native="toast(snack)">Snack</v-btn>
+  <v-btn dark secondary v-on:click.native="active = snack">Snack</v-btn>
 
-<v-btn secondary v-on:click.native="toast(cb)">Callback</v-btn>
+  <v-btn dark secondary v-on:click.native="active = cb">Callback</v-btn>
+</div>

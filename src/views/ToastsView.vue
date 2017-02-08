@@ -1,36 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(file="toasts/1")
-      v-btn(
-        secondary
-        dark
-        v-on:click.native="toast(left)"
-      ) Left
-      v-btn(
-        secondary
-        dark
-        v-on:click.native="toast(right)"
-      ) Right
-      v-btn(
-        secondary
-        dark
-        v-on:click.native="toast(top)"
-      ) Top
-      v-btn(
-        secondary
-        dark
-        v-on:click.native="toast(bottom)"
-      ) Bottom
-      v-btn(
-        secondary
-        dark
-        v-on:click.native="toast(snack)"
-      ) Snack
-      v-btn(
-        secondary
-        dark
-        v-on:click.native="toast(cb)"
-      ) Callback
+    component-example(file="toasts/1" v-bind:data="$data")
     markup(lang="js")
       |data () {
       |   return {
@@ -40,7 +10,7 @@
       |},
       |methods: {
       |   toast (data) {
-      |     this.$vuetify().toast.create(...data)
+      |     this.$vuetify.toast.create(...data)
       |   }
       |}
 </template>
@@ -71,6 +41,13 @@
         bottom: ['Bottom Toast', 'bottom'],
         snack: ['I\'m a snack toast', 'snack'],
         cb: ['Toast with Callback', 'right', 4000, () => alert('Callback')],
+        active: null
+      }
+    },
+
+    watch: {
+      active () {
+        this.toast(this.active)
       }
     },
 
@@ -88,7 +65,7 @@
       },
 
       toast (data) {
-        this.$vuetify().toast.create(...data)
+        this.$vuetify.toast.create(...data)
       },
       
       meta () {
