@@ -1,37 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="grid-view")
     component-example(header="Grid" file="grid/1")
-      v-container(fluid)
-        v-row
-          v-col(xs12)
-            v-card(class="primary")
-              v-card-text 12
-          v-col(xs6 v-for="i in 2")
-            v-card(class="secondary")
-              v-card-text 6
-          v-col(xs4 v-for="i in 3")
-            v-card(class="primary")
-              v-card-text 4
-          v-col(xs3 v-for="i in 4")
-            v-card(class="secondary")
-              v-card-text 3
-          v-col(xs2 v-for="i in 6")
-            v-card(class="primary")
-              v-card-text 2
-          v-col(xs1 v-for="i in 12")
-            v-card(class="secondary")
-              v-card-text 1
-    markup(lang="xml" slot="markup")
-      |&lt;v-container fluid&gt;
-      |   &lt;v-row&gt;
-      |     &lt;v-col xs12 sm6 md4 lg3&gt;
-      |       ...
-      |     &lt;/v-col&gt;
-      |     &lt;v-col xs6 offset-xs3&gt;
-      |       ...
-      |     &lt;/v-col&gt;
-      |   &lt;/v-row&gt;
-      |&lt;/v-container&gt;
 </template>
 
 <script>
