@@ -15,10 +15,7 @@
       ul
         li <code>up</code> - from specified viewport and up
         li <code>down</code> - from specified viewport and down
-      component-example(header="Hidden elements" file="display/1")
-        v-toolbar(class="pl-0")
-          v-toolbar-logo Logo
-          v-toolbar-items(class="hidden-sm-and-down" v-bind:items="items")
+      component-example(header="Hidden elements" file="display/1" v-bind:data="$data")
 </template>
 
 <script>
@@ -29,15 +26,12 @@
       return {
         items: [
           {
-            href: '#!',
             text: 'Link'
           },
           {
-            href: '#!',
             text: 'Link'
           },
           {
-            href: '#!',
             text: 'Link'
           }
         ]
@@ -64,3 +58,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #display-view
+    .toolbar
+      height: 64px
+</style>

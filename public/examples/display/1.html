@@ -1,4 +1,6 @@
-<v-toolbar class="pl-0">
+<v-toolbar>
   <v-toolbar-logo>Logo</v-toolbar-logo>
-  <v-toolbar-items v-bind:items="items" class="hidden-sm-and-down"></v-toolbar-items>
+  <v-toolbar-items class="hidden-sm-and-down">
+    <v-toolbar-item v-for="item in items">{{ item.text }}</v-toolbar-item>
+  </v-toolbar-items>
 </v-toolbar>
