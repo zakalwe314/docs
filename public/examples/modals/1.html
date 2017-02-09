@@ -1,6 +1,6 @@
 <div class="text-xs-center">
   <v-modal v-model="modal">
-    <v-btn slot="button" primary dark>Modal</v-btn>
+    <v-btn slot="activator" primary dark>Modal</v-btn>
     <v-card>
       <v-card-text>
         <h2 class="title">Use Google's location service?</h2>
@@ -15,7 +15,7 @@
   </v-modal>
 
   <v-modal v-model="bottom" bottom>
-    <v-btn slot="button" secondary dark>Bottom Modal</v-btn>
+    <v-btn slot="activator" secondary dark>Bottom Modal</v-btn>
     <v-card class="secondary white--text">
       <v-card-text class="subheading white--text">
         <v-row>
