@@ -30,6 +30,14 @@
               ]
             },
             'v-expansion-panel-content': {
+              params: [
+                [
+                  'ripple',
+                  'Boolean',
+                  'False',
+                  'Applies the ripple directive'
+                ]
+              ],
               model: {
                 types: ['Number'],
                 default: 0
