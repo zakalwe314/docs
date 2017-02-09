@@ -1,22 +1,6 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
     component-example(file="tooltips/1")
-      v-btn(
-        class="primary white--text"
-        v-tooltip:top="{ html: 'Top tooptip' }"
-      ) Top
-      v-btn(
-        class="primary white--text"
-        v-tooltip:right="{ html: 'Right tooptip' }"
-      ) Right
-      v-btn(
-        class="primary white--text"
-        v-tooltip:bottom="{ html: 'Bottom tooptip' }"
-      ) Bottom
-      v-btn(
-        class="primary white--text"
-        v-tooltip:left="{ html: 'Left Tooltip' }"
-      ) Left
 </template>
 
 <script>
