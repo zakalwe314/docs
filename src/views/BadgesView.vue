@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="badges-view")
     component-example(header="Character" file="badges/1")
     component-example(header="Icon" file="badges/2")
     component-example(header="Inline" file="badges/3")
@@ -67,8 +67,10 @@
   }
 </script>
 
-<style lang="stylus" scoped>
-  .component-example
-    span
-      margin: 1rem
+<style lang="stylus">
+  #badges-view
+    .component-example
+      .component-example__container
+        > div
+          text-align: center
 </style>
