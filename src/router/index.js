@@ -54,6 +54,9 @@ const router = new Router({
     // 301 redirects
     { path: '/overview', redirect: '/server-side-rendering' },
     { path: '/event-bus', redirect: '/' },
+    { path: '/components/dropdowns', redirect: '/components/menus' },
+    { path: '/components/collapsible', redirect: '/components/expansion-panel' },
+    { path: '/components/navbars', redirect: '/components/toolbars' },
     // Global redirect for 404
     { path: '*', redirect: '/' }
   ]

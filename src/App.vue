@@ -10,8 +10,7 @@
         v-container(fluid)
           
           transition(name="slide" mode="out-in")
-            keep-alive
-              router-view(@view="meta")
+            router-view(@view="meta")
     main-footer
 </template>
 
@@ -26,10 +25,7 @@
 
     methods: {
       meta (obj) {
-        if (typeof obj === 'string') {
-          return this.title = obj
-        }
-
+        console.log('here')
         this.title = obj.h1
         this.$store.commit('vuetify/TITLE', obj.title)
         this.$store.commit('vuetify/DESCRIPTION', obj.description)
