@@ -70,22 +70,22 @@
           { icon: 'format_color_fill', value: 4 },
         ],
         dropdown: [
-          { title: 'State 1' },
-          { title: 'State 2' },
-          { title: 'State 3' },
-          { title: 'State 4' },
-          { title: 'State 5' },
-          { title: 'State 6' },
-          { title: 'State 7' },
-          { title: 'State 8' },
-          { title: 'State 9' },
-          { title: 'State 10' },
+          { text: 'State 1' },
+          { text: 'State 2' },
+          { text: 'State 3' },
+          { text: 'State 4' },
+          { text: 'State 5' },
+          { text: 'State 6' },
+          { text: 'State 7' },
+          { text: 'State 8' },
+          { text: 'State 9' },
+          { text: 'State 10' },
         ],
         dropdown_font: [
-          { title: 'Arial' },
-          { title: 'Calibri' },
-          { title: 'Courier' },
-          { title: 'Verdana' }
+          { text: 'Arial' },
+          { text: 'Calibri' },
+          { text: 'Courier' },
+          { text: 'Verdana' }
         ],
         dropdown_icon: [
           { action: 'list' },
@@ -93,11 +93,11 @@
           { action: 'delete' },
         ],
         dropdown_edit: [
-          { title: '100%' },
-          { title: '75%' },
-          { title: '50%' },
-          { title: '25%' },
-          { title: '0%' }
+          { text: '100%' },
+          { text: '75%' },
+          { text: '50%' },
+          { text: '25%' },
+          { text: '0%' }
         ],
         selected: null,
         doc: {
@@ -181,6 +181,76 @@
                   'String',
                   'button',
                   'Sets the buttons type attribute',
+                ]
+              ]
+            },
+            'v-btn-dropdown': {
+              params: [
+                [
+                  'editable',
+                  'Boolean',
+                  'False',
+                  'Makes the value editable'
+                ],
+                [
+                  'options',
+                  'Array',
+                  '[]',
+                  'Option Props: [text, icon]'
+                ],
+                [
+                  'max-height',
+                  'String, Number',
+                  '200',
+                  'Designate the maximum height of the dropdown'
+                ],
+                [
+                  'overflow',
+                  'Boolean',
+                  'False',
+                  'Designates the dropdown as an overflow btn'
+                ],
+                [
+                  'placeholder',
+                  'String',
+                  'Select',
+                  'Sets placeholder text if no model value present'
+                ],
+                [
+                  'segmented',
+                  'Boolean',
+                  'False',
+                  'Designates the dropdown as a segmented btn'
+                ]
+              ],
+              model: {
+                types: [],
+                default: 'null'
+              }
+            },
+            'v-btn-toggle': {
+              params: [
+                [
+                  'options',
+                  'Array',
+                  '[]',
+                  'Option Props: [text, icon]'
+                ],                
+                [
+                  'multiple',
+                  'Boolean',
+                  'False',
+                  'Designates the toggle accepts and returns an array'
+                ]
+              ]
+            }
+          },
+          functional: {
+            'v-app-bar': {
+              params: [
+                [
+                  'v-app-bar',
+                  '.app-bar'
                 ]
               ]
             }
