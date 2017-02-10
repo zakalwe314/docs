@@ -1,1 +1,44 @@
-<v-btn small="small">Small</v-btn>
+<v-container fluid>
+  <v-row>
+    <v-col xs12 sm6>
+      <div class="text-xs-center">
+        <v-card class="grey lighten-4 z-depth-0" height="300px">
+          <v-card-text>
+            <div>
+              <v-btn small primary dark>Small Button</v-btn>
+            </div>
+            <div>
+              <v-btn warning dark>Normal Button</v-btn>
+            </div>
+            <div>
+              <v-btn error dark large>Large Button</v-btn>
+            </div>
+          </v-card-text>
+        </v-card>
+      </div>
+    </v-col>
+    <v-col xs12 sm6>
+      <div class="text-xs-center">
+        <v-card class="grey lighten-4 z-depth-0" height="300px">
+          <v-card-text>
+            <div>
+              <v-btn primary floating small dark>
+                <v-icon>edit</v-icon>
+              </v-btn>
+            </div>
+            <div>
+              <v-btn warning floating dark>
+                <v-icon>account_circle</v-icon>
+              </v-btn>
+            </div>
+            <div>
+              <v-btn error floating large dark>
+                <v-icon>alarm</v-icon>
+              </v-btn>
+            </div>
+          </v-card-text>
+        </v-card>
+      </div>
+    </v-col>
+  </v-row>
+</v-container>

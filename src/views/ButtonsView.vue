@@ -8,7 +8,19 @@
     component-example(header="Icon" file="buttons/6" id="e4" v-bind:data="$data")
     component-example(header="App Bar" file="buttons/7" v-bind:data="$data")
     component-example(header="Floating" file="buttons/8" v-bind:data="$data")
-    component-example(header="Progress" file="buttons/9" v-bind:data="$data")
+    component-example(header="Loaders" file="buttons/9" v-bind:data="$data")
+    markup(lang="stylus")
+      |.custom-loader
+      |   animation: loader 1s infinite
+      |   display: flex
+      |&nbsp;    
+      |@keyframes loader
+      |   from
+      |     transform: rotate(0)
+      |&nbsp;
+      |   to
+      |     transform: rotate(360deg)
+    blockquote Vue 2 handles component events differently than previously. All events must have an added <strong>.native</strong> modifier.
     component-example(header="Sizing" file="buttons/10" v-bind:data="$data")
 
     h4 Custom Styles
@@ -22,6 +34,11 @@
   export default {
     data () {
       return {
+        loader: null,
+        loading: false,
+        loading2: false,
+        loading3: false,
+        loading4: false,
         text: 4,
         icon: null,
         toggle_none: null,
@@ -191,11 +208,18 @@
       return this.methods.meta()
     },
 
-    methods: {
-      loader (load) {
-        this[load] = !this[load]
-      },
+    watch: {
+      loader () {
+        const l = this.loader
+        this[l] = !this[l]
+        
+        setTimeout(() => (this[l] = false), 3000)
 
+        this.loader = null
+      }
+    },
+
+    methods: {
       meta () {
         return {
           title: 'Button Component | Vuetify.js',
@@ -213,12 +237,24 @@
   @import '../../node_modules/vuetify/src/stylus/settings/_variables'
   
   #buttons-view
-    #e1-1, #e1-2
-      .card
-        margin: 2rem 0
+    .card
+      margin: 2rem 0
+      
+      .card__text > div
+        margin: 1rem 0
+
+    .custom-loader
+      animation: loader 1s infinite
+      display: flex;
         
-        .card__text > div
-          margin: 1rem 0
+    @keyframes loader
+      from
+        transform: rotate(0)
+      
+      to
+        transform: rotate(360deg)
+
+    #e1-1, #e1-2
           
       .btn-focused
         &:after

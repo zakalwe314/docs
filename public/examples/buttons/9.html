@@ -1,5 +1,45 @@
-<v-progress-circular button="button" size="56" class="deep-orange--text">
-  <v-btn progress="progress" class="indigo white--text">
-    <v-icon>list</v-icon>
+<div class="text-xs-center">
+  <v-btn
+    secondary
+    v-bind:loading="loading" 
+    v-on:click.native="loader = 'loading'" 
+    v-bind:disabled="loading"
+    class="white--text"
+  >
+    Accept Terms
   </v-btn>
-</v-progress-circular>
+
+  <v-btn 
+    v-bind:loading="loading3" 
+    v-on:click.native="loader = 'loading3'" 
+    v-bind:disabled="loading3" 
+    class="blue-grey white--text"
+  >
+    Upload
+    <v-icon right>cloud_upload</v-icon>
+  </v-btn>
+  
+  <v-btn 
+    success
+    v-bind:loading="loading2" 
+    v-on:click.native="loader = 'loading2'" 
+    v-bind:disabled="loading2"
+    class="white--text"
+  >
+    Custom Loader
+    <span slot="loader">Loading...</span>
+  </v-btn>
+
+  <v-btn 
+    info
+    v-bind:loading="loading4" 
+    v-on:click.native="loader = 'loading4'" 
+    v-bind:disabled="loading4"
+    class="white--text"
+  >
+    Icon Loader
+    <span slot="loader" class="custom-loader">
+      <v-icon>cached</v-icon>
+    </span>
+  </v-btn>
+</div>
