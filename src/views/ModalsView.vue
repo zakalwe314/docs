@@ -57,9 +57,6 @@
           description: 'Modal component for Vuetify Framework',
           keywords: 'vuetify, modals, components'
         }
-      },
-
-      modal (id) {
       }
     }
   }

@@ -33,9 +33,6 @@
 
     //- Example 6
     component-example(header="Action with title and sub-title" v-bind:data="example" file="lists/6")
-      section-text(slot="details") A list can contain an input that is actionable.
-      
-    blockquote When an array is used, a list will always order a tile, avatar, action, content. The exception is when the router option is used without an avatar, the list will splice the action in front. It is recommended to explitly define a list markup for specific customizations.
 
     //- Example 7
     component-example(header="Card image with toolbar and list" v-bind:data="example" file="lists/7")
