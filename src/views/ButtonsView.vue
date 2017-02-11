@@ -324,39 +324,38 @@
       to
         transform: rotate(360deg)
 
-    #e1-1, #e1-2
+    // #e1-1, #e1-2    
+    //   .btn-focused
+    //     &:after
+    //       background-color: $button-focus-background-color
           
-      .btn-focused
-        &:after
-          background-color: $button-focus-background-color
+    //     &-dark
+    //       &:after
+    //         background-color: $button-focus-dark-background-color
           
-        &-dark
-          &:after
-            background-color: $button-focus-dark-background-color
+    //   .btn-pressed
+    //     &:after
+    //       background-color: $button-active-background-color
           
-      .btn-pressed
-        &:after
-          background-color: $button-active-background-color
+    //     &-dark
+    //       &:after
+    //         background-color: $button-active-dark-background-color
           
-        &-dark
-          &:after
-            background-color: $button-active-dark-background-color
+    //   .btn-flat-focused
+    //     &:after
+    //       background-color: $button-flat-focus-background-color
           
-      .btn-flat-focused
-        &:after
-          background-color: $button-flat-focus-background-color
-          
-        &-dark
-          &:after
-            background-color: $button-flat-dark-focus-background-color
+    //     &-dark
+    //       &:after
+    //         background-color: $button-flat-dark-focus-background-color
         
-      .btn-flat-pressed
-        &:after
-          background-color: $button-flat-active-background-color
+    //   .btn-flat-pressed
+    //     &:after
+    //       background-color: $button-flat-active-background-color
         
-        &-dark
-          &:after
-            background-color: $button-flat-dark-active-background-color
+    //     &-dark
+    //       &:after
+    //         background-color: $button-flat-dark-active-background-color
             
     #e2-1, #e2-2, #e3, #e4
       .card
