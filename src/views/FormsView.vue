@@ -1,9 +1,10 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="forms-view")
-    component-example(header="Selects" file="forms/1" v-bind:data="example")
-    component-example(header="Inputs" file="forms/2" v-bind:data="example")
-    component-example(header="Radios" file="forms/3" v-bind:data="example")
-    component-example(header="Checkboxes" file="forms/4" v-bind:data="example")
+    component-example(header="Light Theme" file="forms/1" v-bind:data="example")
+    component-example(header="Dark Theme" file="forms/2" v-bind:data="example")
+    //- component-example(header="Selects" file="forms/1" v-bind:data="example")
+    //- component-example(header="Radios" file="forms/3" v-bind:data="example")
+    //- component-example(header="Checkboxes" file="forms/4" v-bind:data="example")
 </template>
 
 <script>
