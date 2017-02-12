@@ -70,6 +70,12 @@
                   'Boolean',
                   'false',
                   'Designates whether the list tiles will attach the ripple directive'
+                ],
+                [
+                  'router',
+                  'Boolean',
+                  'false',
+                  'Designates the tab item as a router-link'
                 ]
               ]
             },
