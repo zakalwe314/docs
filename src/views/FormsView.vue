@@ -1,7 +1,15 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="forms-view")
-    component-example(header="Light Theme" file="forms/1" v-bind:data="example")
-    component-example(header="Dark Theme" file="forms/2" v-bind:data="example")
+    component-example(header="With Label" file="forms/1" v-bind:data="example")
+        span(class="subheading" slot="details") Light Theme
+    component-example(file="forms/2" v-bind:data="example")
+        span(class="subheading" slot="details") Dark Theme
+    component-example(header="Single Line" file="forms/3" v-bind:data="example")
+        span(class="subheading" slot="details") Light Theme
+    component-example(file="forms/4" v-bind:data="example")
+        span(class="subheading" slot="details") Dark Theme
+    component-example(heading="With icon" file="forms/5" v-bind:data="example")
+        span(class="subheading" slot="details") Light Theme
     //- component-example(header="Selects" file="forms/1" v-bind:data="example")
     //- component-example(header="Radios" file="forms/3" v-bind:data="example")
     //- component-example(header="Checkboxes" file="forms/4" v-bind:data="example")
