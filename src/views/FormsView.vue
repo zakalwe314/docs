@@ -8,8 +8,10 @@
         span(class="subheading" slot="details") Light Theme
     component-example(file="forms/4" v-bind:data="example")
         span(class="subheading" slot="details") Dark Theme
-    component-example(heading="With icon" file="forms/5" v-bind:data="example")
+    component-example(header="With Icon" file="forms/5" v-bind:data="example")
         span(class="subheading" slot="details") Light Theme
+    component-example(file="forms/6" v-bind:data="example")
+        span(class="subheading" slot="details") Dark Theme
     //- component-example(header="Selects" file="forms/1" v-bind:data="example")
     //- component-example(header="Radios" file="forms/3" v-bind:data="example")
     //- component-example(header="Checkboxes" file="forms/4" v-bind:data="example")
