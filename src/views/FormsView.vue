@@ -16,9 +16,8 @@
         span(class="subheading" slot="details") Light Theme
     component-example(file="forms/8" v-bind:data="example")
         span(class="subheading" slot="details") Dark Theme
-    //- component-example(header="Selects" file="forms/1" v-bind:data="example")
-    //- component-example(header="Radios" file="forms/3" v-bind:data="example")
-    //- component-example(header="Checkboxes" file="forms/4" v-bind:data="example")
+    component-example(header="Character counter" file="forms/9" v-bind:data="example")
+        span(class="subheading" slot="details") Light Theme
 </template>
 
 <script>
@@ -190,6 +189,16 @@
 
 <style lang="stylus">
   #forms-view
+    .with
+      min-height: 0
+      
+    main
+      min-height: 0
+      padding-left: 0
+      
+    .toolbar
+      max-height: 64px
+      
     .component-example__container
       justify-content: space-between
       flex-wrap: wrap
