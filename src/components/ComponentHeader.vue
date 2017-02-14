@@ -1,7 +1,7 @@
 <template lang="pug">
   h6.component-header
     div(class="text-xs-right")
-      span(class="source" v-tooltip="{ value: location, html: 'View source' }" v-on:click.stop="$emit('source')")
+      span(class="source" v-tooltip="{ value: location, html: 'View source' }" v-on:click="$emit('source')")
         v-icon code
     div
       slot
