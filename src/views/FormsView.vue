@@ -17,6 +17,7 @@
     component-example(file="forms/8" v-bind:data="example")
         span(class="subheading" slot="details") Dark Theme
     component-example(header="Character counter" file="forms/9" v-bind:data="example")
+    component-example(header="Password input" file="forms/10" v-bind:data="example")
         span(class="subheading" slot="details") Light Theme
 </template>
 
