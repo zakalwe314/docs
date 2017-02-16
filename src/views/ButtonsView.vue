@@ -315,7 +315,7 @@
 
     .custom-loader
       animation: loader 1s infinite
-      display: flex;
+      display: flex
         
     @keyframes loader
       from
@@ -323,41 +323,19 @@
       
       to
         transform: rotate(360deg)
+        
+    .btn--light-flat-focused:after
+      background-color: $button-light-overlay
+        
+    .btn--light-flat-pressed:after
+      background-color: rgba(#000, .3)
+        
+    .btn--dark-flat-focused:after
+      background-color: $button-dark-overlay
+      
+    .btn--dark-flat-pressed:after
+      background-color: rgba(#fff, .3)
 
-    #e1-1, #e1-2
-          
-      .btn-focused
-        &:after
-          background-color: $button-focus-background-color
-          
-        &-dark
-          &:after
-            background-color: $button-focus-dark-background-color
-          
-      .btn-pressed
-        &:after
-          background-color: $button-active-background-color
-          
-        &-dark
-          &:after
-            background-color: $button-active-dark-background-color
-          
-      .btn-flat-focused
-        &:after
-          background-color: $button-flat-focus-background-color
-          
-        &-dark
-          &:after
-            background-color: $button-flat-dark-focus-background-color
-        
-      .btn-flat-pressed
-        &:after
-          background-color: $button-flat-active-background-color
-        
-        &-dark
-          &:after
-            background-color: $button-flat-dark-active-background-color
-            
     #e2-1, #e2-2, #e3, #e4
       .card
         width: 100%
