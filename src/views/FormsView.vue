@@ -1,23 +1,23 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="forms-view")
-    component-example(header="With Label" file="forms/1" v-bind:data="example")
+    component-example(header="With Label" file="forms/1" v-bind:data="$data")
         span(class="subheading" slot="details") Light Theme
-    component-example(file="forms/2" v-bind:data="example")
+    component-example(file="forms/2" v-bind:data="$data")
         span(class="subheading" slot="details") Dark Theme
-    component-example(header="Single Line" file="forms/3" v-bind:data="example")
+    component-example(header="Single Line" file="forms/3" v-bind:data="$data")
         span(class="subheading" slot="details") Light Theme
-    component-example(file="forms/4" v-bind:data="example")
+    component-example(file="forms/4" v-bind:data="$data")
         span(class="subheading" slot="details") Dark Theme
-    component-example(header="With Icon" file="forms/5" v-bind:data="example")
+    component-example(header="With Icon" file="forms/5" v-bind:data="$data")
         span(class="subheading" slot="details") Light Theme
-    component-example(file="forms/6" v-bind:data="example")
+    component-example(file="forms/6" v-bind:data="$data")
         span(class="subheading" slot="details") Dark Theme
-    component-example(header="Multi-Line" file="forms/7" v-bind:data="example")
+    component-example(header="Multi-Line" file="forms/7" v-bind:data="$data")
         span(class="subheading" slot="details") Light Theme
-    component-example(file="forms/8" v-bind:data="example")
+    component-example(file="forms/8" v-bind:data="$data")
         span(class="subheading" slot="details") Dark Theme
-    component-example(header="Character counter" file="forms/9" v-bind:data="example")
-    component-example(header="Password input" file="forms/10" v-bind:data="example")
+    component-example(header="Character counter" file="forms/9" v-bind:data="$data")
+    component-example(header="Password input" file="forms/10" v-bind:data="$data")
         span(class="subheading" slot="details") Light Theme
 </template>
 
@@ -145,25 +145,24 @@
             }
           }
         },
-        example: {
-          input: null,
-          multiple: ['1', '2'],
-          options: [
-            {
-              value: 1,
-              text: 'Option 1'
-            },
-            {
-              value: 2,
-              text: 'Option 2'
-            },
-            {
-              value: 3,
-              text: 'Option 3'
-            }
-          ],
-          text: null
-        }
+        input: null,
+        multiple: ['1', '2'],
+        options: [
+          {
+            value: 1,
+            text: 'Option 1'
+          },
+          {
+            value: 2,
+            text: 'Option 2'
+          },
+          {
+            value: 3,
+            text: 'Option 3'
+          }
+        ],
+        text: null,
+        errors: ['Username or Password is incorrect']
       }
     },
 

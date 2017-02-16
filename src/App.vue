@@ -10,8 +10,7 @@
         v-container(fluid)
           
           transition(name="slide" mode="out-in")
-            keep-alive
-              router-view(@view="meta")
+            router-view(@view="meta")
     main-footer
 </template>
 
