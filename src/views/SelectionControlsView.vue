@@ -1,12 +1,13 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="selection-controls-view")
-    component-example(file="selection-controls/1")
+    component-example(file="selection-controls/1" v-bind:data="$data")
 </template>
 
 <script>
   export default {
     data () {
       return {
+        sel: true,
         doc: {
           title: 'Selection controls',
           desc: 'Text fields components are used for collecting user provided information.',

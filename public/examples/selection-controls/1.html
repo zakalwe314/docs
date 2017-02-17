@@ -1,5 +1,20 @@
 <v-card class="grey lighten-4 z-depth-0">
   <v-card-text>
-    <v-checkbox name="test" />
+    <v-container fluid>
+      <v-row>
+        <v-col sm12 md3>
+          <v-checkbox label="Primary" primary />
+        </v-col>
+        <v-col sm12 md3>
+          <v-checkbox label="Secondary" secondary />
+        </v-col>
+        <v-col sm12 md3>
+          <v-checkbox label="Error" error />
+        </v-col>
+        <v-col sm12 md3>
+          <v-checkbox label="Warning" warning />
+        </v-col>
+      </v-row>
+    </v-container>
   </v-card-text>
 </v-card>
