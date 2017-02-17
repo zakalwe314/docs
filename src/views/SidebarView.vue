@@ -102,7 +102,13 @@
                   'Boolean',
                   'False',
                   'Applies the sidebar--right class'
-                ]
+                ],
+                [
+                  'disable-route-watcher',
+                  'Boolean',
+                  'False',
+                  'Disables opening of Sidebar when route changes'
+                ],
               ]
             }
           },
