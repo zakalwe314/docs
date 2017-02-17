@@ -37,6 +37,7 @@ const router = new Router({
     route('/components/progress-circular', 'ProgressCircular'),
     route('/components/progress-linear', 'ProgressLinear'),
     route('/components/sidebar', 'Sidebar'),
+    route('/components/selection-controls', 'SelectionControls'),
     route('/components/tabs', 'Tabs'),
     route('/functions/toasts', 'Toasts'),
     route('/directives/badges', 'Badges'),
