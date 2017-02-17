@@ -78,7 +78,6 @@
               { href: '/components/expansion-panel', title: 'Expansion Panel', action: 'update' },
               { href: '/components/dividers', title: 'Dividers', disabled: true },
               { href: '/components/footer', title: 'Footer' },
-              { href: '/components/forms', title: 'Forms' },
               { href: '/components/icons', title: 'Icons' },
               { href: '/components/lists', title: 'Lists' },
               { href: '/components/menus', title: 'Menus', action: 'update' },
@@ -89,6 +88,7 @@
               { href: '/components/progress-linear', title: 'Progress Linear' },
               { href: '/components/sidebar', title: 'Sidebars', action: 'update' },
               { href: '/components/tabs', title: 'Tabs', action: 'update' },
+              { href: '/components/text-fields', title: 'Text Fields' },
               { href: '/components/toolbar', title: 'Toolbars', action: 'update' }
             ]
           },

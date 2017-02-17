@@ -26,7 +26,7 @@ const router = new Router({
     route('/components/chips', 'Chips'),
     route('/components/expansion-panel', 'ExpansionPanel'),
     route('/components/footer', 'Footer'),
-    route('/components/forms', 'Forms'),
+    route('/components/text-fields', 'TextFields'),
     route('/components/lists', 'Lists'),
     route('/components/icons', 'Icon'),
     route('/components/menus', 'Menus'),
@@ -57,6 +57,7 @@ const router = new Router({
     { path: '/components/dropdowns', redirect: '/components/menus' },
     { path: '/components/collapsible', redirect: '/components/expansion-panel' },
     { path: '/components/navbars', redirect: '/components/toolbars' },
+    { path: '/components/forms', redirect: '/components/text-fields' },
     // Global redirect for 404
     { path: '*', redirect: '/' }
   ]

@@ -26,8 +26,8 @@
     data () {
       return {
         doc: {
-          title: 'Form Inputs',
-          desc: 'Form components are used for collecting user provided information.',
+          title: 'Text fields',
+          desc: 'Text fields components are used for collecting user provided information.',
           props: {
             'v-select': {
               params: [
@@ -55,7 +55,7 @@
                 default: 'null'
               }
             },
-            'v-text-input': {
+            'v-text-field': {
               params: [
                 [
                   'type',
@@ -177,9 +177,9 @@
     methods: {
       meta () {
         return {
-          title: 'Form Input Components | Vuetify.js',
-          h1: 'Form Inputs',
-          description: 'Form input components for Vuetify Framework',
+          title: 'Text fields Input Components | Vuetify.js',
+          h1: 'Text fields',
+          description: 'Text fields input components for Vuetify Framework',
           keywords: 'vuetify, form, components'
         }
       }
