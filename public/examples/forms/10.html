@@ -6,14 +6,14 @@
           <v-list-sub-header>Normal with hint text</v-list-sub-header>
         </v-col>
         <v-col xs8>
-          <v-text-input
+          <v-text-field
             name="input-10-1"
             label="Enter your password"
             hint="At least 8 characters"
             min="8"
             append-icon="remove_red_eye"
             counter
-          ></v-text-input>
+          ></v-text-field>
         </v-col>
       </v-row>
       <v-row>
@@ -21,7 +21,7 @@
           <v-list-sub-header>Visible</v-list-sub-header>
         </v-col>
         <v-col xs8>
-          <v-text-input
+          <v-text-field
             name="input-10-2"
             label="Enter your password"
             hint="At least 8 characters"
@@ -29,7 +29,7 @@
             append-icon="visibility"
             value="wqfasds"
             class="input-group--focused"
-          ></v-text-input>
+          ></v-text-field>
         </v-col>
       </v-row>
       <v-row>
@@ -37,7 +37,7 @@
           <v-list-sub-header>Nonvisible</v-list-sub-header>
         </v-col>
         <v-col xs8>
-          <v-text-input
+          <v-text-field
             name="input-10-2"
             label="Enter your password"
             hint="At least 8 characters"
@@ -46,7 +46,7 @@
             value="wqfasds"
             type="password"
             class="input-group--focused"
-          ></v-text-input>
+          ></v-text-field>
         </v-col>
       </v-row>
       <v-row>
@@ -54,7 +54,7 @@
           <v-list-sub-header>Error</v-list-sub-header>
         </v-col>
         <v-col xs8>
-          <v-text-input
+          <v-text-field
             name="input-10-2"
             label="Enter your password"
             hint="At least 8 characters"
@@ -62,7 +62,7 @@
             append-icon="visibility"
             v-bind:errors="['The email and password you entered don\'t match']"
             class="input-group--focused input-group--error"
-          ></v-text-input>
+          ></v-text-field>
         </v-col>
       </v-row>
     </v-container>
