@@ -3,16 +3,16 @@
     <v-container fluid>
       <v-row>
         <v-col sm12 md3>
-          <v-checkbox label="Primary" primary />
+          <v-checkbox label="Primary" primary v-model="checkbox" light disabled />
         </v-col>
         <v-col sm12 md3>
-          <v-checkbox label="Secondary" secondary />
+          <v-checkbox label="Secondary" secondary v-model="checkbox" light />
         </v-col>
         <v-col sm12 md3>
-          <v-checkbox label="Error" error />
+          <v-checkbox label="Error" error v-model="checkbox" light />
         </v-col>
         <v-col sm12 md3>
-          <v-checkbox label="Warning" warning />
+          <v-checkbox label="Warning" warning v-model="checkbox" light />
         </v-col>
       </v-row>
     </v-container>

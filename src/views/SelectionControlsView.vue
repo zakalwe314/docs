@@ -1,13 +1,17 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="selection-controls-view")
     component-example(file="selection-controls/1" v-bind:data="$data")
+    component-example(file="selection-controls/2" v-bind:data="$data")
+    component-example(file="selection-controls/3" v-bind:data="$data")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        sel: true,
+        checkbox: null,
+        radio: null,
+        toggle: null,
         doc: {
           title: 'Selection controls',
           desc: 'Text fields components are used for collecting user provided information.',

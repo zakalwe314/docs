@@ -1,0 +1,20 @@
+<v-card class="grey lighten-4 z-depth-0">
+  <v-card-text>
+    <v-container fluid>
+      <v-row>
+        <v-col sm12 md3>
+          <v-radio label="Primary" v-model="radio" value-v="primary" primary light disabled />
+        </v-col>
+        <v-col sm12 md3>
+          <v-radio label="Secondary" v-model="radio" value-v="secondary" secondary light />
+        </v-col>
+        <v-col sm12 md3>
+          <v-radio label="Error" v-model="radio" value-v="error" error light />
+        </v-col>
+        <v-col sm12 md3>
+          <v-radio label="Warning" v-model="radio" value-v="warning" warning light />
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card-text>
+</v-card>
