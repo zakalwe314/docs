@@ -18,22 +18,40 @@
             'v-modal': {
               params: [
                 [
-                  'id',
-                  'Boolean',
-                  'True',
-                  'The id to bind the directive'
-                ],
-                [
                   'bottom',
                   'Boolean',
                   'False',
                   'Applies the modal--bottom class'
+                ],
+                [
+                  'persistent',
+                  'Boolean',
+                  'False',
+                  'Modal does not close on outside-click'
+                ],
+                [
+                  'origin',
+                  'String',
+                  'center center',
+                  'The transition origin of the modal'
+                ],
+                [
+                  'transition',
+                  'String',
+                  'v-modal-transition',
+                  'The transition used'
                 ]
               ]
             }
           },
           slots: {
             'v-modal': {
+              params: [
+                [
+                  'activator',
+                  'The element that will activate the modal'
+                ]
+              ],
               default: true
             }
           }
