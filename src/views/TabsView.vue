@@ -60,22 +60,52 @@
             'v-tab-item': {
               params: [
                 [
-                  'href',
-                  'String',
-                  'javascript:;',
-                  'The target content id'
+                  'append',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
                 ],
                 [
-                  'ripple',
+                  'disabled',
                   'Boolean',
-                  'false',
-                  'Designates whether the list tiles will attach the ripple directive'
+                  'False',
+                  'Applies the list__tile--disabled class'
+                ],
+                [
+                  'href',
+                  'String, Object',
+                  '',
+                  'For router, this is passed to the "to" prop'
+                ],
+                [
+                  'nuxt',
+                  'Boolean',
+                  'False',
+                  'Specifies the link is a nuxt-link'
+                ],
+                [
+                  'replace',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
                 ],
                 [
                   'router',
                   'Boolean',
-                  'false',
-                  'Designates the tab item as a router-link'
+                  'False',
+                  'Designates whether the list tiles will be a router-link'
+                ],
+                [
+                  'ripple',
+                  'Boolean',
+                  'False',
+                  'Designates whether the list tiles will attach the ripple directive'
+                ],
+                [
+                  'tag',
+                  'String',
+                  'undefined',
+                  'Use a custom tag for the list tile'
                 ]
               ]
             },

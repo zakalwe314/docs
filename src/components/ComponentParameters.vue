@@ -43,6 +43,8 @@
 
 <style lang="stylus">
   .table--component
+    box-shadow: none
+
     caption
       background: rgba(#000, 0.05)
       padding: 5px 0

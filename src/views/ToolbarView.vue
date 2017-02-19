@@ -37,34 +37,52 @@
             'v-toolbar-item': {
               params: [
                 [
+                  'append',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
+                ],
+                [
                   'disabled',
                   'Boolean',
                   'False',
-                  'Disables the item'
+                  'Applies the list__tile--disabled class'
                 ],
                 [
                   'href',
-                  'String',
-                  'javascript:;',
-                  'Sets the href attribute'
+                  'String, Object',
+                  '',
+                  'For router, this is passed to the "to" prop'
                 ],
                 [
-                  'ripple',
+                  'nuxt',
                   'Boolean',
                   'False',
-                  'Applies the ripple directive'
+                  'Specifies the link is a nuxt-link'
+                ],
+                [
+                  'replace',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
                 ],
                 [
                   'router',
                   'Boolean',
                   'False',
-                  'Designates the item as a router-link'
+                  'Designates whether the list tiles will be a router-link'
+                ],
+                [
+                  'ripple',
+                  'Boolean',
+                  'False',
+                  'Designates whether the list tiles will attach the ripple directive'
                 ],
                 [
                   'tag',
                   'String',
-                  '',
-                  'Specifies the tag'
+                  'undefined',
+                  'Use a custom tag for the list tile'
                 ]
               ]
             }

@@ -230,6 +230,12 @@
             'v-list-tile': {
               params: [
                 [
+                  'append',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
+                ],
+                [
                   'avatar',
                   'Boolean',
                   'False',
@@ -240,6 +246,24 @@
                   'Boolean',
                   'False',
                   'Applies the list__tile--disabled class'
+                ],
+                [
+                  'href',
+                  'String, Object',
+                  '',
+                  'For router, this is passed to the "to" prop'
+                ],
+                [
+                  'nuxt',
+                  'Boolean',
+                  'False',
+                  'Specifies the link is a nuxt-link'
+                ],
+                [
+                  'replace',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
                 ],
                 [
                   'router',
