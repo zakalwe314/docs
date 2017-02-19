@@ -4,8 +4,9 @@
       <v-list-sub-header>Light</v-list-sub-header>
       <v-card class="grey lighten-4 z-depth-0">
         <v-card-text>
-          <v-checkbox v-bind:label="`Checkbox 1: ${ex1.toString()}`" primary v-model="ex1" light />
-          <v-checkbox v-bind:label="`Checkbox 2: ${ex2.toString()}`" primary v-model="ex2" light />
+          <p>{{ ex15 }}</p>
+          <v-switch label="John" primary v-model="ex15" value-v="John" light />
+          <v-switch label="Jacob" primary v-model="ex15" value-v="Jacob" light />
         </v-card-text>
       </v-card>
     </v-col>
@@ -13,8 +14,9 @@
       <v-list-sub-header>Dark</v-list-sub-header>
       <v-card class="secondary z-depth-0">
         <v-card-text>
-          <v-checkbox v-bind:label="`Checkbox 2: ${ex3.toString()}`" primary v-model="ex3" dark />
-          <v-checkbox v-bind:label="`Checkbox 2: ${ex4.toString()}`" primary v-model="ex4" dark />
+          <p class="white--text">{{ ex16 }}</p>
+          <v-switch label="John" primary v-model="ex16" value-v="John" dark />
+          <v-switch label="Jacob" primary v-model="ex16" value-v="Jacob" dark />
         </v-card-text>
       </v-card>
     </v-col>

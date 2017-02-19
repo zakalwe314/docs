@@ -1,20 +1,24 @@
-<v-card class="grey lighten-4 z-depth-0">
-  <v-card-text>
-    <v-container fluid>
-      <v-row>
-        <v-col sm12 md3>
-          <v-radio label="Primary" v-model="radio" value-v="primary" primary light disabled />
-        </v-col>
-        <v-col sm12 md3>
-          <v-radio label="Secondary" v-model="radio" value-v="secondary" secondary light />
-        </v-col>
-        <v-col sm12 md3>
-          <v-radio label="Error" v-model="radio" value-v="error" error light />
-        </v-col>
-        <v-col sm12 md3>
-          <v-radio label="Warning" v-model="radio" value-v="warning" warning light />
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card-text>
-</v-card>
+<v-container fluid>
+  <v-row>
+    <v-col xs12 md6>
+      <v-list-sub-header>Light</v-list-sub-header>
+      <v-card class="grey lighten-4 z-depth-0">
+        <v-card-text>
+          <p>{{ ex5 }}</p>
+          <v-checkbox label="John" primary v-model="ex5" value-v="John" light />
+          <v-checkbox label="Jacob" primary v-model="ex5" value-v="Jacob" light />
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col xs12 md6>
+      <v-list-sub-header>Dark</v-list-sub-header>
+      <v-card class="secondary z-depth-0">
+        <v-card-text>
+          <p class="white--text">{{ ex6 }}</p>
+          <v-checkbox label="John" primary v-model="ex6" value-v="John" dark />
+          <v-checkbox label="Jacob" primary v-model="ex6" value-v="Jacob" dark />
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>
