@@ -1,6 +1,6 @@
 <template lang="pug">
   v-table-overflow
-    table(class="table--component" v-for="(options, type) in params")
+    table(class="table--component z-depth-0" v-for="(options, type) in params")
       caption <strong>&lt;{{ type }}&gt;</strong>
       colgroup
         col(width="20%")
@@ -46,7 +46,6 @@
     caption
       background: rgba(#000, 0.05)
       padding: 5px 0
-      margin: 0 -1rem 8px
       
     &:not(:first-child)
       margin-top: 2rem
