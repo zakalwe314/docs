@@ -14,7 +14,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.9" target="_blank") v0.8.9
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.10" target="_blank") v0.8.10
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -71,25 +71,25 @@
             items: [
               { href: '/components/alerts', title: 'Alerts' },
               { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
-              { href: '/components/buttons', title: 'Buttons', action: 'update' },
+              { href: '/components/buttons', title: 'Buttons' },
               { href: '/components/cards', title: 'Cards' },
-              { href: '/components/carousel', title: 'Carousel', action: 'update' },
+              { href: '/components/carousel', title: 'Carousel' },
               { href: '/components/chips', title: 'Chips' },
-              { href: '/components/expansion-panel', title: 'Expansion Panel', action: 'update' },
+              { href: '/components/expansion-panel', title: 'Expansion Panel' },
               { href: '/components/dividers', title: 'Dividers', disabled: true },
               { href: '/components/footer', title: 'Footer' },
               { href: '/components/forms', title: 'Forms' },
               { href: '/components/icons', title: 'Icons' },
               { href: '/components/lists', title: 'Lists' },
-              { href: '/components/menus', title: 'Menus', action: 'update' },
+              { href: '/components/menus', title: 'Menus' },
               { href: '/components/modals', title: 'Modals' },
-              { href: '/components/pagination', title: 'Pagination', action: 'update' },
+              { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress-circular', title: 'Progress Circular' },
               { href: '/components/progress-linear', title: 'Progress Linear' },
-              { href: '/components/sidebar', title: 'Sidebars', action: 'update' },
-              { href: '/components/tabs', title: 'Tabs', action: 'update' },
-              { href: '/components/toolbar', title: 'Toolbars', action: 'update' }
+              { href: '/components/sidebar', title: 'Sidebars' },
+              { href: '/components/tabs', title: 'Tabs' },
+              { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },
           {

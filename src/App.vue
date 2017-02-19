@@ -25,7 +25,6 @@
 
     methods: {
       meta (obj) {
-        console.log('here')
         this.title = obj.h1
         this.$store.commit('vuetify/TITLE', obj.title)
         this.$store.commit('vuetify/DESCRIPTION', obj.description)
