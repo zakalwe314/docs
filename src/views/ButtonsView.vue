@@ -3,8 +3,78 @@
     component-example(header="Flat" file="buttons/1" id="e1-1" v-bind:data="$data")
     component-example(header="Raised" file="buttons/2" id="e1-2" v-bind:data="$data")
     component-example(header="Button Dropdown" file="buttons/3" id="e2-1" v-bind:data="$data")
+    markup(lang="js")
+      |dropdown: [
+      |  { text: 'State 1' },
+      |  { text: 'State 2' },
+      |  { text: 'State 3' },
+      |  { text: 'State 4' },
+      |  { text: 'State 5' },
+      |  { text: 'State 6' },
+      |  { text: 'State 7' },
+      |  { text: 'State 8' },
+      |  { text: 'State 9' },
+      |  { text: 'State 10' }
+      |]
     component-example(header="Button Dropdown Variants" file="buttons/4" id="e2-2" v-bind:data="$data")
+    markup(lang="js")
+      |data () {
+      |   return {
+      |     dropdown_font: [
+      |       { text: 'Arial' },
+      |       { text: 'Calibri' },
+      |       { text: 'Courier' },
+      |       { text: 'Verdana' }
+      |     ],
+      |&nbsp;
+      |     dropdown_icon: [
+      |       { action: 'list' },
+      |       { action: 'favorite' },
+      |       { action: 'delete' },
+      |     ],
+      |&nbsp;
+      |     dropdown_edit: [
+      |       { text: '100%' },
+      |       { text: '75%' },
+      |       { text: '50%' },
+      |       { text: '25%' },
+      |       { text: '0%' }
+      |     ]
+      |   }
+      |}
     component-example(header="Button Toggle" file="buttons/5" id="e3" v-bind:data="$data")
+    markup(lang="js")
+      |data () {
+      |   return {
+      |      toggle_text_icon: [
+      |        { text: 'Left', icon: 'format_align_left', value: 1 },
+      |        { text: 'Center', icon: 'format_align_center', value: 2 },
+      |        { text: 'Right', icon: 'format_align_right', value: 3 },
+      |        { text: 'Justify', icon: 'format_align_justify', value: 4 },
+      |      ],
+      |&nbsp;
+      |      toggle_text: [
+      |        { text: 'Left', value: 1 },
+      |        { text: 'Center', value: 2 },
+      |        { text: 'Right', value: 3 },
+      |        { text: 'Justify', value: 4 },
+      |      ],
+      |&nbsp;
+      |      toggle_options: [
+      |        { icon: 'format_align_left', value: 1 },
+      |        { icon: 'format_align_center', value: 2 },
+      |        { icon: 'format_align_right', value: 3 },
+      |        { icon: 'format_align_justify', value: 4 },
+      |      ],
+      |&nbsp;
+      |      toggle_options_multiple: [
+      |        { icon: 'format_bold', value: 1 },
+      |        { icon: 'format_italic', value: 2 },
+      |        { icon: 'format_underlined', value: 3 },
+      |        { icon: 'format_color_fill', value: 4 },
+      |      ]
+      |   }
+      |}
     component-example(header="Icon" file="buttons/6" id="e4" v-bind:data="$data")
     component-example(header="App Bar" file="buttons/7" v-bind:data="$data")
     component-example(header="Floating" file="buttons/8" v-bind:data="$data")
