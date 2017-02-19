@@ -53,7 +53,7 @@
                 [
                   'cycle',
                   'Boolean',
-                  'False',
+                  'True',
                   'Determines if carousel should cycle through images'
                 ],
                 [
