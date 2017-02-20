@@ -88,6 +88,7 @@
               { href: '/components/progress-linear', title: 'Progress Linear' },
               { href: '/components/selection-controls', title: 'Selection Controls', action: 'fiber_new' },
               { href: '/components/sidebar', title: 'Sidebars' },
+              { href: '/components/sliders', title: 'Sliders' },
               { href: '/components/tabs', title: 'Tabs' },
               { href: '/components/text-fields', title: 'Text Fields' },
               { href: '/components/toolbar', title: 'Toolbars' }
