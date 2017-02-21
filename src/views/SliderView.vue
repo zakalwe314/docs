@@ -4,7 +4,7 @@
       v-container(fluid)
         v-row
           v-col(xs10)
-            v-slider(v-model="slider")
+            v-slider(v-model="slider" thumb-label)
           v-col(xs2)
             v-text-field(v-model="slider" type="number")
 </template>
