@@ -4,19 +4,19 @@
     <v-container fluid>
       <v-row>
         <v-col xs10>
-          <v-slider label="R" light v-model="r" />
+          <v-slider label="R" light v-bind:max="255" v-model="r" />
         </v-col>
         <v-col xs2>
           <v-text-field light v-model="r" type="number">
         </v-col>
         <v-col xs10>
-          <v-slider label="G" light v-model="g" />
+          <v-slider label="G" light v-bind:max="255" v-model="g" />
         </v-col>
         <v-col xs2>
           <v-text-field light v-model="g" type="number">
         </v-col>
         <v-col xs10>
-          <v-slider label="B" light v-model="b" />
+          <v-slider label="B" light v-bind:max="255" v-model="b" />
         </v-col>
         <v-col xs2>
           <v-text-field light v-model="b" type="number">

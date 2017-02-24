@@ -23,7 +23,7 @@
         media: 20,
         alarm: 50,
         ring: 65,
-        r: 10,
+        r: 255,
         g: 50,
         b: 30,
         doc: {
