@@ -3,7 +3,7 @@
     h2(class="section-header primary--after")
       | What's Next
       v-icon(x-large class="primary--text") help_outline
-    v-alert(info)
+    v-alert(info v-bind:value="true")
       v-container(fluid)
         v-row
           v-col(xs12 sm12 md8)
