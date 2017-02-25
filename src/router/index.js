@@ -36,6 +36,7 @@ const router = new Router({
     route('/components/parallax', 'Parallax'),
     route('/components/progress-circular', 'ProgressCircular'),
     route('/components/progress-linear', 'ProgressLinear'),
+    route('/components/select', 'Select'),
     route('/components/selection-controls', 'SelectionControls'),
     route('/components/sidebar', 'Sidebar'),
     route('/components/sliders', 'Slider'),
