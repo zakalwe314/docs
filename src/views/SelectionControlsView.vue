@@ -48,13 +48,15 @@
   export default {
     data () {
       return {
+        test: [],
+        test2: false,
         ex1: true,
         ex2: false,
         ex3: true,
         ex4: false,
         ex5: ['John'],
         ex6: ['John'],
-        ex7: false,
+        ex7: [],
         ex8: null,
         ex9: null,
         ex10: null,
@@ -64,7 +66,7 @@
         ex14: false,
         ex15: ['John'],
         ex16: ['John'],
-        ex17: false,
+        ex17: [],
         doc: {
           title: 'Selection controls',
           desc: 'Selection control components allow a user to select options. These components <strong>must</strong> be used with the <code>v-model</code> prop as they do not maintain their own state.',

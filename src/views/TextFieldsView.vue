@@ -25,6 +25,7 @@
   export default {
     data () {
       return {
+        testing: null,
         doc: {
           title: 'Text fields',
           desc: 'Text fields components are used for collecting user provided information.',
