@@ -1,6 +1,7 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(file="tooltips/1")
+    //- component-example(file="tooltips/1")
+    v-stepper
 </template>
 
 <script>
