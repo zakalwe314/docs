@@ -60,8 +60,9 @@
             hint="At least 8 characters"
             min="8"
             append-icon="visibility"
-            v-bind:errors="['The email and password you entered don\'t match']"
-            class="input-group--focused input-group--error"
+            value="Pa"
+            v-bind:rules="[() => ('The email and password you entered don\'t match')]"
+            class="input-group--focused"
           ></v-text-field>
         </v-col>
       </v-row>

@@ -162,7 +162,9 @@
           }
         ],
         text: null,
-        errors: ['Username or Password is incorrect']
+        rules: [
+          () => 'Username or Password is incorrect'
+        ]
       }
     },
 
