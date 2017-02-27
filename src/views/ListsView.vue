@@ -295,7 +295,7 @@
                 ]
               ]
             },
-            'v-list-sub-header': {
+            'v-sub-header': {
               params: [
                 [
                   'inset',
@@ -346,7 +346,7 @@
             'v-list-tile-avatar': {
               default: true
             },
-            'v-list-sub-header': {
+            'v-sub-header': {
               default: true
             }
           }

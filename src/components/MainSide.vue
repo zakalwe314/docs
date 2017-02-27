@@ -43,7 +43,7 @@
                 v-list-tile-title {{ subItem.title }}
               v-list-tile-action(v-if="subItem.action")
                 v-icon(class="success--text") {{ subItem.action }}
-        v-list-sub-header(v-else-if="item.header") {{ item.header }}
+        v-sub-header(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider" light)
         v-list-item(v-else)
           v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
