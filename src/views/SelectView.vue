@@ -10,7 +10,7 @@
     data () {
       return {
         ex1: {
-          options: [
+          items: [
             {
               text: 'foo',
               value: 1

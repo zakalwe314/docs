@@ -7,7 +7,7 @@
         </v-col>
         <v-col xs8>
           <v-select 
-            :options="ex1.options"
+            :items="ex1.items"
           ></v-select>
         </v-col>
       </v-row>
@@ -17,7 +17,7 @@
         </v-col>
         <v-col xs8>
           <v-select 
-            :options="ex1.options"
+            :items="ex1.items"
             autocomplete
           ></v-select>
         </v-col>
@@ -28,18 +28,20 @@
         </v-col>
         <v-col xs8>
           <v-select 
-            :options="ex1.options"
+            :items="ex1.items"
             multiple
           ></v-select>
         </v-col>
       </v-row>
       <v-row>
         <v-col xs4>
-          <v-list-sub-header>Example 4</v-list-sub-header>
+          <v-list-sub-header>Multiple Autocomplete</v-list-sub-header>
         </v-col>
         <v-col xs8>
           <v-select 
-            :options="ex1.options"
+            :items="ex1.items"
+            multiple
+            autocomplete
           ></v-select>
         </v-col>
       </v-row>
