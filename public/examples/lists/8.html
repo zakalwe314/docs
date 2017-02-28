@@ -6,7 +6,7 @@
     <v-icon>check_circle</v-icon>
   </v-toolbar>
   <v-list two-line>
-    <v-list-item v-for="(item, index) in e7">
+    <v-list-item v-for="(item, index) in e7" v-bind:key="item.title">
       <v-list-tile avatar ripple>
         <v-list-tile-content>
           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
