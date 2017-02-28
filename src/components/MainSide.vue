@@ -43,7 +43,7 @@
                 v-list-tile-title {{ subItem.title }}
               v-list-tile-action(v-if="subItem.action")
                 v-icon(class="success--text") {{ subItem.action }}
-        v-sub-header(v-else-if="item.header") {{ item.header }}
+        v-subheader(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider" light)
         v-list-item(v-else)
           v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
@@ -89,6 +89,7 @@
               { href: '/components/selection-controls', title: 'Selection Controls', action: 'fiber_new' },
               { href: '/components/sidebar', title: 'Sidebars' },
               { href: '/components/sliders', title: 'Sliders' },
+              { href: '/components/subheaders', title: 'Subheaders' },
               { href: '/components/tabs', title: 'Tabs' },
               { href: '/components/text-fields', title: 'Text Fields' },
               { href: '/components/toolbar', title: 'Toolbars' }

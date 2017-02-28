@@ -19,7 +19,7 @@
 
     //- Example 3
     component-example(header="Icons with 2 lines and action" v-bind:data="example" file="lists/3")
-      section-text(slot="details") Lists can contain sub-headers, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.
+      section-text(slot="details") Lists can contain subheaders, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.
 
     //- Example 4
     component-example(header="Avatar with 3 lines" v-bind:data="example" file="lists/4")
@@ -197,7 +197,7 @@
       },
         doc: {
           title: 'List',
-          desc: 'The <code>v-list</code> component is used to display information. It can contain an avatar, content, actions, sub-headers and much more. Lists can contain children and are used in the sidebar.',
+          desc: 'The <code>v-list</code> component is used to display information. It can contain an avatar, content, actions, subheaders and much more. Lists can contain children and are used in the sidebar.',
           props: {
             'v-list': {
               params: [
@@ -208,10 +208,10 @@
                   'Lowers max height of list tiles'
                 ],
                 [
-                  'sub-header',
+                  'subheader',
                   'Boolean',
                   'False',
-                  'Designates that list has a previous sibling sub-header'
+                  'Designates that list has a previous sibling subheader'
                 ],
                 [
                   'two-line',
@@ -295,13 +295,13 @@
                 ]
               ]
             },
-            'v-sub-header': {
+            'v-subheader': {
               params: [
                 [
                   'inset',
                   'Boolean',
                   'False',
-                  'Applies the list__sub-header--inset class'
+                  'Applies the list__subheader--inset class'
                 ]
               ]
             }
@@ -346,7 +346,7 @@
             'v-list-tile-avatar': {
               default: true
             },
-            'v-sub-header': {
+            'v-subheader': {
               default: true
             }
           }

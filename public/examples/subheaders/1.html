@@ -1,13 +1,13 @@
 <v-card>
   <v-toolbar class="cyan">
-    <v-toolbar-side-icon class="grey--text text--darken-4">
+    <v-toolbar-side-icon class="grey--text text--darken-4" />
     <v-toolbar-title>Inbox</v-toolbar-title>
     <v-icon>search</v-icon>
   </v-toolbar>
   <v-list two-line>
-    <template v-for="item in e1.slice(0, 6)">
-      <v-subheader v-if="item.header" v-text="item.header"/>
-      <v-divider v-else-if="item.divider" v-bind:inset="item.inset"/>
+    <template v-for="item in e1">
+      <v-subheader v-if="item.header" v-text="item.header" />
+      <v-divider v-else-if="item.divider" v-bind:inset="item.inset" />
       <v-list-item v-else>
         <v-list-tile avatar>
           <v-list-tile-avatar>
