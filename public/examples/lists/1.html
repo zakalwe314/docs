@@ -8,7 +8,7 @@
     <template v-for="item in e1.slice(0, 6)">
       <v-subheader v-if="item.header" v-text="item.header" />
       <v-divider v-else-if="item.divider" v-bind:inset="item.inset" />
-      <v-list-item v-else>
+      <v-list-item v-else v-bind:key="item.title">
         <v-list-tile avatar>
           <v-list-tile-avatar>
             <img v-bind:src="item.avatar" />
