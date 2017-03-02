@@ -39,6 +39,7 @@ const router = new Router({
     route('/components/selection-controls', 'SelectionControls'),
     route('/components/sidebar', 'Sidebar'),
     route('/components/sliders', 'Slider'),
+    route('/components/steppers', 'Steppers'),
     route('/components/tabs', 'Tabs'),
     route('/functions/toasts', 'Toasts'),
     route('/directives/badges', 'Badges'),

@@ -89,6 +89,7 @@
               { href: '/components/selection-controls', title: 'Selection Controls', action: 'fiber_new' },
               { href: '/components/sidebar', title: 'Sidebars' },
               { href: '/components/sliders', title: 'Sliders' },
+              { href: '/components/steppers', title: 'Steppers' },
               { href: '/components/tabs', title: 'Tabs' },
               { href: '/components/text-fields', title: 'Text Fields' },
               { href: '/components/toolbar', title: 'Toolbars' }
