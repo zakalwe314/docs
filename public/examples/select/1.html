@@ -8,7 +8,9 @@
         <v-col xs8>
           <v-select 
             :items="ex1.items"
+            v-model="ex1val"
           ></v-select>
+          {{ ex1val }}
         </v-col>
       </v-row>
       <v-row>
@@ -19,7 +21,9 @@
           <v-select 
             :items="ex1.items"
             autocomplete
+            v-model="ex2val"
           ></v-select>
+          {{ ex2val }}
         </v-col>
       </v-row>
       <v-row>
@@ -30,7 +34,9 @@
           <v-select 
             :items="ex1.items"
             multiple
+            v-model="ex3val"
           ></v-select>
+          {{ ex3val }}
         </v-col>
       </v-row>
       <v-row>
@@ -42,7 +48,24 @@
             :items="ex1.items"
             multiple
             autocomplete
+            v-model="ex4val"
           ></v-select>
+          {{ ex4val }}
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-list-sub-header>Using Chips</v-list-sub-header>
+        </v-col>
+        <v-col xs8>
+          <v-select 
+            :items="ex1.items"
+            multiple
+            autocomplete
+            chips
+            v-model="ex5val"
+          ></v-select>
+          {{ ex5val }}
         </v-col>
       </v-row>
     </v-container>
