@@ -1,0 +1,51 @@
+<v-card class="secondary z-depth-0">
+  <v-card-text>
+    <v-container fluid>
+      <v-row>
+        <v-col xs6>
+          <v-subheader class="grey--text text--lighten-1" v-text="'Standard'" />
+        </v-col>
+        <v-col xs6>
+          <v-select 
+            v-bind:items="items"
+            v-model="item"
+            label="Select"
+            dark
+          />
+        </v-col>
+        <v-col xs6>
+          <v-subheader class="grey--text text--lighten-1" v-text="'Standard with focus'" />
+        </v-col>
+        <v-col xs6>
+          <v-select 
+            v-bind:items="items"
+            v-model="item"
+            label="Select"
+            class="input-group--focused"
+            dark
+          />
+        </v-col>
+        <v-col xs6>
+          <v-subheader class="grey--text text--lighten-1" v-text="'Error'" />
+        </v-col>
+        <v-col xs6>
+          <v-select
+            label="Select"
+            v-bind:rules="[() => item || 'Please select an option']"
+            dark
+          />
+        </v-col>
+        <v-col xs6>
+          <v-subheader class="grey--text text--lighten-1" v-text="'Disabled'" />
+        </v-col>
+        <v-col xs6>
+          <v-select
+            label="Select"
+            disabled
+            dark
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card-text>
+</v-card>

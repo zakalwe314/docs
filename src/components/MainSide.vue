@@ -87,6 +87,7 @@
               { href: '/components/progress-circular', title: 'Progress Circular' },
               { href: '/components/progress-linear', title: 'Progress Linear' },
               { href: '/components/selection-controls', title: 'Selection Controls', action: 'fiber_new' },
+              { href: '/components/selects', title: 'Selects', action: 'arrow_upward' },
               { href: '/components/sidebar', title: 'Sidebars' },
               { href: '/components/sliders', title: 'Sliders', action: 'fiber_new' },
               { href: '/components/subheaders', title: 'Subheaders', action: 'fiber_new' },

@@ -38,6 +38,7 @@ const router = new Router({
     route('/components/progress-circular', 'ProgressCircular'),
     route('/components/progress-linear', 'ProgressLinear'),
     route('/components/selection-controls', 'SelectionControls'),
+    route('/components/selects', 'Select'),
     route('/components/sidebar', 'Sidebar'),
     route('/components/sliders', 'Slider'),
     route('/components/subheaders', 'Subheader'),
