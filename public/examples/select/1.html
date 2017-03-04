@@ -9,7 +9,11 @@
           <v-select 
             :items="ex1.items"
             v-model="ex1val"
-          ></v-select>
+          >
+            <template slot="item" scope="data">
+              foobar {{ data.item.text }}
+            </template>
+          </v-select>
           {{ ex1val }}
         </v-col>
       </v-row>
@@ -64,7 +68,18 @@
             autocomplete
             chips
             v-model="ex5val"
-          ></v-select>
+          >
+            <template slot="selection" scope="data">
+              <v-chip 
+                close 
+                class="red white--text"
+                @input="data.parent.removeSelected(data.item)"
+                @click.native.stop
+              >
+                {{ data.item.text }}
+              </v-chip>
+            </template>            
+          </v-select>
           {{ ex5val }}
         </v-col>
       </v-row>

@@ -9,7 +9,7 @@
   export default {
     data () {
       return {
-        ex1val: {},
+        ex1val: {text: 'bar', value: 3},
         ex2val: {},
         ex3val: [],
         ex4val: [],
