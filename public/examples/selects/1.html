@@ -8,7 +8,7 @@
         <v-col xs6>
           <v-select 
             v-bind:items="items"
-            v-model="item"
+            v-model="e1"
             label="Select"
             light
             single-line
@@ -21,7 +21,7 @@
         <v-col xs6>
           <v-select 
             v-bind:items="items"
-            v-model="item"
+            v-model="e2"
             label="Select"
             class="input-group--focused"
             light
@@ -33,7 +33,8 @@
         <v-col xs6>
           <v-select
             label="Select"
-            v-bind:rules="[() => item || 'Please select an option']"
+            v-model="e3"
+            v-bind:rules="[() => e3 || 'Please select an option']"
             light
           />
         </v-col>
@@ -43,6 +44,7 @@
         <v-col xs6>
           <v-select
             label="Select"
+            v-model="e4"
             disabled
             light
           />
