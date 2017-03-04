@@ -19,6 +19,10 @@
     component-example(header="Character counter" file="forms/9" v-bind:data="$data")
     component-example(header="Password input" file="forms/10" v-bind:data="$data")
         span(class="subheading" slot="details") Light Theme
+    component-example(header="Multi-line with character counter" file="forms/11" v-bind:data="$data")
+    component-example(header="Full-width text field with character counter" file="forms/12" v-bind:data="$data")
+    component-example(header="Required fields" file="forms/13" v-bind:data="$data")
+    component-example(header="Hint text" file="forms/14" v-bind:data="$data")
 </template>
 
 <script>
@@ -146,6 +150,15 @@
             }
           }
         },
+        e91: 'Preliminary report describing the',
+        e92: 'Preliminary report describing the state of California',
+        e111: 'Let me only say that it fared with him as with the storm-tossed ship, that miserably drives along the leeward land.',
+        e112: 'Let me only say that it fared with him as with the storm-tossed ship, that miserably drives along the leeward land. The port',
+        e12: 'Hi,\nI just wanted to check in and see if you had any plans the upcoming weekend. We are thinking of heading up to Napa',
+        e131: null,
+        e132: null,
+        e133: null,
+        e14: [],
         input: null,
         multiple: ['1', '2'],
         options: [
@@ -205,8 +218,4 @@
     .component-example__container
       justify-content: space-between
       flex-wrap: wrap
-      
-      > div > *
-        margin: 2rem 0
-        flex: 1 0 100%
 </style>
