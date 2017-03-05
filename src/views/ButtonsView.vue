@@ -2,46 +2,46 @@
   doc-view(v-bind:doc="doc" id="buttons-view")
     component-example(header="Flat" file="buttons/1" id="e1-1" v-bind:data="$data")
     component-example(header="Raised" file="buttons/2" id="e1-2" v-bind:data="$data")
-    component-example(header="Button Dropdown" file="buttons/3" id="e2-1" v-bind:data="$data")
-    markup(lang="js")
-      |dropdown: [
-      |  { text: 'State 1' },
-      |  { text: 'State 2' },
-      |  { text: 'State 3' },
-      |  { text: 'State 4' },
-      |  { text: 'State 5' },
-      |  { text: 'State 6' },
-      |  { text: 'State 7' },
-      |  { text: 'State 8' },
-      |  { text: 'State 9' },
-      |  { text: 'State 10' }
-      |]
-    component-example(header="Button Dropdown Variants" file="buttons/4" id="e2-2" v-bind:data="$data")
-    markup(lang="js")
-      |data () {
-      |   return {
-      |     dropdown_font: [
-      |       { text: 'Arial' },
-      |       { text: 'Calibri' },
-      |       { text: 'Courier' },
-      |       { text: 'Verdana' }
-      |     ],
-      |&nbsp;
-      |     dropdown_icon: [
-      |       { action: 'list' },
-      |       { action: 'favorite' },
-      |       { action: 'delete' },
-      |     ],
-      |&nbsp;
-      |     dropdown_edit: [
-      |       { text: '100%' },
-      |       { text: '75%' },
-      |       { text: '50%' },
-      |       { text: '25%' },
-      |       { text: '0%' }
-      |     ]
-      |   }
-      |}
+    //- component-example(header="Button Dropdown" file="buttons/3" id="e2-1" v-bind:data="$data")
+    //- markup(lang="js")
+    //-   |dropdown: [
+    //-   |  { text: 'State 1' },
+    //-   |  { text: 'State 2' },
+    //-   |  { text: 'State 3' },
+    //-   |  { text: 'State 4' },
+    //-   |  { text: 'State 5' },
+    //-   |  { text: 'State 6' },
+    //-   |  { text: 'State 7' },
+    //-   |  { text: 'State 8' },
+    //-   |  { text: 'State 9' },
+    //-   |  { text: 'State 10' }
+    //-   |]
+    //- component-example(header="Button Dropdown Variants" file="buttons/4" id="e2-2" v-bind:data="$data")
+    //- markup(lang="js")
+    //-   |data () {
+    //-   |   return {
+    //-   |     dropdown_font: [
+    //-   |       { text: 'Arial' },
+    //-   |       { text: 'Calibri' },
+    //-   |       { text: 'Courier' },
+    //-   |       { text: 'Verdana' }
+    //-   |     ],
+    //-   |&nbsp;
+    //-   |     dropdown_icon: [
+    //-   |       { action: 'list' },
+    //-   |       { action: 'favorite' },
+    //-   |       { action: 'delete' },
+    //-   |     ],
+    //-   |&nbsp;
+    //-   |     dropdown_edit: [
+    //-   |       { text: '100%' },
+    //-   |       { text: '75%' },
+    //-   |       { text: '50%' },
+    //-   |       { text: '25%' },
+    //-   |       { text: '0%' }
+    //-   |     ]
+    //-   |   }
+    //-   |}
     component-example(header="Button Toggle" file="buttons/5" id="e3" v-bind:data="$data")
     markup(lang="js")
       |data () {
@@ -76,7 +76,7 @@
       |   }
       |}
     component-example(header="Icon" file="buttons/6" id="e4" v-bind:data="$data")
-    component-example(header="App Bar" file="buttons/7" v-bind:data="$data")
+    //- component-example(header="App Bar" file="buttons/7" v-bind:data="$data")
     component-example(header="Floating" file="buttons/8" v-bind:data="$data")
     component-example(header="Loaders" file="buttons/9" v-bind:data="$data")
     markup(lang="stylus")
@@ -254,50 +254,50 @@
                 ]
               ]
             },
-            'v-btn-dropdown': {
-              params: [
-                [
-                  'editable',
-                  'Boolean',
-                  'False',
-                  'Makes the value editable'
-                ],
-                [
-                  'options',
-                  'Array',
-                  '[]',
-                  'Option Props: [text, icon]'
-                ],
-                [
-                  'max-height',
-                  'String, Number',
-                  '200',
-                  'Designate the maximum height of the dropdown'
-                ],
-                [
-                  'overflow',
-                  'Boolean',
-                  'False',
-                  'Designates the dropdown as an overflow btn'
-                ],
-                [
-                  'placeholder',
-                  'String',
-                  'Select',
-                  'Sets placeholder text if no model value present'
-                ],
-                [
-                  'segmented',
-                  'Boolean',
-                  'False',
-                  'Designates the dropdown as a segmented btn'
-                ]
-              ],
-              model: {
-                types: [],
-                default: 'null'
-              }
-            },
+            // 'v-btn-dropdown': {
+            //   params: [
+            //     [
+            //       'editable',
+            //       'Boolean',
+            //       'False',
+            //       'Makes the value editable'
+            //     ],
+            //     [
+            //       'options',
+            //       'Array',
+            //       '[]',
+            //       'Option Props: [text, icon]'
+            //     ],
+            //     [
+            //       'max-height',
+            //       'String, Number',
+            //       '200',
+            //       'Designate the maximum height of the dropdown'
+            //     ],
+            //     [
+            //       'overflow',
+            //       'Boolean',
+            //       'False',
+            //       'Designates the dropdown as an overflow btn'
+            //     ],
+            //     [
+            //       'placeholder',
+            //       'String',
+            //       'Select',
+            //       'Sets placeholder text if no model value present'
+            //     ],
+            //     [
+            //       'segmented',
+            //       'Boolean',
+            //       'False',
+            //       'Designates the dropdown as a segmented btn'
+            //     ]
+            //   ],
+            //   model: {
+            //     types: [],
+            //     default: 'null'
+            //   }
+            // },
             'v-btn-toggle': {
               params: [
                 [
@@ -315,16 +315,16 @@
               ]
             }
           },
-          functional: {
-            'v-app-bar': {
-              params: [
-                [
-                  'v-app-bar',
-                  '.app-bar'
-                ]
-              ]
-            }
-          },
+          // functional: {
+          //   'v-app-bar': {
+          //     params: [
+          //       [
+          //         'v-app-bar',
+          //         '.app-bar'
+          //       ]
+          //     ]
+          //   }
+          // },
           slots: {
             'v-btn': {
               default: true,

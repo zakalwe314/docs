@@ -31,6 +31,12 @@
                   'Removes the chip'
                 ],
                 [
+                  'contact',
+                  'String',
+                  '',
+                  'Adds contact image'
+                ],
+                [
                   'label',
                   'Boolean',
                   'False',

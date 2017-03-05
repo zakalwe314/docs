@@ -71,8 +71,14 @@
           title: 'Selection controls',
           desc: 'Selection control components allow a user to select options. These components <strong>must</strong> be used with the <code>v-model</code> prop as they do not maintain their own state.',
           props: {
-            'v-checkbox': {
+            'all': {
               params: [
+                [
+                  'append-icon',
+                  'String',
+                  '',
+                  'Append material icon'
+                ],
                 [
                   'dark',
                   'Boolean',
@@ -86,16 +92,16 @@
                   'Disables the checkbox'
                 ],
                 [
-                  'indeterminate',
-                  'Boolean',
-                  'False',
-                  'Sets an indeterminate state for the checkbox'
-                ],
-                [
-                  'label',
+                  'hint',
                   'String',
                   '',
-                  'Label text for the checkbox'
+                  'Hint text'
+                ],
+                [
+                  'persistent-hint',
+                  'Boolean',
+                  'False',
+                  'Forces hint visible'
                 ],
                 [
                   'light',
@@ -104,10 +110,32 @@
                   'Applies the light theme'
                 ],
                 [
-                  'value-v',
-                  'None',
+                  'prepend-icon',
+                  'String',
                   '',
-                  'The value for the checkbox. This is a special property used in conjunction with v-model'
+                  'Prepend material icon'
+                ],
+                [
+                  'required',
+                  'Boolean',
+                  'False',
+                  'Designates the input as required'
+                ],
+                [
+                  'rules',
+                  'Array',
+                  '[]',
+                  "Array of cb fn's that return either True or a String with an error message"
+                ]
+              ]
+            },
+            'v-checkbox': {
+              params: [
+                [
+                  'indeterminate',
+                  'Boolean',
+                  'False',
+                  'Sets an indeterminate state for the checkbox'
                 ]
               ],
               model: {
@@ -116,76 +144,14 @@
               }
             },
             'v-radio': {
-              params: [
-                [
-                  'dark',
-                  'Boolean',
-                  'False',
-                  'Applies the dark theme'
-                ],
-                [
-                  'disabled',
-                  'Boolean',
-                  'False',
-                  'Disables the checkbox'
-                ],
-                [
-                  'label',
-                  'String',
-                  '',
-                  'Label text for the checkbox'
-                ],
-                [
-                  'light',
-                  'Boolean',
-                  'False',
-                  'Applies the light theme'
-                ],
-                [
-                  'value-v',
-                  'None',
-                  '',
-                  'The value for the checkbox. This is a special property used in conjunction with v-model'
-                ]
-              ],
+              params: [],
               model: {
                 types: ['*'],
                 default: 'None'
               }
             },
             'v-switch': {
-              params: [
-                [
-                  'dark',
-                  'Boolean',
-                  'False',
-                  'Applies the dark theme'
-                ],
-                [
-                  'disabled',
-                  'Boolean',
-                  'False',
-                  'Disables the checkbox'
-                ],
-                [
-                  'label',
-                  'String',
-                  '',
-                  'Label text for the checkbox'
-                ],
-                [
-                  'light',
-                  'Boolean',
-                  'False',
-                  'Applies the light theme'
-                ],
-                [
-                  'value-v',
-                  'None',
-                  '',
-                  'The value for the checkbox. This is a special property used in conjunction with v-model'
-                ]
-              ],
+              params: [],
               model: {
                 types: ['*'],
                 default: 'None'

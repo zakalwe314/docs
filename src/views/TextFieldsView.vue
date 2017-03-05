@@ -34,119 +34,103 @@
           title: 'Text fields',
           desc: 'Text fields components are used for collecting user provided information.',
           props: {
-            'v-select': {
-              params: [
-                [
-                  'defaultText',
-                  'String',
-                  'Select...',
-                  'Sets default option text'
-                ],
-                [
-                  'multiple',
-                  'Boolean',
-                  'False',
-                  'Sets the multiple attribute'
-                ],
-                [
-                  'options',
-                  'Array',
-                  `{ id: 1, text: 'Value' }`,
-                  'The options array'
-                ]
-              ],
-              model: {
-                types: ['Array', 'String', 'Number'],
-                default: 'null'
-              }
-            },
             'v-text-field': {
               params: [
                 [
-                  'type',
+                  'append-icon',
                   'String',
-                  'text',
-                  'Sets the type attribute'
+                  '',
+                  'Append material icon'
                 ],
+                [
+                  'counter',
+                  'Boolean',
+                  'False',
+                  'Creates counter for input length'
+                ],
+                [
+                  'dark',
+                  'Boolean',
+                  'False',
+                  'Applies the dark theme'
+                ],
+                [
+                  'disabled',
+                  'Boolean',
+                  'False',
+                  'Disables the checkbox'
+                ],
+                [
+                  'full-width',
+                  'Boolean',
+                  'False',
+                  'Desginates input type as full-width'
+                ],
+                [
+                  'hint',
+                  'String',
+                  '',
+                  'Hint text'
+                ],
+                [
+                  'min',
+                  '[Number, String]',
+                  '0',
+                  'Sets minimum value'
+                ],
+                [
+                  'max',
+                  '[Number, String]',
+                  '25',
+                  'Sets maximum value'
+                ],
+                [
+                  'persistent-hint',
+                  'Boolean',
+                  'False',
+                  'Forces hint visible'
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'False',
+                  'Applies the light theme'
+                ],
+                [
+                  'prepend-icon',
+                  'String',
+                  '',
+                  'Prepend material icon'
+                ],
+                [
+                  'required',
+                  'Boolean',
+                  'False',
+                  'Designates the input as required'
+                ],
+                [
+                  'multi-line',
+                  'Boolean',
+                  'False',
+                  'Turns into textarea'
+                ],
+                [
+                  'single-line',
+                  'Boolean',
+                  'False',
+                  'Label does not move on focus/dirty'
+                ],
+                [
+                  'rules',
+                  'Array',
+                  '[]',
+                  "Array of cb fn's that return either True or a String with an error message"
+                ]
               ],
               model: {
                 types: ['*'],
                 default: 'null'
               }
-            },
-            'v-radio': {
-              params: [
-                [
-                  'gap',
-                  'Boolean',
-                  'False',
-                  'Creates a gap between the selected circle and the outer border'
-                ]
-              ],
-              model: {
-                types: ['String', 'Number', 'Boolean'],
-                default: 'null'
-              }
-            },
-            'v-checkbox': {
-              params: [
-                [
-                  'gap',
-                  'Boolean',
-                  'False',
-                  'Creates a gap between the selected box and the outer border'
-                ],
-                [
-                  'filled',
-                  'Boolean',
-                  'False',
-                  'Fills the checkbox when selected'
-                ],
-                [
-                  'indeterminate',
-                  'Boolean',
-                  'False',
-                  'Sets the indeterminate state'
-                ]
-              ],
-              model: {
-                types: ['String', 'Number', 'Boolean'],
-                default: 'null'
-              }
-            },
-            'All Components': {
-              params: [
-                [
-                  'disabled',
-                  'Boolean',
-                  'False',
-                  'Sets the disabled attribute',
-                ],
-                [
-                  'label',
-                  'String',
-                  "''",
-                  'Sets the label text',
-                ],
-                [
-                  'id',
-                  "String",
-                  "''",
-                  'Sets the input id',
-                ],
-                [
-                  'name',
-                  "String",
-                  "''",
-                  'Sets the label text',
-                ],
-                [
-                  'placeholder',
-                  "String",
-                  "''",
-                  'Sets the placeholder text',
-                ]
-              ]
             }
           }
         },

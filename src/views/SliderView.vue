@@ -30,6 +30,94 @@
           title: 'Slider',
           desc: 'Soon',
           props: {
+            'v-slider': {
+              params: [
+                [
+                  'append-icon',
+                  'String',
+                  '',
+                  'Append material icon'
+                ],
+                [
+                  'dark',
+                  'Boolean',
+                  'False',
+                  'Applies the dark theme'
+                ],
+                [
+                  'disabled',
+                  'Boolean',
+                  'False',
+                  'Disables the checkbox'
+                ],
+                [
+                  'hint',
+                  'String',
+                  '',
+                  'Hint text'
+                ],
+                [
+                  'persistent-hint',
+                  'Boolean',
+                  'False',
+                  'Forces hint visible'
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'False',
+                  'Applies the light theme'
+                ],
+                [
+                  'min',
+                  '[Number, String]',
+                  '0',
+                  'Sets minimum value'
+                ],
+                [
+                  'max',
+                  '[Number, String]',
+                  '100',
+                  'Sets maximum value'
+                ],
+                [
+                  'prepend-icon',
+                  'String',
+                  '',
+                  'Prepend material icon'
+                ],
+                [
+                  'required',
+                  'Boolean',
+                  'False',
+                  'Designates the input as required'
+                ],
+                [
+                  'rules',
+                  'Array',
+                  '[]',
+                  "Array of cb fn's that return either True or a String with an error message"
+                ],
+                [
+                  'step-interval',
+                  '[Number, String]',
+                  '',
+                  'Set step interval for ticks'
+                ],
+                [
+                  'thumb-label',
+                  'Boolean',
+                  'False',
+                  'Show thumb label'
+                ],
+                [
+                  'tick-interval',
+                  'Boolean',
+                  'False',
+                  'Show interval'
+                ]
+              ]
+            }
           }
         }
       }
