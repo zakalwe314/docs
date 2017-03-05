@@ -90,6 +90,7 @@
               { href: '/components/selects', title: 'Selects', action: 'arrow_upward' },
               { href: '/components/sidebar', title: 'Sidebars' },
               { href: '/components/sliders', title: 'Sliders', action: 'fiber_new' },
+              { href: '/components/snackbars', title: 'Snackbars', action: 'fiber_new' },
               { href: '/components/subheaders', title: 'Subheaders', action: 'fiber_new' },
               { href: '/components/tabs', title: 'Tabs' },
               { href: '/components/text-fields', title: 'Text Fields', action: 'arrow_upward' },
@@ -104,14 +105,6 @@
               { href: '/directives/badges', title: 'Badges' },
               { href: '/directives/ripples', title: 'Ripples' },
               { href: '/directives/tooltips', title: 'Tooltips' }
-            ]
-          },
-          {
-            title: 'Functions', 
-            action: 'functions',
-            group: '/functions',
-            items: [
-              { href: '/functions/toasts', title: 'Toasts' }
             ]
           },
           {
