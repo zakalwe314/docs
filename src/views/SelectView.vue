@@ -10,14 +10,18 @@
   export default {
     data () {
       return {
-        e1: [],
-        e2: [],
-        e3: [],
-        e4: [],
+        e1: {},
+        e2: {},
+        e3: {},
+        e4: {},
         items: [
           { text: 'State 1' },
           { text: 'State 2' },
-          { text: 'State 3' }
+          { text: 'State 3' },
+          { text: 'State 4' },
+          { text: 'State 5' },
+          { text: 'State 6' },
+          { text: 'State 7' }
         ],
         doc: {
           title: 'Select',

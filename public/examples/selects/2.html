@@ -31,6 +31,7 @@
         <v-col xs6>
           <v-select
             label="Select"
+            v-bind:items="items"
             v-model="e3"
             v-bind:rules="[() => e3 || 'Please select an option']"
             dark
@@ -42,6 +43,7 @@
         <v-col xs6>
           <v-select
             label="Select"
+            v-bind:items="items"
             v-model="e4"
             disabled
             dark

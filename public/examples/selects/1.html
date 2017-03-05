@@ -13,7 +13,6 @@
             light
             single-line
           />
-          {{ item }}
         </v-col>
         <v-col xs6>
           <v-subheader v-text="'Standard with focus'" />
@@ -33,6 +32,7 @@
         <v-col xs6>
           <v-select
             label="Select"
+            v-bind:items="items"
             v-model="e3"
             v-bind:rules="[() => e3 || 'Please select an option']"
             light
@@ -44,6 +44,7 @@
         <v-col xs6>
           <v-select
             label="Select"
+            v-bind:items="items"
             v-model="e4"
             disabled
             light
