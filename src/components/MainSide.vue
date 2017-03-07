@@ -92,6 +92,8 @@
               { href: '/components/sliders', title: 'Sliders', action: 'fiber_new' },
               { href: '/components/snackbars', title: 'Snackbars', action: 'fiber_new' },
               { href: '/components/subheaders', title: 'Subheaders', action: 'fiber_new' },
+              { href: '/components/sliders', title: 'Sliders' },
+              { href: '/components/steppers', title: 'Steppers', action: 'fiber_new' },
               { href: '/components/tabs', title: 'Tabs' },
               { href: '/components/text-fields', title: 'Text Fields', action: 'arrow_upward' },
               { href: '/components/toolbar', title: 'Toolbars' }

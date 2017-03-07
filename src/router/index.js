@@ -43,6 +43,7 @@ const router = new Router({
     route('/components/sliders', 'Slider'),
     route('/components/snackbars', 'Snackbar'),
     route('/components/subheaders', 'Subheader'),
+    route('/components/steppers', 'Steppers'),
     route('/components/tabs', 'Tabs'),
     route('/directives/badges', 'Badges'),
     route('/directives/ripples', 'Ripples'),
