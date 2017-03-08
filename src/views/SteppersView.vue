@@ -3,7 +3,6 @@
     component-example(file="steppers/1" v-bind:data="$data")
     component-example(header="Editable steps" file="steppers/2")
     component-example(header="Non-editable steps" file="steppers/3")
-    //- component-example(header="Mobile")
     component-example(header="Optional steps" file="steppers/5")
     component-example(header="Horizontal steppers" file="steppers/6")
     component-example(header="Vertical steppers" file="steppers/7" v-bind:data="$data")
@@ -24,7 +23,7 @@
         e13: 4,
         doc: {
           title: 'stepper',
-          desc: 'The <code>v-stepper</code> directive is useful for conveying information when a user hovers over an element.',
+          desc: 'The <code>v-stepper</code> component displays progress through numbered steps.',
           props: {
             'v-stepper': {
               params: [
@@ -58,10 +57,10 @@
     methods: {
       meta () {
         return {
-          title: 'stepper Directive | Vuetify.js',
-          h1: 'steppers',
-          description: 'stepper directive for Vuetify Framework',
-          keywords: 'vuetify, steppers, directives'
+          title: 'Stepper Component | Vuetify.js',
+          h1: 'Steppers',
+          description: 'Stepper component for Vuetify Framework',
+          keywords: 'vuetify, steppers, components'
         }
       }
     }

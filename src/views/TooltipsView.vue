@@ -7,67 +7,16 @@
   export default {
     data () {
       return {
-        ex1val: {},
-        ex2val: {},
-        ex3val: [],
-        ex4val: [],
-        ex5val: [],
-        ex1: {
-          items: [
-            {
-              text: 'foo',
-              value: 1
-            },
-            {
-              text: 'foobar',
-              value: 2
-            },
-            {
-              text: 'bar',
-              value: 3
-            },
-            {
-              text: 'baz',
-              value: 4
-            },
-            {
-              text: 'baaaaaaaaaaz2',
-              value: 5
-            },
-            {
-              text: 'baaaaaaaaaaaaaz3',
-              value: 6
-            },
-            {
-              text: 'baaaaaaaaaaaaaaaz4',
-              value: 7
-            },
-            {
-              text: 'baaaaaaaaaaaaaaaaaz5',
-              value: 8
-            },
-            {
-              text: 'baaaaaaaaaaaz6',
-              value: 9
-            },
-            {
-              text: 'baaaaaaaaaaz7',
-              value: 10
-            },
-            {
-              text: 'baaaaaaaaaaz8',
-              value: 11
-            },
-            {
-              text: 'baz9',
-              value: 12
-            },
-            {
-              text: 'baaaaaaaz10',
-              value: 13
-            }
-          ]
-        },
+        items: [
+          {
+            text: 'foo',
+            value: 1
+          },
+          {
+            text: 'foobar',
+            value: 2
+          }
+        ],
         doc: {
           title: 'Tooltip',
           desc: 'The <code>v-tooltip</code> directive is useful for conveying information when a user hovers over an element.',
