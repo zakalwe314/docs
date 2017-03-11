@@ -378,7 +378,7 @@
 <style lang="stylus">
   #lists-view .component-example
     .card
-      width: 400px
+      max-width: 400px
       margin: 1rem auto
       
       .toolbar
