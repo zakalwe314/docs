@@ -32,7 +32,7 @@
     section
       section-header Vue CLI
       section-text Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official Vue.js templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
-      v-tabs(id="vue-cli" class="z-depth-1" grow icons)
+      v-tabs(id="vue-cli" class="z-depth-1 mb-5" grow icons)
         v-tab-item(ripple slot="activators" href="#simple") Simple HTML
           v-icon accessibility
         v-tab-item(ripple slot="activators" href="#webpack") Webpack
