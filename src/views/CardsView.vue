@@ -115,7 +115,7 @@
     .portrait
       .card__row--actions
         background: rgba(0,0,0,.5)
-        
+
     .card
       margin: 1rem 0
 
