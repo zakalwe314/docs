@@ -9,7 +9,7 @@
           v-col(xs12 sm12 md8)
             slot
           v-col(xs12 sm12 md4 class="text-sm-right text-xs-center")
-            v-btn(class="blue darken-3 white--text" v-on:click.native="$router.push(route)")
+            v-btn(class="blue darken-3 white--text" v-bind:href="route" router)
               | {{ text }}
               v-icon(right) chevron_right
 </template>
