@@ -5,7 +5,7 @@
     <v-icon>more_vert</v-icon>
   </v-toolbar>
   <v-list>
-    <v-list-group v-for="item in e10" v-bind:active="item.active" v-bind:key="item.title">
+    <v-list-group v-for="item in e10" v-model="item.active" v-bind:key="item.title">
       <v-list-tile slot="item">
         <v-list-tile-action>
           <v-icon>{{ item.action }}</v-icon>

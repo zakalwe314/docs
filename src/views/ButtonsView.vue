@@ -1,6 +1,5 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="buttons-view")
-    v-btn(href="/components/buttons" primary router) Testing
     component-example(header="Flat" file="buttons/1" id="e1-1" v-bind:data="$data")
     component-example(header="Raised" file="buttons/2" id="e1-2" v-bind:data="$data")
     component-example(header="Button Dropdown" file="buttons/3" id="e2-1" v-bind:data="$data")
