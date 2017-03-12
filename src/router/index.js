@@ -64,6 +64,7 @@ const router = new Router({
     { path: '/components/collapsible', redirect: '/components/expansion-panel' },
     { path: '/components/navbars', redirect: '/components/toolbars' },
     { path: '/components/forms', redirect: '/components/text-fields' },
+    { path: '/functions/toasts', redirect: '/components/snackbars' },
     // Global redirect for 404
     { path: '*', redirect: '/' }
   ]
