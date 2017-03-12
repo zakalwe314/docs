@@ -33,13 +33,13 @@
                 ],
                 [
                   'bufferValue',
-                  '[Number, String]',
+                  'Number',
                   'None',
                   'The percentage value for the buffer'
                 ],
                 [
                   'height',
-                  '[Number, String]',
+                  'number',
                   '7',
                   'The height of the progress bar'
                 ],
@@ -47,7 +47,7 @@
                   'indeterminate',
                   'Boolean',
                   'False',
-                  'Sets the indeterminate state of the component'
+                  'Sets the indeterminate state of the component. Use when loading progress is unknown'
                 ],
                 [
                   'active',
@@ -60,11 +60,42 @@
                   'Boolean',
                   'False',
                   'Sets the query state of the component'
-                ]
+                ],
+                [
+                  'secondary',
+                  'Boolean',
+                  'False',
+                  'Sets the progress context to "Secondary"'
+                ],
+                [
+                  'success',
+                  'Boolean',
+                  'False',
+                  'Sets the progress context to "Success"'
+                ],
+                [
+                  'info',
+                  'Boolean',
+                  'False',
+                  'Sets the progress context to "Info"'
+                ],
+                [
+                  'warning',
+                  'Boolean',
+                  'False',
+                  'Sets the progress context to "Warning"'
+                ],
+                [
+                  'error',
+                  'Boolean',
+                  'False',
+                  'Sets the progress context to "Error"'
+                ],
               ],
               model: {
-                types: ['Number', 'String'],
-                default: '0'
+                types: ['Number'],
+                default: '0',
+                description: 'The percentage value for current progress'
               }
             }
           }
@@ -180,7 +211,7 @@
   #progress-linear-view .component-example__container
     > .progress-linear
       margin: 2rem 0
-      
+
     .toolbar
       height: 55px
 </style>

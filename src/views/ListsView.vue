@@ -41,15 +41,15 @@
     //- Example 8
     component-example(header="Title with sub-title, actions and action-text" v-bind:data="example" file="lists/8")
       section-text(slot="details") A list can contain a stack within an action. Ripple and router props can be passed through the main v-list, to the v-list-tile or as a property in the items array.
-  
+
     markup(lang="js")
       |e7: [
-      |   { 
+      |   {
       |     title: '...',
       |     subtitle: '...',
-      |     action : { 
+      |     action : {
       |       text: '...',
-      |       icon: 'star_border' 
+      |       icon: 'star_border'
       |     }
       |   }
       |]
@@ -65,15 +65,15 @@
       |     height: auto
       |     min-height: 55px
       |     padding-left: 0
-    
+
     //- Example 10
     component-example(header="Expansion Lists" v-bind:data="example" file="lists/10")
       section-text(slot="details") A list can contain a group of items which will display on click. Expansion lists are also used within the <code>sidebar</code> component.
 
     markup(lang="js")
-      |{ 
+      |{
       |  action: { icon: 'restaurant', class: 'grey--text' },
-      |  title: 'Dining', 
+      |  title: 'Dining',
       |  items: [
       |    { title: 'Breakfast &amp; brunch' },
       |    { title: 'New American' },
@@ -141,16 +141,16 @@
           { action: '18hr', headline: 'Recipe to try', title: 'Britta Holt', subtitle: "We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
         ],
         e10: [
-          { 
+          {
             action: 'local_activity',
-            title: 'Attractions', 
+            title: 'Attractions',
             items: [
               { title: 'List Item' }
             ]
           },
-          { 
+          {
             action: 'restaurant',
-            title: 'Dining', 
+            title: 'Dining',
             active: true,
             items: [
               { title: 'Breakfast & brunch' },
@@ -158,37 +158,37 @@
               { title: 'Sushi' }
             ]
           },
-          { 
+          {
             action: 'school',
-            title: 'Education', 
+            title: 'Education',
             items: [
               { title: 'List Item' }
             ]
           },
-          { 
+          {
             action: 'directions_run',
-            title: 'Family', 
+            title: 'Family',
             items: [
               { title: 'List Item' }
             ]
           },
-          { 
+          {
             action: 'healing',
-            title: 'Health', 
+            title: 'Health',
             items: [
               { title: 'List Item' }
             ]
           },
-          { 
+          {
             action: 'content_cut',
-            title: 'Office', 
+            title: 'Office',
             items: [
               { title: 'List Item' }
             ]
           },
-          { 
+          {
             action: 'local_offer',
-            title: 'Promotions', 
+            title: 'Promotions',
             items: [
               { title: 'List Item' }
             ]
@@ -250,7 +250,7 @@
                 [
                   'href',
                   'String, Object',
-                  '',
+                  '#',
                   'For router, this is passed to the "to" prop'
                 ],
                 [
@@ -280,20 +280,15 @@
                 [
                   'tag',
                   'String',
-                  'undefined',
+                  'a',
                   'Use a custom tag for the list tile'
                 ]
-              ]
-            },
-            'v-list-tile-action': {
-              params: [
-                [
-                  'stack',
-                  'Boolean',
-                  'False',
-                  'Applies the list__tile__action--stack class.'
-                ]
-              ]
+              ],
+              model: {
+                types: ['Boolean'],
+                default: 'False',
+                description: 'Toggles the list__tile--active class'
+              }
             },
             'v-subheader': {
               params: [
@@ -304,12 +299,34 @@
                   'Applies the list__subheader--inset class'
                 ]
               ]
+            },
+            'v-list-group': {
+              params: [
+                [
+                  'group',
+                  'String',
+                  'False',
+                  'Assign a route namespace'
+                ],
+                [
+                  'no-action',
+                  'Boolean',
+                  'False',
+                  'Removes left padding assigned for action icons from group items'
+                ],
+              ],
+              model: {
+                types: ['Boolean'],
+                default: 'False',
+                description: 'Expands / Collapse list group'
+              }
             }
           },
           functional: {
             'v-list': {
               params: [
                 ['v-list-item', 'list__item'],
+                ['v-list-tile-action', 'list__tile__action--stack']
                 ['v-list-tile-action-text', 'list__tile__action-text'],
                 ['v-list-tile-avatar', 'list__tile__avatar'],
                 ['v-list-tile-content', 'list__tile__content'],
@@ -380,7 +397,7 @@
     .card
       max-width: 400px
       margin: 1rem auto
-      
+
       .toolbar
         height: auto
         min-height: 55px

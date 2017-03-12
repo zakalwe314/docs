@@ -18,12 +18,46 @@
             'v-snackbar': {
               params: [
                 [
-                  'arguments',
+                  'bottom',
+                  'Boolean',
+                  'True',
+                  'Pistion the snackbar at the bottom'
+                ],
+                [
+                  'top',
                   'Boolean',
                   'False',
-                  'Types: top, right, left, bottom, snack, callback'
-                ]
-              ]
+                  'Pistion the snackbar at the top'
+                ],
+                [
+                  'left',
+                  'Boolean',
+                  'False',
+                  'Pistion the snackbar on the left'
+                ],
+                [
+                  'right',
+                  'Boolean',
+                  'False',
+                  'Pistion the snackbar on the right'
+                ],
+                [
+                  'multiline',
+                  'Boolean',
+                  'False',
+                  'Makes the snackbar higher'
+                ],
+                [
+                  'timeout',
+                  'Number',
+                  '6000',
+                  'Time to wait until snackbar is automatically hidden'
+                ],
+              ],
+              model: {
+                types: ['Boolean'],
+                default: 'None'
+              }
             }
           }
         }
@@ -42,7 +76,7 @@
       callback () {
         alert('Alerting!')
       },
-      
+
       meta () {
         return {
           title: 'Snackbar Function | Vuetify.js',
