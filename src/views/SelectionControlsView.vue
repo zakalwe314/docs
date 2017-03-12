@@ -76,8 +76,20 @@
                 [
                   'append-icon',
                   'String',
-                  '',
+                  '-',
                   'Append material icon'
+                ],
+                [
+                  'prepend-icon',
+                  'String',
+                  '-',
+                  'Prepend material icon'
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'True',
+                  'Applies the light theme'
                 ],
                 [
                   'dark',
@@ -94,7 +106,7 @@
                 [
                   'hint',
                   'String',
-                  '',
+                  '-',
                   'Hint text'
                 ],
                 [
@@ -104,25 +116,13 @@
                   'Forces hint visible'
                 ],
                 [
-                  'light',
-                  'Boolean',
-                  'False',
-                  'Applies the light theme'
-                ],
-                [
-                  'prepend-icon',
-                  'String',
-                  '',
-                  'Prepend material icon'
-                ],
-                [
                   'required',
                   'Boolean',
                   'False',
                   'Designates the input as required'
                 ],
                 [
-                  'rules',
+                  'rules' ,
                   'Array',
                   '[]',
                   "Array of cb fn's that return either True or a String with an error message"
@@ -190,13 +190,13 @@
         tr
           border-top: none !important
           height: 75px
-          
+
           &:hover
             background: transparent !important
-          
+
         td, th
           text-align: center
-          
+
         td
           .input-group
             justify-content: center
