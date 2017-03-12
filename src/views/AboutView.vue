@@ -101,6 +101,8 @@
           v-col(xs12)
             a(href="https://www.browserstack.com" target="_blank")
               img(src="~public/doc-images/browser-stack.svg" height="35" alt="browser-stack")
+      h6 Looking for a job?
+      section-text Check out <a href="https://vuejobs.com" target="_blank">vuejobs.com</a>
     section
       whats-next(route="/quick-start" text="Quick Start") Select from 3 premade Vuetify vue-cli templates. These packages are based off of the official releases, pre-configured for the <strong>Vuetify.js</strong> package.
 </template>
