@@ -12,6 +12,8 @@ import highlightXML from 'highlight.js/lib/languages/xml'
 import highlightJS from 'highlight.js/lib/languages/javascript'
 import highlightScss from 'highlight.js/lib/languages/scss'
 
+Vue.config.performance = true
+
 highlight.registerLanguage('bash', highlightBash)
 highlight.registerLanguage('stylus', highlightStylus)
 highlight.registerLanguage('sass', highlightScss)

@@ -6,7 +6,7 @@
         dd(slot="desc") Use one of the Vuetify.js Vue CLI packages <em>(based on the official examples)</em> to get your project started in no time. Vuetify.js supports Vue SSR (server-side rendering), SPA (single page application) and standard HTML pages.
 
     section
-      section-header Manual Install
+      section-header(first) Manual Install
       section-text To test using Vuetify.js without installing a template from Vue CLI, include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install and be ready to use.
       markup(lang="html")
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
@@ -87,9 +87,6 @@
 
       div(class="title pt-3 pb-3") Webpack-SSR
       section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
-
-    section
-      whats-next(route="/server-side-rendering" text="Vue SSR") Now that you have your project setup and ready to go, it's time to start your ssr application with the Vuetify.js <strong>webpack-ssr</strong> template.
 </template>
 
 <script>
