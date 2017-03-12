@@ -57,7 +57,7 @@
               ],
               model: {
                 types: ['Boolean'],
-                default: 'False'
+                default: 'True'
               }
             }
           },
