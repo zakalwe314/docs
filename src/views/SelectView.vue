@@ -9,68 +9,86 @@
 <script>
   export default {
     data () {
+      let srcs = {
+        1: '/public/doc-images/lists/1.jpg',
+        2: '/public/doc-images/lists/2.jpg',
+        3: '/public/doc-images/lists/3.jpg',
+        4: '/public/doc-images/lists/4.jpg',
+        5: '/public/doc-images/lists/5.jpg'
+      }
       return {
-        ex1val: null,
-        ex2val: null,
-        ex3val: null,
-        ex4val: null,
-        ex5val: null,
-        ex1: {
-          items: [
-            {
-              text: 'foo',
-              value: 1
-            },
-            {
-              text: 'foobar',
-              value: 2
-            },
-            {
-              text: 'bar',
-              value: 3
-            },
-            {
-              text: 'baz',
-              value: 4
-            },
-            {
-              text: 'baaaaaaaaaaz2',
-              value: 5
-            },
-            {
-              text: 'baaaaaaaaaaaaaz3',
-              value: 6
-            },
-            {
-              text: 'baaaaaaaaaaaaaaaz4',
-              value: 7
-            },
-            {
-              text: 'baaaaaaaaaaaaaaaaaz5',
-              value: 8
-            },
-            {
-              text: 'baaaaaaaaaaaz6',
-              value: 9
-            },
-            {
-              text: 'baaaaaaaaaaz7',
-              value: 10
-            },
-            {
-              text: 'baaaaaaaaaaz8',
-              value: 11
-            },
-            {
-              text: 'baz9',
-              value: 12
-            },
-            {
-              text: 'baaaaaaaz10',
-              value: 13
-            }
-          ]
+        activatorXY: {clientX: 0, clientY: 0},
+        e1: {},
+        e2: {},
+        e3: {},
+        e4: {},
+        e5: {},
+        e6: [],
+        e7: [],
+        e8: {},
+        e9: [],
+        e10: [],
+        e11: [],
+        e12: {
+          select: [],
+          people: [
+            { 'name': 'Sandra Adams', 'group': 'Group 1', avatar: srcs[1] },
+            { 'name': 'Ali Connors', 'group': 'Group 1', avatar: srcs[2] },
+            { 'name': 'Trevor Hansen', 'group': 'Group 1', avatar: srcs[3] },
+            { 'name': 'Tucker Smith', 'group': 'Group 1', avatar: srcs[2] },
+            { 'name': 'Britta Holt', 'group': 'Group 2', avatar: srcs[4] },
+            { 'name': 'Jane Smith ', 'group': 'Group 2', avatar: srcs[5] },
+            { 'name': 'John Smith', 'group': 'Group 2', avatar: srcs[1] },
+            { 'name': 'Sandra Williams', 'group': 'Group 2', avatar: srcs[3] }
+          ],
+          list: [
+            { header: 'Today' },
+            { avatar: srcs[1], title: 'Brunch this weekend?', subtitle: "<span class='grey--text text--darken-2'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
+            { divider: true, inset: true },
+            { avatar: srcs[2], title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>', subtitle: "<span class='grey--text text--darken-2'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend." },
+            { divider: true, inset: true },
+            { avatar: srcs[3], title: 'Oui oui', subtitle: "<span class='grey--text text--darken-2'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?" },
+            { divider: true, inset: true },
+            { avatar: srcs[4], title: 'Birthday gift', subtitle: "<span class='grey--text text--darken-2'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?" },
+            { divider: true, inset: true },
+            { avatar: srcs[5], title: 'Recipe to try', subtitle: "<span class='grey--text text--darken-2'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
+          ],
         },
+        items: [
+          { text: 'State 1' },
+          { text: 'State 2' },
+          { text: 'State 3' },
+          { text: 'State 4' },
+          { text: 'State 5' },
+          { text: 'State 6' },
+          { text: 'State 7' }
+        ],
+        people: [
+          { 'name': 'Sandra Adams', 'group': 'Group 1', avatar: srcs[1] },
+          { 'name': 'Ali Connors', 'group': 'Group 1', avatar: srcs[2] },
+          { 'name': 'Trevor Hansen', 'group': 'Group 1', avatar: srcs[3] },
+          { 'name': 'Tucker Smith', 'group': 'Group 1', avatar: srcs[2] },
+          { 'name': 'Britta Holt', 'group': 'Group 2', avatar: srcs[4] },
+          { 'name': 'Jane Smith ', 'group': 'Group 2', avatar: srcs[5] },
+          { 'name': 'John Smith', 'group': 'Group 2', avatar: srcs[1] },
+          { 'name': 'Sandra Williams', 'group': 'Group 2', avatar: srcs[3] }
+        ],
+        states: [
+          { text: 'Alabama' },{ text: 'Alaska' },{ text: 'American Samoa' },{ text: 'Arizona' },
+          { text: 'Arkansas' },{ text: 'California' },{ text: 'Colorado' },{ text: 'Connecticut' },
+          { text: 'Delaware' },{ text: 'District of Columbia' },{ text: 'Federated States of Micronesia' },
+          { text: 'Florida' },{ text: 'Georgia' },{ text: 'Guam' },{ text: 'Hawaii' },{ text: 'Idaho' },
+          { text: 'Illinois' },{ text: 'Indiana' },{ text: 'Iowa' },{ text: 'Kansas' },{ text: 'Kentucky' },
+          { text: 'Louisiana' },{ text: 'Maine' },{ text: 'Marshall Islands' },{ text: 'Maryland' },
+          { text: 'Massachusetts' },{ text: 'Michigan' },{ text: 'Minnesota' },{ text: 'Mississippi' },
+          { text: 'Missouri' },{ text: 'Montana' },{ text: 'Nebraska' },{ text: 'Nevada' },
+          { text: 'New Hampshire' },{ text: 'New Jersey' },{ text: 'New Mexico' },{ text: 'New York' },
+          { text: 'North Carolina' },{ text: 'North Dakota' },{ text: 'Northern Mariana Islands' },{ text: 'Ohio' },
+          { text: 'Oklahoma' },{ text: 'Oregon' },{ text: 'Palau' },{ text: 'Pennsylvania' },{ text: 'Puerto Rico' },
+          { text: 'Rhode Island' },{ text: 'South Carolina' },{ text: 'South Dakota' },{ text: 'Tennessee' },
+          { text: 'Texas' },{ text: 'Utah' },{ text: 'Vermont' },{ text: 'Virgin Island' },{ text: 'Virginia' },
+          { text: 'Washington' },{ text: 'West Virginia' },{ text: 'Wisconsin' },{ text: 'Wyoming' }
+        ],
         doc: {
           title: 'Select',
           desc: 'Select fields components are used for collecting user provided information from a list of options.',
@@ -209,27 +227,6 @@
         ],
         text: null,
         errors: ['Username or Password is incorrect']
-=======
-        e1: {},
-        e2: {},
-        e3: {},
-        e4: {},
-        items: [
-          { text: 'State 1' },
-          { text: 'State 2' },
-          { text: 'State 3' },
-          { text: 'State 4' },
-          { text: 'State 5' },
-          { text: 'State 6' },
-          { text: 'State 7' }
-        ],
-        doc: {
-          title: 'Select',
-          desc: ``,
-          props: {
-          }
-        }
->>>>>>> dev
       }
     },
 
@@ -244,22 +241,14 @@
     methods: {
       meta () {
         return {
-<<<<<<< HEAD
-          title: 'Select Input Components | Vuetify.js',
-          h1: 'Select fields',
-          description: 'Select fields input components for Vuetify Framework',
-          keywords: 'vuetify, form, components'
-=======
           title: 'Select Component | Vuetify.js',
           h1: 'Selects',
           description: 'Select component for Vuetify Framework',
           keywords: 'vuetify, selects, directives'
->>>>>>> dev
         }
       }
     }
   }
-<<<<<<< HEAD
 </script>
 
 <style lang="stylus">
@@ -282,6 +271,3 @@
         margin: 2rem 0
         flex: 1 0 100%
 </style>
-=======
-</script>
->>>>>>> dev
