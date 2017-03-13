@@ -174,6 +174,7 @@
   #sidebars-view
     .with, main
       min-height: 40vh
+      max-height: 40vh
       
     main
       padding-left: 0

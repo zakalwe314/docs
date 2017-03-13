@@ -1,12 +1,22 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc")
-    component-example(file="tooltips/1")
+    component-example(file="tooltips/1" v-bind:data="$data")
 </template>
 
 <script>
   export default {
     data () {
       return {
+        items: [
+          {
+            text: 'foo',
+            value: 1
+          },
+          {
+            text: 'foobar',
+            value: 2
+          }
+        ],
         doc: {
           title: 'Tooltip',
           desc: 'The <code>v-tooltip</code> directive is useful for conveying information when a user hovers over an element.',

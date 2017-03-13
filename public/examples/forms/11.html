@@ -1,18 +1,64 @@
-<div>
-  <v-select
-    v-bind:options="options" 
-    id="test" 
-    label="Testing" 
-    name="test" 
-    v-model="input"
-  ></v-select>
-
-  <v-select 
-    v-bind:options="options" 
-    id="test2" 
-    label="Testing2" 
-    name="test2" 
-    multiple 
-    v-model="multiple"
-  ></v-select>
-</div>
+<v-container fluid>
+  <v-row>
+    <v-col xs12 sm6>
+      <v-card>
+        <v-toolbar class="teal">
+          <v-icon class="white--text">arrow_back</v-icon>
+          <v-spacer />
+          <v-icon class="white--text">more_vert</v-icon>
+        </v-toolbar>
+        <v-card-text>
+          <v-container fluid>
+            <v-row>
+              <v-col xs12>
+                <v-text-field
+                  label="Title"
+                  value="Preliminary report"
+                />
+              </v-col>
+              <v-col xs12>
+                <v-text-field
+                  label="Title"
+                  v-model="e111"
+                  counter
+                  multi-line
+                  max="120"
+                />
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col xs12 sm6>
+      <v-card>
+        <v-toolbar class="teal">
+          <v-icon class="white--text">arrow_back</v-icon>
+          <v-spacer />
+          <v-icon class="white--text">more_vert</v-icon>
+        </v-toolbar>
+        <v-card-text>
+          <v-container fluid>
+            <v-row>
+              <v-col xs12>
+                <v-text-field
+                  label="Title"
+                  value="Preliminary report"
+                />
+              </v-col>
+              <v-col xs12>
+                <v-text-field
+                  label="Title"
+                  v-model="e112"
+                  counter
+                  multi-line
+                  max="120"
+                />
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>

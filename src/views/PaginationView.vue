@@ -28,15 +28,22 @@
                   'The length of the paginator',
                 ],
                 [
-                  'round',
+                  'circle',
                   'Boolean',
                   'False',
-                  'Applies the pagination--round class',
+                  'Applies the pagination--circle class',
+                ],
+                [
+                  'length',
+                  'Number',
+                  '0',
+                  'Defines number of pages',
                 ],
               ],
               model: {
                 types: ['Number'],
-                default: 0
+                default: 0,
+                description: 'Current selected page'
               }
             }
           }

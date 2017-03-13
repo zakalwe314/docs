@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-row>
         <v-col xs4>
-          <v-list-sub-header class="grey--text text--lighten-1">Normal with hint text</v-list-sub-header>
+          <v-subheader class="grey--text text--lighten-1">Normal with hint text</v-subheader>
         </v-col>
         <v-col xs8>
           <v-text-field
@@ -16,7 +16,7 @@
       </v-row>
       <v-row>
         <v-col xs4>
-          <v-list-sub-header class="grey--text text--lighten-1">Press</v-list-sub-header>
+          <v-subheader class="grey--text text--lighten-1">Press</v-subheader>
         </v-col>
         <v-col xs8>
           <v-text-field
@@ -30,7 +30,7 @@
       </v-row>
       <v-row>
         <v-col xs4>
-          <v-list-sub-header class="grey--text text--lighten-1">Focus</v-list-sub-header>
+          <v-subheader class="grey--text text--lighten-1">Focus</v-subheader>
         </v-col>
         <v-col xs8>
           <v-text-field
@@ -45,7 +45,7 @@
       </v-row>
       <v-row>
         <v-col xs4>
-          <v-list-sub-header class="grey--text text--lighten-1">Normal with input text</v-list-sub-header>
+          <v-subheader class="grey--text text--lighten-1">Normal with input text</v-subheader>
         </v-col>
         <v-col xs8>
           <v-text-field
@@ -59,14 +59,14 @@
       </v-row>
       <v-row>
         <v-col xs4>
-          <v-list-sub-header class="grey--text text--lighten-1">Error</v-list-sub-header>
+          <v-subheader class="grey--text text--lighten-1">Error</v-subheader>
         </v-col>
         <v-col xs8>
           <v-text-field
             name="input-3-5"
             label="Hint Text"
             value="Input text"
-            v-bind:errors="['Username or Password is incorrect.']"
+            v-bind:rules="[() => 'Username or Password is incorrect.']"
             class="input-group--focused"
             dark
             single-line
@@ -75,7 +75,7 @@
       </v-row>
       <v-row>
         <v-col xs4>
-          <v-list-sub-header class="grey--text text--lighten-1">Disabled</v-list-sub-header>
+          <v-subheader class="grey--text text--lighten-1">Disabled</v-subheader>
         </v-col>
         <v-col xs8>
           <v-text-field

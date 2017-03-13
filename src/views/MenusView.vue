@@ -43,6 +43,84 @@
                   'Set left coordinate for menu'
                 ],
                 [
+                  'auto',
+                  'Boolean',
+                  'False',
+                  ''
+                ],
+                [
+                  'offset-x',
+                  'Boolean',
+                  'False',
+                  ''
+                ],
+                [
+                  'offset-y',
+                  'Boolean',
+                  'False',
+                  ''
+                ],
+                [
+                  'disabled',
+                  'Boolean',
+                  'False',
+                  ''
+                ],
+                [
+                  'max-height',
+                  'Number',
+                  'null',
+                  ''
+                ],
+                [
+                  'nudge-x-auto',
+                  'Number',
+                  '-16',
+                  ''
+                ],
+                [
+                  'nudge-y-auto',
+                  'Number',
+                  '-18',
+                  ''
+                ],
+                [
+                  'nudge-top',
+                  'Number',
+                  '0',
+                  ''
+                ],
+                [
+                  'nudge-bottom',
+                  'Number',
+                  '0',
+                  ''
+                ],
+                [
+                  'nudge-left',
+                  'Number',
+                  '0',
+                  ''
+                ],
+                [
+                  'nudge-right',
+                  'Number',
+                  '0',
+                  ''
+                ],
+                [
+                  'open-on-click',
+                  'Boolean',
+                  'True',
+                  ''
+                ],
+                [
+                  'close-on-click',
+                  'Boolean',
+                  'True',
+                  ''
+                ],
+                [
                   'origin',
                   'String',
                   'top left',
@@ -51,7 +129,7 @@
                 [
                   'transition',
                   'String',
-                  'v-scale-transition',
+                  'v-menu-transition',
                   'Set the transition component'
                 ]
               ]
@@ -111,12 +189,12 @@
   #menus-view
     .btn
       margin: 1rem
-      
+
     .component-example__container
       .card
         flex: 1
         margin: 1rem
-        
+
         &__text
           height: 200px
 </style>

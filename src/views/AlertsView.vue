@@ -92,11 +92,11 @@
 <style lang="stylus">
   #alerts .component-example
     flex-wrap: wrap
-    
+
     .component-example__container
       > div
         width: 100%
-      
+
     .alert
       margin: 1rem 0
 </style>

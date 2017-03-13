@@ -1,11 +1,33 @@
-<div>
-  <v-radio id="test5" name="test5" label="Testing 5"></v-radio>
-
-  <v-radio id="test6" name="test5" label="Testing 6" gap></v-radio>
-
-  <v-radio id="test62" name="test52" label="Testing 62" gap checked disabled></v-radio>
-
-  <v-radio id="test61" name="test54" label="Testing 61" disabled checked></v-radio>
-
-  <v-radio id="test71" name="test5" label="Testing 71" disabled></v-radio>
-</div>
+<v-container fluid>
+  <v-row>
+    <v-col xs12 md6 offset-md3>
+      <v-card>
+        <v-toolbar class="indigo">
+          <v-toolbar-title>DMV Application</v-toolbar-title>
+        </v-toolbar>
+        <v-card-text>
+          <span class="title">Personal Info</span>
+          <v-text-field
+            label="Legal first name"
+            v-model="e131"
+            class="mt-5"
+            required
+          />
+          <v-text-field
+            label="Legal middle name"
+            hint="example of helper text only on focus"
+            v-model="e132"
+          />
+          <v-text-field
+            label="Legal last name"
+            hint="example of persistent helper text"
+            v-model="e133"
+            persistent-hint
+            required
+          />
+          <small>*indicates required field</small>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>

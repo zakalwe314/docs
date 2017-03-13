@@ -24,6 +24,7 @@ const router = new Router({
     route('/components/cards', 'Cards'),
     route('/components/carousel', 'Carousel'),
     route('/components/chips', 'Chips'),
+    route('/components/dividers', 'Divider'),
     route('/components/expansion-panel', 'ExpansionPanel'),
     route('/components/footer', 'Footer'),
     route('/components/text-fields', 'TextFields'),
@@ -38,10 +39,13 @@ const router = new Router({
     route('/components/progress-linear', 'ProgressLinear'),
     route('/components/select', 'Select'),
     route('/components/selection-controls', 'SelectionControls'),
+    route('/components/selects', 'Select'),
     route('/components/sidebar', 'Sidebar'),
     route('/components/sliders', 'Slider'),
+    route('/components/snackbars', 'Snackbar'),
+    route('/components/subheaders', 'Subheader'),
+    route('/components/steppers', 'Steppers'),
     route('/components/tabs', 'Tabs'),
-    route('/functions/toasts', 'Toasts'),
     route('/directives/badges', 'Badges'),
     route('/directives/ripples', 'Ripples'),
     route('/directives/tooltips', 'Tooltips'),
@@ -61,6 +65,7 @@ const router = new Router({
     { path: '/components/collapsible', redirect: '/components/expansion-panel' },
     { path: '/components/navbars', redirect: '/components/toolbars' },
     { path: '/components/forms', redirect: '/components/text-fields' },
+    { path: '/functions/toasts', redirect: '/components/snackbars' },
     // Global redirect for 404
     { path: '*', redirect: '/' }
   ]

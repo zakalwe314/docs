@@ -6,7 +6,7 @@
         dd(slot="desc") Use one of the Vuetify.js Vue CLI packages <em>(based on the official examples)</em> to get your project started in no time. Vuetify.js supports Vue SSR (server-side rendering), SPA (single page application) and standard HTML pages.
 
     section
-      section-header Manual Install
+      section-header(first) Manual Install
       section-text To test using Vuetify.js without installing a template from Vue CLI, include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install and be ready to use.
       markup(lang="html")
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
@@ -32,7 +32,7 @@
     section
       section-header Vue CLI
       section-text Vuetify has 3 pre-made Vue CLI templates, 2 being forked from <a href="#!">official Vue.js templates</a>. They contain small modifications to help you get started with Vuetify even faster. These packages require <code>vue-cli</code>. For more information on vue-cli, visit the official <a href="https://github.com/vuejs/vue-cli" target="_blank">Github</a> repository.
-      v-tabs(id="vue-cli" class="z-depth-1" grow icons)
+      v-tabs(id="vue-cli" class="z-depth-1 mb-5" grow icons)
         v-tab-item(ripple slot="activators" href="#simple") Simple HTML
           v-icon accessibility
         v-tab-item(ripple slot="activators" href="#webpack") Webpack
@@ -62,7 +62,7 @@
                 |$  vue init vuetifyjs/webpack-ssr
       
       h6 NPM Install
-      section-text After the vue-cli installation finishes, <kbd>cd</kbd> into your project directory and type <kbd>npm install</kbd>. Alternatively, if you are using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>, you can simply type <kbd>yarn</kbd>.
+      section-text If you are using the <strong>Simple HTML</strong> template, you are ready to go. For other packages, after the vue-cli installation finishes, <kbd>cd</kbd> into your project directory and type <kbd>npm install</kbd>. Alternatively, if you are using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>, you can simply type <kbd>yarn</kbd>.
 
       section-text For any other package, type <kbd>npm run dev</kbd> into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section
@@ -87,9 +87,6 @@
 
       div(class="title pt-3 pb-3") Webpack-SSR
       section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
-
-    section
-      whats-next(route="/server-side-rendering" text="Vue SSR") Now that you have your project setup and ready to go, it's time to start your ssr application with the Vuetify.js <strong>webpack-ssr</strong> template.
 </template>
 
 <script>

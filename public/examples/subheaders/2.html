@@ -1,0 +1,24 @@
+<v-card class="grid">
+  <v-toolbar class="white">
+    <v-icon class="grey--text text--darken-2">arrow_back</v-icon>
+    <v-toolbar-title class="grey--text text--darken-4">Albums</v-toolbar-title>
+    <v-icon class="grey--text text--darken-2">search</v-icon>
+  </v-toolbar>
+  <v-subheader>May</v-subheader>
+  <v-container fluid class="px-3">
+    <v-row>
+      <v-col xs4 v-for="i in 6">
+        <img class="image" v-bind:src="`https://randomuser.me/api/portraits/men/${i + 20}.jpg`" alt="lorem">
+      </v-col>
+    </v-row>
+  </v-container>
+  <v-subheader>June</v-subheader>
+  <v-container fluid class="px-3">
+    <v-row>
+      <v-col xs4 v-for="i in 6">
+        <img class="image" v-bind:src="`https://randomuser.me/api/portraits/women/${i + 5}.jpg`" alt="lorem">
+      </v-col>
+    </v-row>
+  </v-container>
+  <v-footer class="mt-5" />
+</v-card>

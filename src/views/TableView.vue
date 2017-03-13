@@ -1,8 +1,8 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="table-view")
     component-example(header="Default" file="tables/1" v-bind:data="example")
-    component-example(header="Inside Card" file="tables/2" id="table-overflow" v-bind:data="example")
-    component-example(header="With Dropdown" file="tables/3" v-bind:data="example")
+    component-example(header="Inside card w/ overflow" file="tables/2" id="table-overflow" v-bind:data="example")
+    component-example(header="With dropdown" file="tables/3" v-bind:data="example")
 </template>
 
 <script>
@@ -60,11 +60,4 @@
     .component-example__container
       > div
         width: 100%
-        
-    #table-overflow
-      .card
-        width: 500px
-        
-        table
-          width: 500px
 </style>
