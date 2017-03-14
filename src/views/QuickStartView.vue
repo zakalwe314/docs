@@ -87,6 +87,8 @@
 
       div(class="title pt-3 pb-3") Webpack-SSR
       section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
+    section
+      whats-next(route="/server-side-rendering" text="Vue SSR") Now that you have your project setup and ready to go, it's time to start your ssr application with the Vuetify.js <strong>webpack-ssr</strong> template.
 </template>
 
 <script>

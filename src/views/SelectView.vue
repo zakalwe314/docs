@@ -148,18 +148,6 @@
                   'Removes floating label'
                 ],
                 [
-                  'close',
-                  'Boolean',
-                  'False',
-                  ''
-                ],
-                [
-                  'debounce',
-                  'Number',
-                  '200',
-                  ''
-                ],
-                [
                   'light',
                   'Boolean',
                   'True',
@@ -199,7 +187,7 @@
                   'append-icon',
                   'String',
                   'arrow_drop_down',
-                  ''
+                  'Changes the dropdown icon'
                 ],
                 [
                   'prepend-icon',

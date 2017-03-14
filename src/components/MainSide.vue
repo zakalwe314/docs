@@ -86,7 +86,6 @@
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress-circular', title: 'Progress Circular' },
               { href: '/components/progress-linear', title: 'Progress Linear' },
-              { href: '/components/select', title: 'Select', action: 'fiber_new' },
               { href: '/components/selection-controls', title: 'Selection Controls', action: 'fiber_new' },
               { href: '/components/selects', title: 'Selects', action: 'arrow_upward' },
               { href: '/components/sidebar', title: 'Sidebars' },
