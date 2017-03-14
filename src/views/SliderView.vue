@@ -35,7 +35,7 @@
                 [
                   'append-icon',
                   'String',
-                  '',
+                  '-',
                   'Append material icon'
                 ],
                 [
@@ -53,7 +53,7 @@
                 [
                   'hint',
                   'String',
-                  '',
+                  '-',
                   'Hint text'
                 ],
                 [
@@ -63,6 +63,12 @@
                   'Forces hint visible'
                 ],
                 [
+                  'label',
+                  'String',
+                  '-',
+                  'Adds label to slider'
+                ],
+                [
                   'light',
                   'Boolean',
                   'False',
@@ -70,20 +76,20 @@
                 ],
                 [
                   'min',
-                  '[Number, String]',
+                  'Number',
                   '0',
                   'Sets minimum value'
                 ],
                 [
                   'max',
-                  '[Number, String]',
+                  'Number',
                   '100',
                   'Sets maximum value'
                 ],
                 [
                   'prepend-icon',
                   'String',
-                  '',
+                  '-',
                   'Prepend material icon'
                 ],
                 [
@@ -99,22 +105,16 @@
                   "Array of cb fn's that return either True or a String with an error message"
                 ],
                 [
-                  'step-interval',
-                  '[Number, String]',
-                  '',
-                  'Set step interval for ticks'
-                ],
-                [
                   'thumb-label',
                   'Boolean',
                   'False',
                   'Show thumb label'
                 ],
                 [
-                  'tick-interval',
-                  'Boolean',
-                  'False',
-                  'Show interval'
+                  'step',
+                  'Number',
+                  '-',
+                  'If greater than 0, sets step interval for ticks'
                 ]
               ]
             }

@@ -30,7 +30,7 @@
                   'fixed',
                   'Boolean',
                   'false',
-                  'Applies the toolbar--fixed class'
+                  'Fixes the toolbar to the top'
                 ]
               ]
             },
@@ -40,18 +40,18 @@
                   'append',
                   'Boolean',
                   'False',
-                  'Vue Router router-link prop'
+                  'Vue Router prop. Appends the relative path to the current path'
                 ],
                 [
                   'disabled',
                   'Boolean',
                   'False',
-                  'Applies the list__tile--disabled class'
+                  'Disables the item'
                 ],
                 [
                   'href',
                   'String, Object',
-                  '',
+                  'javascript:;',
                   'For router, this is passed to the "to" prop'
                 ],
                 [
@@ -64,7 +64,7 @@
                   'replace',
                   'Boolean',
                   'False',
-                  'Vue Router router-link prop'
+                  'Vue Router prop. Will call router.replace() instead of router.push() when clicked, so the navigation will not leave a history record'
                 ],
                 [
                   'router',
@@ -81,7 +81,7 @@
                 [
                   'tag',
                   'String',
-                  'undefined',
+                  'a',
                   'Use a custom tag for the list tile'
                 ]
               ]
@@ -180,12 +180,12 @@
     .toolbar
       height: 64px !important
       margin: 1rem 0
-      
+
   #toolbar-image
     background: url('~public/doc-images/nature.jpg') center center / cover no-repeat
     height: 300px
     width: 100%
-    
+
     .toolbar
       margin: 0
 </style>

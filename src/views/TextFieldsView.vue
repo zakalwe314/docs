@@ -38,16 +38,34 @@
             'v-text-field': {
               params: [
                 [
+                  'autocomplete',
+                  'Boolean',
+                  'False',
+                  'Enables filtering for select'
+                ],
+                [
                   'append-icon',
                   'String',
-                  '',
+                  '-',
                   'Append material icon'
+                ],
+                [
+                  'prepend-icon',
+                  'String',
+                  '-',
+                  'Prepend material icon'
                 ],
                 [
                   'counter',
                   'Boolean',
                   'False',
                   'Creates counter for input length'
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'True',
+                  'Applies the light theme'
                 ],
                 [
                   'dark',
@@ -59,7 +77,7 @@
                   'disabled',
                   'Boolean',
                   'False',
-                  'Disables the checkbox'
+                  'Disables the input'
                 ],
                 [
                   'full-width',
@@ -70,20 +88,8 @@
                 [
                   'hint',
                   'String',
-                  '',
+                  '-',
                   'Hint text'
-                ],
-                [
-                  'min',
-                  '[Number, String]',
-                  '0',
-                  'Sets minimum value'
-                ],
-                [
-                  'max',
-                  '[Number, String]',
-                  '25',
-                  'Sets maximum value'
                 ],
                 [
                   'persistent-hint',
@@ -92,16 +98,22 @@
                   'Forces hint visible'
                 ],
                 [
-                  'light',
-                  'Boolean',
-                  'False',
-                  'Applies the light theme'
+                  'label',
+                  'String',
+                  '-',
+                  'Sets input label'
                 ],
                 [
-                  'prepend-icon',
-                  'String',
-                  '',
-                  'Prepend material icon'
+                  'min',
+                  'Number',
+                  '0',
+                  'Sets minimum value'
+                ],
+                [
+                  'max',
+                  'Number',
+                  '25',
+                  'Sets maximum value'
                 ],
                 [
                   'required',
@@ -125,12 +137,19 @@
                   'rules',
                   'Array',
                   '[]',
-                  "Array of cb fn's that return either True or a String with an error message"
-                ]
+                  "Array of functions that return either True or a String with an error message"
+                ],
+                [
+                  'type',
+                  'String',
+                  'text',
+                  'Sets input type'
+                ],
               ],
               model: {
                 types: ['*'],
-                default: 'null'
+                default: '-',
+                description: 'Current input value'
               }
             }
           }
@@ -192,14 +211,14 @@
   #forms-view
     .with
       min-height: 0
-      
+
     main
       min-height: 0
       padding-left: 0
-      
+
     .toolbar
       max-height: 64px
-      
+
     .component-example__container
       justify-content: space-between
       flex-wrap: wrap

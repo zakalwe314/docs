@@ -101,7 +101,13 @@
                   'disabled',
                   'Boolean',
                   'False',
-                  'Disables the checkbox'
+                  'Disables the input'
+                ],
+                [
+                  'label',
+                  'String',
+                  '-',
+                  'Sets input label'
                 ],
                 [
                   'hint',
@@ -125,36 +131,112 @@
                   'rules' ,
                   'Array',
                   '[]',
-                  "Array of cb fn's that return either True or a String with an error message"
-                ]
-              ]
+                  "Array of functions that return either True or a String with an error message"
+                ],
+                [
+                  'primary',
+                  'Boolean',
+                  'False',
+                  'Sets input context to "primary"'
+                ],
+                [
+                  'secondary',
+                  'Boolean',
+                  'False',
+                  'Sets input context to "secondary"'
+                ],
+                [
+                  'success',
+                  'Boolean',
+                  'False',
+                  'Sets input context to "success"'
+                ],
+                [
+                  'info',
+                  'Boolean',
+                  'False',
+                  'Sets input context to "info"'
+                ],
+                [
+                  'warning',
+                  'Boolean',
+                  'False',
+                  'Sets input context to "warning"'
+                ],
+                [
+                  'error',
+                  'Boolean',
+                  'False',
+                  'Sets input context to "error"'
+                ],
+              ],
             },
             'v-checkbox': {
               params: [
+                [
+                  'input-value',
+                  'Array, Boolean, String',
+                  '-',
+                  'Sets possible input values'
+                ],
+                [
+                  'true-value',
+                  'String',
+                  '-',
+                  'Sets value for truthy state'
+                ],
+                [
+                  'false-value',
+                  'String',
+                  '-',
+                  'Sets value for falsy state'
+                ],
                 [
                   'indeterminate',
                   'Boolean',
                   'False',
                   'Sets an indeterminate state for the checkbox'
-                ]
+                ],
               ],
               model: {
                 types: ['*'],
-                default: 'None'
+                default: 'None',
+                description: 'Current input value'
               }
             },
             'v-radio': {
               params: [],
               model: {
                 types: ['*'],
-                default: 'None'
+                default: 'None',
+                description: 'Current radio value'
               }
             },
             'v-switch': {
-              params: [],
+              params: [
+                [
+                  'input-value',
+                  'Array, Boolean, String',
+                  '-',
+                  'Sets possible input values'
+                ],
+                [
+                  'true-value',
+                  'String',
+                  '-',
+                  'Sets value for truthy state'
+                ],
+                [
+                  'false-value',
+                  'String',
+                  '-',
+                  'Sets value for falsy state'
+                ],
+              ],
               model: {
                 types: ['*'],
-                default: 'None'
+                default: 'None',
+                description: 'Current switch value'
               }
             }
           }

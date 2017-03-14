@@ -28,17 +28,88 @@
             'v-stepper': {
               params: [
                 [
-                  'modifiers',
-                  'String',
-                  'Required',
-                  'top, right, bottom, left',
+                  'alt-labels',
+                  'Boolean',
+                  'False',
+                  'Places the labels beneath the step',
                 ],
                 [
-                  'html',
+                  'vertical',
+                  'Boolean',
+                  'False',
+                  'Display steps vertically',
+                ],
+              ],
+              model: {
+                types: ['Number', 'String'],
+                default: '-',
+                description: 'Sets current selected step'
+              }
+            },
+            'v-stepper-step': {
+              params: [
+                [
+                  'completed',
+                  'Boolean',
+                  'False',
+                  'Marks step as completed',
+                ],
+                [
+                  'complete-icon',
                   'String',
-                  'Required',
-                  'The content for the stepper',
-                ]
+                  'check',
+                  'Icon to display when step is marked as completed',
+                ],
+                [
+                  'edit-icon',
+                  'String',
+                  'edit',
+                  'Icon to display when step is editable',
+                ],
+                [
+                  'error-icon',
+                  'String',
+                  'warning',
+                  'Icon to display when step has an error',
+                ],
+                [
+                  'editable',
+                  'Boolean',
+                  'False',
+                  'Marks step as editable',
+                ],
+                [
+                  'rules',
+                  'Array',
+                  '[]',
+                  'If any rule is falsy, step will marked with error',
+                ],
+                [
+                  'step',
+                  'Number, String',
+                  '-',
+                  'Will be displayed inside the step circle',
+                ],
+              ]
+            },
+            'v-stepper-content': {
+              params: [
+                [
+                  'step',
+                  'Number, String',
+                  '-',
+                  'Sets step to associate the content to',
+                ],
+              ]
+            }
+          },
+          functional: {
+            'v-stepper': {
+              params: [
+                [
+                  'v-stepper-header',
+                  '.stepper__header'
+                ],
               ]
             }
           }

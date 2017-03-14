@@ -37,12 +37,12 @@
                   'horizontal',
                   'Boolean',
                   'False',
-                  'Applies the card--horizontal class',
+                  'Arrange content horizontally',
                 ],
                 [
                   'img',
                   'String',
-                  `''`,
+                  `-`,
                   'Specifies an image background',
                 ]
               ]
@@ -53,7 +53,7 @@
                   'actions',
                   'Boolean',
                   'False',
-                  'Applies the card__row--action class',
+                  'Designates the row to contain actions',
                 ],
                 [
                   'height',
@@ -64,7 +64,7 @@
                 [
                   'img',
                   'String',
-                  `''`,
+                  `-`,
                   'Specifies an image background',
                 ]
               ]

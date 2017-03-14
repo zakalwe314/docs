@@ -250,7 +250,7 @@
                 [
                   'href',
                   'String, Object',
-                  '#',
+                  'javascript:;',
                   'For router, this is passed to the "to" prop'
                 ],
                 [

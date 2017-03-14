@@ -31,12 +31,6 @@
                   'Adds remove button'
                 ],
                 [
-                  'contact',
-                  'String',
-                  '',
-                  'Adds contact image'
-                ],
-                [
                   'label',
                   'Boolean',
                   'False',
