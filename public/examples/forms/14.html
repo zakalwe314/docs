@@ -1,0 +1,40 @@
+<v-container fluid>
+  <v-row>
+    <v-col xs12 md6 offset-md3>
+      <v-card>
+        <v-toolbar class="indigo">
+          <v-btn icon>
+            <v-icon>arrow_back</v-icon>
+          </v-btn>
+          <v-toolbar-title>Application</v-toolbar-title>
+          <v-btn icon>
+            <v-icon>more_vert</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-card-text>
+          <h1 class="title">Search for new keywords using a prhase, website or category</h1>
+          <h2 class="subheading mb-5">Enter one or more of the following</h2>
+          <v-text-field
+            label="Your product or service"
+            value="Grocery delivery"
+            hint="For example, flowers or used cars"
+            persistent-hint
+          />
+          <v-text-field
+            label="Your landing page"
+            hint="www.example.com/page"
+            persistent-hint
+          />
+          <v-select
+            autocomplete
+            label="Your product category"
+            hint="Enter or select a product category"
+            persistent-hint
+            :items="options"
+            v-model="e14"
+          />
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>

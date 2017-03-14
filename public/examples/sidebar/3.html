@@ -4,7 +4,10 @@
     <v-toolbar-logo class="text-xs-right">Logo</v-toolbar-logo>
   </v-toolbar>
   <main>
-    <v-sidebar v-model="sidebar3" height="auto">
+    <v-content>
+      <v-container fluid></v-container>
+    </v-content>
+    <v-sidebar v-model="sidebar3" height="auto" right>
       <v-list dense>
         <template v-for="item in itemGroup">
           <v-list-group v-if="item.items">
@@ -22,7 +25,7 @@
               </v-list-tile>
             </v-list-item>
           </v-list-group>
-          <v-list-sub-header v-else-if="item.header" v-text="item.header" />
+          <v-subheader v-else-if="item.header" v-text="item.header" />
           <v-divider v-else-if="item.divider" light />
           <v-list-item v-else>
             <v-list-tile>
@@ -32,8 +35,5 @@
         </template>
       </v-list>
     </v-sidebar>
-    <v-content>
-      <v-container fluid></v-container>
-    </v-content>
   </main>
 </v-app>

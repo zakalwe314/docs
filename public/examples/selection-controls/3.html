@@ -1,0 +1,94 @@
+<v-container fluid>
+  <v-row>
+    <v-col xs12 md6>
+      <v-subheader>Light</v-subheader>
+      <v-card class="grey lighten-4 z-depth-0">
+        <v-card-text>
+          <v-container fluid>
+            <v-row>
+              <v-col xs12>
+                <v-table-overflow>
+                  <table class="z-depth-0">
+                    <thead>
+                      <tr>
+                        <th>on</th>
+                        <th>off</th>
+                        <th>indeterminate</th>
+                        <th>on disabled</th>
+                        <th>off disabled</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <v-checkbox input-value="true" value="true" primary light />
+                        </td>
+                        <td>
+                          <v-checkbox value="" primary light />
+                        </td>
+                        <td>
+                          <v-checkbox value="" primary indeterminate light />
+                        </td>
+                        <td>
+                          <v-checkbox input-value="true" value="true" primary light disabled />
+                        </td>
+                        <td>
+                          <v-checkbox value="" primary light disabled />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </v-table-overflow>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col xs12 md6>
+      <v-subheader>Dark</v-subheader>
+      <v-card class="secondary z-depth-0">
+        <v-card-text>
+          <v-container fluid>
+            <v-row>
+              <v-col xs12>
+                <v-table-overflow>
+                  <table class="z-depth-0">
+                    <thead>
+                      <tr>
+                        <th>on</th>
+                        <th>off</th>
+                        <th>indeterminate</th>
+                        <th>on disabled</th>
+                        <th>off disabled</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <v-checkbox input-value="true" value="true" primary dark />
+                        </td>
+                        <td>
+                          <v-checkbox value="" primary dark />
+                        </td>
+                        <td>
+                          <v-checkbox value="" primary indeterminate dark />
+                        </td>
+                        <td>
+                          <v-checkbox input-value="true" value="true" primary dark disabled />
+                        </td>
+                        <td>
+                          <v-checkbox value="" primary dark disabled />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </v-table-overflow>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>

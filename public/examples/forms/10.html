@@ -1,0 +1,72 @@
+<v-card class="grey lighten-4 z-depth-0">
+  <v-card-text>
+    <v-container fluid>
+      <v-row>
+        <v-col xs4>
+          <v-subheader>Normal with hint text</v-subheader>
+        </v-col>
+        <v-col xs8>
+          <v-text-field
+            name="input-10-1"
+            label="Enter your password"
+            hint="At least 8 characters"
+            v-model="password"
+            min="8"
+            append-icon="remove_red_eye"
+            counter
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-subheader>Visible</v-subheader>
+        </v-col>
+        <v-col xs8>
+          <v-text-field
+            name="input-10-2"
+            label="Enter your password"
+            hint="At least 8 characters"
+            min="8"
+            append-icon="visibility"
+            value="wqfasds"
+            class="input-group--focused"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-subheader>Nonvisible</v-subheader>
+        </v-col>
+        <v-col xs8>
+          <v-text-field
+            name="input-10-2"
+            label="Enter your password"
+            hint="At least 8 characters"
+            min="8"
+            append-icon="visibility_off"
+            value="wqfasds"
+            type="password"
+            class="input-group--focused"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-subheader>Error</v-subheader>
+        </v-col>
+        <v-col xs8>
+          <v-text-field
+            name="input-10-2"
+            label="Enter your password"
+            hint="At least 8 characters"
+            min="8"
+            append-icon="visibility"
+            value="Pa"
+            v-bind:rules="[() => ('The email and password you entered don\'t match')]"
+            class="input-group--focused"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card-text>
+</v-card>

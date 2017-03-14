@@ -1,0 +1,92 @@
+<v-card class="grey lighten-4 z-depth-0">
+  <v-card-text>
+    <v-container fluid>
+      <v-row>
+        <v-col xs4>
+          <v-list-sub-header>Normal</v-list-sub-header>
+        </v-col>
+        <v-col xs8>
+          <v-select 
+            :items="ex1.items"
+            close
+          >
+            <template slot="item" scope="data">
+              foobar {{ data.item.text }}
+            </template>
+          </v-select>
+          {{ ex1val }}
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-list-sub-header>Autocomplete</v-list-sub-header>
+        </v-col>
+        <v-col xs8>
+          <v-select 
+            :items="ex1.items"
+            autocomplete
+            v-model="ex2val"
+          ></v-select>
+          {{ ex2val }}
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-list-sub-header>Multiple</v-list-sub-header>
+        </v-col>
+        <v-col xs8>
+          <v-select 
+            :items="ex1.items"
+            multiple
+            chips
+            v-model="ex3val"
+          ></v-select>
+          {{ ex3val }}
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-list-sub-header>Multiple Autocomplete</v-list-sub-header>
+        </v-col>
+        <v-col xs8>
+          <v-select 
+            :items="ex1.items"
+            multiple
+            autocomplete
+            close
+            v-model="ex4val"
+          ></v-select>
+          {{ ex4val }}
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col xs4>
+          <v-list-sub-header>Using Chips</v-list-sub-header>
+        </v-col>
+        <v-col xs8>
+          <v-select 
+            :items="ex1.items"
+            multiple
+            autocomplete
+            chips
+            v-model="ex5val"
+          >
+            <!--
+            <template slot="selection" scope="data">
+              <v-chip 
+                close 
+                class="red white--text"
+                @input="data.parent.removeSelected(data.item)"
+                @click.native.stop
+              >
+                {{ data.item.text }}
+              </v-chip>
+            </template>     
+            -->       
+          </v-select>
+          {{ ex5val }}
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card-text>
+</v-card>

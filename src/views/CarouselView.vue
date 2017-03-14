@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc")
+  doc-view(v-bind:doc="doc" id="carousel-view")
     component-example(file="carousel/1" v-bind:data="$data")
     component-example(header="Custom Transition" file="carousel/2" v-bind:data="$data")
     markup(lang="js")
@@ -139,13 +139,14 @@
 
 
 <style lang="stylus">
-  .fade
-    &-enter-active, &-leave-active, &-leave-to
-      transition: .3s ease-out
-      position: absolute
-      top: 0
-      left: 0
-      
-    &-enter, &-leave, &-leave-to
-      opacity: 0
+  #carousel-view
+    .fade
+      &-enter-active, &-leave-active, &-leave-to
+        transition: .3s ease-out
+        position: absolute
+        top: 0
+        left: 0
+        
+      &-enter, &-leave, &-leave-to
+        opacity: 0
 </style>

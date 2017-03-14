@@ -1,0 +1,38 @@
+<v-card class="grey lighten-4 z-depth-0">
+  <v-card-text>
+    <v-container fluid>
+      <v-row>
+        <v-col xs12 sm6>
+          <v-subheader v-text="'Multiple with persistent hint'" />
+        </v-col>
+        <v-col xs12 sm6>
+          <v-select
+            label="Select"
+            v-bind:items="states"
+            v-model="e6"
+            multiple
+            light
+            max-height="400"
+            hint="Pick your favorite states"
+            persistent-hint
+          />
+        </v-col>
+        <v-col xs12 sm6>
+          <v-subheader v-text="'Multiple (Chips) with persistent hint'" />
+        </v-col>
+        <v-col xs12 sm6>
+          <v-select
+            label="Select"
+            v-bind:items="states"
+            v-model="e7"
+            multiple
+            chips
+            light
+            hint="What are the target regions"
+            persistent-hint
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card-text>
+</v-card>

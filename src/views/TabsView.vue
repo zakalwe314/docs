@@ -55,7 +55,12 @@
                   'False',
                   'Displays scrollbars when content overflows'
                 ]
-              ]
+              ],
+              model: {
+                types: ['String'],
+                default: '-',
+                description: 'Current selected tab'
+              }
             },
             'v-tab-item': {
               params: [
@@ -74,7 +79,7 @@
                 [
                   'href',
                   'String, Object',
-                  '',
+                  'javascript:;',
                   'For router, this is passed to the "to" prop'
                 ],
                 [
@@ -104,7 +109,7 @@
                 [
                   'tag',
                   'String',
-                  'undefined',
+                  'a',
                   'Use a custom tag for the list tile'
                 ]
               ]
@@ -114,7 +119,7 @@
                 [
                   'id',
                   'String',
-                  '',
+                  'Required',
                   'The content id'
                 ],
                 [
@@ -131,6 +136,24 @@
                 ]
               ]
             }
+          },
+          functional: {
+            'v-tabs': {
+              params: [
+                [
+                  'v-tabs-slider',
+                  '.tabs__slider'
+                ],
+                [
+                  'v-tabs-items',
+                  '.tabs__items'
+                ],
+                [
+                  'v-tabs-tabs',
+                  '.tabs__tabs'
+                ],
+              ]
+            },
           }
         }
       }

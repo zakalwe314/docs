@@ -1,0 +1,22 @@
+<v-container fluid>
+  <v-row>
+    <v-col xs12 md6>
+      <v-subheader>Light</v-subheader>
+      <v-card class="grey lighten-4 z-depth-0">
+        <v-card-text>
+          <v-switch v-bind:label="`Switch 1: ${ex11.toString()}`" primary v-model="ex11" light />
+          <v-switch v-bind:label="`Switch 2: ${ex12.toString()}`" primary v-model="ex12" light />
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col xs12 md6>
+      <v-subheader>Dark</v-subheader>
+      <v-card class="secondary z-depth-0">
+        <v-card-text>
+          <v-switch v-bind:label="`Switch 3: ${ex13.toString()}`" primary v-model="ex13" dark />
+          <v-switch v-bind:label="`Switch 4: ${ex14.toString()}`" primary v-model="ex14" dark />
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>

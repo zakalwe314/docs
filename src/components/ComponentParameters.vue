@@ -1,6 +1,6 @@
 <template lang="pug">
   v-table-overflow
-    table(class="table--component" v-for="(options, type) in params")
+    table(class="table--component z-depth-0" v-for="(options, type) in params")
       caption <strong>&lt;{{ type }}&gt;</strong>
       colgroup
         col(width="20%")
@@ -13,9 +13,9 @@
       tbody
           tr(v-if="options.model")
             td <code>v-model</code>
-            td {{ options.model.types.join(',') }}
+            td {{ options.model.types.join(', ') }}
             td {{ options.model.default }}
-            td Vue v-model support
+            td {{ options.model.description ? options.model.description : 'Controls visibility'}}
           tr(v-if="options.default")
             td <code>default</code>
             td Vue default slot
@@ -48,7 +48,7 @@
     caption
       background: rgba(#000, 0.05)
       padding: 5px 0
-      
+
     &:not(:first-child)
       margin-top: 2rem
 </style>

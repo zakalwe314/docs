@@ -38,7 +38,7 @@
                   'disabled',
                   'Boolean',
                   'False',
-                  'Disables a the breadcrumb item'
+                  'Disables the breadcrumb item'
                 ],
                 [
                   'href',
@@ -49,7 +49,7 @@
                 [
                   'target',
                   'String',
-                  '',
+                  '-',
                   'Applies the target attribute'
                 ]
               ]

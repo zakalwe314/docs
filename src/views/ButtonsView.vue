@@ -83,7 +83,7 @@
       |.custom-loader
       |   animation: loader 1s infinite
       |   display: flex
-      |&nbsp;    
+      |&nbsp;
       |@keyframes loader
       |   from
       |     transform: rotate(0)
@@ -181,6 +181,18 @@
             'v-btn': {
               params: [
                 [
+                  'light',
+                  'Boolean',
+                  'True',
+                  'Applies the btn--light class'
+                ],
+                [
+                  'dark',
+                  'Boolean',
+                  'False',
+                  'Applies the btn--dark class'
+                ],
+                [
                   'block',
                   'Boolean',
                   'False',
@@ -237,7 +249,7 @@
                 [
                   'ripple',
                   'Boolean',
-                  'False',
+                  'True',
                   'Applies the ripple directive',
                 ],
                 [
@@ -251,11 +263,59 @@
                   'String',
                   'button',
                   'Sets the buttons type attribute',
+                ],
+                [
+                  'primary',
+                  'Boolean',
+                  'False',
+                  'Applies the primary--text class',
+                ],
+                [
+                  'secondary',
+                  'Boolean',
+                  'False',
+                  'Applies the secondary--text class',
+                ],
+                [
+                  'success',
+                  'Boolean',
+                  'False',
+                  'Applies the success--text class',
+                ],
+                [
+                  'info',
+                  'Boolean',
+                  'False',
+                  'Applies the info--text class',
+                ],
+                [
+                  'warning',
+                  'Boolean',
+                  'False',
+                  'Applies the warning--text class',
+                ],
+                [
+                  'error',
+                  'Boolean',
+                  'False',
+                  'Applies the error--text class',
                 ]
               ]
             },
             'v-btn-dropdown': {
               params: [
+                [
+                  'light',
+                  'Boolean',
+                  'True',
+                  'Applies the btn-dropdown--light class'
+                ],
+                [
+                  'dark',
+                  'Boolean',
+                  'False',
+                  'Applies the btn-dropdown--dark class'
+                ],
                 [
                   'editable',
                   'Boolean',
@@ -281,7 +341,7 @@
                   'Designates the dropdown as an overflow btn'
                 ],
                 [
-                  'placeholder',
+                  'label',
                   'String',
                   'Select',
                   'Sets placeholder text if no model value present'
@@ -294,8 +354,9 @@
                 ]
               ],
               model: {
-                types: [],
-                default: 'null'
+                types: ['String', 'Object'],
+                default: '-',
+                description: 'Sets selected value'
               }
             },
             'v-btn-toggle': {
@@ -304,27 +365,32 @@
                   'options',
                   'Array',
                   '[]',
-                  'Option Props: [text, icon]'
-                ],                
+                  'Option Props: [text, icon, value]'
+                ],
                 [
                   'multiple',
                   'Boolean',
                   'False',
                   'Designates the toggle accepts and returns an array'
                 ]
-              ]
+              ],
+              model: {
+                types: ['String'],
+                default: '-',
+                description: 'Sets mode: toggle_exclusive, toggle_multiple, toggle_none, toggle_one, text, icon'
+              }
             }
           },
-          functional: {
-            'v-app-bar': {
-              params: [
-                [
-                  'v-app-bar',
-                  '.app-bar'
-                ]
-              ]
-            }
-          },
+          // functional: {
+          //   'v-app-bar': {
+          //     params: [
+          //       [
+          //         'v-app-bar',
+          //         '.app-bar'
+          //       ]
+          //     ]
+          //   }
+          // },
           slots: {
             'v-btn': {
               default: true,
@@ -352,7 +418,7 @@
       loader () {
         const l = this.loader
         this[l] = !this[l]
-        
+
         setTimeout(() => (this[l] = false), 3000)
 
         this.loader = null
@@ -375,34 +441,34 @@
 <style lang="stylus">
   @import '../../node_modules/vuetify/src/stylus/settings/_colors'
   @import '../../node_modules/vuetify/src/stylus/settings/_variables'
-  
+
   #buttons-view
     .card
       margin: 2rem 0
-      
+
       .card__text > div
         margin: 1rem 0
 
     .custom-loader
       animation: loader 1s infinite
       display: flex
-        
+
     @keyframes loader
       from
         transform: rotate(0)
-      
+
       to
         transform: rotate(360deg)
-        
+
     .btn--light-flat-focused:after
       background-color: $button-light-overlay
-        
+
     .btn--light-flat-pressed:after
       background-color: rgba(#000, .3)
-        
+
     .btn--dark-flat-focused:after
       background-color: $button-dark-overlay
-      
+
     .btn--dark-flat-pressed:after
       background-color: rgba(#fff, .3)
 

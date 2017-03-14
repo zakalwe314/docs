@@ -28,7 +28,7 @@
                   'close',
                   'Boolean',
                   'False',
-                  'Removes the chip'
+                  'Adds remove button'
                 ],
                 [
                   'label',
@@ -51,7 +51,7 @@
               ],
               model: {
                 types: ['Boolean'],
-                default: 'False'
+                default: 'True'
               }
             }
           },
@@ -89,7 +89,7 @@
   #chips-view
     .component-example__container > div
       text-align: center
-      
+
     .chip
       margin: 1rem
 </style>

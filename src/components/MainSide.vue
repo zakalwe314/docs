@@ -14,7 +14,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.8.10" target="_blank") v0.8.10
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.0" target="_blank") v0.9.0
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -43,7 +43,7 @@
                 v-list-tile-title {{ subItem.title }}
               v-list-tile-action(v-if="subItem.action")
                 v-icon(class="success--text") {{ subItem.action }}
-        v-list-sub-header(v-else-if="item.header") {{ item.header }}
+        v-subheader(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider" light)
         v-list-item(v-else)
           v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
@@ -74,11 +74,10 @@
               { href: '/components/buttons', title: 'Buttons' },
               { href: '/components/cards', title: 'Cards' },
               { href: '/components/carousel', title: 'Carousel' },
-              { href: '/components/chips', title: 'Chips' },
+              { href: '/components/chips', title: 'Chips', action: 'arrow_upward' },
+              { href: '/components/dividers', title: 'Dividers', action: 'fiber_new' },
               { href: '/components/expansion-panel', title: 'Expansion Panel' },
-              { href: '/components/dividers', title: 'Dividers', disabled: true },
               { href: '/components/footer', title: 'Footer' },
-              { href: '/components/forms', title: 'Forms' },
               { href: '/components/icons', title: 'Icons' },
               { href: '/components/lists', title: 'Lists' },
               { href: '/components/menus', title: 'Menus' },
@@ -87,8 +86,15 @@
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress-circular', title: 'Progress Circular' },
               { href: '/components/progress-linear', title: 'Progress Linear' },
+              { href: '/components/selection-controls', title: 'Selection Controls', action: 'fiber_new' },
+              { href: '/components/selects', title: 'Selects', action: 'arrow_upward' },
               { href: '/components/sidebar', title: 'Sidebars' },
+              { href: '/components/sliders', title: 'Sliders', action: 'fiber_new' },
+              { href: '/components/snackbars', title: 'Snackbars', action: 'fiber_new' },
+              { href: '/components/subheaders', title: 'Subheaders', action: 'fiber_new' },
+              { href: '/components/steppers', title: 'Steppers', action: 'fiber_new' },
               { href: '/components/tabs', title: 'Tabs' },
+              { href: '/components/text-fields', title: 'Text Fields', action: 'arrow_upward' },
               { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },
@@ -100,14 +106,6 @@
               { href: '/directives/badges', title: 'Badges' },
               { href: '/directives/ripples', title: 'Ripples' },
               { href: '/directives/tooltips', title: 'Tooltips' }
-            ]
-          },
-          {
-            title: 'Functions', 
-            action: 'functions',
-            group: '/functions',
-            items: [
-              { href: '/functions/toasts', title: 'Toasts' }
             ]
           },
           {
