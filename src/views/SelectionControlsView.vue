@@ -13,7 +13,7 @@
       |   }
       |}
     component-example(header="Array" file="selection-controls/2" v-bind:data="$data")
-      section-text(slot="details") An <strong>Array</strong> checkbox must have an assigned <code>value-v</code> prop set.
+      section-text(slot="details") An <strong>Array</strong> checkbox must have an assigned <code>value</code> prop set.
     markup(lang="js")
       |data () {
       |   return {
