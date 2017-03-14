@@ -38,7 +38,13 @@
             v-list-tile-action
               v-icon keyboard_arrow_down
           v-list-item(v-for="subItem in item.items")
-            v-list-tile(:href="subItem.href" router ripple v-bind:disabled="subItem.disabled")
+            v-list-tile(
+              :href="subItem.href"
+              v-bind:router="!subItem.target"
+              ripple
+              v-bind:disabled="subItem.disabled"
+              v-bind:target="subItem.target"
+            )
               v-list-tile-content
                 v-list-tile-title {{ subItem.title }}
               v-list-tile-action(v-if="subItem.action")
@@ -131,7 +137,19 @@
             ]
           },
           { divider: true, light: true },
-          { header: 'Additional Documentation' },
+          { header: 'Additional Resources' },
+          { 
+            title: 'Ecosytem',
+            action: 'public',
+            items: [
+              { 
+                href: 'https://vuejobs.com/?ref=vuetify',
+                target: '_blank',
+                title: 'Jobs',
+                action: 'whatshot'
+              }
+            ]
+          },
           { title: 'Optimization', action: 'flash_on', disabled: true },
           { title: 'Deployment', action: 'important_devices', disabled: true },
           { title: 'Examples', action: 'web', disabled: true },
