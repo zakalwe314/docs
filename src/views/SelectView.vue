@@ -4,6 +4,22 @@
       span(class="subheading" slot="details") Light Theme
     component-example(file="selects/2" v-bind:data="$data")
       span(class="subheading" slot="details") Dark Theme
+    blockquote Select requires that <code>v-model</code> be an object for single and an array for multiple.
+    component-example(header="Multiple" file="selects/3" v-bind:data="$data")
+      span(class="subheading" slot="details") A multi-select can utilize v-chip as the display for selected items.
+    component-example(header="Scoped slots" file="selects/4" v-bind:data="$data")
+      span(class="subheading" slot="details") With the power of scoped slots, you can customize the visual output of the select. In this example we add a profile picture for both the chips and list items.
+    markup(lang="js")
+      |people: [
+      |   { 'name': 'Sandra Adams', 'group': 'Group 1', avatar: '...' },
+      |   { 'name': 'Ali Connors', 'group': 'Group 1', avatar: '...' },
+      |   { 'name': 'Trevor Hansen', 'group': 'Group 1', avatar: '...' },
+      |   { 'name': 'Tucker Smith', 'group': 'Group 1', avatar: '...' },
+      |   { 'name': 'Britta Holt', 'group': 'Group 2', avatar: '...' },
+      |   { 'name': 'Jane Smith ', 'group': 'Group 2', avatar: '...' },
+      |   { 'name': 'John Smith', 'group': 'Group 2', avatar: '...' },
+      |   { 'name': 'Sandra Williams', 'group': 'Group 2', avatar: '...' }
+      |]
 </template>
 
 <script>
@@ -96,116 +112,47 @@
             'v-select': {
               params: [
                 [
-                  'defaultText',
+                  'appendIcon',
                   'String',
-                  'Select...',
-                  'Sets default option text'
+                  'arrow_drop_down',
+                  'Sets the dropdown icon'
+                ],
+                [
+                  'chips',
+                  'Boolean',
+                  'False',
+                  'Changes display of selections to chips'
+                ],
+                [
+                  'items',
+                  'Array',
+                  '[]',
+                  'The array of items. Item object is required to have a <code>text</code> property'
+                ],
+                [
+                  'maxHeight',
+                  'Number, String',
+                  '200',
+                  'Sets the maximum height for the select menu'
                 ],
                 [
                   'multiple',
                   'Boolean',
                   'False',
-                  'Sets the multiple attribute'
+                  'Changes select to multiple. Accepts array for v-model'
                 ],
                 [
-                  'options',
-                  'Array',
-                  `{ id: 1, text: 'Value' }`,
-                  'The options array'
+                  'single-line',
+                  'Boolean',
+                  'False',
+                  'Removes floating label'
                 ]
               ],
               model: {
-                types: ['Array', 'String', 'Number'],
-                default: 'null'
+                types: ['Array', 'Object'],
+                default: '-',
+                description: 'Single select requires model, multiple requires array'
               }
-            },
-            'v-text-field': {
-              params: [
-                [
-                  'type',
-                  'String',
-                  'text',
-                  'Sets the type attribute'
-                ],
-              ],
-              model: {
-                types: ['*'],
-                default: 'null'
-              }
-            },
-            'v-radio': {
-              params: [
-                [
-                  'gap',
-                  'Boolean',
-                  'False',
-                  'Creates a gap between the selected circle and the outer border'
-                ]
-              ],
-              model: {
-                types: ['String', 'Number', 'Boolean'],
-                default: 'null'
-              }
-            },
-            'v-checkbox': {
-              params: [
-                [
-                  'gap',
-                  'Boolean',
-                  'False',
-                  'Creates a gap between the selected box and the outer border'
-                ],
-                [
-                  'filled',
-                  'Boolean',
-                  'False',
-                  'Fills the checkbox when selected'
-                ],
-                [
-                  'indeterminate',
-                  'Boolean',
-                  'False',
-                  'Sets the indeterminate state'
-                ]
-              ],
-              model: {
-                types: ['String', 'Number', 'Boolean'],
-                default: 'null'
-              }
-            },
-            'All Components': {
-              params: [
-                [
-                  'disabled',
-                  'Boolean',
-                  'False',
-                  'Sets the disabled attribute',
-                ],
-                [
-                  'label',
-                  'String',
-                  "''",
-                  'Sets the label text',
-                ],
-                [
-                  'id',
-                  "String",
-                  "''",
-                  'Sets the input id',
-                ],
-                [
-                  'name',
-                  "String",
-                  "''",
-                  'Sets the label text',
-                ],
-                [
-                  'placeholder',
-                  "String",
-                  "''",
-                  'Sets the placeholder text',
-                ]
-              ]
             }
           }
         },

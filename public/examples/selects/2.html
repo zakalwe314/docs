@@ -33,7 +33,7 @@
             label="Select"
             v-bind:items="items"
             v-model="e3"
-            v-bind:rules="[() => e3 || 'Please select an option']"
+            v-bind:rules="[() => e3.text !== undefined || 'Please select an option']"
             dark
           />
         </v-col>

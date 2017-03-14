@@ -47,7 +47,7 @@
         v-divider(v-else-if="item.divider" light)
         v-list-item(v-else)
           v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
-            v-list-tile-action
+            v-list-tile-avatar
               v-icon {{ item.action }}
             v-list-tile-content
               v-list-tile-title {{ item.title }}
