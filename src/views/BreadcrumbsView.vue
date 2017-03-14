@@ -49,7 +49,7 @@
                 [
                   'target',
                   'String',
-                  '',
+                  '-',
                   'Applies the target attribute'
                 ]
               ]

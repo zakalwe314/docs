@@ -32,7 +32,7 @@
                 [
                   'icon',
                   'String',
-                  "''",
+                  '-',
                   'Designates a specific icon'
                 ],
                 [

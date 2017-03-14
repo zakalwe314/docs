@@ -146,7 +146,79 @@
                   'Boolean',
                   'False',
                   'Removes floating label'
-                ]
+                ],
+                [
+                  'close',
+                  'Boolean',
+                  'False',
+                  ''
+                ],
+                [
+                  'debounce',
+                  'Number',
+                  '200',
+                  ''
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'True',
+                  'Applies the light theme'
+                ],
+                [
+                  'dark',
+                  'Boolean',
+                  'False',
+                  'Applies the dark theme'
+                ],
+                [
+                  'disabled',
+                  'Boolean',
+                  'False',
+                  'Disables input'
+                ],
+                [
+                  'hint',
+                  'String',
+                  '-',
+                  'Sets hint text'
+                ],
+                [
+                  'persistent-hint',
+                  'Boolean',
+                  'False',
+                  'Forces hint visible'
+                ],
+                [
+                  'label',
+                  'String',
+                  '-',
+                  'Sets select label'
+                ],
+                [
+                  'append-icon',
+                  'String',
+                  'arrow_drop_down',
+                  ''
+                ],
+                [
+                  'prepend-icon',
+                  'String',
+                  '-',
+                  'Prepend an icon to the select'
+                ],
+                [
+                  'required',
+                  'Boolean',
+                  'False',
+                  'Designates the input as required'
+                ],
+                [
+                  'rules',
+                  'Array',
+                  '[]',
+                  "Array of functions that return either True or a String with an error message"
+                ],
               ],
               model: {
                 types: ['Array', 'Object'],

@@ -1,7 +1,7 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="sidebars-view")
     component-example(header="Left" file="sidebar/1" v-bind:data="$data")
-            
+
     blockquote A sidebar is required to have an activator. This allows the sidebar to be opened on mobile.
 
     component-example(header="Drawer" file="sidebar/2" v-bind:data="$data")
@@ -70,14 +70,8 @@
                 [
                   'height',
                   'String',
-                  '100vh',
+                  `[fixed || drawer ? '100vh' : 'auto']`,
                   'Sets height of the sidebar',
-                ],
-                [
-                  'id',
-                  'String',
-                  'Required',
-                  'Used for binding the directive',
                 ],
                 [
                   'mobile',
@@ -88,20 +82,14 @@
                 [
                   'mobileBreakPoint',
                   'Number',
-                  'Default: 992',
+                  '992',
                   'The maximum width in px before sidebar auto-closes',
-                ],
-                [
-                  'items',
-                  'Object',
-                  '[]',
-                  'Array of list items',
                 ],
                 [
                   'right',
                   'Boolean',
                   'False',
-                  'Applies the sidebar--right class'
+                  'Places the sidebar on the right'
                 ],
                 [
                   'disable-route-watcher',
@@ -175,26 +163,26 @@
     .with, main
       min-height: 40vh
       max-height: 40vh
-      
+
     main
       padding-left: 0
-      
+
     .component-example__container
       flex: 1
       min-height: 40vh
       position: relative
       overflow: hidden
       justify-content: center
-        
+
     .toolbar
       min-height: 5rem
-      
+
       &__side-icon
         margin: 0 2rem
-          
+
       &--fixed
         position: absolute
-        
+
     .sidebar
       z-index: 2
       &--fixed

@@ -26,14 +26,14 @@
                 [
                   'fill',
                   'String',
-                  "[intermediate ? 'none' : 'transparent']",
+                  "[indeterminate ? 'none' : 'transparent']",
                   'Sets the fill color of the circle'
                 ],
                 [
                   'indeterminate',
                   'Boolean',
                   'False',
-                  'Applies the progress-circular--indeterminate class'
+                  'Never stops rotating. Use when loading progress is unknown.'
                 ],
                 [
                   'rotate',
@@ -45,7 +45,7 @@
                   'size',
                   'Number',
                   '32',
-                  'Sets the size of the circle in pixels'
+                  'Sets the diameter of the circle in pixels'
                 ],
                 [
                   'width',
@@ -56,7 +56,8 @@
               ],
               model: {
                 types: ['Number'],
-                default: '0'
+                default: '0',
+                description: 'The percentage value for current progress'
               }
             }
           },
@@ -98,11 +99,11 @@
 </script>
 
 <style lang="stylus">
-  #progress 
+  #progress
     .component-example
       .progress-circular
         margin: 1rem
-        
+
     .component-example__container
       > div
         text-align: center

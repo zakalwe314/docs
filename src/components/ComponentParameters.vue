@@ -13,7 +13,7 @@
       tbody
           tr(v-if="options.model")
             td <code>v-model</code>
-            td {{ options.model.types.join(',') }}
+            td {{ options.model.types.join(', ') }}
             td {{ options.model.default }}
             td {{ options.model.description ? options.model.description : 'Controls visibility'}}
           tr(v-if="options.default")

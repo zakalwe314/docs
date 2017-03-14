@@ -11,8 +11,8 @@
     data () {
       return {
         doc: {
-          title: 'Subheaders',
-          desc: 'The <code>v-subheader</code> component is used to separate sections of lists.',
+          title: 'Dvididers',
+          desc: 'The <code>v-divider</code> component is used to separate sections of lists.',
           props: {
             'v-divider': {
               params: [
@@ -40,33 +40,33 @@
           { action: '18hr', headline: 'Recipe to try', title: 'Britta Holt', subtitle: "We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
         ],
         e2: [
-          { 
+          {
             action: 'move_to_inbox',
             title: 'Inbox'
           },
-          { 
+          {
             action: 'send',
             title: 'Sent'
           },
-          { 
+          {
             action: 'delete',
             title: 'Trash',
           },
-          { 
+          {
             action: 'report',
             title: 'Spam'
           },
           { divider: true },
           { header: 'Labels' },
-          { 
+          {
             action: 'label',
             title: 'Family'
           },
-          { 
+          {
             action: 'label',
             title: 'Friends'
           },
-          { 
+          {
             action: 'label',
             title: 'Work',
           }
@@ -106,10 +106,10 @@
     methods: {
       meta () {
         return {
-          title: 'Subheader Component | Vuetify.js',
-          h1: 'Subheaders',
-          description: 'Subheaders are used for separating lists of content.',
-          keywords: 'vuetify, header, subheaders'
+          title: 'Divider Component | Vuetify.js',
+          h1: 'Dividers',
+          description: 'Dividers are used for separating lists of content.',
+          keywords: 'vuetify, header, divider'
         }
       }
     }
@@ -125,7 +125,7 @@
     .component-example .card
       max-width: 400px
       margin: 0 auto
-      
+
       .image
         width: 100%
 

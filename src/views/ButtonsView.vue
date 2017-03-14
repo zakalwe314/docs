@@ -355,7 +355,7 @@
               ],
               model: {
                 types: ['String', 'Object'],
-                default: 'null',
+                default: '-',
                 description: 'Sets selected value'
               }
             },
@@ -376,7 +376,7 @@
               ],
               model: {
                 types: ['String'],
-                default: 'null',
+                default: '-',
                 description: 'Sets mode: toggle_exclusive, toggle_multiple, toggle_none, toggle_one, text, icon'
               }
             }
