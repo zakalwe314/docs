@@ -19,7 +19,7 @@
     component-example(header="Character counter" file="forms/9" v-bind:data="$data")
     component-example(header="Password input" file="forms/10" v-bind:data="$data")
         span(class="subheading" slot="details") Light Theme
-    blockquote The rules prop accepts an array of callbacks. The callback should return either <code>true</code> or a <code>String</code>, the error message.
+    blockquote The rules prop accepts an array of callbacks. While validating rules, the current v-model value will be passed to the callback. This callback should return either <code>true</code> or a <code>String</code>, the error message.
     component-example(header="Multi-line with character counter" file="forms/11" v-bind:data="$data")
     component-example(header="Full-width text field with character counter" file="forms/12" v-bind:data="$data")
     component-example(header="Required fields" file="forms/13" v-bind:data="$data")
