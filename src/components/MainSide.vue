@@ -14,7 +14,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.0" target="_blank") v0.9.0
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.2" target="_blank") v0.9.2
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
