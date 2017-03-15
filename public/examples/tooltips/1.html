@@ -1,12 +1,9 @@
-<v-card class="grey lighten-4 z-depth-0">
-  <v-menu bottom offset-y>
-    <v-btn primary dark slot="activator">Dropdown</v-btn>
-    <v-list>
-      <v-list-item v-for="(item, index) in items" :key="index">
-        <v-list-tile>
-          <v-list-tile-title>{{ item.text }}</v-list-tile-title>
-        </v-list-tile>
-      </v-list-item>
-    </v-list>
-  </v-menu>
-</v-card>
+<div class="text-xs-center">
+  <v-btn v-tooltip:top="{ html: 'Top tooptip' }" class="primary white--text">Top</v-btn>
+
+  <v-btn v-tooltip:right="{ html: 'Right tooptip' }" class="primary white--text">Right</v-btn>
+
+  <v-btn v-tooltip:bottom="{ html: 'Bottom tooptip' }" class="primary white--text">Bottom</v-btn>
+
+  <v-btn v-tooltip:left="{ html: 'Left Tooltip' }" class="primary white--text">Left</v-btn>
+</div>
