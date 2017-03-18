@@ -74,7 +74,7 @@
                   'disabled',
                   'Boolean',
                   'False',
-                  'Applies the list__tile--disabled class'
+                  'Disables tab item'
                 ],
                 [
                   'href',

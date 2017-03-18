@@ -80,7 +80,7 @@
                   'Specifies whether menu should collapse automatically on mobile',
                 ],
                 [
-                  'mobileBreakPoint',
+                  'mobile-break-point',
                   'Number',
                   '992',
                   'The maximum width in px before sidebar auto-closes',

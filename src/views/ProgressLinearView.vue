@@ -32,7 +32,7 @@
                   'Designates whether the buffer bar is shown'
                 ],
                 [
-                  'bufferValue',
+                  'buffer-value',
                   'Number',
                   'None',
                   'The percentage value for the buffer'

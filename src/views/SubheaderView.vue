@@ -19,7 +19,7 @@
                   'inset',
                   'Boolean',
                   'False',
-                  'Applies a margin-left of 72px'
+                  'Adds identation (72px)'
                 ]
               ]
             }
@@ -38,33 +38,33 @@
           { avatar: '/public/doc-images/lists/5.jpg', title: 'Recipe to try', subtitle: "<span class='grey--text text--darken-2'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
         ],
         e3: [
-          { 
+          {
             action: 'move_to_inbox',
             title: 'Inbox'
           },
-          { 
+          {
             action: 'send',
             title: 'Sent'
           },
-          { 
+          {
             action: 'delete',
             title: 'Trash',
           },
-          { 
+          {
             action: 'report',
             title: 'Spam'
           },
           { divider: true },
           { header: 'Labels' },
-          { 
+          {
             action: 'label',
             title: 'Family'
           },
-          { 
+          {
             action: 'label',
             title: 'Friends'
           },
-          { 
+          {
             action: 'label',
             title: 'Work',
           }
@@ -102,7 +102,7 @@
     .component-example .card
       max-width: 400px
       margin: 0 auto
-      
+
       .image
         width: 100%
 
