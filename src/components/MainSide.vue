@@ -134,9 +134,7 @@
             action: 'brush',
             group: '/css',
             items: [
-              { href: '/css/grid', title: 'Grid' },
-              { href: '/css/tables', title: 'Tables' },
-              { href: '/css/depth', title: 'Depth' }
+              { href: '/css/tables', title: 'Tables' }
             ]
           },
           {
@@ -146,7 +144,8 @@
             items: [
               { href: '/helpers/spacing', title: 'Spacing' },
               { href: '/helpers/alignment', title: 'Alignment' },
-              { href: '/helpers/display', title: 'Display' }
+              { href: '/helpers/display', title: 'Display' },
+              { href: '/helpers/depth', title: 'Depth' }
             ]
           },
           { divider: true, light: true },
