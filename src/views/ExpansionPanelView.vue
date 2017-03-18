@@ -39,8 +39,9 @@
                 ]
               ],
               model: {
-                types: ['Number'],
-                default: 0
+                types: ['Boolean'],
+                default: 'False',
+                description: 'Designates whether content is expanded or not'
               }
             }
           },

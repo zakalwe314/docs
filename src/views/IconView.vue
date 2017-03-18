@@ -22,31 +22,31 @@
                   'medium',
                   'Boolean',
                   'False',
-                  'Applies the icon--medium class'
+                  'Medium size'
                 ],
                 [
                   'large',
                   'Boolean',
                   'False',
-                  'Applies the icon--large class'
+                  'Large size'
                 ],
                 [
                   'x-large',
                   'Boolean',
                   'False',
-                  'Applies the icon--x-large class'
+                  'Extra-Large size'
                 ],
                 [
                   'left',
                   'Boolean',
                   'False',
-                  'Applies the icon--left class'
+                  'Places icon on the left'
                 ],
                 [
                   'right',
                   'Boolean',
                   'False',
-                  'Applies the icon--right class'
+                  'Places icon on the right'
                 ]
               ]
             }
@@ -81,10 +81,10 @@
     .component-example__container
       > div
         text-align: center
-            
+
       > div > .icon
         margin: 1rem
-        
+
       .btn
         margin: 1rem
 </style>

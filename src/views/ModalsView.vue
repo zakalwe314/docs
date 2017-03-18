@@ -21,7 +21,7 @@
                   'bottom',
                   'Boolean',
                   'False',
-                  'Applies the modal--bottom class'
+                  'Modal will be set to the bottom'
                 ],
                 [
                   'persistent',

@@ -184,79 +184,79 @@
                   'light',
                   'Boolean',
                   'True',
-                  'Applies the btn--light class'
+                  'Applies the light theme'
                 ],
                 [
                   'dark',
                   'Boolean',
                   'False',
-                  'Applies the btn--dark class'
+                  'Applies the dark theme'
                 ],
                 [
                   'block',
                   'Boolean',
                   'False',
-                  'Applies the btn--block class'
+                  'Button will have 100% width'
                 ],
                 [
                   'flat',
                   'Boolean',
                   'False',
-                  'Applies the btn--flat class'
+                  'Applies the flat style'
                 ],
                 [
                   'floating',
                   'Boolean',
                   'False',
-                  'Applies the btn--floating class'
+                  'Applies the floating / round style'
                 ],
                 [
                   'icon',
                   'Boolean',
                   'False',
-                  'Applies the btn--icon class'
+                  'Designates the button as icon - round and flat'
+                ],
+                [
+                  'small',
+                  'Boolean',
+                  'False',
+                  'Small size button',
                 ],
                 [
                   'large',
                   'Boolean',
                   'False',
-                  'Applies the btn--large class'
+                  'Large size button'
                 ],
                 [
                   'loading',
                   'Boolean',
                   'False',
-                  'Applies the btn--loading class'
+                  'Adds a loading icon animation'
                 ],
                 [
                   'outline',
                   'Boolean',
                   'False',
-                  'Applies the btn--outline class'
+                  'Button will have an outline'
                 ],
                 [
                   'round',
                   'Boolean',
                   'False',
-                  'Applies the btn--round class'
+                  'Button will be round on the sides'
                 ],
                 [
                   'raised',
                   'Boolean',
                   'True',
-                  'Applies the btn--raised class'
+                  'Applies the raised style'
                 ],
                 [
                   'ripple',
                   'Boolean',
                   'True',
                   'Applies the ripple directive',
-                ],
-                [
-                  'small',
-                  'Boolean',
-                  'False',
-                  'Applies the btn--small class',
                 ],
                 [
                   'type',
@@ -268,37 +268,37 @@
                   'primary',
                   'Boolean',
                   'False',
-                  'Applies the primary--text class',
+                  'Applies the "primary" context',
                 ],
                 [
                   'secondary',
                   'Boolean',
                   'False',
-                  'Applies the secondary--text class',
+                  'Applies the "secondary" context',
                 ],
                 [
                   'success',
                   'Boolean',
                   'False',
-                  'Applies the success--text class',
+                  'Applies the "success" context',
                 ],
                 [
                   'info',
                   'Boolean',
                   'False',
-                  'Applies the info--text class',
+                  'Applies the "info" context',
                 ],
                 [
                   'warning',
                   'Boolean',
                   'False',
-                  'Applies the warning--text class',
+                  'Applies the "warning" context',
                 ],
                 [
                   'error',
                   'Boolean',
                   'False',
-                  'Applies the error--text class',
+                  'Applies the "error" context',
                 ]
               ]
             },
@@ -308,13 +308,13 @@
                   'light',
                   'Boolean',
                   'True',
-                  'Applies the btn-dropdown--light class'
+                  'Applies the light theme'
                 ],
                 [
                   'dark',
                   'Boolean',
                   'False',
-                  'Applies the btn-dropdown--dark class'
+                  'Applies the dark theme'
                 ],
                 [
                   'editable',

@@ -31,7 +31,7 @@
                   'circle',
                   'Boolean',
                   'False',
-                  'Applies the pagination--circle class',
+                  'Shape pagination elements as circles',
                 ],
                 [
                   'length',

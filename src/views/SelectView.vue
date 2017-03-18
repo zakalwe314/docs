@@ -89,12 +89,6 @@
             'v-select': {
               params: [
                 [
-                  'appendIcon',
-                  'String',
-                  'arrow_drop_down',
-                  'Sets the dropdown icon'
-                ],
-                [
                   'chips',
                   'Boolean',
                   'False',
@@ -107,7 +101,7 @@
                   'The array of items. Item object is required to have a <code>text</code> property'
                 ],
                 [
-                  'maxHeight',
+                  'max-height',
                   'Number, String',
                   '200',
                   'Sets the maximum height for the select menu'
@@ -239,18 +233,18 @@
   #forms-view
     .with
       min-height: 0
-      
+
     main
       min-height: 0
       padding-left: 0
-      
+
     .toolbar
       max-height: 64px
-      
+
     .component-example__container
       justify-content: space-between
       flex-wrap: wrap
-      
+
       > div > *
         margin: 2rem 0
         flex: 1 0 100%

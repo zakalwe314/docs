@@ -39,6 +39,18 @@
                   'Append material icon'
                 ],
                 [
+                  'prepend-icon',
+                  'String',
+                  '-',
+                  'Prepend material icon'
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'True',
+                  'Applies the light theme'
+                ],
+                [
                   'dark',
                   'Boolean',
                   'False',
@@ -69,12 +81,6 @@
                   'Adds label to slider'
                 ],
                 [
-                  'light',
-                  'Boolean',
-                  'False',
-                  'Applies the light theme'
-                ],
-                [
                   'min',
                   'Number',
                   '0',
@@ -85,12 +91,6 @@
                   'Number',
                   '100',
                   'Sets maximum value'
-                ],
-                [
-                  'prepend-icon',
-                  'String',
-                  '-',
-                  'Prepend material icon'
                 ],
                 [
                   'required',
