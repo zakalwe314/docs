@@ -32,6 +32,14 @@
                 class="black--text"
               )
                 v-card-text {{ color }} Accent-{{ n }}
+    section
+      section-header Color Pack
+      section-text Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. This can be disabled in both the webpack and webpack-ssr Vue cli templates.
+      div(class="title pt-3 pb-3") Webpack
+      section-text Navigate to <kbd>src/App.vue</kbd>. Scroll to the style element and set <code>$color-pack = false</code> above the Vuetify css import.
+
+      div(class="title pt-3 pb-3") Webpack-SSR
+      section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
 </template>
 
 <script>

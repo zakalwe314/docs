@@ -14,19 +14,9 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.0" target="_blank") v0.9.0
-      div(class="sidebar__links")
-        a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
-          img(src="~public/github.png" alt="github")
-        a(href="https://twitter.com/vuetifyjs" target="_blank")
-          img(src="~public/twitter.png" alt="twitter")
-        a(href="https://www.facebook.com/vuetifyjs" target="_blank")
-          img(src="~public/facebook.png" alt="facebook")
-        a(href="mailto:john.j.leider@gmail.com")
-          img(src="~public/mail.png" alt="mail")
-      div Need help?
-      div(class="gitter") Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
-      v-divider(light)
+      .title Vuetify
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.2" target="_blank") v0.9.2
+    v-divider(light)
     v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:group="item.group")
@@ -67,9 +57,34 @@
         items: [
           { header: 'Core Documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
-          { href: '/quick-start', title: 'Quick Start', action: 'fast_forward' },
-          { href: '/server-side-rendering', title: 'Server Side Rendering', action: 'cloud_circle' },
-          { href: '/layouts', title: 'Layouts', action: 'devices' },
+          { href: '/quick-start', title: 'Quick Start', action: 'explore' },
+          { href: '/motion', title: 'Motion', action: 'slow_motion_video' },
+          { 
+            title: 'Style',
+            action: 'style',
+            group: 'style',
+            items: [
+              { href: '/style/colors', title: 'Colors' },
+              { href: '/style/theme', title: 'Theme' },
+              { href: '/style/typography', title: 'Typography' },
+              { href: '/style/content', title: 'Content' }
+            ]
+          },
+          { 
+            title: 'Layout',
+            action: 'devices',
+            group: 'layout',
+            items: [
+              {
+                title: 'Grid',
+                href: '/layout/grid'
+              },
+              {
+                title: 'Examples',
+                href: '/layout/examples'
+              }
+            ]
+          },
           {
             title: 'Components',
             action: 'widgets',
@@ -119,11 +134,9 @@
             action: 'brush',
             group: '/css',
             items: [
-              { href: '/css/typography', title: 'Typography' },
-              { href: '/css/content', title: 'Content' },
               { href: '/css/grid', title: 'Grid' },
-              { href: '/css/colors', title: 'Colors' },
               { href: '/css/tables', title: 'Tables' },
+              { href: '/css/depth', title: 'Depth' }
             ]
           },
           {
@@ -147,6 +160,21 @@
                 target: '_blank',
                 title: 'Jobs',
                 action: 'whatshot'
+              },
+              { 
+                href: 'https://gitter.im/vuetifyjs/Lobby/~chat#',
+                target: '_blank',
+                title: 'Chat'
+              }
+            ]
+          },
+          {
+            title: 'Guides',
+            action: 'developer_mode',
+            items: [
+              { 
+                href: '/server-side-rendering',
+                title: 'Server Side Rendering'
               }
             ]
           },
@@ -157,17 +185,13 @@
       }
     },
 
-    props: {
-      value: Boolean,
-    },
-
     watch: {
       isActive () {
-        this.$emit('input', this.isActive)
+        this.$store.commit('vuetify/SIDEBAR', this.isActive)
       },
 
-      value () {
-        this.isActive = this.value
+      '$store.state.sidebar' (sidebar) {
+        this.isActive = sidebar
       }
     }
   }
@@ -175,31 +199,9 @@
 
 <style lang="stylus">
   @import '../stylus/settings/_variables'
-  
-  .sidebar
-    background: $grey.darken-3
-    
-    &__links
-      margin: 1rem
-      display: flex
-      justify-content: center
-      align-items: center
-      
-      a
-        color: #fff
-        text-align: center
-        text-decoration: none
-        margin: 0 .5rem
-        
-        img
-          height: 25px
-          
-        i
-          padding: 0
-  
   .vuetify
     text-align: center
-    margin-top: 16px
+    margin: 16px 0
     color: #fff
         
     .sidebar__logo

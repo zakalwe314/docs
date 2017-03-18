@@ -25,6 +25,7 @@
 
 <style lang="stylus">
   .whats-next    
+    margin-top: 3rem
     p
       margin: 0
       
