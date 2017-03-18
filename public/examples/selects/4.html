@@ -15,12 +15,14 @@
             chips
             light
             max-height="auto"
+            item-value="name"
+            offset
           >
             <template slot="selection" scope="data">
               <v-chip 
-                close 
-                @input="data.parent.removeSelected(data.item)"
-                @click.native.stop 
+                close
+                @input="data.parent.selectItem(data.item)"
+                @click.native.stop
                 class="chip--select-multi"
               >
                 <v-avatar>

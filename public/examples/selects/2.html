@@ -11,6 +11,7 @@
             v-model="e1"
             label="Select"
             dark
+            item-value="text"
           />
         </v-col>
         <v-col xs6>
@@ -23,6 +24,7 @@
             label="Select"
             class="input-group--focused"
             dark
+            item-value="text"
           />
         </v-col>
         <v-col xs6>
@@ -35,6 +37,7 @@
             v-model="e3"
             v-bind:rules="[() => e3.text !== undefined || 'Please select an option']"
             dark
+            item-value="text"
           />
         </v-col>
         <v-col xs6>
