@@ -58,7 +58,7 @@ const router = new Router({
     route('/helpers/spacing', 'Spacing'),
     route('/helpers/alignment', 'Alignment'),
     route('/helpers/display', 'Display'),
-    route('/helpers/depth', 'Depth'),
+    // route('/helpers/depth', 'Depth'),
     route('/layout/grid', 'Grid'),
     route('/layout/examples', 'Layouts'),
     // 301 redirects
