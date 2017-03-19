@@ -19,12 +19,12 @@
                 v-bind:class="[color, 'lighten-' + n]"
                 class="black--text"
               )
-                v-card-text {{ color }} Lighten-{{ n }}
+                v-card-text {{ color }} lighten-{{ n }}
               v-card(
                 v-for="n in 4"
                 v-bind:class="[color, 'darken-' + n]"
               )
-                v-card-text {{ color }} Darken-{{ n }}
+                v-card-text {{ color }} darken-{{ n }}
               v-card(
                 v-for="n in 4"
                 v-bind:class="[color, 'accent-' + n]"
@@ -40,6 +40,7 @@
 
       div(class="title pt-3 pb-3") Webpack-SSR
       section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
+        v-card-text {{ color }} accent-{{ n }}
 </template>
 
 <script>
@@ -93,7 +94,6 @@
       color: #fff
       font-weight: 500
       letter-spacing: .5px
-      text-transform: uppercase
       padding: 1rem
       border-radius: 0
         

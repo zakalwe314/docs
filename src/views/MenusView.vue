@@ -22,103 +22,97 @@
                   'top',
                   'Boolean',
                   'False',
-                  'Set top coordinate for menu'
+                  'Designates menu open up'
                 ],
                 [
                   'right',
                   'Boolean',
                   'False',
-                  'Set right coordinate for menu'
+                  'Designates menu overflow to the right'
                 ],
                 [
                   'bottom',
                   'Boolean',
                   'False',
-                  'Set bottom coordinate for menu'
+                  'Designates menu open down'
                 ],
                 [
                   'left',
                   'Boolean',
                   'False',
-                  'Set left coordinate for menu'
-                ],
-                [
-                  'auto',
-                  'Boolean',
-                  'False',
-                  ''
+                  'Designates menu overflow to the left'
                 ],
                 [
                   'offset-x',
                   'Boolean',
                   'False',
-                  ''
+                  'Offset the menu on the x-axis. Works in conjunction with direction left/right'
                 ],
                 [
                   'offset-y',
                   'Boolean',
                   'False',
-                  ''
+                  'Offset the menu on the y-axis. Works in conjunction with direction top/rightbottom'
                 ],
                 [
                   'disabled',
                   'Boolean',
                   'False',
-                  ''
+                  'Disables the menu'
                 ],
                 [
                   'max-height',
                   'Number',
                   'null',
-                  ''
+                  'The maximum height of the menu, will overflow-y with scroll if content is too large'
                 ],
                 [
                   'nudge-x-auto',
                   'Number',
                   '-16',
-                  ''
+                  'Nudge the menu on the x-axis'
                 ],
                 [
                   'nudge-y-auto',
                   'Number',
                   '-18',
-                  ''
+                  'Nudge the menu on the y-axis'
                 ],
                 [
                   'nudge-top',
                   'Number',
                   '0',
-                  ''
+                  'Nudge the menu from the top'
                 ],
                 [
                   'nudge-bottom',
                   'Number',
                   '0',
-                  ''
+                  'Nudge the menu from the bottomm'
                 ],
                 [
                   'nudge-left',
                   'Number',
                   '0',
-                  ''
+                  'Nudge the menu from the left'
                 ],
                 [
                   'nudge-right',
                   'Number',
                   '0',
-                  ''
+                  'Nudge the menu from the right'
                 ],
                 [
                   'open-on-click',
                   'Boolean',
                   'True',
-                  ''
+                  'Designates whether menu should open on activator click'
                 ],
                 [
                   'close-on-click',
                   'Boolean',
                   'True',
-                  ''
+                  'Designates if menu should close on outside-activator click'
                 ],
                 [
                   'origin',

@@ -177,9 +177,19 @@
               }
             ]
           },
+          { 
+            title: 'Examples',
+            action: 'web',
+            items: [
+              {
+                href: 'https://github.com/nuxt/nuxt.js/tree/master/examples/with-vuetify',
+                target: '_blank',
+                title: 'NUXT'
+              }
+            ]
+          },
           { title: 'Optimization', action: 'flash_on', disabled: true },
-          { title: 'Deployment', action: 'important_devices', disabled: true },
-          { title: 'Examples', action: 'web', disabled: true },
+          { title: 'Deployment', action: 'important_devices', disabled: true }
         ]
       }
     },
