@@ -96,6 +96,9 @@
           slots: {
             'v-carousel': {
               default: true
+            },
+            'v-carousel-item': {
+              default: true
             }
           }
         },
