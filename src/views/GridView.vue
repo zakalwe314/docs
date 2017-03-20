@@ -24,10 +24,16 @@
             'v-col': {
               params: [
                 [
-                  'static attrs',
+                  'widths',
                   'Boolean',
                   'False',
                   'xs:extra small, sm:small, md:medium, lg:large, xl:extra large - 1 through 12'
+                ],
+                [
+                  'offset',
+                  'Boolean',
+                  'False',
+                  'offset-xs:extra small, offset-sm:small, offset-md:medium, offset-lg:large, offset-xl:extra large - 1 through 12'
                 ]
               ]
             }
