@@ -68,7 +68,7 @@
 
       section-text Once the package installation is complete, type <kbd>npm run dev</kbd> into your console. This will start a <a href="https://nodejs.org/en/" target="_blank">nodejs</a> server locally which can be accessed by navigating to <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser.
     section
-      whats-next(route="/style/theme" text="Theme") Now that you have your project setup and ready to go, it's time to setup a custom theme.
+      whats-next(route="/style/theme" text="Theme") Now that you have your project ready to go, it's time to setup a custom theme.
 </template>
 
 <script>
