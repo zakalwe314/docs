@@ -47,6 +47,8 @@
               v-icon {{ item.action }}
             v-list-tile-content
               v-list-tile-title {{ item.title }}
+            v-list-tile-action(v-if="item.subAction")
+              v-icon(class="success--text") {{ item.subAction }}
 </template>
  
 <script>
@@ -58,7 +60,7 @@
           { header: 'Core Documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
           { href: '/quick-start', title: 'Quick Start', action: 'explore' },
-          { href: '/motion', title: 'Motion', action: 'slow_motion_video' },
+          { href: '/motion', title: 'Motion', action: 'slow_motion_video', subAction: 'fiber_new' },
           { 
             title: 'Style',
             action: 'style',
@@ -144,8 +146,8 @@
             items: [
               { href: '/helpers/spacing', title: 'Spacing' },
               { href: '/helpers/alignment', title: 'Alignment' },
-              { href: '/helpers/display', title: 'Display' },
-              { href: '/helpers/depth', title: 'Depth' }
+              { href: '/helpers/display', title: 'Display' }
+              // { href: '/helpers/depth', title: 'Depth' }
             ]
           },
           { divider: true, light: true },
