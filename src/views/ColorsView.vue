@@ -10,7 +10,7 @@
       div
         v-container(fluid)
           v-row
-            v-col(xs6 sm6 md4 lg3 v-for="color in colors")
+            v-col(xs6 sm6 md4 lg3 v-for="color in colors", :key="color")
               v-card(v-bind:class="[color]" height="100px")
                 v-card-text
                   h3 {{ color }}
