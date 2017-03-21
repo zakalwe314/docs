@@ -1,0 +1,10 @@
+<v-menu transition="v-scale-transition" origin="center center">
+  <v-btn primary slot="activator">Scale Transition</v-btn>
+  <v-list>
+    <v-list-item v-for="n in 5">
+      <v-list-tile>
+        <v-list-tile-title v-text="'Item ' + n" />
+      </v-list-tile>
+    </v-list-item>  
+  </v-list>
+</v-menu>
