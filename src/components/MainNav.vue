@@ -1,5 +1,5 @@
 <template lang="pug">
-  header
+  header(id="main-toolbar")
     v-toolbar(fixed)
       v-toolbar-side-icon(
         class="side-icon hidden-md-and-up"
@@ -9,7 +9,7 @@
         v-text="title"
         class="ml-5 text-xs-center text-md-left"
       )
-      .navbar__links
+      .toolbar__links
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
         a(href="https://twitter.com/vuetifyjs" target="_blank")
@@ -25,7 +25,10 @@
 </script>
 
 <style lang="stylus">
-  .navbar
+  #main-toolbar .toolbar
+    &__logo
+      text-transform: uppercase
+      
     &__links
       margin: 1rem
       display: flex
