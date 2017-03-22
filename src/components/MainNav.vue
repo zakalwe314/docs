@@ -7,8 +7,9 @@
       )
       v-toolbar-logo(
         v-text="title"
-        class="ml-5 text-xs-center text-md-left"
+        class="ml-5 text-xs-center text-md-left hidden-md-and-down"
       )
+      v-toolbar-title(v-text="title" class="hidden-md-and-up")
       .toolbar__links
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -26,8 +27,12 @@
 
 <style lang="stylus">
   #main-toolbar .toolbar
-    &__logo
+    &__logo, &__title
       text-transform: uppercase
+      white-space: nowrap
+      min-width: 0
+      overflow: hidden
+      text-overflow: ellipsis
       
     &__links
       margin: 1rem
