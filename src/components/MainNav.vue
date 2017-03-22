@@ -2,7 +2,7 @@
   header
     v-toolbar(fixed)
       v-toolbar-side-icon(
-        class="side-icon hidden-md-and-up"
+        class="side-icon hidden-lg-and-up"
         v-on:click.native.stop="$emit('sidebar')"
       )
       div(class="toolbar__side-title")
