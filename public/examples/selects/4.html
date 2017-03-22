@@ -11,12 +11,12 @@
             v-bind:items="people"
             v-model="e11"
             item-text="name"
+            item-value="name"
             multiple
             chips
             light
             max-height="auto"
-            item-value="name"
-            offset
+            autocomplete
           >
             <template slot="selection" scope="data">
               <v-chip 
