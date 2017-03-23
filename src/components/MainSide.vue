@@ -15,7 +15,7 @@
           alt="Vuetify Logo"
         )
       .title Vuetify
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.3" target="_blank") v0.9.3
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.4" target="_blank") v0.9.4
     v-divider(light)
     v-list(dense)
       template(v-for="item in items")
