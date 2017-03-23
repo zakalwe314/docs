@@ -14,7 +14,7 @@
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.2" target="_blank") v0.9.2
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.3" target="_blank") v0.9.3
       div(class="sidebar__links")
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
@@ -80,8 +80,8 @@
               { href: '/components/buttons', title: 'Buttons' },
               { href: '/components/cards', title: 'Cards' },
               { href: '/components/carousel', title: 'Carousel' },
-              { href: '/components/chips', title: 'Chips', action: 'arrow_upward' },
-              { href: '/components/dividers', title: 'Dividers', action: 'fiber_new' },
+              { href: '/components/chips', title: 'Chips' },
+              { href: '/components/dividers', title: 'Dividers' },
               { href: '/components/expansion-panel', title: 'Expansion Panel' },
               { href: '/components/footer', title: 'Footer' },
               { href: '/components/icons', title: 'Icons' },
@@ -92,15 +92,15 @@
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress-circular', title: 'Progress Circular' },
               { href: '/components/progress-linear', title: 'Progress Linear' },
-              { href: '/components/selection-controls', title: 'Selection Controls', action: 'fiber_new' },
-              { href: '/components/selects', title: 'Selects', action: 'arrow_upward' },
+              { href: '/components/selection-controls', title: 'Selection Controls' },
+              { href: '/components/selects', title: 'Selects' },
               { href: '/components/sidebar', title: 'Sidebars' },
-              { href: '/components/sliders', title: 'Sliders', action: 'fiber_new' },
-              { href: '/components/snackbars', title: 'Snackbars', action: 'fiber_new' },
-              { href: '/components/subheaders', title: 'Subheaders', action: 'fiber_new' },
-              { href: '/components/steppers', title: 'Steppers', action: 'fiber_new' },
+              { href: '/components/sliders', title: 'Sliders' },
+              { href: '/components/snackbars', title: 'Snackbars' },
+              { href: '/components/subheaders', title: 'Subheaders' },
+              { href: '/components/steppers', title: 'Steppers' },
               { href: '/components/tabs', title: 'Tabs' },
-              { href: '/components/text-fields', title: 'Text Fields', action: 'arrow_upward' },
+              { href: '/components/text-fields', title: 'Text Fields' },
               { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },
