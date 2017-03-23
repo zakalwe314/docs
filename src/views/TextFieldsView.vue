@@ -38,12 +38,6 @@
             'v-text-field': {
               params: [
                 [
-                  'autocomplete',
-                  'Boolean',
-                  'False',
-                  'Enables filtering for select'
-                ],
-                [
                   'append-icon',
                   'String',
                   '-',
