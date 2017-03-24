@@ -1,4 +1,5 @@
 <template lang="pug">
+
   header(id="main-toolbar")
     v-toolbar(fixed)
       v-toolbar-side-icon(
@@ -51,4 +52,7 @@
           
         i
           padding: 0
+
+        h1
+          font-size: 4vw
 </style>
