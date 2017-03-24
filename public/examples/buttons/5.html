@@ -1,7 +1,7 @@
 <v-card class="grey lighten-4 z-depth-0 py-5">
   <v-card-text>
     <v-container fluid="fluid">
-      <v-row>
+      <v-layout row wrap>
         <v-col xs12="xs12" sm12="sm12" md6="md6" class="py-2">
           <p>Exclusive</p>
           <v-btn-toggle v-bind:options="toggle_options" v-model="toggle_exclusive"></v-btn-toggle>
@@ -26,7 +26,7 @@
           <p>Text &amp; Icon Options</p>
           <v-btn-toggle v-bind:options="toggle_text_icon" v-model="icon"></v-btn-toggle>
         </v-col>
-      </v-row>
+      </v-layout>
     </v-container>
   </v-card-text>
 </v-card>

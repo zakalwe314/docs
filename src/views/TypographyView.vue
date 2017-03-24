@@ -81,7 +81,11 @@
     .component-example__container
       > div, dl
         width: 100%
-        
+        &:after
+          content:""
+          display: table
+          clear: both
+
       .headings
         dt, dd
           float: left

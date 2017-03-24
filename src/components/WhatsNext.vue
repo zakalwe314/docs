@@ -5,7 +5,7 @@
       v-icon(x-large class="primary--text") help_outline
     v-alert(info v-bind:value="true")
       v-container(fluid)
-        v-row
+        v-layout(row wrap)
           v-col(xs12 sm12 md8)
             slot
           v-col(xs12 sm12 md4 class="text-sm-right text-xs-center")

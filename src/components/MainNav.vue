@@ -1,6 +1,6 @@
 <template lang="pug">
   header
-    v-toolbar(fixed)
+    v-toolbar
       v-toolbar-side-icon(
         class="side-icon hidden-lg-and-up"
         v-on:click.native.stop="$emit('sidebar')"
@@ -113,7 +113,5 @@
         
         h1
           font-size: 4vw
-          
-    #app
-      padding-top: 50px
+
 </style>
