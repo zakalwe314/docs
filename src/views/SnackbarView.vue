@@ -18,28 +18,34 @@
             'v-snackbar': {
               params: [
                 [
+                  'absolute',
+                  'Boolean',
+                  'False',
+                  'Set the position to absolute, allowing you to place snackbar inside any container'
+                ],
+                [
                   'bottom',
                   'Boolean',
                   'True',
-                  'Pistion the snackbar at the bottom'
+                  'Position the snackbar at the bottom'
                 ],
                 [
                   'top',
                   'Boolean',
                   'False',
-                  'Pistion the snackbar at the top'
+                  'Position the snackbar at the top'
                 ],
                 [
                   'left',
                   'Boolean',
                   'False',
-                  'Pistion the snackbar on the left'
+                  'Position the snackbar on the left'
                 ],
                 [
                   'right',
                   'Boolean',
                   'False',
-                  'Pistion the snackbar on the right'
+                  'Position the snackbar on the right'
                 ],
                 [
                   'multiline',
