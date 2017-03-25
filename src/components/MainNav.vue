@@ -1,7 +1,7 @@
 <template lang="pug">
 
   header(id="main-toolbar")
-    v-toolbar(fixed)
+    v-toolbar
       v-toolbar-side-icon(
         class="side-icon hidden-md-and-up"
         v-on:click.native.stop="$store.commit('vuetify/SIDEBAR', true)"
