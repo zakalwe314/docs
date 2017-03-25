@@ -1,6 +1,5 @@
 <template lang="pug">
   v-sidebar(
-    fixed
     v-model="isActive"
   )
     div(class="vuetify")
