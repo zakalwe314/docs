@@ -6,19 +6,19 @@
   </v-toolbar>
   <v-subheader>May</v-subheader>
   <v-container fluid class="px-3">
-    <v-layout row wrap>
+    <v-row>
       <v-col xs4 v-for="i in 6" :key="i">
         <img class="image" v-bind:src="`https://randomuser.me/api/portraits/men/${i + 20}.jpg`" alt="lorem">
       </v-col>
-    </v-layout>
+    </v-row>
   </v-container>
   <v-subheader>June</v-subheader>
   <v-container fluid class="px-3">
-    <v-layout row wrap>
+    <v-row>
       <v-col xs4 v-for="i in 6" :key="i">
         <img class="image" v-bind:src="`https://randomuser.me/api/portraits/women/${i + 5}.jpg`" alt="lorem">
       </v-col>
-    </v-layout>
+    </v-row>
   </v-container>
   <v-footer class="mt-5" />
 </v-card>

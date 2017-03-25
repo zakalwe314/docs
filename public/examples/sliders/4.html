@@ -2,7 +2,7 @@
   <v-card-row height="300px" v-bind:style="{ background: `rgb(${r}, ${g}, ${b})` }" />
   <v-card-text>
     <v-container fluid>
-      <v-layout row wrap>
+      <v-row>
         <v-col xs9>
           <v-slider label="R" light v-bind:max="255" v-model="r" />
         </v-col>
@@ -21,7 +21,7 @@
         <v-col xs3>
           <v-text-field light v-model="b" type="number" />
         </v-col>
-      </v-layout>
+      </v-row>
     </v-container>
   </v-card-text>
 </v-card>

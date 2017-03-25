@@ -27,7 +27,7 @@
                 ]
               ]
             },
-              'v-layout': {
+              'v-row': {
                   params: [
                       [
                           'row[-size]',

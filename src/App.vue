@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app(left-sidebar column)
+  v-app(left-fixed-sidebar top-fixed-toolbar footer)
     main-nav(v-bind:title="title" v-on:sidebar="sidebar = !sidebar")
     main
       main-side(v-model="sidebar")
@@ -9,7 +9,7 @@
 
           transition(name="slide" mode="out-in")
             router-view(@view="meta")
-        main-footer
+    main-footer
 </template>
 
 <script>

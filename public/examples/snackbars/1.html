@@ -1,7 +1,7 @@
 <v-card class="grey lighten-4">
   <v-card-text>
     <v-container fluid>
-      <v-layout row wrap>
+      <v-row>
         <v-col xs12 sm3>
           <v-checkbox v-model="x" value="left" label="Left" light />
         </v-col>
@@ -17,7 +17,7 @@
         <v-col xs12 sm4 offset-sm8>
           <v-text-field v-model.number="timeout" type="number" label="Timeout" />
         </v-col>
-      </v-layout>
+      </v-row>
     </v-container>
     <v-btn block primary @click.native="snackbar = true" dark>Show Snackbar</v-btn>
   </v-card-text>

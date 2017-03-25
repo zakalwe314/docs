@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="footer grey darken-2 white--text")
+  v-footer(class="grey darken-2 white--text")
     div(class="social")
       div(class="fb-like" data-href="https://vuetifyjs.com/" data-width="30" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true")
       a(href="https://twitter.com/vuetifyjs" class="twitter-follow-button" data-show-count="false") Follow @vuetifyjs

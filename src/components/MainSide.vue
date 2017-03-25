@@ -1,6 +1,7 @@
 <template lang="pug">
   v-sidebar(
     v-model="isActive"
+    fixed
   )
     div(class="vuetify")
       router-link(

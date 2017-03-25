@@ -13,7 +13,7 @@
       section-header Features
       v-list(three-line)
         v-container(fluid)
-          v-layout(row wrap)
+          v-row(row wrap)
             v-col(xs12 lg6)
               v-list-item(class="py-1")
                 v-list-tile(tag="div")
@@ -68,7 +68,7 @@
       h6 Sponsors
       section-text Vuetify.js is proudly sponsored by:
       v-container(fluid)
-        v-layout(row)
+        v-row(row)
           v-col(xs12)
             a(href="https://www.browserstack.com" target="_blank")
               img(src="~public/doc-images/browser-stack.svg" height="35" alt="browser-stack")
