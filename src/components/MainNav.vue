@@ -3,14 +3,14 @@
   header(id="main-toolbar")
     v-toolbar(fixed)
       v-toolbar-side-icon(
-        class="side-icon hidden-md-and-up"
+        class="side-icon hidden-lg-and-up"
         v-on:click.native.stop="$store.commit('vuetify/SIDEBAR', true)"
       )
       v-toolbar-logo(
         v-text="title"
         class="ml-5 text-xs-center text-md-left hidden-md-and-down"
       )
-      v-toolbar-title(v-text="title" class="hidden-md-and-up")
+      v-toolbar-title(v-text="title" class="hidden-lg-and-up")
       .toolbar__links
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
           img(src="~public/github.png" alt="github")
