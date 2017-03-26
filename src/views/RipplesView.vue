@@ -55,7 +55,6 @@
 <style lang="stylus">
   #ripple-doc
     .toolbar
-      height: 5rem
       padding-left: 0
       
     .sidebar

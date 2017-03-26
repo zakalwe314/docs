@@ -134,5 +134,5 @@
 
         > *
           margin: 0 auto
-          width: 70%
+          width: 500px
 </style>

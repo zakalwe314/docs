@@ -7,7 +7,7 @@
 
         div(class="text-xs-center")
           v-btn(large primary class="cta" router href="/quick-start") Get Started Now
-            v-icon(right) fast_forward
+            v-icon.hidden-sm-and-down(right) fast_forward
     section
       img(src="~public/doc-images/featured.png" width="100%" alt="featured")
       section-header Features
