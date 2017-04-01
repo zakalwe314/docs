@@ -9,7 +9,7 @@
         class="sidebar__logo"
       )
         img(
-          src="~public/v.png" 
+          src="~public/v.png"
           height="100"
           width="100"
           alt="Vuetify Logo"
@@ -50,7 +50,7 @@
             v-list-tile-action(v-if="item.subAction")
               v-icon(class="success--text") {{ item.subAction }}
 </template>
- 
+
 <script>
   export default {
     data () {
@@ -61,7 +61,7 @@
           { href: '/', title: 'About', action: 'question_answer' },
           { href: '/quick-start', title: 'Quick Start', action: 'explore' },
           { href: '/motion', title: 'Motion', action: 'slow_motion_video', subAction: 'fiber_new' },
-          { 
+          {
             title: 'Style',
             action: 'style',
             group: 'style',
@@ -72,7 +72,7 @@
               { href: '/style/content', title: 'Content' }
             ]
           },
-          { 
+          {
             title: 'Layout',
             action: 'devices',
             group: 'layout',
@@ -132,7 +132,7 @@
             ]
           },
           {
-            title: 'CSS', 
+            title: 'CSS',
             action: 'brush',
             group: '/css',
             items: [
@@ -140,29 +140,29 @@
             ]
           },
           {
-            title: 'Helpers', 
+            title: 'Helpers',
             action: 'build',
             group: '/helpers',
             items: [
               { href: '/helpers/spacing', title: 'Spacing' },
               { href: '/helpers/alignment', title: 'Alignment' },
-              { href: '/helpers/display', title: 'Display' }
-              // { href: '/helpers/depth', title: 'Depth' }
+              { href: '/helpers/display', title: 'Display' },
+              { href: '/helpers/elevation', title: 'Elevation' }
             ]
           },
           { divider: true, light: true },
           { header: 'Additional Resources' },
-          { 
+          {
             title: 'Ecosytem',
             action: 'public',
             items: [
-              { 
+              {
                 href: 'https://vuejobs.com/?ref=vuetify',
                 target: '_blank',
                 title: 'Jobs',
                 action: 'whatshot'
               },
-              { 
+              {
                 href: 'https://gitter.im/vuetifyjs/Lobby/~chat#',
                 target: '_blank',
                 title: 'Chat'
@@ -173,13 +173,13 @@
             title: 'Guides',
             action: 'developer_mode',
             items: [
-              { 
+              {
                 href: '/server-side-rendering',
                 title: 'Server Side Rendering'
               }
             ]
           },
-          { 
+          {
             title: 'Examples',
             action: 'web',
             items: [
@@ -214,25 +214,25 @@
     text-align: center
     margin: 16px 0
     color: #fff
-        
+
     .sidebar__logo
       display: block
       position: relative
       margin-bottom: 16px
       text-decoration: none
-      
+
       img
         height: 100px
-    
+
     a
       color: #fff
-      
+
     .gitter
       margin-bottom: 16px
-        
+
   .sidebar__item-header
     color: #fff
-    
+
   .sidebar__item
     color: #fff
 </style>

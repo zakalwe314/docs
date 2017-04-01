@@ -81,7 +81,7 @@
 
 <style lang="stylus">
   @import '../../node_modules/vuetify/src/stylus/settings/_colors'
-  @import '../../node_modules/vuetify/src/stylus/generic/_z-depths'
+  @import '../../node_modules/vuetify/src/stylus/tools/_elevations'
 
   #layout-view
     .component-example
@@ -103,7 +103,7 @@
         z-index: 0
 
       .with
-        @extend .z-depth-2
+        elevation(3)
         min-height: auto
         position: relative
         overflow: hidden
