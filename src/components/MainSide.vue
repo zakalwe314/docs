@@ -94,6 +94,7 @@
             items: [
               { href: '/components/alerts', title: 'Alerts' },
               { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
+              { href: '/components/bottom-navigation', title: 'Bottom navigation' },
               { href: '/components/buttons', title: 'Buttons' },
               { href: '/components/cards', title: 'Cards' },
               { href: '/components/carousel', title: 'Carousel' },
@@ -108,8 +109,7 @@
               { href: '/components/modals', title: 'Modals' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
-              { href: '/components/progress-circular', title: 'Progress Circular' },
-              { href: '/components/progress-linear', title: 'Progress Linear' },
+              { href: '/components/progress', title: 'Progress & activity' },
               { href: '/components/selection-controls', title: 'Selection Controls' },
               { href: '/components/selects', title: 'Selects' },
               { href: '/components/sidebar', title: 'Sidebars' },
@@ -130,14 +130,6 @@
               { href: '/directives/badges', title: 'Badges' },
               { href: '/directives/ripples', title: 'Ripples' },
               { href: '/directives/tooltips', title: 'Tooltips' }
-            ]
-          },
-          {
-            title: 'CSS',
-            action: 'brush',
-            group: '/css',
-            items: [
-              { href: '/css/tables', title: 'Tables' }
             ]
           },
           {

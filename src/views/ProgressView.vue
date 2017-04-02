@@ -1,8 +1,13 @@
 <template lang="pug">
   doc-view(
-    id="progress-linear-view"
+    id="progress"
     v-bind:doc="doc"
   )
+    component-example(header="Default" file="progress-circular/1" v-bind:data="example")
+    component-example(header="Colored" file="progress-circular/2" v-bind:data="example")
+    component-example(header="Indeterminate" file="progress-circular/3" v-bind:data="example")
+    component-example(header="Size & Width" file="progress-circular/4" v-bind:data="example")
+    component-example(header="Rotate" file="progress-circular/5" v-bind:data="example")
     component-example(header="Determinate" file="progress-linear/1" v-bind:data="example")
     component-example(header="Indeterminate" file="progress-linear/2" v-bind:data="example")
     component-example(header="Buffer" file="progress-linear/3" v-bind:data="example")
@@ -19,10 +24,62 @@
   export default {
     data () {
       return {
+        example: {
+          value: 40,
+          active: false,
+          buffer: 10,
+          bufferValue: 20,
+          loader: false,
+          value2: 0,
+          valueDeterminate: 0,
+          query: false,
+          show: true,
+          bufferActive: true
+        },
         doc: {
-          title: 'Progress Linear',
-          desc: 'The <code>v-progress-linear</code> component is used to convey data visually to users. It has 4 potential states with 5 color variations. Determinate, which is % value defined by model. Indeterminate which conveys processing. Buffer, which is used to show varying states of progress and Query, which is Indeterminate in reverse.',
+          title: 'Progress Circular',
+          desc: 'The <code>v-progress-circular</code> component is used to convey data visually to users. It can also represent an indeterminate amount, such as loading or processing. This component contains a slot that is centered within the component container.',
           props: {
+            'v-progress-circular': {
+              params: [
+                [
+                  'fill',
+                  'String',
+                  "[indeterminate ? 'none' : 'transparent']",
+                  'Sets the fill color of the circle'
+                ],
+                [
+                  'indeterminate',
+                  'Boolean',
+                  'False',
+                  'Never stops rotating. Use when loading progress is unknown.'
+                ],
+                [
+                  'rotate',
+                  'Number',
+                  '0',
+                  'Rotates the circle start point in deg'
+                ],
+                [
+                  'size',
+                  'Number',
+                  '32',
+                  'Sets the diameter of the circle in pixels'
+                ],
+                [
+                  'width',
+                  'Number',
+                  '4',
+                  'Sets the stroke of the circle in pixels'
+                ]
+              ],
+              model: {
+                types: ['Number'],
+                default: '0',
+                description: 'The percentage value for current progress'
+              }
+            },
+
             'v-progress-linear': {
               params: [
                 [
@@ -98,18 +155,12 @@
                 description: 'The percentage value for current progress'
               }
             }
+          },
+          slots: {
+            'v-progress-circular': {
+              default: true
+            }
           }
-        },
-        example: {
-          active: false,
-          buffer: 10,
-          bufferValue: 20,
-          loader: false,
-          value: 0,
-          valueDeterminate: 0,
-          query: false,
-          show: true,
-          bufferActive: true
         }
       }
     },
@@ -117,6 +168,12 @@
     mounted () {
       this.$emit('view', this.meta())
 
+      setInterval(() => {
+        if (this.example.value2 === 100) {
+          return this.example.value = 0
+        }
+        this.example.value2 += 10
+      }, 1000)
       this.queryAndIndeterminate()
       this.determinate()
       this.startBuffer()
@@ -194,13 +251,12 @@
           }, 1000)
         }, 3500)
       },
-
       meta () {
         return {
-          title: 'Progress Linear Component | Vuetify.js',
-          h1: 'Progress Linear',
-          description: 'The progress linear component is used to convey data visually to users. It has 4 potential states with 5 color variations.',
-          keywords: 'vuetify, progress, progress bar, progress linear, components'
+          title: 'Progress Circular Component | Vuetify.js',
+          h1: 'Progress Circular',
+          description: 'Progress Circular component for Vuetify Framework',
+          keywords: 'vuetify, progress, progress circle, progress circular, components'
         }
       }
     }
@@ -208,10 +264,19 @@
 </script>
 
 <style lang="stylus">
-  #progress-linear-view .component-example__container
-    > .progress-linear
-      margin: 2rem 0
+  #progress
+    .component-example__container
+      > .progress-linear
+        margin: 2rem 0
 
-    .toolbar
-      height: 55px
+      .toolbar
+        height: 55px
+
+    .component-example
+      .progress-circular
+        margin: 1rem
+
+    .component-example__container
+      > div
+        text-align: center
 </style>

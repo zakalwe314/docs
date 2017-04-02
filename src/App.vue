@@ -1,6 +1,10 @@
 <template lang="pug">
-  v-app(left-fixed-sidebar top-fixed-toolbar footer)
-    main-nav(v-bind:title="title" v-on:sidebar="sidebar = !sidebar")
+  v-app(
+    left-fixed-sidebar
+    top-fixed-toolbar
+    footer
+  )
+    main-nav(v-bind:title="title")
     main
       main-side(v-model="sidebar")
 
@@ -16,8 +20,16 @@
   export default {
     data () {
       return {
-        sidebar: true,
         title: ''
+      }
+    },
+
+    computed: {
+      isHome () {
+        return this.$route.path === '/'
+      },
+      sidebar () {
+        return this.$store.state.sidebar
       }
     },
 
