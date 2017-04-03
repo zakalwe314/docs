@@ -77,14 +77,12 @@
             action: 'devices',
             group: 'layout',
             items: [
-              {
-                title: 'Grid',
-                href: '/layout/grid'
-              },
-              {
-                title: 'Examples',
-                href: '/layout/examples'
-              }
+              { href: '/layout/predefined', title: 'Pre-Defined' },
+              { href: '/layout/grid', title: 'Grid' },
+              { href: '/layout/spacing', title: 'Spacing' },
+              { href: '/layout/alignment', title: 'Alignment' },
+              { href: '/layout/display', title: 'Display' },
+              { href: '/layout/elevation', title: 'Elevation' }
             ]
           },
           {
@@ -130,17 +128,6 @@
               { href: '/directives/badges', title: 'Badges' },
               { href: '/directives/ripples', title: 'Ripples' },
               { href: '/directives/tooltips', title: 'Tooltips' }
-            ]
-          },
-          {
-            title: 'Helpers',
-            action: 'build',
-            group: '/helpers',
-            items: [
-              { href: '/helpers/spacing', title: 'Spacing' },
-              { href: '/helpers/alignment', title: 'Alignment' },
-              { href: '/helpers/display', title: 'Display' },
-              { href: '/helpers/elevation', title: 'Elevation' }
             ]
           },
           { divider: true, light: true },
