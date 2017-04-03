@@ -3,6 +3,7 @@
     component-example(header="With Icons" file="toolbar/1" v-bind:data="example")
     component-example(header="With Items" file="toolbar/2" v-bind:data="example")
     component-example(header="With Dropdown" file="toolbar/3" v-bind:data="example")
+
     component-example(file="toolbar/4" v-bind:data="example")
     component-example(header="Transparent" file="toolbar/5" v-bind:data="example")
     markup(lang="css")
@@ -12,13 +13,17 @@
       |    height: 300px;
       |  }
       |&lt;/style&gt;
+
+    component-example(header="With Search" file="toolbar/6")
 </template>
 
 <script>
   import ItemProps from '../constants/itemable-props'
+  import ComponentExample from "../components/ComponentExample";
 
   export default {
-    data () {
+      components: {ComponentExample},
+      data () {
       return {
         doc: {
           title: 'Toolbar',
