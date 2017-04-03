@@ -64,7 +64,7 @@
         |&nbsp;
         |@import '../../node_modules/vuetify/src/main'
     section
-      whats-next(route="/layout/examples" text="Layouts") Now that you have all the tools needed to build your next awesome application, head over to the layouts section to choose a ui.
+      whats-next(route="/layout/pre-defined" text="Layouts") Now that you have all the tools needed to build your next awesome application, head over to the layouts section to choose a ui.
 </template>
 
 <script>

@@ -56,7 +56,7 @@ const router = new Router({
     route('/style/colors', 'Colors'),
     route('/style/theme', 'Theme'),
     route('/layout/grid', 'Grid'),
-    route('/layout/predefined', 'Layouts'),
+    route('/layout/pre-defined', 'Layouts'),
     route('/layout/spacing', 'Spacing'),
     route('/layout/alignment', 'Alignment'),
     route('/layout/display', 'Display'),

@@ -57,9 +57,9 @@
       return {
         isActive: true,
         items: [
-          { header: 'Core Documentation' },
+          { header: 'Core documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
-          { href: '/quick-start', title: 'Quick Start', action: 'explore' },
+          { href: '/quick-start', title: 'Quick start', action: 'explore' },
           { href: '/motion', title: 'Motion', action: 'slow_motion_video', subAction: 'fiber_new' },
           {
             title: 'Style',
@@ -77,7 +77,7 @@
             action: 'devices',
             group: 'layout',
             items: [
-              { href: '/layout/predefined', title: 'Pre-Defined' },
+              { href: '/layout/pre-defined', title: 'Pre-defined' },
               { href: '/layout/grid', title: 'Grid' },
               { href: '/layout/spacing', title: 'Spacing' },
               { href: '/layout/alignment', title: 'Alignment' },
@@ -96,10 +96,10 @@
               { href: '/components/buttons', title: 'Buttons' },
               { href: '/components/cards', title: 'Cards' },
               { href: '/components/carousel', title: 'Carousel' },
-              { href: '/components/datatables', title: 'Data tables', action: 'fiber_new' },
               { href: '/components/chips', title: 'Chips' },
+              { href: '/components/datatables', title: 'Data tables', action: 'fiber_new' },
               { href: '/components/dividers', title: 'Dividers' },
-              { href: '/components/expansion-panel', title: 'Expansion Panel' },
+              { href: '/components/expansion-panel', title: 'Expansion panel' },
               { href: '/components/footer', title: 'Footer' },
               { href: '/components/icons', title: 'Icons' },
               { href: '/components/lists', title: 'Lists' },
@@ -108,15 +108,15 @@
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/progress', title: 'Progress & activity' },
-              { href: '/components/selection-controls', title: 'Selection Controls' },
               { href: '/components/selects', title: 'Selects' },
+              { href: '/components/selection-controls', title: 'Selection controls' },
               { href: '/components/sidebar', title: 'Sidebars' },
               { href: '/components/sliders', title: 'Sliders' },
-              { href: '/components/snackbars', title: 'Snackbars' },
-              { href: '/components/subheaders', title: 'Subheaders' },
+              { href: '/components/snackbars', title: 'Snackbars & toasts' },
               { href: '/components/steppers', title: 'Steppers' },
+              { href: '/components/subheaders', title: 'Subheaders' },
               { href: '/components/tabs', title: 'Tabs' },
-              { href: '/components/text-fields', title: 'Text Fields' },
+              { href: '/components/text-fields', title: 'Text fields' },
               { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },
@@ -131,7 +131,7 @@
             ]
           },
           { divider: true, light: true },
-          { header: 'Additional Resources' },
+          { header: 'Additional resources' },
           {
             title: 'Ecosytem',
             action: 'public',
