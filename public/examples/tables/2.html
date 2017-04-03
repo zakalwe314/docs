@@ -1,28 +1,60 @@
-<v-card>
-  <v-table-overflow>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th v-for="header in headers" v-text="header"></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <template v-for="(item, index) in items">
-          <tr>
-            <td>
-              <v-checkbox v-bind:id="'checkbox' + index" filled class="text-xs-center"></v-checkbox>
-            </td>
-            <td v-for="data in item" v-text="data"></td>
-            <td>
-              <v-btn icon="icon">
-                <v-icon class="secondary--text">edit</v-icon>
-              </v-btn>
-            </td>
-          </tr>
-        </template>
-      </tbody>
-    </table>
-  </v-table-overflow>
-</v-card>
+<v-data-table
+    v-bind:headers="headers"
+    v-model="items"
+    v-bind:search="search"
+    hide-actions
+    select-all
+    class="elevation-1"
+  >
+  <template slot="items" scope="props">
+    <td>
+      <v-checkbox
+        hide-details
+        primary
+        v-model="props.item.value"
+      ></v-checkbox>
+    </td>
+    <td>
+      <v-edit-dialog
+        @open="props.item._name = props.item.name"
+        @cancel="props.item.name = props.item._name"
+        lazy
+        class="text-xs-left"
+      > {{ props.item.name }}
+        <v-text-field
+          slot="input"
+          label="Edit"
+          v-bind:value="props.item.name"
+          v-on:change="val => props.item.name = val"
+          single-line counter="counter"
+        ></v-text-field>
+      </v-edit-dialog>
+    </td>
+    <td>{{ props.item.calories }}</td>
+    <td>{{ props.item.fat }}</td>
+    <td>{{ props.item.carbs }}</td>
+    <td>{{ props.item.protein }}</td>
+    <td>{{ props.item.sodium }}</td>
+    <td>{{ props.item.calcium }}</td>
+    <td>
+      <v-edit-dialog
+        @open="props.item._iron = props.item.iron"
+        @cancel="props.item.iron = props.item._iron"
+        large
+        lazy
+      >
+        <div class="text-xs-right">{{ props.item.iron }}</div>
+        <div slot="input" class="mt-3 title">Update Iron</div>
+        <v-text-field
+          slot="input" 
+          label="Edit" 
+          v-bind:value="props.item.iron" 
+          v-on:blur="val => props.item.iron = val"
+          single-line
+          counter
+          autofocus
+        ></v-text-field>
+      </v-edit-dialog>
+    </td>
+  </template>
+</v-data-table>

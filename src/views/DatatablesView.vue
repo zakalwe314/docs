@@ -1,62 +1,6 @@
 <template lang="pug">
-  v-card.my-5
-    v-card-row
-      v-card-title Nutrition
-        v-spacer
-        v-text-field(
-          label="Search"
-          single-line
-          append-icon="search"
-          hide-details
-          v-model="search"
-        )
-    v-data-table(
-      v-bind:headers="headers"
-      v-model="items"
-      v-bind:search="search"
-    )
-      template(slot="items" scope="props")
-        td
-          v-edit-dialog(
-            class="text-xs-left"
-            @open="props.item._name = props.item.name"
-            @cancel="props.item.name = props.item._name"
-            @save="saving"
-            lazy
-          ) {{ props.item.name }}
-            v-text-field(
-              slot="input"
-              label="Edit"
-              v-bind:value="props.item.name"
-              v-on:change="val => props.item.name = val"
-              single-line
-              counter
-            )
-        td {{ props.item.calories }}
-        td {{ props.item.fat }}
-        td {{ props.item.carbs }}
-        td {{ props.item.protein }}
-        td {{ props.item.sodium }}
-        td {{ props.item.calcium }}
-        td
-          v-edit-dialog(
-            @open="props.item._iron = props.item.iron"
-            @cancel="props.item.iron = props.item._iron"
-            @save="saving"
-            large
-            lazy
-          )
-            div.text-xs-right {{ props.item.iron }}
-            div(slot="input").mt-3.title Update Iron
-            v-text-field(
-              slot="input"
-              label="Edit"
-              v-bind:value="props.item.iron"
-              v-on:blur="val => props.item.iron = val"
-              single-line
-              counter
-              autofocus
-            )
+  doc-view(id="data-tables-view" v-bind:doc="doc")
+    component-example(header="Standard" file="tables/1" v-bind:data="$data")
 </template>
 
 <script>
@@ -223,3 +167,8 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #data-tables-view
+    max-width: 1200px
+</style>

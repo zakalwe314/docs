@@ -1,24 +1,26 @@
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th v-for="header in headers" v-text="header"></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <template v-for="(item, index) in items">
-      <tr>
-        <td>
-          <v-checkbox v-bind:id="'checkbox' + index" filled class="text-xs-center"></v-checkbox>
-        </td>
-        <td v-for="data in item" v-text="data"></td>
-        <td>
-          <v-btn icon="icon">
-            <v-icon class="info--text">edit</v-icon>
-          </v-btn>
-        </td>
-      </tr>
-    </template>
-  </tbody>
-</table>
+<v-data-table
+    v-bind:headers="headers"
+    v-model="items"
+    v-bind:search="search"
+    hide-actions
+    select-all
+    class="elevation-1"
+  >
+  <template slot="items" scope="props">
+    <td>
+      <v-checkbox
+        hide-details
+        primary
+        v-model="props.item.value"
+      ></v-checkbox>
+    </td>
+    <td class="text-xs-left">{{ props.item.name }}</td>
+    <td>{{ props.item.calories }}</td>
+    <td>{{ props.item.fat }}</td>
+    <td>{{ props.item.carbs }}</td>
+    <td>{{ props.item.protein }}</td>
+    <td>{{ props.item.sodium }}</td>
+    <td>{{ props.item.calcium }}</td>
+    <td>{{ props.item.iron }}</td>
+  </template>
+</v-data-table>
