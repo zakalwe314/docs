@@ -3,17 +3,9 @@
     v-model="items"
     v-bind:search="search"
     hide-actions
-    select-all
     class="elevation-1"
   >
   <template slot="items" scope="props">
-    <td>
-      <v-checkbox
-        hide-details
-        primary
-        v-model="props.item.value"
-      ></v-checkbox>
-    </td>
     <td class="text-xs-left">{{ props.item.name }}</td>
     <td>{{ props.item.calories }}</td>
     <td>{{ props.item.fat }}</td>

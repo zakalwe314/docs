@@ -1,11 +1,16 @@
 <v-data-table
     v-bind:headers="headers"
-    v-model="items"
+    v-model="items.concat([])"
     v-bind:search="search"
     hide-actions
     select-all
     class="elevation-1"
   >
+  <template slot="headers" scope="props">
+    <span v-tooltip:bottom="{ 'html': props.item.text }">
+      {{ props.item.text }}
+    </span>
+  </template>
   <template slot="items" scope="props">
     <td>
       <v-checkbox
@@ -14,47 +19,13 @@
         v-model="props.item.value"
       ></v-checkbox>
     </td>
-    <td>
-      <v-edit-dialog
-        @open="props.item._name = props.item.name"
-        @cancel="props.item.name = props.item._name"
-        lazy
-        class="text-xs-left"
-      > {{ props.item.name }}
-        <v-text-field
-          slot="input"
-          label="Edit"
-          v-bind:value="props.item.name"
-          v-on:change="val => props.item.name = val"
-          single-line counter="counter"
-        ></v-text-field>
-      </v-edit-dialog>
-    </td>
+    <td class="text-xs-left">{{ props.item.name }}</td>
     <td>{{ props.item.calories }}</td>
     <td>{{ props.item.fat }}</td>
     <td>{{ props.item.carbs }}</td>
     <td>{{ props.item.protein }}</td>
     <td>{{ props.item.sodium }}</td>
     <td>{{ props.item.calcium }}</td>
-    <td>
-      <v-edit-dialog
-        @open="props.item._iron = props.item.iron"
-        @cancel="props.item.iron = props.item._iron"
-        large
-        lazy
-      >
-        <div class="text-xs-right">{{ props.item.iron }}</div>
-        <div slot="input" class="mt-3 title">Update Iron</div>
-        <v-text-field
-          slot="input" 
-          label="Edit" 
-          v-bind:value="props.item.iron" 
-          v-on:blur="val => props.item.iron = val"
-          single-line
-          counter
-          autofocus
-        ></v-text-field>
-      </v-edit-dialog>
-    </td>
+    <td>{{ props.item.iron }}</td>
   </template>
 </v-data-table>

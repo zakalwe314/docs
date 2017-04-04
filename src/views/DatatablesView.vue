@@ -1,6 +1,8 @@
 <template lang="pug">
   doc-view(id="data-tables-view" v-bind:doc="doc")
     component-example(header="Standard" file="tables/1" v-bind:data="$data")
+    component-example(header="Selectable with header tooltip" file="tables/2" v-bind:data="$data")
+    component-example(header="Title with actions and editing" file="tables/3" v-bind:data="$data")
 </template>
 
 <script>
@@ -9,10 +11,95 @@
       return {
         test: false,
         search: null,
+        e3: null,
         doc: {
           title: 'Data tables',
           desc: ``,
           props: {
+            'v-data-table': {
+              params: [
+                [
+                  'headers',
+                  'Array',
+                  '[]',
+                  'The array of headers'
+                ],
+                [
+                  'header-text',
+                  'String',
+                  'text',
+                  'If using an object, the text value for the header'
+                ],
+                [
+                  'hide-actions',
+                  'Boolean',
+                  'False',
+                  'Hide the table actions'
+                ],
+                [
+                  'items',
+                  'Array',
+                  '[]',
+                  'The array of table rows'
+                ],
+                [
+                  'item-value',
+                  'String',
+                  'value',
+                  'When using a selectable row, used for determining the item value for highlight.'
+                ],
+                [
+                  'rows-per-page-items',
+                  'Array',
+                  '[5, 15, 25, { text: "All", value: -1 }]',
+                  'When using a selectable row, used for determining the item value for highlight.'
+                ],
+                [
+                  'select-all',
+                  'Boolean',
+                  'False',
+                  'Adds header row select all radio.'
+                ],
+                [
+                  'search',
+                  'String',
+                  '',
+                  'The search model for filtering results'
+                ],
+                [
+                  'filter',
+                  'Function',
+                  `(val, search) => {
+                    return ['undefined', 'boolean'].indexOf(typeof val) === -1 &&
+                      val.toString().toLowerCase().indexOf(search) !== -1
+                  }`,
+                  'The filtering method for search'
+                ]
+              ],
+              model: {
+                types: ['Array'],
+                default: 'undefined',
+                description: 'Used for mutating the items array when selecting items.'
+              }
+            }
+          },
+          slots: {
+            headers: {
+              params: [
+                [
+                  'scope[headers]',
+                  'The scoped slot for modifying headers.'
+                ]
+              ]
+            },
+            items: {
+              params: [
+                [
+                  'scope[items]',
+                  'The scoped slot for templating the row display.'
+                ]
+              ]
+            }
           }
         },
         headers: [
