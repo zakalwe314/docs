@@ -5,16 +5,23 @@
         dt(slot="title") Display
         dd(slot="desc") The display helpers allow you to control the displaying of content based upon viewport width.
     section
-      h6 Viewports
+      h6 Viewport sizes
       ul
-        li <code>xs</code> - extra small viewport devices
-        li <code>sm</code> - small viewport devices
-        li <code>md</code> - medium viewport devices
-        li <code>lg</code> - large viewport devices
-      h6 Direction
+        li <code>xs</code> - extra small viewport devices (&lt; 576px)
+        li <code>sm</code> - small viewport devices (&lt; 768px)
+        li <code>md</code> - medium viewport devices (&lt; 992px)
+        li <code>lg</code> - large viewport devices (&lt; 1200px)
+      h6 Classes
       ul
-        li <code>up</code> - from specified viewport and up
-        li <code>down</code> - from specified viewport and down
+        li <code>hidden-xs-only</code> - hidden on extra small viewports only
+        li <code>hidden-sm-and-down</code> - hidden on small viewports and down
+        li <code>hidden-sm-and-up</code> - hidden on small viewports and up
+        li <code>hidden-md-only</code> - hidden on medium viewports only
+        li <code>hidden-md-and-down</code> - hidden on medium viewports and down
+        li <code>hidden-md-and-up</code> - hidden on medium viewports and up
+        li <code>hidden-lg-only</code> - hidden on large viewports only
+        li <code>hidden-lg-and-down</code> - hidden on large viewports and down
+        li <code>hidden-lg-and-up</code> - hidden on large viewports and up
       component-example(header="Hidden elements" file="display/1" v-bind:data="$data")
 </template>
 
