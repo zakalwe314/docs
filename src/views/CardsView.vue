@@ -1,16 +1,13 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="cards")
     component-example(header="Basic" file="cards/1" v-bind:data="$data")
-
     component-example(header="Title" file="cards/2" v-bind:data="$data")
-
     component-example(header="Picture" file="cards/3" v-bind:data="$data")
-
     component-example(header="Background" file="cards/4" v-bind:data="$data")
-
     component-example(header="Horizontal" file="cards/5" v-bind:data="$data")
-
     component-example(header="Colored" file="cards/6" v-bind:data="$data")
+    component-example(header="Hover and raised" file="cards/7" v-bind:data="$data")
+      section-text(slot="details") Use the raised or hover prop to emphasize a card.
 </template>
 
 <script>
@@ -44,6 +41,18 @@
                   'String',
                   `-`,
                   'Specifies an image background',
+                ],
+                [
+                  'hover',
+                  'Boolean',
+                  'False',
+                  'Apply a larger elevation on hover',
+                ],
+                [
+                  'raised',
+                  'Boolean',
+                  'False',
+                  'Applies a larger default elevation',
                 ]
               ]
             },
