@@ -181,6 +181,12 @@
             'v-btn': {
               params: [
                 [
+                  'active-class',
+                  'String',
+                  'btn--active',
+                  'Applies the .btn--active class. This does not alter the button style, but can be used for hooking into.'
+                ],
+                [
                   'light',
                   'Boolean',
                   'True',
@@ -265,6 +271,12 @@
                   'Sets the buttons type attribute',
                 ],
                 [
+                  'tag',
+                  'String',
+                  'button',
+                  'Change the element type',
+                ],
+                [
                   'primary',
                   'Boolean',
                   'False',
@@ -300,7 +312,12 @@
                   'False',
                   'Applies the "error" context',
                 ]
-              ]
+              ],
+              model: {
+                types: ['Boolean'],
+                default: 'False'
+              },
+              router: true
             },
             'v-btn-dropdown': {
               params: [

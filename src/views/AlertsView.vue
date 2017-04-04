@@ -2,6 +2,7 @@
   doc-view(v-bind:doc="doc" id="alerts")
     component-example(header="Contextual" file="alerts/1")
     component-example(header="Closable" file="alerts/2" v-bind:data="exampleOneData")
+      section-text(slot="details") Using <code>v-model</code> you can control the state of the Alert. If you don't want to assign a v-model and just display the alert, you can simply do <code>:value="true"</code>.
     component-example(header="Custom Icon / No Icon" file="alerts/3")
 </template>
 

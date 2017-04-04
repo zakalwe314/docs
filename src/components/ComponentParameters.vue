@@ -16,6 +16,11 @@
             td {{ options.model.types.join(', ') }}
             td {{ options.model.default }}
             td {{ options.model.description ? options.model.description : 'Controls visibility'}}
+          tr(v-if="options.router")
+            td <code>router</code>
+            td Boolean
+            td False
+            td Supported through <code>href</code> or <code>to</code> props. Has access to all <a href="https://router.vuejs.org/en/api/router-link.html" target="_blank">vue-router</a> and <a href="https://nuxtjs.org/api/components-nuxt-link" target="_blank">nuxt</a> router properties.
           tr(v-if="options.default")
             td <code>default</code>
             td Vue default slot
