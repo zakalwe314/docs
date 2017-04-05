@@ -28,7 +28,7 @@
         b: 30,
         doc: {
           title: 'Slider',
-          desc: 'Soon',
+          desc: 'The <code>v-slider</code> component is a better visualization of the number input. It is used for gathering numerical user data.',
           props: {
             'v-slider': {
               params: [

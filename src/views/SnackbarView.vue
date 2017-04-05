@@ -48,7 +48,7 @@
                   'Position the snackbar on the right'
                 ],
                 [
-                  'multiline',
+                  'multi-line',
                   'Boolean',
                   'False',
                   'Makes the snackbar higher'

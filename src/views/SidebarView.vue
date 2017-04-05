@@ -1,6 +1,7 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="sidebars-view")
     component-example(header="Left" file="sidebar/1" v-bind:data="$data")
+      section-text(slot="details") If you want to programmatically open or close the sidebar, you can do so by using <code>v-model</code> with a boolean value. Keep in mind, if the trigger for the opening is not contained within the <code>activator</code> slot and is done so by a click, you must <strong>stopPropagation</strong> to avoid immediately triggering a close event.
 
     blockquote A sidebar is required to have an activator. This allows the sidebar to be opened on mobile.
 
@@ -50,6 +51,12 @@
             'v-sidebar': {
               params: [
                 [
+                  'absolute',
+                  'Boolean',
+                  'False',
+                  'Sets the sidebar position to absolute',
+                ],
+                [
                   'close-on-click',
                   'Boolean',
                   'True',
@@ -59,13 +66,13 @@
                   'drawer',
                   'Boolean',
                   'False',
-                  'Applies the sidebar--drawer class',
+                  'Default hides sidebar. Will not automatically hide on resize',
                 ],
                 [
                   'fixed',
                   'Boolean',
                   'False',
-                  'Applies the sidebar--fixed class',
+                  'Sets the sidebar position to fixed',
                 ],
                 [
                   'height',
@@ -161,21 +168,27 @@
 <style lang="stylus">
   #sidebars-view
     .with, main
-      min-height: 40vh
-      max-height: 40vh
+      min-height: 400px
+      
+    .with.sidebar-under-toolbar
+      position: relative
+      
+      .toolbar
+        z-index: 6
 
     main
       padding-left: 0
+      overflow: hidden
+      position: relative
 
     .component-example__container
       flex: 1
-      min-height: 40vh
+      min-height: 400px
       position: relative
-      overflow: hidden
       justify-content: center
 
     .toolbar
-      min-height: 5rem
+      min-height: 56px
 
       &__side-icon
         margin: 0 2rem
@@ -187,4 +200,5 @@
       z-index: 2
       &--fixed
         position: absolute
+        top: 0
 </style>

@@ -1,6 +1,7 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="modals")
     component-example(header="Variants" file="modals/1" v-bind:data="$data")
+      section-text(slot="details") If you want to programmatically open or close the modal, you can do so by using <code>v-model</code> with a boolean value. Keep in mind, if the trigger for the opening is not contained within the <code>activator</code> slot and is done so by a click, you must <strong>stopPropagation</strong> to avoid immediately triggering a close event.
 </template>
 
 <script>
@@ -13,7 +14,7 @@
         bottom: false,
         doc: {
           title: 'Modal',
-          desc: 'The <code>v-modal</code> component is useful for calling a users attention to information or a particular action. It is merely a wrapper for whatever component you choose to place in it. In the examples below, a <code>v-card</code> is used. To close a modal, you must manually publish and event to the Vuetify bus, or click outside of the modal. This is helpful for when you want to capture information by callback after a native click.',
+          desc: 'The <code>v-modal</code> component is useful for calling a users attention to information or a particular action. It is merely a wrapper for whatever component you choose to place in it. In the examples below, a <code>v-card</code> is used.',
           props: {
             'v-modal': {
               params: [
