@@ -15,7 +15,7 @@
           alt="Vuetify Logo"
         )
       .title Vuetify
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.4" target="_blank") v0.9.4
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.10.0" target="_blank") v0.10.0
     v-divider(light)
     v-list(dense)
       template(v-for="item in items")
@@ -81,8 +81,8 @@
               { href: '/layout/grid', title: 'Grid' },
               { href: '/layout/spacing', title: 'Spacing' },
               { href: '/layout/alignment', title: 'Alignment' },
-              { href: '/layout/display', title: 'Display' },
-              { href: '/layout/elevation', title: 'Elevation' }
+              { href: '/layout/display', title: 'Display', action: 'arrow_upward' },
+              { href: '/layout/elevation', title: 'Elevation', action: 'fiber_new' }
             ]
           },
           {
@@ -92,9 +92,9 @@
             items: [
               { href: '/components/alerts', title: 'Alerts' },
               { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
-              { href: '/components/bottom-navigation', title: 'Bottom navigation' },
+              { href: '/components/bottom-navigation', title: 'Bottom navigation', action: 'fiber_new' },
               { href: '/components/buttons', title: 'Buttons' },
-              { href: '/components/cards', title: 'Cards' },
+              { href: '/components/cards', title: 'Cards', action: 'arrow_upward' },
               { href: '/components/carousel', title: 'Carousel' },
               { href: '/components/chips', title: 'Chips' },
               { href: '/components/datatables', title: 'Data tables', action: 'fiber_new' },
@@ -116,7 +116,7 @@
               { href: '/components/steppers', title: 'Steppers' },
               { href: '/components/subheaders', title: 'Subheaders' },
               { href: '/components/tabs', title: 'Tabs' },
-              { href: '/components/text-fields', title: 'Text fields' },
+              { href: '/components/text-fields', title: 'Text fields', action: 'arrow_upward' },
               { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },

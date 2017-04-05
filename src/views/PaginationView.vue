@@ -46,6 +46,13 @@
                 description: 'Current selected page'
               }
             }
+          },
+          events: {
+            'v-pagination': {
+              events: [
+                ['input', 'Number', 'Current page'],
+              ]
+            },
           }
         }
       }

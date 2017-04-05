@@ -28,6 +28,10 @@
             td(v-for="(td, index) in tr")
               span(v-if="index === 0") <code>{{ td }}</code>
               span(v-else) {{ td }}
+          tr(v-for="tr in options.events")
+            td(v-for="(td, index) in tr")
+              span(v-if="index === 0") <code>{{ td }}</code>
+              span(v-else) {{ td }}
 </template>
 
 <script>

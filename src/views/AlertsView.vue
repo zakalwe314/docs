@@ -53,6 +53,13 @@
             'v-alert': {
               default: true
             }
+          },
+          events: {
+            'v-alert': {
+              events: [
+                ['input', 'Boolean: False', "Alert was closed. Requires 'dismissible' prop."]
+              ]
+            }
           }
         }
       }

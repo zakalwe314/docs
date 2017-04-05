@@ -46,13 +46,13 @@
                   'hover',
                   'Boolean',
                   'False',
-                  'Apply a larger elevation on hover',
+                  'Apply a higher elevation on hover',
                 ],
                 [
                   'raised',
                   'Boolean',
                   'False',
-                  'Applies a larger default elevation',
+                  'Specifies a higher default elevation',
                 ]
               ]
             },

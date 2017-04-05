@@ -59,6 +59,13 @@
             'v-chip': {
               default: true
             }
+          },
+          events: {
+            'v-chip': {
+              events: [
+                ['input', 'Boolean: False', "Chip was closed. Requires 'close' prop."]
+              ]
+            },
           }
         }
       }

@@ -118,6 +118,13 @@
                 ]
               ]
             }
+          },
+          events: {
+            'v-slider': {
+              events: [
+                ['input','Number, String', 'Selected value'],
+              ]
+            },
           }
         }
       }

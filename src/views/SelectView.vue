@@ -186,6 +186,13 @@
                 description: 'Single select requires model, multiple requires array'
               }
             }
+          },
+          events: {
+            'v-select': {
+              events: [
+                ['input', 'String', 'Selected value'],
+              ]
+            },
           }
         },
         input: null,

@@ -112,6 +112,13 @@
                 ],
               ]
             }
+          },
+          events: {
+            'v-stepper': {
+              events: [
+                ['input', "Number, String", 'Current step'],
+              ]
+            },
           }
         }
       }

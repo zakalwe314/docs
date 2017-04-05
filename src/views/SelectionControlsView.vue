@@ -239,6 +239,13 @@
                 description: 'Current switch value'
               }
             }
+          },
+          events: {
+            'v-radio': {
+              events: [
+                ['change', 'String, Number', 'Input value changed.']
+              ]
+            },
           }
         }
       }

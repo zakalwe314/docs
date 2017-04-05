@@ -154,6 +154,13 @@
                 ],
               ]
             },
+          },
+          events: {
+            'v-tabs': {
+              events: [
+                ['input', 'Object', 'Current active tab'],
+              ]
+            },
           }
         }
       }

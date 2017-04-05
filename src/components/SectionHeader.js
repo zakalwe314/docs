@@ -13,6 +13,6 @@ export default {
       style: styles
     }
 
-    return h('h2', data, context.children)
+    return h('h3', data, context.children)
   }
 }

@@ -418,6 +418,18 @@
                 ]
               ]
             }
+          },
+          events: {
+            'v-btn-dropdown': {
+              events: [
+                ['input', 'String, Number', 'Selected value']
+              ]
+            },
+            'v-btn-toggle': {
+              events: [
+                ['input', 'String, Number', 'Selected button(s)']
+              ]
+            },
           }
         }
       }

@@ -11,6 +11,7 @@
         li <code>sm</code> - small viewport devices (&lt; 768px)
         li <code>md</code> - medium viewport devices (&lt; 992px)
         li <code>lg</code> - large viewport devices (&lt; 1200px)
+        li <code>xl</code> - extra large viewport devices (&gt; 1200px)
       h6 Classes
       ul
         li <code>hidden-xs-only</code> - hidden on extra small viewports only
@@ -22,6 +23,7 @@
         li <code>hidden-lg-only</code> - hidden on large viewports only
         li <code>hidden-lg-and-down</code> - hidden on large viewports and down
         li <code>hidden-lg-and-up</code> - hidden on large viewports and up
+        li <code>hidden-xl-only</code> - hidden on extra large viewports only
       component-example(header="Hidden elements" file="display/1" v-bind:data="$data")
 </template>
 
