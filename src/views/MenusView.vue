@@ -126,6 +126,12 @@
                   'String',
                   'v-menu-transition',
                   'Set the transition component'
+                ],
+                [
+                  'lazy',
+                  'Boolean',
+                  'False',
+                  'Conditionally renders content on mounted'
                 ]
               ]
             }

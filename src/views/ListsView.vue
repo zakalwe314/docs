@@ -304,6 +304,12 @@
                   'False',
                   'Removes left padding assigned for action icons from group items'
                 ],
+                [
+                  'lazy',
+                  'Boolean',
+                  'False',
+                  'Conditionally renders content on mounted'
+                ]
               ],
               model: {
                 types: ['Boolean'],
