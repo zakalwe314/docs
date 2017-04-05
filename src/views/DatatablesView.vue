@@ -8,7 +8,7 @@
 <script>
   export default {
     data () {
-      return {
+      const data = {
         test: false,
         search: null,
         e3: null,
@@ -229,6 +229,11 @@
           }
         ]
       }
+
+      data.items2 = data.items.concat()
+      data.items3 = data.items.concat()
+
+      return data
     },
 
     mounted () {
