@@ -9,10 +9,10 @@ export default {
     }
 
     const data = {
-      'class': 'section-header secondary--text primary--after',
+      'class': 'section-header secondary--text primary--after display-2',
       style: styles
     }
 
-    return h('h3', data, context.children)
+    return h('h2', data, context.children)
   }
 }
