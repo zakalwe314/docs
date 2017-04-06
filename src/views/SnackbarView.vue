@@ -13,36 +13,42 @@
         timeout: 6000,
         doc: {
           title: 'Snackbar',
-          desc: 'The <code>v-snackbar</code> component is used to display a quick message to a user. Toasts support positioning, removal delay and callbacks.',
+          desc: 'The <code>v-snackbar</code> component is used to display a quick message to a user. Snackbars support positioning, removal delay and callbacks.',
           props: {
             'v-snackbar': {
               params: [
                 [
+                  'absolute',
+                  'Boolean',
+                  'False',
+                  'Set the position to absolute, allowing you to place snackbar inside any container'
+                ],
+                [
                   'bottom',
                   'Boolean',
                   'True',
-                  'Pistion the snackbar at the bottom'
+                  'Position the snackbar at the bottom'
                 ],
                 [
                   'top',
                   'Boolean',
                   'False',
-                  'Pistion the snackbar at the top'
+                  'Position the snackbar at the top'
                 ],
                 [
                   'left',
                   'Boolean',
                   'False',
-                  'Pistion the snackbar on the left'
+                  'Position the snackbar on the left'
                 ],
                 [
                   'right',
                   'Boolean',
                   'False',
-                  'Pistion the snackbar on the right'
+                  'Position the snackbar on the right'
                 ],
                 [
-                  'multiline',
+                  'multi-line',
                   'Boolean',
                   'False',
                   'Makes the snackbar higher'
@@ -79,10 +85,10 @@
 
       meta () {
         return {
-          title: 'Snackbar Function | Vuetify.js',
+          title: 'Snackbar Component | Vuetify.js',
           h1: 'Snackbars',
-          description: 'Snackbar directive for Vuetify Framework',
-          keywords: 'vuetify, snackbar, function'
+          description: 'Snackbar component for Vuetify Framework',
+          keywords: 'vuetify, snackbar, components'
         }
       }
     }

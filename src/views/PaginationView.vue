@@ -31,7 +31,7 @@
                   'circle',
                   'Boolean',
                   'False',
-                  'Applies the pagination--circle class',
+                  'Shape pagination elements as circles',
                 ],
                 [
                   'length',
@@ -46,6 +46,13 @@
                 description: 'Current selected page'
               }
             }
+          },
+          events: {
+            'v-pagination': {
+              events: [
+                ['input', 'Number', 'Current page'],
+              ]
+            },
           }
         }
       }

@@ -9,7 +9,7 @@
       section-text You can change a background or text color by adding a class to the element. For background, use just the name, for example, <code>&lt;div class="red"&gt;</code>. To use a shade, just add the modifying type, such as, <strong>darken-3</strong>. Text is very similar, adding a modification class, <strong>red--text</strong>, you can change the color of text, or change the type with adding <strong>text--lighten-2</strong>. For some elements like the <code>v-badge</code>, you can use the <em>--after</em> type for the background, <code>&lt;span class="green--after" v-badge:5&gt;</code>.
       div
         v-container(fluid)
-          v-row
+          v-row(row wrap)
             v-col(xs6 sm6 md4 lg3 v-for="color in colors")
               v-card(v-bind:class="[color]" height="100px")
                 v-card-text
@@ -32,6 +32,14 @@
                 class="black--text"
               )
                 v-card-text {{ color }} accent-{{ n }}
+    section
+      section-header Color Pack
+      section-text Vuetify comes pre-built with a Material Design Color Pack (thanks <a href="http://materializecss.com/color.html" target="_blank">Materialize.css</a>) by default. While convenient, this also increases the css export size by ~30kb. This can be disabled in both the webpack and webpack-ssr Vue cli templates.
+      div(class="title pt-3 pb-3") Webpack
+      section-text Navigate to <kbd>src/App.vue</kbd>. Scroll to the style element and set <code>$color-pack = false</code> above the Vuetify css import.
+
+      div(class="title pt-3 pb-3") Webpack-SSR
+      section-text Navigate to <kbd>src/stylus/main.styl</kbd>. At the top of the file, declare <code>$color-pack = false</code>.
 </template>
 
 <script>

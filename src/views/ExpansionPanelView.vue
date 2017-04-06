@@ -39,8 +39,9 @@
                 ]
               ],
               model: {
-                types: ['Number'],
-                default: 0
+                types: ['Boolean'],
+                default: 'False',
+                description: 'Designates whether content is expanded or not'
               }
             }
           },
@@ -73,9 +74,9 @@
     methods: {
       meta () {
         return {
-          title: 'Collapsible Component | Vuetify.js',
-          h1: 'Collapsible',
-          description: 'Collapsible component for Vuetify Framework',
+          title: 'Expansion Panel Component | Vuetify.js',
+          h1: 'Expansion Panel',
+          description: 'Expansion Panel component for Vuetify Framework',
           keywords: 'vuetify, expansion-panel, components'
         }
       }

@@ -1,28 +1,31 @@
-<v-card>
-  <v-table-overflow>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th v-for="header in headers" v-text="header"></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <template v-for="(item, index) in items">
-          <tr>
-            <td>
-              <v-checkbox v-bind:id="'checkbox' + index" filled class="text-xs-center"></v-checkbox>
-            </td>
-            <td v-for="data in item" v-text="data"></td>
-            <td>
-              <v-btn icon="icon">
-                <v-icon class="secondary--text">edit</v-icon>
-              </v-btn>
-            </td>
-          </tr>
-        </template>
-      </tbody>
-    </table>
-  </v-table-overflow>
-</v-card>
+<v-data-table
+    v-bind:headers="headers"
+    v-model="items2"
+    v-bind:search="search"
+    hide-actions
+    select-all
+    class="elevation-1"
+  >
+  <template slot="headers" scope="props">
+    <span v-tooltip:bottom="{ 'html': props.item.text }">
+      {{ props.item.text }}
+    </span>
+  </template>
+  <template slot="items" scope="props">
+    <td>
+      <v-checkbox
+        hide-details
+        primary
+        v-model="props.item.value"
+      ></v-checkbox>
+    </td>
+    <td>{{ props.item.name }}</td>
+    <td  class="text-xs-right">{{ props.item.calories }}</td>
+    <td  class="text-xs-right">{{ props.item.fat }}</td>
+    <td  class="text-xs-right">{{ props.item.carbs }}</td>
+    <td  class="text-xs-right">{{ props.item.protein }}</td>
+    <td  class="text-xs-right">{{ props.item.sodium }}</td>
+    <td  class="text-xs-right">{{ props.item.calcium }}</td>
+    <td  class="text-xs-right">{{ props.item.iron }}</td>
+  </template>
+</v-data-table>

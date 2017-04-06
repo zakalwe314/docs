@@ -74,7 +74,7 @@
                   'disabled',
                   'Boolean',
                   'False',
-                  'Applies the list__tile--disabled class'
+                  'Disables tab item'
                 ],
                 [
                   'href',
@@ -152,6 +152,13 @@
                   'v-tabs-tabs',
                   '.tabs__tabs'
                 ],
+              ]
+            },
+          },
+          events: {
+            'v-tabs': {
+              events: [
+                ['input', 'Object', 'Current active tab'],
               ]
             },
           }

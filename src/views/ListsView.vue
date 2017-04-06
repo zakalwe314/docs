@@ -239,13 +239,13 @@
                   'avatar',
                   'Boolean',
                   'False',
-                  'Applies the list__tile--avatar class'
+                  'Used to set minimum tile height on a single-line list item'
                 ],
                 [
                   'disabled',
                   'Boolean',
                   'False',
-                  'Applies the list__tile--disabled class'
+                  'List tile is disabled'
                 ],
                 [
                   'href',
@@ -287,18 +287,8 @@
               model: {
                 types: ['Boolean'],
                 default: 'False',
-                description: 'Toggles the list__tile--active class'
+                description: 'Toggles the list tile active state'
               }
-            },
-            'v-subheader': {
-              params: [
-                [
-                  'inset',
-                  'Boolean',
-                  'False',
-                  'Applies the list__subheader--inset class'
-                ]
-              ]
             },
             'v-list-group': {
               params: [
@@ -314,6 +304,12 @@
                   'False',
                   'Removes left padding assigned for action icons from group items'
                 ],
+                [
+                  'lazy',
+                  'Boolean',
+                  'False',
+                  'Conditionally renders content on mounted'
+                ]
               ],
               model: {
                 types: ['Boolean'],

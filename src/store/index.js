@@ -7,12 +7,17 @@ export default new Vuex.Store({
   state: {
     title: null,
     description: null,
-    keywords: null
+    keywords: null,
+    sidebar: true
   },
 
   actions: {},
 
   mutations: {
+    'vuetify/SIDEBAR' (state, payload) {
+      state.sidebar = payload
+    },
+
     'vuetify/TITLE' (state, payload) {
       state.title = payload
       document.title = payload

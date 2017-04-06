@@ -239,6 +239,13 @@
                 description: 'Current switch value'
               }
             }
+          },
+          events: {
+            'v-radio': {
+              events: [
+                ['change', 'String, Number', 'Input value changed.']
+              ]
+            },
           }
         }
       }
@@ -270,7 +277,7 @@
    .component-example
       table
         tr
-          border-top: none !important
+          border-bottom: none !important
           height: 75px
 
           &:hover

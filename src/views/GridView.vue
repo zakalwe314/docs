@@ -1,6 +1,16 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="grid-view")
+    section(slot="documentation" class='documentation-slot')
+      h6 Viewport breakpoints
+      ul
+        li <code>xs</code> - extra small viewport devices (&lt; 576px)
+        li <code>sm</code> - small viewport devices (&lt; 768px)
+        li <code>md</code> - medium viewport devices (&lt; 992px)
+        li <code>lg</code> - large viewport devices (&lt; 1200px)
+        li <code>xl</code> - extra large viewport devices (&gt; 1200px)
+
     component-example(header="Grid" file="grid/1")
+    component-example(header="Offset" file="grid/2")
 </template>
 
 <script>
@@ -9,7 +19,7 @@
       return {
         doc: {
           title: 'Grid',
-          desc: 'The Vuetify.js uses a 12 point grid system. The grid is used to layout an applications content and contains 5 types (xs, sm, md, lg, xl) of media breakpoints.',
+          desc: 'Vuetify.js uses a 12 point grid system. The grid is used to layout an applications content and contains 5 types of media breakpoints.',
           props: {
             'v-container': {
               params: [
@@ -24,10 +34,16 @@
             'v-col': {
               params: [
                 [
-                  'static attrs',
+                  'Width',
                   'Boolean',
                   'False',
                   'xs:extra small, sm:small, md:medium, lg:large, xl:extra large - 1 through 12'
+                ],
+                [
+                  'Offset',
+                  'Boolean',
+                  'False',
+                  'offset- xs:extra small, sm:small, md:medium, lg:large, xl:extra large - 1 through 12'
                 ]
               ]
             }
@@ -44,15 +60,12 @@
         }
       }
     },
-
     mounted () {
       this.$emit('view', this.meta())
     },
-
     preFetch () {
       return this.methods.meta()
     },
-
     methods: {
       meta () {
         return {
@@ -74,7 +87,10 @@
         text-align: center
         padding: 1rem 0
         margin: .5rem 0
-        
+
         &__text
           padding: 0
+
+  .documentation-slot
+    margin-bottom: 2rem
 </style>

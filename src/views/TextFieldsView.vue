@@ -146,6 +146,16 @@
                 description: 'Current input value'
               }
             }
+          },
+          events: {
+            'v-text-field': {
+              events: [
+                ['input', 'String', 'Current input value. Fires while typing.'],
+                ['focus', '-', 'Input gained focus.'],
+                ['blur', '-', 'Input lost focus.'],
+                ['change', 'String', 'Input value was changed. Fired on blur.'],
+              ]
+            },
           }
         },
         e91: 'Preliminary report describing the',

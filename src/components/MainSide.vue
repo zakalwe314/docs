@@ -1,7 +1,7 @@
 <template lang="pug">
   v-sidebar(
-    fixed
     v-model="isActive"
+    fixed
   )
     div(class="vuetify")
       router-link(
@@ -9,24 +9,14 @@
         class="sidebar__logo"
       )
         img(
-          src="~public/v.png" 
+          src="~public/v.png"
           height="100"
           width="100"
           alt="Vuetify Logo"
         )
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.9.4" target="_blank") v0.9.4
-      div(class="sidebar__links")
-        a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
-          img(src="~public/github.png" alt="github")
-        a(href="https://twitter.com/vuetifyjs" target="_blank")
-          img(src="~public/twitter.png" alt="twitter")
-        a(href="https://www.facebook.com/vuetifyjs" target="_blank")
-          img(src="~public/facebook.png" alt="facebook")
-        a(href="mailto:john.j.leider@gmail.com")
-          img(src="~public/mail.png" alt="mail")
-      div Need help?
-      div(class="gitter") Join the Vuetify.js <a href="https://gitter.im/vuetifyjs/Lobby" target="_blank">gitter</a>
-      v-divider(light)
+      .title Vuetify
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.10.0" target="_blank") v0.10.0
+    v-divider(light)
     v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:group="item.group")
@@ -57,19 +47,44 @@
               v-icon {{ item.action }}
             v-list-tile-content
               v-list-tile-title {{ item.title }}
+            v-list-tile-action(v-if="item.subAction")
+              v-icon(class="success--text") {{ item.subAction }}
 </template>
- 
+
 <script>
   export default {
     data () {
       return {
         isActive: true,
         items: [
-          { header: 'Core Documentation' },
+          { header: 'Core documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
-          { href: '/quick-start', title: 'Quick Start', action: 'fast_forward' },
-          { href: '/server-side-rendering', title: 'Server Side Rendering', action: 'cloud_circle' },
-          { href: '/layouts', title: 'Layouts', action: 'devices' },
+          { href: '/quick-start', title: 'Quick start', action: 'explore' },
+          { href: '/motion', title: 'Motion', action: 'slow_motion_video', subAction: 'fiber_new' },
+          {
+            title: 'Style',
+            action: 'style',
+            group: 'style',
+            items: [
+              { href: '/style/colors', title: 'Colors' },
+              { href: '/style/theme', title: 'Theme' },
+              { href: '/style/typography', title: 'Typography' },
+              { href: '/style/content', title: 'Content' }
+            ]
+          },
+          {
+            title: 'Layout',
+            action: 'devices',
+            group: 'layout',
+            items: [
+              { href: '/layout/pre-defined', title: 'Pre-defined' },
+              { href: '/layout/grid', title: 'Grid' },
+              { href: '/layout/spacing', title: 'Spacing' },
+              { href: '/layout/alignment', title: 'Alignment' },
+              { href: '/layout/display', title: 'Display', action: 'arrow_upward' },
+              { href: '/layout/elevation', title: 'Elevation', action: 'fiber_new' }
+            ]
+          },
           {
             title: 'Components',
             action: 'widgets',
@@ -77,12 +92,14 @@
             items: [
               { href: '/components/alerts', title: 'Alerts' },
               { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
+              { href: '/components/bottom-navigation', title: 'Bottom navigation', action: 'fiber_new' },
               { href: '/components/buttons', title: 'Buttons' },
-              { href: '/components/cards', title: 'Cards' },
+              { href: '/components/cards', title: 'Cards', action: 'arrow_upward' },
               { href: '/components/carousel', title: 'Carousel' },
               { href: '/components/chips', title: 'Chips' },
+              { href: '/components/datatables', title: 'Data tables', action: 'fiber_new' },
               { href: '/components/dividers', title: 'Dividers' },
-              { href: '/components/expansion-panel', title: 'Expansion Panel' },
+              { href: '/components/expansion-panel', title: 'Expansion panel' },
               { href: '/components/footer', title: 'Footer' },
               { href: '/components/icons', title: 'Icons' },
               { href: '/components/lists', title: 'Lists' },
@@ -90,17 +107,16 @@
               { href: '/components/modals', title: 'Modals' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
-              { href: '/components/progress-circular', title: 'Progress Circular' },
-              { href: '/components/progress-linear', title: 'Progress Linear' },
-              { href: '/components/selection-controls', title: 'Selection Controls' },
+              { href: '/components/progress', title: 'Progress & activity' },
               { href: '/components/selects', title: 'Selects' },
+              { href: '/components/selection-controls', title: 'Selection controls' },
               { href: '/components/sidebar', title: 'Sidebars' },
               { href: '/components/sliders', title: 'Sliders' },
-              { href: '/components/snackbars', title: 'Snackbars' },
-              { href: '/components/subheaders', title: 'Subheaders' },
+              { href: '/components/snackbars', title: 'Snackbars & toasts' },
               { href: '/components/steppers', title: 'Steppers' },
+              { href: '/components/subheaders', title: 'Subheaders' },
               { href: '/components/tabs', title: 'Tabs' },
-              { href: '/components/text-fields', title: 'Text Fields' },
+              { href: '/components/text-fields', title: 'Text fields', action: 'arrow_upward' },
               { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },
@@ -114,43 +130,36 @@
               { href: '/directives/tooltips', title: 'Tooltips' }
             ]
           },
-          {
-            title: 'CSS', 
-            action: 'brush',
-            group: '/css',
-            items: [
-              { href: '/css/typography', title: 'Typography' },
-              { href: '/css/content', title: 'Content' },
-              { href: '/css/grid', title: 'Grid' },
-              { href: '/css/colors', title: 'Colors' },
-              { href: '/css/tables', title: 'Tables' },
-            ]
-          },
-          {
-            title: 'Helpers', 
-            action: 'build',
-            group: '/helpers',
-            items: [
-              { href: '/helpers/spacing', title: 'Spacing' },
-              { href: '/helpers/alignment', title: 'Alignment' },
-              { href: '/helpers/display', title: 'Display' }
-            ]
-          },
           { divider: true, light: true },
-          { header: 'Additional Resources' },
-          { 
+          { header: 'Additional resources' },
+          {
             title: 'Ecosytem',
             action: 'public',
             items: [
-              { 
+              {
                 href: 'https://vuejobs.com/?ref=vuetify',
                 target: '_blank',
                 title: 'Jobs',
                 action: 'whatshot'
+              },
+              {
+                href: 'https://gitter.im/vuetifyjs/Lobby/~chat#',
+                target: '_blank',
+                title: 'Chat'
               }
             ]
           },
-          { 
+          {
+            title: 'Guides',
+            action: 'developer_mode',
+            items: [
+              {
+                href: '/server-side-rendering',
+                title: 'Server Side Rendering'
+              }
+            ]
+          },
+          {
             title: 'Examples',
             action: 'web',
             items: [
@@ -167,17 +176,13 @@
       }
     },
 
-    props: {
-      value: Boolean,
-    },
-
     watch: {
       isActive () {
-        this.$emit('input', this.isActive)
+        this.$store.commit('vuetify/SIDEBAR', this.isActive)
       },
 
-      value () {
-        this.isActive = this.value
+      '$store.state.sidebar' (sidebar) {
+        this.isActive = sidebar
       }
     }
   }
@@ -185,51 +190,29 @@
 
 <style lang="stylus">
   @import '../stylus/settings/_variables'
-  
-  .sidebar
-    background: $grey.darken-3
-    
-    &__links
-      margin: 1rem
-      display: flex
-      justify-content: center
-      align-items: center
-      
-      a
-        color: #fff
-        text-align: center
-        text-decoration: none
-        margin: 0 .5rem
-        
-        img
-          height: 25px
-          
-        i
-          padding: 0
-  
   .vuetify
     text-align: center
-    margin-top: 16px
+    margin: 16px 0
     color: #fff
-        
+
     .sidebar__logo
       display: block
       position: relative
       margin-bottom: 16px
       text-decoration: none
-      
+
       img
         height: 100px
-    
+
     a
       color: #fff
-      
+
     .gitter
       margin-bottom: 16px
-        
+
   .sidebar__item-header
     color: #fff
-    
+
   .sidebar__item
     color: #fff
 </style>

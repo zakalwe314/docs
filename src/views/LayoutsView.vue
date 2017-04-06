@@ -3,6 +3,7 @@
     component-example(header="Toolbar and Footer" file="layouts/1" v-bind:data="example")
     component-example(header="Toolbar and Sidebar" file="layouts/2" v-bind:data="example")
     component-example(header="Toolbar, Sidebar & Footer" file="layouts/3" v-bind:data="example")
+    component-example(header="Toolbar, Sidebar fixed" file="layouts/4" v-bind:data="example")
 </template>
 
 <script>
@@ -12,7 +13,8 @@
         example: {
           nav1: true,
           nav2: false,
-          nav3: false
+          nav3: false,
+          nav4:false
         },
         doc: {
           title: 'Layouts',
@@ -21,22 +23,10 @@
             'v-app': {
               params: [
                 [
-                  'toolbar',
-                  'Boolean',
-                  'False',
-                  'Variations: top, bottom, top-fixed, bottom-fixed'
-                ],
-                [
                   'sidebar',
                   'Boolean',
                   'False',
                   'Variations: left, right, left-fixed, right-fixed',
-                ],
-                [
-                  'footer',
-                  'Boolean',
-                  'False',
-                  '',
                 ],
                 [
                   'id',
@@ -49,6 +39,12 @@
                   'Boolean',
                   'False',
                   'Positions a fixed sidebar under the toolbar'
+                ],
+                [
+                  'scroll-y',
+                  'Class',
+                  'null',
+                  'Add vertical scrollbar to "v-content" or any other div container making the content scrollable.'
                 ]
               ]
             }
@@ -85,32 +81,34 @@
 
 <style lang="stylus">
   @import '../../node_modules/vuetify/src/stylus/settings/_colors'
-  @import '../../node_modules/vuetify/src/stylus/generic/_z-depths'
-  
+  @import '../../node_modules/vuetify/src/stylus/tools/_elevations'
+
   #layout-view
     .component-example
       main
         min-height: 300px
         padding-left: 0
-        
+        position: relative
       .toolbar
         height: 5rem
-        
+
       .sidebar
         position: absolute
+        top:0
+        bottom: 0
         z-index: 1
-        
+
       .footer
         padding: 0 1rem
         z-index: 0
-        
+
       .with
-        @extend .z-depth-2
+        elevation(3)
         min-height: auto
         position: relative
         overflow: hidden
         width: 100%
-    
+
     #example-2
       padding: initial
 </style>

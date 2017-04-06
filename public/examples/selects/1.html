@@ -1,4 +1,4 @@
-<v-card class="grey lighten-4 z-depth-0">
+<v-card class="grey lighten-4 elevation-0">
   <v-card-text>
     <v-container fluid>
       <v-row>
@@ -12,6 +12,7 @@
             label="Select"
             light
             single-line
+            auto
           />
         </v-col>
         <v-col xs6>
@@ -24,6 +25,7 @@
             label="Select"
             class="input-group--focused"
             light
+            item-value="text"
           />
         </v-col>
         <v-col xs6>
@@ -36,6 +38,7 @@
             v-model="e3"
             v-bind:rules="[() => e3 && e3.text && e3.text.length > 0 || 'Please select an option']"
             light
+            item-value="text"
           />
         </v-col>
         <v-col xs6>

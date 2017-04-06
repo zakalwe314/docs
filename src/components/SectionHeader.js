@@ -9,7 +9,7 @@ export default {
     }
 
     const data = {
-      'class': 'section-header secondary--text primary--after',
+      'class': 'section-header secondary--text primary--after display-2',
       style: styles
     }
 

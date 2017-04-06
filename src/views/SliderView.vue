@@ -28,7 +28,7 @@
         b: 30,
         doc: {
           title: 'Slider',
-          desc: 'Soon',
+          desc: 'The <code>v-slider</code> component is a better visualization of the number input. It is used for gathering numerical user data.',
           props: {
             'v-slider': {
               params: [
@@ -37,6 +37,18 @@
                   'String',
                   '-',
                   'Append material icon'
+                ],
+                [
+                  'prepend-icon',
+                  'String',
+                  '-',
+                  'Prepend material icon'
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'True',
+                  'Applies the light theme'
                 ],
                 [
                   'dark',
@@ -69,12 +81,6 @@
                   'Adds label to slider'
                 ],
                 [
-                  'light',
-                  'Boolean',
-                  'False',
-                  'Applies the light theme'
-                ],
-                [
                   'min',
                   'Number',
                   '0',
@@ -85,12 +91,6 @@
                   'Number',
                   '100',
                   'Sets maximum value'
-                ],
-                [
-                  'prepend-icon',
-                  'String',
-                  '-',
-                  'Prepend material icon'
                 ],
                 [
                   'required',
@@ -118,6 +118,13 @@
                 ]
               ]
             }
+          },
+          events: {
+            'v-slider': {
+              events: [
+                ['input','Number, String', 'Selected value'],
+              ]
+            },
           }
         }
       }

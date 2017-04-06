@@ -1,4 +1,4 @@
-<v-card class="grey lighten-4 z-depth-0">
+<v-card class="grey lighten-4 elevation-0">
   <v-card-text>
     <v-container fluid>
       <v-row>
@@ -11,17 +11,20 @@
             v-bind:items="people"
             v-model="e11"
             item-text="name"
+            item-value="name"
             multiple
             chips
             light
             max-height="auto"
+            autocomplete
           >
             <template slot="selection" scope="data">
               <v-chip 
-                close 
-                @input="data.parent.removeSelected(data.item)"
-                @click.native.stop 
+                close
+                @input="data.parent.selectItem(data.item)"
+                @click.native.stop
                 class="chip--select-multi"
+                :key="data.item"
               >
                 <v-avatar>
                   <img :src="data.item.avatar">

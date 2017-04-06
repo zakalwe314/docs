@@ -85,7 +85,7 @@
                   'Sets the normal transition',
                 ],
                 [
-                  'reverseTransition',
+                  'reverse-transition',
                   'String',
                   'v-tab-reverse-transition',
                   'Sets the reverse transition',
@@ -149,7 +149,7 @@
         position: absolute
         top: 0
         left: 0
-        
+
       &-enter, &-leave, &-leave-to
         opacity: 0
 </style>
