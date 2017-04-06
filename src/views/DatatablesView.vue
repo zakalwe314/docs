@@ -3,6 +3,7 @@
     component-example(header="Standard" file="tables/1" v-bind:data="$data")
     component-example(header="Selectable with header tooltip" file="tables/2" v-bind:data="$data")
     component-example(header="Title with actions and editing" file="tables/3" v-bind:data="$data")
+      section-text(slot="details") Click the deserve or iron fields in order to edit.
 </template>
 
 <script>
@@ -14,7 +15,7 @@
         e3: null,
         doc: {
           title: 'Data tables',
-          desc: ``,
+          desc: `The <code>v-data-table</code> component is used for displaying tabular data. Features include sorting, searching, pagination, inline-editing, header tooltips, and row selection.`,
           props: {
             'v-data-table': {
               params: [
@@ -81,6 +82,40 @@
                 default: 'undefined',
                 description: 'Used for mutating the items array when selecting items.'
               }
+            },
+            'v-edit-dialog': {
+              params: [
+                [
+                  'cancel-text',
+                  'String',
+                  'Cancel',
+                  `Set's the default text for the cancel button when using the <code>large</code> prop`
+                ],
+                [
+                  'save-text',
+                  'String',
+                  'Save',
+                  `Set's the default text for the save button when using the <code>large</code> prop`
+                ],
+                [
+                  'Large',
+                  'Boolean',
+                  'False',
+                  'Attachs a submit and cancel button to the dialog'
+                ],
+                [
+                  'Lazy',
+                  'Boolean',
+                  'False',
+                  'Lazily load the dialog contents'
+                ],
+                [
+                  'transition',
+                  'String',
+                  'v-slide-x-reverse-transition',
+                  'The transition of the edit dialog'
+                ]
+              ]
             }
           },
           slots: {
@@ -267,7 +302,7 @@
         return {
           title: 'Data tables | Vuetify.js',
           h1: 'Data tables',
-          description: 'Data tables component for Vuetify Framework',
+          description: 'The v-data-table component is used for displaying tabular data. Features include sorting, searching, pagination, inline-editing, header tooltips, and row selection.',
           keywords: 'vuetify, components, data tables'
         }
       }
