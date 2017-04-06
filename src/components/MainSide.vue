@@ -133,7 +133,7 @@
           { divider: true, light: true },
           { header: 'Additional resources' },
           {
-            title: 'Ecosytem',
+            title: 'Ecosystem',
             action: 'public',
             items: [
               {
