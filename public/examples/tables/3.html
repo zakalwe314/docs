@@ -29,7 +29,6 @@
           @open="props.item._name = props.item.name"
           @cancel="props.item.name = props.item._name"
           lazy
-          class="text-xs-left"
         > {{ props.item.name }}
           <v-text-field
             slot="input"
@@ -40,14 +39,15 @@
           ></v-text-field>
         </v-edit-dialog>
       </td>
-      <td>{{ props.item.calories }}</td>
-      <td>{{ props.item.fat }}</td>
-      <td>{{ props.item.carbs }}</td>
-      <td>{{ props.item.protein }}</td>
-      <td>{{ props.item.sodium }}</td>
-      <td>{{ props.item.calcium }}</td>
+      <td class="text-xs-right">{{ props.item.calories }}</td>
+      <td class="text-xs-right">{{ props.item.fat }}</td>
+      <td class="text-xs-right">{{ props.item.carbs }}</td>
+      <td class="text-xs-right">{{ props.item.protein }}</td>
+      <td class="text-xs-right">{{ props.item.sodium }}</td>
+      <td class="text-xs-right">{{ props.item.calcium }}</td>
       <td>
         <v-edit-dialog
+          class="text-xs-right"
           @open="props.item._iron = props.item.iron"
           @cancel="props.item.iron = props.item._iron"
           large
