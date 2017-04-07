@@ -4,6 +4,43 @@
     component-example(header="Selectable with header tooltip" file="tables/2" v-bind:data="$data")
     component-example(header="Title with actions and editing" file="tables/3" v-bind:data="$data")
       section-text(slot="details") Click the deserve or iron fields in order to edit.
+    v-expansion-panel(class="mb-5")
+      v-expansion-panel-content
+        div(slot="header") Example Array
+        markup(lang="js" class="mb-0")
+          |headers: [
+          |  {
+          |    text: 'Dessert (100g serving)',
+          |    left: true,
+          |    sortable: false,
+          |    value: 'name'
+          |  },
+          |  { text: 'Calories', value: 'calories' }
+          |],
+          |items: [
+          |  {
+          |    value: false,
+          |    name: 'Frozen Yogurt',
+          |    calories: 159,
+          |    fat: 6.0,
+          |    carbs: 24,
+          |    protein: 4.0,
+          |    sodium: 87,
+          |    calcium: '14%',
+          |    iron: '1%'
+          |  },
+          |  {
+          |    value: false,
+          |    name: 'Ice cream sandwich',
+          |    calories: 237,
+          |    fat: 9.0,
+          |    carbs: 37,
+          |    protein: 4.3,
+          |    sodium: 129,
+          |    calcium: '8%',
+          |    iron: '1%'
+          |  }
+          |]
 </template>
 
 <script>
@@ -156,15 +193,16 @@
           {
             text: 'Dessert (100g serving)',
             left: true,
-            sortable: false
+            sortable: false,
+            value: 'name'
           },
-          { text: 'Calories' },
-          { text: 'Fat (g)' },
-          { text: 'Carbs (g)' },
-          { text: 'Protein (g)' },
-          { text: 'Sodium (mg)' },
-          { text: 'Calcium (%)' },
-          { text: 'Iron (%)' }
+          { text: 'Calories', value: 'calories' },
+          { text: 'Fat (g)', value: 'fat' },
+          { text: 'Carbs (g)', value: 'carbs' },
+          { text: 'Protein (g)', value: 'protein' },
+          { text: 'Sodium (mg)', value: 'sodium' },
+          { text: 'Calcium (%)', value: 'calcium' },
+          { text: 'Iron (%)', value: 'iron' }
         ],
         items: [
           {
