@@ -45,12 +45,12 @@
       h6 Modify your theme
       section-text Now that stylus is configured, we can create a custom <code>$theme</code> hash containing the application specific styles. Keep in mind, if you want to use the built in color pack variables, i.e. <code>$grey.lighten-3</code> you will need to import the color file at the top of your <code>main.styl</code> file. For a list of colors available, navigate to the <router-link to="/style/colors">Colors</router-link> section of the documenation.
       markup(lang="stylus")
-        |@import '../../node_modules/vuetify/src/settings/_colors'
+        |@import '../../node_modules/vuetify/src/stylus/settings/_colors'
         |&nbsp;
-        |@import '../../node_modules/vuetify/src/main'
+        |@import '../../node_modules/vuetify/src/stylus/main'
       section-text After you have decided on your color pallete, simply create a new hash:
       markup(lang="stylus")
-        |@import '../../node_modules/vuetify/src/settings/_colors'
+        |@import '../../node_modules/vuetify/src/stylus/settings/_colors'
         |&nbsp;
         |$theme := {
         |   primary: $red.darken-2
@@ -62,7 +62,7 @@
         |   success: $green.lighten-2
         |}
         |&nbsp;
-        |@import '../../node_modules/vuetify/src/main'
+        |@import '../../node_modules/vuetify/src/stylus/main'
     section
       whats-next(route="/layout/pre-defined" text="Layouts") Now that you have all the tools needed to build your next awesome application, head over to the layouts section to choose a ui.
 </template>

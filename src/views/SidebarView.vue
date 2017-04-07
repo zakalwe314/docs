@@ -109,10 +109,7 @@
           },
           slots: {
             'v-sidebar': {
-              default: true,
-              params: [
-                ['top', 'Slot located at top of sidebar']
-              ]
+              default: true
             }
           }
         },
