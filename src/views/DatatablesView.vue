@@ -87,6 +87,18 @@
                   'When using a selectable row, used for determining the item value for highlight.'
                 ],
                 [
+                  'no-data-text',
+                  'String',
+                  'No data available in table',
+                  'Display text when there is no table data.'
+                ],
+                [
+                  'no-results-text',
+                  'String',
+                  'No matching records found',
+                  'Display text when there are no filtered results.'
+                ],
+                [
                   'rows-per-page-items',
                   'Array',
                   '[5, 15, 25, { text: "All", value: -1 }]',
