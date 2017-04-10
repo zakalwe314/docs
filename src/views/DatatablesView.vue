@@ -99,6 +99,12 @@
                   'Display text when there are no filtered results.'
                 ],
                 [
+                  'rows-per-page',
+                  'Number',
+                  '5',
+                  'The default rows-per-page to show'
+                ],
+                [
                   'rows-per-page-items',
                   'Array',
                   '[5, 15, 25, { text: "All", value: -1 }]',
