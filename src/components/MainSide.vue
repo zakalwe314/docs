@@ -15,7 +15,7 @@
           alt="Vuetify Logo"
         )
       .title Vuetify
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.10.0" target="_blank") v0.10.0
+      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.10.4" target="_blank") v0.10.4
     v-divider(light)
     v-list(dense)
       template(v-for="item in items")
@@ -107,6 +107,7 @@
               { href: '/components/modals', title: 'Modals' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
+              { href: '/components/pickers', title: 'Pickers' },
               { href: '/components/progress', title: 'Progress & activity' },
               { href: '/components/selects', title: 'Selects' },
               { href: '/components/selection-controls', title: 'Selection controls' },
@@ -133,7 +134,7 @@
           { divider: true, light: true },
           { header: 'Additional resources' },
           {
-            title: 'Ecosytem',
+            title: 'Ecosystem',
             action: 'public',
             items: [
               {

@@ -1,0 +1,16 @@
+<v-modal lazy :close-on-content-click="false" v-model="modal" lazy>
+  <v-text-field 
+    slot="activator"
+    label="Time"
+    v-model="e4"
+    prepend-icon="access_time"
+  ></v-text-field>
+  <v-time-picker v-model="e4" actions>
+    <template scope="{ save, cancel }">
+      <v-card-row actions @click.native="modal = false">
+        <v-btn flat primary @click.native="cancel()">Cancel</v-btn>
+        <v-btn flat primary @click.native="save()">Save</v-btn>
+      </v-card-row>
+    </template>
+  </v-time-picker>
+</v-modal>

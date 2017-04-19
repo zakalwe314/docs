@@ -38,6 +38,7 @@ const router = new Router({
     route('/components/toolbar', 'Toolbar'),
     route('/components/pagination', 'Pagination'),
     route('/components/parallax', 'Parallax'),
+    route('/components/pickers', 'Pickers'),
     route('/components/progress', 'Progress'),
     route('/components/select', 'Select'),
     route('/components/selection-controls', 'SelectionControls'),

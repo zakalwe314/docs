@@ -27,7 +27,7 @@
       <td>
         <v-edit-dialog
           @open="props.item._name = props.item.name"
-          @cancel="props.item.name = props.item._name"
+          @cancel="props.item.name = props.item._name || props.item.name"
           lazy
         > {{ props.item.name }}
           <v-text-field
@@ -49,7 +49,7 @@
         <v-edit-dialog
           class="text-xs-right"
           @open="props.item._iron = props.item.iron"
-          @cancel="props.item.iron = props.item._iron"
+          @cancel="props.item.iron = props.item._iron || props.item.iron"
           large
           lazy
         >
