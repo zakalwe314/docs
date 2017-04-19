@@ -107,6 +107,7 @@
               { href: '/components/modals', title: 'Modals' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
+              { href: '/components/pickers', title: 'Pickers' },
               { href: '/components/progress', title: 'Progress & activity' },
               { href: '/components/selects', title: 'Selects' },
               { href: '/components/selection-controls', title: 'Selection controls' },

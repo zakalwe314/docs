@@ -1,0 +1,42 @@
+<v-container fluid>
+  <v-row>
+    <v-col xs12 sm6>
+      <v-menu 
+        lazy
+        :close-on-content-click="false"
+        v-model="menu2"
+        transition="v-scale-transition"
+        offset-y
+        :nudge-left="56"
+      >
+        <v-text-field 
+          slot="activator"
+          label="Time"
+          v-model="e6"
+          prepend-icon="access_time"
+          readonly
+        ></v-text-field>
+        <v-time-picker v-model="e6"></v-time-picker>
+      </v-menu>
+    </v-col>
+    <v-col xs12 sm6>
+      <v-modal lazy :close-on-content-click="false" v-model="modal2" lazy>
+        <v-text-field 
+          slot="activator"
+          label="Time"
+          v-model="e6"
+          prepend-icon="access_time"
+          readonly
+        ></v-text-field>
+        <v-time-picker v-model="e6" actions>
+          <template scope="{ save, cancel }">
+            <v-card-row actions @click.native="modal = false">
+              <v-btn flat primary @click.native="cancel()">Cancel</v-btn>
+              <v-btn flat primary @click.native="save()">Save</v-btn>
+            </v-card-row>
+          </template>
+        </v-time-picker>
+      </v-modal>
+    </v-col>
+  </v-row>
+</v-container>
