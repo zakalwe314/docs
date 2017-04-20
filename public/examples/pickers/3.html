@@ -16,11 +16,11 @@
           prepend-icon="event"
           readonly
         ></v-text-field>
-        <v-date-picker v-model="e3"></v-date-picker>
+        <v-date-picker v-model="e3" no-title></v-date-picker>
       </v-menu>
     </v-col>
     <v-col xs12 sm6>
-      <v-modal lazy :close-on-content-click="false" v-model="modal" lazy>
+      <v-dialog lazy :close-on-content-click="false" v-model="modal" lazy>
         <v-text-field 
           slot="activator"
           label="Date"
@@ -36,7 +36,7 @@
             </v-card-row>
           </template>
         </v-date-picker>
-      </v-modal>
+      </v-dialog>
     </v-col>
   </v-row>
 </v-container>
