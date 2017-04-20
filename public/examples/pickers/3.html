@@ -16,7 +16,14 @@
           prepend-icon="event"
           readonly
         ></v-text-field>
-        <v-date-picker v-model="e3" no-title></v-date-picker>
+        <v-date-picker v-model="e3" no-title>
+          <template slot="default" scope="{ save, cancel}">
+            <v-card-row actions>
+              <v-btn flat primary @click.native="cancel()">Cancel</v-btn>
+              <v-btn flat primary @click.native="save()">Save</v-btn>
+            </v-card-row>
+          </template>
+        </v-date-picker>
       </v-menu>
     </v-col>
     <v-col xs12 sm6>
