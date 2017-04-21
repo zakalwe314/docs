@@ -41,11 +41,94 @@
           props: {
             'v-date-picker': {
               params: [
-
+                [
+                  'actions',
+                  'Boolean',
+                  'True',
+                  'Use this when using actions inside the picker'
+                ],
+                [
+                  'dark',
+                  'Boolean',
+                  'True',
+                  'Applies the dark theme'
+                ],
+                [
+                  'landscape',
+                  'Boolean',
+                  'True',
+                  'Orients picker horizontal'
+                ],
+                [
+                  'no-title',
+                  'Boolean',
+                  'True',
+                  'Hide the picker title'
+                ],
+                [
+                  'date-format',
+                  'Function',
+                  'val => new Date(val).toISOString().substr(0, 10)',
+                  'The emitted format when the date is changed'
+                ],
+                [
+                  'days',
+                  'Array',
+                  '[Sunday -> Saturday]',
+                  'Used to change the day text. Does NOT support changing the order'
+                ],
+                [
+                  'months',
+                  'Array',
+                  '[January -> December]',
+                  'Used to change the month text. Does NOT support changing the order'
+                ],
+                [
+                  'scrollable',
+                  'Boolean',
+                  'False',
+                  'Allows the use of the mousewheel in the picker'
+                ]
               ]
             },
             'v-time-picker': {
               params: [
+                [
+                  'actions',
+                  'Boolean',
+                  'True',
+                  'Use this when using actions inside the picker'
+                ],
+                [
+                  'dark',
+                  'Boolean',
+                  'True',
+                  'Applies the dark theme'
+                ],
+                [
+                  'landscape',
+                  'Boolean',
+                  'True',
+                  'Orients picker horizontal'
+                ],
+                [
+                  'no-title',
+                  'Boolean',
+                  'True',
+                  'Hide the picker title'
+                ],
+                [
+                  'format',
+                  'String',
+                  'ampm',
+                  `Available options are ['ampm', '24hr']`
+                ],
+                [
+                  'scrollable',
+                  'Boolean',
+                  'False',
+                  'Allows the use of the mousewheel in the picker'
+                ]
               ]
             }
           }

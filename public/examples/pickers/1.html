@@ -6,9 +6,10 @@
     </v-col>
     <v-col md12 lg8>
       <div class="subheading text-xs-center">Landscape</div>
-      <v-date-picker v-model="e1" landscape>
+      <v-date-picker v-model="e1" landscape actions>
         <template scope="{ save, cancel }">
           <v-card-row actions>
+            <v-btn flat primary>Cancel</v-btn>
             <v-btn flat primary>Save</v-btn>
           </v-card-row>
         </template>

@@ -3,7 +3,6 @@
     <v-col xs12 sm6>
       <v-menu 
         lazy
-        :close-on-click="false"
         :close-on-content-click="false"
         v-model="menu"
         transition="v-scale-transition"
@@ -17,7 +16,7 @@
           prepend-icon="event"
           readonly
         ></v-text-field>
-        <v-date-picker v-model="e3" no-title scrollable>
+        <v-date-picker v-model="e3" no-title scrollable actions>
           <template scope="{ save, cancel }">
             <v-card-row actions>
               <v-btn flat primary @click.native="cancel()">Cancel</v-btn>
