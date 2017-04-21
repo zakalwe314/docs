@@ -105,7 +105,6 @@
               { href: '/components/icons', title: 'Icons' },
               { href: '/components/lists', title: 'Lists' },
               { href: '/components/menus', title: 'Menus' },
-              { href: '/components/modals', title: 'Modals' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
               { href: '/components/pickers', title: 'Pickers' },

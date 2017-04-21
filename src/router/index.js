@@ -35,7 +35,6 @@ const router = new Router({
     route('/components/lists', 'Lists'),
     route('/components/icons', 'Icon'),
     route('/components/menus', 'Menus'),
-    route('/components/modals', 'Modals'),
     route('/components/toolbar', 'Toolbar'),
     route('/components/pagination', 'Pagination'),
     route('/components/parallax', 'Parallax'),
