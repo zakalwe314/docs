@@ -1,6 +1,6 @@
 <template lang="pug">
   v-table-overflow
-    table(class="table--component elevation-0" v-for="(options, type) in params")
+    table(class="table table--component elevation-0" v-for="(options, type) in params")
       caption <strong>&lt;{{ type }}&gt;</strong>
       colgroup
         col(width="20%")

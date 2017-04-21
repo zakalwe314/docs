@@ -3,6 +3,7 @@
     <v-col xs12 sm6>
       <v-menu 
         lazy
+        :close-on-click="false"
         :close-on-content-click="false"
         v-model="menu"
         transition="v-scale-transition"
@@ -11,13 +12,13 @@
       >
         <v-text-field 
           slot="activator"
-          label="Date"
+          label="Picker in menu"
           v-model="e3"
           prepend-icon="event"
           readonly
         ></v-text-field>
-        <v-date-picker v-model="e3" no-title>
-          <template slot="default" scope="{ save, cancel}">
+        <v-date-picker v-model="e3" no-title scrollable>
+          <template scope="{ save, cancel }">
             <v-card-row actions>
               <v-btn flat primary @click.native="cancel()">Cancel</v-btn>
               <v-btn flat primary @click.native="save()">Save</v-btn>
@@ -27,22 +28,19 @@
       </v-menu>
     </v-col>
     <v-col xs12 sm6>
-      <v-dialog lazy :close-on-content-click="false" v-model="modal" lazy>
+      <v-dialog
+        persistent
+        v-model="modal"
+        lazy
+      >
         <v-text-field 
           slot="activator"
-          label="Date"
+          label="Picker in dialog"
           v-model="e3"
           prepend-icon="event"
           readonly
         ></v-text-field>
-        <v-date-picker v-model="e3" actions>
-          <template scope="{ save, cancel }">
-            <v-card-row actions @click.native="modal = false">
-              <v-btn flat primary @click.native="cancel()">Cancel</v-btn>
-              <v-btn flat primary @click.native="save()">Save</v-btn>
-            </v-card-row>
-          </template>
-        </v-date-picker>
+        <v-date-picker v-model="e3" scrollable></v-date-picker>
       </v-dialog>
     </v-col>
   </v-row>
