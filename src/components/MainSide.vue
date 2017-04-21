@@ -98,6 +98,7 @@
               { href: '/components/carousel', title: 'Carousel' },
               { href: '/components/chips', title: 'Chips' },
               { href: '/components/datatables', title: 'Data tables', action: 'fiber_new' },
+              { href: '/components/dialogs', title: 'Dialogs', action: 'fiber_new' },
               { href: '/components/dividers', title: 'Dividers' },
               { href: '/components/expansion-panel', title: 'Expansion panel' },
               { href: '/components/footer', title: 'Footer' },
