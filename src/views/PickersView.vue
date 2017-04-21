@@ -16,6 +16,8 @@
       section-text(slot="details") Time pickers also have a dark theme which utilizes the applications primary accent color.
     component-example(header="In dialog and menu" file="pickers/6" v-bind:data="$data")
       section-text(slot="details") Due to the flexibility of pickers, you can really dial in the experience exactly how you want it.
+    component-example(header="24hr time" file="pickers/7" v-bind:data="$data")
+      section-text(slot="details") A time picker can be switched to 24hr format.
 </template>
 
 <script>
@@ -28,6 +30,7 @@
         e4: null,
         e5: null,
         e6: null,
+        e7: null,
         menu: false,
         modal: false,
         menu2: false,
