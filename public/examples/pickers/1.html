@@ -2,11 +2,18 @@
   <v-row>
     <v-col md12 lg4>
       <div class="subheading text-xs-center">Portrait</div>
-      <v-date-picker v-model="e1" actions></v-date-picker>
+      <v-date-picker v-model="e1"></v-date-picker>
     </v-col>
     <v-col md12 lg8>
       <div class="subheading text-xs-center">Landscape</div>
-      <v-date-picker v-model="e1" actions landscape></v-date-picker>
+      <v-date-picker v-model="e1" landscape actions>
+        <template scope="{ save, cancel }">
+          <v-card-row actions>
+            <v-btn flat primary>Cancel</v-btn>
+            <v-btn flat primary>Save</v-btn>
+          </v-card-row>
+        </template>
+      </v-date-picker>
     </v-col>
   </v-row>
 </v-container>

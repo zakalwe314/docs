@@ -1,0 +1,30 @@
+<v-dialog v-model="d5" scrollable>
+  <v-btn primary dark slot="activator">Open Dialog</v-btn>
+  <v-card-title>Select Country</v-card-title>
+  <v-card-row height="300px">
+    <v-card-text>
+      <v-radio label="Bahamas, The" primary v-model="d5m1" value="bahamas" light></v-radio>
+      <v-radio label="Bahrain" primary v-model="d5m1" value="bahrain" light></v-radio>
+      <v-radio label="Bangladesh" primary v-model="d5m1" value="bangladesh" light></v-radio>
+      <v-radio label="Barbados" primary v-model="d5m1" value="barbados" light></v-radio>
+      <v-radio label="Belarus" primary v-model="d5m1" value="belarus" light></v-radio>
+      <v-radio label="Belgium" primary v-model="d5m1" value="belgium" light></v-radio>
+      <v-radio label="Belize" primary v-model="d5m1" value="belize" light></v-radio>
+      <v-radio label="Benin" primary v-model="d5m1" value="benin" light></v-radio>
+      <v-radio label="Bhutan" primary v-model="d5m1" value="bhutan" light></v-radio>
+      <v-radio label="Bolivia" primary v-model="d5m1" value="bolivia" light></v-radio>
+      <v-radio label="Bosnia and Herzegovina" primary v-model="d5m1" value="bosnia" light></v-radio>
+      <v-radio label="Botswana" primary v-model="d5m1" value="botswana" light></v-radio>
+      <v-radio label="Brazil" primary v-model="d5m1" value="brazil" light></v-radio>
+      <v-radio label="Brunei" primary v-model="d5m1" value="brunei" light></v-radio>
+      <v-radio label="Bulgaria" primary v-model="d5m1" value="bulgaria" light></v-radio>
+      <v-radio label="Burkina Faso" primary v-model="d5m1" value="burkina" light></v-radio>
+      <v-radio label="Burma" primary v-model="d5m1" value="burma" light></v-radio>
+      <v-radio label="Burundi" primary v-model="d5m1" value="burundi" light></v-radio>
+    </v-card-text>
+  </v-card-row>
+  <v-card-row actions>
+    <v-btn class="blue--text darken-1" flat @click.native="d5 = false">Close</v-btn>
+    <v-btn class="blue--text darken-1" flat @click.native="d5 = false">Save</v-btn>
+  </v-card-row>
+</v-dialog>
