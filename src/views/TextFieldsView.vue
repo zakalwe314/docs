@@ -101,13 +101,19 @@
                   'min',
                   'Number',
                   '0',
-                  'Sets minimum value'
+                  'Sets minimum value for attribute'
                 ],
                 [
                   'max',
                   'Number',
                   '25',
-                  'Sets maximum value'
+                  'Sets maximum value for attribute'
+                ],
+                [
+                  'maxlength',
+                  'Number',
+                  '25',
+                  'Sets maximum value for a text-field'
                 ],
                 [
                   'required',
