@@ -51,6 +51,12 @@
                   'Changes layout for fullscreen display'
                 ],
                 [
+                  'lazy',
+                  'Boolean',
+                  'False',
+                  'Lazily load dialog contents'
+                ],
+                [
                   'overlay',
                   'Boolean',
                   'True',
@@ -58,9 +64,15 @@
                 ],
                 [
                   'transition',
-                  'String',
+                  '[Boolean, String]',
                   'v-modal-transition',
-                  'Defines show/hide transition'
+                  'Defines show/hide transition. Set to false for no transition'
+                ],
+                [
+                  'scrollable',
+                  'Boolean',
+                  'False',
+                  'When set to true, expects a card, card-title, card-text and card-row with the actions prop. Will set card-row to scroll'
                 ],
                 [
                   'origin',
@@ -69,11 +81,11 @@
                   'Defines transition origin'
                 ],
                 [
-                  'remove-transition',
-                  'Boolean',
-                  'False',
-                  'Disables show/hide transitions'
-                ],
+                  'width',
+                  '[String, Number]',
+                  '320',
+                  'The modal width. Cannot exceed 90% of the screen'
+                ]
               ],
               model: {
                 types: ['Boolean'],

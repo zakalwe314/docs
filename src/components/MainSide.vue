@@ -60,7 +60,7 @@
           { header: 'Core documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
           { href: '/quick-start', title: 'Quick start', action: 'explore' },
-          { href: '/motion', title: 'Motion', action: 'slow_motion_video', subAction: 'fiber_new' },
+          { href: '/motion', title: 'Motion', action: 'slow_motion_video' },
           {
             title: 'Style',
             action: 'style',
@@ -81,8 +81,8 @@
               { href: '/layout/grid', title: 'Grid' },
               { href: '/layout/spacing', title: 'Spacing' },
               { href: '/layout/alignment', title: 'Alignment' },
-              { href: '/layout/display', title: 'Display', action: 'arrow_upward' },
-              { href: '/layout/elevation', title: 'Elevation', action: 'fiber_new' }
+              { href: '/layout/display', title: 'Display' },
+              { href: '/layout/elevation', title: 'Elevation' }
             ]
           },
           {
@@ -92,12 +92,12 @@
             items: [
               { href: '/components/alerts', title: 'Alerts' },
               { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
-              { href: '/components/bottom-navigation', title: 'Bottom navigation', action: 'fiber_new' },
+              { href: '/components/bottom-navigation', title: 'Bottom navigation' },
               { href: '/components/buttons', title: 'Buttons' },
-              { href: '/components/cards', title: 'Cards', action: 'arrow_upward' },
+              { href: '/components/cards', title: 'Cards' },
               { href: '/components/carousel', title: 'Carousel' },
               { href: '/components/chips', title: 'Chips' },
-              { href: '/components/datatables', title: 'Data tables', action: 'fiber_new' },
+              { href: '/components/datatables', title: 'Data tables' },
               { href: '/components/dialogs', title: 'Dialogs', action: 'fiber_new' },
               { href: '/components/dividers', title: 'Dividers' },
               { href: '/components/expansion-panel', title: 'Expansion panel' },
@@ -107,7 +107,7 @@
               { href: '/components/menus', title: 'Menus' },
               { href: '/components/pagination', title: 'Pagination' },
               { href: '/components/parallax', title: 'Parallax' },
-              { href: '/components/pickers', title: 'Pickers' },
+              { href: '/components/pickers', title: 'Pickers', action: 'fiber_new' },
               { href: '/components/progress', title: 'Progress & activity' },
               { href: '/components/selects', title: 'Selects' },
               { href: '/components/selection-controls', title: 'Selection controls' },
@@ -117,7 +117,7 @@
               { href: '/components/steppers', title: 'Steppers' },
               { href: '/components/subheaders', title: 'Subheaders' },
               { href: '/components/tabs', title: 'Tabs' },
-              { href: '/components/text-fields', title: 'Text fields', action: 'arrow_upward' },
+              { href: '/components/text-fields', title: 'Text fields' },
               { href: '/components/toolbar', title: 'Toolbars' }
             ]
           },
