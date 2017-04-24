@@ -105,6 +105,12 @@
                   'The default rows-per-page to show'
                 ],
                 [
+                  'rows-per-page-text',
+                  'String',
+                  'Rows per page:',
+                  'The default rows per page text'
+                ],
+                [
                   'rows-per-page-items',
                   'Array',
                   '[5, 15, 25, { text: "All", value: -1 }]',
