@@ -33,12 +33,6 @@
             'v-dialog': {
               params: [
                 [
-                  'actions',
-                  'Boolean',
-                  'False',
-                  'Adds default action buttons: Cancel, Ok'
-                ],
-                [
                   'persistent',
                   'Boolean',
                   'False',
