@@ -1,13 +1,15 @@
 <v-dialog v-model="d1">
   <v-btn primary dark slot="activator">Open Dialog</v-btn>
-  <v-card-row>
-    <v-card-title>Use Google's location service?</v-card-title>
-  </v-card-row>
-  <v-card-row>
-    <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
-  </v-card-row>
-  <v-card-row actions>
-    <v-btn class="green--text darken-1" flat="flat" @click.native="d1 = false">Disagree</v-btn>
-    <v-btn class="green--text darken-1" flat="flat" @click.native="d1 = false">Agree</v-btn>
-  </v-card-row>
+  <v-card>
+    <v-card-row>
+      <v-card-title>Use Google's location service?</v-card-title>
+    </v-card-row>
+    <v-card-row>
+      <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+    </v-card-row>
+    <v-card-row actions>
+      <v-btn class="green--text darken-1" flat="flat" @click.native="d1 = false">Disagree</v-btn>
+      <v-btn class="green--text darken-1" flat="flat" @click.native="d1 = false">Agree</v-btn>
+    </v-card-row>
+  </v-card>
 </v-dialog>
