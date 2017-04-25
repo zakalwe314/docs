@@ -2,7 +2,7 @@
   header(id="main-toolbar")
     v-toolbar(fixed)
       v-toolbar-side-icon(
-        class="side-icon hidden-lg-and-up"
+        class="side-icon hidden-md-and-up"
         v-on:click.native.stop="$store.commit('vuetify/SIDEBAR', true)"
       )
       v-toolbar-title(v-text="title")

@@ -9,10 +9,8 @@
       main-side(v-model="sidebar")
 
       v-content
-        v-container(fluid)
-
-          transition(name="slide" mode="out-in")
-            router-view(@view="meta")
+        transition(name="slide" mode="out-in")
+          router-view(@view="meta")
     main-footer
 </template>
 
