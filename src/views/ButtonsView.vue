@@ -187,16 +187,10 @@
                   'Applies the .btn--active class. This does not alter the button style, but can be used for hooking into.'
                 ],
                 [
-                  'light',
-                  'Boolean',
-                  'True',
-                  'Applies the light theme'
-                ],
-                [
                   'dark',
                   'Boolean',
                   'False',
-                  'Applies the dark theme'
+                  'Applies the dark theme (default light)'
                 ],
                 [
                   'block',
