@@ -114,7 +114,7 @@
                   'rows-per-page-items',
                   'Array',
                   '[5, 15, 25, { text: "All", value: -1 }]',
-                  'When using a selectable row, used for determining the item value for highlight.'
+                  'The default values for the rows-per-page dropdown'
                 ],
                 [
                   'select-all',
