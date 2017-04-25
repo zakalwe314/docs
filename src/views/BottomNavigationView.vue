@@ -65,3 +65,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #bottom-navigation-view
+    .bottom-nav
+      z-index: 1
+</style>

@@ -10,7 +10,9 @@
         snackbar: false,
         y: 'top',
         x: null,
+        mode: '',
         timeout: 6000,
+        text: 'Hello, I\'m a snackbar',
         doc: {
           title: 'Snackbar',
           desc: 'The <code>v-snackbar</code> component is used to display a quick message to a user. Snackbars support positioning, removal delay and callbacks.',
@@ -51,7 +53,7 @@
                   'multi-line',
                   'Boolean',
                   'False',
-                  'Makes the snackbar higher'
+                  'Makes the snackbar higher (mobile)'
                 ],
                 [
                   'timeout',
@@ -59,6 +61,48 @@
                   '6000',
                   'Time to wait until snackbar is automatically hidden'
                 ],
+                [
+                  'vertical',
+                  'Boolean',
+                  'False',
+                  'Stacks snackbar content vertically (mobile)'
+                ],
+                [
+                  'primary',
+                  'Boolean',
+                  'False',
+                  'Applies the "primary" context',
+                ],
+                [
+                  'secondary',
+                  'Boolean',
+                  'False',
+                  'Applies the "secondary" context',
+                ],
+                [
+                  'success',
+                  'Boolean',
+                  'False',
+                  'Applies the "success" context',
+                ],
+                [
+                  'info',
+                  'Boolean',
+                  'False',
+                  'Applies the "info" context',
+                ],
+                [
+                  'warning',
+                  'Boolean',
+                  'False',
+                  'Applies the "warning" context',
+                ],
+                [
+                  'error',
+                  'Boolean',
+                  'False',
+                  'Applies the "error" context',
+                ]
               ],
               model: {
                 types: ['Boolean'],

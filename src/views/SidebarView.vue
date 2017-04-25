@@ -3,7 +3,7 @@
     component-example(header="Left" file="sidebar/1" v-bind:data="$data")
       section-text(slot="details") If you want to programmatically open or close the sidebar, you can do so by using <code>v-model</code> with a boolean value. Keep in mind, if the trigger for the opening is not contained within the <code>activator</code> slot and is done so by a click, you must <strong>stopPropagation</strong> to avoid immediately triggering a close event.
 
-    blockquote A sidebar is required to have an activator. This allows the sidebar to be opened on mobile.
+    blockquote Keep in mind for the purpose of display, the sidebars in the documentation are in absolute mode. In your application, you will more than likely want to use <code>fixed</code>.
 
     component-example(header="Drawer" file="sidebar/2" v-bind:data="$data")
 
@@ -81,6 +81,24 @@
                   'Sets height of the sidebar',
                 ],
                 [
+                  'hide-overlay',
+                  'Boolean',
+                  'False',
+                  'Hide the display of the overlay',
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'False',
+                  'Changes the sidebar theme to light (default dark)',
+                ],
+                [
+                  'mini',
+                  'Boolean',
+                  'False',
+                  'Condenses sidebar width',
+                ],
+                [
                   'mobile',
                   'Boolean',
                   'True',
@@ -88,7 +106,7 @@
                 ],
                 [
                   'mobile-break-point',
-                  'Number',
+                  '[Number, String]',
                   '992',
                   'The maximum width in px before sidebar auto-closes',
                 ],
@@ -118,10 +136,11 @@
           { title: 'Profile', avatar: 'account_box' },
           { title: 'Contact', avatar: 'import_contacts' }
         ],
-        sidebar: null,
-        sidebar2: null,
-        sidebar3: null,
-        sidebar4: null,
+        mini: false,
+        e1: false,
+        e2: false,
+        e3: false,
+        e4: false,
         itemGroup: [
           { header: 'Header' },
           {
@@ -164,38 +183,10 @@
 
 <style lang="stylus">
   #sidebars-view
-    .with, main
-      min-height: 400px
-      
-    .with.sidebar-under-toolbar
+    .component-example
       position: relative
-      
-      .toolbar
-        z-index: 6
+      z-index: 0
 
-    main
-      padding-left: 0
-      overflow: hidden
-      position: relative
-
-    .component-example__container
-      flex: 1
-      min-height: 400px
-      position: relative
-      justify-content: center
-
-    .toolbar
-      min-height: 56px
-
-      &__side-icon
-        margin: 0 2rem
-
-      &--fixed
-        position: absolute
-
-    .sidebar
-      z-index: 2
-      &--fixed
-        position: absolute
-        top: 0
+      .card
+        overflow-x: hidden
 </style>

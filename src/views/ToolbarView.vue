@@ -182,6 +182,10 @@
 
 <style lang="stylus">
   #toolbar
+    .component-example
+      position: relative
+      z-index: 1
+
     .toolbar
       height: 64px !important
       margin: 1rem 0

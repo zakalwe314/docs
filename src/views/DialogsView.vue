@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc" id="dialogs")
+  doc-view(v-bind:doc="doc" id="dialogs-view")
     component-example(header="Simple dialogs" file="dialogs/1" v-bind:data="$data")
       section-text(slot="details") Choosing an option immediately commits the option and closes the menu. Touching outside of the dialog, or pressing Back, cancels the action and closes the dialog.
     component-example(header="Modal" file="dialogs/2" v-bind:data="$data")
@@ -33,12 +33,6 @@
             'v-dialog': {
               params: [
                 [
-                  'actions',
-                  'Boolean',
-                  'False',
-                  'Adds default action buttons: Cancel, Ok'
-                ],
-                [
                   'persistent',
                   'Boolean',
                   'False',
@@ -51,16 +45,28 @@
                   'Changes layout for fullscreen display'
                 ],
                 [
-                  'overlay',
+                  'lazy',
                   'Boolean',
-                  'True',
-                  'Places a dark overlay behind the Dialog'
+                  'False',
+                  'Lazily load dialog contents'
+                ],
+                [
+                  'hide-overlay',
+                  'Boolean',
+                  'False',
+                  'Hide the display of the overlay',
                 ],
                 [
                   'transition',
-                  'String',
+                  '[Boolean, String]',
                   'v-modal-transition',
-                  'Defines show/hide transition'
+                  'Defines show/hide transition. Set to false for no transition'
+                ],
+                [
+                  'scrollable',
+                  'Boolean',
+                  'False',
+                  'When set to true, expects a card, card-title, card-text and card-row with the actions prop. Will set card-row to scroll'
                 ],
                 [
                   'origin',
@@ -69,11 +75,11 @@
                   'Defines transition origin'
                 ],
                 [
-                  'remove-transition',
-                  'Boolean',
-                  'False',
-                  'Disables show/hide transitions'
-                ],
+                  'width',
+                  '[String, Number]',
+                  '320',
+                  'The modal width. Cannot exceed 90% of the screen'
+                ]
               ],
               model: {
                 types: ['Boolean'],
@@ -116,3 +122,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #dialogs-view
+    .component-example
+      // position: initial
+</style>

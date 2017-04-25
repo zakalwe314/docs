@@ -47,6 +47,12 @@
                   'Boolean',
                   'False',
                   'Places icon on the right'
+                ],
+                [
+                  'light',
+                  'Boolean',
+                  'False',
+                  'Applies the light theme (default dark)'
                 ]
               ]
             }
