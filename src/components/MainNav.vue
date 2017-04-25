@@ -1,10 +1,11 @@
 <template lang="pug">
   header(id="main-toolbar")
-    v-toolbar(fixed)
+    v-toolbar
       v-toolbar-side-icon(
         class="side-icon hidden-md-and-up"
         v-on:click.native.stop="$store.commit('vuetify/SIDEBAR', true)"
       )
+
       v-toolbar-title(v-text="title")
       .toolbar__links
         a(href="https://github.com/vuetifyjs/vuetify" target="_blank")

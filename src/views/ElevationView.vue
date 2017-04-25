@@ -10,7 +10,7 @@
 
       h6 Playground
       v-container(fluid)
-        v-row
+        v-layout(row)
           v-col(xs4)
             v-select(label="Select elevation" v-bind:items="elevations" v-model="selected" item-text="text" item-value="class")
           v-col(xs1)

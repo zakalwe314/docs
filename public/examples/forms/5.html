@@ -1,8 +1,8 @@
 <v-card class="grey lighten-4 elevation-0">
   <v-card-text>
     <v-container fluid>
-      <v-row row>
-        <v-col xs12 sm4>
+      <v-layout row wrap>
+        <v-col xs4>
           <v-subheader>Normal with hint text</v-subheader>
         </v-col>
         <v-col xs12 sm5>
@@ -16,9 +16,9 @@
         <v-col xs12 sm3>
           <v-btn-dropdown v-bind:options="[{ text: 'Mobile' }]" label="Mobile" />
         </v-col>
-      </v-row>
-      <v-row row>
-        <v-col xs12 sm4>
+      </v-layout>
+      <v-layout row wrap>
+        <v-col xs4>
           <v-subheader>Focus</v-subheader>
         </v-col>
         <v-col xs12 sm5>
@@ -34,9 +34,10 @@
         <v-col xs12 sm3>
           <v-btn-dropdown v-bind:options="[{ text: 'Mobile' }]" label="Mobile" />
         </v-col>
-      </v-row>
-      <v-row row>
-        <v-col xs12 sm4>
+
+      </v-layout>
+      <v-layout row wrap>
+        <v-col xs4>
           <v-subheader>Normal with input text</v-subheader>
         </v-col>
         <v-col xs12 sm5>
@@ -51,7 +52,7 @@
         <v-col xs12 sm3>
           <v-btn-dropdown v-bind:options="[{ text: 'Mobile' }]" label="Mobile" />
         </v-col>
-      </v-row>
+      </v-layout>
     </v-container>
   </v-card-text>
 </v-card>

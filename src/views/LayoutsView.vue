@@ -3,7 +3,7 @@
     component-example(header="Toolbar and Footer" file="layouts/1" v-bind:data="example")
     component-example(header="Toolbar and Sidebar" file="layouts/2" v-bind:data="example")
     component-example(header="Toolbar, Sidebar & Footer" file="layouts/3" v-bind:data="example")
-    component-example(header="Toolbar, Sidebar fixed" file="layouts/4" v-bind:data="example")
+    component-example(header="Toolbar, Sidebar under toolbar" file="layouts/4" v-bind:data="example")
 </template>
 
 <script>

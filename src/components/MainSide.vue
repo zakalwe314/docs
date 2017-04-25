@@ -55,7 +55,7 @@
   export default {
     data () {
       return {
-        isActive: true,
+        isActive: false,
         items: [
           { header: 'Core documentation' },
           { href: '/', title: 'About', action: 'question_answer' },

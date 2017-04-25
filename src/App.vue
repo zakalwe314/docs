@@ -9,9 +9,10 @@
       main-side(v-model="sidebar")
 
       v-content
-        transition(name="slide" mode="out-in")
-          router-view(@view="meta")
-    main-footer
+        v-container()
+          transition(name="slide" mode="out-in")
+            router-view(@view="meta")
+        main-footer
 </template>
 
 <script>
