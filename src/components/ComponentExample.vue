@@ -96,6 +96,7 @@
   
   .component-example
     min-height: 100px
+    margin-bottom: 2rem
     
     .component-example__expansion-panel
         box-shadow: none

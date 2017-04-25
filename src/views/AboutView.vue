@@ -14,7 +14,7 @@
       v-list(three-line)
         v-container(fluid)
           v-row(row wrap)
-            v-col(xs12 lg6)
+            v-col(xs12 lg6 id="test")
               v-list-item(class="py-1")
                 v-list-tile(tag="div")
                   v-list-tile-avatar

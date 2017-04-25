@@ -122,9 +122,13 @@
       max-height: 500px
       overflow-y: auto
 
-    .component-example .card
-      max-width: 400px
-      margin: 0 auto
+    .component-example
+      position: relative
+      z-index: 1
+
+      .card
+        max-width: 400px
+        margin: 0 auto
 
       .image
         width: 100%

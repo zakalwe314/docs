@@ -1,5 +1,5 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc" id="dialogs")
+  doc-view(v-bind:doc="doc" id="dialogs-view")
     component-example(header="Simple dialogs" file="dialogs/1" v-bind:data="$data")
       section-text(slot="details") Choosing an option immediately commits the option and closes the menu. Touching outside of the dialog, or pressing Back, cancels the action and closes the dialog.
     component-example(header="Modal" file="dialogs/2" v-bind:data="$data")
@@ -51,10 +51,10 @@
                   'Lazily load dialog contents'
                 ],
                 [
-                  'overlay',
+                  'hide-overlay',
                   'Boolean',
-                  'True',
-                  'Places a dark overlay behind the Dialog'
+                  'False',
+                  'Hide the display of the overlay',
                 ],
                 [
                   'transition',
@@ -122,3 +122,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  #dialogs-view
+    .component-example
+      // position: initial
+</style>

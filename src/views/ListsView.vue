@@ -390,6 +390,9 @@
 
 <style lang="stylus">
   #lists-view .component-example
+    position: relative
+    z-index: 1
+
     .card
       max-width: 400px
       margin: 1rem auto
