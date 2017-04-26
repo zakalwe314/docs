@@ -112,9 +112,15 @@
       height: 400px
       elevation(4)
       
-      .content
-        height: 500px
+      .content > .container
+        min-height: 500px
       
       .sidebar
         height: 500px !important
+        
+        &--drawer
+          position: absolute
+        
+      .overlay
+        position: absolute !important
 </style>

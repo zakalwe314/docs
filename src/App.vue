@@ -1,16 +1,15 @@
 <template lang="pug">
-  v-app(column)
-    main-nav(v-bind:title="title")
+  v-app(toolbar row)
+    main-side(v-model="sidebar")
 
     main
+      main-nav(v-bind:title="title")
 
-      main-side(v-model="sidebar")
-
-      v-content(row)
+      v-content
         v-container(fluid)
           transition(name="slide" mode="out-in")
             router-view(@view="meta")
-        //- main-footer
+        main-footer
 </template>
 
 <script>
