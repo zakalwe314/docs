@@ -1,23 +1,21 @@
-<v-app id="example-3" left-fixed-sidebar>
-  <v-toolbar>
-    <v-toolbar-side-icon @click.native.stop="nav3 = !nav3" />
-    <v-toolbar-logo>Toolbar</v-toolbar-logo>
-  </v-toolbar>
+<v-app id="example-3" column>
   <main>
-    <v-sidebar left fixed drawer v-model="nav3">
-      <v-list>
-        <v-list-item v-for="i in 3" :key="i">
-          <v-list-tile>
-            <v-list-tile-title>Item {{ i }}</v-list-tile-title>
-          </v-list-tile>
-        </v-list-item>
-      </v-list>
-    </v-sidebar>
+
+    <v-sidebar
+      v-model="e3.open"
+      :drawer="e3.fixed"
+      :right="e3.right"
+    ></v-sidebar>
+
     <v-content>
       <v-container fluid>
-        <div class="title">Main Content</div>
+        <div class="title">
+          Main Content
+          <v-switch label="Open" v-model="e3.open" @click.native.stop=""></v-switch>
+          <v-switch label="Fixed" v-model="e3.fixed" @click.native.stop=""></v-switch>
+          <v-switch label="Right" v-model="e3.right" @click.native.stop=""></v-switch>
+        </div>
       </v-container>
     </v-content>
   </main>
-  <v-footer>Footer</v-footer>
 </v-app>

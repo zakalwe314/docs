@@ -1,6 +1,23 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="layout-view")
-    component-example(header="Layouts" file="layouts/1" v-bind:data="$data")
+    component-example(header="Column Layouts" file="layouts/1")
+      section-text(slot="details") This layout features a fixed toolbar with scrollable content.
+    component-example(file="layouts/2")
+      section-text(slot="details") This layout features a fixed toolbar and footer with scrollable content.
+    component-example(v-bind:data="$data" file="layouts/3")
+      section-text(slot="details") This layout features a sidebar. It can be configured on the left or the right, be persistent or fixed.
+    component-example(v-bind:data="$data" file="layouts/4")
+      section-text(slot="details") This layout features a sidebar with an above fixed header. The sidebar can be configured on the left or the right, be persistent or fixed.
+    component-example(v-bind:data="$data" file="layouts/5")
+      section-text(slot="details") This layout features a sidebar with an above fixed header and below fixed footer. The sidebar can be configured on the left or the right, be persistent or fixed.
+    component-example(header="Row Layouts" v-bind:data="$data" file="layouts/6")
+      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a fixed toolbar. The sidebar can be configured on the left or the right, be persistent or fixed.
+    component-example(v-bind:data="$data" file="layouts/7")
+      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a fixed toolbar and footer. The sidebar can be configured on the left or the right, be persistent or fixed.
+    component-example(v-bind:data="$data" file="layouts/8")
+      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a fixed toolbar and non-fixed footer. The sidebar can be configured on the left or the right, be persistent or fixed.
+    component-example(v-bind:data="$data" file="layouts/9")
+      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a non-fixed toolbar and non-fixed footer. The sidebar can be configured on the left or the right, be persistent or fixed.
 </template>
 
 <script>
@@ -33,6 +50,11 @@
           right: false
         },
         e8: {
+          open: true,
+          fixed: false,
+          right: false
+        },
+        e9: {
           open: true,
           fixed: false,
           right: false

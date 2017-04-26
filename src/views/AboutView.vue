@@ -6,7 +6,7 @@
         p Vuetify.js is a semantic component framework for Vue.js 2. It aims to provide clean, semantic and reusable components that make building your application a breeze. Vuetify.js uses Google's <strong><a href="https://material.io/" target="_blank">Material Design</a></strong> design pattern, taking cues from other popular frameworks such as <a href="http://materializecss.com/" target="_blank">Materialize.css</a>, <a href="https://getmdl.io/" target="_blank">Material Design Lite</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a>.
 
         div(class="text-xs-center")
-          v-btn(large primary class="cta" router href="/quick-start") Get Started Now
+          v-btn(large primary class="cta" router href="/quick-start" dark) Get Started Now
             v-icon.hidden-sm-and-down(right) fast_forward
     section
       img(src="~public/doc-images/featured.png" width="100%" alt="featured")
