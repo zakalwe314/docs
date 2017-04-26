@@ -1,13 +1,192 @@
-<v-app id="example-1">
-  <v-toolbar>
-    <v-toolbar-title>Toolbar</v-toolbar-title>
-  </v-toolbar>
-  <main>
-    <v-content>
-      <v-container fluid>
-        <div class="title">Main Content</div>
-      </v-container>
-    </v-content>
-  </main>
-  <v-footer>Footer</v-footer>
-</v-app>
+<v-container fluid>
+  <v-layout row wrap>
+    <v-col xs12 class="mb-4">
+      <span class="title">Column Layouts</span>
+      <v-app id="example-1" column>
+        <header>
+          <v-toolbar>
+            <v-toolbar-title>Toolbar</v-toolbar-title>
+          </v-toolbar>
+        </header>
+        <main>
+          <v-content>
+            <v-container fluid>
+              <div class="title">Main Content</div>
+            </v-container>
+          </v-content>
+        </main>
+      </v-app>
+    </v-col>
+    <v-col xs12 class="mb-4">
+      <v-app id="example-2" column>
+        <header>
+          <v-toolbar>
+            <v-toolbar-title>Toolbar</v-toolbar-title>
+          </v-toolbar>
+        </header>
+        <main>
+          <v-content>
+            <v-container fluid>
+              <div class="title">Main Content</div>
+            </v-container>
+          </v-content>
+        </main>
+        <v-footer>Footer</v-footer>
+      </v-app>
+    </v-col>
+    <v-col xs12 class="mb-4">
+      Layout 3
+      <v-app id="example-3" column>
+        <main>
+          <v-sidebar
+            v-model="e3.open"
+            :absolute="e3.fixed"
+            :drawer="e3.fixed"
+            :right="e3.right"
+          ></v-sidebar>
+          <v-content>
+            <v-container fluid>
+              <div class="title">
+                Main Content
+                <v-switch label="Open" v-model="e3.open" @click.native.stop=""></v-switch>
+                <v-switch label="Fixed" v-model="e3.fixed" @click.native.stop=""></v-switch>
+                <v-switch label="Right" v-model="e3.right" @click.native.stop=""></v-switch>
+              </div>
+            </v-container>
+          </v-content>
+        </main>
+      </v-app>
+    </v-col>
+    <v-col xs12 class="mb-4">
+      <v-app id="example-4" column>
+        <header>
+          <v-toolbar>
+            <v-toolbar-title>Toolbar</v-toolbar-title>
+          </v-toolbar>
+        </header>
+        <main>
+          <v-sidebar
+            v-model="e4.open"
+            :absolute="e4.fixed"
+            :drawer="e4.fixed"
+            :right="e4.right"
+          ></v-sidebar>
+          <v-content>
+            <v-container fluid>
+              <div class="title">
+                Main Content
+                <v-switch label="Open" v-model="e4.open" @click.native.stop=""></v-switch>
+                <v-switch label="Fixed" v-model="e4.fixed" @click.native.stop=""></v-switch>
+                <v-switch label="Right" v-model="e4.right" @click.native.stop=""></v-switch>
+              </div>
+            </v-container>
+          </v-content>
+        </main>
+      </v-app>
+    </v-col>
+    <v-col xs12 class="mb-4">
+      <v-app id="example-5" column>
+        <header>
+          <v-toolbar>
+            <v-toolbar-title>Toolbar</v-toolbar-title>
+          </v-toolbar>
+        </header>
+        <main>
+          <v-sidebar
+            v-model="e5.open"
+            :absolute="e5.fixed"
+            :drawer="e5.fixed"
+            :right="e5.right"
+          ></v-sidebar>
+          <v-content>
+            <v-container fluid>
+              <div class="title">Main Content</div>
+              <v-switch label="Open" v-model="e5.open" @click.native.stop=""></v-switch>
+              <v-switch label="Fixed" v-model="e5.fixed" @click.native.stop=""></v-switch>
+                <v-switch label="Right" v-model="e5.right" @click.native.stop=""></v-switch>
+            </v-container>
+          </v-content>
+        </main>
+        <v-footer>Footer</v-footer>
+      </v-app>
+    </v-col>
+    <v-col xs12 class="mb-4">
+      <span class="title">Row Layouts</span>
+      <v-app id="example-6" row>
+        <v-sidebar
+            v-model="e6.open"
+            :absolute="e6.fixed"
+            :drawer="e6.fixed"
+            :right="e6.right"
+        ></v-sidebar>
+        <main>
+          <header>
+            <v-toolbar>
+              <v-toolbar-title>Toolbar</v-toolbar-title>
+            </v-toolbar>
+          </header>
+          <v-content>
+            <v-container fluid>
+              <div class="title">Main Content</div>
+              <v-switch label="Open" v-model="e6.open" @click.native.stop=""></v-switch>
+              <v-switch label="Fixed" v-model="e6.fixed" @click.native.stop=""></v-switch>
+                <v-switch label="Right" v-model="e6.right" @click.native.stop=""></v-switch>
+            </v-container>
+          </v-content>
+        </main>
+      </v-app>
+    </v-col>
+    <v-col xs12 class="mb-4">
+      <v-app id="example-7" row>
+        <v-sidebar
+            v-model="e7.open"
+            :absolute="e7.fixed"
+            :drawer="e7.fixed"
+            :right="e7.right"
+        ></v-sidebar>
+        <main>
+          <header>
+            <v-toolbar>
+              <v-toolbar-title>Toolbar</v-toolbar-title>
+            </v-toolbar>
+          </header>
+          <v-content>
+            <v-container fluid>
+              <div class="title">Main Content</div>
+              <v-switch label="Open" v-model="e7.open" @click.native.stop=""></v-switch>
+              <v-switch label="Fixed" v-model="e7.fixed" @click.native.stop=""></v-switch>
+                <v-switch label="Right" v-model="e7.right" @click.native.stop=""></v-switch>
+            </v-container>
+          </v-content>
+          <v-footer>Footer</v-footer>
+        </main>
+      </v-app>
+    </v-col>
+    <v-col xs12 class="mb-4">
+      <v-app id="example-8" row>
+        <v-sidebar
+            v-model="e8.open"
+            :absolute="e8.fixed"
+            :drawer="e8.fixed"
+            :right="e8.right"
+        ></v-sidebar>
+        <main>
+          <header>
+            <v-toolbar>
+              <v-toolbar-title>Toolbar</v-toolbar-title>
+            </v-toolbar>
+          </header>
+          <v-content>
+            <v-container fluid>
+              <div class="title">Main Content</div>
+              <v-switch label="Open" v-model="e8.open" @click.native.stop=""></v-switch>
+              <v-switch label="Fixed" v-model="e8.fixed" @click.native.stop=""></v-switch>
+                <v-switch label="Right" v-model="e8.right" @click.native.stop=""></v-switch>
+            </v-container>
+            <v-footer>Footer</v-footer>
+          </v-content>
+        </main>
+      </v-app>
+    </v-col>
+  </v-layout>
+</v-container>

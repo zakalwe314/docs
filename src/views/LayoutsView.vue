@@ -1,20 +1,41 @@
 <template lang="pug">
   doc-view(v-bind:doc="doc" id="layout-view")
-    component-example(header="Toolbar and Footer" file="layouts/1" v-bind:data="example")
-    component-example(header="Toolbar and Sidebar" file="layouts/2" v-bind:data="example")
-    component-example(header="Toolbar, Sidebar & Footer" file="layouts/3" v-bind:data="example")
-    component-example(header="Toolbar, Sidebar under toolbar" file="layouts/4" v-bind:data="example")
+    component-example(header="Layouts" file="layouts/1" v-bind:data="$data")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        example: {
-          nav1: true,
-          nav2: false,
-          nav3: false,
-          nav4:false
+        e3: {
+          open: true,
+          fixed: false,
+          right: false
+        },
+        e4: {
+          open: true,
+          fixed: false,
+          right: false
+        },
+        e5: {
+          open: true,
+          fixed: false,
+          right: false
+        },
+        e6: {
+          open: true,
+          fixed: false,
+          right: false
+        },
+        e7: {
+          open: true,
+          fixed: false,
+          right: false
+        },
+        e8: {
+          open: true,
+          fixed: false,
+          right: false
         },
         doc: {
           title: 'Layouts',
@@ -82,33 +103,18 @@
 <style lang="stylus">
   @import '../../node_modules/vuetify/src/stylus/settings/_colors'
   @import '../../node_modules/vuetify/src/stylus/tools/_elevations'
+  
 
-  #layout-view
-    .component-example
-      main
-        min-height: 300px
-        padding-left: 0
-        position: relative
-      .toolbar
-        height: 5rem
+  .component-example__container
+    z-index: 0
 
+    [data-app]
+      height: 400px
+      elevation(4)
+      
+      .content
+        height: 500px
+      
       .sidebar
-        position: absolute
-        top:0
-        bottom: 0
-        z-index: 1
-
-      .footer
-        padding: 0 1rem
-        z-index: 0
-
-      .with
-        elevation(3)
-        min-height: auto
-        position: relative
-        overflow: hidden
-        width: 100%
-
-    #example-2
-      padding: initial
+        height: 500px !important
 </style>
