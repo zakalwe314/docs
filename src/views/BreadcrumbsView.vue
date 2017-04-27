@@ -35,22 +35,52 @@
             'v-breadcrumbs-item': {
               params: [
                 [
+                  'append',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
+                ],
+                [
                   'disabled',
                   'Boolean',
                   'False',
-                  'Disables the breadcrumb item'
+                  'List tile is disabled'
                 ],
                 [
                   'href',
-                  'String',
+                  'String, Object',
                   'javascript:;',
-                  'Applies the href attribute'
+                  'For router, this is passed to the "to" prop'
                 ],
                 [
-                  'target',
+                  'to',
+                  'String, Object',
+                  'javascript:;',
+                  'For router, this is passed to the "to" prop'
+                ],
+                [
+                  'nuxt',
+                  'Boolean',
+                  'False',
+                  'Specifies the link is a nuxt-link'
+                ],
+                [
+                  'replace',
+                  'Boolean',
+                  'False',
+                  'Vue Router router-link prop'
+                ],
+                [
+                  'router',
+                  'Boolean',
+                  'False',
+                  'Designates whether the list tiles will be a router-link'
+                ],
+                [
+                  'tag',
                   'String',
-                  '-',
-                  'Applies the target attribute'
+                  'a',
+                  'Use a custom tag for the list tile'
                 ]
               ]
             }

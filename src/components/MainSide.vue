@@ -13,7 +13,7 @@
         )
       .title Vuetify
       a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.11.1" target="_blank") v0.11.1
-    v-divider(light)
+    v-divider(dark)
     v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:group="item.group")
@@ -37,7 +37,7 @@
               v-list-tile-action(v-if="subItem.action")
                 v-icon(class="success--text") {{ subItem.action }}
         v-subheader(v-else-if="item.header") {{ item.header }}
-        v-divider(v-else-if="item.divider" light)
+        v-divider(v-else-if="item.divider" dark)
         v-list-item(v-else)
           v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
             v-list-tile-action

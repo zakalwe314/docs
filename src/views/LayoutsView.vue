@@ -66,28 +66,10 @@
             'v-app': {
               params: [
                 [
-                  'sidebar',
-                  'Boolean',
-                  'False',
-                  'Variations: left, right, left-fixed, right-fixed',
-                ],
-                [
                   'id',
                   'String',
                   'app',
-                  'The mounting point id'
-                ],
-                [
-                  'sidebar-under-toolbar',
-                  'Boolean',
-                  'False',
-                  'Positions a fixed sidebar under the toolbar'
-                ],
-                [
-                  'scroll-y',
-                  'Class',
-                  'null',
-                  'Add vertical scrollbar to "v-content" or any other div container making the content scrollable.'
+                  'Sets an id on the v-app element'
                 ]
               ]
             }
