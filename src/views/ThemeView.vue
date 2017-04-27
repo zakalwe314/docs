@@ -17,6 +17,11 @@
         |   error: $red.base
         |   success: $green.base
         |}
+      section-text The <code>$material-light</code> theme settings are use by default. A <code>$material-dark</code> is also available.
+      markup(lang="stylus")
+        |// Default Material theme settings to use
+        |$material-theme := $material-light
+      section-text You can find out all the available variables in the <a target="_blank" href="https://github.com/vuetifyjs/vuetify/blob/master/src/stylus/settings/_variables.styl">_variables.styl</a> file.
       section-text In order to change these variables, we have to create our array before the import of the Vuetify styles. In order to do this, you will need to setup your build process to accommodate a stylus file. If you are using one of the pre-made templates available on the <router-link to="/quick-start">Quick Start</router-link> guide, you can skip this next section.
       h6 Setup stylus-loader with Webpack
       section-text In the command line, run:
