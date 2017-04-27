@@ -24,6 +24,7 @@
     component-example(header="Full-width text field with character counter" file="forms/12" v-bind:data="$data")
     component-example(header="Required fields" file="forms/13" v-bind:data="$data")
     component-example(header="Hint text" file="forms/14" v-bind:data="$data")
+    component-example(header="Prefixes & suffixes" file="forms/15")
 </template>
 
 <script>
@@ -92,6 +93,12 @@
                   'Forces hint visible'
                 ],
                 [
+                  'prefix',
+                  'String',
+                  '',
+                  'Displays prefix text'
+                ],
+                [
                   'label',
                   'String',
                   '-',
@@ -132,6 +139,12 @@
                   'Boolean',
                   'False',
                   'Label does not move on focus/dirty'
+                ],
+                [
+                  'suffix',
+                  'String',
+                  '',
+                  'Displays suffix text'
                 ],
                 [
                   'rules',
