@@ -66,8 +66,7 @@
               { href: '/style/colors', title: 'Colors' },
               { href: '/style/theme', title: 'Theme' },
               { href: '/style/typography', title: 'Typography' },
-              { href: '/style/content', title: 'Content' },
-              { href: '/style/transitions', title: 'Transitions' },
+              { href: '/style/content', title: 'Content' }
             ]
           },
           {

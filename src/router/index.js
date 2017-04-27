@@ -58,7 +58,6 @@ const router = new Router({
     route('/style/content', 'Content'),
     route('/style/colors', 'Colors'),
     route('/style/theme', 'Theme'),
-    route('/style/transitions', 'Transitions'),
     route('/layout/grid', 'Grid'),
     route('/layout/pre-defined', 'Layouts'),
     route('/layout/spacing', 'Spacing'),
