@@ -1,7 +1,5 @@
 <template lang="pug">
-  v-sidebar(
-    v-model="isActive"
-  )
+  v-sidebar(v-model="isActive")
     div(class="vuetify")
       router-link(
         to="/about",
@@ -54,7 +52,7 @@
   export default {
     data () {
       return {
-        isActive: false,
+        isActive: null,
         items: [
           { header: 'Core documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
