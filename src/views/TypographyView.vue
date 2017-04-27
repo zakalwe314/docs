@@ -39,6 +39,26 @@
               div(class="title grey--text text--darken-1") Regular 20sp
               strong title
               span font-weight 500
+            dt(class="primary") s
+            dd
+              div(class="subheading grey--text text--darken-1") Regular 16sp
+              strong subheading
+              span font-weight 400
+            dt(class="primary") b2
+            dd
+              div(class="body-2 grey--text text--darken-1") Body-2 14sp
+              strong body-2
+              span font-weight 500
+            dt(class="primary") b1
+            dd
+              div(class="body-1 grey--text text--darken-1") Body-1 14sp
+              strong body-1
+              span font-weight 400
+            dt(class="primary") c
+            dd
+              div(class="caption grey--text text--darken-1") Caption 12sp
+              strong caption
+              span font-weight 400
 </template>
 
 <script>
