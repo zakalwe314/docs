@@ -30,16 +30,58 @@
       }
     },
 
-    computed: {
-      isHome () {
-        return this.$route.path === '/'
-      },
-      sidebar () {
-        return this.$store.state.sidebar
+    watch: {
+      '$route' () {
+        this.$store.commit('vuetify/COLOR', this.getColor(this.$route.path))
+        this.getPrevNext()
       }
     },
 
+    mounted () {
+      this.$store.commit('vuetify/COLOR', this.getColor(this.$route.path))
+      this.getPrevNext()
+    },
+
     methods: {
+      getColor (path) {
+        let color = 'primary'
+
+        if (this.match(path, /components/)) {
+          color = 'indigo'
+        } else if (this.match(path, /motion/)) {
+          color = 'purple'
+        } else if (this.match(path, /quick-start/)) {
+          color = 'teal'
+        } else if (this.match(path, /server-side-rendering/)) {
+          color = 'cyan'
+        } else if (this.match(path, /directives/)) {
+          color = 'orange'
+        }
+
+        return color
+      },
+      getPrevNext () {
+        const currentIndex = this.$router.options.routes.findIndex(r => r.path === this.$route.path)
+        const previous = currentIndex > 0 ? this.$router.options.routes[currentIndex - 1] : null
+        const next = currentIndex < this.$router.options.routes.length - 1
+          ? this.$router.options.routes[currentIndex + 1]
+          : null
+
+        this.$store.commit('vuetify/NEXT', {
+          name: next ? next.meta.name : null,
+          color: next ? this.getColor(next.path) : null,
+          route: next ? next.path : null
+        })
+
+        this.$store.commit('vuetify/PREVIOUS', {
+          name: previous ? previous.meta.name : null,
+          color: previous ? this.getColor(previous.path) : null,
+          route: previous ? previous.path : null
+        })
+      },
+      match (path, regex) {
+        return path.match(regex)
+      },
       meta (obj) {
         this.title = obj.h1
         this.$store.commit('vuetify/TITLE', obj.title)

@@ -120,9 +120,7 @@
 </script>
 
 <style lang="stylus">
-  .component-example
-    margin-bottom: 100px
-    
+  .component-example    
     .component-example__panel
       .expansion-panel__body
         border: none

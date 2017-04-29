@@ -9,12 +9,35 @@ export function createStore () {
       title: null,
       description: null,
       keywords: null,
-      sidebar: true
+      sidebar: true,
+      currentColor: 'transparent',
+      previous: {
+        name: 'Components',
+        color: 'primary',
+        route: '/components'
+      },
+      next: {
+        name: 'Breadcrumbs',
+        color: 'green',
+        route: '/components/breadcrumbs'
+      }
     },
 
     actions: {},
 
     mutations: {
+      'vuetify/COLOR' (state, payload) {
+        state.currentColor = payload
+      },
+
+      'vuetify/PREVIOUS' (state, payload) {
+        state.previous = payload
+      },
+
+      'vuetify/NEXT' (state, payload) {
+        state.next = payload
+      },
+
       'vuetify/SIDEBAR' (state, payload) {
         state.sidebar = payload
       },

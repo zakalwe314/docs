@@ -1,6 +1,6 @@
 <template lang="pug">
   header(id="main-toolbar")
-    v-toolbar
+    v-toolbar(:class="[color]")
       v-toolbar-side-icon(
         v-on:click.native.stop="$store.commit('vuetify/SIDEBAR', !$store.state.sidebar)"
       )
@@ -17,7 +17,13 @@
 
 <script>
   export default {
-    props: ['title']
+    props: ['title'],
+
+    computed: {
+      color () {
+        return this.$store.state.currentColor
+      }
+    }
   }
 </script>
 

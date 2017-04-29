@@ -37,7 +37,7 @@
           v-icon.primary--text navigate_next
     h2#examples.display-1 Examples
     slot
-    h2#api.display-1 API
+    h2#api.display-1.mt-5 API
     v-tabs.elevation-1
       v-tab-item(
         href="#props"
@@ -94,4 +94,5 @@
 <style lang="stylus">
   .view
     max-width: 1024px
+    padding-bottom: 75px
 </style>

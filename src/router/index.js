@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-function route (path, view) {
+function route (path, view, meta) {
   return {
     path: path,
-    component: require(`../views/${view}View.vue`)
+    meta: { name: view },
+    component: resolve => import(`../views/${view}View.vue`).then(resolve)
   }
 }
 

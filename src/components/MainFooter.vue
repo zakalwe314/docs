@@ -1,34 +1,54 @@
 <template lang="pug">
-  div(class="footer grey darken-2 white--text")
-    div(class="social")
-      div(class="fb-like" data-href="https://vuetifyjs.com/" data-width="30" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true")
-      a(href="https://twitter.com/vuetifyjs" class="twitter-follow-button" data-show-count="false") Follow @vuetifyjs
-    div(class="copy") 
-      |&copy; 2016 <a class="white--text" href="http://johnleider.com" target="_blank">John Leider</a>
+  v-footer.white.pa-0.main-footer
+    v-layout(row)
+      v-col(
+        v-if="previous.route"
+        xs12
+        v-bind:class="[previous.color, { 'xs6': next.route }]").primary.pa-0
+        v-list.py-0
+          v-list-item
+            v-list-tile(router :to="previous.route" ripple).pl-5
+              v-icon.mr-5 arrow_back
+              v-list-tile-content
+                v-list-tile-sub-title Previous
+                v-list-tile-title(v-text="previous.name")
+      v-col(
+        v-if="next.route"
+        xs12
+        v-bind:class="[next.color, { 'xs6': previous.route }]").pa-0
+        v-list.py-0
+          v-list-item
+            v-list-tile(router :to="next.route" ripple).pr-5
+              v-list-tile-content
+                v-list-tile-sub-title.text-xs-right Next
+                v-list-tile-title.text-xs-right(v-text="next.name")
+              v-icon.ml-5 arrow_forward
 </template>
 
+<script>
+  export default {
+    computed: {
+      previous () {
+        return this.$store.state.previous
+      },
+      next () {
+        return this.$store.state.next
+      }
+    }
+  }
+</script>
+
 <style lang="stylus">
-  .footer
-    position: relative
-    
-  .copy
-    text-align: left
-    padding-left: 1rem
+  .main-footer
+    .col
+      transition: .3s ease-in-out
+
+    .list__tile
+      height: 100px
       
-  .social
-    position: absolute !important
-    display: flex !important
-    align-items: center
-    top: 0px
-    right: 25px
-    height: 100%
-    
-  .fb-like
-    display: flex !important
-    align-items: center
-    margin: 0 30px
-    
-  @media screen and (max-width: 768px)
-    .copy
-      display: none
+      &__title
+        color: #fff
+      
+      &__sub-title
+        color: rgba(#fff, .3)
 </style>
