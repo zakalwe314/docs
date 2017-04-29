@@ -40,6 +40,7 @@
         slot(name="desc")
       v-card-text.pa-3
         div(v-bind:id="'example-'+uid")
+    v-divider.my-5
 </template>
 
 <script>

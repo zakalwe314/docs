@@ -1,7 +1,7 @@
 <template lang="pug">
   v-view(v-bind:doc="doc")
     component-example(header="Text Dividers" file="breadcrumbs/1")
-    //- component-example(header="Icon Dividers" file="breadcrumbs/2")
+    component-example(header="Icon Dividers" file="breadcrumbs/2")
 </template>
 
 <script>
@@ -10,11 +10,15 @@
       return {
         doc: {
           title: 'Breadcrumbs',
+          id: 'breadcrumbs-view',
+          edit: 'BreadcrumbsView',
+          component: 'breadcrumbs/Breadcrumbs.js',
           desc: `
             <p>
               The <code>v-breadcrumbs</code> component is a navigational helper for pages. It can accept a <strong>Material Icons</strong> icon or characters as a divider. An array of objects containing the fields <em>href</em>, <em>text</em> and optional <em>disabled</em> can be passed to the <strong>items</strong> property of the component.  Additionally, a regular slot exists for more control of the breadcrumbs, either utilizing <code>v-breadcrumb</code> or other custom markup.
             </p>
           `,
+          props: [],
           props2: {
             'v-breadcrumbs': {
               params: [
