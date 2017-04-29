@@ -17,6 +17,8 @@
         types: ['success', 'info', 'warning', 'error'],
         doc: {
           id: 'alerts-view',
+          edit: 'AlertsView',
+          file: 'alerts/Alert.js',
           title: 'Alert',
           desc: 'The <code>v-alert</code> component is used to convey information to the user. Designed to stand out, the alerts come in four contextual styles, success, info, warning, and error.',
           props: [

@@ -6,9 +6,22 @@
         v-spacer
         v-btn(icon dark v-tooltip:left="{ html: 'Component link' }")
           v-icon widgets
-        v-btn(icon dark v-tooltip:left="{ html: 'Edit this page' }")
+        v-btn(
+          icon
+          dark
+          v-tooltip:left="{ html: 'Edit this page' }"
+          tag="a"
+          v-bind:href="'https://github.com/vuetifyjs/docs/tree/master/src/views/'+doc.edit+'.vue'"
+          target="_blank"
+          v-if="doc.edit"
+        )
           v-icon edit
-        v-btn(icon dark v-tooltip:left="{ html: 'Material design spec' }")
+        v-btn(
+          icon
+          dark
+          v-tooltip:left="{ html: 'Material design spec' }"
+          v-if="doc.spec"
+        )
           v-icon folder_special
       v-card-text(v-html="doc.desc")
       v-card-row(actions)
@@ -67,3 +80,8 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  .view
+    max-width: 1024px
+</style>
