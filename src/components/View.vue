@@ -7,16 +7,6 @@
         v-btn(
           icon
           dark
-          v-tooltip:left="{ html: 'Component link' }"
-          tag="a"
-          v-bind:href="'https://github.com/vuetifyjs/vuetify/tree/master/src/components/'+doc.component"
-          target="_blank"
-          v-if="doc.component"
-        )
-          v-icon widgets
-        v-btn(
-          icon
-          dark
           v-tooltip:left="{ html: 'Edit this page' }"
           tag="a"
           v-bind:href="'https://github.com/vuetifyjs/docs/tree/master/src/views/'+doc.edit+'.vue'"
@@ -24,6 +14,16 @@
           v-if="doc.edit"
         )
           v-icon edit
+        v-btn(
+          icon
+          dark
+          v-tooltip:left="{ html: 'Component link' }"
+          tag="a"
+          v-bind:href="'https://github.com/vuetifyjs/vuetify/tree/master/src/components/'+doc.component"
+          target="_blank"
+          v-if="doc.component"
+        )
+          v-icon widgets
         v-btn(
           icon
           dark
@@ -35,8 +35,10 @@
       v-card-row(actions)
         v-btn(flat primary tag="a" href="#api") Go to api
           v-icon.primary--text navigate_next
+    h2#examples.display-1 Examples
     slot
-    v-tabs.elevation-1#api
+    h2#api.display-1 API
+    v-tabs.elevation-1
       v-tab-item(
         href="#props"
         slot="activators"
@@ -46,7 +48,7 @@
         id="props"
       )
         v-card
-          v-card-title API
+          v-card-title
             v-spacer
             v-spacer
             v-text-field(

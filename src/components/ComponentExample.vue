@@ -6,6 +6,14 @@
         v-spacer
         v-btn(
           icon
+          tag="a"
+          v-bind:href="'https://github.com/vuetifyjs/docs/tree/master/public/examples/'+file+'.vue'"
+          target="_blank"
+          v-tooltip:left="{ html: 'Edit this example' }"
+        )
+          v-icon edit
+        v-btn(
+          icon
           v-on:click.native.stop="panel = !panel"
           v-tooltip:left="{ html: 'View source' }"
         )
