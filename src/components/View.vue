@@ -4,7 +4,15 @@
       v-card-title.red.lighten-2.white--text
         span(v-text="doc.title")
         v-spacer
-        v-btn(icon dark v-tooltip:left="{ html: 'Component link' }")
+        v-btn(
+          icon
+          dark
+          v-tooltip:left="{ html: 'Component link' }"
+          tag="a"
+          v-bind:href="'https://github.com/vuetifyjs/vuetify/tree/master/src/components/'+doc.component"
+          target="_blank"
+          v-if="doc.component"
+        )
           v-icon widgets
         v-btn(
           icon

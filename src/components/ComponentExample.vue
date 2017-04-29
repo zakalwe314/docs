@@ -26,7 +26,7 @@
               v-bind:id="tab"
               slot="content"
             )
-              markup(lang="html" v-if="parsed[tab]")
+              markup(:lang="getLang(tab)" v-if="parsed[tab]")
                 div(v-html="parsed[tab]")
       v-card-text.subheading
         slot(name="desc")
@@ -67,6 +67,11 @@
     },
 
     methods: {
+      getLang (tab) {
+        if (tab === 'script') return 'js'
+        if (tab === 'style') return 'css'
+        return 'html'
+      },
       parseTemplate (target, template) {
         const string = `(<${target}>[\\w\\W]*<\\/${target}>)`
         const regex = new RegExp(string, 'g')
