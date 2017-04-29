@@ -2,8 +2,7 @@
   div(class="markup" v-bind:data-lang="lang")
     pre
       code(v-bind:class="lang" ref="markup")
-        div
-          slot
+        slot
     div(class="markup__copy")
       v-icon(v-on:click.native="copyMarkup") content_copy
     v-slide-x-transition
@@ -66,9 +65,7 @@
     background: rgba(#000, 0.04)
     border-radius: 2px
     position: relative
-    margin-bottom: 1rem
     align-items: center
-    margin-bottom: 3rem
     
     &__copy
       position: absolute
@@ -145,6 +142,5 @@
         
   .tabs
     .markup
-      margin: 2rem 0
       max-width: 100%
 </style>

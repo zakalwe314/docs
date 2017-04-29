@@ -1,9 +1,9 @@
 <template lang="pug">
-  v-app(toolbar row)
-    main-side(v-model="sidebar")
+  v-app(row)
+    main-sidebar
 
     main
-      main-nav(v-bind:title="title")
+      main-toolbar(v-bind:title="title")
 
       v-content
         v-container(fluid)
@@ -13,7 +13,17 @@
 </template>
 
 <script>
+  import MainSidebar from '~components/MainSidebar'
+  import MainToolbar from '~components/MainToolbar'
+  import MainFooter from '~components/MainFooter'
+
   export default {
+    components: {
+      MainSidebar,
+      MainToolbar,
+      MainFooter
+    },
+
     data () {
       return {
         title: ''

@@ -1,9 +1,11 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc" id="alerts")
+  v-view(v-bind:doc="doc")
     component-example(header="Contextual" file="alerts/1")
-    component-example(header="Closable" file="alerts/2" v-bind:data="exampleOneData")
-      section-text(slot="details") Using <code>v-model</code> you can control the state of the Alert. If you don't want to assign a v-model and just display the alert, you can simply do <code>:value="true"</code>.
+      div(slot="desc") The <code>v-alert</code> component comes in 4 variations, <strong>success</strong>, <strong>info</strong>, <strong>warning</strong> and <strong>error</strong>. These have default icons assigned which can be changed and represent different actions.
+    component-example(header="Closable" file="alerts/2")
+      div(slot="desc") Using <code>v-model</code> you can control the state of the Alert. If you don't want to assign a v-model and just display the alert, you can simply do <code>:value="true"</code>.
     component-example(header="Custom Icon / No Icon" file="alerts/3")
+      div(slot="desc") You can easily assign a custom icon or remove it all together.
 </template>
 
 <script>
@@ -11,66 +13,42 @@
     name: 'alerts-view',
 
     data () {
-      let exampleOneData = {
-        alert: true,
-      }
-
       let data = {
-        exampleOneData,
         types: ['success', 'info', 'warning', 'error'],
         doc: {
+          id: 'alerts-view',
           title: 'Alert',
           desc: 'The <code>v-alert</code> component is used to convey information to the user. Designed to stand out, the alerts come in four contextual styles, success, info, warning, and error.',
-          props: {
-            'v-alert': {
-              params: [
-                [
-                  'dismissible',
-                  'Boolean',
-                  'False',
-                  'Specifies that the Alert can be closed'
-                ],
-                [
-                  'icon',
-                  'String',
-                  '-',
-                  'Designates a specific icon'
-                ],
-                [
-                  'hide-icon',
-                  'Boolean',
-                  'False',
-                  'Hides the alert icon'
-                ]
-              ],
-              model: {
-                types: ['Boolean'],
-                default: 'False'
-              }
+          props: [
+            {
+              prop: 'dismissible',
+              type: 'Boolean',
+              default: 'False',
+              description: 'Specifies that the Alert can be closed'
+            },
+            {
+              prop: 'icon',
+              type: 'String',
+              default: '-',
+              description: 'Designates a specific icon'
+            },
+            {
+              prop: 'hide-icon',
+              type: 'Boolean',
+              default: 'False',
+              description: 'Hides the alert icon'
             }
-          },
-          slots: {
-            'v-alert': {
-              default: true
-            }
-          },
-          events: {
-            'v-alert': {
-              events: [
-                ['input', 'Boolean: False', "Alert was closed. Requires 'dismissible' prop."]
-              ]
-            }
-          }
+          ]
         }
       }
 
       data.types.forEach(i => {
-        data.doc.props['v-alert'].params.push([
-          i,
-          'Boolean',
-          'False',
-          `Applies the alert--${i} class`
-        ])
+        data.doc.props.push({
+          prop: i,
+          type: 'Boolean',
+          default: 'False',
+          description: `Applies the alert--${i} class`
+        })
       })
 
       return data
@@ -98,13 +76,7 @@
 </script>
 
 <style lang="stylus">
-  #alerts .component-example
-    flex-wrap: wrap
-
-    .component-example__container
-      > div
-        width: 100%
-
+  #alerts-view
     .alert
       margin: 1rem 0
 </style>

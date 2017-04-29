@@ -1,10 +1,9 @@
 module.exports = {
+  extractCSS: process.env.NODE_ENV === 'production',
+  preserveWhitespace: false,
   postcss: [
     require('autoprefixer')({
-      browsers: ['> 1%', 'last 3 versions']
+      browsers: ['last 3 versions']
     })
-  ],
-  buble: {
-    objectAssign: 'Object.assign',
-  },
+  ]
 }

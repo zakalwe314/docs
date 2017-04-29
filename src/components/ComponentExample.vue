@@ -1,71 +1,86 @@
 <template lang="pug">
-  div(class="component-example")
-    component-header(@source="active = !active") {{ header }}
-    slot(name="details")
-    v-expansion-panel(ref="source" class="component-example__expansion-panel")
-      v-expansion-panel-content(ref="body" v-model="active")
-        markup(lang="html" v-if="content")
-          div(v-html="content" ref="markup")
-    div(class="component-example__container")
-      v-fade-transition
-        v-progress-circular(
-          indeterminate 
-          v-bind:size="50"
-          v-if="loading"
-          class="primary--text" 
+  div.component-example
+    v-card
+      v-card-title.primary
+        span.white--text(v-text="header")
+        v-spacer
+        v-btn(
+          icon
+          v-on:click.native.stop="panel = !panel"
+          v-tooltip:left="{ html: 'View source' }"
         )
-      div(v-bind:id="'example-' + _uid")
+          v-icon code
+      v-expansion-panel.elevation-0.component-example__panel
+        v-expansion-panel-content(v-model="panel")
+          v-tabs
+            v-tab-item(
+              v-for="tab in tabs"
+              v-bind:key="tab"
+              slot="activators"
+              v-bind:href="'#'+tab"
+              v-show="parsed[tab]"
+            ) {{ tab }}
+            v-tab-content(
+              v-for="tab in tabs"
+              v-bind:key="tab"
+              v-bind:id="tab"
+              slot="content"
+            )
+              markup(lang="html" v-if="parsed[tab]")
+                div(v-html="parsed[tab]")
+      v-card-text.subheading
+        slot(name="desc")
+      v-card-text.pa-3
+        div(v-bind:id="'example-'+uid")
 </template>
 
 <script>
   import Vue from 'vue'
 
   export default {
-    name: 'component-example',
-
     data () {
       return {
-        active: false,
-        template: null,
-        content: null,
-        loading: false
-      }
-    },
-
-    props: {
-      header: String,
-
-      file: String,
-
-      data: {
-        type: Object,
-        default () {
-          return {
-            example: true
-          }
+        tabs: ['template', 'script', 'style'],
+        component: null,
+        uid: null,
+        panel: false,
+        parsed: {
+          script: null,
+          style: null,
+          template: null
         }
       }
     },
 
+    props: {
+      file: String,
+      header: String
+    },
+
     mounted () {
-      this.request(`${this.file}.html`, this.boot)
+      this.uid = this._uid
+      const vm = this
+      import('~examples/'+this.file+'.vue').then(comp => {
+        new Vue(comp).$mount('#example-'+vm.uid)
+      })
+      this.request(this.file, this.boot)
     },
 
     methods: {
-      boot (res) {
-        this.template = res
-        this.content = this.template.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        const render = Vue.compile(this.template)
-        const vm = this
+      parseTemplate (target, template) {
+        const string = `(<${target}>[\\w\\W]*<\\/${target}>)`
+        const regex = new RegExp(string, 'g')
+        const parsed = regex.exec(template)
 
-        new Vue({
-          name: 'test',
-          data () {
-            return vm.data || {}
-          },
-          render: render.render,
-          staticRenderFns: render.staticRenderFns
-        }).$mount(`#example-${vm._uid}`)
+        return parsed
+          ? parsed[1].replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          : false
+      },
+
+      boot (res) {
+        this.parsed.template = this.parseTemplate('template', res)
+        this.parsed.script = this.parseTemplate('script', res)
+        this.parsed.style = this.parseTemplate('style', res)
       },
 
       toggle () {
@@ -76,7 +91,7 @@
         const xmlhttp = new XMLHttpRequest()
         const vm = this
         const timeout = setTimeout(() => this.loading = true, 500)
-        xmlhttp.open('GET', `/public/examples/${file}`, true)
+        xmlhttp.open('GET', `/public/examples/${file}.vue`, true)
 
         xmlhttp.onreadystatechange = function () {
           if(xmlhttp.status == 200 && xmlhttp.readyState == 4) {
@@ -92,45 +107,21 @@
 </script>
 
 <style lang="stylus">
-  @import '../stylus/settings/_variables'
-  
   .component-example
-    min-height: 100px
-    margin-bottom: 2rem
+    margin-bottom: 100px
     
-    .component-example__expansion-panel
-        box-shadow: none
-        background: transparent
-        
-        li
-          border: none
-        
+    .component-example__panel
       .expansion-panel__body
         border: none
-        box-shadow: none
-        background: transparent
-      
-    &-copy
-      opacity: 0
-      position: absolute
-      
-    &-copied
-      position: absolute
-      right: 1rem
-      bottom: .5rem
-      font-size: 1rem
-      font-weight: 700
-      color: rgba(#000, 0.3)
-      
-    &__container
-      flex-wrap: wrap
-      transition: .3s ease-out
-      text-align: center
-      
-      > *
-        text-align: initial
-        
-      @media screen and (max-width: $grid-breakpoints.sm)
-        margin: 0 -1rem 1rem
-        padding: 2rem 1rem
+
+      .tabs__item, .markup
+        height: 100%
+
+      .tabs__items
+        border: none
+        max-height: 500px
+        overflow-y: auto
+
+      > li
+        border: none
 </style>
