@@ -94,5 +94,6 @@
 <style lang="stylus">
   .view
     max-width: 1024px
+    margin: 0 auto
     padding-bottom: 75px
 </style>

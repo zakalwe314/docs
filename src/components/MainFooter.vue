@@ -8,7 +8,7 @@
         v-list.py-0
           v-list-item
             v-list-tile(router :to="previous.route" ripple).pl-5
-              v-icon.mr-5 arrow_back
+              v-icon.mr-5.hidden-xs-only arrow_back
               v-list-tile-content
                 v-list-tile-sub-title Previous
                 v-list-tile-title(v-text="previous.name")
@@ -22,7 +22,7 @@
               v-list-tile-content
                 v-list-tile-sub-title.text-xs-right Next
                 v-list-tile-title.text-xs-right(v-text="next.name")
-              v-icon.ml-5 arrow_forward
+              v-icon.ml-5.hidden-xs-only arrow_forward
 </template>
 
 <script>
