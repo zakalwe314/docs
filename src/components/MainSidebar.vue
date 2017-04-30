@@ -52,7 +52,6 @@
   export default {
     data () {
       return {
-        isActive: null,
         items: [
           { header: 'Core documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
@@ -174,13 +173,14 @@
       }
     },
 
-    watch: {
-      isActive () {
-        this.$store.commit('vuetify/SIDEBAR', this.isActive)
-      },
-
-      '$store.state.sidebar' (sidebar) {
-        this.isActive = sidebar
+    computed: {
+      isActive: {
+        get () {
+          return this.$store.state.sidebar
+        },
+        set (val) {
+          this.$store.commit('vuetify/SIDEBAR', val)
+        }
       }
     }
   }

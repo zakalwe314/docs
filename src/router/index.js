@@ -15,9 +15,6 @@ export function createRouter () {
     const router = new Router({
       base: __dirname,
       mode: 'history',
-      scrollBehavior: () => {
-        document.querySelector('.content').scrollTop = 0
-      },
       routes: [
         route('/', 'About'),
         route('/quick-start', 'QuickStart'),

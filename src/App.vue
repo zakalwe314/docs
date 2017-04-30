@@ -1,15 +1,12 @@
 <template lang="pug">
-  v-app(row)
+  v-app(fixed-toolbar)
     main-sidebar
-
+    main-toolbar(v-bind:title="title")
     main
-      main-toolbar(v-bind:title="title")
-
-      v-content
-        v-container(fluid)
-          transition(name="slide" mode="out-in")
-            router-view(@view="meta")
-        main-footer
+      v-container
+        transition(name="slide" mode="out-in")
+          router-view(@view="meta")
+      main-footer
 </template>
 
 <script>

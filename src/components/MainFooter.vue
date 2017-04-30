@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-footer.white.pa-0.main-footer
+  v-footer.white.pa-0.main-footer(data-footer)
     v-layout(row)
       v-col(
         v-if="previous.route"
