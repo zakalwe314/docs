@@ -1,18 +1,17 @@
 <template lang="pug">
-  header(id="main-toolbar")
-    v-toolbar(:class="[color]")
-      v-toolbar-side-icon(
-        v-on:click.native.stop="$store.commit('vuetify/SIDEBAR', !$store.state.sidebar)"
-      )
+  v-toolbar(:class="[color]" fixed)#main-toolbar
+    v-toolbar-side-icon(
+      v-on:click.native.stop="$store.commit('vuetify/SIDEBAR', !$store.state.sidebar)"
+    )
 
-      v-toolbar-title(v-text="title")
-      .toolbar__links
-        a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
-          img(src="~public/github.png" alt="github")
-        a(href="https://twitter.com/vuetifyjs" target="_blank")
-          img(src="~public/twitter.png" alt="twitter")
-        a(href="https://www.facebook.com/vuetifyjs" target="_blank")
-          img(src="~public/facebook.png" alt="facebook")
+    v-toolbar-title(v-text="title")
+    .toolbar__links
+      a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
+        img(src="~public/github.png" alt="github")
+      a(href="https://twitter.com/vuetifyjs" target="_blank")
+        img(src="~public/twitter.png" alt="twitter")
+      a(href="https://www.facebook.com/vuetifyjs" target="_blank")
+        img(src="~public/facebook.png" alt="facebook")
 </template>
 
 <script>

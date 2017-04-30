@@ -1,5 +1,6 @@
 <template lang="pug">
-  v-sidebar(v-model="isActive")
+  v-navigation-drawer(v-model="isActive" permanent dark)
+    v-btn(primary v-on:click.native.stop="mini = !mini") Mini
     div(class="vuetify")
       router-link(
         to="/about",
@@ -13,7 +14,7 @@
         )
       .title Vuetify
       a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.11.1" target="_blank") v0.11.1
-    v-divider(dark)
+    v-divider
     v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:group="item.group")
@@ -37,7 +38,7 @@
               v-list-tile-action(v-if="subItem.action")
                 v-icon(class="success--text") {{ subItem.action }}
         v-subheader(v-else-if="item.header") {{ item.header }}
-        v-divider(v-else-if="item.divider" dark)
+        v-divider(v-else-if="item.divider")
         v-list-item(v-else)
           v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
             v-list-tile-action
@@ -52,6 +53,7 @@
   export default {
     data () {
       return {
+        mini: false,
         items: [
           { header: 'Core documentation' },
           { href: '/', title: 'About', action: 'question_answer' },
@@ -127,7 +129,7 @@
               { href: '/directives/tooltips', title: 'Tooltips' }
             ]
           },
-          { divider: true, light: true },
+          { divider: true },
           { header: 'Additional resources' },
           {
             title: 'Ecosystem',

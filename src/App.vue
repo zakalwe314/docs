@@ -1,6 +1,6 @@
 <template lang="pug">
   v-app(fixed-toolbar)
-    main-sidebar
+    main-navigation
     main-toolbar(v-bind:title="title")
     main
       v-container
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-  import MainSidebar from '~components/MainSidebar'
+  import MainNavigation from '~components/MainNavigation'
   import MainToolbar from '~components/MainToolbar'
   import MainFooter from '~components/MainFooter'
 
   export default {
     components: {
-      MainSidebar,
+      MainNavigation,
       MainToolbar,
       MainFooter
     },
