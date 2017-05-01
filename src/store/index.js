@@ -9,7 +9,7 @@ export function createStore () {
       title: null,
       description: null,
       keywords: null,
-      sidebar: null,
+      sidebar: true,
       currentColor: 'transparent',
       previous: {
         name: 'Components',

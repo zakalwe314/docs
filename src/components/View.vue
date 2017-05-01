@@ -28,6 +28,9 @@
           icon
           dark
           v-tooltip:left="{ html: 'Material design spec' }"
+          tag="a"
+          v-bind:href="doc.spec"
+          target="_blank"
           v-if="doc.spec"
         )
           v-icon folder_special

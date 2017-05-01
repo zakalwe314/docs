@@ -1,84 +1,26 @@
 <template lang="pug">
-  doc-view(v-bind:doc="doc" id="layout-view")
-    component-example(header="Column Layouts" file="layouts/1")
-      section-text(slot="details") This layout features a fixed toolbar with scrollable content.
-    component-example(file="layouts/2")
-      section-text(slot="details") This layout features a fixed toolbar and footer with scrollable content.
-    component-example(v-bind:data="$data" file="layouts/3")
-      section-text(slot="details") This layout features a sidebar. It can be configured on the left or the right, be persistent or fixed.
-    component-example(v-bind:data="$data" file="layouts/4")
-      section-text(slot="details") This layout features a sidebar with an above fixed header. The sidebar can be configured on the left or the right, be persistent or fixed.
-    component-example(v-bind:data="$data" file="layouts/5")
-      section-text(slot="details") This layout features a sidebar with an above fixed header and below fixed footer. The sidebar can be configured on the left or the right, be persistent or fixed.
-    component-example(header="Row Layouts" v-bind:data="$data" file="layouts/6")
-      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a fixed toolbar. The sidebar can be configured on the left or the right, be persistent or fixed.
-    component-example(v-bind:data="$data" file="layouts/7")
-      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a fixed toolbar and footer. The sidebar can be configured on the left or the right, be persistent or fixed.
-    component-example(v-bind:data="$data" file="layouts/8")
-      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a fixed toolbar and non-fixed footer. The sidebar can be configured on the left or the right, be persistent or fixed.
-    component-example(v-bind:data="$data" file="layouts/9")
-      section-text(slot="details") This layout features a sidebar that is offset from the main content area with a non-fixed toolbar and non-fixed footer. The sidebar can be configured on the left or the right, be persistent or fixed.
+  v-view(v-bind:doc="doc")
+    component-example(header="Structure" file="layouts/1")
+      div(slot="desc") The default structure of the Vuetify layout is one of the few opinionated designs you will encounter in the framework. It is done so that each layout is easy to understand and works as expected for any given scenario. Below is the <strong>baseline</strong> structure for a layout. It includes a navigation drawer, toolbar, right navigation drawer, content and footer.
+    component-example(header="Permanent drawer" file="layouts/2")
+      div(slot="desc") Permanent navigation drawers are default open. These are used for applications that are desktop only and are not openable or closeable.
+    component-example(header="Permanent clipped drawer" file="layouts/3")
+    component-example(header="Permanent floating drawer" file="layouts/4")
+    component-example(header="Permanent floating drawer in a card" file="layouts/5")
+    component-example(header="Persistent" file="layouts/6")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        e3: {
-          open: true,
-          fixed: false,
-          right: false
-        },
-        e4: {
-          open: true,
-          fixed: false,
-          right: false
-        },
-        e5: {
-          open: true,
-          fixed: false,
-          right: false
-        },
-        e6: {
-          open: true,
-          fixed: false,
-          right: false
-        },
-        e7: {
-          open: true,
-          fixed: false,
-          right: false
-        },
-        e8: {
-          open: true,
-          fixed: false,
-          right: false
-        },
-        e9: {
-          open: true,
-          fixed: false,
-          right: false
-        },
         doc: {
           title: 'Layouts',
-          desc: 'Vuetify supports numerous different pre-defined layouts, right out of the box. The total number of variations is not limited to the examples below.',
-          props: {
-            'v-app': {
-              params: [
-                [
-                  'id',
-                  'String',
-                  'app',
-                  'Sets an id on the v-app element'
-                ]
-              ]
-            }
-          },
-          slots: {
-            'v-app': {
-              default: true
-            }
-          }
+          id: 'layout-view',
+          edit: 'LayoutsView',
+          component: 'app',
+          desc: 'The layout system is the heart of every application. Below are the officially supported examples, ranging from desktop to mobile applications.',
+          props: []
         }
       }
     },
@@ -108,23 +50,22 @@
   @import '../../node_modules/vuetify/src/stylus/settings/_colors'
   @import '../../node_modules/vuetify/src/stylus/tools/_elevations'
   
+  #layout-view
+    .component-example
+      position: relative
+      z-index: 0
 
-  .component-example__container
-    z-index: 0
-
-    [data-app]
-      height: 400px
-      elevation(4)
-      
-      .content > .container
-        min-height: 500px
-      
-      .sidebar
-        height: 500px !important
+      [data-app]
+        overflow: hidden
+        height: 400px
+        elevation(2)
         
-        &--drawer
+        .navigation-drawer, .toolbar, .overlay
           position: absolute
-        
-      .overlay
-        position: absolute !important
+
+        main
+          min-height: calc(400px - 36px)
+
+        .navigation-drawer
+          height: 400px !important
 </style>

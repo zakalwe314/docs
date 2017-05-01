@@ -3,7 +3,7 @@
     main-navigation
     main-toolbar(v-bind:title="title")
     main
-      v-container
+      v-container(fluid)
         transition(name="slide" mode="out-in")
           router-view(@view="meta")
       main-footer

@@ -1,6 +1,5 @@
 <template lang="pug">
-  v-navigation-drawer(v-model="isActive" permanent dark)
-    v-btn(primary v-on:click.native.stop="mini = !mini") Mini
+  v-navigation-drawer(v-model="isActive" persistent dark)
     div(class="vuetify")
       router-link(
         to="/about",
@@ -20,11 +19,11 @@
         v-list-group(v-if="item.items" v-bind:group="item.group")
           v-list-tile(slot="item" ripple)
             v-list-tile-action
-              v-icon {{ item.action }}
+              v-icon(dark) {{ item.action }}
             v-list-tile-content
               v-list-tile-title {{ item.title }}
             v-list-tile-action
-              v-icon keyboard_arrow_down
+              v-icon(dark) keyboard_arrow_down
           v-list-item(v-for="subItem in item.items")
             v-list-tile(
               :href="subItem.href"
@@ -36,17 +35,17 @@
               v-list-tile-content
                 v-list-tile-title {{ subItem.title }}
               v-list-tile-action(v-if="subItem.action")
-                v-icon(class="success--text") {{ subItem.action }}
+                v-icon(dark class="success--text") {{ subItem.action }}
         v-subheader(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider")
         v-list-item(v-else)
           v-list-tile(:href="item.href" router ripple v-bind:disabled="item.disabled")
             v-list-tile-action
-              v-icon {{ item.action }}
+              v-icon(dark) {{ item.action }}
             v-list-tile-content
               v-list-tile-title {{ item.title }}
             v-list-tile-action(v-if="item.subAction")
-              v-icon(class="success--text") {{ item.subAction }}
+              v-icon(dark class="success--text") {{ item.subAction }}
 </template>
 
 <script>
