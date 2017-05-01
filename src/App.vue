@@ -1,12 +1,12 @@
 <template lang="pug">
-  v-app(fixed-toolbar)
+  v-app
     main-navigation
     main-toolbar(v-bind:title="title")
     main
       v-container(fluid)
         transition(name="slide" mode="out-in")
           router-view(@view="meta")
-      main-footer
+    main-footer
 </template>
 
 <script>
