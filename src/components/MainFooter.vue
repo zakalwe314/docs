@@ -40,15 +40,17 @@
 
 <style lang="stylus">
   .main-footer
+    height: initial
+
     .col
       transition: .3s ease-in-out
 
     .list__tile
       height: 100px
-      
+
       &__title
         color: #fff
-      
+
       &__sub-title
         color: rgba(#fff, .3)
 </style>
