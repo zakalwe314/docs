@@ -33,7 +33,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar fixed class="teal">
-      <v-toolbar-side-icon @click.native="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Toolbar</v-toolbar-title>
     </v-toolbar>
     <main>
