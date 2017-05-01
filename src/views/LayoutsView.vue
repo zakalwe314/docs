@@ -9,6 +9,8 @@
     component-example(header="Permanent floating drawer in a card" file="layouts/5")
     component-example(header="Persistent" file="layouts/6")
     component-example(header="Temporary" file="layouts/7")
+    component-example(header="Dark theme" file="layouts/8")
+      div(slot="desc") Vuetify also supports the dark application theme. This will not override components that have default themes so in some cases it will be necessary to manually set the dark theme accents.
 </template>
 
 <script>
@@ -52,6 +54,10 @@
   @import '../../node_modules/vuetify/src/stylus/tools/_elevations'
   
   #layout-view
+    #example-8
+      .card
+        background: #424242
+
     .component-example
       position: relative
       z-index: 0
