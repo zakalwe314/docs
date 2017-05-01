@@ -5,23 +5,29 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
+const resolve = (file) => path.resolve(__dirname, file)
 
 module.exports = {
   devtool: isProd
     ? false
     : '#cheap-module-source-map',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: resolve('../dist'),
     publicPath: '/dist/',
     filename: '[name].[chunkhash].js'
   },
   resolve: {
     extensions: ['*', '.js', '.json', '.vue'],
     alias: {
-      'public': path.resolve(__dirname, '../public'),
-      '~components': path.resolve(__dirname, '../src/components'),
-      '~layouts': path.resolve(__dirname, '../src/layouts'),
-      '~examples': path.resolve(__dirname, '../public/examples'),
+      '~assets': resolve('../src/assets'),
+      '~components': resolve('../src/components'),
+      '~examples': resolve('../public/examples'),
+      '~layouts': resolve('../src/layouts'),
+      '~pages': resolve('../pages'),
+      '~public': resolve('../public'),
+      '~router': resolve('../router'),
+      '~static': resolve('../static'),
+      '~store': resolve('../store'),
       'vue$': 'vue/dist/vue.common.js'
     }
   },
