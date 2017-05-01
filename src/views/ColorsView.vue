@@ -10,7 +10,7 @@
       div
         v-container(fluid)
           v-layout(row wrap)
-            v-col(xs6 sm6 md4 lg3 v-for="color in colors")
+            v-col(xs6 sm6 md4 lg3 v-for="color in colors" v-bind:key="color")
               v-card(v-bind:class="[color]" height="100px")
                 v-card-text
                   h3 {{ color }}
@@ -18,11 +18,13 @@
                 v-for="n in [4,3,2,1]"
                 v-bind:class="[color, 'lighten-' + n]"
                 class="black--text"
+                v-bind:key="n"
               )
                 v-card-text {{ color }} lighten-{{ n }}
               v-card(
                 v-for="n in 4"
                 v-bind:class="[color, 'darken-' + n]"
+                v-bind:key="n"
               )
                 v-card-text {{ color }} darken-{{ n }}
               v-card(
@@ -30,6 +32,7 @@
                 v-bind:class="[color, 'accent-' + n]"
                 v-if="['grey', 'blue-grey', 'brown'].indexOf(color) === -1"
                 class="black--text"
+                v-bind:key="n"
               )
                 v-card-text {{ color }} accent-{{ n }}
     section
@@ -88,21 +91,21 @@
   #colors-view
     .col
       margin: .5rem 0
-      
+
     .card
       color: #fff
       font-weight: 500
       letter-spacing: .5px
       padding: 1rem
       border-radius: 0
-        
+
       .card__text
         h3
           color: #fff
           align-self: flex-start
           font-size: 1.5rem
           margin: 0
-      
+
     .card__text
       padding: 0
 </style>

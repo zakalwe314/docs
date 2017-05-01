@@ -24,7 +24,7 @@
               v-list-tile-title {{ item.title }}
             v-list-tile-action
               v-icon(dark) keyboard_arrow_down
-          v-list-item(v-for="subItem in item.items")
+          v-list-item(v-for="subItem in item.items" v-bind:key="subItem")
             v-list-tile(
               :href="subItem.href"
               v-bind:router="!subItem.target"
