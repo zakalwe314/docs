@@ -8,6 +8,7 @@
     component-example(header="Permanent floating drawer" file="layouts/4")
     component-example(header="Permanent floating drawer in a card" file="layouts/5")
     component-example(header="Persistent" file="layouts/6")
+    component-example(header="Temporary" file="layouts/7")
 </template>
 
 <script>
