@@ -462,8 +462,8 @@
 </script>
 
 <style lang="stylus">
-  @import '../../node_modules/vuetify/src/stylus/settings/_colors'
-  @import '../../node_modules/vuetify/src/stylus/settings/_variables'
+  @import '../node_modules/vuetify/src/stylus/settings/_colors'
+  @import '../node_modules/vuetify/src/stylus/settings/_variables'
 
   #buttons-view
     .card

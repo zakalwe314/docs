@@ -50,9 +50,9 @@
 </script>
 
 <style lang="stylus">
-  @import '../../node_modules/vuetify/src/stylus/settings/_colors'
-  @import '../../node_modules/vuetify/src/stylus/tools/_elevations'
-  
+  @import '../node_modules/vuetify/src/stylus/settings/_colors'
+  @import '../node_modules/vuetify/src/stylus/tools/_elevations'
+
   #layout-view
     #example-8
       .card
@@ -66,7 +66,7 @@
         overflow: hidden
         height: 400px
         elevation(2)
-        
+
         .navigation-drawer, .toolbar, .overlay
           position: absolute
 
