@@ -1,18 +1,25 @@
 <template lang="pug">
   div#home-view
     header
-      img(src="https://raw.githubusercontent.com/vuetifyjs/webpack-ssr/master/template/public/v.png")
+      img(src="/static/v.png")
       #menu
-        a(class="white--text" href="https://vuetifyjs.com/quick-start") Docs
-        a(class="white--text" href="https://github.com/vuetifyjs/vuetify/releases") Updates
+        router-link(
+          class="white--text"
+          to="/quick-start"
+        ) Docs
+        a(
+          class="white--text"
+          href="https://github.com/vuetifyjs/vuetify/releases"
+          target="_blank"
+        ) Updates
     
     
-    section(id="hero-wrrap")
+    section(id="hero-wrap")
       img(src="http://androidmag.de/wp-content/uploads/2014/11/14-77.jpg")
       section(id="hero" class="blue")
-        v-container( fluid)
+        v-container(fluid)
           v-layout(row)
-            v-col( xs8 class="text-xs-right")
+            v-col(xs8 class="text-xs-right")
               h1(class="grey--text text--lighten-4") Vuetify.js
               h4(class="grey--text text--lighten-4") Clean and semantic Vue framework
 
@@ -128,7 +135,7 @@
       align-items center
       text-align center
 
-    #hero-wrrap
+    #hero-wrap
       height 400px
       padding 0
       overflow: hidden

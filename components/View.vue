@@ -39,7 +39,13 @@
         v-btn(flat primary tag="a" href="#api") Go to api
           v-icon.primary--text navigate_next
     h2#examples.display-1 Examples
-    slot
+    component-example(
+      v-for="example in doc.examples"
+      v-bind:key="example"
+      v-bind:heading="example.heading"
+      v-bind:file="example.file"
+    )
+      div(slot="desc" v-html="example.desc" v-if="example.desc")
     h2#api.display-1.mt-5 API
     v-tabs.elevation-1
       v-tab-item(

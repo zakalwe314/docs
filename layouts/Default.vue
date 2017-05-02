@@ -4,7 +4,7 @@
     main-toolbar
     main
       v-container(fluid)
-        transition(name="slide" mode="out-in")
+        v-slide-x-transition(mode="out-in")
           router-view
     main-footer
 </template>
