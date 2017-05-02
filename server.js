@@ -82,6 +82,7 @@ app.use(compression({ threshold: 0 }))
 app.use(favicon('./static/favicon.ico'))
 app.use('/static', serve('./static', true))
 app.use('/public', serve('./public', true))
+app.use('/examples', serve('./examples', true))
 app.use('/static/manifest.json', serve('./manifest.json', true))
 app.use('/static/robots.txt', serve('./robots.txt'))
 
