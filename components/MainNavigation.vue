@@ -1,18 +1,33 @@
 <template lang="pug">
-  v-navigation-drawer(v-model="isActive" persistent dark)
-    div(class="vuetify")
-      router-link(
-        to="/",
-        class="sidebar__logo"
-      )
-        img(
-          src="/static/v.png"
-          height="100"
-          width="100"
-          alt="Vuetify Logo"
-        )
-      .title Vuetify
-      a(href="https://github.com/vuetifyjs/vuetify/releases/tag/v0.11.1" target="_blank") v0.11.1
+  v-navigation-drawer(v-model="isActive" persistent dark :mini-variant="mini")
+    v-list.pa-0.vuetify
+      v-list-item
+        v-list-tile(avatar tag="div")
+          v-list-tile-avatar
+            router-link(to="/")
+              img(src="/static/v.png")
+          v-list-tile-content.show-overflow
+            v-menu(transition="v-scale-transition" origin="top")
+              v-list-tile-title(slot="activator")
+                span Vuetify
+                v-icon arrow_drop_down
+              v-list(class="grey darken-2")
+                v-list-item
+                  v-list-tile
+                    v-list-tile-title Github
+                v-list-item
+                  v-list-tile
+                    v-list-tile-title Chat
+                v-list-item
+                  v-list-tile
+                    v-list-tile-title Twitter
+                v-list-item
+                  v-list-tile
+                    v-list-tile-title Facebook
+          v-spacer
+          v-list-tile-action
+            v-btn(icon v-on:click.native.stop="mini = !mini")
+              v-icon chevron_left
     v-divider
     v-list(dense)
       template(v-for="item in items")
@@ -188,28 +203,10 @@
 
 <style lang="stylus">
   .vuetify
-    text-align: center
-    margin: 16px 0
-    color: #fff
+    .router-link-active
+      display: flex
+      align-items: center
 
-    .sidebar__logo
-      display: block
-      position: relative
-      margin-bottom: 16px
-      text-decoration: none
-
-      img
-        height: 100px
-
-    a
-      color: #fff
-
-    .gitter
-      margin-bottom: 16px
-
-  .sidebar__item-header
-    color: #fff
-
-  .sidebar__item
-    color: #fff
+    .list__tile__avatar img
+      border-radius: 0 !important
 </style>
