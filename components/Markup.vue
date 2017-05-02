@@ -16,7 +16,18 @@
 </template>
 
 <script>
-  import hljs from 'highlight.js/lib/highlight.js'
+  import highlight from 'highlight.js/lib/highlight.js'
+  import highlightBash from 'highlight.js/lib/languages/bash'
+  import highlightStylus from 'highlight.js/lib/languages/stylus'
+  import highlightXML from 'highlight.js/lib/languages/xml'
+  import highlightJS from 'highlight.js/lib/languages/javascript'
+  import highlightScss from 'highlight.js/lib/languages/scss'
+
+  highlight.registerLanguage('bash', highlightBash)
+  highlight.registerLanguage('stylus', highlightStylus)
+  highlight.registerLanguage('sass', highlightScss)
+  highlight.registerLanguage('html', highlightXML)
+  highlight.registerLanguage('js', highlightJS)
 
 	export default {
     name: 'markup',
@@ -34,7 +45,7 @@
     },
 
 		mounted () {
-      hljs.highlightBlock(this.$refs.markup)
+      highlight.highlightBlock(this.$refs.markup)
 		},
 
     methods: {
@@ -54,7 +65,7 @@
 </script>
 
 <style lang="stylus">
-  @import '../stylus/settings/_variables'
+  @import '~assets/stylus/settings/_variables'
       
   .markup
     font-size: 1.2rem
@@ -120,6 +131,7 @@
       overflow-y: hidden
       word-break: break-word
       display: flex
+      flex-wrap: wrap
       align-items: center
       
       > div

@@ -2,11 +2,11 @@
   v-navigation-drawer(v-model="isActive" persistent dark)
     div(class="vuetify")
       router-link(
-        to="/about",
+        to="/",
         class="sidebar__logo"
       )
         img(
-          src="~public/v.png"
+          src="/static/v.png"
           height="100"
           width="100"
           alt="Vuetify Logo"
@@ -55,79 +55,78 @@
         mini: false,
         items: [
           { header: 'Core documentation' },
-          { href: '/', title: 'About', action: 'question_answer' },
           { href: '/quick-start', title: 'Quick start', action: 'explore' },
-          { href: '/motion', title: 'Motion', action: 'slow_motion_video' },
-          {
-            title: 'Style',
-            action: 'style',
-            group: 'style',
-            items: [
-              { href: '/style/colors', title: 'Colors' },
-              { href: '/style/theme', title: 'Theme' },
-              { href: '/style/typography', title: 'Typography' },
-              { href: '/style/content', title: 'Content' }
-            ]
-          },
-          {
-            title: 'Layout',
-            action: 'devices',
-            group: 'layout',
-            items: [
-              { href: '/layout/pre-defined', title: 'Pre-defined' },
-              { href: '/layout/grid', title: 'Grid' },
-              { href: '/layout/spacing', title: 'Spacing' },
-              { href: '/layout/alignment', title: 'Alignment' },
-              { href: '/layout/display', title: 'Display' },
-              { href: '/layout/elevation', title: 'Elevation' }
-            ]
-          },
-          {
-            title: 'Components',
-            action: 'widgets',
-            group: '/components',
-            items: [
-              { href: '/components/alerts', title: 'Alerts' },
-              { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
-              { href: '/components/bottom-navigation', title: 'Bottom navigation' },
-              { href: '/components/buttons', title: 'Buttons' },
-              { href: '/components/cards', title: 'Cards' },
-              { href: '/components/carousel', title: 'Carousel' },
-              { href: '/components/chips', title: 'Chips' },
-              { href: '/components/datatables', title: 'Data tables' },
-              { href: '/components/dialogs', title: 'Dialogs', action: 'fiber_new' },
-              { href: '/components/dividers', title: 'Dividers' },
-              { href: '/components/expansion-panel', title: 'Expansion panel' },
-              { href: '/components/footer', title: 'Footer' },
-              { href: '/components/icons', title: 'Icons' },
-              { href: '/components/lists', title: 'Lists' },
-              { href: '/components/menus', title: 'Menus' },
-              { href: '/components/pagination', title: 'Pagination' },
-              { href: '/components/parallax', title: 'Parallax' },
-              { href: '/components/pickers', title: 'Pickers', action: 'fiber_new' },
-              { href: '/components/progress', title: 'Progress & activity' },
-              { href: '/components/selects', title: 'Selects' },
-              { href: '/components/selection-controls', title: 'Selection controls' },
-              { href: '/components/sidebar', title: 'Sidebars' },
-              { href: '/components/sliders', title: 'Sliders' },
-              { href: '/components/snackbars', title: 'Snackbars & toasts' },
-              { href: '/components/steppers', title: 'Steppers' },
-              { href: '/components/subheaders', title: 'Subheaders' },
-              { href: '/components/tabs', title: 'Tabs' },
-              { href: '/components/text-fields', title: 'Text fields' },
-              { href: '/components/toolbar', title: 'Toolbars' }
-            ]
-          },
-          {
-            title: 'Directives',
-            action: 'polymer',
-            group: '/directives',
-            items: [
-              { href: '/directives/badges', title: 'Badges' },
-              { href: '/directives/ripples', title: 'Ripples' },
-              { href: '/directives/tooltips', title: 'Tooltips' }
-            ]
-          },
+          // { href: '/motion', title: 'Motion', action: 'slow_motion_video' },
+          // {
+          //   title: 'Style',
+          //   action: 'style',
+          //   group: 'style',
+          //   items: [
+          //     { href: '/style/colors', title: 'Colors' },
+          //     { href: '/style/theme', title: 'Theme' },
+          //     { href: '/style/typography', title: 'Typography' },
+          //     { href: '/style/content', title: 'Content' }
+          //   ]
+          // },
+          // {
+          //   title: 'Layout',
+          //   action: 'devices',
+          //   group: 'layout',
+          //   items: [
+          //     { href: '/layout/pre-defined', title: 'Pre-defined' },
+          //     { href: '/layout/grid', title: 'Grid' },
+          //     { href: '/layout/spacing', title: 'Spacing' },
+          //     { href: '/layout/alignment', title: 'Alignment' },
+          //     { href: '/layout/display', title: 'Display' },
+          //     { href: '/layout/elevation', title: 'Elevation' }
+          //   ]
+          // },
+          // {
+          //   title: 'Components',
+          //   action: 'widgets',
+          //   group: '/components',
+          //   items: [
+          //     { href: '/components/alerts', title: 'Alerts' },
+          //     { href: '/components/breadcrumbs', title: 'Breadcrumbs' },
+          //     { href: '/components/bottom-navigation', title: 'Bottom navigation' },
+          //     { href: '/components/buttons', title: 'Buttons' },
+          //     { href: '/components/cards', title: 'Cards' },
+          //     { href: '/components/carousel', title: 'Carousel' },
+          //     { href: '/components/chips', title: 'Chips' },
+          //     { href: '/components/datatables', title: 'Data tables' },
+          //     { href: '/components/dialogs', title: 'Dialogs', action: 'fiber_new' },
+          //     { href: '/components/dividers', title: 'Dividers' },
+          //     { href: '/components/expansion-panel', title: 'Expansion panel' },
+          //     { href: '/components/footer', title: 'Footer' },
+          //     { href: '/components/icons', title: 'Icons' },
+          //     { href: '/components/lists', title: 'Lists' },
+          //     { href: '/components/menus', title: 'Menus' },
+          //     { href: '/components/pagination', title: 'Pagination' },
+          //     { href: '/components/parallax', title: 'Parallax' },
+          //     { href: '/components/pickers', title: 'Pickers', action: 'fiber_new' },
+          //     { href: '/components/progress', title: 'Progress & activity' },
+          //     { href: '/components/selects', title: 'Selects' },
+          //     { href: '/components/selection-controls', title: 'Selection controls' },
+          //     { href: '/components/sidebar', title: 'Sidebars' },
+          //     { href: '/components/sliders', title: 'Sliders' },
+          //     { href: '/components/snackbars', title: 'Snackbars & toasts' },
+          //     { href: '/components/steppers', title: 'Steppers' },
+          //     { href: '/components/subheaders', title: 'Subheaders' },
+          //     { href: '/components/tabs', title: 'Tabs' },
+          //     { href: '/components/text-fields', title: 'Text fields' },
+          //     { href: '/components/toolbar', title: 'Toolbars' }
+          //   ]
+          // },
+          // {
+          //   title: 'Directives',
+          //   action: 'polymer',
+          //   group: '/directives',
+          //   items: [
+          //     { href: '/directives/badges', title: 'Badges' },
+          //     { href: '/directives/ripples', title: 'Ripples' },
+          //     { href: '/directives/tooltips', title: 'Tooltips' }
+          //   ]
+          // },
           { divider: true },
           { header: 'Additional resources' },
           {
@@ -188,7 +187,6 @@
 </script>
 
 <style lang="stylus">
-  @import '../stylus/settings/_variables'
   .vuetify
     text-align: center
     margin: 16px 0

@@ -24,7 +24,7 @@
 </script>
 
 <style lang="stylus">
-  @import '../stylus/settings/_variables'
+  // @import '~assets/stylus/settings/_variables'
 
   .view
     margin-bottom: 3rem
@@ -42,5 +42,5 @@
     font-weight 900
 
   .section-text
-    line-height: $line-height-root * 1.5
+    // line-height: $line-height-root * 1.5
 </style>

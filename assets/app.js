@@ -1,22 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { createStore } from './store'
-import { createRouter } from './router'
 import Vuetify from 'vuetify'
-import Components from './components/_index'
-import { sync } from 'vuex-router-sync'
-import highlight from 'highlight.js/lib/highlight.js'
-import highlightBash from 'highlight.js/lib/languages/bash'
-import highlightStylus from 'highlight.js/lib/languages/stylus'
-import highlightXML from 'highlight.js/lib/languages/xml'
-import highlightJS from 'highlight.js/lib/languages/javascript'
-import highlightScss from 'highlight.js/lib/languages/scss'
+import Components from 'components/_index'
 
-highlight.registerLanguage('bash', highlightBash)
-highlight.registerLanguage('stylus', highlightStylus)
-highlight.registerLanguage('sass', highlightScss)
-highlight.registerLanguage('html', highlightXML)
-highlight.registerLanguage('js', highlightJS)
+import { createStore } from 'store/index'
+import { createRouter } from 'router/index'
+import { sync } from 'vuex-router-sync'
 
 Vue.use(Vuetify)
 

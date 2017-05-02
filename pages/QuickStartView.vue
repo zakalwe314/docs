@@ -10,11 +10,8 @@
       section-text To test using Vuetify.js without installing a template from Vue CLI, include the files below into your <code>index</code> file of your application after Vue. Vuetify will automatically install and be ready to use.
       markup(lang="html")
         |&lt;link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"&gt;
-        |&nbsp;
         |&lt;link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"&gt;
-        |&nbsp;
         |&lt;script src="https://unpkg.com/vue/dist/vue.js"&gt;&lt;/script&gt;
-        |&nbsp;
         |&lt;script src="https://unpkg.com/vuetify/dist/vuetify.min.js"&gt;&lt;/script&gt;
 
       h6 Existing Projects
@@ -45,24 +42,24 @@
           v-card
             v-card-text
               h4 Simple HTML Quick Start
-              p This template is intended for users who want to try out Vue.js and Vuetify.js in the most simplistic way. It contains a basic index.html with no additional functionality. This is useful for developers who want to easily preview the features of the framework.
+              section-text This template is intended for users who want to try out Vue.js and Vuetify.js in the most simplistic way. It contains a basic index.html with no additional functionality. This is useful for developers who want to easily preview the features of the framework.
               markup(lang="cli")
                 |$  vue init vuetifyjs/simple
         v-tab-content(id="webpack" slot="content")
           v-card
             v-card-text
               h4 Webpack Quick Start
-              p This template is intended for users who are already familiar with Vue/Webpack. It contains a very simple webpack setup and is targetted at developers creating prototype or basic applications.
+              section-text This template is intended for users who are already familiar with Vue/Webpack. It contains a very simple webpack setup and is targetted at developers creating prototype or basic applications.
               markup(lang="cli")
                 |$  vue init vuetifyjs/webpack
         v-tab-content(id="webpack-ssr" slot="content")
           v-card
             v-card-text
               h4 Webpack SSR Quick Start
-              p This template is for advanced users looking to utilize the new Vue SSR (server-side rendering). Based off of the structure in the Vue.js 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository. The Vuetify.js SSR template provides next generation functionality for advanced Vue applications.
+              section-text This template is for advanced users looking to utilize the new Vue SSR (server-side rendering). Based off of the structure in the Vue.js 2 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank">Hackernews</a> repository. The Vuetify.js SSR template provides next generation functionality for advanced Vue applications.
               markup(lang="cli")
                 |$  vue init vuetifyjs/webpack-ssr
-      p If you are using the <strong>Simple HTML</strong> template, you are ready to go. Open the <code>index.html</code> in any browser to get started.
+      section-text If you are using the <strong>Simple HTML</strong> template, you are ready to go. Open the <code>index.html</code> in any browser to get started.
       h6 NPM Install
       section-text After the vue-cli installation finishes, <kbd>cd</kbd> into your project directory and type <kbd>npm install</kbd>. Alternatively, if you are using Facebook's recently released <a href="https://yarnpkg.com/" target="_blank">yarn package manager</a>, you can simply type <kbd>yarn</kbd>.
 

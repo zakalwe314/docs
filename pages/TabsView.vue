@@ -10,7 +10,6 @@
 </template>
 
 <script>
-  import ItemProps from '../constants/itemable-props'
 
   export default {
     name: 'tabs-view',

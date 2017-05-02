@@ -1,29 +1,26 @@
 <template lang="pug">
-  v-app
-    main-navigation
-    main-toolbar(v-bind:title="title")
-    main
-      v-container(fluid)
-        transition(name="slide" mode="out-in")
-          router-view(@view="meta")
-    main-footer
+  div#app
+    v-fade-transition(mode="out-in")
+      component(:is="component")
+        slot
 </template>
 
 <script>
-  import MainNavigation from '~components/MainNavigation'
-  import MainToolbar from '~components/MainToolbar'
-  import MainFooter from '~components/MainFooter'
-
   export default {
     components: {
-      MainNavigation,
-      MainToolbar,
-      MainFooter
+      default: () => import('layouts/Default'),
+      home: () => import('layouts/Home')
     },
 
     data () {
       return {
         title: ''
+      }
+    },
+
+    computed: {
+      component () {
+        return this.$route.path === '/' ? 'home' : 'default'
       }
     },
 
@@ -91,4 +88,7 @@
 
 <style lang="stylus">
   @import './stylus/main'
+  
+  #app
+    transition: .3s ease-in-out
 </style>

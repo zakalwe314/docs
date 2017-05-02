@@ -18,7 +18,6 @@
 </template>
 
 <script>
-  import ItemProps from '../constants/itemable-props'
   import ComponentExample from "../components/ComponentExample";
 
   export default {
@@ -191,7 +190,6 @@
       margin: 1rem 0
 
   #toolbar-image
-    background: url('~public/doc-images/nature.jpg') center center / cover no-repeat
     height: 300px
     width: 100%
 

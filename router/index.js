@@ -5,7 +5,7 @@ function route (path, view, meta) {
   return {
     path: path,
     meta: { name: view },
-    component: resolve => import(`../views/${view}View.vue`).then(resolve)
+    component: resolve => import(`pages/${view}View.vue`).then(resolve)
   }
 }
 
@@ -17,7 +17,7 @@ export function createRouter () {
       mode: 'history',
       scrollBehavior: () => ({ y: 0 }),
       routes: [
-        route('/', 'About'),
+        route('/', 'Home'),
         route('/quick-start', 'QuickStart'),
         route('/server-side-rendering', 'SSR'),
         route('/motion', 'Motion'),

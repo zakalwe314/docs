@@ -7,11 +7,11 @@
     v-toolbar-title(v-text="title")
     .toolbar__links
       a(href="https://github.com/vuetifyjs/vuetify" target="_blank")
-        img(src="~public/github.png" alt="github")
+        img(src="~static/github.png" alt="github")
       a(href="https://twitter.com/vuetifyjs" target="_blank")
-        img(src="~public/twitter.png" alt="twitter")
+        img(src="~static/twitter.png" alt="twitter")
       a(href="https://www.facebook.com/vuetifyjs" target="_blank")
-        img(src="~public/facebook.png" alt="facebook")
+        img(src="~static/facebook.png" alt="facebook")
 </template>
 
 <script>

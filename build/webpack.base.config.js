@@ -12,22 +12,22 @@ module.exports = {
     ? false
     : '#cheap-module-source-map',
   output: {
-    path: resolve('../dist'),
-    publicPath: '/dist/',
+    path: resolve('../public'),
+    publicPath: '/public/',
     filename: '[name].[chunkhash].js'
   },
   resolve: {
     extensions: ['*', '.js', '.json', '.vue'],
     alias: {
-      '~assets': resolve('../src/assets'),
-      '~components': resolve('../src/components'),
-      '~examples': resolve('../public/examples'),
-      '~layouts': resolve('../src/layouts'),
-      '~pages': resolve('../pages'),
-      '~public': resolve('../public'),
-      '~router': resolve('../router'),
-      '~static': resolve('../static'),
-      '~store': resolve('../store'),
+      'assets': resolve('../assets'),
+      'components': resolve('../components'),
+      'examples': resolve('../pages/examples'),
+      'layouts': resolve('../layouts'),
+      'pages': resolve('../pages'),
+      'public': resolve('../public'),
+      'router': resolve('../router'),
+      'static': resolve('../static'),
+      'store': resolve('../store'),
       'vue$': 'vue/dist/vue.common.js'
     }
   },
